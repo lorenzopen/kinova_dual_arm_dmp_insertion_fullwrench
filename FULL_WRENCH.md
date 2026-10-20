@@ -1,11 +1,13 @@
 # This copy: the full-wrench SOCP (2026-10-19)
 
-2026-10-20: optional force-space cone translation (`socp.cone_shift_N`, newtons
-per active point, default 0). The original behavior below is the zero-shift
-case. Analytical checks and a 12-run I/T/Z dry-run comparison are documented in
-[`docs/experiments/cone_shift_20261020/README.md`](docs/experiments/cone_shift_20261020/README.md).
+2026-10-20 update: signed friction distance margins from `friction_cone.pdf`,
+with the full nominal Coulomb opening. The former 70% cone and normal-axis
+offset are replaced. Current equations, defaults and the 3D task-adaptive
+extension are in [docs/FRICTION_MARGIN.md](docs/FRICTION_MARGIN.md).
+The earlier offset experiment remains archived in
+[docs/experiments/cone_shift_20261020/README.md](docs/experiments/cone_shift_20261020/README.md).
 Vitus' original thesis uses uncontracted Coulomb cones plus a separate 1 N
-normal floor per hand (pp. 80-81, eq. 5.23); this project's six contracted
+normal floor per hand (pp. 80-81, eq. 5.23); this project's six point
 point cones and full-wrench cost are an adaptation, not an identical program.
 
 **Comandi per provarla sui Kinova:** [docs/AVVIO_FULL_WRENCH.md](docs/AVVIO_FULL_WRENCH.md)
@@ -22,13 +24,14 @@ package name: **do not put both folders in the same colcon `src/`**.
 | `kinova_dual_arm_dmp_insertion/socp.py` | rewritten: cost = human precision on the two FLANGE wrenches (Vitus' Sigma^-1), cones per point, no floor, no cap, no slack. Built once per set of active pads (DPP) |
 | `controller.py` | builds the new SOCP from `cell.yaml`; `full_wrench` regulates the internal flange wrench on every route |
 | `main.py` | passes `socp`, `full_wrench`, `full_wrench_channels` from the config; `insert` refuses `full_wrench: true` unless `allow_hand_wrench: true` |
-| `config/cell.yaml` | new block `socp:` (`r_s` 0.30, `w_force` 0, `no_bending` false), `full_wrench: false`, `full_wrench_channels: twist` |
+| `config/cell.yaml` | `socp.margin_mode: task_adaptive`, scale 0.25, task floor 0.5 N; `w_force: 0`, `no_bending: false`, `full_wrench: false` |
 
 The program, in short (`w = H f` = the two flange wrenches, 12):
 
     min_f  1/2 w' D' Sigma^-1 D w  (+ w_force/(m g)^2 |f|^2, off by default)
     s.t.   sum f_i + m g = 0,  sum (p_i - c) x f_i = 0
-           |(I - n n') f_i| <= (1 - r_s) mu (-n' f_i)   per pad
+           |(I - n n') f_i| <= mu (-n' f_i) - rho_i sqrt(1+mu^2)   per pad
+           -n' f_i >= 0
 
 The 18 pad forces are only the exact friction model of the tri-pad (a point has
 no moment); what is commanded is the flange wrench.
@@ -38,7 +41,7 @@ TWIST about the pad axis, nothing else - in simulation the channels a
 tilt-compliant tool can carry. `internal` = the old hwd law (internal
 tangential + all internal moments).
 
-## Checked on this PC (no robot)
+## Historical checks before the signed-distance update (no robot)
 
 - SOCP time per call: **1.4 ms** median (1.9 max) after the first call (~20 ms,
   compilation). The old Kinova SOCP: 1.7 ms. Codex's non-DPP version: 22 ms - on

@@ -1,5 +1,13 @@
 # Coni traslati: confronto offline del 20 ottobre 2026
 
+**Esperimento storico, commit `a9cceda`.** Il codice attuale usa il margine di
+distanza firmata di `friction_cone.pdf`, senza restringimento al 70%; vedere
+[../../FRICTION_MARGIN.md](../../FRICTION_MARGIN.md). I risultati sottostanti
+restano quelli della prova precedente. Il modulo `compare_cone_shift` e i suoi
+parametri appartengono a quel commit; il confronto attuale si ripete con
+`python -m kinova_dual_arm_dmp_insertion.compare_friction_margin`, che scrive
+in una directory distinta e non sovrascrive questi dati.
+
 La traslazione nello spazio delle forze aumenta la compressione richiesta in
 modo regolare nelle tre route I/T/Z provate. Tutte le 1.240 allocazioni sono
 state accettate dopo la verifica esplicita dei residui. Questo esperimento

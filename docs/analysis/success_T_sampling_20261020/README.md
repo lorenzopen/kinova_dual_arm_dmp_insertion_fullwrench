@@ -63,8 +63,10 @@ veloce da questi dati lenti e irregolari.
    e' la media delle due mani, non la forza di ciascuna mano.
 6. Le linee tratteggiate SOCP del vecchio grafico sono ricostruzioni offline.
    Il CSV conserva il solo `target_N`, non l'intera soluzione del solver.
-   Inoltre l'analizzatore contiene `r_s=0.10` fisso e non passa le nuove opzioni
-   del config; rigenerare adesso il grafico con il solver modificato non
+   Inoltre l'analizzatore verificato inizialmente conteneva `r_s=0.10` fisso e
+   non passava le opzioni del config (corretto nell'aggiornamento signed-distance
+   del 20 ottobre: ora usa il config e avvisa sulla ricostruzione). Rigenerare
+   il grafico con un solver modificato non
    riproduce automaticamente il solver della run storica. Per questa diagnosi
    non e' stato ricalcolato alcun SOCP: il target mostrato e' quello registrato.
 7. I segnali sono stime dai sensori di coppia ai giunti, corrette tramite

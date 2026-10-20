@@ -33,11 +33,11 @@ from .socp import GraspSOCP
 PHASES = ("to_mouth", "route", "slow_seat", "seat_by_feel")
 
 
-def resolve(d, r):
+def resolve(d, r, cfg):
     """Re-solve the SOCP on every logged tick of the carrying phases."""
     c = r.c
     socp = GraspSOCP(prior=HumanPrior(PRIOR), prior_mode="tpgmm", mu=float(c["mu_eff"]),
-                     f_pad_max=float(c["f_pad_max"]), f_min=1.0, r_s=0.10, r_char=0.05)
+                     **(cfg.get("socp") or {}))
     a = r.axis / np.linalg.norm(r.axis)
     qL0 = GE.quat_from_x(a)
     R0 = r.rots[0]
@@ -144,7 +144,8 @@ def main(argv=None):
         print(f"  forces re-corrected offline by {a.baseline}: {100 * rebase(d, cfg, a.baseline, r):.0f}% of the readings")
     d = measured(d)
     c = d[d.phase.isin(PHASES)].reset_index(drop=True)
-    s = resolve(c, r)
+    print("  SOCP curves use the supplied config and CURRENT solver; historical wrench solutions were not logged.")
+    s = resolve(c, r, cfg)
     c = pd.concat([c, s.drop(columns="t")], axis=1)
     c["dt_ms"] = 1000 * c.t.diff()
     # jam limit as watch_jam had it (route: share 3; to_mouth / seat: w_ext None -> share 1)

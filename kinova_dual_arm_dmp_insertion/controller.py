@@ -81,12 +81,16 @@ class Insertion:
             raise ValueError("full_wrench_channels must be twist or internal")
         self.hand_wrench = route.hand_wrench != "off" or self.full_wrench
         self.f_min = float(c["f_min"])          # passed on, ignored by the new SOCP (no floor)
-        s = dict(r_s=0.30, w_force=0.0, no_bending=False, cone_shift_N=0.0)
+        s = dict(w_force=0.0, no_bending=False, margin_mode="task_adaptive",
+                 margin_task_scale=0.25, margin_floor_N=0.5, margin_fixed_N=0.5)
         s.update(socp_cfg or {})
+        if any(float(s.get(k, 0)) != 0 for k in ("r_s", "cone_shift_N")):
+            raise ValueError("old cone settings r_s/cone_shift_N: update the config to signed friction margins")
         self.socp = GraspSOCP(prior=HumanPrior(PRIOR), prior_mode="tpgmm", mu=self.mu,
-                              r_s=float(s["r_s"]), w_force=float(s["w_force"]),
+                              w_force=float(s["w_force"]),
                               no_bending=bool(s["no_bending"]),
-                              cone_shift_N=float(s["cone_shift_N"]))
+                              margin_mode=s["margin_mode"], margin_task_scale=s["margin_task_scale"],
+                              margin_floor_N=s["margin_floor_N"], margin_fixed_N=s["margin_fixed_N"])
         self.log = log
         self.f_abort, self.track_abort = float(f_abort), float(track_abort)   # robot-only safety
         self.jam_scale = float(jam_scale)                                     # robot: looser sentry

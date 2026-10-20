@@ -3,6 +3,9 @@
 **Full-wrench SOCP copy (2026-10-19).** Robot startup commands, per-piece wrench
 baseline, and scalar/twist test profiles: [docs/AVVIO_FULL_WRENCH.md](docs/AVVIO_FULL_WRENCH.md).
 The changes from the original package are described in [FULL_WRENCH.md](FULL_WRENCH.md).
+**2026-10-20:** the active cones now use task-adaptive signed friction distance
+from `friction_cone.pdf`, with the full nominal opening; equations, parameters
+and dry-run comparison: [Friction margins](docs/FRICTION_MARGIN.md).
 Five alternative routes with reference images and all T1–T5 commands, including a
 T with its horizontal bar on top: [Variety, columns 2–5](docs/ESEMPI_VARIETA_COLONNE_2_5.md).
 The sections below describe the original package and its training setup.

@@ -1,23 +1,25 @@
 """
 The convex program: which pair of FLANGE wrenches to ask for (full-wrench SOCP,
-2026-10-19). At cone_shift_N=0, same mathematics as the original full-wrench
-version; cvxpy compiles it ONCE per set of active pads (DPP).
+2026-10-19, friction margins updated 2026-10-20 from friction_cone.pdf).
+cvxpy compiles it ONCE per set of active pads (DPP).
 
     w = H f                         the two flange wrenches (what the F/T reads), 12
     min_f  1/2 w' D' Sigma^-1 D w   human precision (Vitus' principle, extended to flange wrenches)
          + k_f |f|^2                optional effort term, k_f = w_force / (m g)^2 (0 = off)
     s.t.   sum f_i + m g = 0, sum (p_i - c) x f_i = 0          equilibrium about the believed CoM
-           |(I - n n') f_i| <= (1 - r_s) mu (-n' f_i - cone_shift_N)
-           -n' f_i >= cone_shift_N                          translated cone per point
+           |(I - n n') f_i| <= mu (-n' f_i) - sqrt(1+mu^2) rho_i
+           -n' f_i >= 0                   signed friction distance >= rho_i [N]
            [no_bending] no moment across each hand's pad plane
 
 f (18 = three point forces per hand) is ONLY the exact friction model of the
 tri-pad: a point carries no moment, so the flange moment comes from the lever
 arms. The forces per pad are not measured and not commanded - what goes to the
-robot is the flange wrench. With cone_shift_N=0 the original cone is recovered.
-The optional shift is in FORCE space, in newtons PER ACTIVE POINT; contact
-positions and moment arms are unchanged. With three active points, the normal
-reserve is 3 * cone_shift_N per hand, in addition to the friction demand.
+robot is the flange wrench. The nominal Coulomb opening is unchanged: no 70%
+cone, reduced mu, or independent normal-axis shift. rho_i is a FORCE-space
+distance to the nominal boundary, in newtons PER ACTIVE POINT (paper eq. 3-8).
+Margins are parameters computed before the solve, not optimization variables.
+Task-adaptive allocation uses the general minimum-norm correction framework
+in the paper appendix; see task_margin() and docs/FRICTION_MARGIN.md.
 No separate force floor, no cap, no equilibrium slack: an
 impossible grasp returns ok=False and the controller's fallback decides.
 
@@ -29,7 +31,7 @@ cases: the flange wrenches equal the effort+prior version to 0.5%.
 Interface kept from the old `socp.py`, so `controller.py` changes little:
 `solve(...)` returns f_L, f_R, fn_L, fn_R, peak, ok, residuals, eta_max; the
 flange wrenches are added as wrench_L / wrench_R. `f_min` is accepted and
-ignored; use cone_shift_N explicitly for a cone offset.
+ignored; contact maintenance now follows from the signed distance margin.
 """
 import numpy as np
 import cvxpy as cp
@@ -49,10 +51,38 @@ def wrench_map(points, pole):
                       np.hstack([_skew(np.asarray(p, float) - pole) for p in points])))
 
 
+def task_margin(G, target, active, task_scale, floor_N):
+    """Generalize paper eq. 23-25 to a multi-row equilibrium map.
+
+    A = G restricted to active force columns, Ftask = A^+ target [N],
+    rho = task_scale*||Ftask|| + floor_N [N], P = A^+ A.
+    For D = {A*u: ||u||<=rho}, the minimum-norm correction is -P*u.
+    Thus each point block is bounded by rho_i = ||P_i||_2 * rho.
+    For a scalar task map this is EXACTLY ||G_i||/||G|| * rho (eq. 25).
+    The multi-row uncertainty set is an explicit adaptation of the appendix,
+    not a measured bound on this robot's mass/CoM errors.
+    """
+    active = np.asarray(active, bool)
+    A = np.asarray(G, float)[:, np.repeat(active, 3)]
+    inverse = np.linalg.pinv(A, rcond=1e-10)
+    ftask = inverse @ np.asarray(target, float)
+    residual = A @ ftask - target
+    if np.linalg.norm(residual[:3]) > FORCE_TOL or np.linalg.norm(residual[3:]) > TORQUE_TOL:
+        raise ValueError("active contacts cannot balance the requested task wrench")
+    rho_task = float(task_scale * np.linalg.norm(ftask) + floor_N)
+    projection = inverse @ A
+    weights = np.zeros(len(active))
+    for block, point in enumerate(np.flatnonzero(active)):
+        weights[point] = np.linalg.norm(projection[3 * block:3 * block + 3], 2)
+    return weights * rho_task, dict(task_force_norm_N=float(np.linalg.norm(ftask)),
+                                   task_margin_N=rho_task, margin_weights=weights.tolist())
+
+
 class GraspSOCP:
-    def __init__(self, prior=None, prior_mode="tpgmm", mu=1.0, r_s=0.30,
+    def __init__(self, prior=None, prior_mode="tpgmm", mu=1.0,
                  w_force=0.0, no_bending=False, solver_order=("CLARABEL", "ECOS", "SCS"),
-                 cone_shift_N=0.0,
+                 margin_mode="task_adaptive", margin_task_scale=0.25,
+                 margin_floor_N=0.5, margin_fixed_N=0.5,
                  **_legacy):
         # `_legacy` swallows the old f_pad_max / f_min / r_char / w_slack arguments
         if prior_mode not in ("tpgmm", "identity", "none"):
@@ -62,12 +92,20 @@ class GraspSOCP:
         if prior is None and prior_mode != "none":
             raise ValueError("a prior is required unless prior_mode is 'none'")
         self.prior, self.prior_mode = prior, prior_mode
-        self.mu, self.r_s, self.w_force = float(mu), float(r_s), float(w_force)
-        self.cone_shift_N = float(cone_shift_N)
-        if not np.isfinite(self.cone_shift_N) or self.cone_shift_N < 0:
-            raise ValueError("cone_shift_N must be finite and >= 0 (newtons per active point)")
-        if not np.isfinite(self.mu) or self.mu <= 0 or not 0 <= self.r_s < 1:
-            raise ValueError("mu must be finite and > 0, and r_s must lie in [0, 1)")
+        for removed in ("r_s", "cone_shift_N"):
+            if removed in _legacy and float(_legacy[removed]) != 0.0:
+                raise ValueError(f"{removed} was removed: use signed friction distance margin settings")
+        self.mu, self.w_force = float(mu), float(w_force)
+        if not np.isfinite(self.mu) or self.mu <= 0:
+            raise ValueError("mu must be finite and > 0")
+        if margin_mode not in ("none", "fixed", "task_adaptive"):
+            raise ValueError("margin_mode must be none, fixed or task_adaptive")
+        self.margin_mode = margin_mode
+        self.margin_task_scale, self.margin_floor_N, self.margin_fixed_N = map(
+            float, (margin_task_scale, margin_floor_N, margin_fixed_N))
+        if any(not np.isfinite(v) or v < 0 for v in (
+                self.margin_task_scale, self.margin_floor_N, self.margin_fixed_N)):
+            raise ValueError("margin parameters must be finite and >= 0")
         self.no_bending = bool(no_bending)
         self.solver_order = tuple(solver_order)
         self.std_f = float(getattr(prior, "std_f", 12.0))
@@ -108,16 +146,17 @@ class GraspSOCP:
         active = aL + aR
         f = cp.Variable(18, name="pad_forces")
         P = dict(G=cp.Parameter((6, 18)), target=cp.Parameter(6),
+                 rho=cp.Parameter(6, nonneg=True),
                  n=[cp.Parameter(3) for _ in range(6)],
                  proj=[cp.Parameter((3, 3)) for _ in range(6)])
         con = [P["G"] @ f == P["target"]]
-        k = (1.0 - self.r_s) * self.mu
+        distance_scale = np.sqrt(1.0 + self.mu ** 2)
         for i in range(6):
             fi = f[3 * i:3 * i + 3]
             if active[i]:
                 comp = -(P["n"][i] @ fi)                        # compression, >= 0
-                con += [comp >= self.cone_shift_N,
-                        cp.norm(P["proj"][i] @ fi, 2) <= k * (comp - self.cone_shift_N)]
+                con += [comp >= 0,
+                        cp.norm(P["proj"][i] @ fi, 2) <= self.mu * comp - distance_scale * P["rho"][i]]
             else:
                 con += [fi == 0]
         if self.no_bending:
@@ -161,6 +200,7 @@ class GraspSOCP:
         P = self._program(aL, aR)
         P["G"].value = wrench_map(pts, pole)
         P["target"].value = target
+        margin_G, margin_target = P["G"].value, target
         for i in range(6):
             n = nrm[i] / max(np.linalg.norm(nrm[i]), 1e-12)
             P["n"][i].value = n
@@ -173,6 +213,20 @@ class GraspSOCP:
                 nu /= np.linalg.norm(nu)
                 B = np.hstack([_skew(pts[i] - centre) if (aL + aR)[i] else np.zeros((3, 3)) for i in idx])
                 P["bend"][h].value = (np.eye(3) - np.outer(nu, nu)) @ B
+            extra = np.zeros((6, 18))
+            extra[:3, :9], extra[3:, 9:] = P["bend"][0].value, P["bend"][1].value
+            margin_G = np.vstack((margin_G, extra))
+            margin_target = np.r_[target, np.zeros(6)]
+        margin_info = dict(task_force_norm_N=0.0, task_margin_N=0.0, margin_weights=[0.0] * 6)
+        if self.margin_mode == "task_adaptive":
+            try:
+                rho, margin_info = task_margin(margin_G, margin_target, aL + aR,
+                                               self.margin_task_scale, self.margin_floor_N)
+            except ValueError as e:
+                return _empty(str(e))
+        else:
+            rho = np.asarray(aL + aR, float) * (self.margin_fixed_N if self.margin_mode == "fixed" else 0.0)
+        P["rho"].value = rho
         L = self._root(R)
         if "A" in P:
             D = np.kron(np.eye(4), R.T)                          # world -> grasp frame
@@ -194,24 +248,27 @@ class GraspSOCP:
                 return _empty("equilibrium and contact constraints are incompatible", P["prob"].status, s)
             if P["f"].value is None:
                 continue
-            r = self._check(P["f"].value, pts, nrm, aL + aR, pole, target, H, P["prob"], s)
+            r = self._check(P["f"].value, pts, nrm, aL + aR, pole, target, H, P["prob"], s, rho)
+            r.update(margin_info)
             if r["ok"]:
                 return r
             errors.append(f"{s}: {r['reason']}")
         return _empty("no solver succeeded: " + "; ".join(errors))
 
-    def _check(self, vec, pts, nrm, active, pole, target, H, prob, solver):
+    def _check(self, vec, pts, nrm, active, pole, target, H, prob, solver, rho):
         """Recompute every hard constraint from the forces, whatever the status says."""
         F = np.asarray(vec, float).reshape(6, 3)
         active = np.asarray(active, bool)
         res = wrench_map(pts, pole) @ F.ravel() - target
         comp = -np.sum(nrm * F, axis=1)
         tang = np.linalg.norm(F + comp[:, None] * nrm, axis=1)
-        k = (1.0 - self.r_s) * self.mu
-        available = comp[active] - self.cone_shift_N
-        cone_slack = k * available - tang[active]
+        distance_scale = np.sqrt(1.0 + self.mu ** 2)
+        rho = np.asarray(rho, float)
+        signed_distance = (self.mu * comp - tang) / distance_scale
+        available = comp[active] - distance_scale * rho[active] / self.mu
+        cone_slack = distance_scale * (signed_distance[active] - rho[active])
         cone_err = max(0.0, float(-cone_slack.min()))
-        tension_err = max(0.0, float(-available.min()))
+        tension_err = max(0.0, float(-comp[active].min()))
         rF, rT = float(np.linalg.norm(res[:3])), float(np.linalg.norm(res[3:]))
         ok = bool(prob.status in (cp.OPTIMAL, cp.OPTIMAL_INACCURATE)
                   and rF <= FORCE_TOL and rT <= TORQUE_TOL
@@ -226,6 +283,8 @@ class GraspSOCP:
                     residual_force=rF, residual_torque=rT, eta_max=eta,
                     min_normal_reserve_N=float(available.min()),
                     min_cone_slack_N=float(cone_slack.min()),
+                    required_margin_N=rho.tolist(), signed_distance_N=signed_distance.tolist(),
+                    min_margin_surplus_N=float(np.min(signed_distance[active] - rho[active])),
                     cone_violation=cone_err, cost=float(prob.value), ok=ok,
                     wrench_L=w[:6], wrench_R=w[6:],
                     reason="" if ok else "returned allocation violates hard constraints")

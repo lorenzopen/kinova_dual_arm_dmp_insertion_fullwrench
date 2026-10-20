@@ -20,7 +20,7 @@
 # is scaled about the slot (PyBullet, 3 worlds: all still seat, real tri-pad included).
 # Build the board at this scale too: the route files' neighbours are scaled on load.
 scale: 0.8333333
-piece_mass: null          # [kg] CALIBRATE: weigh the real piece; null = trained mass x scale^3
+piece_mass: 0.050         # [kg] whole real polystyrene tetromino: 50 g (Lorenzo, 2026-10-20).
 
 rate_hz: 100              # control loop and command stream [Hz]
 log_dir: logs
@@ -34,10 +34,12 @@ allow_hand_wrench: false  # hwd routes chase wrench MOMENTS: enable only once th
 # THE FULL-WRENCH SOCP (2026-10-19, this copy only). Cost = the human precision on the
 # two flange wrenches (Vitus-inspired Sigma^-1), cones per point; no separate floor/cap/slack.
 socp:
-  r_s: 0.30               # cone margin (sim: 0.10 put the torsion on the cone edge and the piece slid)
-  cone_shift_N: 0.0        # [N] FORCE-space apex offset PER ACTIVE POINT; 0 = original.
-                          # ||ft_i|| <= (1-r_s)*mu*(N_i-cone_shift_N), N_i >= cone_shift_N.
-                          # Three points: 3*shift normal reserve per hand. Dry-run experiment: 0.25/0.5/1.
+  margin_mode: task_adaptive  # friction_cone.pdf eq. 3-8 + general task map (appendix).
+  margin_task_scale: 0.25     # dimensionless: rho_task = scale*||F_task|| + floor_N.
+  margin_floor_N: 0.5         # [N] TASK-level floor, distributed to ACTIVE POINTS by ||(G^+G)_i||_2.
+                             # Paper's design values, adapted to the 3D tri-pad; not calibrated uncertainty bounds.
+  margin_fixed_N: 0.5         # [N/point] used ONLY by margin_mode: fixed (comparison).
+                             # ||ft_i|| <= mu*N_i - rho_i*sqrt(1+mu^2); no 0.7 multiplier.
   w_force: 0.0            # effort term weight; 0 = human precision only, 1 = Codex's effort + prior
   no_bending: false       # true = no moment across each pad plane (a tilt-compliant tool)
 full_wrench: false        # true = regulate the internal flange wrench on EVERY route (needs allow_hand_wrench on the robot)
