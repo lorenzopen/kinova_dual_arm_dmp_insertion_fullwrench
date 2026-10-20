@@ -1,5 +1,9 @@
 # Due Kinova: 5 esempi col kit da 5 pezzi
 
+**Altre rotte e orientamenti:** [Cinque alternative nelle colonne 2–5](ESEMPI_VARIETA_COLONNE_2_5.md),
+tutte diverse da quelle sotto, con meno vicini e comandi completi per T1–T5.
+La prima ha la **T con barra in alto e gambo in basso**.
+
 > **Copia fullwrench, 19/10/2026:** per avvio, configurazioni, baseline e test del nuovo
 > SOCP usa [AVVIO_FULL_WRENCH.md](AVVIO_FULL_WRENCH.md). Qui sotto restano le quote,
 > le figure e i comandi storici della cartella originale: i suoi percorsi non avviano questa copia.

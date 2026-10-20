@@ -1,5 +1,9 @@
 # Kinova: avvio della copia full wrench (19/10/2026)
 
+Per cinque mondi **diversi dagli esempi originali**, con orientamenti variati e slot
+fra le colonne 2 e 5, usa [ESEMPI_VARIETA_COLONNE_2_5.md](ESEMPI_VARIETA_COLONNE_2_5.md):
+include figure, quote e la sequenza completa T1–T5, a partire dalla T con barra in alto.
+
 Comandi da incollare sul **PC robot Ubuntu/Jazzy**, salvo il trasferimento dal PC Windows.
 Si parte dalla **T**, come nella prova riuscita del 16/10: `cart_k = [1000,1000,1000,20,20,20]`,
 `cart_d = [5,5,5,1,1,1]`, `jam_scale = 1.8`, inserimento tre volte più lento.
