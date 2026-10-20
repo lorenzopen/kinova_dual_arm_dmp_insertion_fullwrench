@@ -309,6 +309,154 @@ Questi tre comandi muovono davvero i bracci. Non c'è controllo automatico delle
 collisioni fra avambracci. Se senti lo stesso rumore o vedi una postura troppo
 estesa, interrompi la prova e non passare all'inserimento. Tieni disponibile l'E-stop.
 
+## T4 — test delle stime dei momenti, prima del full wrench
+
+Questa routine **registra soltanto**, senza pubblicare target o attivare il
+controllo dei momenti. Misura il rumore; non abilita automaticamente
+`full_wrench: true` e non certifica la stima.
+
+### 1. Preparazione e azzeramento, bracci fermi
+
+**T1/T2:** controller attivi in mantenimento, entrambi i bracci fermi, tool
+montati, niente pezzo e niente a contatto. Nessun `insert` o `follow` in
+esecuzione in T4/T5. T3 può continuare a registrare. Tieni l'E-stop disponibile;
+non torcere i pad a mano durante questa prima misura.
+
+**T4:** recupera il profilo già creato, senza rigenerarlo:
+
+```bash
+source ~/lorenzo/env.sh
+cd "$LORENZO/kinova_dual_arm_dmp_insertion_fullwrench"
+source config/session_varieta.env
+printf 'Test momenti: mondo=%s profilo=%s\n' "$W" "$CFG"
+mkdir -p logs
+export MOMLOG="logs/verifica_momenti_${W}_$(date +%Y%m%d_%H%M%S).csv"
+```
+
+Con i bracci fermi e nessun contatto, azzera **un braccio alla volta**:
+
+```bash
+ros2 service call /left/zero_wrench std_srvs/srv/Trigger '{}'
+```
+
+```bash
+ros2 service call /right/zero_wrench std_srvs/srv/Trigger '{}'
+```
+
+Controlla che **entrambe le risposte riportino `success: true`** (oppure
+`success=True`). Se il servizio manca o fallisce, non considerare le letture
+azzerate. Le chiamate sono separate per verificare la risposta: il logger
+successivo non deve rifare il tare.
+
+### 2. T4 — registra almeno 30 secondi senza contatti
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.wrench_log --config "$CFG" --out "$MOMLOG"
+```
+
+Quando compare `logging to ...`, scrivi **nel logger in T4**:
+
+```text
+fermo
+```
+
+Premi Invio, lascia registrare almeno **30 secondi senza toccare nulla**, poi
+**Ctrl-C in T4**. Non chiudere T1/T2. Il riepilogo del logger mostra le forze;
+i momenti sono salvati nelle colonne `tx`, `ty`, `tz` del CSV, in **Nm**.
+
+### 3. T4 — analizza il CSV, senza muovere i robot
+
+Nello stesso terminale, dove esiste ancora la variabile `$MOMLOG`:
+
+```bash
+python - "$MOMLOG" <<'PY'
+import csv
+import sys
+from pathlib import Path
+import numpy as np
+
+path = Path(sys.argv[1])
+with path.open(newline="") as f:
+    rows = list(csv.DictReader(f))
+marks = list(dict.fromkeys(
+    r["mark"] for r in rows if r["mark"].startswith("fermo")
+))
+if not marks:
+    raise SystemExit("Nessun tratto marcato fermo: scrivi fermo + Invio nel logger.")
+for mark in marks:
+    for arm in ("L", "R"):
+        rr = [r for r in rows if r["arm"] == arm and r["mark"] == mark]
+        if len(rr) < 2:
+            print(arm, mark, "CAMPIONI INSUFFICIENTI")
+            continue
+        a = np.array([[float(r[k]) for k in ("tx", "ty", "tz")] for r in rr])
+        if not np.isfinite(a).all():
+            print(arm, mark, "DATI NON FINITI: misura non utilizzabile")
+            continue
+        duration = float(rr[-1]["t"]) - float(rr[0]["t"])
+        n = max(1, len(a) // 3)
+        print(f"\n{arm} {mark}: {len(a)} campioni, {duration:.1f} s; assi tx ty tz [Nm]")
+        print("  media:                ", np.round(a.mean(axis=0), 4))
+        print("  deviazione standard:   ", np.round(a.std(axis=0), 4))
+        print("  intervallo picco-picco:", np.round(np.ptp(a, axis=0), 4))
+        print("  media fine - inizio:   ", np.round(a[-n:].mean(axis=0) - a[:n].mean(axis=0), 4))
+        if duration < 30:
+            print("  Tratto inferiore a 30 s: registra un tratto piu lungo.")
+print("\nCSV:", path.resolve())
+PY
+```
+
+Se riapri T4, prima dell'analisi imposta `MOMLOG` al **file effettivamente
+registrato**, per esempio `export MOMLOG="logs/verifica_momenti_...csv"`,
+sostituendo i puntini con il suo nome completo.
+
+Media = residuo dopo il tare; deviazione standard e picco-picco = oscillazioni;
+differenza fra media finale e iniziale = deriva durante la misura. Con il
+`tool_in_ee` attuale, l'asse dei pad coincide con `z` dell'end effector:
+**`tz` è quindi il canale principale per il twist**. Sono momenti grezzi sul
+braccio, negli assi locali dell'end effector: il backend li trasforma e cambia
+il segno per descrivere la mano sul pezzo. Non confrontare direttamente i segni
+dei due bracci senza tener conto dei loro assi.
+
+### 4. Verifica della dipendenza dalla postura
+
+Una misura subito dopo il tare non verifica le altre posture. Per una seconda
+prova, crea un nuovo file con la riga `export MOMLOG=...` del punto 1 e ripeti
+le due chiamate di azzeramento una sola volta nella postura iniziale. Avvia il
+logger del punto 2 e marca `fermo_A`; registra almeno 30 secondi. Prima di un
+trasferimento scrivi `spostamento`, così l'analisi non include quel tratto.
+Usa soltanto posture e movimenti già verificati nelle prove a vuoto. Raggiunta
+la seconda postura e con entrambi i bracci nuovamente fermi, scrivi `fermo_B`
+e registra altri 30 secondi, **senza rifare il tare**. Poi Ctrl-C e la stessa
+analisi del punto 3. Non usare tratti in movimento come rumore statico.
+
+Se cambia anche l'orientamento della flangia, gli assi locali ruotano: confronta
+i componenti nello stesso sistema di riferimento. `tz` resta il canale del
+twist se il montaggio del tool non cambia. Differenze a vuoto possono indicare
+errori dipendenti dalla postura, non contatti reali.
+
+### 5. Segno e ampiezza: serve un riferimento noto
+
+Il test a vuoto misura rumore e deriva, **non la correttezza del guadagno o del
+segno**. Per questi serve un sensore F/T di riferimento oppure un'attrezzatura
+di laboratorio fissata con leva e dinamometro. Una forza perpendicolare applica
+un momento `M = F * r`: `r` va misurato rispetto all'asse e all'origine corretti.
+Verifica entrambi i versi, ripetibilità, componenti sugli altri assi e ritorno
+allo zero dopo aver tolto il carico. Non fare il tare con il carico applicato.
+Non improvvisare una leva sulle parti stampate o sulle molle: servono un
+fissaggio adatto e carichi compatibili con il tool e il setup del laboratorio.
+
+Torcere il pad a mano dà soltanto una risposta qualitativa. Un metodo con leva
+e forza misurata è descritto nella [guida NPL alla calibrazione dei trasduttori
+di momento](https://eprintspublications.npl.co.uk/4092/).
+
+**Non c'è una soglia universale in Nm per passare a `full_wrench: true`.**
+Se rumore, deriva o errore sono dello stesso ordine dei momenti che il SOCP
+richiede, la stima non è sufficientemente affidabile per quel controllo.
+Il problema della presa che si allenta va verificato anche sul canale di forza;
+questa routine non lo risolve. L'attuale script non ha un arresto dedicato per
+momento eccessivo o errore angolare.
+
 ## T4 + T5 — baseline della rotta selezionata
 
 **T4**, bracci fermi e niente a contatto:
@@ -379,6 +527,7 @@ restano aperti; T5 deve rileggere `source config/session_varieta.env` ogni volta
 | Dato | Dove |
 |---|---|
 | Giri a vuoto | `logs/follow2_<mondo>_<data_ora>.csv` |
+| Test dei momenti | `logs/verifica_momenti_<mondo>_<data_ora>.csv`, indicato da `$MOMLOG` |
 | Baseline | il CSV indicato da `$BASELINE` |
 | Inserimento | `logs/<mondo>_c100_narrow75_<data_ora>.csv` |
 | Sessione completa | `$LORENZO/bags/varieta_col2_5_*` |
