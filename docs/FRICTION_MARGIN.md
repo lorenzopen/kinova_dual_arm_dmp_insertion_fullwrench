@@ -92,16 +92,22 @@ documentati con quella massa. Confronto aggiornato sulla T a 50 g:
 socp:
   margin_mode: task_adaptive
   margin_task_scale: 0.25
-  margin_floor_N: 0.5
+  margin_floor_N: 1.0
   margin_fixed_N: 0.5
   w_force: 0.0
   no_bending: false
 ```
 
-I valori 0.25 e 0.5 N riprendono i parametri di progetto del PDF; la mappa di
-distribuzione e' adattata al tri-pad. Sono punti iniziali per la verifica,
-non limiti di incertezza calibrati sul robot. `margin_floor_N` e' una
-quantita' a livello del task, non 0.5 N su ogni punto e non 0.5 N per mano.
+Il coefficiente 0.25 riprende il parametro di progetto del PDF; il termine
+fisso iniziale di 0.5 N e' stato alzato a **1.0 N** su richiesta di Lorenzo,
+per aumentare la presa in aria sul pezzo da 50 g. La distribuzione e' adattata
+al tri-pad. Sono punti iniziali per la verifica, non limiti di incertezza
+calibrati sul robot. `margin_floor_N` e' una quantita' a livello del task,
+non 1 N su ogni punto e non 1 N per mano. Il costruttore standalone del solver
+mantiene il riferimento del paper a 0.5 N; il controllore e il config operativo
+passano esplicitamente 1 N.
+
+Confronto di taratura sulla T: [aumento del margine a 50 g](experiments/margin_floor_50g_20261020/README.md).
 
 Modalita' disponibili:
 
@@ -166,3 +172,36 @@ python -m kinova_dual_arm_dmp_insertion.main check F75_Tt1_s9007 --arm c100_five
 
 Il vecchio esperimento di offset con cono al 70% resta archiviato con i suoi
 dati nel commit `a9cceda` e nella directory `cone_shift_20261020`.
+
+## Ricontrollo di coerenza con il PDF
+
+La corrispondenza riguarda il **modello del margine di attrito**, non una copia
+di tutto l'algoritmo sperimentale del paper:
+
+| Elemento | Paper | Implementazione di questo progetto |
+|---|---|---|
+| Distanza dal cono | Eq. 3-8 | Stessa espressione, con norma tangenziale 3D |
+| Parametro per ogni solve | rho fissato prima dell'ottimizzazione | Stesso criterio, Parametri CVXPY, struttura DPP |
+| Task | Momento scalare attorno a pivot, 2 contatti planari | Wrench 3D al CoM assunto, 6 punti |
+| Distribuzione adattiva | Eq. 25 per il task scalare | Estensione dichiarata tramite P=A^+A e D specificato sopra; coincide col caso scalare |
+| Costo finale | Minimo della somma dei quadrati delle forze, eq. 27 | Prior umano sui wrench di flangia, mantenuto dal progetto |
+| Termine fisso | 0.5 N nel loro setup | 1 N nel profilo attivo, scelto nella taratura richiesta da Lorenzo |
+
+Non viene quindi affermato che il profilo implementato riproduca i loro
+esperimenti, ne' che D sia un insieme identificato degli errori di massa/CoM
+del robot reale. Il vincolo implementa la distanza del paper; la costruzione
+3D e' un adattamento modellistico coerente con la sua appendice.
+
+Audit numerico: **16 test passati**. Oltre ai dodici iniziali, verificati il
+cambio rigido di frame, la normalizzazione coerente delle normali, il rifiuto
+di forze su punti inattivi e il rifiuto di flessione interna quando
+`no_bending=true` anche se l'equilibrio globale e i coni risultano soddisfatti.
+Sono stati rafforzati questi ultimi controlli indipendenti del risultato:
+prima non verificavano esplicitamente i residui di inattivita' e flessione.
+Le correzioni non cambiano la formula dei coni o la taratura del margine.
+
+Ripetuto il dry run I/T/Z con 50 g e termine fisso 1 N dopo il rafforzamento
+dei controlli: risultati in
+[audit attivo](experiments/margin_floor_50g_20261020/audit_active_floor100/summary.json).
+La validazione numerica riguarda forze pianificate; il loop reale continua
+a regolare principalmente la somma delle compressioni, non ogni punto.

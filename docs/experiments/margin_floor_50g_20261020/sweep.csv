@@ -1,0 +1,4 @@
+floor_N,airborne_median_N,route_median_N,slow_seat_median_N,overall_median_N,max_N,socp_ok,socp_ticks
+0.5,1.94,3.18,2.04,2.6166450452040197,3.62,104,104
+0.75,2.74,3.91,2.83,3.3896092972862464,4.31,104,104
+1.0,3.49,4.63,3.68,4.177241938113227,5.06,104,104

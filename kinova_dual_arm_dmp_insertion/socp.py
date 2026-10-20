@@ -191,6 +191,10 @@ class GraspSOCP:
         m = float(m_hat)
         if pts.shape != (6, 3) or nrm.shape != (6, 3) or m <= 0 or not np.all(np.isfinite(pts)):
             return _empty("invalid geometry or load")
+        normal_lengths = np.linalg.norm(nrm, axis=1)
+        if not np.all(np.isfinite(normal_lengths)) or np.any(normal_lengths < 1e-12):
+            return _empty("contact normals must be finite and nonzero")
+        nrm = nrm / normal_lengths[:, None]     # use the SAME unit normals in solve and verification
         target = (np.array([0.0, 0.0, 9.81 * m, 0.0, 0.0, 0.0]) if w_des is None
                   else np.asarray(w_des, float))
 
@@ -259,6 +263,8 @@ class GraspSOCP:
         """Recompute every hard constraint from the forces, whatever the status says."""
         F = np.asarray(vec, float).reshape(6, 3)
         active = np.asarray(active, bool)
+        if not np.all(np.isfinite(F)):
+            return _empty("solver returned nonfinite contact forces", prob.status, solver)
         res = wrench_map(pts, pole) @ F.ravel() - target
         comp = -np.sum(nrm * F, axis=1)
         tang = np.linalg.norm(F + comp[:, None] * nrm, axis=1)
@@ -270,8 +276,19 @@ class GraspSOCP:
         cone_err = max(0.0, float(-cone_slack.min()))
         tension_err = max(0.0, float(-comp[active].min()))
         rF, rT = float(np.linalg.norm(res[:3])), float(np.linalg.norm(res[3:]))
+        inactive_err = float(np.max(np.linalg.norm(F[~active], axis=1), initial=0.0))
+        bending_err = 0.0
+        if self.no_bending:
+            for hand in (np.arange(3), np.arange(3, 6)):
+                idx = hand[active[hand]]
+                centre = pts[idx].mean(0)
+                normal = nrm[idx].mean(0)
+                normal /= np.linalg.norm(normal)
+                moment = np.cross(pts[idx] - centre, F[idx]).sum(0)
+                bending_err = max(bending_err, float(np.linalg.norm(moment - (moment @ normal) * normal)))
         ok = bool(prob.status in (cp.OPTIMAL, cp.OPTIMAL_INACCURATE)
                   and rF <= FORCE_TOL and rT <= TORQUE_TOL
+                  and inactive_err <= FORCE_TOL and bending_err <= TORQUE_TOL
                   and max(cone_err, tension_err) <= CONTACT_TOL)
         fn = np.maximum(comp, 0.0)
         w = H @ F.ravel()
@@ -286,6 +303,7 @@ class GraspSOCP:
                     required_margin_N=rho.tolist(), signed_distance_N=signed_distance.tolist(),
                     min_margin_surplus_N=float(np.min(signed_distance[active] - rho[active])),
                     cone_violation=cone_err, cost=float(prob.value), ok=ok,
+                    inactive_force_residual_N=inactive_err, bending_residual_Nm=bending_err,
                     wrench_L=w[:6], wrench_R=w[6:],
                     reason="" if ok else "returned allocation violates hard constraints")
 

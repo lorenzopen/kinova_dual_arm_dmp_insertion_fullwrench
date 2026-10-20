@@ -153,6 +153,76 @@ class FrictionMargin(unittest.TestCase):
                 self.assertGreaterEqual(normal, -1e-6)
                 self.assertLessEqual(np.linalg.norm(tangent), normal + 1e-6)
 
+    def check_forces(self, solver, forces, active):
+        from kinova_dual_arm_dmp_insertion.socp import wrench_map
+        args = geometry()
+        pts = np.vstack((args["posL"], args["posR"]))
+        H = np.zeros((12, 18))
+        H[:6, :9] = wrench_map(args["posL"], args["baseL"])
+        H[6:, 9:] = wrench_map(args["posR"], args["baseR"])
+        program = next(iter(solver._programs.values()))
+        return solver._check(forces.ravel(), pts, np.vstack((args["nrmL"], args["nrmR"])),
+                             active, args["p_com"], np.array([0., 0., .2 * 9.81, 0., 0., 0.]),
+                             H, program["prob"], "test", np.asarray(active) * .5)
+
+    def test_checker_rejects_internal_bending_even_when_object_balances(self):
+        solver = GraspSOCP(prior_mode="none", w_force=1., margin_mode="fixed",
+                           margin_fixed_N=.5, no_bending=True)
+        self.assertTrue(solver.solve(**geometry())["ok"])
+        forces = np.array([[0., 2., .2 * 9.81 / 6]] * 3 + [[0., -2., .2 * 9.81 / 6]] * 3)
+        self.assertTrue(self.check_forces(solver, forces, [True] * 6)["ok"])
+        forces[[0, 1, 3, 4], 1] += [.1, -.1, -.1, .1]  # opposite couples, zero net object wrench
+        result = self.check_forces(solver, forces, [True] * 6)
+        self.assertLess(result["residual_torque"], 1e-10)
+        self.assertLess(result["cone_violation"], 1e-10)
+        self.assertGreater(result["bending_residual_Nm"], 1e-5)
+        self.assertFalse(result["ok"])
+
+    def test_checker_rejects_force_on_inactive_points_even_when_object_balances(self):
+        solver = self.solver(.5)
+        active = [True, False, False, True, False, False]
+        result = solver.solve(**geometry(), active_L=active[:3], active_R=active[3:])
+        self.assertTrue(result["ok"])
+        forces = np.array(result["f_L"] + result["f_R"])
+        forces[1] = [0., .1, 0.]
+        forces[4] = [0., -.1, 0.]
+        check = self.check_forces(solver, forces, active)
+        self.assertLess(check["residual_force"], 1e-10)
+        self.assertLess(check["residual_torque"], 1e-10)
+        self.assertAlmostEqual(check["inactive_force_residual_N"], .1)
+        self.assertFalse(check["ok"])
+
+    def test_rigid_frame_change_preserves_margins_and_rotates_solution(self):
+        from scipy.spatial.transform import Rotation
+        args = geometry()
+        solver = GraspSOCP(prior_mode="none", w_force=1.)
+        reference = solver.solve(**args)
+        rotation = Rotation.from_euler("xyz", [23., -39., 71.], degrees=True)
+        translation = np.array([.3, -.7, .5])
+        changed = dict(args)
+        for key in ("posL", "posR", "baseL", "baseR", "p_com"):
+            changed[key] = rotation.apply(args[key]) + translation
+        for key in ("nrmL", "nrmR"):
+            changed[key] = rotation.apply(args[key])
+        changed["orientation"] = rotation.as_matrix()
+        target = np.r_[rotation.apply([0., 0., .2 * 9.81]), np.zeros(3)]
+        result = solver.solve(**changed, w_des=target)
+        self.assertTrue(result["ok"], result["reason"])
+        np.testing.assert_allclose(result["required_margin_N"], reference["required_margin_N"], atol=1e-10)
+        expected = rotation.apply(np.array(reference["f_L"] + reference["f_R"]))
+        np.testing.assert_allclose(np.array(result["f_L"] + result["f_R"]), expected, atol=1e-5)
+
+    def test_normal_length_does_not_change_the_contact_model(self):
+        solver = self.solver(.5)
+        args = geometry()
+        reference = solver.solve(**args)
+        args["nrmL"] *= 2
+        args["nrmR"] *= 3
+        rescaled = solver.solve(**args)
+        self.assertTrue(rescaled["ok"], rescaled["reason"])
+        np.testing.assert_allclose(rescaled["fn_L"] + rescaled["fn_R"],
+                                   reference["fn_L"] + reference["fn_R"], atol=1e-8)
+
 
 if __name__ == "__main__":
     unittest.main()

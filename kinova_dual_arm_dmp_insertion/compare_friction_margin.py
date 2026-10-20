@@ -64,6 +64,8 @@ def run_one(world, arm, cfg, mode, settings, slow, output):
                                 cone_violation_N=res.get("cone_violation", float("nan")),
                                 min_cone_slack_N=res.get("min_cone_slack_N", float("nan")),
                                 min_margin_surplus_N=res.get("min_margin_surplus_N", float("nan")),
+                                inactive_force_residual_N=res.get("inactive_force_residual_N", float("nan")),
+                                bending_residual_Nm=res.get("bending_residual_Nm", float("nan")),
                                 rho_min_N=min(res.get("required_margin_N", [float("nan")])),
                                 rho_max_N=max(res.get("required_margin_N", [float("nan")])),
                                 task_margin_N=res.get("task_margin_N", float("nan")),
@@ -105,6 +107,8 @@ def run_one(world, arm, cfg, mode, settings, slow, output):
                    rho_min_N=min((r["rho_min_N"] for r in valid), default=float("nan")),
                    rho_max_N=max((r["rho_max_N"] for r in valid), default=float("nan")),
                    min_margin_surplus_N=min((r["min_margin_surplus_N"] for r in valid), default=float("nan")),
+                   inactive_force_residual_max_N=max((r["inactive_force_residual_N"] for r in valid), default=float("nan")),
+                   bending_residual_max_Nm=max((r["bending_residual_Nm"] for r in valid), default=float("nan")),
                    solve_ms_median=float(np.median([r["solve_ms"] for r in allocations])))
     print(f"{world} {mode}: target median {result['squeeze_median']:.3f} N/hand, "
           f"SOCP {result['socp_ok']}/{result['socp_ticks']}, seat={result['seat_found']}", flush=True)
@@ -149,16 +153,21 @@ def main():
     ap.add_argument("--margin-task-scale", type=float)
     ap.add_argument("--margin-floor-N", type=float)
     ap.add_argument("--slow", type=float, default=1.)
-    ap.add_argument("--output", type=Path, help="default: separate directory named after the configured piece mass")
+    ap.add_argument("--output", type=Path, help="default: separate directory named after piece mass and margin parameters")
     a = ap.parse_args()
     if not np.isfinite(a.slow) or a.slow <= 0:
         ap.error("slow must be finite and > 0")
     cfg, path = load_config(a.config)
     mass_label = "route_mass" if cfg.get("piece_mass") is None else f"{1000 * float(cfg['piece_mass']):g}g"
-    if a.output is None:
-        a.output = Path(f"docs/experiments/signed_friction_margin_{mass_label}_20261020")
     settings = {k: v for k, v in dict(margin_fixed_N=a.margin_fixed_N,
                 margin_task_scale=a.margin_task_scale, margin_floor_N=a.margin_floor_N).items() if v is not None}
+    if a.output is None:
+        effective = dict(margin_task_scale=.25, margin_floor_N=1., margin_fixed_N=.5)
+        effective.update(cfg.get("socp") or {})
+        effective.update(settings)
+        label = (f"floor{effective['margin_floor_N']:g}_scale{effective['margin_task_scale']:g}"
+                 f"_fixed{effective['margin_fixed_N']:g}")
+        a.output = Path(f"docs/experiments/signed_friction_margin_{mass_label}_{label}_20261020")
     a.output.mkdir(parents=True, exist_ok=True)
     summaries, traces = [], {}
     for world in a.worlds:

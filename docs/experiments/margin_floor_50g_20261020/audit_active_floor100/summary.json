@@ -1,0 +1,249 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "cvxpy": "1.9.3",
+  "installed_solvers": [
+    "CLARABEL",
+    "SCS",
+    "SCIPY",
+    "HIGHS",
+    "OSQP"
+  ],
+  "prior_sha256": "2d229d367e70de99a0bc1b6cdf7004642b73bda5935bde5202ddccf636b0eadd",
+  "config_path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\config\\cell.yaml",
+  "config": {
+    "scale": 0.8333333,
+    "piece_mass": 0.05,
+    "rate_hz": 100,
+    "log_dir": "logs",
+    "max_reach": 0.902,
+    "f_abort": 60.0,
+    "track_abort": 0.04,
+    "jam_scale": 1.8,
+    "allow_hand_wrench": false,
+    "socp": {
+      "margin_mode": "task_adaptive",
+      "margin_task_scale": 0.25,
+      "margin_floor_N": 1.0,
+      "margin_fixed_N": 0.5,
+      "w_force": 0.0,
+      "no_bending": false
+    },
+    "full_wrench": false,
+    "full_wrench_channels": "twist",
+    "wrench_baseline": "logs/wrench_20261016_134246_Z_senza_contatto.csv",
+    "stiffness": {
+      "trans": 1500.0,
+      "torsion": 40.0,
+      "tilt": 8.0
+    },
+    "tool": {
+      "pad_x": 0.055,
+      "pad_r": 0.015,
+      "r_tri": 0.0404
+    },
+    "left": {
+      "base_frame": "base_link",
+      "ee_frame": "end_effector_link",
+      "urdf_path": "/home/nvidia/ros2_ws/src/kinova_controller_pkgs/kinova_control/urdfs/gen3_p2_F_only.urdf",
+      "target_topic": "/left/target_pose",
+      "joint_states_topic": "/left/joint_states",
+      "wrench_topic": "/left/estimated_wrench",
+      "wrench_source": "estimated",
+      "zero_wrench_service": "/left/zero_wrench",
+      "shoulder_in_base": [
+        0.0,
+        0.0,
+        0.2848
+      ],
+      "shelf_in_base": {
+        "xyz": [
+          0.8075,
+          -0.3025,
+          -0.03
+        ],
+        "quat": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "tool_in_ee": {
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quat": [
+          0.0,
+          -0.7071068,
+          0.0,
+          0.7071068
+        ]
+      }
+    },
+    "right": {
+      "base_frame": "base_link",
+      "ee_frame": "end_effector_link",
+      "urdf_path": "/home/nvidia/ros2_ws/src/kinova_controller_pkgs/kinova_control/urdfs/gen3_p2_F_only.urdf",
+      "target_topic": "/right/target_pose",
+      "joint_states_topic": "/right/joint_states",
+      "wrench_topic": "/right/estimated_wrench",
+      "wrench_source": "estimated",
+      "zero_wrench_service": "/right/zero_wrench",
+      "shoulder_in_base": [
+        0.0,
+        0.0,
+        0.2848
+      ],
+      "shelf_in_base": {
+        "xyz": [
+          0.8075,
+          0.2975,
+          -0.03
+        ],
+        "quat": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "tool_in_ee": {
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quat": [
+          0.0,
+          -0.7071068,
+          0.0,
+          0.7071068
+        ]
+      }
+    }
+  },
+  "arm": "c100_five_cut800",
+  "slow": 1.0,
+  "overrides": {},
+  "limitation": "DryRun has no friction/slip dynamics, neighbours, or measured moments.",
+  "runs": [
+    {
+      "world": "F75_It1_s9001",
+      "margin_mode": "task_adaptive",
+      "margin_task_scale": 0.25,
+      "margin_floor_N": 1.0,
+      "margin_fixed_N": 0.5,
+      "mu": 1.0,
+      "mass_kg": 0.05,
+      "full_wrench": false,
+      "hand_wrench": false,
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.19999999999997797,
+      "believed_mm": -0.19999999999992246,
+      "socp_ok": 101,
+      "socp_ticks": 101,
+      "side_force_max": 6.48372826207414e-14,
+      "squeeze_median": 3.7223833894711764,
+      "wall_seconds": 0.7154773999936879,
+      "target_p95_N": 5.61,
+      "target_max_N": 5.67,
+      "measured_half_sum_median_N": 3.74,
+      "tracking_half_sum_error_p95_N": 0.25,
+      "abs_ds_max_mm": 1.88,
+      "min_point_N": 0.97045438693418,
+      "eta_max": 0.5458633319886126,
+      "force_residual_max_N": 1.3865954389517604e-10,
+      "torque_residual_max_Nm": 2.7637963462090837e-12,
+      "cone_violation_max_N": 0.0,
+      "rho_min_N": 0.6862148769942311,
+      "rho_max_N": 0.8965098573271008,
+      "min_margin_surplus_N": 4.1459613520089533e-11,
+      "inactive_force_residual_max_N": 0.0,
+      "bending_residual_max_Nm": 0.0,
+      "solve_ms_median": 2.502199960872531
+    },
+    {
+      "world": "F75_Tt1_s9007",
+      "margin_mode": "task_adaptive",
+      "margin_task_scale": 0.25,
+      "margin_floor_N": 1.0,
+      "margin_fixed_N": 0.5,
+      "mu": 1.0,
+      "mass_kg": 0.05,
+      "full_wrench": false,
+      "hand_wrench": false,
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000000573,
+      "believed_mm": -0.20000000000006124,
+      "socp_ok": 104,
+      "socp_ticks": 104,
+      "side_force_max": 6.528143295199436e-14,
+      "squeeze_median": 4.177241938108093,
+      "wall_seconds": 0.7274668000172824,
+      "target_p95_N": 5.02,
+      "target_max_N": 5.06,
+      "measured_half_sum_median_N": 4.19,
+      "tracking_half_sum_error_p95_N": 0.0804999999999996,
+      "abs_ds_max_mm": 1.65,
+      "min_point_N": 1.0047025825736513,
+      "eta_max": 0.5321041947316423,
+      "force_residual_max_N": 8.330391675478662e-12,
+      "torque_residual_max_Nm": 3.4237458761459204e-13,
+      "cone_violation_max_N": 1.2618676081195633e-11,
+      "rho_min_N": 0.7104320089242977,
+      "rho_max_N": 0.8679306377901976,
+      "min_margin_surplus_N": -8.92275142660992e-12,
+      "inactive_force_residual_max_N": 0.0,
+      "bending_residual_max_Nm": 0.0,
+      "solve_ms_median": 2.496449975296855
+    },
+    {
+      "world": "F75_Zt1_s9012",
+      "margin_mode": "task_adaptive",
+      "margin_task_scale": 0.25,
+      "margin_floor_N": 1.0,
+      "margin_fixed_N": 0.5,
+      "mu": 1.0,
+      "mass_kg": 0.05,
+      "full_wrench": false,
+      "hand_wrench": false,
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000000573,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 105,
+      "socp_ticks": 105,
+      "side_force_max": 4.440949273905156e-14,
+      "squeeze_median": 3.7932352022105302,
+      "wall_seconds": 0.738619799958542,
+      "target_p95_N": 4.48,
+      "target_max_N": 5.55,
+      "measured_half_sum_median_N": 3.815,
+      "tracking_half_sum_error_p95_N": 0.125,
+      "abs_ds_max_mm": 1.74,
+      "min_point_N": 0.9930538850370524,
+      "eta_max": 0.5147736676848342,
+      "force_residual_max_N": 1.5282324026900025e-11,
+      "torque_residual_max_Nm": 2.4338621499826914e-13,
+      "cone_violation_max_N": 1.0203245842756512e-11,
+      "rho_min_N": 0.7021951359229387,
+      "rho_max_N": 0.8652889604970229,
+      "min_margin_surplus_N": -7.21478432552658e-12,
+      "inactive_force_residual_max_N": 0.0,
+      "bending_residual_max_Nm": 0.0,
+      "solve_ms_median": 2.53800000064075
+    }
+  ]
+}

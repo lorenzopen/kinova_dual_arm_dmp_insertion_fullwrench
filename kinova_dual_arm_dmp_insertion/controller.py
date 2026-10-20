@@ -82,7 +82,7 @@ class Insertion:
         self.hand_wrench = route.hand_wrench != "off" or self.full_wrench
         self.f_min = float(c["f_min"])          # passed on, ignored by the new SOCP (no floor)
         s = dict(w_force=0.0, no_bending=False, margin_mode="task_adaptive",
-                 margin_task_scale=0.25, margin_floor_N=0.5, margin_fixed_N=0.5)
+                 margin_task_scale=0.25, margin_floor_N=1.0, margin_fixed_N=0.5)
         s.update(socp_cfg or {})
         if any(float(s.get(k, 0)) != 0 for k in ("r_s", "cone_shift_N")):
             raise ValueError("old cone settings r_s/cone_shift_N: update the config to signed friction margins")

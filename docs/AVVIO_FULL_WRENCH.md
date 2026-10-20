@@ -86,7 +86,7 @@ for side in ("left", "right"):
     cfg[side]["urdf_path"] = str(urdf)
 cfg["stiffness"] = {"trans": 1000.0, "torsion": 20.0, "tilt": 20.0}
 cfg["socp"] = {"margin_mode": "task_adaptive", "margin_task_scale": 0.25,
-               "margin_floor_N": 0.5, "margin_fixed_N": 0.5, "w_force": 0.0, "no_bending": False}
+               "margin_floor_N": 1.0, "margin_fixed_N": 0.5, "w_force": 0.0, "no_bending": False}
 cfg["full_wrench"] = False
 cfg["allow_hand_wrench"] = False
 cfg["full_wrench_channels"] = "twist"

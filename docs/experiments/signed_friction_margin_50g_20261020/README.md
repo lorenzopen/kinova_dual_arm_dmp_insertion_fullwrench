@@ -1,5 +1,9 @@
 # T reale da 50 g: dry run aggiornato
 
+Questa e' la prima prova a 50 g, con termine fisso del margine a 0.5 N.
+Il profilo attivo e' stato poi alzato a 1.0 N per aumentare la presa in aria:
+[confronto della taratura](../margin_floor_50g_20261020/README.md).
+
 Massa comunicata da Lorenzo il 20 ottobre 2026: **0.050 kg per tetromino intero**,
 non per singolo cubetto. `config/cell.yaml` ora usa questo valore esplicito,
 invece dei circa 0.14468 kg derivati dalla route. Il peso passa da circa
