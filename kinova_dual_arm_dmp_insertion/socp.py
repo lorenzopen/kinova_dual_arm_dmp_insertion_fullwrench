@@ -1,19 +1,24 @@
 """
 The convex program: which pair of FLANGE wrenches to ask for (full-wrench SOCP,
-2026-10-19). Same mathematics as `lorenzo_data_analysis/full_wrench_socp/lib/socp.py`,
-written so cvxpy compiles it ONCE per set of active pads (DPP).
+2026-10-19). At cone_shift_N=0, same mathematics as the original full-wrench
+version; cvxpy compiles it ONCE per set of active pads (DPP).
 
     w = H f                         the two flange wrenches (what the F/T reads), 12
-    min_f  1/2 w' D' Sigma^-1 D w   human precision only (Vitus' cost, on the flanges)
+    min_f  1/2 w' D' Sigma^-1 D w   human precision (Vitus' principle, extended to flange wrenches)
          + k_f |f|^2                optional effort term, k_f = w_force / (m g)^2 (0 = off)
     s.t.   sum f_i + m g = 0, sum (p_i - c) x f_i = 0          equilibrium about the believed CoM
-           |(I - n n') f_i| <= (1 - r_s) mu (-n' f_i)          Coulomb cone per point
+           |(I - n n') f_i| <= (1 - r_s) mu (-n' f_i - cone_shift_N)
+           -n' f_i >= cone_shift_N                          translated cone per point
            [no_bending] no moment across each hand's pad plane
 
 f (18 = three point forces per hand) is ONLY the exact friction model of the
 tri-pad: a point carries no moment, so the flange moment comes from the lever
 arms. The forces per pad are not measured and not commanded - what goes to the
-robot is the flange wrench. No force floor, no cap, no equilibrium slack: an
+robot is the flange wrench. With cone_shift_N=0 the original cone is recovered.
+The optional shift is in FORCE space, in newtons PER ACTIVE POINT; contact
+positions and moment arms are unchanged. With three active points, the normal
+reserve is 3 * cone_shift_N per hand, in addition to the friction demand.
+No separate force floor, no cap, no equilibrium slack: an
 impossible grasp returns ok=False and the controller's fallback decides.
 
 Why the prior alone is bounded: Sigma^-1 is full rank on all 12 flange
@@ -24,7 +29,7 @@ cases: the flange wrenches equal the effort+prior version to 0.5%.
 Interface kept from the old `socp.py`, so `controller.py` changes little:
 `solve(...)` returns f_L, f_R, fn_L, fn_R, peak, ok, residuals, eta_max; the
 flange wrenches are added as wrench_L / wrench_R. `f_min` is accepted and
-ignored (there is no floor).
+ignored; use cone_shift_N explicitly for a cone offset.
 """
 import numpy as np
 import cvxpy as cp
@@ -47,6 +52,7 @@ def wrench_map(points, pole):
 class GraspSOCP:
     def __init__(self, prior=None, prior_mode="tpgmm", mu=1.0, r_s=0.30,
                  w_force=0.0, no_bending=False, solver_order=("CLARABEL", "ECOS", "SCS"),
+                 cone_shift_N=0.0,
                  **_legacy):
         # `_legacy` swallows the old f_pad_max / f_min / r_char / w_slack arguments
         if prior_mode not in ("tpgmm", "identity", "none"):
@@ -57,6 +63,11 @@ class GraspSOCP:
             raise ValueError("a prior is required unless prior_mode is 'none'")
         self.prior, self.prior_mode = prior, prior_mode
         self.mu, self.r_s, self.w_force = float(mu), float(r_s), float(w_force)
+        self.cone_shift_N = float(cone_shift_N)
+        if not np.isfinite(self.cone_shift_N) or self.cone_shift_N < 0:
+            raise ValueError("cone_shift_N must be finite and >= 0 (newtons per active point)")
+        if not np.isfinite(self.mu) or self.mu <= 0 or not 0 <= self.r_s < 1:
+            raise ValueError("mu must be finite and > 0, and r_s must lie in [0, 1)")
         self.no_bending = bool(no_bending)
         self.solver_order = tuple(solver_order)
         self.std_f = float(getattr(prior, "std_f", 12.0))
@@ -105,7 +116,8 @@ class GraspSOCP:
             fi = f[3 * i:3 * i + 3]
             if active[i]:
                 comp = -(P["n"][i] @ fi)                        # compression, >= 0
-                con += [comp >= 0, cp.norm(P["proj"][i] @ fi, 2) <= k * comp]
+                con += [comp >= self.cone_shift_N,
+                        cp.norm(P["proj"][i] @ fi, 2) <= k * (comp - self.cone_shift_N)]
             else:
                 con += [fi == 0]
         if self.no_bending:
@@ -196,8 +208,10 @@ class GraspSOCP:
         comp = -np.sum(nrm * F, axis=1)
         tang = np.linalg.norm(F + comp[:, None] * nrm, axis=1)
         k = (1.0 - self.r_s) * self.mu
-        cone_err = max(0.0, float(np.max(tang[active] - k * comp[active])))
-        tension_err = max(0.0, float(-comp[active].min()))
+        available = comp[active] - self.cone_shift_N
+        cone_slack = k * available - tang[active]
+        cone_err = max(0.0, float(-cone_slack.min()))
+        tension_err = max(0.0, float(-available.min()))
         rF, rT = float(np.linalg.norm(res[:3])), float(np.linalg.norm(res[3:]))
         ok = bool(prob.status in (cp.OPTIMAL, cp.OPTIMAL_INACCURATE)
                   and rF <= FORCE_TOL and rT <= TORQUE_TOL
@@ -210,6 +224,8 @@ class GraspSOCP:
                     fn_L=fn[:3].tolist(), fn_R=fn[3:].tolist(),
                     peak=float(max(fn[:3].sum(), fn[3:].sum())),
                     residual_force=rF, residual_torque=rT, eta_max=eta,
+                    min_normal_reserve_N=float(available.min()),
+                    min_cone_slack_N=float(cone_slack.min()),
                     cone_violation=cone_err, cost=float(prob.value), ok=ok,
                     wrench_L=w[:6], wrench_R=w[6:],
                     reason="" if ok else "returned allocation violates hard constraints")

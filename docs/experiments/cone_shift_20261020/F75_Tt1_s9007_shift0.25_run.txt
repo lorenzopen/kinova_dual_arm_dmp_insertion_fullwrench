@@ -1,0 +1,5 @@
+  F75_Tt1_s9007 (T, arm c100_five_cut800, hand wrench off, scale 0.833333): 668 waypoints, mass 0.145 kg, opening 100 mm, pickup squeeze 25.0 N/hand; PyBullet placed 4.6 mm, slip 1.2 mm
+      approach: 2.4 N measured
+      squeeze: 11.8 N measured, asked 12.0
+  RESULT: route_followed True, jammed False, seat_found True, landed_high False, drop_mm 0.2, believed_mm -0.2, socp_ok 104, socp_ticks 104, side_force_max 0.0, squeeze_median 3.8
+  measure the placement by hand (worst cell against its target) - the robot does not see it

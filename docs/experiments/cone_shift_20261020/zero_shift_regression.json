@@ -1,0 +1,7 @@
+{
+  "cases": 24,
+  "max_flange_wrench_component_difference": 0.0,
+  "reference": "git HEAD:kinova_dual_arm_dmp_insertion/socp.py",
+  "commit": "12d9010",
+  "shift_N": 0.0
+}

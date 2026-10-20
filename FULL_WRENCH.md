@@ -1,5 +1,13 @@
 # This copy: the full-wrench SOCP (2026-10-19)
 
+2026-10-20: optional force-space cone translation (`socp.cone_shift_N`, newtons
+per active point, default 0). The original behavior below is the zero-shift
+case. Analytical checks and a 12-run I/T/Z dry-run comparison are documented in
+[`docs/experiments/cone_shift_20261020/README.md`](docs/experiments/cone_shift_20261020/README.md).
+Vitus' original thesis uses uncontracted Coulomb cones plus a separate 1 N
+normal floor per hand (pp. 80-81, eq. 5.23); this project's six contracted
+point cones and full-wrench cost are an adaptation, not an identical program.
+
 **Comandi per provarla sui Kinova:** [docs/AVVIO_FULL_WRENCH.md](docs/AVVIO_FULL_WRENCH.md)
 (controller, prove a vuoto, baseline per pezzo, nuovo SOCP e profilo twist).
 

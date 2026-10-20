@@ -1,0 +1,97 @@
+{
+  "source": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\runs\\20261016_1211_F75_Tt1_s9007_riuscito\\F75_Tt1_s9007_c100_five_cut800_20261016_121150.csv",
+  "source_sha256": "87d6c4c29e67edbc402fb326d3e8e976f8a2f53333fd3acb5339293688bf1f6f",
+  "total_rows": 3703,
+  "phases": [
+    {
+      "phase": "to_open_pose",
+      "samples": 2436,
+      "duration_s": 25.282000000000153,
+      "median_dt_ms": 10.000000000218279,
+      "p95_dt_ms": 15.99999999962165,
+      "max_dt_ms": 52.999999999883585,
+      "effective_hz": 96.3135827861714
+    },
+    {
+      "phase": "approach",
+      "samples": 1,
+      "duration_s": 0.0,
+      "median_dt_ms": null,
+      "p95_dt_ms": null,
+      "max_dt_ms": null,
+      "effective_hz": null
+    },
+    {
+      "phase": "squeeze",
+      "samples": 407,
+      "duration_s": 4.106999999999971,
+      "median_dt_ms": 10.000000000218279,
+      "p95_dt_ms": 14.999999999417923,
+      "max_dt_ms": 24.999999999636202,
+      "effective_hz": 98.85561236912659
+    },
+    {
+      "phase": "to_mouth",
+      "samples": 16,
+      "duration_s": 2.0159999999996217,
+      "median_dt_ms": 135.00000000021828,
+      "p95_dt_ms": 146.50000000046927,
+      "max_dt_ms": 150.0000000005457,
+      "effective_hz": 7.440476190477587
+    },
+    {
+      "phase": "route",
+      "samples": 123,
+      "duration_s": 18.902000000000044,
+      "median_dt_ms": 148.99999999988722,
+      "p95_dt_ms": 216.99999999987062,
+      "max_dt_ms": 349.00000000016007,
+      "effective_hz": 6.4543434557189565
+    },
+    {
+      "phase": "slow_seat",
+      "samples": 17,
+      "duration_s": 2.569999999999709,
+      "median_dt_ms": 156.50000000005093,
+      "p95_dt_ms": 201.74999999994725,
+      "max_dt_ms": 242.9999999994834,
+      "effective_hz": 6.225680933852845
+    },
+    {
+      "phase": "seat_by_feel",
+      "samples": 1,
+      "duration_s": 0.0,
+      "median_dt_ms": null,
+      "p95_dt_ms": null,
+      "max_dt_ms": null,
+      "effective_hz": null
+    },
+    {
+      "phase": "release",
+      "samples": 174,
+      "duration_s": 2.0059999999994034,
+      "median_dt_ms": 10.000000000218279,
+      "p95_dt_ms": 18.399999999564905,
+      "max_dt_ms": 154.99999999974534,
+      "effective_hz": 86.24127617151119
+    },
+    {
+      "phase": "retreat",
+      "samples": 528,
+      "duration_s": 5.305999999999585,
+      "median_dt_ms": 10.000000000218279,
+      "p95_dt_ms": 14.699999999629643,
+      "max_dt_ms": 21.999999999934516,
+      "effective_hz": 99.32152280438017
+    }
+  ],
+  "normal_sum_reconstruction_max_difference_N": 3.075219581933895,
+  "route_normal_sum_reconstruction_max_difference_N": 1.0200000000000014,
+  "route_normal_sum_reconstruction_p95_difference_N": 0.7250000000000018,
+  "route_normal_target_correlation": {
+    "L": 0.6540670364968172,
+    "R": 0.6290367614832666
+  },
+  "zoom_samples": 20,
+  "limitation": "CSV times are log-write times; sensor/header times and per-stage durations are absent."
+}

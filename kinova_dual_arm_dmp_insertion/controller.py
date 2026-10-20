@@ -81,11 +81,12 @@ class Insertion:
             raise ValueError("full_wrench_channels must be twist or internal")
         self.hand_wrench = route.hand_wrench != "off" or self.full_wrench
         self.f_min = float(c["f_min"])          # passed on, ignored by the new SOCP (no floor)
-        s = dict(r_s=0.30, w_force=0.0, no_bending=False)
+        s = dict(r_s=0.30, w_force=0.0, no_bending=False, cone_shift_N=0.0)
         s.update(socp_cfg or {})
         self.socp = GraspSOCP(prior=HumanPrior(PRIOR), prior_mode="tpgmm", mu=self.mu,
                               r_s=float(s["r_s"]), w_force=float(s["w_force"]),
-                              no_bending=bool(s["no_bending"]))
+                              no_bending=bool(s["no_bending"]),
+                              cone_shift_N=float(s["cone_shift_N"]))
         self.log = log
         self.f_abort, self.track_abort = float(f_abort), float(track_abort)   # robot-only safety
         self.jam_scale = float(jam_scale)                                     # robot: looser sentry
