@@ -8,7 +8,8 @@
 #
 # THE ARMS AND THE ATIs (2026-10-21): tele_ros2's launch, unmodified, in another terminal
 # (GUIDA.md, T1): kinova_controller.py per arm in /left_arm (.200) and /right_arm (.107), a
-# Cartesian impedance on `tool_frame` of gen3.urdf, which IS the flange (offset 0, mass 0).
+# Cartesian impedance on `tool_frame` of urdf/gen3_ati_tool.urdf, which IS the flange (offset 0);
+# that URDF is gen3.urdf + the 150 g bolted on the flange (ATI, adapters, spring, tri-pad).
 # Its stiffness is diagonal in the BASE axes and fixed at launch: `check` prints the cart_k.
 # ft_raw per arm, started by the same launch (ati:=true). The cells are mounted the other way
 # round from tele_ros2's map (Lorenzo, 2026-10-21): left .200 has the .132, right .107 the
@@ -85,7 +86,7 @@ left:
   base_frame: base_link
   ee_frame: tool_frame                   # the frame tele_ros2's controller drives (= the flange in gen3.urdf)
   # the URDF the controller runs: the forward kinematics here must be the same
-  urdf_path: /home/nvidia/tele_ros2/src/kinova_control/urdfs/gen3.urdf   # = left_tool/right_tool:=gen3 of the launch
+  urdf_path: /home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf   # = left_urdf/right_urdf of the launch: gen3.urdf + the 150 g ATI tool
   target_topic: /left_arm/target_pose
   joint_states_topic: /left_arm/joint_states
   wrench_topic: /left_arm/estimated_wrench   # from the joint torque sensors, not an F/T
@@ -114,7 +115,7 @@ left:
 right:
   base_frame: base_link
   ee_frame: tool_frame
-  urdf_path: /home/nvidia/tele_ros2/src/kinova_control/urdfs/gen3.urdf   # = left_tool/right_tool:=gen3 of the launch
+  urdf_path: /home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf   # = left_urdf/right_urdf of the launch: gen3.urdf + the 150 g ATI tool
   target_topic: /right_arm/target_pose
   joint_states_topic: /right_arm/joint_states
   wrench_topic: /right_arm/estimated_wrench

@@ -59,7 +59,7 @@ Se dà errore, non è compilato: usa la variante senza compilazione in fondo all
 **T1, bracci + ATI** (terminale normale, **senza** `env.sh`). Lascia libera la zona: i bracci vanno in home.
 
 ```bash
-source /opt/ros/jazzy/setup.bash && source /home/nvidia/tele_ros2/install/setup.bash && ros2 launch teleop_bringup kinova_arms.launch.py arms:=both home:=true viz:=false zed:=false ati:=true left_tool:=gen3 right_tool:=gen3 cart_k:="1000 1000 1000 20 20 20" cart_d:="5 5 5 1 1 1"
+source /opt/ros/jazzy/setup.bash && source /home/nvidia/tele_ros2/install/setup.bash && ros2 launch teleop_bringup kinova_arms.launch.py arms:=both home:=true viz:=false zed:=false ati:=true left_urdf:=/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf right_urdf:=/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf cart_k:="1000 1000 1000 20 20 20" cart_d:="5 5 5 1 1 1"
 ```
 
 Avvia:
@@ -74,7 +74,16 @@ altrimenti ogni braccio legge la forza dell'altro. `ft_check --calibrate` lo seg
 
 All'avvio ogni `ft_raw` stampa seriale e unità: sinistro **FT54940**, destro **FT49595**, in N / Nm
 (se un NetBox fosse in lbf, il nostro codice legge le unità e converte da solo).
-Con `gen3.urdf` il frame comandato (`tool_frame`) **coincide con la flangia**. L'impedenza è quindi alla flangia,
+**L'URDF è `urdf/gen3_ati_tool.urdf` di questo repo**, cioè `gen3.urdf` con in più quello che è montato sulla flangia:
+ATI, adattatori, molla e tri-pad, **150 g** in tutto. Con `left_tool:=gen3` la compensazione di gravità non
+vedrebbe il tool, e il braccio cederebbe appena passa in coppia: il 21/10 il .200 ha dato uno scossone ed è
+rimasto 5° più basso sul giunto 2. Se cambi tool, aggiorna massa e baricentro in quel file.
+Il frame comandato (`tool_frame`) **coincide con la flangia**.
+
+**La prima volta, e dopo ogni scossone, un braccio alla volta.** Lancia T1 con `arms:=right`, controlla che
+in home resti fermo senza scendere, poi chiudi con Ctrl-C. Ripeti con `arms:=left`. Solo dopo usa `arms:=both`.
+Mano sull'E-stop e niente sotto le punte. Se nel log compare `Servoing-mode mismatch`, il robot è andato in
+fault: chiudi T1, controlla il braccio e ripeti la prova sul braccio singolo. L'impedenza è quindi alla flangia,
 come nell'addestramento. Aspetta che i bracci siano in home e fermi.
 
 **Una volta sola: la velocità del .132.** `ft_raw` vuole 1000 pacchetti/s. Il 21/10 il .131 era a 1000 e
@@ -116,7 +125,7 @@ in tre terminali normali. I controller si scrivono i topic con nomi assoluti, qu
 Destro, poi sinistro con `N=left_arm` e `192.180.0.200`:
 
 ```bash
-source /opt/ros/jazzy/setup.bash && N=right_arm && RM=$(for t in joint_states target_pose joint_cmd cartesian_gains joint_gains switch_control_mode estimated_wrench zero_wrench clear_wrench_offset current_pose_viz target_pose_viz joint_target_viz control_diagnostics control_gains commanded_wrench commanded_twist cmd_vel joint_torque_ff gripper_cmd; do echo -n " -r /$t:=/$N/$t"; done) && python3 /home/nvidia/tele_ros2/src/kinova_control/scripts/kinova_controller.py --ip 192.180.0.107 --home --ros-args -r __node:=${N}_controller $RM -p initial_mode:=cartesian -p urdf_path:=/home/nvidia/tele_ros2/src/kinova_control/urdfs/gen3.urdf -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
+source /opt/ros/jazzy/setup.bash && N=right_arm && RM=$(for t in joint_states target_pose joint_cmd cartesian_gains joint_gains switch_control_mode estimated_wrench zero_wrench clear_wrench_offset current_pose_viz target_pose_viz joint_target_viz control_diagnostics control_gains commanded_wrench commanded_twist cmd_vel joint_torque_ff gripper_cmd; do echo -n " -r /$t:=/$N/$t"; done) && python3 /home/nvidia/tele_ros2/src/kinova_control/scripts/kinova_controller.py --ip 192.180.0.107 --home --ros-args -r __node:=${N}_controller $RM -p initial_mode:=cartesian -p urdf_path:=/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
 ```
 
 I due ATI:
