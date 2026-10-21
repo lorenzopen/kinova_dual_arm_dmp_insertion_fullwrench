@@ -19,16 +19,16 @@ sono state rimosse: tutto quello che serviva è qui.
 - `<W>_<R>_<data>_meta.json`: config usata (con `local.yaml`), comando, commit git, unità e seriale degli ATI,
   bias e rumore di ogni tare, esito.
 - `follow2_<W>_<data>.csv`: giri a vuoto, con l'ATI grezzo.
-- Il rosbag: tutto `/left/*` e `/right/*`, cioè joint states, target, stima Kinova e ATI a 1 kHz.
+- Il rosbag: tutto `/left_arm/*` e `/right_arm/*`, cioè joint states, target, stima Kinova e ATI a 1 kHz.
 
 ---
 
 ## 0. Una volta sola sul PC robot (se già fatto, salta)
 
-Terminale **normale**. Crea `~/lorenzo/env.sh`, venv e URDF senza gripper, come nelle sessioni precedenti:
+Terminale **normale**. Crea `~/lorenzo/env.sh` (cartella separata: il PC è condiviso), venv e copia del codice:
 
 ```bash
-mkdir -p ~/lorenzo/home ~/lorenzo/bags && cat > ~/lorenzo/env.sh <<'EOF'
+mkdir -p ~/lorenzo/home ~/lorenzo/bags && cat > ~/lorenzo/env.sh <<'END'
 LORENZO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export HOME="$LORENZO/home"
 export HISTFILE="$LORENZO/bash_history"
@@ -37,68 +37,46 @@ export PATH="$HOME/.local/bin:$PATH"
 source /opt/ros/jazzy/setup.bash
 [ -d "$LORENZO/venv" ] && source "$LORENZO/venv/bin/activate"
 PS1="(lorenzo) $PS1"
-EOF
-```
-
-```bash
-sed 's|<mass value="0.925" />|<mass value="0.0001" />|' ~/ros2_ws/src/kinova_controller_pkgs/kinova_control/urdfs/gen3_p2_F_only.urdf > ~/lorenzo/gen3_bare.urdf && grep -c 'mass value="0.0001"' ~/lorenzo/gen3_bare.urdf
+END
 ```
 
 ```bash
 source ~/lorenzo/env.sh && python3 -m venv --system-site-packages "$LORENZO/venv" && source "$LORENZO/venv/bin/activate" && pip install "cvxpy<1.7" clarabel "numpy<2" && cd "$LORENZO" && git clone https://github.com/lorenzopen/kinova_dual_arm_dmp_insertion_fullwrench.git
 ```
 
-`tele_ros2` è già sul PC NVIDIA, in `/home/nvidia/tele_ros2`. Lo usiamo eseguendo direttamente gli script
-Python, senza `colcon build`: `ft_raw.py` (ATI) in T3 e, solo nella variante, `kinova_controller.py`.
-Se è altrove, trovalo con `find /home/nvidia -name ft_raw.py -path "*ati_ft_tools*"` e correggi `/home/nvidia/tele_ros2`
-nei comandi. Se `~/ros2_ws` non c'è, l'URDF di partenza per `gen3_bare.urdf` è
-`tele_ros2/src/kinova_control/urdfs/gen3_p2_F_only.urdf`. Lì la massa è già diversa da 0.925:
-in quel caso il `sed` sopra non trova niente, e va deciso a mano quale massa tenere.
+Bracci e ATI girano con **`tele_ros2`** del lab, in `/home/nvidia/tele_ros2`, senza modifiche. Verifica che sia compilato:
+
+```bash
+source /opt/ros/jazzy/setup.bash && source /home/nvidia/tele_ros2/install/setup.bash && ros2 pkg prefix teleop_bringup && ros2 pkg prefix ati_ft_tools
+```
+
+Se dà errore, non è compilato: usa la variante senza compilazione in fondo alla sezione 1.
 
 ---
 
-## 1. Ogni sessione: 5 terminali
+## 1. Ogni sessione: 3 terminali
 
-Lascia libera la zona: T1 e T2 portano i bracci in home. In tutti i terminali deve risultare lo stesso
-`echo $ROS_DOMAIN_ID`.
-
-**T1, braccio destro .107** (terminale normale, **senza** `env.sh`):
+**T1, bracci + ATI** (terminale normale, **senza** `env.sh`). Lascia libera la zona: i bracci vanno in home.
 
 ```bash
-source /opt/ros/jazzy/setup.bash && source ~/ros2_ws/install/setup.bash && ros2 run kinova_control kinova_controller.py --ip 192.180.0.107 --ros-args -r __ns:=/right -p initial_mode:=cartesian -p home_on_start:=true -p ee_frame:=end_effector_link -p urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p friction_enable:=true -p friction_urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p kalman_enable:=true -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
+source /opt/ros/jazzy/setup.bash && source /home/nvidia/tele_ros2/install/setup.bash && ros2 launch teleop_bringup kinova_arms.launch.py arms:=both home:=true viz:=false zed:=false ati:=true left_tool:=gen3 right_tool:=gen3 cart_k:="1000 1000 1000 20 20 20" cart_d:="5 5 5 1 1 1"
 ```
 
-**T2, braccio sinistro .200** (terminale normale, **senza** `env.sh`):
+Avvia, senza modifiche:
+- un controllo di impedenza cartesiano per braccio: `/left_arm` = .200, `/right_arm` = .107;
+- un `ft_raw` per ATI: sinistro NetBox .131, destro .132.
+
+Con `gen3.urdf` il frame comandato (`tool_frame`) **coincide con la flangia**. L'impedenza è quindi alla flangia,
+come nell'addestramento. Il `.131` pubblica in **lbf**: il nostro codice legge le unità e converte da solo.
+Aspetta che i bracci siano in home e fermi.
+
+**T2, registrazione** (lasciala andare tutta la sessione, Ctrl-C alla fine):
 
 ```bash
-source /opt/ros/jazzy/setup.bash && source ~/ros2_ws/install/setup.bash && ros2 run kinova_control kinova_controller.py --ip 192.180.0.200 --ros-args -r __ns:=/left -p initial_mode:=cartesian -p home_on_start:=true -p ee_frame:=end_effector_link -p urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p friction_enable:=true -p friction_urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p kalman_enable:=true -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
+source ~/lorenzo/env.sh && cd "$LORENZO/bags" && ros2 bag record -e "/(left_arm|right_arm)/.*|/rosout" -o sessione_$(date +%Y%m%d_%H%M%S)
 ```
 
-**Variante T1/T2 con il controller di `tele_ros2`** (solo se `~/ros2_ws` non c'è più). Quel controller usa
-topic **assoluti**: `__ns` non li separa, quindi si rimappano tutti per braccio. La home si chiede con `--home`.
-Per il sinistro sostituisci `N=right` con `N=left` e `192.180.0.107` con `192.180.0.200`:
-
-```bash
-source /opt/ros/jazzy/setup.bash && N=right && RM=$(for t in joint_states target_pose joint_cmd cartesian_gains joint_gains switch_control_mode estimated_wrench zero_wrench clear_wrench_offset current_pose_viz target_pose_viz joint_target_viz control_diagnostics control_gains commanded_wrench commanded_twist cmd_vel joint_torque_ff gripper_cmd; do echo -n " -r /$t:=/$N/$t"; done) && python3 /home/nvidia/tele_ros2/src/kinova_control/scripts/kinova_controller.py --ip 192.180.0.107 --home --ros-args -r __node:=${N}_controller $RM -p initial_mode:=cartesian -p ee_frame:=end_effector_link -p urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p friction_enable:=true -p friction_urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p kalman_enable:=true -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
-```
-
-**T3, i due ATI** (terminale normale): sinistro NetBox `.131`, destro `.132`, nei namespace dei bracci.
-
-```bash
-source /opt/ros/jazzy/setup.bash && FT=/home/nvidia/tele_ros2/src/ati_ft_tools/ati_ft_tools/ft_raw.py && ping -c1 -W1 192.180.0.131 && ping -c1 -W1 192.180.0.132 && (python3 $FT --ros-args -r __ns:=/left -p ip_address:=192.180.0.131 -p frame_id:=left_ati -p configure_sensor:=false -p rdt_sampling_rate:=1000 & python3 $FT --ros-args -r __ns:=/right -p ip_address:=192.180.0.132 -p frame_id:=right_ati -p configure_sensor:=false -p rdt_sampling_rate:=1000 & wait)
-```
-
-Nel log di ciascuno devi trovare `Serial #` e `Receiving RDT packets`. Il `.131` è impostato in **lbf**:
-il nostro codice legge le unità dal driver e converte da solo in N/Nm. `configure_sensor:=false` è voluto:
-la NetBox è già configurata e la configurazione via HTTP la blocca. Ctrl-C in T3 chiude entrambi.
-
-**T4, registrazione** (lasciala andare tutta la sessione, Ctrl-C alla fine):
-
-```bash
-source ~/lorenzo/env.sh && cd "$LORENZO/bags" && ros2 bag record -e "/(left|right)/.*|/rosout" -o sessione_$(date +%Y%m%d_%H%M%S)
-```
-
-**T5, lavoro** (aggiorna il codice e scegli la rotta, tabella in fondo):
+**T3, lavoro** (aggiorna il codice e scegli la rotta, tabella in fondo):
 
 ```bash
 source ~/lorenzo/env.sh && cd "$LORENZO/kinova_dual_arm_dmp_insertion_fullwrench" && git pull --ff-only && mkdir -p logs
@@ -109,21 +87,32 @@ export W=F75_Tt1_s9007 R=c100_five_cut800
 ```
 
 ```bash
-ros2 topic list | grep -E "joint_states|ft_data_raw|estimated_wrench"
+ros2 topic hz /left_arm/ft_data_raw
 ```
 
-Devono comparire **solo** le versioni `/left/...` e `/right/...`. Se vedi `/joint_states` senza prefisso,
-un controller è partito senza rimappature: fermalo.
+Ripeti per `/right_arm/ft_data_raw` (circa 1000 Hz) e per `/left_arm/joint_states` (circa 250 Hz). Ctrl-C dopo qualche secondo.
+Tutti i terminali devono avere lo stesso `echo $ROS_DOMAIN_ID`.
+
+**Variante senza compilazione** (solo se `ros2 pkg prefix` ha dato errore). Stessi nodi, eseguiti direttamente,
+in tre terminali normali. I controller si scrivono i topic con nomi assoluti, quindi li rimappiamo per braccio.
+
+Destro, poi sinistro con `N=left_arm` e `192.180.0.200`:
 
 ```bash
-ros2 topic hz /left/ft_data_raw
+source /opt/ros/jazzy/setup.bash && N=right_arm && RM=$(for t in joint_states target_pose joint_cmd cartesian_gains joint_gains switch_control_mode estimated_wrench zero_wrench clear_wrench_offset current_pose_viz target_pose_viz joint_target_viz control_diagnostics control_gains commanded_wrench commanded_twist cmd_vel joint_torque_ff gripper_cmd; do echo -n " -r /$t:=/$N/$t"; done) && python3 /home/nvidia/tele_ros2/src/kinova_control/scripts/kinova_controller.py --ip 192.180.0.107 --home --ros-args -r __node:=${N}_controller $RM -p initial_mode:=cartesian -p urdf_path:=/home/nvidia/tele_ros2/src/kinova_control/urdfs/gen3.urdf -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
 ```
 
-Fai lo stesso per `/right/ft_data_raw`: circa 1000 Hz. Poi `/left/joint_states`: circa 250 Hz. Ctrl-C dopo qualche secondo.
+I due ATI:
+
+```bash
+source /opt/ros/jazzy/setup.bash && FT=/home/nvidia/tele_ros2/src/ati_ft_tools/ati_ft_tools/ft_raw.py && (python3 $FT --ros-args -r __ns:=/left_arm -p ip_address:=192.180.0.131 -p configure_sensor:=false & python3 $FT --ros-args -r __ns:=/right_arm -p ip_address:=192.180.0.132 -p configure_sensor:=false & wait)
+```
+
+`configure_sensor:=false` è voluto: le NetBox sono già configurate e la configurazione via HTTP le blocca.
 
 ---
 
-## 2. Solo la prima volta con gli ATI montati (T5, bracci fermi in home)
+## 2. Solo la prima volta con gli ATI montati (T3, bracci fermi in home)
 
 **a. Misure a mano**, da salvare (in `config/local.yaml`, fuori da git; ogni comando la legge):
 - pesa ciò che sta **oltre** ogni sensore: adattatore, molla e tri-pad, in kg;
@@ -159,7 +148,7 @@ Rifai a, b, c solo se smonti o ruoti un sensore o un tool.
 
 ---
 
-## 3. Per ogni rotta (T5), un comando alla volta
+## 3. Per ogni rotta (T3), un comando alla volta
 
 Board e pezzi: figure e quote nell'appendice. Mano sull'E-stop: non c'è controllo collisioni fra gli avambracci.
 
@@ -167,7 +156,7 @@ Board e pezzi: figure e quote nell'appendice. Mano sull'E-stop: non c'è control
 python -m kinova_dual_arm_dmp_insertion.main check "$W" --arm "$R" --slow 3
 ```
 
-Nessun movimento: deve stampare `SOCP ok N/N`, `seat_found True` e il `cart_k` dei terminali T1/T2.
+Nessun movimento: deve stampare `SOCP ok N/N`, `seat_found True` e il `cart_k` del launch in T1.
 
 ```bash
 python -m kinova_dual_arm_dmp_insertion.follow_two_arms "$W" --routes "$R" --cell --gap 0.20 --lift 0.10
@@ -203,7 +192,7 @@ python -m kinova_dual_arm_dmp_insertion.main insert "$W" --arm "$R" --slow 3 --t
 Ctrl-C ferma lo streaming e i bracci tengono l'ultimo target; l'arresto del robot resta l'E-stop.
 Il codice si ferma da solo sopra 60 N per mano o con 4 cm di errore.
 
-**Fine sessione:** Ctrl-C in T4 (bag), T3, T1, T2. Dal **PC Windows** (PowerShell) copia i dati:
+**Fine sessione:** Ctrl-C in T2 (bag), poi T1. Dal **PC Windows** (PowerShell) copia i dati:
 
 ```powershell
 $d = "C:\Users\Lorenzo\Desktop\dati_kinova_$(Get-Date -Format yyyyMMdd)"; New-Item -ItemType Directory -Force $d | Out-Null; scp -r nvidia@<IP_PC_ROBOT>:~/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/logs nvidia@<IP_PC_ROBOT>:~/lorenzo/bags $d
@@ -227,7 +216,7 @@ $d = "C:\Users\Lorenzo\Desktop\dati_kinova_$(Get-Date -Format yyyyMMdd)"; New-It
 | 10 | O, due vicini | `O_s7094m3` | `c100_narrow75` | no lift | Z, I |
 
 Inizia dalla 1 (T, già inserita il 16/10). La 4 (Z) è la più delicata delle prime cinque; la 9 (S) è vicina
-alla soglia PyBullet: lasciala per ultima. Si cambia rotta solo con la riga `export W=... R=...` in T5.
+alla soglia PyBullet: lasciala per ultima. Si cambia rotta solo con la riga `export W=... R=...` in T3.
 
 Altre rotte esportate: `python -m kinova_dual_arm_dmp_insertion.main list`. Non sono provate sui robot.
 

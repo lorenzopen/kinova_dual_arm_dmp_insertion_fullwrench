@@ -213,7 +213,7 @@ class RosBackend(Node):
         while missing():
             if time.monotonic() > deadline:
                 raise RuntimeError("nothing received on " + ", ".join(missing())
-                                   + " - are both kinova_controller and both ft_raw running?")
+                                   + " - is the tele_ros2 launch (T1) running?")
             time.sleep(0.05)
         for arm in self.arms.values():
             if arm.cfg.get("ft_topic"):
@@ -228,7 +228,7 @@ class RosBackend(Node):
             return
         cli = self.create_client(Trigger, srv)
         if not cli.wait_for_service(timeout_sec=3.0):
-            raise RuntimeError(f"{arm.name}: {srv} not available - is ft_raw running in /{arm.name}?")
+            raise RuntimeError(f"{arm.name}: {srv} not available - is ft_raw (T1 launch) running?")
         fut = cli.call_async(Trigger.Request())
         t0 = time.monotonic()
         while not fut.done() and time.monotonic() - t0 < 3.0:

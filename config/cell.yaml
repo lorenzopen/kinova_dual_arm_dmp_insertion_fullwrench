@@ -6,15 +6,11 @@
 # the RIGHT arm at +y. The shelf has no front and no back panel: one tool
 # reaches the piece from each side.
 #
-# THE ARMS RUN THE LAB'S CONTROLLER, unmodified, in another terminal:
-#   ros2 launch kinova_control dual_cartesian.launch.py \
-#       ee_frame:=end_effector_link \
-#       cart_k:='[1500.0, 1500.0, 1500.0, KRX, KRY, KRZ]'
-# `check` prints KRX KRY KRZ for this cell: their stiffness is diagonal in the
-# BASE axes (Pinocchio LOCAL_WORLD_ALIGNED) and fixed at launch, so the 40 Nm/rad
-# goes on the base axis the push axis lies along and 8 Nm/rad on the other two.
-# ee_frame:=end_effector_link puts the impedance at the flange, as in the
-# simulated wrist; their default tool_frame is 0.15 m further out (the 2F-85 tip).
+# THE ARMS AND THE ATIs (2026-10-21): tele_ros2's launch, unmodified, in another terminal
+# (GUIDA.md, T1): kinova_controller.py per arm in /left_arm (.200) and /right_arm (.107), a
+# Cartesian impedance on `tool_frame` of gen3.urdf, which IS the flange (offset 0, mass 0);
+# ft_raw per arm (left ATI .131, right .132). Its stiffness is diagonal in the BASE axes
+# and fixed at launch: `check` prints the cart_k for this cell.
 
 # THE REAL PIECES ARE 100 mm CUBES, the routes were trained on 120 mm: every position
 # is scaled about the slot (PyBullet, 3 worlds: all still seat, real tri-pad included).
@@ -75,19 +71,17 @@ tool:
 
 left:
   base_frame: base_link
-  ee_frame: end_effector_link            # must match the launch's ee_frame
-  # CALIBRATE: the URDF the controller runs (urdf_path of the launch). Its
-  # end_effector_link carries the 2F-85's 0.925 kg: with a tri-pad there instead,
-  # gravity compensation is off by the difference - use a copy with the tri-pad's mass
-  urdf_path: /home/nvidia/lorenzo/gen3_bare.urdf   # the SAME urdf_path the two controllers are launched with
-  target_topic: /left/target_pose
-  joint_states_topic: /left/joint_states
-  wrench_topic: /left/estimated_wrench   # from the joint torque sensors, not an F/T
-  zero_wrench_service: /left/zero_wrench
-  # THE WRIST ATI (2026-10-21): ft_raw of tele_ros2 started in this arm's namespace
+  ee_frame: tool_frame                   # the frame tele_ros2's controller drives (= the flange in gen3.urdf)
+  # the URDF the controller runs: the forward kinematics here must be the same
+  urdf_path: /home/nvidia/tele_ros2/src/kinova_control/urdfs/gen3.urdf   # = left_tool/right_tool:=gen3 of the launch
+  target_topic: /left_arm/target_pose
+  joint_states_topic: /left_arm/joint_states
+  wrench_topic: /left_arm/estimated_wrench   # from the joint torque sensors, not an F/T
+  zero_wrench_service: /left_arm/zero_wrench
+  # THE WRIST ATI (2026-10-21): ft_raw, started by tele_ros2's kinova_arms.launch.py in this arm's namespace
   wrench_source: ft                      # ft = the ATI; estimated = the joint torques (logged anyway)
-  ft_topic: /left/ft_data_raw            # sensor axes, raw, 1 kHz
-  ft_calibration_service: /left/ft_raw/get_calibration   # units: the .131 box sends lbf, converted
+  ft_topic: /left_arm/ft_data_raw            # sensor axes, raw, 1 kHz
+  ft_calibration_service: /left_arm/ft_raw/get_calibration   # units: the .131 box sends lbf, converted
   # the sensor frame in end_effector_link: rotation from `ft_check --calibrate`, xyz = the
   # sensor origin (only moves the moment origin, not the twist about the pad axis)
   ft_in_ee: {xyz: [0.0, 0.0, 0.0], quat: [0.0, 0.0, 0.0, 1.0]}
@@ -105,16 +99,16 @@ left:
 
 right:
   base_frame: base_link
-  ee_frame: end_effector_link
-  urdf_path: /home/nvidia/lorenzo/gen3_bare.urdf   # the SAME urdf_path the two controllers are launched with
-  target_topic: /right/target_pose
-  joint_states_topic: /right/joint_states
-  wrench_topic: /right/estimated_wrench
-  zero_wrench_service: /right/zero_wrench
-  # THE WRIST ATI (2026-10-21): ft_raw of tele_ros2 started in this arm's namespace
+  ee_frame: tool_frame
+  urdf_path: /home/nvidia/tele_ros2/src/kinova_control/urdfs/gen3.urdf   # = left_tool/right_tool:=gen3 of the launch
+  target_topic: /right_arm/target_pose
+  joint_states_topic: /right_arm/joint_states
+  wrench_topic: /right_arm/estimated_wrench
+  zero_wrench_service: /right_arm/zero_wrench
+  # THE WRIST ATI (2026-10-21): ft_raw, started by tele_ros2's kinova_arms.launch.py in this arm's namespace
   wrench_source: ft                      # ft = the ATI; estimated = the joint torques (logged anyway)
-  ft_topic: /right/ft_data_raw            # sensor axes, raw, 1 kHz
-  ft_calibration_service: /right/ft_raw/get_calibration   # units (the .132 box is already N / Nm)
+  ft_topic: /right_arm/ft_data_raw            # sensor axes, raw, 1 kHz
+  ft_calibration_service: /right_arm/ft_raw/get_calibration   # units (the .132 box is already N / Nm)
   # the sensor frame in end_effector_link: rotation from `ft_check --calibrate`, xyz = the
   # sensor origin (only moves the moment origin, not the twist about the pad axis)
   ft_in_ee: {xyz: [0.0, 0.0, 0.0], quat: [0.0, 0.0, 0.0, 1.0]}
