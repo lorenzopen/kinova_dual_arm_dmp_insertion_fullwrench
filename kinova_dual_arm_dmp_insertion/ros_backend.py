@@ -23,8 +23,18 @@ The estimate is off by up to 8-9 N per arm away from the pose of the tare, the s
 on every pass along the same path (2026-10-16: two empty runs agree within ~1 N).
 `wrench_baseline:` in cell.yaml names an empty-handed `wrench_log` CSV recorded along
 the route: each hand's force is then corrected by the baseline at the nearest flange
-position, minus the baseline where the tare was made. Forces only, not moments. A real wrist F/T
-sensor (`wrench_source: ft`, frame read from TF) is kept as the other option.
+position, minus the baseline where the tare was made. Forces only, not moments.
+
+`wrench_source: ft` (2026-10-21): the wrist ATI Net F/T, read by the lab's `ft_raw`
+(tele_ros2/src/ati_ft_tools) started in the arm's namespace:
+
+    /<ns>/ft_data_raw              WrenchStamped 1 kHz, SENSOR axes, raw (no filter, no bias)
+    /<ns>/ft_raw/get_calibration   Trigger       the NetBox units (the left box is in lbf!)
+
+The sensor pose is the flange's (forward kinematics, no TF) times `ft_in_ee`. The bias
+is taken here, averaged, at each tare (tools in free air), with the tool's weight
+(`tool_mass`, `tool_com_in_ft`) removed at every attitude. Each reading is the mean of
+the samples of the last control period. The estimated wrench is still read and logged.
 
 Everything inside the controller is in the SHELF frame; this file is the only
 place that knows where the two robot bases are.
@@ -33,6 +43,7 @@ import csv
 import os
 import threading
 import time
+from collections import deque
 
 import numpy as np
 from scipy.spatial.transform import Rotation as Rot
@@ -40,7 +51,6 @@ from scipy.spatial.transform import Rotation as Rot
 import rclpy
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.node import Node
-from rclpy.time import Time
 from geometry_msgs.msg import PoseStamped, WrenchStamped
 from sensor_msgs.msg import JointState
 from std_srvs.srv import Trigger
@@ -48,6 +58,11 @@ from std_srvs.srv import Trigger
 from .geometry import Frame
 
 G_WORLD = np.array([0.0, 0.0, -9.81])        # shelf z is up
+# NetBox units -> N, Nm (ft_raw publishes in whatever the box is configured to)
+FT_STALE = 0.050                              # [s] no ATI sample for this long: stop
+FORCE_UNITS = {"N": 1.0, "lbf": 4.4482216, "Lbf": 4.4482216, "kN": 1000.0, "kgf": 9.80665}
+TORQUE_UNITS = {"Nm": 1.0, "N-m": 1.0, "Nmm": 0.001, "N-mm": 0.001, "lbf-in": 0.11298483,
+                "lbfin": 0.11298483, "Lbf-in": 0.11298483, "lbf-ft": 1.3558179, "kNm": 1000.0}
 
 
 def _frame(cfg):
@@ -129,10 +144,21 @@ class _Arm:
         self.zero = (node.create_client(Trigger, cfg["zero_wrench_service"])
                      if cfg.get("zero_wrench_service") else None)
         self.source = cfg.get("wrench_source", "estimated")
+        if self.source not in ("estimated", "ft"):
+            raise ValueError(f"{name}: wrench_source must be estimated or ft")
         self.bias = (np.zeros(3), np.zeros(3))
         self.m_tool = float(cfg.get("tool_mass", 0.0))
         self.c_tool = np.asarray(cfg.get("tool_com_in_ft", [0.0, 0.0, 0.0]), float)
         self.sign = float(cfg.get("ft_sign", 1.0))
+        self.ft_in_ee = _frame(cfg.get("ft_in_ee", {"xyz": [0, 0, 0], "quat": [0, 0, 0, 1]}))
+        self.ft = deque(maxlen=2000)          # raw ATI samples (6,), sensor axes, N / Nm
+        self.ft_scale = (1.0, 1.0)
+        self.ft_t = -1e9                      # monotonic time of the last ATI sample
+        self.ft_units = None
+        if cfg.get("ft_topic"):
+            node.create_subscription(WrenchStamped, cfg["ft_topic"], self._ft, 50)
+        elif self.source == "ft":
+            raise ValueError(f"{name}: wrench_source ft needs ft_topic")
         self.baseline, self.b0 = None, np.zeros(3)
         self.ticks = self.misses = 0
 
@@ -141,6 +167,18 @@ class _Arm:
 
     def _wrench(self, msg):
         self.wrench = msg
+
+    def _ft(self, msg):
+        w = msg.wrench
+        kf, kt = self.ft_scale
+        self.ft_t = time.monotonic()
+        self.ft.append(np.array([kf * w.force.x, kf * w.force.y, kf * w.force.z,
+                                 kt * w.torque.x, kt * w.torque.y, kt * w.torque.z]))
+
+    def ft_last(self, n):
+        """The last `n` ATI samples (sensor axes, N / Nm), [k, 6]."""
+        k = min(int(n), len(self.ft))
+        return np.array([self.ft[-1 - i] for i in range(k)])
 
 
 class RosBackend(Node):
@@ -157,23 +195,61 @@ class RosBackend(Node):
                 z = arm.baseline.P[:, 2]
                 print(f"  wrench baseline {arm.name}: {len(z)} samples, flange z {z.min():.2f}..{z.max():.2f} m"
                       f" (base), from {path}")
-        if any(a.source == "ft" for a in self.arms.values()):
-            from tf2_ros import Buffer, TransformListener
-            self.tf = Buffer()
-            self._tfl = TransformListener(self.tf, self)
+        self.raw = {}                          # last raw readings, for the log
+        self.tares = []                        # every tare: the ATI biases, for the log's metadata
         self._exec = MultiThreadedExecutor()
         self._exec.add_node(self)
         threading.Thread(target=self._exec.spin, daemon=True).start()
         deadline = time.monotonic() + 10.0
-        while any(a.joints is None or a.wrench is None for a in self.arms.values()):
+
+        def missing():
+            out = []
+            for a in self.arms.values():
+                out += [t for t, m in ((a.cfg["joint_states_topic"], a.joints),
+                                       (a.cfg["wrench_topic"], a.wrench)) if m is None]
+                if a.cfg.get("ft_topic") and not a.ft:
+                    out.append(a.cfg["ft_topic"])
+            return out
+        while missing():
             if time.monotonic() > deadline:
-                missing = [t for a in self.arms.values()
-                           for t, m in ((a.cfg["joint_states_topic"], a.joints),
-                                        (a.cfg["wrench_topic"], a.wrench)) if m is None]
-                raise RuntimeError("nothing received on " + ", ".join(missing)
-                                   + " - is dual_cartesian.launch.py running?")
+                raise RuntimeError("nothing received on " + ", ".join(missing())
+                                   + " - are both kinova_controller and both ft_raw running?")
             time.sleep(0.05)
+        for arm in self.arms.values():
+            if arm.cfg.get("ft_topic"):
+                self._ft_units(arm)
         self._next = time.monotonic()
+
+    def _ft_units(self, arm):
+        """Ask ft_raw which units its NetBox is set to; everything is scaled to N, Nm."""
+        srv = arm.cfg.get("ft_calibration_service")
+        if not srv:
+            print(f"  {arm.name} ATI: no ft_calibration_service, units taken as N / Nm")
+            return
+        cli = self.create_client(Trigger, srv)
+        if not cli.wait_for_service(timeout_sec=3.0):
+            raise RuntimeError(f"{arm.name}: {srv} not available - is ft_raw running in /{arm.name}?")
+        fut = cli.call_async(Trigger.Request())
+        t0 = time.monotonic()
+        while not fut.done() and time.monotonic() - t0 < 3.0:
+            time.sleep(0.02)
+        res = fut.result()
+        if res is None or not res.success:
+            raise RuntimeError(f"{arm.name}: ATI calibration not readable ({srv}): ft_raw would "
+                               f"publish raw counts. Restart ft_raw, check the NetBox.")
+        info = dict(line.split(": ", 1) for line in res.message.splitlines() if ": " in line)
+        fu, tu = info.get("force_unit", "N").strip(), info.get("torque_unit", "Nm").strip()
+        if fu not in FORCE_UNITS or tu not in TORQUE_UNITS:
+            raise RuntimeError(f"{arm.name}: ATI units {fu} / {tu} not known: set the NetBox to N / Nm")
+        arm.ft_scale = (FORCE_UNITS[fu], TORQUE_UNITS[tu])
+        arm.ft.clear()                         # the samples so far were not scaled
+        arm.ft_units = dict(force=fu, torque=tu, serial=info.get("serial"), cal_date=info.get("cal_date"))
+        print(f"  {arm.name} ATI: serial {info.get('serial')}, units {fu} / {tu}"
+              + ("" if arm.ft_scale == (1.0, 1.0) else
+                 f" -> converted here to N / Nm (x{arm.ft_scale[0]:.4g}, x{arm.ft_scale[1]:.4g})"))
+        t0 = time.monotonic()
+        while len(arm.ft) < 100 and time.monotonic() - t0 < 2.0:
+            time.sleep(0.02)
 
     # ---- clock
     def now(self):
@@ -214,45 +290,72 @@ class RosBackend(Node):
         return arm.base_in_shelf.apply(pt, qt)                  # tool in shelf
 
     def tare(self):
-        """Zero both wrench readings with the tools in free air."""
+        """Zero both wrench readings with the tools in free air: the arm's estimate by
+        its zero_wrench service (always: it is logged), the ATI by a bias averaged here."""
         time.sleep(0.5)
         for arm in self.arms.values():
-            if arm.source == "estimated":
-                if arm.zero is not None and arm.zero.wait_for_service(timeout_sec=2.0):
-                    fut = arm.zero.call_async(Trigger.Request())
-                    t0 = time.monotonic()
-                    while not fut.done() and time.monotonic() - t0 < 3.0:
-                        time.sleep(0.02)
-                    time.sleep(0.4)          # it averages 50 samples (~200 ms)
-                else:
-                    self.get_logger().warn(f"{arm.name}: no zero_wrench service, not tared")
-                if arm.baseline is not None:
-                    b0 = arm.baseline.force(self._ee_pose(arm)[0])
-                    if b0 is None:
-                        self.get_logger().warn(f"{arm.name}: tare pose off the wrench baseline, "
-                                               f"correction relative to its own tare")
-                    arm.b0 = np.zeros(3) if b0 is None else b0
+            if arm.zero is not None and arm.zero.wait_for_service(timeout_sec=2.0):
+                fut = arm.zero.call_async(Trigger.Request())
+                t0 = time.monotonic()
+                while not fut.done() and time.monotonic() - t0 < 3.0:
+                    time.sleep(0.02)
             else:
-                f, t, _ps, qs = self._ft_raw(arm)
-                g = arm.m_tool * G_WORLD
-                arm.bias = (qs.inv().apply(f - g), qs.inv().apply(t - np.cross(qs.apply(arm.c_tool), g)))
+                self.get_logger().warn(f"{arm.name}: no zero_wrench service, estimate not tared")
+        time.sleep(0.5)                      # it averages 50 samples (~200 ms); the ATI fills its buffer
+        rec = {"t": self.now(), "t_wall": time.time()}
+        for arm in self.arms.values():
+            if arm.source == "estimated" and arm.baseline is not None:
+                b0 = arm.baseline.force(self._ee_pose(arm)[0])
+                if b0 is None:
+                    self.get_logger().warn(f"{arm.name}: tare pose off the wrench baseline, "
+                                           f"correction relative to its own tare")
+                arm.b0 = np.zeros(3) if b0 is None else b0
+            if arm.source == "ft":
+                w = arm.ft_last(500)
+                if len(w) < 50:
+                    raise RuntimeError(f"{arm.name}: only {len(w)} ATI samples for the tare")
+                m, sd = w.mean(0), w.std(0)
+                _ps, qs = self._ft_pose(arm)
+                g_s = qs.inv().apply(arm.m_tool * G_WORLD)        # the tool's weight, sensor axes
+                arm.bias = (arm.sign * m[:3] - g_s, arm.sign * m[3:] - np.cross(arm.c_tool, g_s))
+                rec[arm.name] = dict(bias_F=np.round(arm.bias[0], 4).tolist(),
+                                     bias_T=np.round(arm.bias[1], 5).tolist(),
+                                     sd_F=np.round(sd[:3], 4).tolist(), sd_T=np.round(sd[3:], 5).tolist(),
+                                     samples=len(w))
+                print(f"  {arm.name} ATI tare: bias F {np.round(arm.bias[0], 2).tolist()} N; noise sd "
+                      f"F {np.round(sd[:3], 3).tolist()} N, T {np.round(sd[3:], 4).tolist()} Nm")
+        self.tares.append(rec)
 
-    def _ft_raw(self, arm):
-        """F/T sensor option: (force, moment at the sensor origin, sensor position, rotation), shelf frame."""
-        w = arm.wrench
-        t = self.tf.lookup_transform(arm.base, w.header.frame_id, Time())
-        tr, ro = t.transform.translation, t.transform.rotation
-        ps, qs = arm.base_in_shelf.apply(np.array([tr.x, tr.y, tr.z]),
-                                         Rot.from_quat([ro.x, ro.y, ro.z, ro.w]))
-        f = arm.sign * np.array([w.wrench.force.x, w.wrench.force.y, w.wrench.force.z])
-        m = arm.sign * np.array([w.wrench.torque.x, w.wrench.torque.y, w.wrench.torque.z])
-        return f, m, ps, qs
+    def _ft_pose(self, arm):
+        """The ATI frame (position, rotation) in the shelf frame, by forward kinematics."""
+        pe, qe = self._ee_pose(arm)
+        ps, qs = pe + qe.apply(arm.ft_in_ee.t), qe * arm.ft_in_ee.R
+        return arm.base_in_shelf.apply(ps, qs)
+
+    def ft_on_tool(self, arm, w):
+        """ATI sample (sensor axes, N / Nm) -> (force, moment about the sensor origin,
+        sensor origin) that the world - the piece - exerts on the tool, shelf frame,
+        bias and tool weight removed."""
+        ps, qs = self._ft_pose(arm)
+        g = arm.m_tool * G_WORLD
+        f = qs.apply(arm.sign * w[:3] - arm.bias[0]) - g
+        m = qs.apply(arm.sign * w[3:] - arm.bias[1]) - np.cross(qs.apply(arm.c_tool), g)
+        return f, m, ps
 
     def read(self):
-        out = {}
+        out, raw = {}, {}
+        n_avg = max(1, int(round(self.period * 1000.0)))    # ATI samples in one control period (1 kHz)
         for s, arm in self.arms.items():
             pt, qt = self._tool_pose(arm)
             w = arm.wrench
+            raw["est" + s] = [w.wrench.force.x, w.wrench.force.y, w.wrench.force.z,
+                              w.wrench.torque.x, w.wrench.torque.y, w.wrench.torque.z]
+            ft = arm.ft_last(n_avg).mean(0) if arm.ft else np.full(6, np.nan)
+            if arm.source == "ft" and time.monotonic() - arm.ft_t > FT_STALE:
+                from .controller import Abort
+                raise Abort(f"{arm.name} ATI silent for {1000 * (time.monotonic() - arm.ft_t):.0f} ms "
+                            f"({arm.cfg['ft_topic']}): is ft_raw still running?")
+            raw["ft" + s] = list(ft)
             if arm.source == "estimated":
                 # the external wrench ON the arm, ee axes, about the ee origin; the tool's
                 # weight is the URDF's business (and what is left of it, the tare's)
@@ -272,14 +375,12 @@ class RosBackend(Node):
                 m_on_tool = qe.apply([w.wrench.torque.x, w.wrench.torque.y, w.wrench.torque.z])
                 origin = pe
             else:
-                f, m, origin, qs = self._ft_raw(arm)
-                g = arm.m_tool * G_WORLD
-                f_on_tool = f - qs.apply(arm.bias[0]) - g
-                m_on_tool = m - qs.apply(arm.bias[1]) - np.cross(qs.apply(arm.c_tool), g)
+                f_on_tool, m_on_tool, origin = self.ft_on_tool(arm, ft)
             # the hand on the piece is the opposite; moment moved to the tool origin
             F = -np.asarray(f_on_tool)
             T = -np.asarray(m_on_tool) + np.cross(origin - pt, F)
             out.update({f"p{s}": pt, f"q{s}": qt.as_quat(), f"F{s}": F, f"T{s}": T})
+        self.raw = raw
         return out
 
     def close(self):

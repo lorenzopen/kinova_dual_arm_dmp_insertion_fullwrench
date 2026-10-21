@@ -43,18 +43,18 @@ socp:
                              # ||ft_i|| <= mu*N_i - rho_i*sqrt(1+mu^2); no 0.7 multiplier.
   w_force: 0.0            # effort term weight; 0 = human precision only, 1 = Codex's effort + prior
   no_bending: false       # true = no moment across each pad plane (a tilt-compliant tool)
-full_wrench: false        # true = regulate the internal flange wrench on EVERY route (needs allow_hand_wrench on the robot)
+full_wrench: false        # true (or `--twist` on the command line) = regulate the internal flange wrench on EVERY route.
+                          # 2026-10-21: needs wrench_source: ft on both arms (main.py refuses otherwise)
 full_wrench_channels: twist   # twist = squeeze + opposite twist only; internal = the old hwd law
-# empty-handed `wrench_log` CSV along the route (follow_two_arms --gap 0.10, no piece):
-# each hand's force is corrected by it at the nearest flange position (ros_backend.py).
-# null = no correction. 2026-10-16: the estimate is off up to 8-9 N per arm, repeatably.
-wrench_baseline: logs/wrench_20261016_134246_Z_senza_contatto.csv   # Z F75_Zt1_s9012 (gap 0.10, cart_k 1000; sinistro sotto z 0.275 tolto: toccava la T)
-# T F75_Tt1_s9007: logs/wrench_20261016_112659.csv
+# ONLY for wrench_source: estimated. An empty-handed `wrench_log` CSV along the route: each
+# hand's force corrected by it at the nearest flange position (ros_backend.py). The ATI
+# needs none. Old ones: Z logs/wrench_20261016_134246_Z_senza_contatto.csv, T logs/wrench_20261016_112659.csv
+wrench_baseline: null
 
-stiffness:                # what the routes were trained against (lib/wrist.py)
-  trans: 1500.0           # [N/m]
-  torsion: 40.0           # [Nm/rad] about the push axis
-  tilt: 8.0               # [Nm/rad] the other two (the sim used 3 while approaching)
+stiffness:                # what the controllers are LAUNCHED with (`check` prints the cart_k).
+  trans: 1000.0           # [N/m]   the routes were trained at 1500 N/m, 40 Nm/rad torsion, 8 tilt
+  torsion: 20.0           # [Nm/rad] about the push axis; 20 = the real runs since 2026-10-16
+  tilt: 20.0              # [Nm/rad] the other two
 
 # THE REAL TOOL (Lorenzo, 2026-10-16): a printed flange, a 50 mm spring, then a tri-pad
 # like PyBullet's: three spheres of radius 15 mm centred on the vertices of a 70 mm
@@ -65,7 +65,9 @@ tool:
   # the spheres), a few tens of grams (no URDF mass needed: gen3_bare.urdf + the tare).
   # Only the sum pad_x + pad_r places the contact; the spring is taken as rigid
   # (geometry.pad_contacts: the tri-pad pose is the flange pose).
-  pad_x: 0.055            # [m] tool origin (flange) to the plane of the sphere centres
+  pad_x: 0.055            # [m] tool origin (flange) to the plane of the sphere centres.
+                          # 2026-10-21 WITH THE ATI: measure again flange -> front of the spheres
+                          # (L), pad_x = L - pad_r. The ATI + adapters add their thickness.
   pad_r: 0.015            # [m] sphere radius
   r_tri: 0.0404           # [m] sphere centres' circle: 70 mm triangle side / sqrt(3) (the sim had 30 mm).
                           # TO CHECK: Lorenzo also said "inscribed in a 35 mm circle", which is a
@@ -77,12 +79,21 @@ left:
   # CALIBRATE: the URDF the controller runs (urdf_path of the launch). Its
   # end_effector_link carries the 2F-85's 0.925 kg: with a tri-pad there instead,
   # gravity compensation is off by the difference - use a copy with the tri-pad's mass
-  urdf_path: /home/nvidia/ros2_ws/src/kinova_controller_pkgs/kinova_control/urdfs/gen3_p2_F_only.urdf
+  urdf_path: /home/nvidia/lorenzo/gen3_bare.urdf   # the SAME urdf_path the two controllers are launched with
   target_topic: /left/target_pose
   joint_states_topic: /left/joint_states
   wrench_topic: /left/estimated_wrench   # from the joint torque sensors, not an F/T
-  wrench_source: estimated               # or `ft` for a real wrist sensor (frame from TF)
   zero_wrench_service: /left/zero_wrench
+  # THE WRIST ATI (2026-10-21): ft_raw of tele_ros2 started in this arm's namespace
+  wrench_source: ft                      # ft = the ATI; estimated = the joint torques (logged anyway)
+  ft_topic: /left/ft_data_raw            # sensor axes, raw, 1 kHz
+  ft_calibration_service: /left/ft_raw/get_calibration   # units: the .131 box sends lbf, converted
+  # the sensor frame in end_effector_link: rotation from `ft_check --calibrate`, xyz = the
+  # sensor origin (only moves the moment origin, not the twist about the pad axis)
+  ft_in_ee: {xyz: [0.0, 0.0, 0.0], quat: [0.0, 0.0, 0.0, 1.0]}
+  ft_sign: 1.0                           # from `ft_check --calibrate`
+  tool_mass: 0.0          # [kg] WEIGH what hangs on the sensor: adapter + spring + tri-pad
+  tool_com_in_ft: [0.0, 0.0, 0.03]       # [m] its centre of mass, sensor axes (on the axis, ~ half the tool)
   shoulder_in_base: [0.0, 0.0, 0.2848]
   # the pose of the SHELF frame in this arm's base_link, measured by hand (Lorenzo,
   # 2026-10-15, see `right`): from .200 the near floor corner is at x 175, y -240,
@@ -95,12 +106,21 @@ left:
 right:
   base_frame: base_link
   ee_frame: end_effector_link
-  urdf_path: /home/nvidia/ros2_ws/src/kinova_controller_pkgs/kinova_control/urdfs/gen3_p2_F_only.urdf
+  urdf_path: /home/nvidia/lorenzo/gen3_bare.urdf   # the SAME urdf_path the two controllers are launched with
   target_topic: /right/target_pose
   joint_states_topic: /right/joint_states
   wrench_topic: /right/estimated_wrench
-  wrench_source: estimated
   zero_wrench_service: /right/zero_wrench
+  # THE WRIST ATI (2026-10-21): ft_raw of tele_ros2 started in this arm's namespace
+  wrench_source: ft                      # ft = the ATI; estimated = the joint torques (logged anyway)
+  ft_topic: /right/ft_data_raw            # sensor axes, raw, 1 kHz
+  ft_calibration_service: /right/ft_raw/get_calibration   # units (the .132 box is already N / Nm)
+  # the sensor frame in end_effector_link: rotation from `ft_check --calibrate`, xyz = the
+  # sensor origin (only moves the moment origin, not the twist about the pad axis)
+  ft_in_ee: {xyz: [0.0, 0.0, 0.0], quat: [0.0, 0.0, 0.0, 1.0]}
+  ft_sign: 1.0                           # from `ft_check --calibrate`
+  tool_mass: 0.0          # [kg] WEIGH what hangs on the sensor: adapter + spring + tri-pad
+  tool_com_in_ft: [0.0, 0.0, 0.03]       # [m] its centre of mass, sensor axes (on the axis, ~ half the tool)
   shoulder_in_base: [0.0, 0.0, 0.2848]
   # measured by hand (Lorenzo, 2026-10-15): bases parallel, 600 mm apart; the shelf floor
   # runs from x 175 to 825 mm in front of both bases, 30 mm below them; from .107 its near

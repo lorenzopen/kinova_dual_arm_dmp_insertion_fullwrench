@@ -20,4 +20,4 @@ Controllo a posteriori: il percorso della Z passa a 160-195 mm dalla linea di ba
 quindi la correzione era attiva sullo 0% dei tick: forze tutte grezze. Il seat "a sentire" è
 durato 0 s con ext_z 6-9 N (la soglia è il 60% del peso, ~0.9 N): è possibile che abbia
 creduto il pezzo appoggiato e l'abbia lasciato troppo presto. Prossima Z: prima la sua linea
-di base (passo 7 di ESEMPI_5_PEZZI.md).
+di base (guida di allora, oggi rimossa: con gli ATI la baseline non serve).

@@ -10,8 +10,8 @@ Vitus' original thesis uses uncontracted Coulomb cones plus a separate 1 N
 normal floor per hand (pp. 80-81, eq. 5.23); this project's six point
 point cones and full-wrench cost are an adaptation, not an identical program.
 
-**Comandi per provarla sui Kinova:** [docs/AVVIO_FULL_WRENCH.md](docs/AVVIO_FULL_WRENCH.md)
-(controller, prove a vuoto, baseline per pezzo, nuovo SOCP e profilo twist).
+**Comandi per provarla sui Kinova:** [GUIDA.md](GUIDA.md)
+(controller, ATI, prove a vuoto, `insert` scalare e `insert --twist`).
 
 A copy of `kinova_dual_arm_dmp_insertion` (Desktop, commit `1d225f1`) with ONE change of
 substance: the convex program. The original folder is untouched. Same python
@@ -68,8 +68,9 @@ tangential + all internal moments).
    controller still floors its target at 1 N, and the pickup squeeze is still
    6 N. The jam sentry's limit scales with the squeeze (`2 mu F - m g`): expect
    it to be tighter.
-2. **The wrench is ESTIMATED from the joint torques** (`wrench_source: estimated`),
-   off by up to 8-9 N per arm (cell.yaml). Regulating a few newtons of internal
-   wrench sits inside that error. Turn `full_wrench` on only with an F/T, or after
-   checking the moment estimate.
+2. **The wrench source.** Until 2026-10-20 it was ESTIMATED from the joint torques,
+   off by up to 8-9 N per arm: a few newtons of internal wrench sat inside that error.
+   **2026-10-21: the wrist ATIs are mounted** (`wrench_source: ft`, ros_backend.py,
+   checked with `ft_check`); `insert --twist` turns the full wrench on and refuses
+   to run unless both arms read their ATI. The joint-torque estimate is still logged.
 3. The routes were trained with the old squeeze law.

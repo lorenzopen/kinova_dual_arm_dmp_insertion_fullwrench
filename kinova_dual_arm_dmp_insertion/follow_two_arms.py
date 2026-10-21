@@ -32,7 +32,7 @@ It stops BOTH arms (each holds where it is) if either flange is more than
 flanges of both arms, the distance between them (what would squeeze the piece)
 and the estimated wrenches (their noise, arm still and moving) to logs/.
 
-Lab stack first: one `kinova_controller.py` per arm (SETUP_PC_ROBOT.md, part E),
+Lab stack first: one `kinova_controller.py` per arm (GUIDA.md, T1 and T2),
 /left = 192.180.0.200, /right = 192.180.0.107. Then, venv active:
 
     python -m kinova_dual_arm_dmp_insertion.follow_two_arms F75_Tt1_s9007 --dry
@@ -178,6 +178,9 @@ def main():
                                  lambda m, s=side: last[s].update(js=m), 10)
         node.create_subscription(WrenchStamped, acfg["wrench_topic"],
                                  lambda m, s=side: last[s].update(w=m), 10)
+        if acfg.get("ft_topic"):                          # the wrist ATI, raw, logged only
+            node.create_subscription(WrenchStamped, acfg["ft_topic"],
+                                     lambda m, s=side: last[s].update(ft=m), 50)
         fks[side] = _FK(acfg["urdf_path"], acfg["ee_frame"])
     exe = MultiThreadedExecutor()
     exe.add_node(node)
@@ -190,6 +193,14 @@ def main():
     def force_now(side):
         w = last[side].get("w")
         return [w.wrench.force.x, w.wrench.force.y, w.wrench.force.z] if w is not None else [np.nan] * 3
+
+    def ft_now(side):
+        """The ATI as published (sensor axes, NetBox units, no bias): for the log."""
+        w = last[side].get("ft")
+        if w is None:
+            return [np.nan] * 6
+        w = w.wrench
+        return [w.force.x, w.force.y, w.force.z, w.torque.x, w.torque.y, w.torque.z]
 
     def send(side, p, q):
         msg = PoseStamped()
@@ -234,7 +245,8 @@ def main():
     log = csv.writer(fh)
     log.writerow(["t", "phase"] + [f"{c}{s[0].upper()}" for s in SIDES for c in
                                    ("xc", "yc", "zc", "xm", "ym", "zm", "err_mm", "rot_deg", "Fx", "Fy", "Fz")]
-                 + ["gap_cmd_mm", "gap_meas_mm"])
+                 + ["gap_cmd_mm", "gap_meas_mm", "t_wall"]
+                 + [f"ft{c}{s[0].upper()}" for s in SIDES for c in ("fx", "fy", "fz", "tx", "ty", "tz")])
     err_max = {s: 0.0 for s in SIDES}
     gap_err_max, forces = 0.0, {s: [] for s in SIDES}
     try:
@@ -272,6 +284,9 @@ def main():
                     g_m = np.linalg.norm(meas["left"] + off - meas["right"])
                     gap_err_max = max(gap_err_max, abs(g_m - g_c))
                     row += [f"{1000 * g_c:.1f}", f"{1000 * g_m:.1f}"]
+                else:
+                    row += ["", ""]
+                row += [f"{time.time():.4f}"] + [f"{v:.4f}" for side in SIDES for v in ft_now(side)]
                 log.writerow(row)
                 if t >= tt[-1]:
                     break

@@ -27,6 +27,19 @@ from .route import Route, available
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 
+LOCAL = "local.yaml"
+
+
+def merge(base, over):
+    """Nested dict update: `over` wins, key by key."""
+    for k, v in over.items():
+        if isinstance(v, dict) and isinstance(base.get(k), dict):
+            merge(base[k], v)
+        else:
+            base[k] = v
+    return base
+
+
 def load_config(path):
     import yaml
     if path is None:
@@ -39,16 +52,34 @@ def load_config(path):
                                 "config", "cell.yaml")
     with open(path, encoding="utf-8") as fh:
         cfg = yaml.safe_load(fh)
+    # what was measured on THIS robot PC (ft_check --save): next to the config, not in git
+    local = os.path.join(os.path.dirname(os.path.abspath(path)), LOCAL)
+    if os.path.isfile(local):
+        with open(local, encoding="utf-8") as fh:
+            merge(cfg, yaml.safe_load(fh) or {})
+        print(f"  local values: {local}")
     t = cfg.get("tool", {})
     GE.set_tool(t.get("pad_x", 0.020), t.get("r_tri", 0.030), t.get("pad_r", 0.010))
     return cfg, path
 
 
+W6 = ("fx", "fy", "fz", "tx", "ty", "tz")
+
+
 class Log:
-    """One CSV row per control tick: what was commanded, what was measured."""
+    """One CSV row per control tick: what was commanded, what was measured.
+    The first 35 columns are the original ones; then (2026-10-21) the measured
+    flange orientations, the moments the controller used, the raw readings of both
+    sources (estimated: ee axes; ATI: sensor axes, N / Nm, before bias), the
+    full-wrench offsets and the SOCP's desired hand wrenches. Shelf frame
+    unless said; F, T = hand ON the piece, T about the tool origin."""
     COLS = ("t phase xL yL zL qxL qyL qzL qwL xR yR zR qxR qyR qzR qwR "
             "mxL myL mzL mxR myR mzR FxL FyL FzL FxR FyR FzR ds_mm target_N "
-            "fn_N ext_x ext_y ext_z jammed").split()
+            "fn_N ext_x ext_y ext_z jammed").split() + (
+        "t_wall mqxL mqyL mqzL mqwL mqxR mqyR mqzR mqwR TxL TyL TzL TxR TyR TzR".split()
+        + [f"{src}{s}_{c}" for src in ("est", "ft") for s in "LR" for c in W6]
+        + [f"off{s}_{c}" for s in "LR" for c in ("x", "y", "z", "rx", "ry", "rz")]
+        + [f"wdes{s}_{c}" for s in "LR" for c in W6])
 
     def __init__(self, path):
         self.fh = open(path, "w", newline="")
@@ -58,14 +89,43 @@ class Log:
     def row(self, ins, tL, qL, tR, qR):
         m = ins.meas
         e = ins.external_force()
+        raw = getattr(ins.b, "raw", {})
+        nan6 = [np.nan] * 6
+        wdes = [np.round(np.concatenate(ins.w_des[s]), 4) if s in ins.w_des else nan6 for s in "LR"]
         self.w.writerow([f"{ins.b.now():.3f}", ins.phase, *np.round(tL, 5), *np.round(qL.as_quat(), 5),
                          *np.round(tR, 5), *np.round(qR.as_quat(), 5), *np.round(m["pL"], 5),
                          *np.round(m["pR"], 5), *np.round(m["FL"], 2), *np.round(m["FR"], 2),
                          f"{1000 * ins.ds:.2f}", f"{ins.target or 0:.2f}", f"{ins.normal_force():.2f}",
-                         *np.round(e, 2), int(ins.jammed)])
+                         *np.round(e, 2), int(ins.jammed),
+                         f"{time.time():.4f}", *np.round(m["qL"], 5), *np.round(m["qR"], 5),
+                         *np.round(m["TL"], 4), *np.round(m["TR"], 4),
+                         *np.round(np.concatenate([raw.get(k, nan6) for k in ("estL", "estR", "ftL", "ftR")]), 4),
+                         *np.round(ins.off["L"], 5), *np.round(ins.off["R"], 5), *np.concatenate(wdes)])
 
     def close(self):
         self.fh.close()
+
+
+def write_meta(path, cfg, cfg_path, a, backend=None, result=None):
+    """Everything needed to read a run later: the config as used, the command,
+    the code version, the ATI units and every tare's biases."""
+    import json
+    import subprocess
+    try:
+        rev = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=HERE, capture_output=True,
+                             text=True, timeout=5).stdout.strip()
+        dirty = bool(subprocess.run(["git", "status", "--porcelain"], cwd=HERE, capture_output=True,
+                                    text=True, timeout=5).stdout.strip())
+    except Exception:
+        rev, dirty = None, None
+    meta = dict(argv=sys.argv, config_path=os.path.abspath(cfg_path), config=cfg, git=rev, git_dirty=dirty,
+                started=time.strftime("%Y-%m-%d %H:%M:%S"), result=result)
+    if backend is not None:
+        meta["ft_units"] = {arm.name: arm.ft_units for arm in backend.arms.values()}
+        meta["wrench_source"] = {arm.name: arm.source for arm in backend.arms.values()}
+        meta["tares"] = backend.tares
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(meta, fh, indent=1, default=lambda o: o.tolist() if hasattr(o, "tolist") else str(o))
 
 
 def reach_report(route, cfg, rows):
@@ -182,20 +242,28 @@ def cmd_insert(a, cfg):
     if cfg.get("full_wrench", False) and not cfg.get("allow_hand_wrench", False):
         sys.exit("full_wrench: true regulates the flange MOMENTS: set allow_hand_wrench: true "
                  "in the config once the F/T moments are verified")
+    if cfg.get("full_wrench", False) and any(cfg[s].get("wrench_source") != "ft" for s in ("left", "right")):
+        sys.exit("full_wrench: true needs the wrist ATI on BOTH arms (wrench_source: ft): "
+                 "the joint-torque estimate is not good enough for the moments")
     os.makedirs(cfg["log_dir"], exist_ok=True)
     path = os.path.join(cfg["log_dir"], time.strftime(f"{r.world}_{a.arm}_%Y%m%d_%H%M%S.csv"))
     log = Log(path)
+    meta = path[:-4] + "_meta.json"
     b = RosBackend(cfg)
+    write_meta(meta, cfg, a.cfg_path, a, b)
     ins = slowed(Insertion(r, b, log=log, f_abort=cfg["f_abort"], track_abort=cfg["track_abort"],
                                 jam_scale=cfg.get("jam_scale", 1.0), **socp_kwargs(cfg)), a.slow)
+    result = None
     try:
-        ins.run()
+        result = ins.run()
     except (Abort, KeyboardInterrupt) as e:
+        result = dict(stopped=str(e) or "Ctrl-C", phase=ins.phase)
         print(f"\n  STOPPED: {e or 'Ctrl-C'} - the arms hold their last target")
     finally:
         log.close()
+        write_meta(meta, cfg, a.cfg_path, a, b, result)
         b.close()
-        print(f"  log: {path}")
+        print(f"  log: {path}\n  meta: {meta}")
 
 
 ARMS = ("scalar", "hwd", "c100_narrow75", "c100_narrow75hs", "c100_five", "c100_five625", "c100_five_cut800", "c100_five_cut700")
@@ -212,6 +280,9 @@ def main(argv=None):
                          "cubes100/README.md): c100_narrow75 the 29 narrow75 worlds, c100_five / c100_five625 the "
                          "20-cube kit worlds at 75% / 62.5%")
     ap.add_argument("--config", default=None)
+    ap.add_argument("--twist", action="store_true",
+                    help="full wrench: squeeze + opposite twist about the pad axis, closed on the wrist "
+                         "ATIs (= full_wrench: true, full_wrench_channels: twist, allow_hand_wrench: true)")
     ap.add_argument("--slow", type=float, default=1.0,
                     help="route, seat and turns this many times slower than trained (default 1)")
     pair.add_args(ap)
@@ -225,6 +296,12 @@ def main(argv=None):
     if not a.world:
         ap.error("which world? (list)")
     cfg, path = load_config(a.config)
+    a.cfg_path = path
+    if a.twist:
+        cfg.update(full_wrench=True, full_wrench_channels="twist", allow_hand_wrench=True)
+    print(f"  wrench control: {'TWIST (full wrench)' if cfg.get('full_wrench') else 'scalar squeeze only'}"
+          f"; wrench source left {cfg['left'].get('wrench_source', 'estimated')}, "
+          f"right {cfg['right'].get('wrench_source', 'estimated')}")
     print(f"  config: {os.path.abspath(path)}")
     (cmd_check if a.command == "check" else cmd_insert)(a, cfg)
 
