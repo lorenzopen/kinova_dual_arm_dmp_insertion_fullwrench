@@ -57,8 +57,8 @@ class Abort(RuntimeError):
 
 class Insertion:
     def __init__(self, route, backend, log=None, f_abort=60.0, track_abort=0.040,
-                 confirm=None, jam_scale=1.0, socp_cfg=None, full_wrench=False,
-                 full_wrench_channels="twist"):
+                 confirm=None, jam_scale=1.0, jam_min=2.0, socp_cfg=None, full_wrench=False,
+                 full_wrench_channels="twist", moment_sign=-1.0):
         self.r, self.b = route, backend
         c = route.c
         self.mu = float(c["mu_eff"])                  # 1.0 for narrow75 (pad-piece rubber)
@@ -77,6 +77,11 @@ class Insertion:
         # internal moments).
         self.full_wrench = bool(full_wrench)
         self.channels = str(full_wrench_channels)
+        # sign of the rotation correction. -1 = the original law: rotating the flange towards the
+        # missing moment (right for a rigid tool and a sensor with the right sign). On 2026-10-20
+        # (estimated wrench) -1 and +1 both drove the offset to its cap with the twist error
+        # unchanged (~0.5 Nm): the free spring passes almost no twist. Recheck with the ATIs.
+        self.moment_sign = float(moment_sign)
         if self.channels not in ("twist", "internal"):
             raise ValueError("full_wrench_channels must be twist or internal")
         self.hand_wrench = route.hand_wrench != "off" or self.full_wrench
@@ -94,6 +99,7 @@ class Insertion:
         self.log = log
         self.f_abort, self.track_abort = float(f_abort), float(track_abort)   # robot-only safety
         self.jam_scale = float(jam_scale)                                     # robot: looser sentry
+        self.jam_min = float(jam_min)       # [N] floor: above the wrench estimate's noise (robot)
         self.confirm = confirm or (lambda msg: input(f"\n  >>> {msg} [Enter] "))
         # the open pose (Hands.__init__): LEFT pushes along +axis
         a = route.axis / np.linalg.norm(route.axis)
@@ -109,6 +115,7 @@ class Insertion:
         self.w_des = {}
         self.c_cmd = self.R_cmd = None
         self.t_ctrl = self.t_socp = -1e9
+        self.socp_ms = 0.0                  # [ms] the last SOCP solve, for the log
         self.jammed, self.jam_info, self.landed_high = False, None, False
         self.seat_goal = None
         self.phase = "start"
@@ -168,7 +175,9 @@ class Insertion:
     def _control(self, now):
         if self.target is None or now - self.t_socp >= SOCP_PERIOD - 1e-9:
             self.t_socp = now
+            t0 = time.perf_counter()
             self._allocate()
+            self.socp_ms = 1000.0 * (time.perf_counter() - t0)
         f_now = self.normal_force()
         step = float(np.clip(GAIN * (2.0 * self.target - f_now), -DS_MAX, DS_MAX))
         self.ds = float(np.clip(self.ds + step, -RELEASE, S_MAX))
@@ -225,7 +234,7 @@ class Insertion:
             sF = sF - (sF @ a) * a
             o = self.off[side]
             o[:3] += np.clip(-GAIN_F * sF, -STEP_F, STEP_F)
-            o[3:] += np.clip(-GAIN_T * sT, -STEP_T, STEP_T)
+            o[3:] += np.clip(self.moment_sign * GAIN_T * sT, -STEP_T, STEP_T)
             for sl, cap in ((slice(0, 3), MAX_F), (slice(3, 6), MAX_T)):
                 n = np.linalg.norm(o[sl])
                 if n > cap:
@@ -235,7 +244,7 @@ class Insertion:
         f = self.target if self.target else self.r.derived_N
         spare = 2.0 * self.mu * max(float(f), 1.0) - self.r.mass * G
         share = self.jam_share if (self.w_ext is not None or not self.seat_stops) else 1.0
-        return max(self.jam_scale * share * spare, 2.0)
+        return max(self.jam_scale * share * spare, self.jam_min)
 
     def watch_jam(self):
         meas = self.external_force()

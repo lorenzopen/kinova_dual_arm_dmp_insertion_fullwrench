@@ -79,7 +79,8 @@ class Log:
         "t_wall mqxL mqyL mqzL mqwL mqxR mqyR mqzR mqwR TxL TyL TzL TxR TyR TzR".split()
         + [f"{src}{s}_{c}" for src in ("est", "ft") for s in "LR" for c in W6]
         + [f"off{s}_{c}" for s in "LR" for c in ("x", "y", "z", "rx", "ry", "rz")]
-        + [f"wdes{s}_{c}" for s in "LR" for c in W6])
+        + [f"wdes{s}_{c}" for s in "LR" for c in W6]
+        + ["socp_ms"])                     # the last SOCP solve [ms]
 
     def __init__(self, path):
         self.fh = open(path, "w", newline="")
@@ -100,7 +101,8 @@ class Log:
                          f"{time.time():.4f}", *np.round(m["qL"], 5), *np.round(m["qR"], 5),
                          *np.round(m["TL"], 4), *np.round(m["TR"], 4),
                          *np.round(np.concatenate([raw.get(k, nan6) for k in ("estL", "estR", "ftL", "ftR")]), 4),
-                         *np.round(ins.off["L"], 5), *np.round(ins.off["R"], 5), *np.concatenate(wdes)])
+                         *np.round(ins.off["L"], 5), *np.round(ins.off["R"], 5), *np.concatenate(wdes),
+                         f"{ins.socp_ms:.1f}"])
 
     def close(self):
         self.fh.close()
@@ -167,7 +169,8 @@ def slowed(ins, slow):
 def socp_kwargs(cfg):
     """The full-wrench SOCP settings of the cell (config/cell.yaml: socp, full_wrench)."""
     return dict(socp_cfg=cfg.get("socp"), full_wrench=bool(cfg.get("full_wrench", False)),
-                full_wrench_channels=cfg.get("full_wrench_channels", "twist"))
+                full_wrench_channels=cfg.get("full_wrench_channels", "twist"),
+                moment_sign=float(cfg.get("full_wrench_moment_sign", -1.0)))
 
 
 def cmd_check(a, cfg):
@@ -252,7 +255,8 @@ def cmd_insert(a, cfg):
     b = RosBackend(cfg)
     write_meta(meta, cfg, a.cfg_path, a, b)
     ins = slowed(Insertion(r, b, log=log, f_abort=cfg["f_abort"], track_abort=cfg["track_abort"],
-                                jam_scale=cfg.get("jam_scale", 1.0), **socp_kwargs(cfg)), a.slow)
+                                jam_scale=cfg.get("jam_scale", 1.0), jam_min=cfg.get("jam_min", 2.0),
+                                **socp_kwargs(cfg)), a.slow)
     result = None
     try:
         result = ins.run()

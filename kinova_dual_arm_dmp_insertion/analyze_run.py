@@ -151,7 +151,7 @@ def main(argv=None):
     # jam limit as watch_jam had it (route: share 3; to_mouth / seat: w_ext None -> share 1)
     share = np.where(c.phase == "route", float(r.c["jam_share"]), 1.0)
     spare = 2.0 * mu * np.maximum(c.target_N.clip(lower=1.0), 1.0) - r.mass * G
-    c["jam_lim"] = np.maximum(jam_scale * share * spare, 2.0)
+    c["jam_lim"] = np.maximum(jam_scale * share * spare, float(cfg.get("jam_min", 2.0)))
     c["jam_res"] = np.hypot(c.ext_x - c.pred_x, c.ext_y - c.pred_y)
 
     print(f"  {r.world}: mass {r.mass:.3f} kg ({r.mass * G:.2f} N), mu_eff {mu}, {len(c)} carrying ticks "

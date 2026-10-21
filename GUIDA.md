@@ -62,13 +62,30 @@ Se dà errore, non è compilato: usa la variante senza compilazione in fondo all
 source /opt/ros/jazzy/setup.bash && source /home/nvidia/tele_ros2/install/setup.bash && ros2 launch teleop_bringup kinova_arms.launch.py arms:=both home:=true viz:=false zed:=false ati:=true left_tool:=gen3 right_tool:=gen3 cart_k:="1000 1000 1000 20 20 20" cart_d:="5 5 5 1 1 1"
 ```
 
-Avvia, senza modifiche:
+Avvia:
 - un controllo di impedenza cartesiano per braccio: `/left_arm` = .200, `/right_arm` = .107;
-- un `ft_raw` per ATI: sinistro NetBox .131, destro .132.
+- un `ft_raw` per ATI: sinistro NetBox **.132**, destro **.131**.
 
+**La mappa degli ATI è una modifica locale di tele_ros2.** I sensori sono montati al contrario rispetto al
+launch originale, che metteva il .131 a sinistra e il .132 a destra. Sul PC robot, in
+`/home/nvidia/tele_ros2/src/teleop_bringup/launch/kinova_arms.launch.py`, il dizionario `ATI` è stato
+scambiato (21/10), e la modifica non è pushata. Se tele_ros2 viene riscaricato o aggiornato, rifai lo scambio:
+altrimenti ogni braccio legge la forza dell'altro. `ft_check --calibrate` lo segnala.
+
+All'avvio ogni `ft_raw` stampa seriale e unità: sinistro **FT54940**, destro **FT49595**, in N / Nm
+(se un NetBox fosse in lbf, il nostro codice legge le unità e converte da solo).
 Con `gen3.urdf` il frame comandato (`tool_frame`) **coincide con la flangia**. L'impedenza è quindi alla flangia,
-come nell'addestramento. Il `.131` pubblica in **lbf**: il nostro codice legge le unità e converte da solo.
-Aspetta che i bracci siano in home e fermi.
+come nell'addestramento. Aspetta che i bracci siano in home e fermi.
+
+**Una volta sola: la velocità del .132.** `ft_raw` vuole 1000 pacchetti/s. Il 21/10 il .131 era a 1000 e
+il .132 a **7000**, con il segnale in ritardo e a scalini. Controlla e, se serve, correggi: l'impostazione
+resta salvata nel NetBox.
+
+```bash
+curl -s http://192.180.0.132/netftapi2.xml | grep -o "<comrdtrate>[0-9]*"
+curl -s "http://192.180.0.132/comm.cgi?comrdtrate=1000" >/dev/null
+curl -s http://192.180.0.132/netftapi2.xml | grep -o "<comrdtrate>[0-9]*"
+```
 
 **T2, registrazione** (lasciala andare tutta la sessione, Ctrl-C alla fine):
 
@@ -105,7 +122,7 @@ source /opt/ros/jazzy/setup.bash && N=right_arm && RM=$(for t in joint_states ta
 I due ATI:
 
 ```bash
-source /opt/ros/jazzy/setup.bash && FT=/home/nvidia/tele_ros2/src/ati_ft_tools/ati_ft_tools/ft_raw.py && (python3 $FT --ros-args -r __ns:=/left_arm -p ip_address:=192.180.0.131 -p configure_sensor:=false & python3 $FT --ros-args -r __ns:=/right_arm -p ip_address:=192.180.0.132 -p configure_sensor:=false & wait)
+source /opt/ros/jazzy/setup.bash && FT=/home/nvidia/tele_ros2/src/ati_ft_tools/ati_ft_tools/ft_raw.py && (python3 $FT --ros-args -r __ns:=/left_arm -p ip_address:=192.180.0.132 -p configure_sensor:=false & python3 $FT --ros-args -r __ns:=/right_arm -p ip_address:=192.180.0.131 -p configure_sensor:=false & wait)
 ```
 
 `configure_sensor:=false` è voluto: le NetBox sono già configurate e la configurazione via HTTP le blocca.
@@ -115,15 +132,16 @@ source /opt/ros/jazzy/setup.bash && FT=/home/nvidia/tele_ros2/src/ati_ft_tools/a
 ## 2. Solo la prima volta con gli ATI montati (T3, bracci fermi in home)
 
 **a. Misure a mano**, da salvare (in `config/local.yaml`, fuori da git; ogni comando la legge):
-- pesa ciò che sta **oltre** ogni sensore: adattatore, molla e tri-pad, in kg;
-- misura dalla flangia del Kinova al fronte delle sfere; `pad_x` = quella misura − 0.015 m.
-  L'ATI e gli adattatori allungano il tool: prima era 0.070 − 0.015 = 0.055.
+- pesa ciò che sta **oltre** ogni sensore: adattatore, molla e tri-pad, in kg. Molla più tri-pad pesano 40 g,
+  che è già il valore in `cell.yaml`; manca l'adattatore lato tool;
+- dalla flangia del Kinova al fronte delle sfere ci sono **100 mm** su entrambi i bracci (21/10). Quindi
+  `pad_x` = 0.100 − 0.015 = **0.085**, già in `cell.yaml`. Rimisuralo solo se cambi il tool.
 
 ```bash
-python -m kinova_dual_arm_dmp_insertion.ft_check --tool-mass 0.080 0.080 --pad-x 0.070 --save
+python -m kinova_dual_arm_dmp_insertion.ft_check --tool-mass 0.050 0.050 --pad-x 0.085 --save
 ```
 
-(sostituisci i tre numeri con i tuoi: massa sinistra, massa destra, `pad_x`).
+(sostituisci le due masse con quelle pesate: sinistra, destra).
 
 **b. Orientamento e segno dei sensori:** tre prese a mano per braccio, ciascuna mantenuta per circa 2 s.
 Nell'ordine: niente contatto; premi la faccia del tri-pad verso la flangia; premi il tri-pad **verso il basso,

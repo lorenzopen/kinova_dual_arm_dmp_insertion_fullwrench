@@ -5,6 +5,10 @@
 - `20261016_1333_F75_Zt1_s9012_mezzo_successo/`: la Z entrata, pila mezza caduta. Forze NON
   corrette (base della T attiva, percorso lontano). Accanto, la base della Z registrata dopo
   (`wrench_20261016_134246_Z_senza_contatto.csv`) per correggerle offline.
+- `20261019_1924_F75_Lt1_s9014_riuscito/`: la L inserita, stima delle coppie con baseline.
+- `20261020_1129_T_s7039m4_twist_riuscito/`: la T barra in alto (colonne 2-5), primo
+  inserimento con twist (stima delle coppie, prima degli ATI). I profili `--config` citati nei
+  README sono copiati nella cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 

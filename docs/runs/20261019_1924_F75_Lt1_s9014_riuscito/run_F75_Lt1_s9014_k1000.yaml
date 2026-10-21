@@ -1,0 +1,92 @@
+scale: 0.8333333
+piece_mass: null
+rate_hz: 100
+log_dir: logs
+max_reach: 0.902
+f_abort: 60.0
+track_abort: 0.04
+jam_scale: 1.8
+jam_min: 8.0
+allow_hand_wrench: false
+socp:
+  r_s: 0.3
+  w_force: 0.0
+  no_bending: false
+  f_floor: 5.0
+full_wrench: false
+full_wrench_channels: twist
+wrench_baseline: /home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/logs/baseline_F75_Lt1_s9014_k1000.csv
+stiffness:
+  trans: 1000.0
+  torsion: 20.0
+  tilt: 20.0
+tool:
+  pad_x: 0.055
+  pad_r: 0.015
+  r_tri: 0.0404
+left:
+  base_frame: base_link
+  ee_frame: end_effector_link
+  urdf_path: /home/nvidia/lorenzo/gen3_bare.urdf
+  target_topic: /left/target_pose
+  joint_states_topic: /left/joint_states
+  wrench_topic: /left/estimated_wrench
+  wrench_source: estimated
+  zero_wrench_service: /left/zero_wrench
+  shoulder_in_base:
+  - 0.0
+  - 0.0
+  - 0.2848
+  shelf_in_base:
+    xyz:
+    - 0.7475
+    - -0.3025
+    - -0.03
+    quat:
+    - 0.0
+    - 0.0
+    - 1.0
+    - 0.0
+  tool_in_ee:
+    xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    quat:
+    - 0.0
+    - -0.7071068
+    - 0.0
+    - 0.7071068
+right:
+  base_frame: base_link
+  ee_frame: end_effector_link
+  urdf_path: /home/nvidia/lorenzo/gen3_bare.urdf
+  target_topic: /right/target_pose
+  joint_states_topic: /right/joint_states
+  wrench_topic: /right/estimated_wrench
+  wrench_source: estimated
+  zero_wrench_service: /right/zero_wrench
+  shoulder_in_base:
+  - 0.0
+  - 0.0
+  - 0.2848
+  shelf_in_base:
+    xyz:
+    - 0.7475
+    - 0.2975
+    - -0.03
+    quat:
+    - 0.0
+    - 0.0
+    - 1.0
+    - 0.0
+  tool_in_ee:
+    xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    quat:
+    - 0.0
+    - -0.7071068
+    - 0.0
+    - 0.7071068
