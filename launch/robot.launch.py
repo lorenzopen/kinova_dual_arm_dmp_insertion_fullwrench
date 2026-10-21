@@ -17,6 +17,9 @@ mounted the other way round from tele_ros2's map: left .200 has the .132, right 
 The URDF is urdf/gen3_ati_tool.urdf of this repo: gen3.urdf + the 150 g bolted on the flange.
 """
 import os
+import tempfile
+
+import yaml
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction, TimerAction
@@ -76,12 +79,15 @@ def _setup(context):
                    "-r", "__node:=real_robot_impedance_node", "-r", f"__ns:=/{ns}"]
             for t in FAST_REMAP:
                 cmd += ["-r", f"/{t}:=/{ns}/{t}"]
-            for k, v in (("viz_frame_prefix", f"{ns}/"), ("initial_mode", "cartesian"),
-                         ("ee_frame", "end_effector_link"), ("urdf_path", URDF), ("publish_thread", "true"),
-                         ("kalman_enable", lc("kalman")), ("friction_enable", "false"),
-                         ("cart_k", "[" + ", ".join(str(x) for x in cart_k) + "]"),
-                         ("cart_d", "[" + ", ".join(str(x) for x in cart_d) + "]")):
-                cmd += ["-p", f"{k}:={v}"]
+            # parameters by FILE, never `-p`: the controller's own argparse takes `-p` as --password
+            params = {"viz_frame_prefix": f"{ns}/", "initial_mode": "cartesian",
+                      "ee_frame": "end_effector_link", "urdf_path": URDF, "publish_thread": True,
+                      "kalman_enable": lc("kalman") == "true", "friction_enable": False,
+                      "cart_k": cart_k, "cart_d": cart_d}
+            fh = tempfile.NamedTemporaryFile("w", prefix=f"fast_ctrl_{side}_", suffix=".yaml", delete=False)
+            yaml.safe_dump({"/**": {"ros__parameters": params}}, fh)
+            fh.close()
+            cmd += ["--params-file", fh.name]
             ctrl = ExecuteProcess(cmd=cmd, name=f"fast_ctrl_{side}", output="screen", emulate_tty=True)
         # the second arm waits for the first to be home and still
         actions.append(ctrl if i == 0 else TimerAction(period=float(lc("left_delay")), actions=[ctrl]))
