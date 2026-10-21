@@ -58,7 +58,7 @@ class Abort(RuntimeError):
 class Insertion:
     def __init__(self, route, backend, log=None, f_abort=60.0, track_abort=0.040,
                  confirm=None, jam_scale=1.0, jam_min=2.0, socp_cfg=None, full_wrench=False,
-                 full_wrench_channels="twist", moment_sign=-1.0):
+                 full_wrench_channels="twist", moment_sign=-1.0, async_socp=False):
         self.r, self.b = route, backend
         c = route.c
         self.mu = float(c["mu_eff"])                  # 1.0 for narrow75 (pad-piece rubber)
@@ -116,6 +116,15 @@ class Insertion:
         self.c_cmd = self.R_cmd = None
         self.t_ctrl = self.t_socp = -1e9
         self.socp_ms = 0.0                  # [ms] the last SOCP solve, for the log
+        # on the robot the SOCP is solved in a worker thread: the 100 Hz stream of targets goes on
+        # with the last solution meanwhile (2026-10-21: solved inline it stalled the loop 40-260 ms
+        # once a second while carrying: the arms jerked). The dry run keeps it inline (same results).
+        self.async_socp = bool(async_socp)
+        self._socp_job = None
+        self._socp_pool = None
+        if self.async_socp:
+            from concurrent.futures import ThreadPoolExecutor
+            self._socp_pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="socp")
         self.jammed, self.jam_info, self.landed_high = False, None, False
         self.seat_goal = None
         self.phase = "start"
@@ -173,11 +182,21 @@ class Insertion:
 
     # ------------------------------------------------------------ the loops
     def _control(self, now):
-        if self.target is None or now - self.t_socp >= SOCP_PERIOD - 1e-9:
+        if self._socp_job is not None and self._socp_job[1].done():
+            inp, job = self._socp_job
+            self._socp_job = None
+            self._socp_apply(inp, *job.result())              # re-raises a worker error here
+        if self.target is None:                               # the first one: wait for it
             self.t_socp = now
-            t0 = time.perf_counter()
-            self._allocate()
-            self.socp_ms = 1000.0 * (time.perf_counter() - t0)
+            inp = self._socp_inputs()
+            self._socp_apply(inp, *self._socp_solve(inp))
+        elif now - self.t_socp >= SOCP_PERIOD - 1e-9 and self._socp_job is None:
+            self.t_socp = now
+            inp = self._socp_inputs()
+            if self.async_socp:
+                self._socp_job = (inp, self._socp_pool.submit(self._socp_solve, inp))
+            else:
+                self._socp_apply(inp, *self._socp_solve(inp))
         f_now = self.normal_force()
         step = float(np.clip(GAIN * (2.0 * self.target - f_now), -DS_MAX, DS_MAX))
         self.ds = float(np.clip(self.ds + step, -RELEASE, S_MAX))
@@ -186,7 +205,12 @@ class Insertion:
             self._chase_wrench()
 
     def _allocate(self):
-        """The SOCP on the pads as the geometry puts them (no contact sensor)."""
+        """The SOCP on the pads as the geometry puts them (no contact sensor), inline."""
+        inp = self._socp_inputs()
+        self._socp_apply(inp, *self._socp_solve(inp))
+
+    def _socp_inputs(self):
+        """Everything the SOCP needs, copied now (the worker must not read self.meas later)."""
         m = self.meas
         pole = self.grasp_centre() - self.R_cmd.apply(self.r.r_plan)
         hands = {"L": (m["pL"], Rot.from_quat(m["qL"])), "R": (m["pR"], Rot.from_quat(m["qR"]))}
@@ -199,15 +223,25 @@ class Insertion:
             w[:3] += self.w_ext[0]
             w[3:] = self.w_ext[1]
         self.stats["socp_ticks"] += 1
-        res = self.socp.solve(posL=pA, posR=pB, baseL=np.asarray(hands[first][0]),
-                              baseR=np.asarray(hands[second][0]), nrmL=nA, nrmR=nB,
-                              m_hat=self.r.mass, p_com=pole, orientation=q.as_matrix(),
-                              w_des=w, f_min=self.f_min)
+        kw = dict(posL=pA, posR=pB, baseL=np.array(hands[first][0], float),
+                  baseR=np.array(hands[second][0], float), nrmL=nA, nrmR=nB,
+                  m_hat=self.r.mass, p_com=pole, orientation=q.as_matrix(), w_des=w, f_min=self.f_min)
+        return dict(kw=kw, first=first, second=second, pA=pA, pB=pB, c=self.grasp_centre())
+
+    def _socp_solve(self, inp):
+        """(result, solve time [ms]); safe in the worker thread: touches only `inp` and the SOCP."""
+        t0 = time.perf_counter()
+        res = self.socp.solve(**inp["kw"])
+        return res, 1000.0 * (time.perf_counter() - t0)
+
+    def _socp_apply(self, inp, res, ms):
+        self.socp_ms = ms
+        first, second, pA, pB = inp["first"], inp["second"], inp["pA"], inp["pB"]
         if res["ok"]:
             self.stats["socp_ok"] += 1
             self.target = max(float(max(sum(res["fn_L"]), sum(res["fn_R"]))), 1.0)
             if self.hand_wrench:
-                c = self.grasp_centre()
+                c = inp["c"]                  # the grasp centre the program was solved about
                 self.w_des = {side: (sum(np.asarray(f) for f in forces),
                                      sum(np.cross(pp - c, np.asarray(f)) for pp, f in zip(pads, forces)))
                               for side, pads, forces in ((first, pA, res["f_L"]), (second, pB, res["f_R"]))}

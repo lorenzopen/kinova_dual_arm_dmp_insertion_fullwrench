@@ -256,7 +256,7 @@ def cmd_insert(a, cfg):
     write_meta(meta, cfg, a.cfg_path, a, b)
     ins = slowed(Insertion(r, b, log=log, f_abort=cfg["f_abort"], track_abort=cfg["track_abort"],
                                 jam_scale=cfg.get("jam_scale", 1.0), jam_min=cfg.get("jam_min", 2.0),
-                                **socp_kwargs(cfg)), a.slow)
+                                async_socp=True, **socp_kwargs(cfg)), a.slow)
     result = None
     try:
         result = ins.run()
