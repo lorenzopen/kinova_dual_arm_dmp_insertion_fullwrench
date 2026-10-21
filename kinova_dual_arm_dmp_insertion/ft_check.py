@@ -49,9 +49,8 @@ def triad(a, b):
 def hold(b, msg, seconds=1.0):
     input(f"  >>> {msg}, keep it, [Enter] ")
     time.sleep(0.3)
-    n = int(seconds * 1000)
     time.sleep(seconds)
-    return {s: b.arms[s].ft_last(n).mean(0) for s, _ in SIDES}
+    return {s: b.arms[s].ft_last(int(seconds * b.arms[s].ft_rate)).mean(0) for s, _ in SIDES}
 
 
 def calibrate(b):

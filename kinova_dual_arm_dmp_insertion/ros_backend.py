@@ -29,6 +29,8 @@ position, minus the baseline where the tare was made. Forces only, not moments.
 (tele_ros2/src/ati_ft_tools) started in the arm's namespace:
 
     /<ns>/ft_data_raw              WrenchStamped 1 kHz, SENSOR axes, raw (no filter, no bias)
+    /<ns>/ft_data_avg              the same, means of 5 samples at 200 Hz (ft_relay.py, its own
+                                   process): what cell.yaml reads, `ft_rate_hz: 200`
     /<ns>/ft_raw/get_calibration   Trigger       the NetBox units (the left box is in lbf!)
 
 The sensor pose is the flange's (forward kinematics, no TF) times `ft_in_ee`. The bias
@@ -49,7 +51,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation as Rot
 
 import rclpy
-from rclpy.executors import MultiThreadedExecutor
+from rclpy.executors import SingleThreadedExecutor
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped, WrenchStamped
 from sensor_msgs.msg import JointState
@@ -152,6 +154,8 @@ class _Arm:
         self.sign = float(cfg.get("ft_sign", 1.0))
         self.ft_in_ee = _frame(cfg.get("ft_in_ee", {"xyz": [0, 0, 0], "quat": [0, 0, 0, 1]}))
         self.ft = deque(maxlen=2000)          # raw ATI samples (6,), sensor axes, N / Nm
+        # [Hz] the rate of ft_topic: 200 for the means of launch/robot.launch.py's ft_relay (1000 raw)
+        self.ft_rate = float(cfg.get("ft_rate_hz", 1000.0))
         self.ft_scale = (1.0, 1.0)
         self.ft_t = -1e9                      # monotonic time of the last ATI sample
         self.ft_units = None
@@ -197,7 +201,9 @@ class RosBackend(Node):
                       f" (base), from {path}")
         self.raw = {}                          # last raw readings, for the log
         self.tares = []                        # every tare: the ATI biases, for the log's metadata
-        self._exec = MultiThreadedExecutor()
+        # single-threaded, in its own thread: the callbacks only store the latest messages, and on the
+        # Jetson the multi-threaded executor took ~2.6x the CPU for the same topics (2026-10-21)
+        self._exec = SingleThreadedExecutor()
         self._exec.add_node(self)
         threading.Thread(target=self._exec.spin, daemon=True).start()
         deadline = time.monotonic() + 10.0
@@ -311,8 +317,8 @@ class RosBackend(Node):
                                            f"correction relative to its own tare")
                 arm.b0 = np.zeros(3) if b0 is None else b0
             if arm.source == "ft":
-                w = arm.ft_last(500)
-                if len(w) < 50:
+                w = arm.ft_last(int(0.5 * arm.ft_rate))                   # 0.5 s
+                if len(w) < int(0.05 * arm.ft_rate):
                     raise RuntimeError(f"{arm.name}: only {len(w)} ATI samples for the tare")
                 m, sd = w.mean(0), w.std(0)
                 _ps, qs = self._ft_pose(arm)
@@ -344,12 +350,13 @@ class RosBackend(Node):
 
     def read(self):
         out, raw = {}, {}
-        n_avg = max(1, int(round(self.period * 1000.0)))    # ATI samples in one control period (1 kHz)
+        # ATI samples in one control period, at each arm's ft_topic rate
         for s, arm in self.arms.items():
             pt, qt = self._tool_pose(arm)
             w = arm.wrench
             raw["est" + s] = [w.wrench.force.x, w.wrench.force.y, w.wrench.force.z,
                               w.wrench.torque.x, w.wrench.torque.y, w.wrench.torque.z]
+            n_avg = max(1, int(round(self.period * arm.ft_rate)))
             ft = arm.ft_last(n_avg).mean(0) if arm.ft else np.full(6, np.nan)
             if arm.source == "ft" and time.monotonic() - arm.ft_t > FT_STALE:
                 from .controller import Abort

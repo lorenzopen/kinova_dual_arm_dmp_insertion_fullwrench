@@ -27,6 +27,9 @@ HERE = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 URDF = os.path.join(HERE, "urdf", "gen3_ati_tool.urdf")
 FRICTION_URDF = "/home/nvidia/lorenzo/gen3_bare.urdf"     # the identified friction, as on 15-20/10
 FT_RAW = "/home/nvidia/tele_ros2/src/ati_ft_tools/ati_ft_tools/ft_raw.py"
+# one more process per ATI: 1 kHz in, means of `ft_every` samples out on <ns>/ft_data_avg, the topic
+# cell.yaml reads (taking 1 kHz inside the insert process stalled its 100 Hz loop, 2026-10-21)
+FT_RELAY = os.path.join(HERE, "kinova_dual_arm_dmp_insertion", "ft_relay.py")
 
 ARMS = {"right": {"ns": "right_arm", "ip": "192.180.0.107", "ati": "192.180.0.131"},
         "left": {"ns": "left_arm", "ip": "192.180.0.200", "ati": "192.180.0.132"}}
@@ -69,6 +72,10 @@ def _setup(context):
                      "-p", f"ip_address:={a['ati']}", "-p", f"frame_id:={a['ns']}/tool_frame",
                      "-p", "configure_sensor:=false"],
                 name=f"ft_raw_{side}", output="screen", emulate_tty=True))
+            actions.append(ExecuteProcess(
+                cmd=["python3", FT_RELAY, "--in", f"/{a['ns']}/ft_data_raw", "--out", f"/{a['ns']}/ft_data_avg",
+                     "--every", lc("ft_every")],
+                name=f"ft_relay_{side}", output="screen", emulate_tty=True))
     return actions
 
 
@@ -86,6 +93,8 @@ def generate_launch_description():
         # torque-based wrench estimate (logged only); friction adds the joints' Stribeck torque.
         DeclareLaunchArgument("kalman", default_value="true", description="Kalman filter on q, dq"),
         DeclareLaunchArgument("friction", default_value="true", description="joint friction compensation"),
+        DeclareLaunchArgument("ft_every", default_value="5",
+                              description="ATI samples per mean on ft_data_avg (5 -> 200 Hz; = ft_rate_hz in cell.yaml)"),
         DeclareLaunchArgument("cart_k", default_value="1000 1000 1000 20 20 20"),
         DeclareLaunchArgument("cart_d", default_value="5 5 5 1 1 1"),
         OpaqueFunction(function=_setup),

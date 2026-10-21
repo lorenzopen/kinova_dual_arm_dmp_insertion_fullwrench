@@ -162,7 +162,7 @@ def main():
 
     # ---- the robots: only from here on ROS is needed
     import rclpy
-    from rclpy.executors import MultiThreadedExecutor
+    from rclpy.executors import SingleThreadedExecutor
     from geometry_msgs.msg import PoseStamped, WrenchStamped
     from sensor_msgs.msg import JointState
     from .ros_backend import _FK
@@ -182,7 +182,7 @@ def main():
             node.create_subscription(WrenchStamped, acfg["ft_topic"],
                                      lambda m, s=side: last[s].update(ft=m), 50)
         fks[side] = _FK(acfg["urdf_path"], acfg["ee_frame"])
-    exe = MultiThreadedExecutor()
+    exe = SingleThreadedExecutor()      # ~2.6x less CPU than the multi-threaded one on the Jetson
     exe.add_node(node)
     threading.Thread(target=exe.spin, daemon=True).start()
 
