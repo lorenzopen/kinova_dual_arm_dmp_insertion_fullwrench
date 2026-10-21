@@ -9,6 +9,8 @@
 - `20261020_1129_T_s7039m4_twist_riuscito/`: la T barra in alto (colonne 2-5), primo
   inserimento con twist (stima delle coppie, prima degli ATI). I profili `--config` citati nei
   README sono copiati nella cartella.
+- `20261021_2015_F75_Tt1_s9007_twist_ati_entrata/`: la T entrata con `--twist` e gli ATI ai polsi come
+  sorgente del wrench (prima prova così); la L vicina non si è spostata.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
