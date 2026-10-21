@@ -44,85 +44,53 @@ END
 source ~/lorenzo/env.sh && python3 -m venv --system-site-packages "$LORENZO/venv" && source "$LORENZO/venv/bin/activate" && pip install "cvxpy<1.7" clarabel "numpy<2" && cd "$LORENZO" && git clone https://github.com/lorenzopen/kinova_dual_arm_dmp_insertion_fullwrench.git
 ```
 
-Due controller del laboratorio, con compiti diversi. Il **vecchio**, in `~/ros2_ws` (`kinova_controller_pkgs`), serve
-**solo per portare i bracci in home**. L'**impedenza** la fa quello di **`tele_ros2`**, in `/home/nvidia/tele_ros2`,
-avviato come in `dual_arm_bringup/connect.launch.py` del collega: senza home (`--skip-home`) e con
-`publish_thread:=true`, che lo porta a 1 kHz (il vecchio gira a circa 3 ms). Gli **ATI** usano `ft_raw` di tele_ros2.
-I due workspace hanno pacchetti `kinova_*` con lo stesso nome: **mai tutti e due nello stesso terminale**.
-Verifica che siano compilati:
+I **bracci** (home e impedenza) girano con il controller del laboratorio in `~/ros2_ws` (`kinova_controller_pkgs`),
+quello delle prove del 15–20/10. Gli **ATI** usano solo `ft_raw` di **`tele_ros2`**, lanciato dal suo file sorgente:
+il workspace di tele_ros2 **non si carica mai**, perché ha pacchetti `kinova_*` con lo stesso nome di `ros2_ws`.
+Verifica che `ros2_ws` sia compilato e che il sorgente di `ft_raw` ci sia:
 
 ```bash
-source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.bash && ros2 pkg prefix kinova_control
+source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.bash && ros2 pkg prefix kinova_control && ls /home/nvidia/tele_ros2/src/ati_ft_tools/ati_ft_tools/ft_raw.py
 ```
+
+Il controller di tele_ros2 **non va usato**. Il 21/10 il .200 è andato in fault e ha dato uno scatto due volte su due,
+e sul .107 l'azione Home dava `DATABASE_ERROR`. Il controller di `ros2_ws` non usa l'azione Home del robot: entra
+in coppia dalla posa in cui si trova e va in home **in impedenza**. A ogni uscita rimette il braccio in posizione.
+
+**Una volta sola: la velocità del .132.** `ft_raw` vuole 1000 pacchetti/s. Il 21/10 il .131 era a 1000 e il .132 a
+**7000**, con il segnale in ritardo e a scalini. L'impostazione resta salvata nel NetBox. Deve stampare
+`<comrdtrate>1000`:
 
 ```bash
-source /opt/ros/jazzy/setup.bash && source /home/nvidia/tele_ros2/install/setup.bash && ros2 pkg prefix kinova_control && ros2 pkg prefix ati_ft_tools
+curl -s "http://192.180.0.132/comm.cgi?comrdtrate=1000" >/dev/null; curl -s http://192.180.0.132/netftapi2.xml | grep -o "<comrdtrate>[0-9]*"
 ```
-
-**Perché la home non la fa il controller di tele_ros2.** Il 21/10, con `kinova_arms.launch.py home:=true`, è
-successo due volte su due: il .200 è andato in fault entrando in coppia subito dopo l'azione Home, e ha dato uno
-scatto; il .107 si è fermato leggendo l'azione Home (`DATABASE_ERROR`). `connect.launch.py` usa lo stesso
-controller sempre senza home.
 
 ---
 
-## 1. Ogni sessione
+## 1. Ogni sessione: 3 terminali
 
-Terminali normali, **senza** `env.sh` (i controller usano `kortex_api` di `/home/nvidia/.local`).
-Mano sull'E-stop e niente sotto le punte. **Un braccio alla volta.**
-
-**T0, home con il controller vecchio** (un braccio alla volta). Il braccio va in home e poi resta in impedenza:
-quando è fermo in home, **Ctrl-C**. In uscita il controller rimette il braccio in modalità posizione, e lì resta.
+**T1, bracci + ATI** (terminale normale, **senza** `env.sh`: il controller usa `kortex_api` di `/home/nvidia/.local`).
+Mano sull'E-stop, niente sotto le punte, zona libera.
 
 ```bash
-source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.bash && ros2 run kinova_control kinova_controller.py --ip 192.180.0.107 --ros-args -r __ns:=/right_arm -p initial_mode:=cartesian -p home_on_start:=true -p ee_frame:=end_effector_link -p urdf_path:=/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
+source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.bash && ros2 launch /home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/launch/robot.launch.py
 ```
 
-Poi lo stesso con `--ip 192.180.0.200` e `__ns:=/left_arm`. Se il .107 dà ancora `DATABASE_ERROR`, fai la home
-dalla web app del Kinova (`http://192.180.0.107`); se succede anche lì, riavvia il braccio.
+`launch/robot.launch.py` di questo repo avvia, nell'ordine:
+- i due `ft_raw`: sinistro (.200) NetBox **.132**, seriale FT54940; destro (.107) NetBox **.131**, seriale FT49595.
+  Sono montati al contrario rispetto alla mappa di tele_ros2;
+- il **destro**: va in home in impedenza (8 s) e poi la tiene;
+- dopo 14 s il **sinistro**, quando il destro è già fermo in home.
 
-**T1 e T1b, impedenza con il controller di tele_ros2** (un braccio alla volta). Parte dalla posa in cui si trova,
-senza muoversi: avvia T1, controlla per una decina di secondi che resti fermo e che nel log **non** compaia
-`Servoing-mode mismatch`, poi avvia T1b. Se compare, chiudi subito con Ctrl-C.
+Le impostazioni sono quelle delle prove del 15–20/10: `cart_k` 1000/20, `cart_d` 5/1, attrito e Kalman,
+impedenza su `end_effector_link`, cioè **sulla flangia**. L'URDF è **`urdf/gen3_ati_tool.urdf`** di questo
+repo: `gen3.urdf` più quello che è montato sulla flangia (ATI, adattatori, molla e tri-pad), **150 g** in tutto.
+Senza quella massa la compensazione di gravità non vede il tool. Se cambi tool, aggiorna massa e baricentro
+in quel file.
 
-T1, destro (.107):
-
-```bash
-source /opt/ros/jazzy/setup.bash && source /home/nvidia/tele_ros2/install/setup.bash && N=right_arm && RM=$(for t in joint_states target_pose joint_cmd cartesian_gains joint_gains switch_control_mode estimated_wrench zero_wrench clear_wrench_offset current_pose_viz target_pose_viz joint_target_viz control_diagnostics control_gains commanded_wrench commanded_twist cmd_vel joint_torque_ff gripper_cmd; do echo -n " -r /$t:=/$N/$t"; done) && ros2 run kinova_control kinova_controller.py --ip 192.180.0.107 --skip-home --ros-args -r __node:=real_robot_impedance_node -r __ns:=/$N $RM -p viz_frame_prefix:=$N/ -p initial_mode:=cartesian -p ee_frame:=end_effector_link -p urdf_path:=/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf -p publish_thread:=true -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
-```
-
-T1b, sinistro (.200): lo stesso comando con `N=left_arm` e `--ip 192.180.0.200`.
-
-```bash
-source /opt/ros/jazzy/setup.bash && source /home/nvidia/tele_ros2/install/setup.bash && N=left_arm && RM=$(for t in joint_states target_pose joint_cmd cartesian_gains joint_gains switch_control_mode estimated_wrench zero_wrench clear_wrench_offset current_pose_viz target_pose_viz joint_target_viz control_diagnostics control_gains commanded_wrench commanded_twist cmd_vel joint_torque_ff gripper_cmd; do echo -n " -r /$t:=/$N/$t"; done) && ros2 run kinova_control kinova_controller.py --ip 192.180.0.200 --skip-home --ros-args -r __node:=real_robot_impedance_node -r __ns:=/$N $RM -p viz_frame_prefix:=$N/ -p initial_mode:=cartesian -p ee_frame:=end_effector_link -p urdf_path:=/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf -p publish_thread:=true -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
-```
-
-Il controller di tele_ros2 scrive i topic con nomi assoluti, quindi li rimappiamo nel namespace del braccio (`RM`).
-L'URDF è **`urdf/gen3_ati_tool.urdf`** di questo repo: `gen3.urdf` più quello che è montato sulla flangia (ATI,
-adattatori, molla e tri-pad), **150 g** in tutto. Senza quella massa la compensazione di gravità non vede il tool.
-Se cambi tool, aggiorna massa e baricentro in quel file. `end_effector_link` **coincide con la flangia**: l'impedenza
-è alla flangia, come nell'addestramento. Attrito e Kalman restano spenti, come in `connect.launch.py`.
-
-**T1c, i due ATI** (terminale normale, **senza** `env.sh`):
-
-```bash
-source /opt/ros/jazzy/setup.bash && source /home/nvidia/tele_ros2/install/setup.bash && ros2 launch ati_ft_tools ati_ft_sensor.launch.py ns_1:=left_arm ip_address_1:=192.180.0.132 frame_id_1:=left_arm/tool_frame configure_sensor_1:=false ns_2:=right_arm ip_address_2:=192.180.0.131 frame_id_2:=right_arm/tool_frame configure_sensor_2:=false
-```
-
-I sensori sono montati **al contrario** rispetto alla mappa di tele_ros2: sul sinistro (.200) c'è il **.132**, sul destro
-(.107) il **.131**. All'avvio ogni `ft_raw` stampa seriale e unità: sinistro **FT54940**, destro **FT49595**, in N / Nm
-(se un NetBox fosse in lbf, il nostro codice legge le unità e converte da solo). `configure_sensor:=false` è voluto:
-i NetBox sono già configurati e la configurazione via HTTP li blocca.
-
-**Una volta sola: la velocità del .132.** `ft_raw` vuole 1000 pacchetti/s. Il 21/10 il .131 era a 1000 e
-il .132 a **7000**, con il segnale in ritardo e a scalini. Controlla e, se serve, correggi: l'impostazione
-resta salvata nel NetBox.
-
-```bash
-curl -s http://192.180.0.132/netftapi2.xml | grep -o "<comrdtrate>[0-9]*"
-curl -s "http://192.180.0.132/comm.cgi?comrdtrate=1000" >/dev/null
-curl -s http://192.180.0.132/netftapi2.xml | grep -o "<comrdtrate>[0-9]*"
-```
+Opzioni: `arms:=right` o `arms:=left` per un braccio solo; usalo **la prima volta e dopo ogni scatto**.
+`arms:=none` avvia solo i due ATI, senza bracci. `home:=false` fa partire i bracci dalla posa in cui sono.
+Ctrl-C in T1 ferma tutto, e i bracci tornano in posizione e restano fermi.
 
 **T2, registrazione** (lasciala andare tutta la sessione, Ctrl-C alla fine):
 

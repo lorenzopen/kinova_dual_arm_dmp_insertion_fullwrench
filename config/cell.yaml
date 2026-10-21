@@ -6,15 +6,14 @@
 # the RIGHT arm at +y. The shelf has no front and no back panel: one tool
 # reaches the piece from each side.
 #
-# THE ARMS AND THE ATIs (2026-10-21, GUIDA.md section 1): Home with the old controller of
-# ~/ros2_ws, then the impedance by tele_ros2's kinova_controller.py as dual_arm_bringup's
-# connect.launch.py runs it (--skip-home, publish_thread:=true -> 1 kHz), one per arm in
-# /left_arm (.200) and /right_arm (.107), on end_effector_link (= the flange) of
-# urdf/gen3_ati_tool.urdf = gen3.urdf + the 150 g bolted on the flange (ATI, adapters, spring,
-# tri-pad). With home:=true that controller faulted the .200 twice on 2026-10-21 (a jolt) and
-# the .107's Home action gave DATABASE_ERROR. Stiffness diagonal in the BASE axes, fixed at
-# launch (`check` prints it). ft_raw of tele_ros2 per arm: the cells are mounted the other way
-# round from tele_ros2's map: left .200 has the .132, right .107 the .131.
+# THE ARMS AND THE ATIs (2026-10-21, GUIDA.md T1 = launch/robot.launch.py): the lab's
+# kinova_controller.py of ~/ros2_ws (kinova_controller_pkgs, as in the 15-20/10 runs), one per arm
+# in /left_arm (.200) and /right_arm (.107): home in impedance, then Cartesian impedance on
+# end_effector_link (= the flange) of urdf/gen3_ati_tool.urdf = gen3.urdf + the 150 g bolted on
+# the flange (ATI, adapters, spring, tri-pad). NOT tele_ros2's controller (faulted the .200 twice
+# on 2026-10-21). Stiffness diagonal in the BASE axes, fixed at launch (`check` prints it).
+# ft_raw of tele_ros2 (from its source) per arm: the cells are mounted the other way round from
+# tele_ros2's map: left .200 has the .132, right .107 the .131.
 
 # THE REAL PIECES ARE 100 mm CUBES, the routes were trained on 120 mm: every position
 # is scaled about the slot (PyBullet, 3 worlds: all still seat, real tri-pad included).
