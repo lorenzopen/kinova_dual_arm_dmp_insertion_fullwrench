@@ -241,9 +241,10 @@ Altre rotte esportate: `python -m kinova_dual_arm_dmp_insertion.main list`. Non 
 ## Appendice: board
 
 **Cella** (già in `config/cell.yaml`): basi parallele, sinistra .200 a y = +600 mm dalla destra .107;
-pavimento dello scaffale da x = 175 a 825 mm davanti alle basi, 30 mm sotto di esse, profondo 125 mm.
-Origine (colonna 0) a x = 807,5 mm: le colonne crescono **verso le basi**. Se sposti scaffale o bracci,
-correggi `shelf_in_base`.
+pavimento dello scaffale 30 mm sotto le basi, profondo 125 mm. Misurato il 15/10 da x = 175 a 825 mm
+davanti alle basi; poi **la board è stata avvicinata di 60 mm**, con l'origine (colonna 0) a **x = 747,5 mm**.
+È la posizione delle prove riuscite del 19 e del 20/10. Le colonne crescono **verso le basi**. Se sposti
+scaffale o bracci, correggi `shelf_in_base` (la x vale per tutti e due i bracci).
 
 Quote in mm nel frame dello scaffale: x dal bordo sinistro della colonna 0, z dal pavimento.
 Le figure sono **viste dal braccio sinistro** (.200). Il pezzo pieno in alto mostra come presentarlo
