@@ -6,14 +6,14 @@
 # the RIGHT arm at +y. The shelf has no front and no back panel: one tool
 # reaches the piece from each side.
 #
-# THE ARMS AND THE ATIs (2026-10-21): tele_ros2's launch, unmodified, in another terminal
-# (GUIDA.md, T1): kinova_controller.py per arm in /left_arm (.200) and /right_arm (.107), a
-# Cartesian impedance on `tool_frame` of urdf/gen3_ati_tool.urdf, which IS the flange (offset 0);
-# that URDF is gen3.urdf + the 150 g bolted on the flange (ATI, adapters, spring, tri-pad).
-# Its stiffness is diagonal in the BASE axes and fixed at launch: `check` prints the cart_k.
-# ft_raw per arm, started by the same launch (ati:=true). The cells are mounted the other way
-# round from tele_ros2's map (Lorenzo, 2026-10-21): left .200 has the .132, right .107 the
-# .131; the launch's ATI dict is swapped LOCALLY on the robot PC (GUIDA.md T1).
+# THE ARMS AND THE ATIs (2026-10-21, GUIDA.md T1/T1b/T1c): the lab's kinova_controller.py of
+# ~/ros2_ws (kinova_controller_pkgs, as in the 15-20/10 runs), one per arm in /left_arm (.200)
+# and /right_arm (.107), Cartesian impedance on end_effector_link (= the flange) of
+# urdf/gen3_ati_tool.urdf = gen3.urdf + the 150 g bolted on the flange (ATI, adapters, spring,
+# tri-pad). NOT tele_ros2's controller: its warm-up sends a stale position and faulted the .200
+# twice on 2026-10-21. Stiffness diagonal in the BASE axes, fixed at launch (`check` prints it).
+# ft_raw of tele_ros2 per arm (ati_ft_sensor.launch.py): the cells are mounted the other way
+# round from tele_ros2's map: left .200 has the .132, right .107 the .131.
 
 # THE REAL PIECES ARE 100 mm CUBES, the routes were trained on 120 mm: every position
 # is scaled about the slot (PyBullet, 3 worlds: all still seat, real tri-pad included).
@@ -84,7 +84,7 @@ tool:
 
 left:
   base_frame: base_link
-  ee_frame: tool_frame                   # the frame tele_ros2's controller drives (= the flange in gen3.urdf)
+  ee_frame: end_effector_link            # the frame the controller drives (= the flange; ee_frame:= in GUIDA T1)
   # the URDF the controller runs: the forward kinematics here must be the same
   urdf_path: /home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf   # = left_urdf/right_urdf of the launch: gen3.urdf + the 150 g ATI tool
   target_topic: /left_arm/target_pose
@@ -114,7 +114,7 @@ left:
 
 right:
   base_frame: base_link
-  ee_frame: tool_frame
+  ee_frame: end_effector_link
   urdf_path: /home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf   # = left_urdf/right_urdf of the launch: gen3.urdf + the 150 g ATI tool
   target_topic: /right_arm/target_pose
   joint_states_topic: /right_arm/joint_states
