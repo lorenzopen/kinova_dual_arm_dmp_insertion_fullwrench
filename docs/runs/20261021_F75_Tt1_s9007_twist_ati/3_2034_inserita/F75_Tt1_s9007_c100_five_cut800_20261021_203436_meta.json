@@ -1,0 +1,310 @@
+{
+ "argv": [
+  "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+  "insert",
+  "F75_Tt1_s9007",
+  "--arm",
+  "c100_five_cut800",
+  "--slow",
+  "3",
+  "--twist"
+ ],
+ "config_path": "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/config/cell.yaml",
+ "config": {
+  "scale": 0.8333333,
+  "piece_mass": 0.05,
+  "rate_hz": 100,
+  "log_dir": "logs",
+  "max_reach": 0.902,
+  "f_abort": 60.0,
+  "track_abort": 0.04,
+  "jam_scale": 1.8,
+  "jam_min": 8.0,
+  "allow_hand_wrench": true,
+  "socp": {
+   "margin_mode": "task_adaptive",
+   "margin_task_scale": 0.25,
+   "margin_floor_N": 1.0,
+   "margin_fixed_N": 0.5,
+   "w_force": 0.0,
+   "no_bending": false
+  },
+  "full_wrench": true,
+  "full_wrench_channels": "twist",
+  "full_wrench_moment_sign": -1,
+  "wrench_baseline": null,
+  "stiffness": {
+   "trans": 1000.0,
+   "torsion": 20.0,
+   "tilt": 20.0
+  },
+  "tool": {
+   "pad_x": 0.085,
+   "pad_r": 0.015,
+   "r_tri": 0.0404
+  },
+  "left": {
+   "base_frame": "base_link",
+   "ee_frame": "end_effector_link",
+   "urdf_path": "/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf",
+   "target_topic": "/left_arm/target_pose",
+   "joint_states_topic": "/left_arm/joint_states",
+   "wrench_topic": "/left_arm/estimated_wrench",
+   "zero_wrench_service": "/left_arm/zero_wrench",
+   "wrench_source": "ft",
+   "ft_topic": "/left_arm/ft_data_avg",
+   "ft_rate_hz": 200,
+   "ft_calibration_service": "/left_arm/ft_raw/get_calibration",
+   "ft_in_ee": {
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat": [
+     -0.0349,
+     0.0255,
+     0.0807,
+     0.9958
+    ]
+   },
+   "ft_sign": 1.0,
+   "tool_mass": 0.04,
+   "tool_com_in_ft": [
+    0.0,
+    0.0,
+    0.03
+   ],
+   "shoulder_in_base": [
+    0.0,
+    0.0,
+    0.2848
+   ],
+   "shelf_in_base": {
+    "xyz": [
+     0.7525,
+     -0.3025,
+     -0.03
+    ],
+    "quat": [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ]
+   },
+   "tool_in_ee": {
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat": [
+     0.0,
+     -0.7071068,
+     0.0,
+     0.7071068
+    ]
+   }
+  },
+  "right": {
+   "base_frame": "base_link",
+   "ee_frame": "end_effector_link",
+   "urdf_path": "/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf",
+   "target_topic": "/right_arm/target_pose",
+   "joint_states_topic": "/right_arm/joint_states",
+   "wrench_topic": "/right_arm/estimated_wrench",
+   "zero_wrench_service": "/right_arm/zero_wrench",
+   "wrench_source": "ft",
+   "ft_topic": "/right_arm/ft_data_avg",
+   "ft_rate_hz": 200,
+   "ft_calibration_service": "/right_arm/ft_raw/get_calibration",
+   "ft_in_ee": {
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat": [
+     -0.0145,
+     -0.0011,
+     0.1016,
+     0.9947
+    ]
+   },
+   "ft_sign": 1.0,
+   "tool_mass": 0.04,
+   "tool_com_in_ft": [
+    0.0,
+    0.0,
+    0.03
+   ],
+   "shoulder_in_base": [
+    0.0,
+    0.0,
+    0.2848
+   ],
+   "shelf_in_base": {
+    "xyz": [
+     0.7525,
+     0.2975,
+     -0.03
+    ],
+    "quat": [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ]
+   },
+   "tool_in_ee": {
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat": [
+     0.0,
+     -0.7071068,
+     0.0,
+     0.7071068
+    ]
+   }
+  }
+ },
+ "git": "cb2a541",
+ "git_dirty": false,
+ "started": "2026-10-21 20:36:10",
+ "result": {
+  "route_followed": true,
+  "jammed": false,
+  "seat_found": true,
+  "landed_high": false,
+  "drop_mm": 0.0,
+  "believed_mm": 2.0041732517501187,
+  "socp_ok": 209,
+  "socp_ticks": 210,
+  "side_force_max": 1.4046189597537873,
+  "squeeze_median": 4.866603743187749
+ },
+ "ft_units": {
+  "left": {
+   "force": "N",
+   "torque": "Nm",
+   "serial": "FT54940",
+   "cal_date": "2024-11-20 05:00:00Z"
+  },
+  "right": {
+   "force": "N",
+   "torque": "Nm",
+   "serial": "FT49595",
+   "cal_date": "2024-01-18 05:00:00Z"
+  }
+ },
+ "wrench_source": {
+  "left": "ft",
+  "right": "ft"
+ },
+ "tares": [
+  {
+   "t": 26024.183691245,
+   "t_wall": 1792586079.3933885,
+   "left": {
+    "bias_F": [
+     1.6413,
+     -3.5703,
+     -5.5807
+    ],
+    "bias_T": [
+     -0.0403,
+     -0.0891,
+     0.05144
+    ],
+    "sd_F": [
+     0.0072,
+     0.0152,
+     0.0209
+    ],
+    "sd_T": [
+     0.00026,
+     0.00021,
+     0.00012
+    ],
+    "samples": 100
+   },
+   "right": {
+    "bias_F": [
+     -0.084,
+     0.3608,
+     0.2059
+    ],
+    "bias_T": [
+     0.00507,
+     0.01031,
+     -0.00701
+    ],
+    "sd_F": [
+     0.0048,
+     0.0053,
+     0.0096
+    ],
+    "sd_T": [
+     0.00013,
+     0.00013,
+     0.00027
+    ],
+    "samples": 100
+   }
+  },
+  {
+   "t": 26052.855717972,
+   "t_wall": 1792586108.0654144,
+   "left": {
+    "bias_F": [
+     1.6888,
+     -3.5894,
+     -5.6021
+    ],
+    "bias_T": [
+     -0.03963,
+     -0.08901,
+     0.05117
+    ],
+    "sd_F": [
+     0.0081,
+     0.0151,
+     0.0208
+    ],
+    "sd_T": [
+     0.00026,
+     0.00025,
+     0.00019
+    ],
+    "samples": 100
+   },
+   "right": {
+    "bias_F": [
+     -0.1028,
+     0.4006,
+     0.1625
+    ],
+    "bias_T": [
+     0.00441,
+     0.00983,
+     -0.00702
+    ],
+    "sd_F": [
+     0.0083,
+     0.013,
+     0.0113
+    ],
+    "sd_T": [
+     0.00055,
+     0.00041,
+     0.00056
+    ],
+    "samples": 100
+   }
+  }
+ ]
+}

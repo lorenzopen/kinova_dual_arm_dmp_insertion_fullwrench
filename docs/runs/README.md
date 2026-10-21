@@ -9,10 +9,8 @@
 - `20261020_1129_T_s7039m4_twist_riuscito/`: la T barra in alto (colonne 2-5), primo
   inserimento con twist (stima delle coppie, prima degli ATI). I profili `--config` citati nei
   README sono copiati nella cartella.
-- `20261021_2015_F75_Tt1_s9007_twist_ati_entrata/`: la T entrata con `--twist` e gli ATI ai polsi come
-  sorgente del wrench (prima prova così); la L vicina non si è spostata.
-- `20261021_2028_F75_Tt1_s9007_twist_ati_riuscito/`: la stessa, rifatta: la T inserita e tutti i vicini
-  spostati.
+- `20261021_F75_Tt1_s9007_twist_ati/`: la T con `--twist` e gli ATI ai polsi come sorgente del wrench, tre
+  prove: 1 entrata con la L ferma, 2 e 3 inserite con i vicini spostati. Tabella nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 

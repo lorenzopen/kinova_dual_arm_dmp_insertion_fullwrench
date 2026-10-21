@@ -5,7 +5,7 @@ W=F75_Tt1_s9007 R=c100_five_cut800
 python -m kinova_dual_arm_dmp_insertion.main insert $W --arm $R --slow 3 --twist
 ```
 
-Stessa cella e stesso codice della prova delle 20:15 (`../20261021_2015_F75_Tt1_s9007_twist_ati_entrata/`):
+Stessa cella e stesso codice della prova delle 20:15 (`../1_2015_entrata_L_ferma/`):
 ATI ai polsi come sorgente del wrench, `--twist`, margini d'attrito `task_adaptive`, commit `6ae471a`
 (config completa nel `_meta.json`, calibrazione ATI in `local.yaml`).
 
