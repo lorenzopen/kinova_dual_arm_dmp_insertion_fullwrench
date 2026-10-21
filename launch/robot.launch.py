@@ -53,9 +53,9 @@ def _setup(context):
                 "home_seconds": float(lc("home_seconds")),
                 "ee_frame": "end_effector_link",
                 "urdf_path": URDF,
-                "friction_enable": True,
+                "friction_enable": lc("friction") == "true",
                 "friction_urdf_path": FRICTION_URDF,
-                "kalman_enable": True,
+                "kalman_enable": lc("kalman") == "true",
                 "cart_k": cart_k,
                 "cart_d": cart_d,
             }])
@@ -81,6 +81,11 @@ def generate_launch_description():
         DeclareLaunchArgument("home_seconds", default_value="8.0", description="[s] the homing drive"),
         DeclareLaunchArgument("left_delay", default_value="14.0",
                               description="[s] the left arm starts this much after the right one"),
+        # both ON as in the 15-20/10 runs. Off = more passive, a few mm less accurate; the ATI
+        # forces do not depend on them. Kalman filters q, dq for the friction model and the
+        # torque-based wrench estimate (logged only); friction adds the joints' Stribeck torque.
+        DeclareLaunchArgument("kalman", default_value="true", description="Kalman filter on q, dq"),
+        DeclareLaunchArgument("friction", default_value="true", description="joint friction compensation"),
         DeclareLaunchArgument("cart_k", default_value="1000 1000 1000 20 20 20"),
         DeclareLaunchArgument("cart_d", default_value="5 5 5 1 1 1"),
         OpaqueFunction(function=_setup),

@@ -90,6 +90,10 @@ in quel file.
 
 Opzioni: `arms:=right` o `arms:=left` per un braccio solo; usalo **la prima volta e dopo ogni scatto**.
 `arms:=none` avvia solo i due ATI, senza bracci. `home:=false` fa partire i bracci dalla posa in cui sono.
+`kalman:=false` e `friction:=false` spengono il filtro di Kalman e la compensazione d'attrito, che di default
+sono accesi come nelle prove del 15–20/10. Spenti, il braccio è più passivo e qualche mm meno preciso; le forze
+degli ATI non cambiano. Il loop del controller gira a circa 280 Hz (`joint_states` circa 70 Hz, una pubblicazione
+ogni 4 cicli): servono a misurare se spegnerli lo velocizza.
 Ctrl-C in T1 ferma tutto, e i bracci tornano in posizione e restano fermi.
 
 **T2, registrazione** (lasciala andare tutta la sessione, Ctrl-C alla fine):
