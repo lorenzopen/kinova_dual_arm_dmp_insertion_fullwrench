@@ -17,9 +17,6 @@ mounted the other way round from tele_ros2's map: left .200 has the .132, right 
 The URDF is urdf/gen3_ati_tool.urdf of this repo: gen3.urdf + the 150 g bolted on the flange.
 """
 import os
-import tempfile
-
-import yaml
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction, TimerAction
@@ -30,14 +27,6 @@ HERE = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 URDF = os.path.join(HERE, "urdf", "gen3_ati_tool.urdf")
 FRICTION_URDF = "/home/nvidia/lorenzo/gen3_bare.urdf"     # the identified friction, as on 15-20/10
 FT_RAW = "/home/nvidia/tele_ros2/src/ati_ft_tools/ati_ft_tools/ft_raw.py"
-# impedance:=fast -> tele_ros2's controller from its SOURCE (std msgs only, no workspace to source),
-# with publish_thread: the ROS publishing overlaps the robot round trip. Patched LOCALLY on this PC
-# (warm-up position fix from ~/ros2_ws, guard after a fault recovery). It does NO homing here.
-FAST_CTRL = "/home/nvidia/tele_ros2/src/kinova_control/scripts/kinova_controller.py"
-FAST_REMAP = ("joint_states target_pose joint_cmd cartesian_gains joint_gains switch_control_mode "
-              "estimated_wrench zero_wrench clear_wrench_offset current_pose_viz target_pose_viz "
-              "joint_target_viz control_diagnostics control_gains commanded_wrench commanded_twist "
-              "cmd_vel joint_torque_ff gripper_cmd").split()
 
 ARMS = {"right": {"ns": "right_arm", "ip": "192.180.0.107", "ati": "192.180.0.131"},
         "left": {"ns": "left_arm", "ip": "192.180.0.200", "ati": "192.180.0.132"}}
@@ -52,9 +41,6 @@ def _setup(context):
     cart_k = [float(x) for x in lc("cart_k").split()]
     cart_d = [float(x) for x in lc("cart_d").split()]
     actions = []
-    fast = lc("impedance") == "fast"
-    if lc("impedance") not in ("slow", "fast"):
-        raise RuntimeError("impedance:= slow (~/ros2_ws, default) or fast (tele_ros2, publish_thread)")
     for i, side in enumerate(sides):
         a = ARMS[side]
         ctrl = Node(
@@ -73,22 +59,6 @@ def _setup(context):
                 "cart_k": cart_k,
                 "cart_d": cart_d,
             }])
-        if fast:
-            ns = a["ns"]
-            cmd = ["python3", FAST_CTRL, "--ip", a["ip"], "--skip-home", "--ros-args",
-                   "-r", "__node:=real_robot_impedance_node", "-r", f"__ns:=/{ns}"]
-            for t in FAST_REMAP:
-                cmd += ["-r", f"/{t}:=/{ns}/{t}"]
-            # parameters by FILE, never `-p`: the controller's own argparse takes `-p` as --password
-            params = {"viz_frame_prefix": f"{ns}/", "initial_mode": "cartesian",
-                      "ee_frame": "end_effector_link", "urdf_path": URDF, "publish_thread": True,
-                      "kalman_enable": lc("kalman") == "true", "friction_enable": False,
-                      "cart_k": cart_k, "cart_d": cart_d}
-            fh = tempfile.NamedTemporaryFile("w", prefix=f"fast_ctrl_{side}_", suffix=".yaml", delete=False)
-            yaml.safe_dump({"/**": {"ros__parameters": params}}, fh)
-            fh.close()
-            cmd += ["--params-file", fh.name]
-            ctrl = ExecuteProcess(cmd=cmd, name=f"fast_ctrl_{side}", output="screen", emulate_tty=True)
         # the second arm waits for the first to be home and still
         actions.append(ctrl if i == 0 else TimerAction(period=float(lc("left_delay")), actions=[ctrl]))
     for side in (sides or list(ARMS)):            # arms:=none -> the two ATIs alone
@@ -114,9 +84,6 @@ def generate_launch_description():
         # both ON as in the 15-20/10 runs. Off = more passive, a few mm less accurate; the ATI
         # forces do not depend on them. Kalman filters q, dq for the friction model and the
         # torque-based wrench estimate (logged only); friction adds the joints' Stribeck torque.
-        DeclareLaunchArgument("impedance", default_value="slow",
-                              description="slow = ~/ros2_ws controller (home + impedance, ~300-400 Hz); "
-                                          "fast = tele_ros2's controller, publish_thread, NO homing, friction off"),
         DeclareLaunchArgument("kalman", default_value="true", description="Kalman filter on q, dq"),
         DeclareLaunchArgument("friction", default_value="true", description="joint friction compensation"),
         DeclareLaunchArgument("cart_k", default_value="1000 1000 1000 20 20 20"),

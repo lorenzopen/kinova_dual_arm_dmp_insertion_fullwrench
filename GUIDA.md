@@ -97,28 +97,9 @@ ogni 4 cicli): servono a misurare se spegnerli lo velocizza.
 
 **Più velocità.** Sulla Jetson (15 W) la CPU si adatta al carico; per tenerla alla frequenza massima, una volta
 per accensione del PC, lancia `sudo jetson_clocks`: torna com'era al riavvio. Il 21/10, con `jetson_clocks` e
-`kalman:=false`, `joint_states` è passato da 70 a 100 Hz, cioè un loop a circa 400 Hz.
+`kalman:=false`, `joint_states` è passato da 70 a 100 Hz, cioè un loop a circa 400 Hz. Il controller di tele_ros2 (`publish_thread`) qui non va più veloce:
+provato il 21/10, 308 Hz, perché ogni ciclo aspetta comunque circa 2 ms la risposta del robot.
 
-**`impedance:=fast`, in prova.** L'impedenza la fa il controller di tele_ros2, lanciato dal sorgente con
-`publish_thread`: la pubblicazione ROS avviene mentre si aspetta il robot, per avvicinarsi a 1 kHz. Attrito spento,
-**nessuna home**. Il controller ha **due correzioni locali**, non pushate: la posizione aggiornata nel riscaldamento
-(la causa probabile degli scatti del .200) e una protezione dopo il recovery da un fault. Se tele_ros2 viene
-riscaricato, riapplicale:
-
-```bash
-cd /home/nvidia/tele_ros2 && patch -p1 < /home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/patches/tele_ros2_kinova_controller.patch
-```
-
-Uso: prima porta i bracci in home con il comando normale e premi Ctrl-C quando sono fermi. Poi, la prima volta
-con **un braccio solo** e la mano sull'E-stop:
-
-```bash
-source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.bash && ros2 launch /home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/launch/robot.launch.py impedance:=fast arms:=right
-```
-
-Deve arrivare a `Control loop started.` **senza** `Servoing-mode mismatch`, e il braccio deve restare fermo.
-Misura `ros2 topic hz /right_arm/joint_states`: questo controller pubblica `joint_states` a ogni ciclo, quindi la
-frequenza è quella del loop. Se tutto va bene, ripeti con `arms:=left` e poi senza `arms`.
 Ctrl-C in T1 ferma tutto, e i bracci tornano in posizione e restano fermi.
 
 **T2, registrazione** (lasciala andare tutta la sessione, Ctrl-C alla fine):
