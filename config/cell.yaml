@@ -94,7 +94,7 @@ left:
   # THE WRIST ATI (2026-10-21): NetBox .132 (Mini40 SI-80-4, FT54940, N / Nm), ft_raw in this
   # arm's namespace (GUIDA.md T1). Lorenzo: at Home ATI +z = Kinova +X, +x = +Y -> ee axes.
   wrench_source: ft                      # ft = the ATI; estimated = the joint torques (logged anyway)
-  ft_topic: /left_arm/ft_data_avg            # sensor axes, means of 5 raw samples (ft_relay of launch/robot.launch.py)
+  ft_topic: /left_arm/ft_data_avg            # sensor axes, means of 5 raw samples (ati_node.py)
   ft_rate_hz: 200                            # its rate: 1000 / ft_every
   ft_calibration_service: /left_arm/ft_raw/get_calibration   # units, read at start (lbf would be converted)
   # the sensor frame in end_effector_link: rotation from `ft_check --calibrate`, xyz = the
@@ -124,7 +124,7 @@ right:
   # THE WRIST ATI (2026-10-21): NetBox .131 (Mini40 SI-80-4, FT49595, N / Nm on 2026-10-21),
   # ft_raw in this arm's namespace (GUIDA.md T1). Mounted as the left one: ee axes.
   wrench_source: ft                      # ft = the ATI; estimated = the joint torques (logged anyway)
-  ft_topic: /right_arm/ft_data_avg            # sensor axes, means of 5 raw samples (ft_relay of launch/robot.launch.py)
+  ft_topic: /right_arm/ft_data_avg            # sensor axes, means of 5 raw samples (ati_node.py)
   ft_rate_hz: 200                             # its rate: 1000 / ft_every
   ft_calibration_service: /right_arm/ft_raw/get_calibration   # units, read at start (lbf would be converted)
   # the sensor frame in end_effector_link: rotation from `ft_check --calibrate`, xyz = the

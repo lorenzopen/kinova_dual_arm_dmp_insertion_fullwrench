@@ -28,9 +28,9 @@ position, minus the baseline where the tare was made. Forces only, not moments.
 `wrench_source: ft` (2026-10-21): the wrist ATI Net F/T, read by the lab's `ft_raw`
 (tele_ros2/src/ati_ft_tools) started in the arm's namespace:
 
-    /<ns>/ft_data_raw              WrenchStamped 1 kHz, SENSOR axes, raw (no filter, no bias)
-    /<ns>/ft_data_avg              the same, means of 5 samples at 200 Hz (ft_relay.py, its own
-                                   process): what cell.yaml reads, `ft_rate_hz: 200`
+    /<ns>/ft_data_avg              WrenchStamped 200 Hz, SENSOR axes, means of 5 raw samples (no bias):
+                                   ati_node.py, what cell.yaml reads (`ft_rate_hz: 200`)
+    /<ns>/ft_data_raw              the raw 1 kHz, only with robot.launch ati_raw:=true
     /<ns>/ft_raw/get_calibration   Trigger       the NetBox units (the left box is in lbf!)
 
 The sensor pose is the flange's (forward kinematics, no TF) times `ft_in_ee`. The bias
@@ -154,7 +154,7 @@ class _Arm:
         self.sign = float(cfg.get("ft_sign", 1.0))
         self.ft_in_ee = _frame(cfg.get("ft_in_ee", {"xyz": [0, 0, 0], "quat": [0, 0, 0, 1]}))
         self.ft = deque(maxlen=2000)          # raw ATI samples (6,), sensor axes, N / Nm
-        # [Hz] the rate of ft_topic: 200 for the means of launch/robot.launch.py's ft_relay (1000 raw)
+        # [Hz] the rate of ft_topic: 200 for ati_node.py's means (1000 for the raw topic)
         self.ft_rate = float(cfg.get("ft_rate_hz", 1000.0))
         self.ft_scale = (1.0, 1.0)
         self.ft_t = -1e9                      # monotonic time of the last ATI sample

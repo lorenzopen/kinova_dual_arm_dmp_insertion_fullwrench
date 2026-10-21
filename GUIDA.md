@@ -126,11 +126,13 @@ Ripeti per `/right_arm/ft_data_avg`: devono dare circa **200 Hz**. Poi `/left_ar
 `/right_arm/joint_states`: circa 70 Hz, 100 Hz con `jetson_clocks` e `kalman:=false`. Ctrl-C dopo qualche
 secondo. Tutti i terminali devono avere lo stesso `echo $ROS_DOMAIN_ID`.
 
-**Perché `ft_data_avg`.** `ft_raw` pubblica l'ATI grezzo a 1 kHz (`ft_data_raw`, registrato nel bag). In Python,
-ricevere 1 kHz costa circa un core intero della Jetson. Dentro il processo di `insert` quelle callback bloccavano
-il loop a 100 Hz e il SOCP: il 21/10 c'erano tick da 30 a 260 ms e i bracci andavano a scatti. Il launch avvia
-quindi un `ft_relay` per braccio, in un processo suo, che pubblica la media di 5 campioni a 200 Hz su
-`ft_data_avg`. È il topic che legge il nostro codice (`ft_topic` e `ft_rate_hz: 200` in `cell.yaml`).
+**Perché `ft_data_avg`.** In Python, sulla Jetson, ricevere l'ATI a 1 kHz costa circa un core intero. Il 21/10,
+dentro il processo di `insert`, bloccava il loop a 100 Hz e il SOCP: tick da 30 a 260 ms e bracci a scatti. Il carico in
+più faceva anche scadere il timeout di 3 ms dei controller durante la home (`Homing tick error`). Ogni ATI ora gira con
+`ati_node.py` di questo repo: è `ft_raw` di tele_ros2 (stessi servizi e stessa calibrazione) senza il suo timer a
+2 kHz. Legge i pacchetti in un thread e pubblica la media di 5 campioni a **200 Hz** su `ft_data_avg`, usando circa il
+10% di un core. È il topic che legge il nostro codice (`ft_topic` e `ft_rate_hz: 200` in `cell.yaml`), e finisce
+nel bag. Il grezzo a 1 kHz su `ft_data_raw` c'è solo con `ati_raw:=true` in T1, che costa più CPU.
 
 ---
 

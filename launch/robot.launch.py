@@ -10,7 +10,7 @@ over `home_seconds`, then holds it in Cartesian impedance at the flange (end_eff
 On any exit it puts the arm back in POSITION mode. The right arm starts first; the left one
 `left_delay` s later, when the right is already home and still.
 
-ATIs: ft_raw of tele_ros2, run from its SOURCE file with plain python3, so tele_ros2's workspace
+ATIs: ati_node.py = ft_raw of tele_ros2 (from its SOURCE file, plain python3) made light, so tele_ros2's workspace
 (kinova_* packages with the same names as ~/ros2_ws) is never sourced here. The cells are
 mounted the other way round from tele_ros2's map: left .200 has the .132, right .107 the .131.
 
@@ -26,10 +26,11 @@ from launch_ros.actions import Node
 HERE = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 URDF = os.path.join(HERE, "urdf", "gen3_ati_tool.urdf")
 FRICTION_URDF = "/home/nvidia/lorenzo/gen3_bare.urdf"     # the identified friction, as on 15-20/10
-FT_RAW = "/home/nvidia/tele_ros2/src/ati_ft_tools/ati_ft_tools/ft_raw.py"
-# one more process per ATI: 1 kHz in, means of `ft_every` samples out on <ns>/ft_data_avg, the topic
-# cell.yaml reads (taking 1 kHz inside the insert process stalled its 100 Hz loop, 2026-10-21)
-FT_RELAY = os.path.join(HERE, "kinova_dual_arm_dmp_insertion", "ft_relay.py")
+# one light process per ATI: tele_ros2's ft_raw (its source) without the 2 kHz timer, publishing the
+# means of `ft_every` samples on <ns>/ft_data_avg, the topic cell.yaml reads; raw 1 kHz on
+# <ns>/ft_data_raw only with ati_raw:=true (2026-10-21: the 1 kHz in Python cost ~a core per sensor,
+# stalled insert and pushed the controllers' 3 ms Kortex Refresh into homing timeouts)
+ATI_NODE = os.path.join(HERE, "kinova_dual_arm_dmp_insertion", "ati_node.py")
 
 ARMS = {"right": {"ns": "right_arm", "ip": "192.180.0.107", "ati": "192.180.0.131"},
         "left": {"ns": "left_arm", "ip": "192.180.0.200", "ati": "192.180.0.132"}}
@@ -68,14 +69,11 @@ def _setup(context):
         a = ARMS[side]
         if lc("ati") == "true":
             actions.append(ExecuteProcess(
-                cmd=["python3", FT_RAW, "--ros-args", "-r", "__node:=ft_raw", "-r", f"__ns:=/{a['ns']}",
+                cmd=["python3", ATI_NODE, "--ros-args", "-r", "__node:=ft_raw", "-r", f"__ns:=/{a['ns']}",
                      "-p", f"ip_address:={a['ati']}", "-p", f"frame_id:={a['ns']}/tool_frame",
-                     "-p", "configure_sensor:=false"],
-                name=f"ft_raw_{side}", output="screen", emulate_tty=True))
-            actions.append(ExecuteProcess(
-                cmd=["python3", FT_RELAY, "--in", f"/{a['ns']}/ft_data_raw", "--out", f"/{a['ns']}/ft_data_avg",
-                     "--every", lc("ft_every")],
-                name=f"ft_relay_{side}", output="screen", emulate_tty=True))
+                     "-p", "configure_sensor:=false", "-p", f"every:={lc('ft_every')}",
+                     "-p", f"publish_raw:={lc('ati_raw')}"],
+                name=f"ati_{side}", output="screen", emulate_tty=True))
     return actions
 
 
@@ -93,6 +91,8 @@ def generate_launch_description():
         # torque-based wrench estimate (logged only); friction adds the joints' Stribeck torque.
         DeclareLaunchArgument("kalman", default_value="true", description="Kalman filter on q, dq"),
         DeclareLaunchArgument("friction", default_value="true", description="joint friction compensation"),
+        DeclareLaunchArgument("ati_raw", default_value="false",
+                              description="also publish the raw 1 kHz on ft_data_raw (more CPU)"),
         DeclareLaunchArgument("ft_every", default_value="5",
                               description="ATI samples per mean on ft_data_avg (5 -> 200 Hz; = ft_rate_hz in cell.yaml)"),
         DeclareLaunchArgument("cart_k", default_value="1000 1000 1000 20 20 20"),
