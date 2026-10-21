@@ -48,8 +48,12 @@ sed 's|<mass value="0.925" />|<mass value="0.0001" />|' ~/ros2_ws/src/kinova_con
 source ~/lorenzo/env.sh && python3 -m venv --system-site-packages "$LORENZO/venv" && source "$LORENZO/venv/bin/activate" && pip install "cvxpy<1.7" clarabel "numpy<2" && cd "$LORENZO" && git clone https://github.com/lorenzopen/kinova_dual_arm_dmp_insertion_fullwrench.git
 ```
 
-Il driver ATI è `ft_raw.py` di `tele_ros2`, già sul PC NVIDIA in `~/tele_ros2`. È puro Python e non va compilato.
-Se è altrove, trovalo con `find ~ -name ft_raw.py -path "*ati_ft_tools*"` e correggi il percorso in T3.
+`tele_ros2` è già sul PC NVIDIA, in `/home/nvidia/tele_ros2`. Lo usiamo eseguendo direttamente gli script
+Python, senza `colcon build`: `ft_raw.py` (ATI) in T3 e, solo nella variante, `kinova_controller.py`.
+Se è altrove, trovalo con `find /home/nvidia -name ft_raw.py -path "*ati_ft_tools*"` e correggi `/home/nvidia/tele_ros2`
+nei comandi. Se `~/ros2_ws` non c'è, l'URDF di partenza per `gen3_bare.urdf` è
+`tele_ros2/src/kinova_control/urdfs/gen3_p2_F_only.urdf`. Lì la massa è già diversa da 0.925:
+in quel caso il `sed` sopra non trova niente, e va deciso a mano quale massa tenere.
 
 ---
 
@@ -68,6 +72,14 @@ source /opt/ros/jazzy/setup.bash && source ~/ros2_ws/install/setup.bash && ros2 
 
 ```bash
 source /opt/ros/jazzy/setup.bash && source ~/ros2_ws/install/setup.bash && ros2 run kinova_control kinova_controller.py --ip 192.180.0.200 --ros-args -r __ns:=/left -p initial_mode:=cartesian -p home_on_start:=true -p ee_frame:=end_effector_link -p urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p friction_enable:=true -p friction_urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p kalman_enable:=true -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
+```
+
+**Variante T1/T2 con il controller di `tele_ros2`** (solo se `~/ros2_ws` non c'è più). Quel controller usa
+topic **assoluti**: `__ns` non li separa, quindi si rimappano tutti per braccio. La home si chiede con `--home`.
+Per il sinistro sostituisci `N=right` con `N=left` e `192.180.0.107` con `192.180.0.200`:
+
+```bash
+source /opt/ros/jazzy/setup.bash && N=right && RM=$(for t in joint_states target_pose joint_cmd cartesian_gains joint_gains switch_control_mode estimated_wrench zero_wrench clear_wrench_offset current_pose_viz target_pose_viz joint_target_viz control_diagnostics control_gains commanded_wrench commanded_twist cmd_vel joint_torque_ff gripper_cmd; do echo -n " -r /$t:=/$N/$t"; done) && python3 /home/nvidia/tele_ros2/src/kinova_control/scripts/kinova_controller.py --ip 192.180.0.107 --home --ros-args -r __node:=${N}_controller $RM -p initial_mode:=cartesian -p ee_frame:=end_effector_link -p urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p friction_enable:=true -p friction_urdf_path:=/home/nvidia/lorenzo/gen3_bare.urdf -p kalman_enable:=true -p cart_k:='[1000.0, 1000.0, 1000.0, 20.0, 20.0, 20.0]' -p cart_d:='[5.0, 5.0, 5.0, 1.0, 1.0, 1.0]'
 ```
 
 **T3, i due ATI** (terminale normale): sinistro NetBox `.131`, destro `.132`, nei namespace dei bracci.
@@ -95,6 +107,13 @@ source ~/lorenzo/env.sh && cd "$LORENZO/kinova_dual_arm_dmp_insertion_fullwrench
 ```bash
 export W=F75_Tt1_s9007 R=c100_five_cut800
 ```
+
+```bash
+ros2 topic list | grep -E "joint_states|ft_data_raw|estimated_wrench"
+```
+
+Devono comparire **solo** le versioni `/left/...` e `/right/...`. Se vedi `/joint_states` senza prefisso,
+un controller è partito senza rimappature: fermalo.
 
 ```bash
 ros2 topic hz /left/ft_data_raw
