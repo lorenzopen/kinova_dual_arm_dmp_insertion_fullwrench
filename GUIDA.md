@@ -216,7 +216,8 @@ python -m kinova_dual_arm_dmp_insertion.main insert "$W" --arm "$R" --slow 3 --t
 
 **In alternativa: presa automatica dall'angolo** (`insert_pick`, stessi log con `_pick` nel nome). Non devi più tenere
 il pezzo in mano alla quota di partenza. Il pezzo si appoggia sul pavimento dello scaffale, **nell'orientamento dello
-slot** (il tratteggio della figura), contro la parete vicina ai Kinova, a **board vuota**. I bracci lo prendono, lo
+slot** (il tratteggio della figura), **in mezzo allo scaffale** (centrato tra le due pareti di fondo; `check` stampa
+la distanza dalla parete vicina ai Kinova), a **board vuota**. Con `--pick-at wall` torna contro la parete vicina ai Kinova. I bracci lo prendono, lo
 portano alla posa di partenza della rotta e lo tengono lì mentre monti i vicini. Poi parte l'inserimento normale.
 
 ```bash

@@ -34,11 +34,11 @@ MARGIN = 0.010            # [m] pads clear of the end wall and of the floor by t
 LIFT = 0.030              # [m] first, slow, straight up off the floor
 
 
-def pick_pose(r, turn_deg=0.0, wall_gap=0.0, riser=None):
+def pick_pose(r, turn_deg=0.0, wall_gap=0.0, riser=None, at="middle"):
     """The piece's pose at the pick (shelf frame) and what the user must do.
-    Slot orientation (+ turn about the shelf y), lowest point on the floor (+ riser),
-    the side towards the bases at `wall_gap` from the end wall, or further if the
-    tri-pad would touch the wall."""
+    Slot orientation (+ turn about the shelf y), lowest point on the floor (+ riser);
+    at="middle": centred between the two end walls; at="wall": the side towards the
+    bases at `wall_gap` from the end wall, or further if the tri-pad would touch it."""
     R = Rot.from_euler("y", turn_deg, degrees=True) * r.R_target
     cells = np.asarray(r.cells, float)
     edge = min(np.linalg.norm(a - b) for i, a in enumerate(cells) for b in cells[i + 1:])
@@ -49,10 +49,10 @@ def pick_pose(r, turn_deg=0.0, wall_gap=0.0, riser=None):
     # the grasp centre relative to the CoM, at this orientation
     g_rel = R.apply(r.grasp_R.inv().apply(r.centre - r.grasp_c))
     foot = GE.R_TRI + GE.PAD_R                          # the tri-pad's reach around the grasp point
-    wall = float(r.shelf["inner_faces"][1]) * r.eff_scale
+    x0, wall = (float(x) * r.eff_scale for x in r.shelf["inner_faces"])
     x_touch = wall - xmax - float(wall_gap)
     x_pads = wall - g_rel[0] - foot - MARGIN            # tri-pad clear of the end wall
-    cx = min(x_touch, x_pads)
+    cx = 0.5 * (x0 + wall) - 0.5 * (xmin + xmax) if at == "middle" else min(x_touch, x_pads)
     need = foot + MARGIN - (g_rel[2] - zmin)            # tri-pad clear of the floor
     lift = max(0.0, need) if riser is None else float(riser)
     c = np.array([cx, 0.0, lift - zmin])
@@ -66,7 +66,7 @@ def pick_pose(r, turn_deg=0.0, wall_gap=0.0, riser=None):
         stands = "leaning on the wall (it tips towards it)"
     else:
         stands = "NO: hold it until the pads close"
-    return dict(c=c, R=R, wall_gap=gap, riser=lift, wall=wall, stands=stands,
+    return dict(c=c, R=R, wall_gap=gap, riser=lift, wall=wall, stands=stands, at=at,
                 box_x=(cx + xmin, cx + xmax), box_z=(lift, lift + w[:, 2].max() - zmin),
                 grasp=c + g_rel, pads_floor=c[2] + g_rel[2] - foot, pads_wall=wall - (c[0] + g_rel[0] + foot))
 
@@ -121,8 +121,8 @@ class PickInsertion(Insertion):
         self.b.tare()                                   # F/T zero, hands in free air
         # from home straight to the pick height, open: the piece goes in between the pads after
         self._goto(self.cL, self.qL, self.cR, self.qR, "to_pick")
-        self.confirm(f"board EMPTY, piece in the corner near the bases between the open pads, slot "
-                     f"orientation, {1000 * p['wall_gap']:.0f} mm from the wall"
+        self.confirm(f"board EMPTY, piece {'in the middle of the shelf' if p['at'] == 'middle' else 'in the corner near the bases'} "
+                     f"between the open pads, slot orientation, {1000 * p['wall_gap']:.0f} mm from the end wall near the bases"
                      + (f", on a {1000 * p['riser']:.0f} mm spacer" if p["riser"] > 1e-3 else "")
                      + ", not touching the pads")
         self.b.tare()                                   # nothing touching
@@ -183,6 +183,9 @@ def main():
         ap.add_argument("--pick-turn", type=float, default=0.0,
                         help="[deg] the piece at the pick turned this much about the shelf y from its slot "
                              "orientation (default 0: exactly as in the slot)")
+        ap.add_argument("--pick-at", choices=("middle", "wall"), default="middle",
+                        help="where the piece stands on the shelf floor: centred between the end walls "
+                             "(default) or against the end wall near the bases")
         ap.add_argument("--wall-gap", type=float, default=0.0,
                         help="[m] the piece this far from the end wall near the bases (default 0: touching, "
                              "or as far as the tri-pad needs)")
@@ -195,11 +198,11 @@ def main():
     state = {}
 
     def make(a, r, b, **kw):
-        p = pick_pose(r, a.pick_turn, a.wall_gap, a.riser)
+        p = pick_pose(r, a.pick_turn, a.wall_gap, a.riser, a.pick_at)
         state.update(a=a, p=p)
-        print(f"  PICK: piece in its slot orientation{' turned %+.0f deg' % a.pick_turn if a.pick_turn else ''}, "
-              f"against the end wall near the bases (shelf x {1000 * p['wall']:.0f} mm), gap "
-              f"{1000 * p['wall_gap']:.0f} mm"
+        print(f"  PICK: piece in its slot orientation{' turned %+.0f deg' % a.pick_turn if a.pick_turn else ''}"
+              + (", in the middle of the shelf" if p["at"] == "middle" else ", against the end wall near the bases")
+              + f", {1000 * p['wall_gap']:.0f} mm from the end wall near the bases (shelf x {1000 * p['wall']:.0f} mm)"
               + (f", on a {1000 * p['riser']:.0f} mm spacer" if p["riser"] > 1e-3 else ", on the floor")
               + f"; it spans shelf x {1000 * p['box_x'][0]:.0f}..{1000 * p['box_x'][1]:.0f}, "
                 f"z {1000 * p['box_z'][0]:.0f}..{1000 * p['box_z'][1]:.0f} mm")
