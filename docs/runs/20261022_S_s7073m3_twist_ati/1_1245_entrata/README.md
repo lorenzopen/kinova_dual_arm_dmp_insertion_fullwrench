@@ -1,4 +1,4 @@
-# 22/10/2026 12:45 - S_s7073m3, S inserita con --twist e ATI
+# 22/10/2026 12:45 - S_s7073m3, S inserita con --twist e ATI (prima della serie)
 
 ```bash
 W=S_s7073m3 R=c100_narrow75
