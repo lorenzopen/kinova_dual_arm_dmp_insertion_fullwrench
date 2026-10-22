@@ -17,6 +17,8 @@
   tutte riuscite (15:00, 15:07, 15:12). Tabella nel README della cartella.
 - `20261022_F75_Zt1_s9012_twist_ati/`: la Z con `--twist` e gli ATI, pezzo dato a mano, due prove
   entrambe riuscite (15:20, 15:28). Tabella nel README della cartella.
+- `20261022_F75_Zt1_s9012_squeeze_gain/`: la Z la sera, la sinusoide a ~1,5 Hz nella stretta: `cart_d` 60/7 e
+  `--squeeze-gain` 1 / 0,5 / 0,25 (0,5 entrata, scelta come default). Grafico e `plot_squeeze.py` nella cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
