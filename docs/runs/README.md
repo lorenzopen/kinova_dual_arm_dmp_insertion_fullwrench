@@ -13,8 +13,8 @@
   prove: 1 entrata con la L ferma, 2 e 3 inserite con i vicini spostati. Tabella nel README della cartella.
 - `20261022_S_s7073m3_twist_ati/`: la S (`c100_narrow75`) con `--twist` e gli ATI, pezzo dato a mano, due
   prove entrambe entrate (12:45, 13:48). Tabella nel README della cartella.
-- `20261022_F75_Lt1_s9014_twist_ati/`: la L con `--twist` e gli ATI, pezzo dato a mano, due prove
-  entrambe riuscite (15:00, 15:07). Tabella nel README della cartella.
+- `20261022_F75_Lt1_s9014_twist_ati/`: la L con `--twist` e gli ATI, pezzo dato a mano, tre prove
+  tutte riuscite (15:00, 15:07, 15:12). Tabella nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
