@@ -199,6 +199,10 @@ python -m kinova_dual_arm_dmp_insertion.insert_pick check "$W" --arm "$R" --slow
 ```
 
 Stampa **dove mettere il pezzo**: distanza dalla parete, eventuale spessore sotto, se sta in piedi da solo.
+Calcolato per tutte le rotte: T, L, Z, I (F75) a **15 mm dalla parete** (usa un blocchetto da 15 mm come distanziatore);
+O (F75) e le cinque `c100_narrow75` **appoggiate alla parete**; sempre sul pavimento, nessuno spessore.
+J e T barra in alto vanno tenute con la mano finché i pad chiudono. Il robot non vede il pezzo: lo prende dove
+deve essere, quindi uno spostamento lungo la parete o un orientamento storto se lo porta fino allo slot.
 Controlla anche che i tri-pad non tocchino parete e pavimento, e la cinematica inversa di tutte le pose.
 
 ```bash
