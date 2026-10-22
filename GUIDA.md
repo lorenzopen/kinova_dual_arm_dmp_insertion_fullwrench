@@ -217,6 +217,17 @@ python -m kinova_dual_arm_dmp_insertion.main insert "$W" --arm "$R" --slow 3 --t
 
 **Inserimento full wrench** (stretta + twist): stessa board, pezzo rimesso al punto di partenza.
 
+**Variante con stretta in feedforward** (`insert_open`, log con `_open`): l'ATI **registra soltanto**, non chiude
+l'anello della stretta. La forza chiesta dal SOCP diventa direttamente una chiusura delle flange, `ds = f*/k_eff`
+(come l'esecuzione del paper sui coni di attrito), con `k_eff` = impedenza in serie alla molla ≈ 730 N/m.
+Nessuna sinusoide possibile; la forza vera dipende da quanto è giusto `k_eff` e dalla larghezza del pezzo.
+A fine prova stampa misurata/chiesta e il `k_eff` che la renderebbe giusta (da rimettere con `--k-eff`).
+Niente `--twist`. Sicurezze, sentinella del jam e appoggio a sentire usano ancora l'ATI (come eventi).
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slow 3
+```
+
 **In alternativa: presa automatica dall'angolo** (`insert_pick`, stessi log con `_pick` nel nome). Non devi più tenere
 il pezzo in mano alla quota di partenza. Il pezzo si appoggia sul pavimento dello scaffale, **nell'orientamento dello
 slot** (il tratteggio della figura), **in mezzo allo scaffale** (centrato tra le due pareti di fondo; `check` stampa

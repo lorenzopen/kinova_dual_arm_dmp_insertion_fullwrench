@@ -198,12 +198,17 @@ class Insertion:
                 self._socp_job = (inp, self._socp_pool.submit(self._socp_solve, inp))
             else:
                 self._socp_apply(inp, *self._socp_solve(inp))
-        f_now = self.normal_force()
-        step = float(np.clip(self.gain * (2.0 * self.target - f_now), -DS_MAX, DS_MAX))
-        self.ds = float(np.clip(self.ds + step, -RELEASE, S_MAX))
+        self._squeeze_update()
         self.stats["asked"].append(self.target)
         if self.hand_wrench and self.w_des and (self.w_ext is not None or self.full_wrench):
             self._chase_wrench()
+
+    def _squeeze_update(self):
+        """The squeeze loop: integrate the measured normal force towards the SOCP target
+        (insert_open.py replaces it with a feedforward closure, the sensors only logged)."""
+        f_now = self.normal_force()
+        step = float(np.clip(self.gain * (2.0 * self.target - f_now), -DS_MAX, DS_MAX))
+        self.ds = float(np.clip(self.ds + step, -RELEASE, S_MAX))
 
     def _allocate(self):
         """The SOCP on the pads as the geometry puts them (no contact sensor), inline."""
