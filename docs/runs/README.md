@@ -21,8 +21,8 @@
   `--squeeze-gain` 1 / 0,5 / 0,25 (0,5 entrata, scelta come default). Grafico e `plot_squeeze.py` nella cartella.
   La matematica del loop della stretta e perché oscillava: `docs/squeeze_loop_math.md`.
 - `20261022_F75_Zt1_s9012_offline/`: la Z con `insert_open --offline` (SOCP prima della prova, stretta in
-  feedforward, ATI non in feedback), k_eff 730 e 480: entrambe entrate, nessuna sinusoide; con 480 la stretta è
-  giusta nella prima metà della route e poi cala. Tabella nel README della cartella.
+  feedforward, ATI non in feedback), k_eff 730 e 480 (entrate) e K 1500 con k_eff 580 (deriva molto più piccola,
+  forza 18% alta, fermata a fine route). Nessuna sinusoide. Tabella nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
