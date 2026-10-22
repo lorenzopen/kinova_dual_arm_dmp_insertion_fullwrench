@@ -11,6 +11,7 @@
   README sono copiati nella cartella.
 - `20261021_F75_Tt1_s9007_twist_ati/`: la T con `--twist` e gli ATI ai polsi come sorgente del wrench, tre
   prove: 1 entrata con la L ferma, 2 e 3 inserite con i vicini spostati. Tabella nel README della cartella.
+- `20261022_1245_S_s7073m3_twist_ati/`: la S (`c100_narrow75`) entrata con `--twist` e gli ATI, pezzo dato a mano.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
