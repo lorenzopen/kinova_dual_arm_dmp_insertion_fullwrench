@@ -1,0 +1,25 @@
+# measured on this robot PC (2026-10-21 18:21), read on top of cell.yaml; not in git
+left:
+  ft_sign: 1.0
+  ft_in_ee:
+    xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    quat:
+    - -0.0349
+    - 0.0255
+    - 0.0807
+    - 0.9958
+right:
+  ft_sign: 1.0
+  ft_in_ee:
+    xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    quat:
+    - -0.0145
+    - -0.0011
+    - 0.1016
+    - 0.9947
