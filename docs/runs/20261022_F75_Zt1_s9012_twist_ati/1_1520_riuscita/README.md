@@ -1,4 +1,4 @@
-# 22/10/2026 15:20 - F75_Zt1_s9012, Z inserita con --twist e ATI
+# 22/10/2026 15:20 - F75_Zt1_s9012, Z inserita con --twist e ATI (prima della serie)
 
 ```bash
 W=F75_Zt1_s9012 R=c100_five_cut800
