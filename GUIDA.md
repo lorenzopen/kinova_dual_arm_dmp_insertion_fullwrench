@@ -234,7 +234,7 @@ Controlla anche che i tri-pad non tocchino parete e pavimento, e la cinematica i
 python -m kinova_dual_arm_dmp_insertion.insert_pick insert "$W" --arm "$R" --slow 3
 ```
 
-Tre Enter: bracci sopra l'angolo (pezzo in posizione?); pezzo portato su (**monta la board**, mani via);
+Tre Enter: bracci dalla home dritti alla quota di presa, aperti (metti il pezzo tra i pad senza toccarli); pezzo portato su (**monta la board**, mani via);
 poi tutto come `insert`. Aggiungi `--twist` per il full wrench. **Il primo giro fallo senza board e con la mano
 sull'E-stop**: la presa in basso vicino alle basi è la posa più vicina ai bracci di tutta la prova.
 

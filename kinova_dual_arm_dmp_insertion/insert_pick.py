@@ -8,8 +8,8 @@ the board figure), against the end wall NEAR THE KINOVA BASES, in the shelf's mi
 the board is EMPTY. `check` prints where exactly (gap from the wall, spacer under it if
 the pads would touch the floor). Then:
 
-    tare, nothing touching -> both tools above the piece, open -> [Enter: piece in place]
-    -> down, close, squeeze in closed loop on the measured force -> lift 3 cm, then up to
+    tare, nothing touching -> both tools straight to the pick, open -> [Enter: piece in
+    place between the pads] -> close, squeeze in closed loop on the measured force -> lift 3 cm, then up to
     the height of the route start -> across and turned to the route start pose ->
     [Enter: board built] -> the route, the slow seat, the release: as `main insert`.
 
@@ -118,14 +118,14 @@ class PickInsertion(Insertion):
         centre = cp + Rp.apply(r.grasp_R.inv().apply(r.centre - r.grasp_c))
         self.cL, self.cR = centre - reach * self.axis, centre + reach * self.axis
         z_top = max(float(r.grasp_c[2]), float(cp[2]))
-        up = np.array([0.0, 0.0, z_top - cp[2]])
         self.b.tare()                                   # F/T zero, hands in free air
-        self._goto(self.cL + up, self.qL, self.cR + up, self.qR, "to_above_pick")
-        self.confirm(f"board EMPTY, piece in the corner near the bases, slot orientation, "
-                     f"{1000 * p['wall_gap']:.0f} mm from the wall"
-                     + (f", on a {1000 * p['riser']:.0f} mm spacer" if p["riser"] > 1e-3 else ""))
-        self.b.tare()                                   # above it, nothing touching
-        self._goto(self.cL, self.qL, self.cR, self.qR, "down_to_pick")
+        # from home straight to the pick height, open: the piece goes in between the pads after
+        self._goto(self.cL, self.qL, self.cR, self.qR, "to_pick")
+        self.confirm(f"board EMPTY, piece in the corner near the bases between the open pads, slot "
+                     f"orientation, {1000 * p['wall_gap']:.0f} mm from the wall"
+                     + (f", on a {1000 * p['riser']:.0f} mm spacer" if p["riser"] > 1e-3 else "")
+                     + ", not touching the pads")
+        self.b.tare()                                   # nothing touching
         self.approach()
         print(f"      approach: {self.normal_force():.1f} N measured")
         pickup = min(r.derived_N, PICKUP_N)
