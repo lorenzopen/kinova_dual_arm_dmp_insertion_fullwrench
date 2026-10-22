@@ -15,6 +15,7 @@
   prove entrambe entrate (12:45, 13:48). Tabella nel README della cartella.
 - `20261022_F75_Lt1_s9014_twist_ati/`: la L con `--twist` e gli ATI, pezzo dato a mano, tre prove
   tutte riuscite (15:00, 15:07, 15:12). Tabella nel README della cartella.
+- `20261022_1520_F75_Zt1_s9012_twist_ati/`: la Z con `--twist` e gli ATI, pezzo dato a mano, riuscita.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
