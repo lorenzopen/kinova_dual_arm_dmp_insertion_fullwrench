@@ -22,7 +22,8 @@
   La matematica del loop della stretta e perché oscillava: `docs/squeeze_loop_math.md`.
 - `20261022_F75_Zt1_s9012_offline/`: la Z con `insert_open --offline` (SOCP prima della prova, stretta in
   feedforward, ATI non in feedback), k_eff 730 e 480 (entrate) e K 1500 con k_eff 580 (deriva molto più piccola,
-  forza 18% alta, fermata a fine route). Nessuna sinusoide. Tabella nel README della cartella.
+  forza 18% alta, fermata a fine route). Nessuna sinusoide. Più, per confronto, l'anello chiuso `--online`
+  a K 1500 gain 0,5: entrata, forza giusta in tutta la route, sinusoide piccola. Tabella nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 

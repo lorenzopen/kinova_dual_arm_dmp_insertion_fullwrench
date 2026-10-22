@@ -121,21 +121,43 @@ f_{180} = \frac{1}{4\,(\tau_a + \tau + T_s/2)}$$
 
 So higher damping made the arm slower ($\tau_a$ up), and the frequency dropped exactly as predicted.
 
-**Is there enough gain at $f_{180}$?** *Measured* in that band, the squeeze changes by $|P| \approx 1650$ N/m of
-$d_s$ (15:28) and 1380 N/m (17:22):
+**The gain at $f_{180}$ (corrected 22/10 20:30).** A first version of this section took $|P| = F/d_s$ from the
+closed-loop logs and found $|L(j\omega_{180})| \approx 1.4\,g$. That is circular: in a sustained oscillation the
+loop *forces* $|L| \approx 1$ at the oscillation frequency, so any ratio of two closed-loop signals there gives
+back ≈ 1, whatever $g$ is. Indeed, with the ratio built from measured quantities only
+($|P| = k_c^{band}\cdot 2\,|x/d_s|$, contact stiffness and arm ratio both measured), every run gives
+$K_i|P|/\omega \approx 1.2$–1.6, the gain-0.5 runs included:
 
-$$|L(j\omega_{180})| = \frac{K_i\,|P|}{\omega_{180}} = \frac{g\cdot 8.33\times10^{-3}\cdot 1650}{2\pi\cdot 1.53} \approx 1.4\,g
-\qquad\Big(\tfrac{g\cdot 8.33\times10^{-3}\cdot 1380}{2\pi\cdot 1.23} \approx 1.5\,g\ \text{for 17:22}\Big)$$
+| run | $g$ | K | $k_c$ in band (F / measured separation) | measured / commanded separation | $K_i\lvert P\rvert/\omega$ |
+|---|---|---|---|---|---|
+| 15:28 | 1 | 1000 | 2590 N/m | 0.32 | 1.25 |
+| 17:22 | 1 | 1000 | 2690 N/m | 0.26 | 1.57 |
+| 17:34 | 0.5 | 1000 | 2630 N/m | 0.41 | 1.23 |
+| 20:20 | 0.5 | 1500 | 2530 N/m | 0.48 | 1.39 |
 
-| $g$ | $\lvert L(j\omega_{180})\rvert$ | prediction | observed |
-|---|---|---|---|
-| 1 | 1.4–1.5 | unstable → limit cycle | sine, 0.44–0.63 N peak |
-| 0.5 | 0.7 | stable, gain margin ≈ 1.4 (small) | small residual peak, 0.23 N |
-| 0.25 | 0.36 | stable, margin ≈ 2.8 | no sine (0.18 N), but slow |
-| 0.1 | 0.15 | very stable | no sine (0.06 N per hand), very slow |
+What this does tell:
 
-**This is the whole explanation:** an integrator (−90°) in series with an arm that reacts ≈ 0.16 s late along
-the pad axis (another −90° at ≈ 1.5 Hz), with a loop gain above 1 there. The sine is not caused by the update
+* at 1–2 Hz the contact is stiff, $k_c \approx 2600$ N/m (the tool spring, 2700), while the **static** stiffness
+  measured from the mean squeeze and compression is ≈ 950 N/m (section 7, `insert_open`): the pad / sponge /
+  polystyrene side creeps slowly, it is not a plain spring;
+* the arm's ratio $|x/d_s|$ is **amplitude-dependent** (0.26–0.32 at gain 1, 0.41–0.48 at gain 0.5), so the arm
+  is not linear at these sub-millimetre motions (friction). A loop with such an element settles at the amplitude
+  where its describing-function gain is 1: lowering $g$ does not move a fixed margin, it **shrinks the amplitude**
+  of the limit cycle.
+
+The observed amplitude is the measurable effect of $g$ (peak of the squeeze spectrum, same Z):
+
+| $g$ | peak, sum of both hands (log) | peak per hand (bag) |
+|---|---|---|
+| 1 | 0.44–0.63 N | 0.24–0.33 N |
+| 0.5 | 0.23 N | 0.10 N (K 1500) |
+| 0.25 | 0.18 N | – |
+| 0.1 | – | 0.06 N |
+| 0.01 / feedforward | – | 0.04–0.07 N (noise floor) |
+
+**The explanation:** an integrator (−90°) in series with an arm that reacts ≈ 0.16 s late along the pad axis
+(another −90° at ≈ 1.5 Hz) sets the frequency; the arm's friction-dominated, amplitude-dependent response sets
+how large the cycle grows, and $g$ scales it down. The sine is not caused by the update
 rate. 50 Hz is about 35 updates per period, and the update rate only contributes $T_s/2$ to the lag.
 
 ## 6. Where the 150–180 ms come from (hypothesis, not verified)
@@ -157,7 +179,7 @@ is measured, not computed.
 
 ## 7. What can be done
 
-1. **Lower $K_i$** (`--squeeze-gain`, default 0.5 since 22/10). This brings $|L(j\omega_{180})|$ below 1.
+1. **Lower $K_i$** (`--squeeze-gain`, default 0.5 since 22/10). This shrinks the limit cycle (table above).
    The cost is a slower recovery when the force drops: with $\omega_c$ the time constant is
    $1/\omega_c$, which is 0.16 s at $g = 0.5$ and 0.33 s at $g = 0.25$ (that is why the 0.25 run lost the squeeze
    at the end).
