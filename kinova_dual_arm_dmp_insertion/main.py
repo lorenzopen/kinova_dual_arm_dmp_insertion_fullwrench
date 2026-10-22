@@ -173,11 +173,13 @@ def socp_kwargs(cfg):
                 moment_sign=float(cfg.get("full_wrench_moment_sign", -1.0)))
 
 
-def cmd_check(a, cfg):
+def cmd_check(a, cfg, make=None):
     """Dry run: the whole sequence with no robot, then the commanded route
-    against the flange poses the simulated apparatus was commanded."""
+    against the flange poses the simulated apparatus was commanded.
+    `make(a, route, backend, **kw)` builds the insertion (default: Insertion)."""
     from .controller import Insertion
     from .dryrun import DryRun
+    make = make or (lambda a_, r_, b_, **kw: Insertion(r_, b_, **kw))
     r = Route(a.world, a.arm, cfg.get('scale', 1.0), cfg.get('piece_mass'))
     cfg = placed(a, cfg, r)
     b = DryRun(r, period=1.0 / cfg["rate_hz"])
@@ -186,8 +188,8 @@ def cmd_check(a, cfg):
     class Keep:
         def row(self, ins, tL, qL, tR, qR):
             rows.append([ins.b.now(), *tL, *qL.as_quat(), *tR, *qR.as_quat(), ins.phase])
-    ins = slowed(Insertion(r, b, log=Keep(), confirm=lambda msg: print(f"  (dry run) {msg}"),
-                           **socp_kwargs(cfg)), a.slow)
+    ins = slowed(make(a, r, b, log=Keep(), confirm=lambda msg: print(f"  (dry run) {msg}"),
+                      **socp_kwargs(cfg)), a.slow)
     t0 = time.perf_counter()
     ins.run()
     print(f"  dry run: {b.now():.1f} s of motion, solved in {time.perf_counter() - t0:.1f} s; "
@@ -207,7 +209,7 @@ def cmd_check(a, cfg):
                   f"({mine[-1, 0] - mine[0, 0]:.1f} s vs {sim[-1, 0] - sim[0, 0]:.1f} s); "
                   f"left flange path vs PyBullet's: median {1000 * np.median(dist):.1f} mm, "
                   f"max {1000 * np.max(dist):.1f} mm (the squeeze differs: no real contact here)")
-    for line in reach_report(r, cfg, [x[:15] for x in rows]):
+    for line in reach_report(r, cfg, rows):
         print("  " + line)
     for line in stiffness_report(r, cfg):
         print("  " + line)
@@ -235,9 +237,10 @@ def stiffness_report(route, cfg):
     return out
 
 
-def cmd_insert(a, cfg):
+def cmd_insert(a, cfg, make=None):
     from .controller import Abort, Insertion
     from .ros_backend import RosBackend
+    make = make or (lambda a_, r_, b_, **kw: Insertion(r_, b_, **kw))
     r = Route(a.world, a.arm, cfg.get('scale', 1.0), cfg.get('piece_mass'))
     if r.hand_wrench != "off" and not cfg.get("allow_hand_wrench", False):
         sys.exit("this route was trained with the hand wrench (hwd): set allow_hand_wrench: true "
@@ -249,14 +252,14 @@ def cmd_insert(a, cfg):
         sys.exit("full_wrench: true needs the wrist ATI on BOTH arms (wrench_source: ft): "
                  "the joint-torque estimate is not good enough for the moments")
     os.makedirs(cfg["log_dir"], exist_ok=True)
-    path = os.path.join(cfg["log_dir"], time.strftime(f"{r.world}_{a.arm}_%Y%m%d_%H%M%S.csv"))
+    path = os.path.join(cfg["log_dir"], time.strftime(f"{r.world}_{a.arm}{getattr(a, 'log_tag', '')}_%Y%m%d_%H%M%S.csv"))
     log = Log(path)
     meta = path[:-4] + "_meta.json"
     b = RosBackend(cfg)
     write_meta(meta, cfg, a.cfg_path, a, b)
-    ins = slowed(Insertion(r, b, log=log, f_abort=cfg["f_abort"], track_abort=cfg["track_abort"],
-                                jam_scale=cfg.get("jam_scale", 1.0), jam_min=cfg.get("jam_min", 2.0),
-                                async_socp=True, **socp_kwargs(cfg)), a.slow)
+    ins = slowed(make(a, r, b, log=log, f_abort=cfg["f_abort"], track_abort=cfg["track_abort"],
+                      jam_scale=cfg.get("jam_scale", 1.0), jam_min=cfg.get("jam_min", 2.0),
+                      async_socp=True, **socp_kwargs(cfg)), a.slow)
     result = None
     try:
         result = ins.run()
@@ -273,8 +276,9 @@ def cmd_insert(a, cfg):
 ARMS = ("scalar", "hwd", "c100_narrow75", "c100_narrow75hs", "c100_five", "c100_five625", "c100_five_cut800", "c100_five_cut700")
 
 
-def main(argv=None):
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+def main(argv=None, doc=None, extra=None, make=None):
+    """`extra(ap)` adds arguments, `make` builds the insertion (insert_pick.py)."""
+    ap = argparse.ArgumentParser(description=doc or __doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("command", choices=("list", "check", "insert"))
     ap.add_argument("world", nargs="?")
     ap.add_argument("--arm", default="scalar", choices=ARMS,
@@ -290,6 +294,8 @@ def main(argv=None):
     ap.add_argument("--slow", type=float, default=1.0,
                     help="route, seat and turns this many times slower than trained (default 1)")
     pair.add_args(ap)
+    if extra:
+        extra(ap)
     a = ap.parse_args(argv if argv is not None else sys.argv[1:])
     if a.command == "list":
         from .route import Route as R
@@ -307,7 +313,7 @@ def main(argv=None):
           f"; wrench source left {cfg['left'].get('wrench_source', 'estimated')}, "
           f"right {cfg['right'].get('wrench_source', 'estimated')}")
     print(f"  config: {os.path.abspath(path)}")
-    (cmd_check if a.command == "check" else cmd_insert)(a, cfg)
+    (cmd_check if a.command == "check" else cmd_insert)(a, cfg, make)
 
 
 def list_entry():

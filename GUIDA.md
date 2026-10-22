@@ -214,6 +214,30 @@ python -m kinova_dual_arm_dmp_insertion.main insert "$W" --arm "$R" --slow 3 --t
 
 **Inserimento full wrench** (stretta + twist): stessa board, pezzo rimesso al punto di partenza.
 
+**In alternativa: presa automatica dall'angolo** (`insert_pick`, stessi log con `_pick` nel nome). Non devi più tenere
+il pezzo in mano alla quota di partenza. Il pezzo si appoggia sul pavimento dello scaffale, **nell'orientamento dello
+slot** (il tratteggio della figura), contro la parete vicina ai Kinova, a **board vuota**. I bracci lo prendono, lo
+portano alla posa di partenza della rotta e lo tengono lì mentre monti i vicini. Poi parte l'inserimento normale.
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_pick check "$W" --arm "$R" --slow 3
+```
+
+Stampa **dove mettere il pezzo**: distanza dalla parete, eventuale spessore sotto, se sta in piedi da solo.
+Calcolato per tutte le rotte: T, L, Z, I (F75) a **15 mm dalla parete** (usa un blocchetto da 15 mm come distanziatore);
+O (F75) e le cinque `c100_narrow75` **appoggiate alla parete**; sempre sul pavimento, nessuno spessore.
+J e T barra in alto vanno tenute con la mano finché i pad chiudono. Il robot non vede il pezzo: lo prende dove
+deve essere, quindi uno spostamento lungo la parete o un orientamento storto se lo porta fino allo slot.
+Controlla anche che i tri-pad non tocchino parete e pavimento, e la cinematica inversa di tutte le pose.
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_pick insert "$W" --arm "$R" --slow 3
+```
+
+Tre Enter: bracci sopra l'angolo (pezzo in posizione?); pezzo portato su (**monta la board**, mani via);
+poi tutto come `insert`. Aggiungi `--twist` per il full wrench. **Il primo giro fallo senza board e con la mano
+sull'E-stop**: la presa in basso vicino alle basi è la posa più vicina ai bracci di tutta la prova.
+
 Ctrl-C ferma lo streaming e i bracci tengono l'ultimo target; l'arresto del robot resta l'E-stop.
 Il codice si ferma da solo sopra 60 N per mano o con 4 cm di errore.
 
