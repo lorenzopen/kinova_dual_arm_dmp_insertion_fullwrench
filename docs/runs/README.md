@@ -20,6 +20,8 @@
 - `20261022_F75_Zt1_s9012_squeeze_gain/`: la Z la sera, la sinusoide a ~1,5 Hz nella stretta: `cart_d` 60/7 e
   `--squeeze-gain` 1 / 0,5 / 0,25 (0,5 entrata, scelta come default). Grafico e `plot_squeeze.py` nella cartella.
   La matematica del loop della stretta e perché oscillava: `docs/squeeze_loop_math.md`.
+- `20261022_1932_F75_Zt1_s9012_offline/`: la Z con `insert_open --offline` (SOCP prima della prova, stretta in
+  feedforward, ATI non in feedback): entrata, nessuna sinusoide, ma stretta al 62% della chiesta (k_eff vero ≈ 460 N/m).
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
