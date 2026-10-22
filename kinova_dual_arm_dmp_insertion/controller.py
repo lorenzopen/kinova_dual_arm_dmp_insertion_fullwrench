@@ -58,7 +58,7 @@ class Abort(RuntimeError):
 class Insertion:
     def __init__(self, route, backend, log=None, f_abort=60.0, track_abort=0.040,
                  confirm=None, jam_scale=1.0, jam_min=2.0, socp_cfg=None, full_wrench=False,
-                 full_wrench_channels="twist", moment_sign=-1.0, async_socp=False):
+                 full_wrench_channels="twist", moment_sign=-1.0, async_socp=False, squeeze_gain=1.0):
         self.r, self.b = route, backend
         c = route.c
         self.mu = float(c["mu_eff"])                  # 1.0 for narrow75 (pad-piece rubber)
@@ -100,6 +100,7 @@ class Insertion:
         self.f_abort, self.track_abort = float(f_abort), float(track_abort)   # robot-only safety
         self.jam_scale = float(jam_scale)                                     # robot: looser sentry
         self.jam_min = float(jam_min)       # [N] floor: above the wrench estimate's noise (robot)
+        self.gain = GAIN * float(squeeze_gain)   # squeeze integrator [m/N]; < 1 x GAIN: slower, no limit cycle
         self.confirm = confirm or (lambda msg: input(f"\n  >>> {msg} [Enter] "))
         # the open pose (Hands.__init__): LEFT pushes along +axis
         a = route.axis / np.linalg.norm(route.axis)
@@ -198,7 +199,7 @@ class Insertion:
             else:
                 self._socp_apply(inp, *self._socp_solve(inp))
         f_now = self.normal_force()
-        step = float(np.clip(GAIN * (2.0 * self.target - f_now), -DS_MAX, DS_MAX))
+        step = float(np.clip(self.gain * (2.0 * self.target - f_now), -DS_MAX, DS_MAX))
         self.ds = float(np.clip(self.ds + step, -RELEASE, S_MAX))
         self.stats["asked"].append(self.target)
         if self.hand_wrench and self.w_des and (self.w_ext is not None or self.full_wrench):
@@ -391,7 +392,7 @@ class Insertion:
             if self.b.now() - t_u >= CONTROL_PERIOD - 1e-9:
                 t_u = self.b.now()
                 f = self.normal_force()
-                s = float(np.clip(s + np.clip(GAIN * (2 * force_n - f), -DS_MAX, DS_MAX), 0.0, S_MAX))
+                s = float(np.clip(s + np.clip(self.gain * (2 * force_n - f), -DS_MAX, DS_MAX), 0.0, S_MAX))
                 if abs(f - 2 * force_n) < 0.05 * force_n:
                     break
             self.tick(self.cL + s * self.axis, self.qL, self.cR - s * self.axis, self.qR, K_TILT_HOLD)

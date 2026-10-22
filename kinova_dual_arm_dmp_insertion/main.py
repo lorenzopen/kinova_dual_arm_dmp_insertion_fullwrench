@@ -189,7 +189,7 @@ def cmd_check(a, cfg, make=None):
         def row(self, ins, tL, qL, tR, qR):
             rows.append([ins.b.now(), *tL, *qL.as_quat(), *tR, *qR.as_quat(), ins.phase])
     ins = slowed(make(a, r, b, log=Keep(), confirm=lambda msg: print(f"  (dry run) {msg}"),
-                      **socp_kwargs(cfg)), a.slow)
+                      squeeze_gain=a.squeeze_gain, **socp_kwargs(cfg)), a.slow)
     t0 = time.perf_counter()
     ins.run()
     print(f"  dry run: {b.now():.1f} s of motion, solved in {time.perf_counter() - t0:.1f} s; "
@@ -259,7 +259,7 @@ def cmd_insert(a, cfg, make=None):
     write_meta(meta, cfg, a.cfg_path, a, b)
     ins = slowed(make(a, r, b, log=log, f_abort=cfg["f_abort"], track_abort=cfg["track_abort"],
                       jam_scale=cfg.get("jam_scale", 1.0), jam_min=cfg.get("jam_min", 2.0),
-                      async_socp=True, **socp_kwargs(cfg)), a.slow)
+                      async_socp=True, squeeze_gain=a.squeeze_gain, **socp_kwargs(cfg)), a.slow)
     result = None
     try:
         result = ins.run()
@@ -291,6 +291,9 @@ def main(argv=None, doc=None, extra=None, make=None):
     ap.add_argument("--twist", action="store_true",
                     help="full wrench: squeeze + opposite twist about the pad axis, closed on the wrist "
                          "ATIs (= full_wrench: true, full_wrench_channels: twist, allow_hand_wrench: true)")
+    ap.add_argument("--squeeze-gain", type=float, default=1.0,
+                    help="x the squeeze integrator's gain (default 1 = as trained); 0.5 or 0.25 if the "
+                         "squeeze force oscillates (~1.5 Hz sine)")
     ap.add_argument("--slow", type=float, default=1.0,
                     help="route, seat and turns this many times slower than trained (default 1)")
     pair.add_args(ap)
@@ -312,6 +315,8 @@ def main(argv=None, doc=None, extra=None, make=None):
     print(f"  wrench control: {'TWIST (full wrench)' if cfg.get('full_wrench') else 'scalar squeeze only'}"
           f"; wrench source left {cfg['left'].get('wrench_source', 'estimated')}, "
           f"right {cfg['right'].get('wrench_source', 'estimated')}")
+    if a.squeeze_gain != 1.0:
+        print(f"  squeeze gain x{a.squeeze_gain:g}")
     print(f"  config: {os.path.abspath(path)}")
     (cmd_check if a.command == "check" else cmd_insert)(a, cfg, make)
 
