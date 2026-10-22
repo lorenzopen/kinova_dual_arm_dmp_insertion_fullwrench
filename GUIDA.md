@@ -217,16 +217,32 @@ python -m kinova_dual_arm_dmp_insertion.main insert "$W" --arm "$R" --slow 3 --t
 
 **Inserimento full wrench** (stretta + twist): stessa board, pezzo rimesso al punto di partenza.
 
-**Variante con stretta in feedforward** (`insert_open`, log con `_open`): l'ATI **registra soltanto**, non chiude
-l'anello della stretta. La forza chiesta dal SOCP diventa direttamente una chiusura delle flange, `ds = f*/k_eff`
-(come l'esecuzione del paper sui coni di attrito), con `k_eff` = impedenza in serie alla molla ≈ 730 N/m.
-Nessuna sinusoide possibile; la forza vera dipende da quanto è giusto `k_eff` e dalla larghezza del pezzo.
-A fine prova stampa misurata/chiesta e il `k_eff` che la renderebbe giusta (da rimettere con `--k-eff`).
-Niente `--twist`. Sicurezze, sentinella del jam e appoggio a sentire usano ancora l'ATI (come eventi).
+**Confronto di tre modi di fare la stretta** (`insert_open`, stessa board e stesso pezzo, log con `_offline`,
+`_open`, `_online` nel nome):
+
+| comando | stretta | SOCP | ATI |
+|---|---|---|---|
+| `--offline` | feedforward, `ds = f*/k_eff` | risolto **prima** della prova lungo tutta la sequenza (come il paper) | solo registrato |
+| (niente) | feedforward, `ds = f*/k_eff` | online ogni 100 ms | solo registrato |
+| `--online` | anello chiuso sull'ATI, gain **0,1** (o `--squeeze-gain`) | online ogni 100 ms | in feedback |
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slow 3 --offline
+```
 
 ```bash
 python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slow 3
 ```
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slow 3 --online
+```
+
+`k_eff` = impedenza in serie alla molla ≈ 730 N/m: nel feedforward la forza vera dipende da quanto è giusto e
+dalla larghezza del pezzo. A fine prova stampa misurata/chiesta e il `k_eff` che la renderebbe giusta (`--k-eff`).
+Con `--offline` il profilo del SOCP viene salvato in `logs/<W>_<R>_offline_profile_<data>.csv`.
+`--twist` solo con `--online`. In tutti e tre sicurezze, sentinella del jam e appoggio a sentire usano ancora
+l'ATI, ma come eventi, non come regolazione.
 
 **In alternativa: presa automatica dall'angolo** (`insert_pick`, stessi log con `_pick` nel nome). Non devi più tenere
 il pezzo in mano alla quota di partenza. Il pezzo si appoggia sul pavimento dello scaffale, **nell'orientamento dello
