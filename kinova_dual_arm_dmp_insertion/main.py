@@ -286,14 +286,14 @@ def main(argv=None, doc=None, extra=None, make=None):
                          "hwd: + the internal hand wrench (25/29). A route runs only with the control it was trained with. "
                          "c100_*: routes TRAINED at the real size (100 mm cubes, 70 mm tri-pad, scalar squeeze; "
                          "cubes100/README.md): c100_narrow75 the 29 narrow75 worlds, c100_five / c100_five625 the "
-                         "20-cube kit worlds at 75% / 62.5%")
+                         "20-cube kit worlds at 75%% / 62.5%%")
     ap.add_argument("--config", default=None)
     ap.add_argument("--twist", action="store_true",
                     help="full wrench: squeeze + opposite twist about the pad axis, closed on the wrist "
                          "ATIs (= full_wrench: true, full_wrench_channels: twist, allow_hand_wrench: true)")
-    ap.add_argument("--squeeze-gain", type=float, default=1.0,
-                    help="x the squeeze integrator's gain (default 1 = as trained); 0.5 or 0.25 if the "
-                         "squeeze force oscillates (~1.5 Hz sine)")
+    ap.add_argument("--squeeze-gain", type=float, default=0.5,
+                    help="x the squeeze integrator's gain GAIN (default 0.5: 1 gave a ~1.5 Hz sine in the "
+                         "squeeze, 0.25 recovers too slowly when the piece meets its neighbours; Z, 22/10)")
     ap.add_argument("--slow", type=float, default=1.0,
                     help="route, seat and turns this many times slower than trained (default 1)")
     pair.add_args(ap)
@@ -315,8 +315,7 @@ def main(argv=None, doc=None, extra=None, make=None):
     print(f"  wrench control: {'TWIST (full wrench)' if cfg.get('full_wrench') else 'scalar squeeze only'}"
           f"; wrench source left {cfg['left'].get('wrench_source', 'estimated')}, "
           f"right {cfg['right'].get('wrench_source', 'estimated')}")
-    if a.squeeze_gain != 1.0:
-        print(f"  squeeze gain x{a.squeeze_gain:g}")
+    print(f"  squeeze gain x{a.squeeze_gain:g}")
     print(f"  config: {os.path.abspath(path)}")
     (cmd_check if a.command == "check" else cmd_insert)(a, cfg, make)
 

@@ -83,8 +83,10 @@ source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.ba
 - dopo 14 s il **sinistro**, quando il destro è già fermo in home.
 
 Le impostazioni sono `cart_k` 1000/20, `cart_d` **60/7** (dal 22/10 sera; fino alle prove del 22/10 15:28
-compresa era 5/1, che dava una stretta oscillante a ~1,5 Hz), attrito e Kalman,
-impedenza su `end_effector_link`, cioè **sulla flangia**. L'URDF è **`urdf/gen3_ati_tool.urdf`** di questo
+compresa era 5/1), attrito e Kalman. La sinusoide a ~1,2–1,5 Hz nella stretta veniva dal loop della stretta,
+non dal damping: `main insert` ha `--squeeze-gain` **0,5** di default dal 22/10 sera (1 oscilla, 0,25 recupera troppo
+piano quando il pezzo entra tra i vicini).
+L'impedenza è su `end_effector_link`, cioè **sulla flangia**. L'URDF è **`urdf/gen3_ati_tool.urdf`** di questo
 repo: `gen3.urdf` più quello che è montato sulla flangia (ATI, adattatori, molla e tri-pad), **150 g** in tutto.
 Senza quella massa la compensazione di gravità non vede il tool. Se cambi tool, aggiorna massa e baricentro
 in quel file.
