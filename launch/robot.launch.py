@@ -96,6 +96,6 @@ def generate_launch_description():
         DeclareLaunchArgument("ft_every", default_value="5",
                               description="ATI samples per mean on ft_data_avg (5 -> 200 Hz; = ft_rate_hz in cell.yaml)"),
         DeclareLaunchArgument("cart_k", default_value="1000 1000 1000 20 20 20"),
-        DeclareLaunchArgument("cart_d", default_value="5 5 5 1 1 1"),
+        DeclareLaunchArgument("cart_d", default_value="60 60 60 7 7 7"),
         OpaqueFunction(function=_setup),
     ])

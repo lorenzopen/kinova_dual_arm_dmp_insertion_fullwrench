@@ -82,7 +82,8 @@ source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.ba
 - il **destro**: va in home in impedenza (8 s) e poi la tiene;
 - dopo 14 s il **sinistro**, quando il destro è già fermo in home.
 
-Le impostazioni sono quelle delle prove del 15–20/10: `cart_k` 1000/20, `cart_d` 5/1, attrito e Kalman,
+Le impostazioni sono `cart_k` 1000/20, `cart_d` **60/7** (dal 22/10 sera; fino alle prove del 22/10 15:28
+compresa era 5/1, che dava una stretta oscillante a ~1,5 Hz), attrito e Kalman,
 impedenza su `end_effector_link`, cioè **sulla flangia**. L'URDF è **`urdf/gen3_ati_tool.urdf`** di questo
 repo: `gen3.urdf` più quello che è montato sulla flangia (ATI, adattatori, molla e tri-pad), **150 g** in tutto.
 Senza quella massa la compensazione di gravità non vede il tool. Se cambi tool, aggiorna massa e baricentro
