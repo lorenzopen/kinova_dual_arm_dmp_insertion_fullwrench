@@ -59,7 +59,7 @@ class DryRun:
             self.held = True
             self.local = (qL.inv().apply(self.c - mid), qL.inv() * self.R)
         support = 0.0
-        if self.held:
+        if self.held and abs(float(self.r.target[0] - self.c[0])) < 0.05:   # the seat, at the slot only
             depth = float(self.r.target[2] - self.c[2])
             if depth > 0:
                 support = self.k_floor * depth

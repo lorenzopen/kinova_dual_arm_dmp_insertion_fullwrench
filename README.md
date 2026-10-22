@@ -20,6 +20,8 @@ Solo l'inserimento: il pezzo viene presentato a mano e la board si costruisce a 
 | `ros_backend.py` | l'unico file che conosce ROS: target, cinematica diretta, ATI (`ft`) o stima dei giunti |
 | `ft_check.py` | ATI: unità, tare, rumore, orientamento e segno (`--calibrate`), lettura dal vivo |
 | `follow_two_arms.py` | il percorso a due bracci a mani vuote (nessun SOCP) |
+| `insert_pick.py` | come `insert`, ma i bracci prendono il pezzo dall'angolo dello scaffale vicino alle basi |
+| `reach_ik.py` | cinematica inversa (numpy) sull'URDF: raggiungibilità di ogni posa comandata, nel `check` di `insert_pick` |
 | `dryrun.py`, `geometry.py`, `route.py`, `pair.py` | backend senza robot, geometria del tool, lettura delle rotte |
 | `routes/<set>/<mondo>.json` | le rotte esportate da PyBullet (dati) |
 | `config/cell.yaml` | cella, topic, ATI, SOCP, sicurezza; `config/local.yaml` (fuori da git) = valori misurati sul PC robot |

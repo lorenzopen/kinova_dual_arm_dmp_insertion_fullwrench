@@ -411,8 +411,13 @@ class Insertion:
                 return
 
     def run(self, from_mouth=False):
+        print("  " + self.r.summary())
+        self.present()
+        return self.insert()
+
+    def present(self):
+        """The piece held at the grasp pose, in the object frame: presented by hand."""
         r = self.r
-        print("  " + r.summary())
         self.b.tare()                           # F/T zero, hands in free air
         self.open_pose()
         self.confirm("hold the piece at the grasp pose between the pads (or close the fixture)")
@@ -427,6 +432,11 @@ class Insertion:
         self.freeze(r.grasp_c, R0)
         self.R_rel = R0.inv() * Rot.from_quat(self.meas["qL"])
         self.R_cmd, self.c_cmd = R0, r.grasp_c
+
+    def insert(self):
+        """From the grasp pose (piece held, object frame frozen) to the slot and away."""
+        r = self.r
+        R0 = r.rots[0]
         c0 = r.centres[0]
         route_c, route_R, route_w = r.centres[:-1], r.rots[:-1], r.wext[:-1]
         arc = float(np.sum(np.linalg.norm(np.diff(route_c, axis=0), axis=1)))
