@@ -134,6 +134,8 @@ class PickInsertion(Insertion):
         self.freeze(cp, Rp)
         self.R_rel = Rp.inv() * Rot.from_quat(self.meas["qL"])
         self.R_cmd, self.c_cmd = Rp, cp
+        self.meas = self.b.read()
+        self._prepare_control()
         self.phase = "lift"
         c1 = cp + [0.0, 0.0, LIFT]
         self.move(cp, Rp, c1, Rp, LIFT / (0.25 * self.motion_speed))

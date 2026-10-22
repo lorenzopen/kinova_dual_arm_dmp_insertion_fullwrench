@@ -1,0 +1,326 @@
+[
+  {
+    "label": "D 5/1, gain 1",
+    "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\runs\\20261022_F75_Zt1_s9012_twist_ati\\2_1528_riuscita\\F75_Zt1_s9012_c100_five_cut800_20261022_152814.csv",
+    "git": "9d7a0f7",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.0,
+      "believed_mm": 4.164712137671001,
+      "socp_ok": 203,
+      "socp_ticks": 204,
+      "side_force_max": 2.3591452463580675,
+      "squeeze_median": 4.43737487408227
+    },
+    "route_s": 19.079999923706055,
+    "rows": 1802,
+    "actual_rate_Hz": 94.39203392041618,
+    "dt_ms_p50_p95_p99_max": [
+      10.299921035766602,
+      16.700029373168945,
+      20.200014114379883,
+      28.399944305419922
+    ],
+    "gaps_over_30ms": 0,
+    "peak_Hz_resampled": 1.4857142857142858,
+    "peak_Hz_actual_timestamps": 1.784,
+    "peak_amplitude_N": 0.4607183311176194,
+    "detrended_std_N": 0.6801663600867041,
+    "target_peak_to_peak_N": 1.1400000000000001,
+    "force_median_N": 8.93,
+    "target_sum_median_N": 8.9,
+    "min_force_N": 6.18,
+    "late_force_median_N": 7.59,
+    "late_target_sum_median_N": 7.64,
+    "final_half_second_force_median_N": 8.29,
+    "final_half_second_tangent_median_N": [
+      1.4383212078316245,
+      0.9784365603905285
+    ],
+    "gross_hand_friction_usage_max": [
+      0.44382619241102994,
+      0.37497429834021656
+    ],
+    "mean_actual_sum_force_N": [
+      -0.20361820199778005,
+      -0.009911209766925633,
+      0.24088235294117674
+    ],
+    "max_actual_horizontal_sum_force_N": 1.6702694393420483,
+    "max_predicted_horizontal_sum_force_N": 0.3841,
+    "pad_moments": [
+      {
+        "side": "L",
+        "desired_twist_abs_median_Nm": 0.03683878721591097,
+        "desired_twist_abs_max_Nm": 0.04528486194676583,
+        "measured_twist_abs_median_Nm": 0.0100274579872156,
+        "desired_pad_bending_norm_median_Nm": 0.029116322714764713,
+        "twist_tracking_rms_Nm": 0.028510050229083303
+      },
+      {
+        "side": "R",
+        "desired_twist_abs_median_Nm": 0.014901223077220714,
+        "desired_twist_abs_max_Nm": 0.08386584947927224,
+        "measured_twist_abs_median_Nm": 0.015430756837226481,
+        "desired_pad_bending_norm_median_Nm": 0.02621509370773996,
+        "twist_tracking_rms_Nm": 0.02266579135283853
+      }
+    ],
+    "harmonic_force_N": 0.24218066230826893,
+    "harmonic_command_closure_mm": 0.34220998534819513,
+    "harmonic_measured_closure_mm": 0.09264123624747184,
+    "command_to_force_phase_deg": 87.89323345941634,
+    "equivalent_phase_lag_ms": 164.3302976004045,
+    "per_hand_correlation": 0.9909469507070463,
+    "fn_reconstruction_max_error_N": 0.01426038904967708,
+    "target_max_all_phases_N": 5.9,
+    "actual_total_force_residual_rms_N": 0.9968401470653817,
+    "fullwrench_max_offset_rad": 0.06332,
+    "source": {
+      "left": "ft",
+      "right": "ft"
+    }
+  },
+  {
+    "label": "D 60/7, gain 1",
+    "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\runs\\20261022_F75_Zt1_s9012_squeeze_gain\\F75_Zt1_s9012_c100_five_cut800_20261022_172232.csv",
+    "git": "6844e03",
+    "result": {
+      "stopped": "Ctrl-C",
+      "phase": "route"
+    },
+    "route_s": 17.665199995040894,
+    "rows": 1655,
+    "actual_rate_Hz": 93.63041462674202,
+    "dt_ms_p50_p95_p99_max": [
+      10.399818420410156,
+      17.399871349334717,
+      21.593999862670902,
+      32.000064849853516
+    ],
+    "gaps_over_30ms": 1,
+    "peak_Hz_resampled": 1.2,
+    "peak_Hz_actual_timestamps": 1.1640000000000001,
+    "peak_amplitude_N": 0.6176590703054142,
+    "detrended_std_N": 0.9189778601454636,
+    "target_peak_to_peak_N": 1.12,
+    "force_median_N": 8.92,
+    "target_sum_median_N": 8.88,
+    "min_force_N": 3.52,
+    "late_force_median_N": 7.76,
+    "late_target_sum_median_N": 7.96,
+    "final_half_second_force_median_N": 7.89,
+    "final_half_second_tangent_median_N": [
+      0.7887385931614107,
+      2.378031224394671
+    ],
+    "gross_hand_friction_usage_max": [
+      0.4521745013000042,
+      0.6954047605687734
+    ],
+    "mean_actual_sum_force_N": [
+      -0.23769184290030243,
+      0.025625377643504522,
+      -0.01337764350453233
+    ],
+    "max_actual_horizontal_sum_force_N": 1.2301625908797584,
+    "max_predicted_horizontal_sum_force_N": 0.3841,
+    "pad_moments": [
+      {
+        "side": "L",
+        "desired_twist_abs_median_Nm": 0.03786711071789619,
+        "desired_twist_abs_max_Nm": 0.04523946166382069,
+        "measured_twist_abs_median_Nm": 0.012939918068657963,
+        "desired_pad_bending_norm_median_Nm": 0.028261049830533992,
+        "twist_tracking_rms_Nm": 0.026300556594201413
+      },
+      {
+        "side": "R",
+        "desired_twist_abs_median_Nm": 0.012582890336872116,
+        "desired_twist_abs_max_Nm": 0.027025407769434632,
+        "measured_twist_abs_median_Nm": 0.014399073707858522,
+        "desired_pad_bending_norm_median_Nm": 0.02612193740998253,
+        "twist_tracking_rms_Nm": 0.023474700388808886
+      }
+    ],
+    "harmonic_force_N": 0.3722019424664798,
+    "harmonic_command_closure_mm": 0.5706760630113172,
+    "harmonic_measured_closure_mm": 0.1822088581965463,
+    "command_to_force_phase_deg": 104.3476077202326,
+    "equivalent_phase_lag_ms": 241.54538824127917,
+    "per_hand_correlation": 0.9868251761257603,
+    "fn_reconstruction_max_error_N": 0.013771697338933464,
+    "target_max_all_phases_N": 4.7,
+    "actual_total_force_residual_rms_N": 1.366142798406324,
+    "fullwrench_max_offset_rad": 0.05758,
+    "source": {
+      "left": "ft",
+      "right": "ft"
+    }
+  },
+  {
+    "label": "D 60/7, gain 0.5",
+    "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\runs\\20261022_F75_Zt1_s9012_squeeze_gain\\F75_Zt1_s9012_c100_five_cut800_20261022_173458.csv",
+    "git": "13222b7",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.0,
+      "believed_mm": 1.7958487147015645,
+      "socp_ok": 207,
+      "socp_ticks": 208,
+      "side_force_max": 1.3619194248951778,
+      "squeeze_median": 4.389185006695378
+    },
+    "route_s": 19.083400011062622,
+    "rows": 1770,
+    "actual_rate_Hz": 92.69836606550787,
+    "dt_ms_p50_p95_p99_max": [
+      10.399818420410156,
+      17.6999568939209,
+      22.431945800781246,
+      35.199880599975586
+    ],
+    "gaps_over_30ms": 1,
+    "peak_Hz_resampled": 1.2,
+    "peak_Hz_actual_timestamps": 1.21,
+    "peak_amplitude_N": 0.25628464399724676,
+    "detrended_std_N": 0.49939805936679954,
+    "target_peak_to_peak_N": 1.0099999999999998,
+    "force_median_N": 8.85,
+    "target_sum_median_N": 8.82,
+    "min_force_N": 6.59,
+    "late_force_median_N": 7.53,
+    "late_target_sum_median_N": 7.68,
+    "final_half_second_force_median_N": 7.68,
+    "final_half_second_tangent_median_N": [
+      1.1369040206594319,
+      0.6619814057510532
+    ],
+    "gross_hand_friction_usage_max": [
+      0.38591006421871465,
+      0.24003955664274104
+    ],
+    "mean_actual_sum_force_N": [
+      -0.2135988700564975,
+      0.06618644067796622,
+      0.34387570621468927
+    ],
+    "max_actual_horizontal_sum_force_N": 1.1401754250991378,
+    "max_predicted_horizontal_sum_force_N": 0.3841,
+    "pad_moments": [
+      {
+        "side": "L",
+        "desired_twist_abs_median_Nm": 0.03620489749138234,
+        "desired_twist_abs_max_Nm": 0.04284467695581681,
+        "measured_twist_abs_median_Nm": 0.013009907204137684,
+        "desired_pad_bending_norm_median_Nm": 0.028656110207266987,
+        "twist_tracking_rms_Nm": 0.025232430014855266
+      },
+      {
+        "side": "R",
+        "desired_twist_abs_median_Nm": 0.013286614156873457,
+        "desired_twist_abs_max_Nm": 0.08952589304510059,
+        "measured_twist_abs_median_Nm": 0.014510776209652613,
+        "desired_pad_bending_norm_median_Nm": 0.026497264365663444,
+        "twist_tracking_rms_Nm": 0.02147448652543973
+      }
+    ],
+    "harmonic_force_N": 0.19722470908409423,
+    "harmonic_command_closure_mm": 0.15851357786522738,
+    "harmonic_measured_closure_mm": 0.07758106192471957,
+    "command_to_force_phase_deg": 76.34620374818216,
+    "equivalent_phase_lag_ms": 176.72732349116242,
+    "per_hand_correlation": 0.9871484306875595,
+    "fn_reconstruction_max_error_N": 0.013740678603381795,
+    "target_max_all_phases_N": 6.08,
+    "actual_total_force_residual_rms_N": 0.7866657461021139,
+    "fullwrench_max_offset_rad": 0.04747,
+    "source": {
+      "left": "ft",
+      "right": "ft"
+    }
+  },
+  {
+    "label": "D 60/7, gain 0.25",
+    "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\runs\\20261022_F75_Zt1_s9012_squeeze_gain\\F75_Zt1_s9012_c100_five_cut800_20261022_174421.csv",
+    "git": "13222b7",
+    "result": {
+      "stopped": "Ctrl-C",
+      "phase": "route"
+    },
+    "route_s": 17.567700147628784,
+    "rows": 1642,
+    "actual_rate_Hz": 93.41006427762233,
+    "dt_ms_p50_p95_p99_max": [
+      10.400056838989258,
+      16.900062561035156,
+      21.56004905700683,
+      26.999950408935547
+    ],
+    "gaps_over_30ms": 0,
+    "peak_Hz_resampled": 1.1428571428571428,
+    "peak_Hz_actual_timestamps": 1.1720000000000002,
+    "peak_amplitude_N": 0.16783630343291386,
+    "detrended_std_N": 0.5792697310079726,
+    "target_peak_to_peak_N": 1.0500000000000003,
+    "force_median_N": 8.83,
+    "target_sum_median_N": 8.8,
+    "min_force_N": 3.65,
+    "late_force_median_N": 7.74,
+    "late_target_sum_median_N": 8.14,
+    "final_half_second_force_median_N": 4.609999999999999,
+    "final_half_second_tangent_median_N": [
+      0.7850329080990587,
+      0.8727020709967972
+    ],
+    "gross_hand_friction_usage_max": [
+      0.46764190508332243,
+      0.49904979080947787
+    ],
+    "mean_actual_sum_force_N": [
+      -0.17819732034104782,
+      0.07563946406820952,
+      0.10671741778319117
+    ],
+    "max_actual_horizontal_sum_force_N": 1.2001666550941998,
+    "max_predicted_horizontal_sum_force_N": 0.3841,
+    "pad_moments": [
+      {
+        "side": "L",
+        "desired_twist_abs_median_Nm": 0.0354918245451048,
+        "desired_twist_abs_max_Nm": 0.04333625070879825,
+        "measured_twist_abs_median_Nm": 0.01155399058198064,
+        "desired_pad_bending_norm_median_Nm": 0.028953836759333145,
+        "twist_tracking_rms_Nm": 0.02505238828952188
+      },
+      {
+        "side": "R",
+        "desired_twist_abs_median_Nm": 0.011834501543249722,
+        "desired_twist_abs_max_Nm": 0.028846584318977218,
+        "measured_twist_abs_median_Nm": 0.01367174596662496,
+        "desired_pad_bending_norm_median_Nm": 0.02607915474000881,
+        "twist_tracking_rms_Nm": 0.01922453161554187
+      }
+    ],
+    "harmonic_force_N": 0.11053589981578249,
+    "harmonic_command_closure_mm": 0.025157243921380294,
+    "harmonic_measured_closure_mm": 0.09893332368980093,
+    "command_to_force_phase_deg": -42.26053548883291,
+    "equivalent_phase_lag_ms": -102.71657931313554,
+    "per_hand_correlation": 0.959221969325396,
+    "fn_reconstruction_max_error_N": 0.012831603153067306,
+    "target_max_all_phases_N": 4.66,
+    "actual_total_force_residual_rms_N": 1.1239284628309358,
+    "fullwrench_max_offset_rad": 0.04429,
+    "source": {
+      "left": "ft",
+      "right": "ft"
+    }
+  }
+]

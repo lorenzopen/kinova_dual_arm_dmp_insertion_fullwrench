@@ -7,13 +7,12 @@ trained routes are routes for another tool.
 THE TOOL FRAME: origin at the flange centre, local x = the push direction (the
 pad normal, pointing AT the piece), the contact face at x = PAD_X + PAD_R.
 
-THE REAL TOOL IS NOT THE SIMULATED ONE (Lorenzo, 2026-10-12): two printed
-plastic plates, a central spring between them and a SPONGE on the face, where
-the simulation has three spheres on zero-length springs. The convex program
-still reasons on three points (CONSTRAINT 1): here they are three points on a
-circle of radius R_TRI on the sponge face, taken from geometry - a declared
-approximation of a distributed contact. `set_tool` puts the measured numbers in
-(config/cell.yaml, `tool:`); the defaults are the simulated tool's.
+THE REAL TOOL (config/cell.yaml, updated 2026-10-21): an ATI, a free central
+spring and a plate with three 15 mm spheres on a nominal 70 mm triangle;
+no sponge on the contact face. The three point contacts below use the measured
+unloaded geometry. Plate deflection relative to the flange is not observed:
+`pad_contacts` assumes their attitudes coincide. `set_tool` loads the real
+dimensions; the module defaults remain the simulated tool's.
 """
 import numpy as np
 from scipy.spatial.transform import Rotation as Rot
@@ -57,6 +56,11 @@ def pad_contacts(position, rotation):
     x = rotation.apply([1.0, 0.0, 0.0])
     pts = np.asarray(position, float) + rotation.apply(PADS_LOCAL) + PAD_R * x
     return pts, np.tile(-x, (3, 1))
+
+
+def contact_face_centres(positions, quaternions, depth):
+    """Face centres from flange poses, including batches with different tool depths."""
+    return np.asarray(positions, float) + Rot.from_quat(quaternions).apply([float(depth), 0., 0.])
 
 
 def segment_times(centres, rotations, speed, turn_rate):

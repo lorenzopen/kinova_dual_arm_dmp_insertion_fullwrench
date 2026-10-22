@@ -13,13 +13,21 @@ sono state rimosse: tutto quello che serviva è qui.
 - Per ogni rotta: prima `insert` (scalare), poi `insert --twist`, stessa board e stesso pezzo: due dati confrontabili.
 
 **Dati salvati a ogni prova** (`logs/`, e il rosbag in `~/lorenzo/bags/`):
-- `<W>_<R>_<data>.csv`, 100 Hz: comandi; pose misurate; forze e momenti usati dal controllo;
-  **ATI grezzo** (assi del sensore, N/Nm); **stima Kinova grezza**; offset del twist; wrench chiesto dal SOCP;
-  `t_wall` per allinearlo al bag.
+- `<W>_<R>_<data>.csv`, 100 Hz richiesti (frequenza effettiva dai timestamp): comandi; pose misurate;
+  forze e momenti usati dal controllo; **ATI prima del bias**, mediato (assi sensore, N/Nm);
+  **stima Kinova grezza**; offset; wrench completo chiesto dal SOCP anche nelle prove scalari;
+  `t_wall` per allinearlo al bag. Dal branch di revisione del 23/10: anche q/dq/effort dei 7 giunti per braccio,
+  timestamp e freschezza delle sorgenti, intervallo del controllo e stato dell'ultima allocazione.
 - `<W>_<R>_<data>_meta.json`: config usata (con `local.yaml`), comando, commit git, unità e seriale degli ATI,
-  bias e rumore di ogni tare, esito.
+  bias e rumore di ogni tare, esito. La revisione registra anche i parametri letti dai controller
+  (`cart_k`, `cart_d` ecc.), il gain effettivo, la modalità di esecuzione e il file del profilo offline.
+  `control_hz` è un parametro richiesto: non certifica la frequenza reale del loop.
 - `follow2_<W>_<data>.csv`: giri a vuoto, con l'ATI grezzo.
-- Il rosbag: tutto `/left_arm/*` e `/right_arm/*`, cioè joint states, target, stima Kinova e ATI a 1 kHz.
+- Il rosbag: tutto `/left_arm/*` e `/right_arm/*`, cioè joint states, target, stima Kinova e ATI
+  mediato a **200 Hz**; ATI grezzo a 1 kHz soltanto con `ati_raw:=true` (più carico CPU).
+
+**Revisione per il laboratorio del 23/10:** [analisi, formulazione e prove a 1500 N/m](docs/CONTROL_REVIEW_20261023.md).
+Codice sul branch `codex/controller-review-20261023`; i default del launch e del gain storico restano invariati.
 
 ---
 
@@ -217,14 +225,14 @@ python -m kinova_dual_arm_dmp_insertion.main insert "$W" --arm "$R" --slow 3 --t
 
 **Inserimento full wrench** (stretta + twist): stessa board, pezzo rimesso al punto di partenza.
 
-**Confronto di tre modi di fare la stretta** (`insert_open`, stessa board e stesso pezzo, log con `_offline`,
-`_open`, `_online` nel nome):
+**Separare pianificazione delle forze ed esecuzione** (`insert_open`, stessa board e stesso pezzo):
 
 | comando | stretta | SOCP | ATI |
 |---|---|---|---|
-| `--offline` | feedforward, `ds = f*/k_eff` | risolto **prima** della prova lungo tutta la sequenza (come il paper) | solo registrato |
+| `--offline` | feedforward normale, `ds = N*/k_eff` | risolto **prima** della prova | registrato ed eventi |
 | (niente) | feedforward, `ds = f*/k_eff` | online ogni 100 ms | solo registrato |
 | `--online` | anello chiuso sull'ATI, gain **0,1** (o `--squeeze-gain`) | online ogni 100 ms | in feedback |
+| `--offline --online` | anello chiuso sull'ATI, stesso controllo | risolto **prima**, nessun solve durante l'esecuzione | in feedback |
 
 ```bash
 python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slow 3 --offline
@@ -238,11 +246,29 @@ python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slo
 python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slow 3 --online
 ```
 
-`k_eff` = impedenza in serie alla molla ≈ 730 N/m: nel feedforward la forza vera dipende da quanto è giusto e
-dalla larghezza del pezzo. A fine prova stampa misurata/chiesta e il `k_eff` che la renderebbe giusta (`--k-eff`).
-Con `--offline` il profilo del SOCP viene salvato in `logs/<W>_<R>_offline_profile_<data>.csv`.
-`--twist` solo con `--online`. In tutti e tre sicurezze, sentinella del jam e appoggio a sentire usano ancora
-l'ATI, ma come eventi, non come regolazione.
+`k_eff` assiale = impedenza in serie alla molla da 2700 N/m: **730 N/m a 1000**, **964 N/m a 1500**.
+Su hardware viene ricavato dal `cart_k` letto dai due controller; se non è leggibile, il feedforward richiede
+un `--k-eff` esplicito e calibrato. Nel dry run viene usato il modello di `cell.yaml`. Il rapporto
+misurata/chiesta non è una calibrazione della rigidezza durante contatti o errori di larghezza.
+Il profilo offline conserva **target normale e tutti i 12 componenti dei wrench**, riferiti al centro di presa.
+Una fase mancante o un solve non fattibile impediscono l'esecuzione del profilo.
+`--twist` abilita il feedback dei momenti solo con `--online`, anche combinato con `--offline`.
+`--wrench-channels forces` abilita, sempre con feedback, stretta più **ripartizione tangenziale interna**,
+senza anello dei momenti; è una modalità pilota con offset limitati a **2 mm per mano**, da provare prima
+di usarla per i dati finali. `--wrench-channels contact` aggiunge il twist assiale alle tangenziali;
+`--no-bending` vincola a zero la flessione al pad nel SOCP, conservando torsione e momenti di leva alla flangia.
+Questi canali interni non regolano il wrench ambientale risultante. Tutte le modalità mantengono
+gli eventi di sicurezza, jam e appoggio; nei modi senza `--online` l'ATI non regola la stretta.
+
+Per analizzare i dati senza ricostruire il SOCP con un modello diverso da quello della run:
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.audit_run logs/NOME_RUN.csv
+```
+
+Salva rapporto JSON, tracking, **6 componenti del wrench per mano** e, nei nuovi CSV, joints.
+I momenti misurati sono trasportati al centro di presa prima del confronto. `analyze_run` rimane disponibile
+per la ricostruzione dei vecchi log: ricalcola il SOCP con il codice/config forniti, non recupera le soluzioni storiche.
 
 **In alternativa: presa automatica dall'angolo** (`insert_pick`, stessi log con `_pick` nel nome). Non devi più tenere
 il pezzo in mano alla quota di partenza. Il pezzo si appoggia sul pavimento dello scaffale, **nell'orientamento dello

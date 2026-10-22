@@ -85,6 +85,6 @@ class Route:
         return (f"{self.world} ({self.piece}, arm {self.arm}, hand wrench {self.hand_wrench}, "
                 f"scale {self.scale:g}): "
                 f"{len(self.centres)} waypoints, mass {self.mass:.3f} kg, opening "
-                f"{1000 * self.opening:.0f} mm, pickup squeeze {self.derived_N:.1f} N/hand; "
+                f"{1000 * self.opening:.0f} mm, trained squeeze {self.derived_N:.1f} N/hand; "
                 f"PyBullet placed {s.get('placed_mm', float('nan')):.1f} mm, "
                 f"slip {s.get('slip_mm', float('nan')):.1f} mm")

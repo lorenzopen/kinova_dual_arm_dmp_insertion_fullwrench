@@ -1,0 +1,1010 @@
+[
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "online_scalar",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.19999999999997797,
+      "socp_ok": 232,
+      "socp_ticks": 232,
+      "socp_failed": 0,
+      "side_force_max": 3.286339983919758e-14,
+      "squeeze_median": 4.082309120741218
+    },
+    "execution_seconds": 1.4386190000222996,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 4.480075924401843,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "online_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 232,
+      "socp_ticks": 232,
+      "socp_failed": 0,
+      "side_force_max": 3.375162304295357e-14,
+      "squeeze_median": 4.251597102400597
+    },
+    "execution_seconds": 1.5252110000001267,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.480075924401843,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "online_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 4.200000000000648,
+      "believed_mm": -0.08111892451992397,
+      "socp_ok": 234,
+      "socp_ticks": 234,
+      "socp_failed": 0,
+      "side_force_max": 5.3290705182007514e-14,
+      "squeeze_median": 4.306794814998661
+    },
+    "execution_seconds": 1.5447484999895096,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.480075924401843,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "offline_feedforward",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.19999999999997797,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 3.375077994860476e-14,
+      "squeeze_median": 4.100666445275369
+    },
+    "execution_seconds": 0.8182662000181153,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 4.768983711289408,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "offline_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.19999999999997797,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 3.3307271267089286e-14,
+      "squeeze_median": 4.100666445275369
+    },
+    "execution_seconds": 0.9246148000238463,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.489577315687221,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "offline_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 2.8000000000004412,
+      "believed_mm": -0.02800563083346641,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 4.440892098500626e-14,
+      "squeeze_median": 4.0964530230975695
+    },
+    "execution_seconds": 0.9196133998921141,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.489577315687221,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "online_scalar",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.200000000000089,
+      "socp_ok": 235,
+      "socp_ticks": 235,
+      "socp_failed": 0,
+      "side_force_max": 3.4639949213566174e-14,
+      "squeeze_median": 4.489860223481307
+    },
+    "execution_seconds": 1.4299436999717727,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 4.63292880094521,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "online_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.200000000000089,
+      "socp_ok": 235,
+      "socp_ticks": 235,
+      "socp_failed": 0,
+      "side_force_max": 3.286366351163472e-14,
+      "squeeze_median": 4.486361178574221
+    },
+    "execution_seconds": 1.5519402000354603,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.63292880094521,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "online_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 1.0000000000001674,
+      "believed_mm": -0.06748954875260282,
+      "socp_ok": 236,
+      "socp_ticks": 236,
+      "socp_failed": 0,
+      "side_force_max": 4.4428772042194194e-14,
+      "squeeze_median": 4.480137333720162
+    },
+    "execution_seconds": 1.5481226000702009,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.63292880094521,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "offline_feedforward",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.200000000000089,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 3.463987238868415e-14,
+      "squeeze_median": 4.452692553899688
+    },
+    "execution_seconds": 0.833528200048022,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 5.037581513191223,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "offline_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.200000000000089,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 3.375179042354216e-14,
+      "squeeze_median": 4.452692553899688
+    },
+    "execution_seconds": 0.9392270999960601,
+    "max_internal_translation_mm": 2.000000000000001,
+    "max_squeeze_model_error_N": 4.758175117589038,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "offline_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.6000000000001005,
+      "believed_mm": -0.06318568045213246,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 4.440892098500626e-14,
+      "squeeze_median": 4.452692553899688
+    },
+    "execution_seconds": 0.9295821998966858,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.758175117589038,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "online_scalar",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.19999999999995022,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 263,
+      "socp_ticks": 263,
+      "socp_failed": 0,
+      "side_force_max": 4.085620730620576e-14,
+      "squeeze_median": 4.697929865416018
+    },
+    "execution_seconds": 1.5844743000343442,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 4.668553066497834,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "online_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.19999999999995022,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 263,
+      "socp_ticks": 263,
+      "socp_failed": 0,
+      "side_force_max": 4.085620730620576e-14,
+      "squeeze_median": 4.702511294450385
+    },
+    "execution_seconds": 1.6879056000616401,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.668553066497834,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "online_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 2.3999999999995136,
+      "believed_mm": -0.06326187670549488,
+      "socp_ok": 264,
+      "socp_ticks": 264,
+      "socp_failed": 0,
+      "side_force_max": 6.48602848213108e-14,
+      "squeeze_median": 4.706683619167155
+    },
+    "execution_seconds": 1.6849132999777794,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.668553066497834,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "offline_feedforward",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.19999999999995022,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 5.3290705182007514e-14,
+      "squeeze_median": 4.628684415932718
+    },
+    "execution_seconds": 0.9168725999770686,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 5.0721749671886105,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "offline_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.19999999999995022,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 4.085620730620576e-14,
+      "squeeze_median": 4.628684415932718
+    },
+    "execution_seconds": 1.0225580999394879,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.792768571586423,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1000.0,
+    "k_eff": 729.7297297297298,
+    "mode": "offline_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 1.599999999999685,
+      "believed_mm": -0.12806573192972182,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 6.483702463810914e-14,
+      "squeeze_median": 4.628684415932718
+    },
+    "execution_seconds": 1.0237308000214398,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.792768571586423,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "online_scalar",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.19999999999997797,
+      "socp_ok": 232,
+      "socp_ticks": 232,
+      "socp_failed": 0,
+      "side_force_max": 5.684390453732607e-14,
+      "squeeze_median": 4.089396943637459
+    },
+    "execution_seconds": 1.4411087000044063,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 4.484215343025887,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "online_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.19999999999997797,
+      "socp_ok": 232,
+      "socp_ticks": 232,
+      "socp_failed": 0,
+      "side_force_max": 5.684394232310249e-14,
+      "squeeze_median": 4.252638885008465
+    },
+    "execution_seconds": 1.5210493999766186,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.484215343025887,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "online_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 3.8000000000005807,
+      "believed_mm": -0.13451347309850759,
+      "socp_ok": 234,
+      "socp_ticks": 234,
+      "socp_failed": 0,
+      "side_force_max": 7.105427357601002e-14,
+      "squeeze_median": 4.302641781737066
+    },
+    "execution_seconds": 1.5330643999623135,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.484215343025887,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "offline_feedforward",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.19999999999997797,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 4.352135507597799e-14,
+      "squeeze_median": 4.100666445275369
+    },
+    "execution_seconds": 0.827042100019753,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 4.768983711289405,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "offline_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.19999999999997797,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 5.684390797390336e-14,
+      "squeeze_median": 4.100666445275369
+    },
+    "execution_seconds": 0.9167125000385568,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.498274781565566,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Zt1_s9012",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "offline_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 2.8000000000004412,
+      "believed_mm": -0.028006478184405825,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 7.016648796118242e-14,
+      "squeeze_median": 4.0964530230975225
+    },
+    "execution_seconds": 0.9234008999774233,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.498274781565566,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "online_scalar",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.200000000000089,
+      "socp_ok": 235,
+      "socp_ticks": 235,
+      "socp_failed": 0,
+      "side_force_max": 4.3521580983842305e-14,
+      "squeeze_median": 4.481110302639704
+    },
+    "execution_seconds": 1.4255274999886751,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 4.66673752796454,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "online_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.200000000000089,
+      "socp_ok": 235,
+      "socp_ticks": 235,
+      "socp_failed": 0,
+      "side_force_max": 4.352159107445909e-14,
+      "squeeze_median": 4.481954002077899
+    },
+    "execution_seconds": 1.5197579000378028,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.66673752796454,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "online_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 1.0000000000001674,
+      "believed_mm": -0.12451598891444204,
+      "socp_ok": 236,
+      "socp_ticks": 236,
+      "socp_failed": 0,
+      "side_force_max": 5.773226820741958e-14,
+      "squeeze_median": 4.478596729593243
+    },
+    "execution_seconds": 1.5235216999426484,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.66673752796454,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "offline_feedforward",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.200000000000089,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 4.440963392458548e-14,
+      "squeeze_median": 4.452692553899688
+    },
+    "execution_seconds": 0.8231270000105724,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 5.037581513191216,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "offline_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.20000000000003348,
+      "believed_mm": -0.200000000000089,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 4.352157145960343e-14,
+      "squeeze_median": 4.452692553899688
+    },
+    "execution_seconds": 0.9159923999104649,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.766872583467378,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Tt1_s9007",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "offline_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.6000000000001005,
+      "believed_mm": -0.06318588323098173,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 5.773159728050814e-14,
+      "squeeze_median": 4.452692553899688
+    },
+    "execution_seconds": 0.9282180999871343,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.766872583467378,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "online_scalar",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.19999999999995022,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 263,
+      "socp_ticks": 263,
+      "socp_failed": 0,
+      "side_force_max": 5.417888360170764e-14,
+      "squeeze_median": 4.691759294255139
+    },
+    "execution_seconds": 1.561869400087744,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 4.730146345847807,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "online_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.19999999999995022,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 263,
+      "socp_ticks": 263,
+      "socp_failed": 0,
+      "side_force_max": 5.417888360170764e-14,
+      "squeeze_median": 4.7183793335136
+    },
+    "execution_seconds": 1.6716510999249294,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.730146345847807,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "online_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 2.199999999999563,
+      "believed_mm": -0.05331310928657906,
+      "socp_ok": 264,
+      "socp_ticks": 264,
+      "socp_failed": 0,
+      "side_force_max": 9.769962616701378e-14,
+      "squeeze_median": 4.710252299776839
+    },
+    "execution_seconds": 1.6767247999086976,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.730146345847807,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "offline_feedforward",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.19999999999995022,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 6.927791673660977e-14,
+      "squeeze_median": 4.628684415934908
+    },
+    "execution_seconds": 0.9135673000710085,
+    "max_internal_translation_mm": 0.0,
+    "max_squeeze_model_error_N": 5.072174967188603,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "offline_forces",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.19999999999995022,
+      "believed_mm": -0.19999999999995022,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 5.417888360170764e-14,
+      "squeeze_median": 4.628684415934908
+    },
+    "execution_seconds": 1.0128558999858797,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.80146603746471,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  },
+  {
+    "world": "F75_Lt1_s9014",
+    "arm_stiffness_N_per_m": 1500.0,
+    "k_eff": 964.2857142857142,
+    "mode": "offline_contact",
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 1.599999999999685,
+      "believed_mm": -0.12806882902821615,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 9.769962616701378e-14,
+      "squeeze_median": 4.628684415934908
+    },
+    "execution_seconds": 1.020917100016959,
+    "max_internal_translation_mm": 2.0000000000000004,
+    "max_squeeze_model_error_N": 4.80146603746471,
+    "planned_phases": [
+      "to_mouth",
+      "route",
+      "slow_seat",
+      "seat_by_feel"
+    ]
+  }
+]
