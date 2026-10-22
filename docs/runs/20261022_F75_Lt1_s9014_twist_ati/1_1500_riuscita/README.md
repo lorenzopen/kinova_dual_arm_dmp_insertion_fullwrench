@@ -1,4 +1,4 @@
-# 22/10/2026 15:00 - F75_Lt1_s9014, L inserita con --twist e ATI
+# 22/10/2026 15:00 - F75_Lt1_s9014, L inserita con --twist e ATI (prima della serie)
 
 ```bash
 W=F75_Lt1_s9014 R=c100_five_cut800
