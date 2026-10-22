@@ -1,4 +1,4 @@
-# 22/10/2026 19:32 - F75_Zt1_s9012, stretta in feedforward con SOCP offline (come il paper)
+# 22/10/2026 19:32 - F75_Zt1_s9012, stretta in feedforward con SOCP offline (come il paper) (k_eff 730, prima della serie)
 
 ```bash
 W=F75_Zt1_s9012 R=c100_five_cut800
