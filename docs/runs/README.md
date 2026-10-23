@@ -50,6 +50,9 @@
   stretta RMS 0,95 N, oscillazione 0,12 N): S con FFI 2 su 2. Tabella nel README della cartella.
 - `20261023_1915_S_s7073m3_ffi_riuscito/`: terza S identica, entrata (errore in sede 2,5 mm, forza laterale 3,2 N,
   stretta RMS 1,12 N, oscillazione 0,15 N): S con FFI 3 su 3. Tabella delle tre nel README della cartella.
+- `20261023_1921_F75_Tt1_s9007_ffi_riuscito/`: la T con lo stesso `insert_ffi --offline --k-eff 680`: entrata, drop 0,
+  errore in sede 0,5 mm, stretta RMS 0,57 N, oscillazione 0,22 N (contro 0,34–0,42 delle T del 21/10). Dettagli nel
+  README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
