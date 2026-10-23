@@ -1,0 +1,448 @@
+{
+ "argv": [
+  "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+  "insert",
+  "F75_Zt1_s9012",
+  "--arm",
+  "c100_five_cut800",
+  "--slow",
+  "3",
+  "--offline",
+  "--k-eff",
+  "680"
+ ],
+ "config_path": "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/config/cell.yaml",
+ "config": {
+  "scale": 0.8333333,
+  "piece_mass": 0.05,
+  "rate_hz": 100,
+  "log_dir": "logs",
+  "max_reach": 0.902,
+  "f_abort": 60.0,
+  "track_abort": 0.04,
+  "jam_scale": 1.8,
+  "jam_min": 8.0,
+  "allow_hand_wrench": false,
+  "socp": {
+   "margin_mode": "task_adaptive",
+   "margin_task_scale": 0.25,
+   "margin_floor_N": 1.0,
+   "margin_fixed_N": 0.5,
+   "w_force": 0.0,
+   "no_bending": false
+  },
+  "full_wrench": false,
+  "full_wrench_channels": "twist",
+  "full_wrench_moment_sign": -1,
+  "wrench_baseline": null,
+  "stiffness": {
+   "trans": 1500.0,
+   "torsion": 20.0,
+   "tilt": 20.0
+  },
+  "tool": {
+   "spring_axial_N_per_m": 2700.0,
+   "pad_x": 0.085,
+   "pad_r": 0.015,
+   "r_tri": 0.0404
+  },
+  "left": {
+   "base_frame": "base_link",
+   "ee_frame": "end_effector_link",
+   "urdf_path": "/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf",
+   "target_topic": "/left_arm/target_pose",
+   "joint_states_topic": "/left_arm/joint_states",
+   "wrench_topic": "/left_arm/estimated_wrench",
+   "zero_wrench_service": "/left_arm/zero_wrench",
+   "wrench_source": "ft",
+   "ft_topic": "/left_arm/ft_data_avg",
+   "ft_rate_hz": 200,
+   "ft_calibration_service": "/left_arm/ft_raw/get_calibration",
+   "ft_in_ee": {
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat": [
+     -0.0349,
+     0.0255,
+     0.0807,
+     0.9958
+    ]
+   },
+   "ft_sign": 1.0,
+   "tool_mass": 0.04,
+   "tool_com_in_ft": [
+    0.0,
+    0.0,
+    0.03
+   ],
+   "shoulder_in_base": [
+    0.0,
+    0.0,
+    0.2848
+   ],
+   "shelf_in_base": {
+    "xyz": [
+     0.7525,
+     -0.3025,
+     -0.03
+    ],
+    "quat": [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ]
+   },
+   "tool_in_ee": {
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat": [
+     0.0,
+     -0.7071068,
+     0.0,
+     0.7071068
+    ]
+   }
+  },
+  "right": {
+   "base_frame": "base_link",
+   "ee_frame": "end_effector_link",
+   "urdf_path": "/home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf",
+   "target_topic": "/right_arm/target_pose",
+   "joint_states_topic": "/right_arm/joint_states",
+   "wrench_topic": "/right_arm/estimated_wrench",
+   "zero_wrench_service": "/right_arm/zero_wrench",
+   "wrench_source": "ft",
+   "ft_topic": "/right_arm/ft_data_avg",
+   "ft_rate_hz": 200,
+   "ft_calibration_service": "/right_arm/ft_raw/get_calibration",
+   "ft_in_ee": {
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat": [
+     -0.0145,
+     -0.0011,
+     0.1016,
+     0.9947
+    ]
+   },
+   "ft_sign": 1.0,
+   "tool_mass": 0.04,
+   "tool_com_in_ft": [
+    0.0,
+    0.0,
+    0.03
+   ],
+   "shoulder_in_base": [
+    0.0,
+    0.0,
+    0.2848
+   ],
+   "shelf_in_base": {
+    "xyz": [
+     0.7525,
+     0.2975,
+     -0.03
+    ],
+    "quat": [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ]
+   },
+   "tool_in_ee": {
+    "xyz": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "quat": [
+     0.0,
+     -0.7071068,
+     0.0,
+     0.7071068
+    ]
+   }
+  }
+ },
+ "git": "bd457b8093530cb699c1833302f17fb283094924",
+ "git_branch": "codex/feedforward-i-20261023",
+ "git_dirty": false,
+ "started": "2026-10-23 17:58:35",
+ "result": {
+  "route_followed": true,
+  "jammed": false,
+  "seat_found": true,
+  "landed_high": false,
+  "drop_mm": 0.0,
+  "believed_mm": 0.20072713874508263,
+  "socp_ok": 0,
+  "socp_ticks": 0,
+  "socp_failed": 0,
+  "side_force_max": 1.4682091046795076,
+  "squeeze_median": 4.102076492284856
+ },
+ "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+ "ft_units": {
+  "left": {
+   "force": "N",
+   "torque": "Nm",
+   "serial": "FT54940",
+   "cal_date": "2024-11-20 05:00:00Z"
+  },
+  "right": {
+   "force": "N",
+   "torque": "Nm",
+   "serial": "FT49595",
+   "cal_date": "2024-01-18 05:00:00Z"
+  }
+ },
+ "wrench_source": {
+  "left": "ft",
+  "right": "ft"
+ },
+ "tares": [
+  {
+   "t": 25449.738039786,
+   "t_wall": 1792749424.9532588,
+   "left": {
+    "bias_F": [
+     1.8003,
+     -4.0726,
+     -5.2404
+    ],
+    "bias_T": [
+     -0.03822,
+     -0.08909,
+     0.05185
+    ],
+    "sd_F": [
+     0.0063,
+     0.0114,
+     0.0163
+    ],
+    "sd_T": [
+     0.00032,
+     0.00018,
+     0.00016
+    ],
+    "samples": 100
+   },
+   "right": {
+    "bias_F": [
+     -0.3608,
+     -5.3125,
+     -3.2513
+    ],
+    "bias_T": [
+     -0.07779,
+     -0.00182,
+     0.0077
+    ],
+    "sd_F": [
+     0.0053,
+     0.0052,
+     0.0107
+    ],
+    "sd_T": [
+     0.00013,
+     0.0001,
+     9e-05
+    ],
+    "samples": 100
+   }
+  },
+  {
+   "t": 25496.282507893,
+   "t_wall": 1792749471.497728,
+   "left": {
+    "bias_F": [
+     1.768,
+     -3.7552,
+     -5.3366
+    ],
+    "bias_T": [
+     -0.04334,
+     -0.0872,
+     0.05071
+    ],
+    "sd_F": [
+     0.0068,
+     0.0131,
+     0.0211
+    ],
+    "sd_T": [
+     0.00028,
+     0.00021,
+     0.00013
+    ],
+    "samples": 100
+   },
+   "right": {
+    "bias_F": [
+     -0.276,
+     -4.9313,
+     -3.3208
+    ],
+    "bias_T": [
+     -0.08341,
+     0.00058,
+     0.00516
+    ],
+    "sd_F": [
+     0.0046,
+     0.0042,
+     0.0089
+    ],
+    "sd_T": [
+     0.00014,
+     0.00011,
+     8e-05
+    ],
+    "samples": 100
+   }
+  }
+ ],
+ "controller_parameters": {
+  "L": {
+   "node": "/left_arm/real_robot_controller_node",
+   "cart_k": [
+    1500.0,
+    1500.0,
+    1500.0,
+    20.0,
+    20.0,
+    20.0
+   ],
+   "cart_d": [
+    60.0,
+    60.0,
+    60.0,
+    7.0,
+    7.0,
+    7.0
+   ],
+   "control_hz": 1000.0,
+   "friction_enable": true,
+   "kalman_enable": true,
+   "urdf_path": "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf",
+   "ee_frame": "end_effector_link"
+  },
+  "R": {
+   "node": "/right_arm/real_robot_controller_node",
+   "cart_k": [
+    1500.0,
+    1500.0,
+    1500.0,
+    20.0,
+    20.0,
+    20.0
+   ],
+   "cart_d": [
+    60.0,
+    60.0,
+    60.0,
+    7.0,
+    7.0,
+    7.0
+   ],
+   "control_hz": 1000.0,
+   "friction_enable": true,
+   "kalman_enable": true,
+   "urdf_path": "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf",
+   "ee_frame": "end_effector_link"
+  }
+ },
+ "joint_names": {
+  "L": [
+   "joint_1",
+   "joint_2",
+   "joint_3",
+   "joint_4",
+   "joint_5",
+   "joint_6",
+   "joint_7"
+  ],
+  "R": [
+   "joint_1",
+   "joint_2",
+   "joint_3",
+   "joint_4",
+   "joint_5",
+   "joint_6",
+   "joint_7"
+  ]
+ },
+ "execution": {
+  "mode": "offline_socp_ati_feedforward_I",
+  "squeeze_gain_scale": null,
+  "squeeze_gain_m_per_N_per_update": null,
+  "nominal_force_update_period_s": 0.02,
+  "squeeze_feedback": true,
+  "internal_wrench_feedback": false,
+  "wrench_channels": "none",
+  "internal_translation_limit_m": 0.02,
+  "k_eff_N_per_m": 680.0,
+  "offline_profile": "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/logs/F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_175703.csv",
+  "offline_profile_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+  "planning_k_eff_N_per_m": 680.0,
+  "planned_socp_ok": 232,
+  "planned_socp_ticks": 232,
+  "desired_moment_origin": "common grasp centre",
+  "measured_moment_origin": "tool origin",
+  "squeeze_controller": "normal_feedforward_plus_I",
+  "legacy_internal_translation_gain_scale": 0.1,
+  "ffi": {
+   "ki_m_per_N_s": 0.0016,
+   "trim_limit_m": 0.003,
+   "trim_speed_m_per_s": 0.002,
+   "total_limit_m": 0.012,
+   "total_speed_m_per_s": 0.002,
+   "max_dt_s": 0.1,
+   "stall_dt_s": 0.3,
+   "k_eff_N_per_m": 680.0,
+   "pickup_measured_N_per_hand": 6.065623458075127,
+   "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+   "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+   "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+   "anti_windup": "track feasible integral after trim and combined command limits",
+   "hardware_tuned": false
+  },
+  "pickup_controller": {
+   "type": "I",
+   "kp_m_per_N": 0.0,
+   "ki_m_per_N_s": 0.001,
+   "slew_m_per_s": 0.002,
+   "correction_limit_m": 0.006,
+   "pickup_limit_m": 0.015,
+   "max_dt_s": 0.1
+  },
+  "ffi_last": {
+   "ffi_seq": 883,
+   "ffi_dt_ms": 21.811459002492484,
+   "ffi_dt_clamped": 0,
+   "ffi_error_N": -0.040802281818409725,
+   "ffi_ff_want_mm": -3.6005661673293803,
+   "ffi_ff_mm": -3.6005661673293803,
+   "ffi_i_mm": -0.8366530521042986,
+   "ffi_output_mm": -4.437219219433679,
+   "ffi_ff_limited": 0,
+   "ffi_i_limited": 0,
+   "ffi_rate_limited": 0,
+   "ffi_position_limited": 0
+  }
+ },
+ "socp_last_reason": "",
+ "allocation_failures": 0,
+ "allocation_result_not_applied": false
+}

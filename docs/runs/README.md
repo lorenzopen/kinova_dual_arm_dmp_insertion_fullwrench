@@ -34,6 +34,8 @@
   Comando e parametri nel README della cartella.
 - `20261023_1751_F75_Zt1_s9012_ffi_riuscito/`: ripetizione identica della 17:43, entrata anche lei (errore in sede
   −0,05 mm, stretta RMS 0,54 N, oscillazione 0,25 N). Confronto tra le due nel README della cartella.
+- `20261023_1756_F75_Zt1_s9012_ffi_riuscito/`: terza ripetizione identica, entrata (errore in sede +0,20 mm, stretta
+  RMS 0,51 N, oscillazione 0,22 N): FFI 3 su 3. Tabella delle tre nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
