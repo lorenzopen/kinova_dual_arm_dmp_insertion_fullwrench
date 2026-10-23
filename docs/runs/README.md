@@ -25,6 +25,10 @@
   forza 18% alta, fermata a fine route). Nessuna sinusoide. Più, per confronto, l'anello chiuso `--online`
   a K 1500 gain 0,5: entrata, forza giusta in tutta la route, sinusoide piccola. Tabella nel README della cartella.
 
+- `20261023_F75_Zt1_s9012_offline/`: la Z con `insert_open --offline` senza `--k-eff` (default 964 a K 1500):
+  entrata, ma stretta misurata circa metà della chiesta; oscillazione 0,18 N contro 0,32 N dell'`--online`
+  gain 0,5. Tabella nel README della cartella.
+
 Le bag sono troppo grandi per git. Dal tuo PC:
 
 ```bash
