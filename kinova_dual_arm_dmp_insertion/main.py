@@ -64,6 +64,8 @@ def load_config(path):
 
 
 W6 = ("fx", "fy", "fz", "tx", "ty", "tz")
+PI_COLS = ('pi_seq pi_dt_ms pi_error_N pi_p_mm pi_i_mm pi_output_mm '
+           'pi_rate_limited pi_position_limited').split()
 TELEMETRY_COLS = ([f"{kind}_{s}_{unit}" for s in "LR" for kind, unit in (("joint_age", "ms"), ("ft_age", "ms"))]
                   + [f"{kind}_stamp_{s}" for s in "LR" for kind in ("joint", "ft")]
                   + [f"{kind}{s}_j{j}" for s in "LR" for kind in ("q", "dq", "tau") for j in range(1, 8)])
@@ -83,7 +85,7 @@ class Log:
         + [f"{src}{s}_{c}" for src in ("est", "ft") for s in "LR" for c in W6]
         + [f"off{s}_{c}" for s in "LR" for c in ("x", "y", "z", "rx", "ry", "rz")]
         + [f"wdes{s}_{c}" for s in "LR" for c in W6]
-        + ["socp_ms", "ctrl_dt_ms", "ctrl_seq", "socp_ok", "socp_input_age_ms"] + TELEMETRY_COLS)
+        + ["socp_ms", "ctrl_dt_ms", "ctrl_seq", "socp_ok", "socp_input_age_ms"] + TELEMETRY_COLS + PI_COLS)
 
     def __init__(self, path):
         self.fh = open(path, "w", newline="")
@@ -97,6 +99,7 @@ class Log:
         nan6 = [np.nan] * 6
         wdes = [np.round(np.concatenate(ins.w_des[s]), 4) if s in ins.w_des else nan6 for s in "LR"]
         telemetry = getattr(ins.b, "telemetry", {})
+        pi = getattr(getattr(ins, 'squeeze_pi', None), 'diag', {})
         input_age = (1000 * (ins.b.now() - ins.socp_input_time)
                      if ins.socp_input_time is not None else np.nan)
         self.w.writerow([f"{ins.b.now():.3f}", ins.phase, *np.round(tL, 5), *np.round(qL.as_quat(), 5),
@@ -110,7 +113,8 @@ class Log:
                          *np.round(ins.off["L"], 5), *np.round(ins.off["R"], 5), *np.concatenate(wdes),
                          f"{ins.socp_ms:.1f}", f"{1000 * ins.control_dt:.3f}", getattr(ins, "control_seq", 0),
                          int(ins.socp_status) if ins.socp_status is not None else "", f"{input_age:.3f}",
-                         *(telemetry.get(c, np.nan) for c in TELEMETRY_COLS)])
+                         *(telemetry.get(c, np.nan) for c in TELEMETRY_COLS),
+                         *(pi.get(c, np.nan) for c in PI_COLS)])
 
     def close(self):
         self.fh.close()
@@ -161,6 +165,8 @@ def write_meta(path, cfg, cfg_path, a, backend=None, result=None, ins=None):
         meta["socp_last_reason"] = ins.socp_reason
         meta["allocation_failures"] = ins.stats["socp_fail"]
         meta["allocation_result_not_applied"] = ins._socp_job is not None
+        if hasattr(ins, 'control_metadata'):
+            meta['execution'].update(ins.control_metadata())
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(meta, fh, indent=1, default=lambda o: o.tolist() if hasattr(o, "tolist") else str(o))
 
@@ -379,7 +385,10 @@ def main(argv=None, doc=None, extra=None, make=None):
     print(f"  wrench control: {cfg.get('full_wrench_channels') if cfg.get('full_wrench') else 'scalar squeeze only'}"
           f"; wrench source left {cfg['left'].get('wrench_source', 'estimated')}, "
           f"right {cfg['right'].get('wrench_source', 'estimated')}")
-    print(f"  squeeze gain x{a.squeeze_gain:g}")
+    if getattr(a, 'squeeze_controller', None) == 'PI':
+        print('  normal force controller: PI (--squeeze-gain only scales optional tangential feedback)')
+    else:
+        print(f"  squeeze gain x{a.squeeze_gain:g}")
     print(f"  config: {os.path.abspath(path)}")
     (cmd_check if a.command == "check" else cmd_insert)(a, cfg, make)
 

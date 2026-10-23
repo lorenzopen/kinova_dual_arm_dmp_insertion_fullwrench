@@ -1,10 +1,10 @@
-# Guida unica: due Kinova + ATI, inserimento DMP (21/10/2026)
+# Guida unica: due Kinova + ATI, inserimento DMP (23/10/2026)
 
 Unica guida operativa. Le precedenti (AVVIO_FULL_WRENCH, ESEMPI_*, SETUP_PC_ROBOT, HANDOFF)
 sono state rimosse: tutto quello che serviva è qui.
 
 **In breve**
-- `follow_two_arms` = solo il percorso a mani vuote (nessun SOCP, nessuna forza). **L'inserimento vero è sempre `main insert`.**
+- `follow_two_arms` = solo il percorso a mani vuote. Inserimento con integratore: `main insert`; variante PI: `insert_pi insert`.
 - `insert` = SOCP + stretta scalare. `insert --twist` = **full wrench**: stretta + twist opposto attorno all'asse dei pad,
   chiuso sugli ATI. Senza ATI su entrambi i bracci `--twist` si rifiuta di partire.
 - Con gli ATI **non serve più la baseline del wrench**: la forza arriva dai sensori, non dalle coppie dei giunti.
@@ -28,6 +28,85 @@ sono state rimosse: tutto quello che serviva è qui.
 
 **Revisione per il laboratorio del 23/10:** [analisi, formulazione e prove a 1500 N/m](docs/CONTROL_REVIEW_20261023.md).
 Codice sul branch `codex/controller-review-20261023`; i default del launch e del gain storico restano invariati.
+
+## Prove di venerdì: integratore e PI
+
+Sul PC robot deve esserci il branch `codex/controller-review-20261023` aggiornato con
+`kinova_dual_arm_dmp_insertion/insert_pi.py`. I comandi sotto si eseguono **sul PC robot**.
+Calibrazione ATI e controlli del percorso restano quelli delle sezioni 2 e 3.
+
+**T1 — bracci + ATI, terminale normale senza `env.sh`.** Avvia una sola istanza.
+Per queste prove: rigidezza traslazionale 1500, rotazionale 20; damping 60/7.
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source /home/nvidia/ros2_ws/install/setup.bash
+ros2 launch /home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/launch/robot.launch.py cart_k:="1500 1500 1500 20 20 20" cart_d:="60 60 60 7 7 7"
+```
+
+**T2 — registrazione, lascialo aperto per tutte le prove.**
+
+```bash
+source ~/lorenzo/env.sh
+mkdir -p "$LORENZO/bags"
+cd "$LORENZO/bags"
+ros2 bag record -e "/(left_arm|right_arm)/.*|/rosout" -o sessione_$(date +%Y%m%d_%H%M%S)
+```
+
+**T3 — prove, un comando alla volta.** Esempio con la Z; cambia `W` per il tuo pezzo.
+
+```bash
+source ~/lorenzo/env.sh
+cd "$LORENZO/kinova_dual_arm_dmp_insertion_fullwrench"
+git branch --show-current
+export W=F75_Zt1_s9012 R=c100_five_cut800
+```
+
+Prima **dry run PI**, senza movimento dei robot:
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_pi check "$W" --arm "$R" --slow 3
+```
+
+**A — integratore precedente, gain 0.25:**
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.main insert "$W" --arm "$R" --slow 3 --squeeze-gain 0.25
+```
+
+**B — nuovo PI, stessa board e pezzo rimesso all'inizio:**
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_pi insert "$W" --arm "$R" --slow 3
+```
+
+**C — nuovo PI con SOCP offline, sempre con feedback ATI:**
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_pi insert "$W" --arm "$R" --slow 3 --offline
+```
+
+Per confrontare anche il twist, aggiungi `--twist` **a entrambi A e B**.
+`--wrench-channels forces` aggiunge invece il feedback tangenziale interno già esistente;
+il nuovo PI regola solo la stretta normale. Se scegli `--no-bending`, usalo in tutte le prove confrontate.
+
+**PI iniziale:** P = **0.1 mm/N**, I = **1 mm/(N·s)** sull'errore di forza **sommato delle due mani**.
+Velocità massima della correzione **2 mm/s per mano**; correzione dopo la presa **±6 mm per mano**.
+Usa il tempo effettivo e l'anti-windup. Se la presa non si stabilizza entro 6 s, si ferma prima di chiederti
+di lasciare il pezzo; intervallo PI oltre 100 ms: stop. Sono valori iniziali da verificare sul robot.
+Nel modulo PI **`--squeeze-gain` non cambia la stretta normale**: usa `--pi-kp` e `--pi-ki`
+solo per prove di taratura. Non cambiare gain, impedenza e modalità contemporaneamente.
+
+**T3 — analisi, dopo ogni prova.** Sostituisci il percorso con il CSV stampato a fine esecuzione:
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.audit_run logs/NOME_PROVA.csv
+```
+
+I log PI hanno `_pi_` nel nome; il meta distingue SOCP online/offline e salva i gain PI.
+Nel CSV ci sono errore, P, I e saturazioni `pi_*`, oltre a wrench, pose e joints.
+Confronta oscillazioni **e** cali della forza; dry run riuscito non certifica stabilità reale.
+Per tornare al vecchio controllo usa il comando **A**: non serve cambiare file.
 
 ---
 
@@ -90,10 +169,11 @@ source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.ba
 - il **destro**: va in home in impedenza (8 s) e poi la tiene;
 - dopo 14 s il **sinistro**, quando il destro è già fermo in home.
 
-Le impostazioni sono `cart_k` 1000/20, `cart_d` **60/7** (dal 22/10 sera; fino alle prove del 22/10 15:28
-compresa era 5/1), attrito e Kalman. La sinusoide a ~1,2–1,5 Hz nella stretta veniva dal loop della stretta,
-non dal damping: `main insert` ha `--squeeze-gain` **0,5** di default dal 22/10 sera (1 oscilla, 0,25 recupera troppo
-piano quando il pezzo entra tra i vicini).
+I default sono `cart_k` 1000/20, `cart_d` **60/7**; il comando PI in cima alla guida richiede esplicitamente 1500/20.
+Fino alla prova del 22/10 alle 15:28 il damping era 5/1. Attrito e Kalman sono accesi di default.
+Nei dati la sinusoide a circa 1,2–1,5 Hz compare anche nel comando di stretta; il gain più basso la riduce,
+ma a 0,25 si osservano anche cali della forza. Il default di `main insert` resta 0,5;
+per il confronto di venerdì il comando A richiede esplicitamente 0,25.
 L'impedenza è su `end_effector_link`, cioè **sulla flangia**. L'URDF è **`urdf/gen3_ati_tool.urdf`** di questo
 repo: `gen3.urdf` più quello che è montato sulla flangia (ATI, adattatori, molla e tri-pad), **150 g** in tutto.
 Senza quella massa la compensazione di gravità non vede il tool. Se cambi tool, aggiorna massa e baricentro
@@ -192,7 +272,8 @@ Board e pezzi: figure e quote nell'appendice. Mano sull'E-stop: non c'è control
 python -m kinova_dual_arm_dmp_insertion.main check "$W" --arm "$R" --slow 3
 ```
 
-Nessun movimento: deve stampare `SOCP ok N/N`, `seat_found True` e il `cart_k` del launch in T1.
+Nessun movimento: deve stampare `SOCP ok N/N` e `seat_found True`. Il `cart_k` suggerito dal dry run
+viene dal config e non legge T1; i parametri reali sono registrati nel meta delle prove hardware.
 
 ```bash
 python -m kinova_dual_arm_dmp_insertion.follow_two_arms "$W" --routes "$R" --cell --gap 0.20 --lift 0.10
