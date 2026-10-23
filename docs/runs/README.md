@@ -53,6 +53,8 @@
 - `20261023_1921_F75_Tt1_s9007_ffi_riuscito/`: la T con lo stesso `insert_ffi --offline --k-eff 680`: entrata, drop 0,
   errore in sede 0,5 mm, stretta RMS 0,57 N, oscillazione 0,22 N (contro 0,34–0,42 delle T del 21/10). Dettagli nel
   README della cartella.
+- `20261023_1927_F75_Tt1_s9007_ffi_riuscito/`: seconda T identica, entrata (errore in sede 0,3 mm, stretta RMS 0,56 N,
+  oscillazione 0,19 N): T con FFI 2 su 2. Tabella nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
