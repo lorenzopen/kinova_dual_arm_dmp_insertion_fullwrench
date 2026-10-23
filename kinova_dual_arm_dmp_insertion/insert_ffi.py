@@ -19,12 +19,15 @@ from .insert_pi import PISettings, PISqueezeMixin
 
 @dataclass(frozen=True)
 class FFISettings:
-    ki_m_per_N_s: float = 0.0005  # error is the SUM of both hand normal forces
+    # Delay rule (docs/FFI_CONTROLLER.md): ki = 0.5/(k_loop*tau), k_loop = 2*680 N/m,
+    # tau = 0.23 s worst measured command->flange lag -> ~60 deg phase margin.
+    ki_m_per_N_s: float = 0.0016  # error is the SUM of both hand normal forces
     trim_limit_m: float = 0.003   # integral correction per hand
-    trim_speed_m_per_s: float = 0.001
+    trim_speed_m_per_s: float = 0.002
     total_limit_m: float = 0.012  # total extra motion relative to frozen pickup frame
     total_speed_m_per_s: float = 0.002
-    max_dt_s: float = 0.100
+    max_dt_s: float = 0.100       # longer intervals integrate at most this much
+    stall_dt_s: float = 0.300     # beyond this the loop is considered stalled: Abort
 
     def __post_init__(self):
         if not all(np.isfinite(v) and v > 0 for v in asdict(self).values()):
@@ -35,6 +38,8 @@ class FFISettings:
             raise ValueError('FFI requires trim speed <= total speed <= 10 mm/s')
         if not .020 <= self.max_dt_s <= .100:
             raise ValueError('FFI max dt must be between 20 and 100 ms')
+        if not self.max_dt_s < self.stall_dt_s <= .500:
+            raise ValueError('FFI stall dt must be above max dt and at most 500 ms')
 
 
 class NominalIntegral:
@@ -66,12 +71,16 @@ class NominalIntegral:
         want = (float(target_N)-self.pickup_N)/self.k_eff
         error = 2*float(target_N)-float(measured_sum_N)
         dt = 0.
-        feed_clipped = trim_clipped = total_rate = total_position = False
+        feed_clipped = trim_clipped = total_rate = total_position = dt_clamped = False
         ff, trim = self.ff, self.trim
         if self.time is not None:
             dt = float(now-self.time)
-            if dt <= 0 or dt > s.max_dt_s+1e-9:
-                raise Abort(f'FFI update interval {1000*dt:.1f} ms outside (0, {1000*s.max_dt_s:g}] ms')
+            if dt <= 0 or dt > s.stall_dt_s+1e-9:
+                raise Abort(f'FFI update interval {1000*dt:.1f} ms outside (0, {1000*s.stall_dt_s:g}] ms')
+            # Real-PC hiccups (ctrl_dt up to ~126 ms on 23/10): do not abort, but
+            # never integrate or move more than one max_dt worth in a single tick.
+            dt_clamped = dt > s.max_dt_s
+            dt = min(dt, s.max_dt_s)
             total_step, trim_step = s.total_speed_m_per_s*dt, s.trim_speed_m_per_s*dt
             total_lo = max(-s.total_limit_m, current-total_step)
             total_hi = min(s.total_limit_m, current+total_step)
@@ -94,7 +103,8 @@ class NominalIntegral:
         out = ff+trim
         self.ff, self.trim, self.output, self.time = ff, trim, out, float(now)
         self.sequence += 1
-        self.diag = dict(ffi_seq=self.sequence, ffi_dt_ms=1000*dt, ffi_error_N=error,
+        self.diag = dict(ffi_seq=self.sequence, ffi_dt_ms=1000*dt, ffi_dt_clamped=int(dt_clamped),
+                         ffi_error_N=error,
                          ffi_ff_want_mm=1000*want, ffi_ff_mm=1000*ff, ffi_i_mm=1000*trim,
                          ffi_output_mm=1000*out, ffi_ff_limited=int(feed_clipped),
                          ffi_i_limited=int(trim_clipped), ffi_rate_limited=int(total_rate),
@@ -176,7 +186,8 @@ def main(argv=None):
     def extra(ap):
         ap.add_argument('--offline',action='store_true',help='fixed SOCP plan; ATI integral trim remains active')
         ap.add_argument('--k-eff',type=positive,default=None,help='axial feedforward stiffness per hand [N/m]')
-        ap.add_argument('--i-ki',type=positive,default=.0005,help='runtime trim I [m/(N s)], SUMMED force error')
+        ap.add_argument('--i-ki',type=positive,default=FFISettings.ki_m_per_N_s,
+                        help='runtime trim I [m/(N s)], SUMMED force error')
         ap.add_argument('--i-limit-mm',type=trim_mm,default=3.,help='maximum integral trim each way [mm/hand]')
         ap.set_defaults(log_tag='_ffi',squeeze_gain=.1,squeeze_controller='FFI')
         for action in ap._actions:
@@ -192,7 +203,7 @@ def main(argv=None):
         k=effective_stiffness(cfg,b,a.k_eff)
         settings=FFISettings(ki_m_per_N_s=a.i_ki,trim_limit_m=a.i_limit_mm/1000)
         print(f'  NORMAL FEEDFORWARD + I: k_eff={k:.1f} N/m/hand, ki={a.i_ki:g} m/(N s), '
-              f'trim +/-{a.i_limit_mm:g} mm/hand; total speed 2 mm/s/hand')
+              f'trim +/-{a.i_limit_mm:g} mm/hand; trim and total speed 2 mm/s/hand')
         if a.offline:
             profile=offline_profile(a,r,k,cfg)
             return FFIProfileInsertion(r,b,k_eff=k,ffi_settings=settings,profile=profile,**kw)

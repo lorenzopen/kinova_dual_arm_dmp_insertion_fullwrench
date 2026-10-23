@@ -31,9 +31,9 @@ class FFILaw(unittest.TestCase):
 
     def test_integral_actual_dt_and_sign(self):
         c = NominalIntegral(FFISettings(), 1000., 6.)
-        c.update(6., 10., 1., 0.)
-        y = c.update(6., 10., 1.03, 0.)
-        self.assertAlmostEqual(y, .0005*2*.03)
+        c.update(6., 11., 1., 0.)
+        y = c.update(6., 11., 1.03, 0.)
+        self.assertAlmostEqual(y, FFISettings().ki_m_per_N_s*1*.03)
         self.assertAlmostEqual(c.ff, 0.)
 
     def test_combined_limits_under_jitter_and_reversals(self):
@@ -48,7 +48,7 @@ class FFILaw(unittest.TestCase):
             measured = (0., 60.)[(j//70) % 2]
             out = c.update(target, measured, now, out)
             self.assertLessEqual(abs(out-old_out), .002*dt+1e-12)
-            self.assertLessEqual(abs(c.trim-old_trim), .001*dt+1e-12)
+            self.assertLessEqual(abs(c.trim-old_trim), .002*dt+1e-12)
             self.assertLessEqual(abs(c.ff-old_ff), .002*dt+1e-12)
             self.assertLessEqual(abs(c.trim), .003+1e-12)
             self.assertLessEqual(abs(c.ff), .009+1e-12)
@@ -86,10 +86,38 @@ class FFILaw(unittest.TestCase):
             for j in range(1, round(1/dt)+1):
                 y = c.update(6., 11., j*dt, y)
             ends.append(y)
-        np.testing.assert_allclose(ends, .0005, atol=1e-12)
+        np.testing.assert_allclose(ends, FFISettings().ki_m_per_N_s, atol=1e-12)
+
+    def test_late_tick_is_clamped_not_aborted(self):
+        c = NominalIntegral(FFISettings(), 964., 6.)
+        c.update(6., 11., 0., 0.)
+        y = c.update(6., 11., .126, 0.)
+        self.assertEqual(c.diag['ffi_dt_clamped'], 1)
+        self.assertAlmostEqual(c.diag['ffi_dt_ms'], 100.)
+        self.assertAlmostEqual(y, FFISettings().ki_m_per_N_s*1*.1)
+
+    def test_delay_rule_separates_measured_gains(self):
+        # Plant identified from 22-23/10 logs: sum force = k_loop * ds delayed by tau,
+        # tau 0.12-0.23 s. Default ki: k_loop*ki*tau <= 0.5 (PM ~60 deg) even at
+        # k_eff 964 -> settles. Old gain 1 (8.33 mm/(N s)): > pi/2 -> keeps oscillating.
+        def run(ki, k_eff, tau, dt=.02, seconds=20.):
+            s = replace(FFISettings(), ki_m_per_N_s=ki, trim_limit_m=.0029,
+                        trim_speed_m_per_s=.01, total_speed_m_per_s=.01)
+            c = NominalIntegral(s, 964., 4.)
+            lag = round(tau/dt)
+            hist, out, err = [0.]*(lag+1), 0., []
+            for j in range(round(seconds/dt)):
+                measured = 8.+2*k_eff*hist[-lag-1]-(1. if j*dt >= 2 else 0.)
+                out = c.update(4., measured, j*dt, out)
+                hist.append(out)
+                err.append(8.-measured)
+            return np.abs(err[-round(5/dt):]).max()
+        for k_eff in (680., 964.):
+            self.assertLess(run(FFISettings().ki_m_per_N_s, k_eff, .23), .02)
+        self.assertGreater(run(1/(4*1500)/.02, 680., .17), .3)
 
     def test_invalid_input_and_late_clock_do_not_change_state(self):
-        for now, target, measure, current in ((.101,6.,12.,0.), (0.,6.,12.,0.),
+        for now, target, measure, current in ((.301,6.,12.,0.), (0.,6.,12.,0.),
                                               (.02,-1.,12.,0.), (.02,6.,np.nan,0.),
                                               (.02,6.,12.,.001)):
             c = NominalIntegral(FFISettings(),964.,6.)
@@ -101,7 +129,8 @@ class FFILaw(unittest.TestCase):
 
     def test_invalid_settings_and_cli(self):
         for key, value in (('ki_m_per_N_s',0.), ('trim_limit_m',.013),
-                           ('total_speed_m_per_s',.0001), ('max_dt_s',.2)):
+                           ('total_speed_m_per_s',.0001), ('max_dt_s',.2),
+                           ('stall_dt_s',.1), ('stall_dt_s',.6)):
             with self.assertRaises(ValueError):
                 replace(FFISettings(),**{key:value})
         for args in (['--i-ki','nan'], ['--i-limit-mm','12'], ['--k-eff','-1']):

@@ -67,7 +67,7 @@ W6 = ("fx", "fy", "fz", "tx", "ty", "tz")
 PI_COLS = ('pi_seq pi_dt_ms pi_error_N pi_p_mm pi_i_mm pi_output_mm '
            'pi_rate_limited pi_position_limited').split()
 FFI_COLS = ('ffi_seq ffi_dt_ms ffi_error_N ffi_ff_want_mm ffi_ff_mm ffi_i_mm '
-            'ffi_output_mm ffi_ff_limited ffi_i_limited ffi_rate_limited ffi_position_limited').split()
+            'ffi_output_mm ffi_ff_limited ffi_i_limited ffi_rate_limited ffi_position_limited ffi_dt_clamped').split()
 TELEMETRY_COLS = ([f"{kind}_{s}_{unit}" for s in "LR" for kind, unit in (("joint_age", "ms"), ("ft_age", "ms"))]
                   + [f"{kind}_stamp_{s}" for s in "LR" for kind in ("joint", "ft")]
                   + [f"{kind}{s}_j{j}" for s in "LR" for kind in ("q", "dq", "tau") for j in range(1, 8)])

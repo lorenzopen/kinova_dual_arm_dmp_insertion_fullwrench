@@ -53,13 +53,13 @@ mani, non una forza per mano. Non sono aggiunti P, D, banda morta o filtri ATI.
 
 | Parametro | Default |
 |---|---:|
-| `--i-ki` | 0.0005 m/(N s), cioè 0.5 mm/(N s) |
+| `--i-ki` | 0.0016 m/(N s), cioè 1.6 mm/(N s) (regola sotto) |
 | `--i-limit-mm` | ±3 mm di trim per mano |
-| Velocità trim | massimo 1 mm/s per mano |
+| Velocità trim | massimo 2 mm/s per mano |
 | Velocità totale nominale + trim | massimo 2 mm/s per mano |
 | Escursione totale relativa al pickup | ±12 mm per mano |
 | Nominale interno | ±(12 mm − limite trim), default ±9 mm |
-| Intervallo valido dopo la prima lettura | 0 < dt <= 100 ms |
+| Intervallo dopo la prima lettura | dt oltre 100 ms integrato come 100 ms; Abort oltre 300 ms |
 
 Gli intervalli ammissibili vengono calcolati congiuntamente: non si applica un
 limite al nominale e uno all'I lasciando che la loro somma vada al doppio della
@@ -71,12 +71,61 @@ Il tempo è il clock effettivo del backend. Non si integra più volte per recupe
 tick saltati. Il trigger del controllo rimane quello del controller base, nominalmente
 20 ms e potenzialmente irregolare sul PC reale; qui si normalizza l'integrazione
 con dt, **non si cambia il rate né lo scheduler degli altri anelli**.
-Intervallo non positivo o oltre 100 ms causa Abort prima della modifica dello stato.
+Un intervallo tra 100 e 300 ms (ctrl_dt arriva a 92–126 ms nelle run normali del 23/10)
+non ferma la prova: si integra e si muove al massimo per 100 ms, `ffi_dt_clamped=1`.
+Intervallo non positivo o oltre 300 ms causa Abort prima della modifica dello stato.
 
-Il gain del trim è inferiore all'equivalente nominale del vecchio gain 0.1 a 50 Hz
-(circa 0.833 mm/(N s)); il nominale ora contribuisce esplicitamente al comando.
-La presa iniziale usa un'I diversa e meno lenta per caricarsi entro il timeout.
-Sono valori per un pilot, non gain identificati sulla dinamica reale.
+La presa iniziale usa un'I separata (1 mm/(N s)) per caricarsi entro il timeout.
+
+## Scelta di K_I: regola del ritardo
+
+**Impianto misurato** (21 run del 22–23/10, archivio `E:/TESI/NVIDIA_LOG_RUNS` + `docs/runs`).
+Si confrontano la chiusura comandata (distanza fra le pose mandate) e quella misurata
+(encoder, `mx*`), e la forza ATI:
+
+- comando → flange misurate: ritardo **120–230 ms** (correlazione incrociata 0.3–4 Hz;
+  120 e 160 ms nelle offline, senza anello di forza);
+- flange misurate → forza: ritardo ~0 ms, rigidezza ~2500 N/m: il contatto è statico;
+- età dei dati di posa ~5 ms: non è un ritardo del sensore.
+
+Modello per la somma delle forze rispetto a `s` (per mano):
+
+\[
+G(s)=k_L e^{-\tau s},\qquad k_L = 2k_{eff}\approx 1360\ \text{N/m},\quad \tau\le 0.23\ \text{s}.
+\]
+
+**Anello** con I pura \(C=K_I/s\): \(L=k_LK_I e^{-\tau s}/s\). Il modulo vale 1 a
+\(\omega_c=k_LK_I\), dove la fase è \(-90^\circ-\omega_c\tau\). Quindi
+
+\[
+\text{PM}=90^\circ-\frac{180}{\pi}\,k_LK_I\tau,\qquad
+\text{stabile}\iff k_LK_I\tau<\frac{\pi}{2}.
+\]
+
+Scelta: \(k_LK_I\tau=0.5\) (PM ≈ 61°) con il caso peggiore τ = 0.23 s:
+\(K_I = 0.5/(1360\cdot0.23)\approx 0.0016\) m/(N s). Con k_eff = 964 (rigidezza nominale,
+la più alta vista) il prodotto sale a 0.71, PM ≈ 49°; l'instabilità richiede un errore
+di modello di 2.2 volte. Costante di tempo in anello chiuso circa \(1/\omega_c\approx 0.45\) s.
+
+**Verifica contro le run** (τ = 0.17 s, \(k_L\) = 1360; il vecchio integratore
+`GAIN=1/(4·1500)` m/N ogni 20 ms vale 8.33 mm/(N s) a gain 1):
+
+| Gain storico | \(k_LK_I\tau\) | PM prevista | Osservato |
+|---|---:|---:|---|
+| 1 | 1.93 | instabile (ciclo a ~1.47 Hz) | ciclo limite a 1.37 Hz |
+| 0.5 | 0.96 | 35° | risonanza, RMS banda 0.27–0.38 N |
+| 0.25–0.3 | 0.48–0.58 | 57–62° | calma, ma con l'I vecchia senza nominale cala nel finale |
+| 0.1 | 0.19 | 79° | errore RMS 0.43 N, lenta |
+
+Il nominale SOCP arriva in feedforward e non passa per questo limite: l'I corregge
+solo i disturbi (k_eff sbagliato, carichi del finale). Banda massima ragionevole
+dell'I ≈ 0.25–0.35 Hz: per andare più veloci va ridotto τ, non cambiato il controllore.
+L'analisi è lineare: vale finché i limiti di velocità/corsa non saturano
+(`ffi_rate_limited`, `ffi_i_limited` nel CSV). Con 2 mm/s il limite scatta per
+errori oltre ~1.25 N sulla somma.
+
+Test: `test_delay_rule_separates_measured_gains` simula \(G\) con ritardo puro:
+il default si assesta con k_eff 680 e 964 e τ = 0.23 s; il vecchio gain 1 oscilla.
 
 ## Pianificazione e canali
 

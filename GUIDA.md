@@ -58,7 +58,7 @@ La presa iniziale usa feedback I e deve stabilizzarsi prima di chiederti di lasc
 La chiusura nominale successiva è riferita a quella presa: **non somma due volte il carico iniziale**.
 I piccola = **0.5 mm/(N·s)** sull'errore totale delle mani, correzione **±3 mm per mano**;
 velocità totale nominale + I **massimo 2 mm/s per mano**. Nessun P/D aggiunto.
-`--squeeze-gain` non cambia questa I: il parametro è `--i-ki` (default `0.0005`).
+`--squeeze-gain` non cambia questa I: il parametro è `--i-ki` (default `0.0016`, scelto col ritardo misurato del braccio: [regola](docs/FFI_CONTROLLER.md#scelta-di-k_i-regola-del-ritardo)).
 Per il primo confronto lascia i default. `--k-eff` cambia il nominale; non cambiare anche il gain insieme.
 `--twist` resta opzionale: la nuova legge riguarda solo la stretta normale.
 
