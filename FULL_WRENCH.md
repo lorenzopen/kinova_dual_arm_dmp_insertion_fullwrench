@@ -1,5 +1,11 @@
 # This copy: the full-wrench SOCP (2026-10-19)
 
+2026-10-23 review: [controller, real ATI data and lab comparisons](docs/CONTROL_REVIEW_20261023.md).
+The SOCP's 12 desired wrench components are now retained in every mode and in offline profiles.
+Execution regulates the selected channels; this is not a claim of full 12-component wrench tracking.
+Offline allocation can be combined with ATI feedback. New `forces` / `contact` channels are bounded pilots;
+`--no-bending` exposes the existing pad-bending constraint. Launch/gain defaults are unchanged.
+
 2026-10-20 update: signed friction distance margins from `friction_cone.pdf`,
 with the full nominal Coulomb opening. The former 70% cone and normal-axis
 offset are replaced. Current equations, defaults and the 3D task-adaptive
@@ -24,7 +30,7 @@ package name: **do not put both folders in the same colcon `src/`**.
 | `kinova_dual_arm_dmp_insertion/socp.py` | rewritten: cost = human precision on the two FLANGE wrenches (Vitus' Sigma^-1), cones per point, no floor, no cap, no slack. Built once per set of active pads (DPP) |
 | `controller.py` | builds the new SOCP from `cell.yaml`; `full_wrench` regulates the internal flange wrench on every route |
 | `main.py` | passes `socp`, `full_wrench`, `full_wrench_channels` from the config; `insert` refuses `full_wrench: true` unless `allow_hand_wrench: true` |
-| `config/cell.yaml` | `socp.margin_mode: task_adaptive`, scale 0.25, task floor 0.5 N; `w_force: 0`, `no_bending: false`, `full_wrench: false` |
+| `config/cell.yaml` | `socp.margin_mode: task_adaptive`, scale 0.25, current task floor 1.0 N; `w_force: 0`, `no_bending: false`, `full_wrench: false` |
 
 The program, in short (`w = H f` = the two flange wrenches, 12):
 
@@ -34,7 +40,7 @@ The program, in short (`w = H f` = the two flange wrenches, 12):
            -n' f_i >= 0
 
 The 18 pad forces are only the exact friction model of the tri-pad (a point has
-no moment); what is commanded is the flange wrench.
+no moment); the solver asks for flange wrenches and the pose controller realizes its selected channels.
 
 `full_wrench_channels: twist` = squeeze (the existing `ds` loop) + the OPPOSITE
 TWIST about the pad axis, nothing else - in simulation the channels a

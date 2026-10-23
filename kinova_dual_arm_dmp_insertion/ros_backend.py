@@ -53,6 +53,8 @@ from scipy.spatial.transform import Rotation as Rot
 import rclpy
 from rclpy.executors import SingleThreadedExecutor
 from rclpy.node import Node
+from rclpy.parameter import parameter_value_to_python
+from rcl_interfaces.srv import GetParameters
 from geometry_msgs.msg import PoseStamped, WrenchStamped
 from sensor_msgs.msg import JointState
 from std_srvs.srv import Trigger
@@ -62,6 +64,7 @@ from .geometry import Frame
 G_WORLD = np.array([0.0, 0.0, -9.81])        # shelf z is up
 # NetBox units -> N, Nm (ft_raw publishes in whatever the box is configured to)
 FT_STALE = 0.050                              # [s] no ATI sample for this long: stop
+JOINT_STALE = 0.100                           # [s] no fresh pose source: stop
 FORCE_UNITS = {"N": 1.0, "lbf": 4.4482216, "Lbf": 4.4482216, "kN": 1000.0, "kgf": 9.80665}
 TORQUE_UNITS = {"Nm": 1.0, "N-m": 1.0, "Nmm": 0.001, "N-mm": 0.001, "lbf-in": 0.11298483,
                 "lbfin": 0.11298483, "Lbf-in": 0.11298483, "lbf-ft": 1.3558179, "kNm": 1000.0}
@@ -140,6 +143,8 @@ class _Arm:
         self.ee_in_tool = self.tool_in_ee.inverse()
         self.pub = node.create_publisher(PoseStamped, cfg["target_topic"], 10)
         self.joints = self.wrench = None
+        self.joints_t = -1e9
+        self.ft_stamp = float("nan")
         node.create_subscription(JointState, cfg["joint_states_topic"], self._joints, 10)
         node.create_subscription(WrenchStamped, cfg["wrench_topic"], self._wrench, 10)
         self.fk = _FK(cfg["urdf_path"], cfg["ee_frame"])
@@ -168,6 +173,7 @@ class _Arm:
 
     def _joints(self, msg):
         self.joints = msg
+        self.joints_t = time.monotonic()
 
     def _wrench(self, msg):
         self.wrench = msg
@@ -176,6 +182,7 @@ class _Arm:
         w = msg.wrench
         kf, kt = self.ft_scale
         self.ft_t = time.monotonic()
+        self.ft_stamp = msg.header.stamp.sec + 1e-9 * msg.header.stamp.nanosec
         self.ft.append(np.array([kf * w.force.x, kf * w.force.y, kf * w.force.z,
                                  kt * w.torque.x, kt * w.torque.y, kt * w.torque.z]))
 
@@ -200,6 +207,8 @@ class RosBackend(Node):
                 print(f"  wrench baseline {arm.name}: {len(z)} samples, flange z {z.min():.2f}..{z.max():.2f} m"
                       f" (base), from {path}")
         self.raw = {}                          # last raw readings, for the log
+        self.telemetry = {}
+        self.controller_parameters = {}
         self.tares = []                        # every tare: the ATI biases, for the log's metadata
         # single-threaded, in its own thread: the callbacks only store the latest messages, and on the
         # Jetson the multi-threaded executor took ~2.6x the CPU for the same topics (2026-10-21)
@@ -224,7 +233,40 @@ class RosBackend(Node):
         for arm in self.arms.values():
             if arm.cfg.get("ft_topic"):
                 self._ft_units(arm)
+        self._read_controller_parameters()
         self._next = time.monotonic()
+
+    def _read_controller_parameters(self):
+        """Read-only snapshot: YAML stiffness is not evidence of the launched cart_k/cart_d."""
+        names = ["cart_k", "cart_d", "control_hz", "friction_enable", "kalman_enable", "urdf_path", "ee_frame"]
+        for side, arm in self.arms.items():
+            ns = arm.cfg["target_topic"].rsplit("/", 1)[0]
+            node = arm.cfg.get("controller_node", ns + "/real_robot_controller_node")
+            cli = self.create_client(GetParameters, node + "/get_parameters")
+            try:
+                if not cli.wait_for_service(timeout_sec=2.0):
+                    self.controller_parameters[side] = {"node": node, "error": "parameter service unavailable"}
+                    self.get_logger().warn(f"{arm.name}: cannot record actual controller parameters ({node})")
+                    continue
+                request = GetParameters.Request()
+                request.names = names
+                future = cli.call_async(request)
+                deadline = time.monotonic() + 3.0
+                while not future.done() and time.monotonic() < deadline:
+                    time.sleep(0.01)
+                if not future.done():
+                    future.cancel()
+                    self.controller_parameters[side] = {"node": node, "error": "parameter request timed out"}
+                    continue
+                response = future.result()
+                values = {name: parameter_value_to_python(value) for name, value in zip(names, response.values)}
+                self.controller_parameters[side] = dict(node=node, **values)
+                print(f"  {arm.name} ACTUAL controller: cart_k {values.get('cart_k')}; cart_d {values.get('cart_d')}")
+            except Exception as exc:
+                self.controller_parameters[side] = {"node": node, "error": str(exc)}
+                self.get_logger().warn(f"{arm.name}: controller parameter snapshot failed: {exc}")
+            finally:
+                self.destroy_client(cli)
 
     def _ft_units(self, arm):
         """Ask ft_raw which units its NetBox is set to; everything is scaled to N, Nm."""
@@ -286,12 +328,12 @@ class RosBackend(Node):
             arm.pub.publish(msg)
 
     # ---- in
-    def _ee_pose(self, arm):
+    def _ee_pose(self, arm, joints=None):
         """(ee position, ee rotation) in the base, by forward kinematics."""
-        return arm.fk.pose(arm.joints)
+        return arm.fk.pose(arm.joints if joints is None else joints)
 
-    def _tool_pose(self, arm):
-        pe, qe = self._ee_pose(arm)
+    def _tool_pose(self, arm, ee_pose=None):
+        pe, qe = self._ee_pose(arm) if ee_pose is None else ee_pose
         pt, qt = pe + qe.apply(arm.tool_in_ee.t), qe * arm.tool_in_ee.R
         return arm.base_in_shelf.apply(pt, qt)                  # tool in shelf
 
@@ -332,27 +374,42 @@ class RosBackend(Node):
                       f"F {np.round(sd[:3], 3).tolist()} N, T {np.round(sd[3:], 4).tolist()} Nm")
         self.tares.append(rec)
 
-    def _ft_pose(self, arm):
+    def _ft_pose(self, arm, ee_pose=None):
         """The ATI frame (position, rotation) in the shelf frame, by forward kinematics."""
-        pe, qe = self._ee_pose(arm)
+        pe, qe = self._ee_pose(arm) if ee_pose is None else ee_pose
         ps, qs = pe + qe.apply(arm.ft_in_ee.t), qe * arm.ft_in_ee.R
         return arm.base_in_shelf.apply(ps, qs)
 
-    def ft_on_tool(self, arm, w):
+    def ft_on_tool(self, arm, w, ee_pose=None):
         """ATI sample (sensor axes, N / Nm) -> (force, moment about the sensor origin,
         sensor origin) that the world - the piece - exerts on the tool, shelf frame,
         bias and tool weight removed."""
-        ps, qs = self._ft_pose(arm)
+        ps, qs = self._ft_pose(arm, ee_pose)
         g = arm.m_tool * G_WORLD
         f = qs.apply(arm.sign * w[:3] - arm.bias[0]) - g
         m = qs.apply(arm.sign * w[3:] - arm.bias[1]) - np.cross(qs.apply(arm.c_tool), g)
         return f, m, ps
 
     def read(self):
-        out, raw = {}, {}
+        out, raw, telemetry = {}, {}, {}
         # ATI samples in one control period, at each arm's ft_topic rate
         for s, arm in self.arms.items():
-            pt, qt = self._tool_pose(arm)
+            joints = arm.joints
+            joint_age = time.monotonic() - arm.joints_t
+            if joint_age > JOINT_STALE:
+                from .controller import Abort
+                raise Abort(f"{arm.name} joint_states silent for {1000 * joint_age:.0f} ms")
+            # A single FK snapshot per arm: pose and wrench transformations must use
+            # the same joint message, even if a callback arrives during this read.
+            ee_pose = self._ee_pose(arm, joints)
+            pt, qt = self._tool_pose(arm, ee_pose)
+            telemetry[f"joint_age_{s}_ms"] = 1000 * joint_age
+            telemetry[f"ft_age_{s}_ms"] = 1000 * (time.monotonic() - arm.ft_t) if arm.ft else float("nan")
+            telemetry[f"joint_stamp_{s}"] = joints.header.stamp.sec + 1e-9 * joints.header.stamp.nanosec
+            telemetry[f"ft_stamp_{s}"] = arm.ft_stamp
+            for prefix, values in (("q", joints.position), ("dq", joints.velocity), ("tau", joints.effort)):
+                for j in range(7):
+                    telemetry[f"{prefix}{s}_j{j+1}"] = values[j] if j < len(values) else float("nan")
             w = arm.wrench
             raw["est" + s] = [w.wrench.force.x, w.wrench.force.y, w.wrench.force.z,
                               w.wrench.torque.x, w.wrench.torque.y, w.wrench.torque.z]
@@ -366,7 +423,7 @@ class RosBackend(Node):
             if arm.source == "estimated":
                 # the external wrench ON the arm, ee axes, about the ee origin; the tool's
                 # weight is the URDF's business (and what is left of it, the tare's)
-                pb, qb = self._ee_pose(arm)
+                pb, qb = ee_pose
                 pe, qe = arm.base_in_shelf.apply(pb, qb)
                 f_on_tool = qe.apply([w.wrench.force.x, w.wrench.force.y, w.wrench.force.z])
                 if arm.baseline is not None:
@@ -382,12 +439,13 @@ class RosBackend(Node):
                 m_on_tool = qe.apply([w.wrench.torque.x, w.wrench.torque.y, w.wrench.torque.z])
                 origin = pe
             else:
-                f_on_tool, m_on_tool, origin = self.ft_on_tool(arm, ft)
+                f_on_tool, m_on_tool, origin = self.ft_on_tool(arm, ft, ee_pose)
             # the hand on the piece is the opposite; moment moved to the tool origin
             F = -np.asarray(f_on_tool)
             T = -np.asarray(m_on_tool) + np.cross(origin - pt, F)
             out.update({f"p{s}": pt, f"q{s}": qt.as_quat(), f"F{s}": F, f"T{s}": T})
         self.raw = raw
+        self.telemetry = telemetry
         return out
 
     def close(self):

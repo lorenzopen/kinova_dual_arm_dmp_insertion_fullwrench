@@ -1,10 +1,10 @@
-# Guida unica: due Kinova + ATI, inserimento DMP (21/10/2026)
+# Guida unica: due Kinova + ATI, inserimento DMP (23/10/2026)
 
 Unica guida operativa. Le precedenti (AVVIO_FULL_WRENCH, ESEMPI_*, SETUP_PC_ROBOT, HANDOFF)
 sono state rimosse: tutto quello che serviva è qui.
 
 **In breve**
-- `follow_two_arms` = solo il percorso a mani vuote (nessun SOCP, nessuna forza). **L'inserimento vero è sempre `main insert`.**
+- `follow_two_arms` = solo il percorso a mani vuote. Inserimento con integratore: `main insert`; variante PI: `insert_pi insert`.
 - `insert` = SOCP + stretta scalare. `insert --twist` = **full wrench**: stretta + twist opposto attorno all'asse dei pad,
   chiuso sugli ATI. Senza ATI su entrambi i bracci `--twist` si rifiuta di partire.
 - Con gli ATI **non serve più la baseline del wrench**: la forza arriva dai sensori, non dalle coppie dei giunti.
@@ -13,13 +13,100 @@ sono state rimosse: tutto quello che serviva è qui.
 - Per ogni rotta: prima `insert` (scalare), poi `insert --twist`, stessa board e stesso pezzo: due dati confrontabili.
 
 **Dati salvati a ogni prova** (`logs/`, e il rosbag in `~/lorenzo/bags/`):
-- `<W>_<R>_<data>.csv`, 100 Hz: comandi; pose misurate; forze e momenti usati dal controllo;
-  **ATI grezzo** (assi del sensore, N/Nm); **stima Kinova grezza**; offset del twist; wrench chiesto dal SOCP;
-  `t_wall` per allinearlo al bag.
+- `<W>_<R>_<data>.csv`, 100 Hz richiesti (frequenza effettiva dai timestamp): comandi; pose misurate;
+  forze e momenti usati dal controllo; **ATI prima del bias**, mediato (assi sensore, N/Nm);
+  **stima Kinova grezza**; offset; wrench completo chiesto dal SOCP anche nelle prove scalari;
+  `t_wall` per allinearlo al bag. Dal branch di revisione del 23/10: anche q/dq/effort dei 7 giunti per braccio,
+  timestamp e freschezza delle sorgenti, intervallo del controllo e stato dell'ultima allocazione.
 - `<W>_<R>_<data>_meta.json`: config usata (con `local.yaml`), comando, commit git, unità e seriale degli ATI,
-  bias e rumore di ogni tare, esito.
+  bias e rumore di ogni tare, esito. La revisione registra anche i parametri letti dai controller
+  (`cart_k`, `cart_d` ecc.), il gain effettivo, la modalità di esecuzione e il file del profilo offline.
+  `control_hz` è un parametro richiesto: non certifica la frequenza reale del loop.
 - `follow2_<W>_<data>.csv`: giri a vuoto, con l'ATI grezzo.
-- Il rosbag: tutto `/left_arm/*` e `/right_arm/*`, cioè joint states, target, stima Kinova e ATI a 1 kHz.
+- Il rosbag: tutto `/left_arm/*` e `/right_arm/*`, cioè joint states, target, stima Kinova e ATI
+  mediato a **200 Hz**; ATI grezzo a 1 kHz soltanto con `ati_raw:=true` (più carico CPU).
+
+**Revisione per il laboratorio del 23/10:** [analisi, formulazione e prove a 1500 N/m](docs/CONTROL_REVIEW_20261023.md).
+Codice sul branch `codex/controller-review-20261023`; i default del launch e del gain storico restano invariati.
+
+## Prove di venerdì: integratore e PI
+
+Sul PC robot deve esserci il branch `codex/controller-review-20261023` aggiornato con
+`kinova_dual_arm_dmp_insertion/insert_pi.py`. I comandi sotto si eseguono **sul PC robot**.
+Calibrazione ATI e controlli del percorso restano quelli delle sezioni 2 e 3.
+
+**T1 — bracci + ATI, terminale normale senza `env.sh`.** Avvia una sola istanza.
+Per queste prove: rigidezza traslazionale 1500, rotazionale 20; damping 60/7.
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source /home/nvidia/ros2_ws/install/setup.bash
+ros2 launch /home/nvidia/lorenzo/kinova_dual_arm_dmp_insertion_fullwrench/launch/robot.launch.py cart_k:="1500 1500 1500 20 20 20" cart_d:="60 60 60 7 7 7"
+```
+
+**T2 — registrazione, lascialo aperto per tutte le prove.**
+
+```bash
+source ~/lorenzo/env.sh
+mkdir -p "$LORENZO/bags"
+cd "$LORENZO/bags"
+ros2 bag record -e "/(left_arm|right_arm)/.*|/rosout" -o sessione_$(date +%Y%m%d_%H%M%S)
+```
+
+**T3 — prove, un comando alla volta.** Esempio con la Z; cambia `W` per il tuo pezzo.
+
+```bash
+source ~/lorenzo/env.sh
+cd "$LORENZO/kinova_dual_arm_dmp_insertion_fullwrench"
+git branch --show-current
+export W=F75_Zt1_s9012 R=c100_five_cut800
+```
+
+Prima **dry run PI**, senza movimento dei robot:
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_pi check "$W" --arm "$R" --slow 3
+```
+
+**A — integratore precedente, gain 0.25:**
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.main insert "$W" --arm "$R" --slow 3 --squeeze-gain 0.25
+```
+
+**B — nuovo PI, stessa board e pezzo rimesso all'inizio:**
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_pi insert "$W" --arm "$R" --slow 3
+```
+
+**C — nuovo PI con SOCP offline, sempre con feedback ATI:**
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_pi insert "$W" --arm "$R" --slow 3 --offline
+```
+
+Per confrontare anche il twist, aggiungi `--twist` **a entrambi A e B**.
+`--wrench-channels forces` aggiunge invece il feedback tangenziale interno già esistente;
+il nuovo PI regola solo la stretta normale. Se scegli `--no-bending`, usalo in tutte le prove confrontate.
+
+**PI iniziale:** P = **0.1 mm/N**, I = **1 mm/(N·s)** sull'errore di forza **sommato delle due mani**.
+Velocità massima della correzione **2 mm/s per mano**; correzione dopo la presa **±6 mm per mano**.
+Usa il tempo effettivo e l'anti-windup. Se la presa non si stabilizza entro 6 s, si ferma prima di chiederti
+di lasciare il pezzo; intervallo PI oltre 100 ms: stop. Sono valori iniziali da verificare sul robot.
+Nel modulo PI **`--squeeze-gain` non cambia la stretta normale**: usa `--pi-kp` e `--pi-ki`
+solo per prove di taratura. Non cambiare gain, impedenza e modalità contemporaneamente.
+
+**T3 — analisi, dopo ogni prova.** Sostituisci il percorso con il CSV stampato a fine esecuzione:
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.audit_run logs/NOME_PROVA.csv
+```
+
+I log PI hanno `_pi_` nel nome; il meta distingue SOCP online/offline e salva i gain PI.
+Nel CSV ci sono errore, P, I e saturazioni `pi_*`, oltre a wrench, pose e joints.
+Confronta oscillazioni **e** cali della forza; dry run riuscito non certifica stabilità reale.
+Per tornare al vecchio controllo usa il comando **A**: non serve cambiare file.
 
 ---
 
@@ -82,10 +169,11 @@ source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.ba
 - il **destro**: va in home in impedenza (8 s) e poi la tiene;
 - dopo 14 s il **sinistro**, quando il destro è già fermo in home.
 
-Le impostazioni sono `cart_k` 1000/20, `cart_d` **60/7** (dal 22/10 sera; fino alle prove del 22/10 15:28
-compresa era 5/1), attrito e Kalman. La sinusoide a ~1,2–1,5 Hz nella stretta veniva dal loop della stretta,
-non dal damping: `main insert` ha `--squeeze-gain` **0,5** di default dal 22/10 sera (1 oscilla, 0,25 recupera troppo
-piano quando il pezzo entra tra i vicini).
+I default sono `cart_k` 1000/20, `cart_d` **60/7**; il comando PI in cima alla guida richiede esplicitamente 1500/20.
+Fino alla prova del 22/10 alle 15:28 il damping era 5/1. Attrito e Kalman sono accesi di default.
+Nei dati la sinusoide a circa 1,2–1,5 Hz compare anche nel comando di stretta; il gain più basso la riduce,
+ma a 0,25 si osservano anche cali della forza. Il default di `main insert` resta 0,5;
+per il confronto di venerdì il comando A richiede esplicitamente 0,25.
 L'impedenza è su `end_effector_link`, cioè **sulla flangia**. L'URDF è **`urdf/gen3_ati_tool.urdf`** di questo
 repo: `gen3.urdf` più quello che è montato sulla flangia (ATI, adattatori, molla e tri-pad), **150 g** in tutto.
 Senza quella massa la compensazione di gravità non vede il tool. Se cambi tool, aggiorna massa e baricentro
@@ -184,7 +272,8 @@ Board e pezzi: figure e quote nell'appendice. Mano sull'E-stop: non c'è control
 python -m kinova_dual_arm_dmp_insertion.main check "$W" --arm "$R" --slow 3
 ```
 
-Nessun movimento: deve stampare `SOCP ok N/N`, `seat_found True` e il `cart_k` del launch in T1.
+Nessun movimento: deve stampare `SOCP ok N/N` e `seat_found True`. Il `cart_k` suggerito dal dry run
+viene dal config e non legge T1; i parametri reali sono registrati nel meta delle prove hardware.
 
 ```bash
 python -m kinova_dual_arm_dmp_insertion.follow_two_arms "$W" --routes "$R" --cell --gap 0.20 --lift 0.10
@@ -217,14 +306,14 @@ python -m kinova_dual_arm_dmp_insertion.main insert "$W" --arm "$R" --slow 3 --t
 
 **Inserimento full wrench** (stretta + twist): stessa board, pezzo rimesso al punto di partenza.
 
-**Confronto di tre modi di fare la stretta** (`insert_open`, stessa board e stesso pezzo, log con `_offline`,
-`_open`, `_online` nel nome):
+**Separare pianificazione delle forze ed esecuzione** (`insert_open`, stessa board e stesso pezzo):
 
 | comando | stretta | SOCP | ATI |
 |---|---|---|---|
-| `--offline` | feedforward, `ds = f*/k_eff` | risolto **prima** della prova lungo tutta la sequenza (come il paper) | solo registrato |
+| `--offline` | feedforward normale, `ds = N*/k_eff` | risolto **prima** della prova | registrato ed eventi |
 | (niente) | feedforward, `ds = f*/k_eff` | online ogni 100 ms | solo registrato |
 | `--online` | anello chiuso sull'ATI, gain **0,1** (o `--squeeze-gain`) | online ogni 100 ms | in feedback |
+| `--offline --online` | anello chiuso sull'ATI, stesso controllo | risolto **prima**, nessun solve durante l'esecuzione | in feedback |
 
 ```bash
 python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slow 3 --offline
@@ -238,11 +327,29 @@ python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slo
 python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slow 3 --online
 ```
 
-`k_eff` = impedenza in serie alla molla ≈ 730 N/m: nel feedforward la forza vera dipende da quanto è giusto e
-dalla larghezza del pezzo. A fine prova stampa misurata/chiesta e il `k_eff` che la renderebbe giusta (`--k-eff`).
-Con `--offline` il profilo del SOCP viene salvato in `logs/<W>_<R>_offline_profile_<data>.csv`.
-`--twist` solo con `--online`. In tutti e tre sicurezze, sentinella del jam e appoggio a sentire usano ancora
-l'ATI, ma come eventi, non come regolazione.
+`k_eff` assiale = impedenza in serie alla molla da 2700 N/m: **730 N/m a 1000**, **964 N/m a 1500**.
+Su hardware viene ricavato dal `cart_k` letto dai due controller; se non è leggibile, il feedforward richiede
+un `--k-eff` esplicito e calibrato. Nel dry run viene usato il modello di `cell.yaml`. Il rapporto
+misurata/chiesta non è una calibrazione della rigidezza durante contatti o errori di larghezza.
+Il profilo offline conserva **target normale e tutti i 12 componenti dei wrench**, riferiti al centro di presa.
+Una fase mancante o un solve non fattibile impediscono l'esecuzione del profilo.
+`--twist` abilita il feedback dei momenti solo con `--online`, anche combinato con `--offline`.
+`--wrench-channels forces` abilita, sempre con feedback, stretta più **ripartizione tangenziale interna**,
+senza anello dei momenti; è una modalità pilota con offset limitati a **2 mm per mano**, da provare prima
+di usarla per i dati finali. `--wrench-channels contact` aggiunge il twist assiale alle tangenziali;
+`--no-bending` vincola a zero la flessione al pad nel SOCP, conservando torsione e momenti di leva alla flangia.
+Questi canali interni non regolano il wrench ambientale risultante. Tutte le modalità mantengono
+gli eventi di sicurezza, jam e appoggio; nei modi senza `--online` l'ATI non regola la stretta.
+
+Per analizzare i dati senza ricostruire il SOCP con un modello diverso da quello della run:
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.audit_run logs/NOME_RUN.csv
+```
+
+Salva rapporto JSON, tracking, **6 componenti del wrench per mano** e, nei nuovi CSV, joints.
+I momenti misurati sono trasportati al centro di presa prima del confronto. `analyze_run` rimane disponibile
+per la ricostruzione dei vecchi log: ricalcola il SOCP con il codice/config forniti, non recupera le soluzioni storiche.
 
 **In alternativa: presa automatica dall'angolo** (`insert_pick`, stessi log con `_pick` nel nome). Non devi più tenere
 il pezzo in mano alla quota di partenza. Il pezzo si appoggia sul pavimento dello scaffale, **nell'orientamento dello

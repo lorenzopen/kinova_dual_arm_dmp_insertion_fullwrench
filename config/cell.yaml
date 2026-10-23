@@ -46,7 +46,7 @@ socp:
   no_bending: false       # true = no moment across each pad plane (a tilt-compliant tool)
 full_wrench: false        # true (or `--twist` on the command line) = regulate the internal flange wrench on EVERY route.
                           # 2026-10-21: needs wrench_source: ft on both arms (main.py refuses otherwise)
-full_wrench_channels: twist   # twist = squeeze + opposite twist only; internal = the old hwd law
+full_wrench_channels: twist   # twist = squeeze + axial twist; forces/contact are bounded pilot tangential channels
 full_wrench_moment_sign: -1  # -1 = the original law. 2026-10-20 (estimated wrench, logs 19:41 19:45 with -1,
                              # 19:55 with +1): both signs drove the twist offset to its cap (~5 deg) with the
                              # twist error unchanged (~0.5 Nm), so neither is shown right. Recheck with the ATIs:
@@ -56,7 +56,7 @@ full_wrench_moment_sign: -1  # -1 = the original law. 2026-10-20 (estimated wren
 # needs none. Old ones: Z logs/wrench_20261016_134246_Z_senza_contatto.csv, T logs/wrench_20261016_112659.csv
 wrench_baseline: null
 
-stiffness:                # what the controllers are LAUNCHED with (`check` prints the cart_k).
+stiffness:                # reference/dry-run model; actual hardware cart_k/cart_d are set at launch and logged separately
   trans: 1000.0           # [N/m]   the routes were trained at 1500 N/m, 40 Nm/rad torsion, 8 tilt
   torsion: 20.0           # [Nm/rad] about the push axis; 20 = the real runs since 2026-10-16
   tilt: 20.0              # [Nm/rad] the other two
@@ -75,7 +75,9 @@ tool:
   # series with the 1000 N/m impedance -> 730 N/m per hand; 2.2 mm shorter at 6 N; bending
   # ~0.11 Nm/rad, twist ~0.25 Nm/rad (the wrist: 20); sideways ~100 N/m at the pad (~10 Hz
   # with 40 g); buckling from ~10 N per hand if the pad slides sideways freely. The spring
-  # passes FORCES: a moment about the flange is only those forces times their arm.
+  # stiffness estimates above are NOT calibrated moment authority; flange moments also
+  # include the lever arm of tangential contact forces.
+  spring_axial_N_per_m: 2700.0 # nominal axial spring stiffness; does not define lateral/torsional compliance
   pad_x: 0.085            # [m] tool origin (flange) to the plane of the sphere centres = 0.100 - pad_r
   pad_r: 0.015            # [m] sphere radius
   r_tri: 0.0404           # [m] sphere centres' circle: 70 mm triangle side / sqrt(3) (the sim had 30 mm).

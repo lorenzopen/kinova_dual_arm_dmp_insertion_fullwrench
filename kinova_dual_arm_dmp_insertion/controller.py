@@ -8,9 +8,10 @@ What the robot is sent, and nothing else:
   * on top, ONE scalar `ds`: the extra squeeze along the grasp axis, closed on
     the MEASURED normal force, at the target the SOCP (with the TP-GMM prior)
     re-solves every 100 ms;
-  * the wrist impedance is the arm's controller (1500 N/m, 40 Nm/rad about the
-    push axis, 8 Nm/rad tilt): the simulated wrist was that spring, so the
-    trained routes assume it.
+  * the wrist impedance is configured at the arm controller's launch. The
+    TRAINING model used 1500 N/m, 40 Nm/rad twist, 8 Nm/rad tilt; these constants
+    do not set the real arm or the compliant tripad's stiffness. Actual launch
+    parameters are read and recorded by the ROS backend.
 What is read: each wrist's F/T sensor (gravity-compensated by the backend) and
 each flange pose. The jam sentry, the seat by feel and the stop on a high
 landing run on those two readings only - no contact sensor, no vision.
@@ -32,7 +33,7 @@ import os
 PRIOR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "prior_torsional_C.npz")
 
 # ---- the simulated apparatus's numbers (tetris/handling.py, lib/wrist.py) ----
-KP = 1500.0                     # [N/m] wrist translational stiffness
+KP = 1500.0                     # [N/m] training reference for gain/safety, NOT actual cart_k
 K_TILT_SEAT, K_TILT_HOLD = 3.0, 8.0   # [Nm/rad] wrist tilt stiffness: approaching / holding
 K_TORSION = 40.0                # [Nm/rad] about the push axis
 CONTROL_PERIOD = 0.020          # [s] squeeze update (EVERY = 20 ticks of 1 ms)
@@ -47,6 +48,7 @@ PICKUP_N = 6.0                 # [N] per hand: the pickup squeeze on the REAL pi
                                 # capped below the route's derived_N (25 N); the route then asks 3-6 N
 # THE HAND WRENCH (hwd routes only, `internal-descent`): Wong et al. eq. 49-50 as an integrator
 GAIN_F, STEP_F, MAX_F = 1.0 / (4.0 * KP), 2e-4, 0.020
+FORCES_MAX_F = 0.002              # [m] pilot tangential modes: bounded internal correction per hand
 GAIN_T, STEP_T, MAX_T = 1.0 / (4.0 * 40.0), 2e-3, 0.15
 G = 9.81
 
@@ -82,9 +84,10 @@ class Insertion:
         # (estimated wrench) -1 and +1 both drove the offset to its cap with the twist error
         # unchanged (~0.5 Nm): the free spring passes almost no twist. Recheck with the ATIs.
         self.moment_sign = float(moment_sign)
-        if self.channels not in ("twist", "internal"):
-            raise ValueError("full_wrench_channels must be twist or internal")
+        if self.channels not in ("forces", "twist", "contact", "internal"):
+            raise ValueError("full_wrench_channels must be forces, twist, contact or internal")
         self.hand_wrench = route.hand_wrench != "off" or self.full_wrench
+        self.force_offset_limit = FORCES_MAX_F if self.full_wrench and self.channels in ("forces", "contact") else MAX_F
         self.f_min = float(c["f_min"])          # passed on, ignored by the new SOCP (no floor)
         s = dict(w_force=0.0, no_bending=False, margin_mode="task_adaptive",
                  margin_task_scale=0.25, margin_floor_N=1.0, margin_fixed_N=0.5)
@@ -100,7 +103,8 @@ class Insertion:
         self.f_abort, self.track_abort = float(f_abort), float(track_abort)   # robot-only safety
         self.jam_scale = float(jam_scale)                                     # robot: looser sentry
         self.jam_min = float(jam_min)       # [N] floor: above the wrench estimate's noise (robot)
-        self.gain = GAIN * float(squeeze_gain)   # squeeze integrator [m/N]; < 1 x GAIN: slower, no limit cycle
+        self.gain = GAIN * float(squeeze_gain)   # [m/N per update]; smaller scale reduces integral action
+        self.squeeze_feedback = True
         self.confirm = confirm or (lambda msg: input(f"\n  >>> {msg} [Enter] "))
         # the open pose (Hands.__init__): LEFT pushes along +axis
         a = route.axis / np.linalg.norm(route.axis)
@@ -117,6 +121,11 @@ class Insertion:
         self.c_cmd = self.R_cmd = None
         self.t_ctrl = self.t_socp = -1e9
         self.socp_ms = 0.0                  # [ms] the last SOCP solve, for the log
+        self.socp_status = None
+        self.socp_reason = ""
+        self.socp_input_time = None
+        self.control_dt = 0.0
+        self.control_seq = 0
         # on the robot the SOCP is solved in a worker thread: the 100 Hz stream of targets goes on
         # with the last solution meanwhile (2026-10-21: solved inline it stalled the loop 40-260 ms
         # once a second while carrying: the arms jerked). The dry run keeps it inline (same results).
@@ -129,8 +138,9 @@ class Insertion:
         self.jammed, self.jam_info, self.landed_high = False, None, False
         self.seat_goal = None
         self.phase = "start"
+        self.phase_t0 = None
         self.k_tilt = K_TILT_SEAT
-        self.stats = dict(socp_ok=0, socp_ticks=0, f_ext_max=0.0, asked=[])
+        self.stats = dict(socp_ok=0, socp_ticks=0, socp_fail=0, f_ext_max=0.0, asked=[])
 
     # ------------------------------------------------------------ one tick
     def tick(self, tL, qL, tR, qR, k_tilt):
@@ -143,7 +153,9 @@ class Insertion:
         self._safety(tL, tR)
         now = self.b.now()
         if self.frame is not None and now - self.t_ctrl >= CONTROL_PERIOD - 1e-9:
+            self.control_dt = now - self.t_ctrl if self.t_ctrl > 0 else CONTROL_PERIOD
             self.t_ctrl = now
+            self.control_seq += 1
             self._control(now)
         if self.log is not None:
             self.log.row(self, tL, qL, tR, qR)
@@ -182,6 +194,12 @@ class Insertion:
         return float(origin[2] - goal[2])
 
     # ------------------------------------------------------------ the loops
+    def _phase_time(self, now):
+        """The command generator's clock, shared with offline force-profile lookup."""
+        if self.phase_t0 is None:
+            raise Abort("motion phase clock has not started")
+        return max(0., now - self.phase_t0)
+
     def _control(self, now):
         if self._socp_job is not None and self._socp_job[1].done():
             inp, job = self._socp_job
@@ -215,10 +233,19 @@ class Insertion:
         inp = self._socp_inputs()
         self._socp_apply(inp, *self._socp_solve(inp))
 
-    def _socp_inputs(self):
+    def _prepare_control(self):
+        """Compile/solve while holding still, before starting a wall-clock-paced move.
+        Otherwise the first synchronous compilation can skip part of that move.
+        Offline executors override this hook: they must not solve on hardware.
+        """
+        self._allocate()
+        self.t_ctrl = self.t_socp = self.b.now()
+
+    def _socp_inputs(self, measured=None):
         """Everything the SOCP needs, copied now (the worker must not read self.meas later)."""
-        m = self.meas
-        pole = self.grasp_centre() - self.R_cmd.apply(self.r.r_plan)
+        m = self.meas if measured is None else measured
+        centre = 0.5 * (np.asarray(m["pL"]) + np.asarray(m["pR"]))
+        pole = centre - self.R_cmd.apply(self.r.r_plan)
         hands = {"L": (m["pL"], Rot.from_quat(m["qL"])), "R": (m["pR"], Rot.from_quat(m["qR"]))}
         first, second = ("R", "L") if self.r.swapped else ("L", "R")
         q = self._q_cmd_R if self.r.swapped else self._q_cmd
@@ -232,7 +259,8 @@ class Insertion:
         kw = dict(posL=pA, posR=pB, baseL=np.array(hands[first][0], float),
                   baseR=np.array(hands[second][0], float), nrmL=nA, nrmR=nB,
                   m_hat=self.r.mass, p_com=pole, orientation=q.as_matrix(), w_des=w, f_min=self.f_min)
-        return dict(kw=kw, first=first, second=second, pA=pA, pB=pB, c=self.grasp_centre())
+        return dict(kw=kw, first=first, second=second, pA=pA, pB=pB, c=centre,
+                    time=self.b.now())
 
     def _socp_solve(self, inp):
         """(result, solve time [ms]); safe in the worker thread: touches only `inp` and the SOCP."""
@@ -242,18 +270,24 @@ class Insertion:
 
     def _socp_apply(self, inp, res, ms):
         self.socp_ms = ms
+        self.socp_status = bool(res["ok"])
+        self.socp_reason = res.get("reason", "")
+        self.socp_input_time = inp["time"]
         first, second, pA, pB = inp["first"], inp["second"], inp["pA"], inp["pB"]
         if res["ok"]:
             self.stats["socp_ok"] += 1
             self.target = max(float(max(sum(res["fn_L"]), sum(res["fn_R"]))), 1.0)
-            if self.hand_wrench:
-                c = inp["c"]                  # the grasp centre the program was solved about
-                self.w_des = {side: (sum(np.asarray(f) for f in forces),
-                                     sum(np.cross(pp - c, np.asarray(f)) for pp, f in zip(pads, forces)))
-                              for side, pads, forces in ((first, pA, res["f_L"]), (second, pB, res["f_R"]))}
+            # Keep ALL components also in scalar/feedforward runs: the log and an offline
+            # profile must not silently discard the SOCP's tangential forces and moments.
+            c = inp["c"]                  # desired moments are about the common grasp centre
+            self.w_des = {side: (sum(np.asarray(f) for f in forces),
+                                 sum(np.cross(pp - c, np.asarray(f)) for pp, f in zip(pads, forces)))
+                          for side, pads, forces in ((first, pA, res["f_L"]), (second, pB, res["f_R"]))}
         else:
-            self.target = self.r.derived_N
-            self.w_des = {}
+            # An infeasible wrench is not permission to jump to the route's nominal
+            # 25 N fallback. Stop streaming, holding the last commanded pose instead.
+            self.stats["socp_fail"] += 1
+            raise Abort("SOCP allocation failed: " + self.socp_reason)
 
     def _chase_wrench(self):
         """hwd routes: only how the two hands SHARE the load (the null space of G),
@@ -267,15 +301,29 @@ class Insertion:
             F_des, T_des = self.w_des[side]
             e[side] = (F - F_des, T_c - T_des)
         eF, eT = 0.5 * (e["L"][0] - e["R"][0]), 0.5 * (e["L"][1] - e["R"][1])
-        if self.full_wrench and self.channels == "twist":
-            eF = np.zeros(3)                  # the tangential split is fixed by statics
+        if self.full_wrench and self.channels in ("twist", "contact"):
+            if self.channels == "twist":
+                eF = np.zeros(3)
             eT = (eT @ a) * a                 # only the opposite twist about the pad axis
+        elif self.full_wrench and self.channels == "forces":
+            eT = np.zeros(3)                  # compliant tripad: no assumed moment authority
         for side, sF, sT in (("L", eF, eT), ("R", -eF, -eT)):
             sF = sF - (sF @ a) * a
             o = self.off[side]
-            o[:3] += np.clip(-GAIN_F * sF, -STEP_F, STEP_F)
+            # New tangential channels use the same explicit gain scale as the squeeze.
+            # Historical twist/internal behavior is preserved for existing experiments.
+            gain_f = self.gain if self.channels in ("forces", "contact") else GAIN_F
+            step_f = -gain_f * sF
+            if self.channels in ("forces", "contact"):
+                o[:3] -= (o[:3] @ a) * a
+                # A componentwise clip would rotate a large tangential correction
+                # out of the pad plane when the grasp axis is not a world axis.
+                step_f *= min(1., STEP_F / max(np.linalg.norm(step_f), 1e-12))
+            else:
+                step_f = np.clip(step_f, -STEP_F, STEP_F)
+            o[:3] += step_f
             o[3:] += np.clip(self.moment_sign * GAIN_T * sT, -STEP_T, STEP_T)
-            for sl, cap in ((slice(0, 3), MAX_F), (slice(3, 6), MAX_T)):
+            for sl, cap in ((slice(0, 3), self.force_offset_limit), (slice(3, 6), MAX_T)):
                 n = np.linalg.norm(o[sl])
                 if n > cap:
                     o[sl] *= cap / n
@@ -331,6 +379,7 @@ class Insertion:
         seconds = max(float(seconds), float(np.linalg.norm(c_to - c_from)) / self.motion_speed,
                       max(TURN_FLOOR, turn / self.turn_rate))
         t0 = self.b.now()
+        self.phase_t0 = t0
         while True:
             u = min(1.0, (self.b.now() - t0) / seconds)
             R = R_from * Rot.from_rotvec(u * (R_from.inv() * R_to).as_rotvec())
@@ -348,6 +397,7 @@ class Insertion:
         if times[-1] > 0:
             times = times * max(1.0, float(seconds) / times[-1])
         t0 = self.b.now()
+        self.phase_t0 = t0
         while True:
             t = self.b.now() - t0
             c, R, k, j, mix = GE.interpolate(times, centres, rots, t)
@@ -414,6 +464,7 @@ class Insertion:
             return float(goal[2] - c[2]), False
         want = self.land_share * self.r.mass * G
         t0, z0 = self.b.now(), c[2]
+        self.phase_t0 = t0
         while z0 - c[2] < SEAT_DROP:
             here = self.believed_height(goal)
             carried = self.external_force()[2] >= want
@@ -481,6 +532,8 @@ class Insertion:
         self.freeze(r.grasp_c, R0)
         self.R_rel = R0.inv() * Rot.from_quat(self.meas["qL"])
         self.R_cmd, self.c_cmd = R0, r.grasp_c
+        self.meas = self.b.read()
+        self._prepare_control()
 
     def insert(self):
         """From the grasp pose (piece held, object frame frozen) to the slot and away."""
@@ -516,6 +569,7 @@ class Insertion:
         out = dict(route_followed=ok, jammed=jammed or self.jammed, seat_found=sat,
                    landed_high=self.landed_high, drop_mm=1000 * drop, believed_mm=1000 * believed,
                    socp_ok=self.stats["socp_ok"], socp_ticks=self.stats["socp_ticks"],
+                   socp_failed=self.stats["socp_fail"],
                    side_force_max=self.stats["f_ext_max"],
                    squeeze_median=float(np.median(self.stats["asked"])) if self.stats["asked"] else float("nan"))
         print("  RESULT: " + ", ".join(f"{k} {v:.1f}" if isinstance(v, float) else f"{k} {v}"

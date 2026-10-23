@@ -64,6 +64,11 @@ def load_config(path):
 
 
 W6 = ("fx", "fy", "fz", "tx", "ty", "tz")
+PI_COLS = ('pi_seq pi_dt_ms pi_error_N pi_p_mm pi_i_mm pi_output_mm '
+           'pi_rate_limited pi_position_limited').split()
+TELEMETRY_COLS = ([f"{kind}_{s}_{unit}" for s in "LR" for kind, unit in (("joint_age", "ms"), ("ft_age", "ms"))]
+                  + [f"{kind}_stamp_{s}" for s in "LR" for kind in ("joint", "ft")]
+                  + [f"{kind}{s}_j{j}" for s in "LR" for kind in ("q", "dq", "tau") for j in range(1, 8)])
 
 
 class Log:
@@ -80,7 +85,7 @@ class Log:
         + [f"{src}{s}_{c}" for src in ("est", "ft") for s in "LR" for c in W6]
         + [f"off{s}_{c}" for s in "LR" for c in ("x", "y", "z", "rx", "ry", "rz")]
         + [f"wdes{s}_{c}" for s in "LR" for c in W6]
-        + ["socp_ms"])                     # the last SOCP solve [ms]
+        + ["socp_ms", "ctrl_dt_ms", "ctrl_seq", "socp_ok", "socp_input_age_ms"] + TELEMETRY_COLS + PI_COLS)
 
     def __init__(self, path):
         self.fh = open(path, "w", newline="")
@@ -93,6 +98,10 @@ class Log:
         raw = getattr(ins.b, "raw", {})
         nan6 = [np.nan] * 6
         wdes = [np.round(np.concatenate(ins.w_des[s]), 4) if s in ins.w_des else nan6 for s in "LR"]
+        telemetry = getattr(ins.b, "telemetry", {})
+        pi = getattr(getattr(ins, 'squeeze_pi', None), 'diag', {})
+        input_age = (1000 * (ins.b.now() - ins.socp_input_time)
+                     if ins.socp_input_time is not None else np.nan)
         self.w.writerow([f"{ins.b.now():.3f}", ins.phase, *np.round(tL, 5), *np.round(qL.as_quat(), 5),
                          *np.round(tR, 5), *np.round(qR.as_quat(), 5), *np.round(m["pL"], 5),
                          *np.round(m["pR"], 5), *np.round(m["FL"], 2), *np.round(m["FR"], 2),
@@ -102,30 +111,62 @@ class Log:
                          *np.round(m["TL"], 4), *np.round(m["TR"], 4),
                          *np.round(np.concatenate([raw.get(k, nan6) for k in ("estL", "estR", "ftL", "ftR")]), 4),
                          *np.round(ins.off["L"], 5), *np.round(ins.off["R"], 5), *np.concatenate(wdes),
-                         f"{ins.socp_ms:.1f}"])
+                         f"{ins.socp_ms:.1f}", f"{1000 * ins.control_dt:.3f}", getattr(ins, "control_seq", 0),
+                         int(ins.socp_status) if ins.socp_status is not None else "", f"{input_age:.3f}",
+                         *(telemetry.get(c, np.nan) for c in TELEMETRY_COLS),
+                         *(pi.get(c, np.nan) for c in PI_COLS)])
 
     def close(self):
         self.fh.close()
 
 
-def write_meta(path, cfg, cfg_path, a, backend=None, result=None):
+def write_meta(path, cfg, cfg_path, a, backend=None, result=None, ins=None):
     """Everything needed to read a run later: the config as used, the command,
     the code version, the ATI units and every tare's biases."""
     import json
     import subprocess
     try:
-        rev = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=HERE, capture_output=True,
-                             text=True, timeout=5).stdout.strip()
+        rev = subprocess.run(["git", "rev-parse", "HEAD"], cwd=HERE, capture_output=True,
+                             text=True, timeout=5, check=True).stdout.strip()
+        branch = subprocess.run(["git", "branch", "--show-current"], cwd=HERE, capture_output=True,
+                                text=True, timeout=5, check=True).stdout.strip()
         dirty = bool(subprocess.run(["git", "status", "--porcelain"], cwd=HERE, capture_output=True,
-                                    text=True, timeout=5).stdout.strip())
+                                    text=True, timeout=5, check=True).stdout.strip())
     except Exception:
-        rev, dirty = None, None
-    meta = dict(argv=sys.argv, config_path=os.path.abspath(cfg_path), config=cfg, git=rev, git_dirty=dirty,
+        rev, branch, dirty = None, None, None
+    meta = dict(argv=sys.argv, config_path=os.path.abspath(cfg_path), config=cfg, git=rev, git_branch=branch, git_dirty=dirty,
                 started=time.strftime("%Y-%m-%d %H:%M:%S"), result=result)
+    meta["log_timing"] = ("poses are commands already sent; measured wrench is read after wait; "
+                          "ds/target/wdes are updated after that reading for subsequent commands. "
+                          "Source stamps identify the latest message, ages are since local receipt; "
+                          "ATI values average the last configured samples.")
     if backend is not None:
         meta["ft_units"] = {arm.name: arm.ft_units for arm in backend.arms.values()}
         meta["wrench_source"] = {arm.name: arm.source for arm in backend.arms.values()}
         meta["tares"] = backend.tares
+        meta["controller_parameters"] = getattr(backend, "controller_parameters", {})
+        meta["joint_names"] = {s: list(arm.joints.name[:7]) for s, arm in backend.arms.items()}
+    if ins is not None:
+        from .controller import GAIN, CONTROL_PERIOD
+        meta["execution"] = dict(mode=getattr(ins, "execution_mode", "online_socp_ati_feedback"),
+                                 squeeze_gain_scale=ins.gain / GAIN,
+                                 squeeze_gain_m_per_N_per_update=ins.gain,
+                                 nominal_force_update_period_s=CONTROL_PERIOD,
+                                 squeeze_feedback=ins.squeeze_feedback, internal_wrench_feedback=ins.hand_wrench,
+                                 wrench_channels=ins.channels if ins.full_wrench else "internal" if ins.hand_wrench else "none",
+                                 internal_translation_limit_m=ins.force_offset_limit,
+                                 k_eff_N_per_m=getattr(ins, "k_eff", None),
+                                 offline_profile=getattr(getattr(ins, "profile", None), "path", None),
+                                 offline_profile_sha256=getattr(getattr(ins, "profile", None), "sha256", None),
+                                 planning_k_eff_N_per_m=getattr(getattr(ins, "profile", None), "k_eff", None),
+                                 planned_socp_ok=getattr(getattr(ins, "profile", None), "socp_ok", None),
+                                 planned_socp_ticks=getattr(getattr(ins, "profile", None), "socp_ticks", None),
+                                 desired_moment_origin="common grasp centre", measured_moment_origin="tool origin")
+        meta["socp_last_reason"] = ins.socp_reason
+        meta["allocation_failures"] = ins.stats["socp_fail"]
+        meta["allocation_result_not_applied"] = ins._socp_job is not None
+        if hasattr(ins, 'control_metadata'):
+            meta['execution'].update(ins.control_metadata())
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(meta, fh, indent=1, default=lambda o: o.tolist() if hasattr(o, "tolist") else str(o))
 
@@ -203,11 +244,15 @@ def cmd_check(a, cfg, make=None):
         sim = tr["rows"][tr["phase"] == "route"]
         mine = np.array([x[:15] for x in rows if x[15] == "route"], float)
         if len(sim) and len(mine):
-            # each of mine against the nearest simulated left flange position
-            dist = [float(np.min(np.linalg.norm(sim[:, 1:4] - m[1:4], axis=1))) for m in mine]
+            # Real flange-to-face depth is 100 mm; this export used ~28 mm.
+            # Comparing raw flanges would report this geometric offset as path error.
+            sim_depth = float(r.c["pad_x"]) + float(r.c["pad_r"])
+            sim_faces = GE.contact_face_centres(sim[:, 1:4], sim[:, 4:8], sim_depth)
+            my_faces = GE.contact_face_centres(mine[:, 1:4], mine[:, 4:8], GE.PAD_X + GE.PAD_R)
+            dist = [float(np.min(np.linalg.norm(sim_faces - face, axis=1))) for face in my_faces]
             print(f"  route phase: {len(mine)} ticks here, {len(sim)} in PyBullet "
                   f"({mine[-1, 0] - mine[0, 0]:.1f} s vs {sim[-1, 0] - sim[0, 0]:.1f} s); "
-                  f"left flange path vs PyBullet's: median {1000 * np.median(dist):.1f} mm, "
+                  f"commanded left contact-face path vs PyBullet's: median {1000 * np.median(dist):.1f} mm, "
                   f"max {1000 * np.max(dist):.1f} mm (the squeeze differs: no real contact here)")
     for line in reach_report(r, cfg, rows):
         print("  " + line)
@@ -256,20 +301,29 @@ def cmd_insert(a, cfg, make=None):
     log = Log(path)
     meta = path[:-4] + "_meta.json"
     b = RosBackend(cfg)
-    write_meta(meta, cfg, a.cfg_path, a, b)
-    ins = slowed(make(a, r, b, log=log, f_abort=cfg["f_abort"], track_abort=cfg["track_abort"],
-                      jam_scale=cfg.get("jam_scale", 1.0), jam_min=cfg.get("jam_min", 2.0),
-                      async_socp=True, squeeze_gain=a.squeeze_gain, **socp_kwargs(cfg)), a.slow)
+    ins = None
     result = None
     try:
+        write_meta(meta, cfg, a.cfg_path, a, b)
+        ins = slowed(make(a, r, b, log=log, f_abort=cfg["f_abort"], track_abort=cfg["track_abort"],
+                          jam_scale=cfg.get("jam_scale", 1.0), jam_min=cfg.get("jam_min", 2.0),
+                          async_socp=True, squeeze_gain=a.squeeze_gain, **socp_kwargs(cfg)), a.slow)
+        write_meta(meta, cfg, a.cfg_path, a, b, ins=ins)
         result = ins.run()
     except (Abort, KeyboardInterrupt) as e:
-        result = dict(stopped=str(e) or "Ctrl-C", phase=ins.phase)
+        result = dict(stopped=str(e) or "Ctrl-C", phase=ins.phase if ins is not None else "preparation")
         print(f"\n  STOPPED: {e or 'Ctrl-C'} - the arms hold their last target")
+    except Exception as e:
+        result = dict(stopped=f"{type(e).__name__}: {e}", phase=ins.phase if ins is not None else "preparation")
+        raise
     finally:
         log.close()
-        write_meta(meta, cfg, a.cfg_path, a, b, result)
-        b.close()
+        try:
+            write_meta(meta, cfg, a.cfg_path, a, b, result, ins=ins)
+        finally:
+            if ins is not None and ins._socp_pool is not None:
+                ins._socp_pool.shutdown(wait=True)
+            b.close()
         print(f"  log: {path}\n  meta: {meta}")
 
 
@@ -291,6 +345,12 @@ def main(argv=None, doc=None, extra=None, make=None):
     ap.add_argument("--twist", action="store_true",
                     help="full wrench: squeeze + opposite twist about the pad axis, closed on the wrist "
                          "ATIs (= full_wrench: true, full_wrench_channels: twist, allow_hand_wrench: true)")
+    ap.add_argument("--wrench-channels", choices=("forces", "twist", "contact", "internal"), default=None,
+                    help="ATI feedback channels: forces = squeeze + internal tangential forces, no moment loop; "
+                         "twist = squeeze + opposite axial twist; contact = forces + axial twist (pilot); "
+                         "internal = all internal wrench components")
+    ap.add_argument("--no-bending", action="store_true",
+                    help="SOCP: zero bending moment at each pad centre, keeping axial torsion (Wong-like contact model)")
     ap.add_argument("--squeeze-gain", type=float, default=0.5,
                     help="x the squeeze integrator's gain GAIN (default 0.5: 1 gave a ~1.5 Hz sine in the "
                          "squeeze, 0.25 recovers too slowly when the piece meets its neighbours; Z, 22/10)")
@@ -300,6 +360,12 @@ def main(argv=None, doc=None, extra=None, make=None):
     if extra:
         extra(ap)
     a = ap.parse_args(argv if argv is not None else sys.argv[1:])
+    if not np.isfinite(a.squeeze_gain) or a.squeeze_gain < 0:
+        ap.error("--squeeze-gain must be finite and non-negative")
+    if not np.isfinite(a.slow) or a.slow <= 0:
+        ap.error("--slow must be finite and positive")
+    if a.twist and a.wrench_channels not in (None, "twist"):
+        ap.error("--twist conflicts with --wrench-channels " + a.wrench_channels)
     if a.command == "list":
         from .route import Route as R
         for arm in ARMS:
@@ -312,10 +378,17 @@ def main(argv=None, doc=None, extra=None, make=None):
     a.cfg_path = path
     if a.twist:
         cfg.update(full_wrench=True, full_wrench_channels="twist", allow_hand_wrench=True)
-    print(f"  wrench control: {'TWIST (full wrench)' if cfg.get('full_wrench') else 'scalar squeeze only'}"
+    if a.wrench_channels:
+        cfg.update(full_wrench=True, full_wrench_channels=a.wrench_channels, allow_hand_wrench=True)
+    if a.no_bending:
+        cfg.setdefault("socp", {})["no_bending"] = True
+    print(f"  wrench control: {cfg.get('full_wrench_channels') if cfg.get('full_wrench') else 'scalar squeeze only'}"
           f"; wrench source left {cfg['left'].get('wrench_source', 'estimated')}, "
           f"right {cfg['right'].get('wrench_source', 'estimated')}")
-    print(f"  squeeze gain x{a.squeeze_gain:g}")
+    if getattr(a, 'squeeze_controller', None) == 'PI':
+        print('  normal force controller: PI (--squeeze-gain only scales optional tangential feedback)')
+    else:
+        print(f"  squeeze gain x{a.squeeze_gain:g}")
     print(f"  config: {os.path.abspath(path)}")
     (cmd_check if a.command == "check" else cmd_insert)(a, cfg, make)
 

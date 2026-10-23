@@ -21,7 +21,7 @@ Margins are parameters computed before the solve, not optimization variables.
 Task-adaptive allocation uses the general minimum-norm correction framework
 in the paper appendix; see task_margin() and docs/FRICTION_MARGIN.md.
 No separate force floor, no cap, no equilibrium slack: an
-impossible grasp returns ok=False and the controller's fallback decides.
+impossible grasp returns ok=False and the controller stops streaming targets.
 
 Why the prior alone is bounded: Sigma^-1 is full rank on all 12 flange
 components, the squeeze between the hands included, and with w fixed the pad

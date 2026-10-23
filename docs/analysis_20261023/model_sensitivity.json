@@ -1,0 +1,14 @@
+{
+  "samples": 30,
+  "original_export_mass_kg": 0.14467982638406945,
+  "current_mass_kg": 0.05,
+  "automatic_contact_force_scale": 0.3455906828867017,
+  "normal_target_median_bending_allowed_N": 4.398357598192798,
+  "normal_target_median_no_bending_N": 5.377486819350214,
+  "no_bending_to_allowed_ratio_p50_p95_max": [
+    1.2365722547714415,
+    1.4183624718907069,
+    1.4555114172134924
+  ],
+  "all_allocations_feasible": true
+}
