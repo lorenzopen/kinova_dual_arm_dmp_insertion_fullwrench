@@ -43,6 +43,9 @@
   RMS 0,51 N, oscillazione 0,23 N): L con FFI 2 su 2. Tabella nel README della cartella.
 - `20261023_1841_F75_Lt1_s9014_ffi_riuscito/`: terza ripetizione della L, entrata (errore in sede 2,0 mm, stretta
   RMS 0,48 N, oscillazione 0,21 N): L con FFI 3 su 3. Tabella delle tre nel README della cartella.
+- `20261023_1904_S_s7073m3_ffi_riuscito/`: la S (`c100_narrow75`) con lo stesso `insert_ffi --offline --k-eff 680`:
+  entrata, drop 0, errore in sede 2,9 mm, forza laterale 1,7 N (contro ~4,5 N del 22/10), oscillazione 0,14 N
+  (contro 0,65–0,85). Ritardo di ~1 s sul picco di forza a fine route (rate limit). Dettagli nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
