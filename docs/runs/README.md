@@ -41,6 +41,8 @@
   Comando, parametri e confronto nel README della cartella.
 - `20261023_1837_F75_Lt1_s9014_ffi_riuscito/`: ripetizione identica della L, entrata (errore in sede 3,0 mm, stretta
   RMS 0,51 N, oscillazione 0,23 N): L con FFI 2 su 2. Tabella nel README della cartella.
+- `20261023_1841_F75_Lt1_s9014_ffi_riuscito/`: terza ripetizione della L, entrata (errore in sede 2,0 mm, stretta
+  RMS 0,48 N, oscillazione 0,21 N): L con FFI 3 su 3. Tabella delle tre nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
