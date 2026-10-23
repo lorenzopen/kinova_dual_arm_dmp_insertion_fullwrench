@@ -1,0 +1,270 @@
+[
+  {
+    "file": "E:\\TESI\\NVIDIA_LOG_RUNS\\F75_Zt1_s9012_c100_five_cut800_20261022_181557.csv",
+    "sha256": "ef6ed65df15fe95aa358978bfaa744c6876a532aeb4f1faf2d5c009c86a23a5a",
+    "argv": [
+      "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+      "insert",
+      "F75_Zt1_s9012",
+      "--arm",
+      "c100_five_cut800",
+      "--slow",
+      "3",
+      "--twist",
+      "--squeeze-gain",
+      "0.01"
+    ],
+    "gain": 0.01,
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.0,
+      "believed_mm": 2.4879392653707755,
+      "socp_ok": 206,
+      "socp_ticks": 206,
+      "side_force_max": 1.4677554984252554,
+      "squeeze_median": 4.357509396760401
+    },
+    "actual_controller_parameters_recorded": false,
+    "route_duration_s": 19.078700065612793,
+    "route_force_median_N": 10.64,
+    "route_target_median_N": 8.74,
+    "measured_over_target_median": 1.1984649122807018,
+    "route_minimum_normal_sum_N": 7.92,
+    "route_error_rms_N": 1.8331378959190563,
+    "normal_projection_log_max_diff_N": 0.013589789940784414,
+    "csv_dt_ms_p50_p99_max": [
+      10.299921035766602,
+      20.486958026885976,
+      27.40001678466797
+    ],
+    "route_sixths": [
+      {
+        "start_s": 0.0,
+        "end_s": 3.179783344268799,
+        "measured_sum_N": 11.31,
+        "target_sum_N": 9.1
+      },
+      {
+        "start_s": 3.179783344268799,
+        "end_s": 6.359566688537598,
+        "measured_sum_N": 10.655000000000001,
+        "target_sum_N": 9.08
+      },
+      {
+        "start_s": 6.359566688537598,
+        "end_s": 9.539350032806396,
+        "measured_sum_N": 10.84,
+        "target_sum_N": 8.76
+      },
+      {
+        "start_s": 9.539350032806396,
+        "end_s": 12.719133377075195,
+        "measured_sum_N": 10.73,
+        "target_sum_N": 8.72
+      },
+      {
+        "start_s": 12.719133377075195,
+        "end_s": 15.898916721343994,
+        "measured_sum_N": 9.76,
+        "target_sum_N": 8.3
+      },
+      {
+        "start_s": 15.898916721343994,
+        "end_s": 19.078700065612793,
+        "measured_sum_N": 8.65,
+        "target_sum_N": 7.76
+      }
+    ],
+    "last_second": {
+      "measured_sum_N": 8.575,
+      "target_sum_N": 7.76
+    },
+    "common_window": {
+      "start_route_s": 1.0,
+      "end_route_s": 16.270699977874756,
+      "peak_Hz": 1.3089005235602094,
+      "peak_amplitude_normal_sum_N": 0.08090657520903208,
+      "band_0p8_2p5_rms_normal_sum_N": 0.1490788459669063,
+      "force_median_N": 10.70319031252422
+    }
+  },
+  {
+    "file": "E:\\TESI\\NVIDIA_LOG_RUNS\\F75_Zt1_s9012_c100_five_cut800_20261022_182705.csv",
+    "sha256": "defcd95aeb79301940cc78d9738f6c0017f915ab67c6ceb01c2c44789ab5bacd",
+    "argv": [
+      "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+      "insert",
+      "F75_Zt1_s9012",
+      "--arm",
+      "c100_five_cut800",
+      "--slow",
+      "3",
+      "--twist",
+      "--squeeze-gain",
+      "0.1"
+    ],
+    "gain": 0.1,
+    "result": {
+      "stopped": "Ctrl-C",
+      "phase": "route"
+    },
+    "actual_controller_parameters_recorded": false,
+    "route_duration_s": 16.770699977874756,
+    "route_force_median_N": 9.0,
+    "route_target_median_N": 8.78,
+    "measured_over_target_median": 1.00982800982801,
+    "route_minimum_normal_sum_N": 7.16,
+    "route_error_rms_N": 0.45315487239385516,
+    "normal_projection_log_max_diff_N": 0.012947264058810859,
+    "csv_dt_ms_p50_p99_max": [
+      10.299921035766602,
+      20.79991102218628,
+      27.499914169311523
+    ],
+    "route_sixths": [
+      {
+        "start_s": 0.0,
+        "end_s": 2.795116662979126,
+        "measured_sum_N": 9.145,
+        "target_sum_N": 9.14
+      },
+      {
+        "start_s": 2.795116662979126,
+        "end_s": 5.590233325958252,
+        "measured_sum_N": 9.26,
+        "target_sum_N": 9.14
+      },
+      {
+        "start_s": 5.590233325958252,
+        "end_s": 8.385349988937378,
+        "measured_sum_N": 9.31,
+        "target_sum_N": 8.98
+      },
+      {
+        "start_s": 8.385349988937378,
+        "end_s": 11.180466651916504,
+        "measured_sum_N": 8.985,
+        "target_sum_N": 8.66
+      },
+      {
+        "start_s": 11.180466651916504,
+        "end_s": 13.97558331489563,
+        "measured_sum_N": 8.715,
+        "target_sum_N": 8.78
+      },
+      {
+        "start_s": 13.97558331489563,
+        "end_s": 16.770699977874756,
+        "measured_sum_N": 8.13,
+        "target_sum_N": 8.24
+      }
+    ],
+    "last_second": {
+      "measured_sum_N": 7.82,
+      "target_sum_N": 8.2
+    },
+    "common_window": {
+      "start_route_s": 1.0,
+      "end_route_s": 16.270699977874756,
+      "peak_Hz": 1.8324607329842932,
+      "peak_amplitude_normal_sum_N": 0.12470762656266045,
+      "band_0p8_2p5_rms_normal_sum_N": 0.1732971074271668,
+      "force_median_N": 9.0168770564071
+    }
+  },
+  {
+    "file": "E:\\TESI\\NVIDIA_LOG_RUNS\\F75_Zt1_s9012_c100_five_cut800_20261022_184327.csv",
+    "sha256": "df5c13a956cefab2cc9af185ad76147b0a27ab4b367d6fa7f819eda6f3938c43",
+    "argv": [
+      "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+      "insert",
+      "F75_Zt1_s9012",
+      "--arm",
+      "c100_five_cut800",
+      "--slow",
+      "3",
+      "--twist",
+      "--squeeze-gain",
+      "1"
+    ],
+    "gain": 1.0,
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.0,
+      "believed_mm": 2.1554159074089196,
+      "socp_ok": 203,
+      "socp_ticks": 204,
+      "side_force_max": 1.223641282599875,
+      "squeeze_median": 4.341553494612422
+    },
+    "actual_controller_parameters_recorded": false,
+    "route_duration_s": 19.07990002632141,
+    "route_force_median_N": 8.7,
+    "route_target_median_N": 8.72,
+    "measured_over_target_median": 0.9967177242888401,
+    "route_minimum_normal_sum_N": 6.24,
+    "route_error_rms_N": 0.677526568579581,
+    "normal_projection_log_max_diff_N": 0.013942959794224663,
+    "csv_dt_ms_p50_p99_max": [
+      10.400056838989258,
+      22.300004959106445,
+      61.89990043640137
+    ],
+    "route_sixths": [
+      {
+        "start_s": 0.0,
+        "end_s": 3.1799833377202353,
+        "measured_sum_N": 9.085,
+        "target_sum_N": 9.14
+      },
+      {
+        "start_s": 3.1799833377202353,
+        "end_s": 6.359966675440471,
+        "measured_sum_N": 9.28,
+        "target_sum_N": 9.12
+      },
+      {
+        "start_s": 6.359966675440471,
+        "end_s": 9.539950013160706,
+        "measured_sum_N": 8.77,
+        "target_sum_N": 8.84
+      },
+      {
+        "start_s": 9.539950013160706,
+        "end_s": 12.719933350880941,
+        "measured_sum_N": 8.52,
+        "target_sum_N": 8.72
+      },
+      {
+        "start_s": 12.719933350880941,
+        "end_s": 15.899916688601175,
+        "measured_sum_N": 8.4,
+        "target_sum_N": 8.34
+      },
+      {
+        "start_s": 15.899916688601175,
+        "end_s": 19.07990002632141,
+        "measured_sum_N": 7.87,
+        "target_sum_N": 7.8
+      }
+    ],
+    "last_second": {
+      "measured_sum_N": 7.8,
+      "target_sum_N": 7.8
+    },
+    "common_window": {
+      "start_route_s": 1.0,
+      "end_route_s": 16.270699977874756,
+      "peak_Hz": 1.37434554973822,
+      "peak_amplitude_normal_sum_N": 0.46213768392703863,
+      "band_0p8_2p5_rms_normal_sum_N": 0.5267649940199512,
+      "force_median_N": 8.825491987673864
+    }
+  }
+]
