@@ -48,6 +48,8 @@
   (contro 0,65–0,85). Ritardo di ~1 s sul picco di forza a fine route (rate limit). Dettagli nel README della cartella.
 - `20261023_1913_S_s7073m3_ffi_riuscito/`: seconda S identica, entrata (errore in sede 2,9 mm, forza laterale 3,0 N,
   stretta RMS 0,95 N, oscillazione 0,12 N): S con FFI 2 su 2. Tabella nel README della cartella.
+- `20261023_1915_S_s7073m3_ffi_riuscito/`: terza S identica, entrata (errore in sede 2,5 mm, forza laterale 3,2 N,
+  stretta RMS 1,12 N, oscillazione 0,15 N): S con FFI 3 su 3. Tabella delle tre nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
