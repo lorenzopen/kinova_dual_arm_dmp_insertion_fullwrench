@@ -39,6 +39,8 @@
 - `20261023_1827_F75_Lt1_s9014_ffi_riuscito/`: la L con lo stesso `insert_ffi --offline --k-eff 680`: entrata
   (errore in sede 2,5 mm contro 5,5–6,5 delle L del 22/10, stretta RMS 0,46 N, oscillazione 0,23 N contro 0,62–0,68).
   Comando, parametri e confronto nel README della cartella.
+- `20261023_1837_F75_Lt1_s9014_ffi_riuscito/`: ripetizione identica della L, entrata (errore in sede 3,0 mm, stretta
+  RMS 0,51 N, oscillazione 0,23 N): L con FFI 2 su 2. Tabella nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
