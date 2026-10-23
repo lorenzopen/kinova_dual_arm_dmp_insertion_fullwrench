@@ -55,6 +55,8 @@
   README della cartella.
 - `20261023_1927_F75_Tt1_s9007_ffi_riuscito/`: seconda T identica, entrata (errore in sede 0,3 mm, stretta RMS 0,56 N,
   oscillazione 0,19 N): T con FFI 2 su 2. Tabella nel README della cartella.
+- `20261023_1931_F75_Tt1_s9007_ffi_riuscito/`: terza T identica, entrata (errore in sede 0,4 mm, stretta RMS 0,58 N,
+  oscillazione 0,21 N): T con FFI 3 su 3. Tabella delle tre nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
