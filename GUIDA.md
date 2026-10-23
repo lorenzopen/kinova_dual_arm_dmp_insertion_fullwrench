@@ -169,7 +169,7 @@ source /opt/ros/jazzy/setup.bash && source /home/nvidia/ros2_ws/install/setup.ba
 - il **destro**: va in home in impedenza (8 s) e poi la tiene;
 - dopo 14 s il **sinistro**, quando il destro è già fermo in home.
 
-I default sono `cart_k` 1000/20, `cart_d` **60/7**; il comando PI in cima alla guida richiede esplicitamente 1500/20.
+I default sono `cart_k` **1500/20** (dal 23/10; prima 1000/20), `cart_d` **60/7**. Con 1500 e `--squeeze-gain 0.5` la Z del 22/10 alle 20:20 ha avuto forza giusta e sinusoide 0,10 N.
 Fino alla prova del 22/10 alle 15:28 il damping era 5/1. Attrito e Kalman sono accesi di default.
 Nei dati la sinusoide a circa 1,2–1,5 Hz compare anche nel comando di stretta; il gain più basso la riduce,
 ma a 0,25 si osservano anche cali della forza. Il default di `main insert` resta 0,5;
@@ -327,7 +327,7 @@ python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slo
 python -m kinova_dual_arm_dmp_insertion.insert_open insert "$W" --arm "$R" --slow 3 --online
 ```
 
-`k_eff` assiale = impedenza in serie alla molla da 2700 N/m: **730 N/m a 1000**, **964 N/m a 1500**.
+`k_eff` assiale: il modello (impedenza in serie alla molla da 2700 N/m) dà 730 N/m a 1000 e 964 a 1500, ma **misurato sulla Z il 22/10 è circa 460 a 1000 e 680 a 1500** (molla, gomma e polistirolo sono più cedevoli): per `--offline` a 1500 usa `--k-eff 680`.
 Su hardware viene ricavato dal `cart_k` letto dai due controller; se non è leggibile, il feedforward richiede
 un `--k-eff` esplicito e calibrato. Nel dry run viene usato il modello di `cell.yaml`. Il rapporto
 misurata/chiesta non è una calibrazione della rigidezza durante contatti o errori di larghezza.

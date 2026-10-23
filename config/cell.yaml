@@ -57,7 +57,7 @@ full_wrench_moment_sign: -1  # -1 = the original law. 2026-10-20 (estimated wren
 wrench_baseline: null
 
 stiffness:                # reference/dry-run model; actual hardware cart_k/cart_d are set at launch and logged separately
-  trans: 1000.0           # [N/m]   the routes were trained at 1500 N/m, 40 Nm/rad torsion, 8 tilt
+  trans: 1500.0           # [N/m] = robot.launch default since 2026-10-23 (training value); measured k_eff at 1500 ~ 680 N/m
   torsion: 20.0           # [Nm/rad] about the push axis; 20 = the real runs since 2026-10-16
   tilt: 20.0              # [Nm/rad] the other two
 

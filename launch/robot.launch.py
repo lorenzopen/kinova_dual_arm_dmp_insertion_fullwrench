@@ -95,7 +95,7 @@ def generate_launch_description():
                               description="also publish the raw 1 kHz on ft_data_raw (more CPU)"),
         DeclareLaunchArgument("ft_every", default_value="5",
                               description="ATI samples per mean on ft_data_avg (5 -> 200 Hz; = ft_rate_hz in cell.yaml)"),
-        DeclareLaunchArgument("cart_k", default_value="1000 1000 1000 20 20 20"),
+        DeclareLaunchArgument("cart_k", default_value="1500 1500 1500 20 20 20"),   # 1500 = training; best Z run 22/10 20:20
         DeclareLaunchArgument("cart_d", default_value="60 60 60 7 7 7"),
         OpaqueFunction(function=_setup),
     ])
