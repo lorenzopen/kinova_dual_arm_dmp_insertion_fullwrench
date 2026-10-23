@@ -36,6 +36,9 @@
   −0,05 mm, stretta RMS 0,54 N, oscillazione 0,25 N). Confronto tra le due nel README della cartella.
 - `20261023_1756_F75_Zt1_s9012_ffi_riuscito/`: terza ripetizione identica, entrata (errore in sede +0,20 mm, stretta
   RMS 0,51 N, oscillazione 0,22 N): FFI 3 su 3. Tabella delle tre nel README della cartella.
+- `20261023_1827_F75_Lt1_s9014_ffi_riuscito/`: la L con lo stesso `insert_ffi --offline --k-eff 680`: entrata
+  (errore in sede 2,5 mm contro 5,5–6,5 delle L del 22/10, stretta RMS 0,46 N, oscillazione 0,23 N contro 0,62–0,68).
+  Comando, parametri e confronto nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
