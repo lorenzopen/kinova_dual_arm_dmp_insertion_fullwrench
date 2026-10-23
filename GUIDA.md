@@ -30,7 +30,50 @@ sono state rimosse: tutto quello che serviva è qui.
 La variante PI è stata integrata anche in `main`. Il launch ora ha default 1500/20;
 i gain storici dei singoli moduli restano distinti.
 
-## Prove di venerdì: integratore e PI
+## Nuova prova: forza nominale SOCP + piccola correzione I
+
+File nuovo **`insert_ffi.py`**, branch **`codex/feedforward-i-20261023`**.
+Stessi coni con margine e stesso SOCP; nessuna forza extra aggiunta al target.
+Le versioni `main`, `insert_open` e `insert_pi` restano disponibili.
+
+**T1 — bracci + ATI:** stesso avvio a **1500/20, damping 60/7** riportato sotto.
+**T2 — bag:** lascialo registrare come sotto. Nessun aumento del rate ATI.
+
+**T3 — dopo aver copiato/aggiornato questo branch sul PC robot:**
+
+```bash
+source ~/lorenzo/env.sh
+cd "$LORENZO/kinova_dual_arm_dmp_insertion_fullwrench"
+export W=F75_Zt1_s9012 R=c100_five_cut800
+python -m kinova_dual_arm_dmp_insertion.insert_ffi check "$W" --arm "$R" --slow 3 --offline
+```
+
+Poi **T3, prova reale**, stesso pezzo/board e stessi parametri T1:
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.insert_ffi insert "$W" --arm "$R" --slow 3 --offline
+```
+
+La presa iniziale usa feedback I e deve stabilizzarsi prima di chiederti di lasciare il pezzo.
+La chiusura nominale successiva è riferita a quella presa: **non somma due volte il carico iniziale**.
+I piccola = **0.5 mm/(N·s)** sull'errore totale delle mani, correzione **±3 mm per mano**;
+velocità totale nominale + I **massimo 2 mm/s per mano**. Nessun P/D aggiunto.
+`--squeeze-gain` non cambia questa I: il parametro è `--i-ki` (default `0.0005`).
+Per il primo confronto lascia i default. `--k-eff` cambia il nominale; non cambiare anche il gain insieme.
+`--twist` resta opzionale: la nuova legge riguarda solo la stretta normale.
+
+Log con **`_ffi_`** nel nome. **T3, dopo la prova:**
+
+```bash
+python -m kinova_dual_arm_dmp_insertion.audit_run logs/NOME_PROVA.csv
+```
+
+Il CSV salva separatamente nominale, I, totale e limiti (`ffi_*`); il meta salva i parametri.
+È una variante da pilotare, non ancora validata sul robot. Per tornare al controllo precedente:
+`main insert ... --squeeze-gain 0.1` oppure `insert_open ...` con le opzioni della prova di riferimento.
+Dettagli della legge: [nominale + I](docs/FFI_CONTROLLER.md).
+
+## Confronti precedenti: integratore e PI
 
 Sul PC robot deve esserci `kinova_dual_arm_dmp_insertion/insert_pi.py` (commit `ee3c101` o successivo).
 I comandi sotto si eseguono **sul PC robot**.
@@ -87,7 +130,8 @@ python -m kinova_dual_arm_dmp_insertion.insert_pi insert "$W" --arm "$R" --slow 
 python -m kinova_dual_arm_dmp_insertion.insert_pi insert "$W" --arm "$R" --slow 3 --offline
 ```
 
-**Dopo le run del 23/10: prova consigliata C.** L'offline pura `insert_open --offline`
+**Prima variante proposta dopo le run del 23/10: C (PI).** La nuova prova FFI è in cima alla guida.
+L'offline pura `insert_open --offline`
 non recupera la presa al contatto: nella nuova Z misura circa metà target già nella prima parte.
 C usa il piano offline ma corregge la stretta con gli ATI. Parti dai default PI
 (P 0.0001, I 0.001); se resta l'onda, confronta una seconda prova cambiando **solo**
