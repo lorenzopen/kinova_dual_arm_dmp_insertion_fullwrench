@@ -32,6 +32,8 @@
 - `20261023_1743_F75_Zt1_s9012_ffi_riuscito/`: la Z con `insert_ffi --offline --k-eff 680` (SOCP offline +
   trim I 1,6 mm/(N s)): entrata, stretta giusta lungo tutta la route (errore RMS 0,42 N), oscillazione 0,24 N.
   Comando e parametri nel README della cartella.
+- `20261023_1751_F75_Zt1_s9012_ffi_riuscito/`: ripetizione identica della 17:43, entrata anche lei (errore in sede
+  −0,05 mm, stretta RMS 0,54 N, oscillazione 0,25 N). Confronto tra le due nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
