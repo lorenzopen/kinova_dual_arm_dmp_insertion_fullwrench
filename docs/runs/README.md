@@ -46,6 +46,8 @@
 - `20261023_1904_S_s7073m3_ffi_riuscito/`: la S (`c100_narrow75`) con lo stesso `insert_ffi --offline --k-eff 680`:
   entrata, drop 0, errore in sede 2,9 mm, forza laterale 1,7 N (contro ~4,5 N del 22/10), oscillazione 0,14 N
   (contro 0,65–0,85). Ritardo di ~1 s sul picco di forza a fine route (rate limit). Dettagli nel README della cartella.
+- `20261023_1913_S_s7073m3_ffi_riuscito/`: seconda S identica, entrata (errore in sede 2,9 mm, forza laterale 3,0 N,
+  stretta RMS 0,95 N, oscillazione 0,12 N): S con FFI 2 su 2. Tabella nel README della cartella.
 
 Le bag sono troppo grandi per git. Dal tuo PC:
 
