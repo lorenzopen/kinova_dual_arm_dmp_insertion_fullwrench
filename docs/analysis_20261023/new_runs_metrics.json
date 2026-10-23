@@ -1,0 +1,487 @@
+[
+  {
+    "label": "22 Oct 19:32 offline, k=730",
+    "path": "docs\\runs\\20261022_F75_Zt1_s9012_offline\\1_1932_keff730\\F75_Zt1_s9012_c100_five_cut800_offline_20261022_193252.csv",
+    "sha256": "82cd0ae1eb38ab9ed4bc97e33def790258971de15fd029995d69b09f2ec2bf3c",
+    "argv": [
+      "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/insert_open.py",
+      "insert",
+      "F75_Zt1_s9012",
+      "--arm",
+      "c100_five_cut800",
+      "--slow",
+      "3",
+      "--offline"
+    ],
+    "recorded_controller_parameters": null,
+    "execution": null,
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.0,
+      "believed_mm": 0.9060195509087432,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "side_force_max": 3.379637203879172,
+      "squeeze_median": 4.082001129319749
+    },
+    "bins": [
+      {
+        "target_sum_N": 8.96,
+        "actual_sum_N": 5.45,
+        "ratio": 0.6073825503355704
+      },
+      {
+        "target_sum_N": 8.86,
+        "actual_sum_N": 5.26,
+        "ratio": 0.5933940774487472
+      },
+      {
+        "target_sum_N": 8.56,
+        "actual_sum_N": 5.445,
+        "ratio": 0.6396971126218435
+      },
+      {
+        "target_sum_N": 8.18,
+        "actual_sum_N": 5.55,
+        "ratio": 0.6771844660194175
+      },
+      {
+        "target_sum_N": 7.96,
+        "actual_sum_N": 4.92,
+        "ratio": 0.6256281407035177
+      },
+      {
+        "target_sum_N": 7.22,
+        "actual_sum_N": 5.63,
+        "ratio": 0.6781914893617021
+      }
+    ],
+    "total_force_min_N": 2.29,
+    "total_force_median_N": 5.36,
+    "total_force_error_rms_N": 3.197970707989625,
+    "median_ratio": 0.6308307603042046,
+    "normal_projection_vs_logged_max_difference_N": 0.013279565332607213,
+    "band_0p8_2p5_rms_N": 0.2321817450015567,
+    "band_rms_over_mean_force": 0.04373640688257791,
+    "spectral_peak_Hz": 1.7286553939906995,
+    "spectral_peak_total_N": 0.12131518287391295,
+    "per_hand_normal_min_N": [
+      1.0951568749080782,
+      1.191427878274668
+    ],
+    "per_hand_Ft_over_N_p95": [
+      0.5213963844668121,
+      0.42776459031799197
+    ],
+    "horizontal_load_max_N": 3.3833267651824586,
+    "csv_dt_ms_p50_p99_max": [
+      9.999990463256836,
+      14.197974205017092,
+      40.80009460449219
+    ]
+  },
+  {
+    "label": "22 Oct 19:53 offline, k=480",
+    "path": "docs\\runs\\20261022_F75_Zt1_s9012_offline\\2_1953_keff480\\F75_Zt1_s9012_c100_five_cut800_offline_20261022_195355.csv",
+    "sha256": "375d2db1ddf10fe9a7b3be335e296b58418b7209a874117366f09b989c792521",
+    "argv": [
+      "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/insert_open.py",
+      "insert",
+      "F75_Zt1_s9012",
+      "--arm",
+      "c100_five_cut800",
+      "--slow",
+      "3",
+      "--offline",
+      "--k-eff",
+      "480"
+    ],
+    "recorded_controller_parameters": null,
+    "execution": null,
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.0,
+      "believed_mm": 2.336464729430776,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "side_force_max": 1.6743678510135875,
+      "squeeze_median": 4.098264621233514
+    },
+    "bins": [
+      {
+        "target_sum_N": 8.98,
+        "actual_sum_N": 8.95,
+        "ratio": 0.9955357142857142
+      },
+      {
+        "target_sum_N": 9.02,
+        "actual_sum_N": 9.27,
+        "ratio": 1.03
+      },
+      {
+        "target_sum_N": 8.7,
+        "actual_sum_N": 8.555,
+        "ratio": 0.98281730577454
+      },
+      {
+        "target_sum_N": 8.22,
+        "actual_sum_N": 6.87,
+        "ratio": 0.8369049441298024
+      },
+      {
+        "target_sum_N": 7.96,
+        "actual_sum_N": 6.14,
+        "ratio": 0.78
+      },
+      {
+        "target_sum_N": 7.24,
+        "actual_sum_N": 5.21,
+        "ratio": 0.7079359724096566
+      }
+    ],
+    "total_force_min_N": 4.16,
+    "total_force_median_N": 7.51,
+    "total_force_error_rms_N": 1.3941606343408028,
+    "median_ratio": 0.8867039146947122,
+    "normal_projection_vs_logged_max_difference_N": 0.014899769329372425,
+    "band_0p8_2p5_rms_N": 0.22965285415387926,
+    "band_rms_over_mean_force": 0.030764269282782253,
+    "spectral_peak_Hz": 1.5191214068403116,
+    "spectral_peak_total_N": 0.13339556085930232,
+    "per_hand_normal_min_N": [
+      2.083859083498013,
+      2.0630938625407595
+    ],
+    "per_hand_Ft_over_N_p95": [
+      0.4046717193739402,
+      0.2470276355013286
+    ],
+    "horizontal_load_max_N": 0.8935882720806042,
+    "csv_dt_ms_p50_p99_max": [
+      9.999990463256836,
+      13.900041580200195,
+      15.399932861328125
+    ]
+  },
+  {
+    "label": "22 Oct 20:13 offline, k=580",
+    "path": "docs\\runs\\20261022_F75_Zt1_s9012_offline\\3_2013_K1500_keff580\\F75_Zt1_s9012_c100_five_cut800_offline_20261022_201347.csv",
+    "sha256": "b475ec0412da7e85df892a7b0130c2cfc3e72442309eecc269e40385492406aa",
+    "argv": [
+      "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/insert_open.py",
+      "insert",
+      "F75_Zt1_s9012",
+      "--arm",
+      "c100_five_cut800",
+      "--slow",
+      "3",
+      "--offline",
+      "--k-eff",
+      "580"
+    ],
+    "recorded_controller_parameters": null,
+    "execution": null,
+    "result": {
+      "stopped": "Ctrl-C",
+      "phase": "route"
+    },
+    "bins": [
+      {
+        "target_sum_N": 8.96,
+        "actual_sum_N": 10.55,
+        "ratio": 1.1774553571428572
+      },
+      {
+        "target_sum_N": 8.98,
+        "actual_sum_N": 10.43,
+        "ratio": 1.1627649737511931
+      },
+      {
+        "target_sum_N": 8.78,
+        "actual_sum_N": 10.64,
+        "ratio": 1.2083331161418451
+      },
+      {
+        "target_sum_N": 8.36,
+        "actual_sum_N": 10.27,
+        "ratio": 1.2294685990338166
+      },
+      {
+        "target_sum_N": 8.04,
+        "actual_sum_N": 9.335,
+        "ratio": 1.1625155086848635
+      },
+      {
+        "target_sum_N": 7.52,
+        "actual_sum_N": 7.8149999999999995,
+        "ratio": 1.0316463809358996
+      }
+    ],
+    "total_force_min_N": 3.7,
+    "total_force_median_N": 10.23,
+    "total_force_error_rms_N": 1.635851311282532,
+    "median_ratio": 1.178173719376392,
+    "normal_projection_vs_logged_max_difference_N": 0.014036225530549729,
+    "band_0p8_2p5_rms_N": 0.17172663395570034,
+    "band_rms_over_mean_force": 0.01767993103517105,
+    "spectral_peak_Hz": 1.1156792789095298,
+    "spectral_peak_total_N": 0.08136747336972618,
+    "per_hand_normal_min_N": [
+      2.1092583242924148,
+      1.5743455140894536
+    ],
+    "per_hand_Ft_over_N_p95": [
+      0.40054654418059665,
+      0.29385302651913897
+    ],
+    "horizontal_load_max_N": 0.8409518416651455,
+    "csv_dt_ms_p50_p99_max": [
+      9.999990463256836,
+      14.299108982086183,
+      16.7999267578125
+    ]
+  },
+  {
+    "label": "22 Oct 20:20 online, gain=0.5",
+    "path": "docs\\runs\\20261022_F75_Zt1_s9012_offline\\4_2020_K1500_online_gain05\\F75_Zt1_s9012_c100_five_cut800_online_20261022_202036.csv",
+    "sha256": "27d203017182e8a1bfe184ea317f0632a5751332fcf2d3a47f0d27096a0ee763",
+    "argv": [
+      "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/insert_open.py",
+      "insert",
+      "F75_Zt1_s9012",
+      "--arm",
+      "c100_five_cut800",
+      "--slow",
+      "3",
+      "--online",
+      "--squeeze-gain",
+      "0.5"
+    ],
+    "recorded_controller_parameters": null,
+    "execution": null,
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.0,
+      "believed_mm": 0.3931518665450384,
+      "socp_ok": 207,
+      "socp_ticks": 207,
+      "side_force_max": 1.3839140325258843,
+      "squeeze_median": 4.399818114301427
+    },
+    "bins": [
+      {
+        "target_sum_N": 9.12,
+        "actual_sum_N": 8.97,
+        "ratio": 0.9923413566739606
+      },
+      {
+        "target_sum_N": 9.04,
+        "actual_sum_N": 9.21,
+        "ratio": 1.0099558009427174
+      },
+      {
+        "target_sum_N": 8.86,
+        "actual_sum_N": 8.92,
+        "ratio": 1.0056306306306304
+      },
+      {
+        "target_sum_N": 8.8,
+        "actual_sum_N": 8.78,
+        "ratio": 0.998296737069923
+      },
+      {
+        "target_sum_N": 8.56,
+        "actual_sum_N": 8.49,
+        "ratio": 0.9918414918414918
+      },
+      {
+        "target_sum_N": 7.86,
+        "actual_sum_N": 8.02,
+        "ratio": 1.001187648456057
+      }
+    ],
+    "total_force_min_N": 6.56,
+    "total_force_median_N": 8.75,
+    "total_force_error_rms_N": 0.5122772834543033,
+    "median_ratio": 1.0,
+    "normal_projection_vs_logged_max_difference_N": 0.014772983113079619,
+    "band_0p8_2p5_rms_N": 0.31116490754141335,
+    "band_rms_over_mean_force": 0.035735114137682,
+    "spectral_peak_Hz": 1.204895772366619,
+    "spectral_peak_total_N": 0.1894126841020668,
+    "per_hand_normal_min_N": [
+      3.28683483127264,
+      3.2711896006195587
+    ],
+    "per_hand_Ft_over_N_p95": [
+      0.21890194904428553,
+      0.20693649214773754
+    ],
+    "horizontal_load_max_N": 0.8902246907382427,
+    "csv_dt_ms_p50_p99_max": [
+      10.09988784790039,
+      18.46490144729613,
+      25.800228118896484
+    ]
+  },
+  {
+    "label": "23 Oct 12:32 offline, k=964",
+    "path": "docs\\runs\\20261023_F75_Zt1_s9012_offline\\F75_Zt1_s9012_c100_five_cut800_offline_20261023_123222.csv",
+    "sha256": "773a605c7c5951457ccbb5986abb82b57b16915ce8572d4e03e5c5a63420da70",
+    "argv": [
+      "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/insert_open.py",
+      "insert",
+      "F75_Zt1_s9012",
+      "--arm",
+      "c100_five_cut800",
+      "--slow",
+      "3",
+      "--offline"
+    ],
+    "recorded_controller_parameters": {
+      "L": {
+        "node": "/left_arm/real_robot_controller_node",
+        "cart_k": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "cart_d": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "control_hz": 1000.0,
+        "friction_enable": true,
+        "kalman_enable": true,
+        "urdf_path": "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf",
+        "ee_frame": "end_effector_link"
+      },
+      "R": {
+        "node": "/right_arm/real_robot_controller_node",
+        "cart_k": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "cart_d": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "control_hz": 1000.0,
+        "friction_enable": true,
+        "kalman_enable": true,
+        "urdf_path": "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/urdf/gen3_ati_tool.urdf",
+        "ee_frame": "end_effector_link"
+      }
+    },
+    "execution": {
+      "mode": "offline_feedforward",
+      "squeeze_gain_scale": 0.1,
+      "squeeze_gain_m_per_N_per_update": 1.6666666666666667e-05,
+      "nominal_force_update_period_s": 0.02,
+      "squeeze_feedback": false,
+      "internal_wrench_feedback": false,
+      "wrench_channels": "none",
+      "internal_translation_limit_m": 0.02,
+      "k_eff_N_per_m": 964.2857142857142,
+      "offline_profile": "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/logs/F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_123234.csv",
+      "offline_profile_sha256": "9668de8d9773e5d55f93ae01d9830a8b0448faa1ef9d7c6d27ba60a7c3e7ed19",
+      "planning_k_eff_N_per_m": 964.2857142857142,
+      "planned_socp_ok": 232,
+      "planned_socp_ticks": 232,
+      "desired_moment_origin": "common grasp centre",
+      "measured_moment_origin": "tool origin"
+    },
+    "result": {
+      "route_followed": true,
+      "jammed": false,
+      "seat_found": true,
+      "landed_high": false,
+      "drop_mm": 0.0,
+      "believed_mm": -0.426477954317106,
+      "socp_ok": 0,
+      "socp_ticks": 0,
+      "socp_failed": 0,
+      "side_force_max": 1.1415035491438235,
+      "squeeze_median": 4.100666445275307
+    },
+    "bins": [
+      {
+        "target_sum_N": 8.96,
+        "actual_sum_N": 4.66,
+        "ratio": 0.5189732142857143
+      },
+      {
+        "target_sum_N": 8.82,
+        "actual_sum_N": 4.62,
+        "ratio": 0.5217391304347826
+      },
+      {
+        "target_sum_N": 8.56,
+        "actual_sum_N": 4.78,
+        "ratio": 0.5610328638497654
+      },
+      {
+        "target_sum_N": 8.2,
+        "actual_sum_N": 4.9350000000000005,
+        "ratio": 0.600243022335613
+      },
+      {
+        "target_sum_N": 7.98,
+        "actual_sum_N": 3.92,
+        "ratio": 0.495
+      },
+      {
+        "target_sum_N": 7.14,
+        "actual_sum_N": 2.93,
+        "ratio": 0.40406895677525667
+      }
+    ],
+    "total_force_min_N": 2.14,
+    "total_force_median_N": 4.56,
+    "total_force_error_rms_N": 4.043952962311147,
+    "median_ratio": 0.5290814467863648,
+    "normal_projection_vs_logged_max_difference_N": 0.013730209133400617,
+    "band_0p8_2p5_rms_N": 0.1787402280691411,
+    "band_rms_over_mean_force": 0.04153430110880211,
+    "spectral_peak_Hz": 2.200406823669639,
+    "spectral_peak_total_N": 0.080629909863404,
+    "per_hand_normal_min_N": [
+      1.0583620330403354,
+      1.030060813555353
+    ],
+    "per_hand_Ft_over_N_p95": [
+      0.5295405692160319,
+      0.41817750769953543
+    ],
+    "horizontal_load_max_N": 0.9121951545584969,
+    "csv_dt_ms_p50_p99_max": [
+      9.900093078613281,
+      15.900135040283203,
+      20.400047302246094
+    ]
+  }
+]

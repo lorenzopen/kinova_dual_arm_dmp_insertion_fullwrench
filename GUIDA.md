@@ -27,12 +27,13 @@ sono state rimosse: tutto quello che serviva è qui.
   mediato a **200 Hz**; ATI grezzo a 1 kHz soltanto con `ati_raw:=true` (più carico CPU).
 
 **Revisione per il laboratorio del 23/10:** [analisi, formulazione e prove a 1500 N/m](docs/CONTROL_REVIEW_20261023.md).
-Codice sul branch `codex/controller-review-20261023`; i default del launch e del gain storico restano invariati.
+La variante PI è stata integrata anche in `main`. Il launch ora ha default 1500/20;
+i gain storici dei singoli moduli restano distinti.
 
 ## Prove di venerdì: integratore e PI
 
-Sul PC robot deve esserci il branch `codex/controller-review-20261023` aggiornato con
-`kinova_dual_arm_dmp_insertion/insert_pi.py`. I comandi sotto si eseguono **sul PC robot**.
+Sul PC robot deve esserci `kinova_dual_arm_dmp_insertion/insert_pi.py` (commit `ee3c101` o successivo).
+I comandi sotto si eseguono **sul PC robot**.
 Calibrazione ATI e controlli del percorso restano quelli delle sezioni 2 e 3.
 
 **T1 — bracci + ATI, terminale normale senza `env.sh`.** Avvia una sola istanza.
@@ -85,6 +86,14 @@ python -m kinova_dual_arm_dmp_insertion.insert_pi insert "$W" --arm "$R" --slow 
 ```bash
 python -m kinova_dual_arm_dmp_insertion.insert_pi insert "$W" --arm "$R" --slow 3 --offline
 ```
+
+**Dopo le run del 23/10: prova consigliata C.** L'offline pura `insert_open --offline`
+non recupera la presa al contatto: nella nuova Z misura circa metà target già nella prima parte.
+C usa il piano offline ma corregge la stretta con gli ATI. Parti dai default PI
+(P 0.0001, I 0.001); se resta l'onda, confronta una seconda prova cambiando **solo**
+`--pi-ki 0.0005`, verificando che la forza non cali durante il contatto.
+`--k-eff 680` è una stima da una prova precedente, non una calibrazione garantita.
+Dettagli e numeri: [verifica delle nuove run](docs/RUN_REVIEW_20261023.md).
 
 Per confrontare anche il twist, aggiungi `--twist` **a entrambi A e B**.
 `--wrench-channels forces` aggiunge invece il feedback tangenziale interno già esistente;
