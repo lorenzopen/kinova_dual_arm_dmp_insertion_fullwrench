@@ -29,6 +29,10 @@
   entrata, ma stretta misurata circa metà della chiesta; oscillazione 0,18 N contro 0,32 N dell'`--online`
   gain 0,5. Tabella nel README della cartella.
 
+- `20261023_1743_F75_Zt1_s9012_ffi_riuscito/`: la Z con `insert_ffi --offline --k-eff 680` (SOCP offline +
+  trim I 1,6 mm/(N s)): entrata, stretta giusta lungo tutta la route (errore RMS 0,42 N), oscillazione 0,24 N.
+  Comando e parametri nel README della cartella.
+
 Le bag sono troppo grandi per git. Dal tuo PC:
 
 ```bash
