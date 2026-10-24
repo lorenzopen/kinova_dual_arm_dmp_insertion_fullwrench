@@ -1,0 +1,318 @@
+\chapter{From Boxes to Irregular Geometries}
+\label{ch:geometry}
+
+Geometry is introduced progressively so that a failure can be attributed to a change in the object rather than to several simultaneous changes in the apparatus. A perfect cube tests the pipeline without surface irregularity. A cube with one displaced corner tests a controlled local defect. Jittered corners remove the deliberately chosen defect direction. Random-plane polytopes then remove the assumption that the body is essentially box-like.
+
+This chapter specifies each construction and reports a blind simulation campaign over all of them: 182 bodies, three end-effector configurations, three prior modes and two levels of sensor noise, 1456 runs in total. Every planned run is in the ledger, and every number below is regenerated from the per-run records by the campaign's report scripts. The campaign is a simulation in PyBullet; its limits are stated in Section~\ref{sec:geo-limits}.
+
+\section{What the geometry progression tests}
+
+The progression tests whether the allocator and passive tool tolerate a changing local contact set without assuming parallel faces. The cube provides a reference. One displaced corner isolates a seating defect. Jitter distributes variation across the body. Random-plane convex polytopes remove the box-like arrangement of opposing surfaces.
+
+These are synthetic populations, not a documented manufacturing-tolerance distribution. A 21.6 mm corner displacement on a 120 mm body is a stress condition, not an ordinary precision-machining tolerance. Potential applications include rigid packages with damaged outer geometry and rigid irregular parts admitted by the tool's opening. Deformable cardboard, sharp concavities and shifting contents require additional models.
+
+The outcome is whether conformity preserves a usable three-point load path, whether measured normals remain allocatable under finite force, and whether estimation survives without extra support. Paired comparisons and failures by stage attribute differences to the design rather than to the population.
+
+\section{The information available to the planner}
+\label{sec:geo-information}
+
+A geometry experiment must state what the planner can access. A known-mesh arm can choose opposing faces using the mesh. A rough-size arm must use an explicitly perturbed size. A blind-search arm can approach from a coarse object location and discover contact through force feedback. These arms answer different questions and must retain separate results. Only the blind-search arm exists in this implementation, so only it was run; nothing below mixes information regimes.
+
+The true simulated mass, CoM, facet set and body base position are prohibited inputs to a blind decision. In Bullet, the reported base position can be the inertial-frame CoM rather than the nominal geometric origin. Treating it as an ordinary object position can therefore leak the unknown quantity into control. An accessor audit must examine every use, including stage gates and population selection.
+
+That audit was carried out on the entry point, the search, the allocator call, the estimator, the prior-frame construction and the stage gates. The planner, the estimator, the allocation and the prior query read only the coarse sensor of the geometric centre (with its declared 10 mm error), the contacts, the measured force and the solver status. One gate did read the truth: the checks that the object was still held after the lift and after the wielding compared the \emph{true} body height, and the wielding was entered only if the first check passed. It produced no visible defect, because the check was correct, which is precisely how such a leak hides. Both checks now use the same declared coarse sensor as the search, averaged over ten readings on its own random stream, and fall back to contact counts alone when no sensor is given; the true height is still written to the record, for reporting only. Over the campaign the new gate disagreed with the truth once in 30 wielding losses, on the safe side (20.0 mm seen against 5.3 mm true).
+
+\section{Perfect cube: establishing the contact loop}
+
+The perfect cube is a control experiment rather than a proof of generality. Its flat faces allow three parallel normals per hand when the triangle lies inside the face. That separates failures due to scalar-force realization, wrist deformation or estimation from failures due to changing facet normals.
+
+Even a cube does not guarantee seating. A tool footprint near an edge can place one sphere outside the face. The search must account for the measured contact mask and should not assume that a visual cube supplies six contacts automatically.
+
+The basic sequence is approach, seat, allocate squeeze, lift, estimate, wield, reorient, transport and release. Load identification and wielding remain free-space stages. Touchdown uses contact feedback only after the estimation interval has ended. Samples influenced by support are not allowed to enter the airborne regression. In the campaign every run performs this whole sequence: blind search, squeeze, a 150 mm lift, a $\pm35^\circ$ wielding cycle, a $90^\circ$ yaw, placement at a fixed target by force-guided lowering, release, and the pose measured once the hands are clear.
+
+\section{The end-effector configurations}
+\label{sec:geo-arms}
+
+Three configurations are compared on every body. The \emph{fixed tri-pad} is the rigid three-sphere tool on the compliant wrist. It is run twice: without and with the wrist re-alignment controller, which during the approach re-commands the wrist orientation from the measured contact normals up to three times. The \emph{floating-plate tri-pad} carries the three spheres on a plate suspended by zero-rest-length springs and is never run with the re-alignment controller: the plate is designed to conform mechanically precisely so that this control layer is not needed, and running it with the controller would measure a controller and a mechanism together. The axial-travel tool of Chapter~\ref{ch:contacts} was excluded from the comparison by design decision. Every arm still uses wrist impedance and squeeze feedback; ``without controller'' here refers only to active wrist re-alignment. All arms share the friction coefficient, trajectories, estimator gates, mass band, target and sensor error, and the plate carries no collision shape unless declared otherwise (Table~\ref{tab:plate-collision}).
+
+\section{The step before jittered boxes: one displaced corner}
+
+A deterministic deformation moves one cube vertex by a known geometric construction while the other seven remain fixed. The displacement is an independent variable of the population generator; it is not information given to the blind controller. Reusing the same configuration at several displacement magnitudes produces a paired geometry comparison.
+
+The saved geometric analysis shows why this step cannot be summarized by mean irregularity alone. Most axes still intersect a largely intact face, so median local unevenness can remain close to zero. The upper tail grows where the tool spans the deformed region or an edge. A localized defect tests rare poor seating rather than uniformly difficult seating.
+
+Local unevenness can be defined by placing the nominal three-pad footprint against the body along a candidate direction and measuring the spread of contact depths. A pad directed into empty space is a separate category; it should not be assigned an arbitrary finite unevenness and merged into the same distribution.
+
+In the campaign the corner direction (corner 7, along its own diagonal), the magnitudes, the arrivals and the tool settings are frozen. The 120 mm cube of 2 kg has its CoM 20 mm along the push direction, and the search seeds are the same for every magnitude, so between two bodies only the corner moves. Table~\ref{tab:one-corner} lists every run; none is selected.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}rrrlll@{}}\toprule
+Push & Faces & p90 unevenness & Fixed, no align. & Fixed, align. & Floating plate\\
+\midrule
+0 mm & 6 & 0.0 mm & placed & lost in wielding & placed\\
++6 mm & 9 & 0.9 mm & placed & lost in wielding & placed\\
++12 mm & 9 & 4.8 mm & placed & placed & placed\\
++24 mm & 9 & 30.8 mm & placed & placed & placed\\
++48 mm & 9 & 54.5 mm & placed & placed & placed\\
+$-36$ mm & 9 & 26.7 mm & placed & placed, $163^\circ$ off & placed\\
+\bottomrule\end{tabular}
+\caption{One displaced corner, deterministic. Every run seated 6/6 pads at the first attempt and no plate or flange contact occurred. The fixed tool with the controller loses the two \emph{least} deformed bodies in the wielding (true slip 54 and 65 mm); without the controller it places them. Bodies placed by the plate end within 11.5 mm and $1.1^\circ$ of the request.}
+\label{tab:one-corner}
+\end{table}
+
+The controlled defect separates nothing on the floating plate: it places all six bodies within tolerance. The informative line is the fixed tool's: the re-alignment controller costs it the two easiest bodies, the perfect cube and the 6 mm push, which the same tool without the controller places. Re-commanding the wrist on contact moves the pads, and on a near-perfect face it is the only thing that moves them.
+
+\section{Jittered corners: a bounded isotropic construction}
+
+For each of the eight cube vertices, draw $\vect z_i\sim\mathcal N(\vect0,I_3)$ and $u_i\sim\mathrm{Uniform}(0,1)$. With edge length $L$ and jitter fraction $\delta$,
+\begin{equation}
+\vect v_i'=\vect v_i+\delta L\,u_i^{1/3}\frac{\vect z_i}{\norm{\vect z_i}}.
+\label{eq:jitter-generator}
+\end{equation}
+The normalized Gaussian gives an isotropic direction. The cube root gives uniform volume density inside the displacement ball. The whole displacement is bounded by $\delta L$; it is not an independent bound of that size on each coordinate.
+
+These choices matter. Normalizing a vector sampled uniformly inside a cube biases the directions toward its diagonals. Sampling radius uniformly concentrates more points near the centre than a uniform-volume distribution. An unbounded Gaussian displacement would also contradict the stated maximum jitter.
+
+With the same seed, changing $\delta$ scales the same displacement directions and relative radii. This gives a paired comparison across jitter levels. With different seeds, the comparison is between populations as well as between amplitudes. The earlier three-family pilot used different seeds, so it was not a paired ladder; the campaign ladder is.
+
+The campaign crosses two variables. The number of displaced corners is $k\in\{1,2,4,8\}$, where the corners are taken in a fixed per-pair order such that the first two share an edge and the first four form a whole face, so the sets are nested. The amplitude is $\delta\in\{0.05,0.10,0.18\}$, a bound of 6.0, 12.0 and 21.6 mm on $L=120$ mm. Each of eight pairs draws its directions, radii, corner order, mass (1--4 kg) and CoM direction (20 mm from the centre) once, and every $(k,\delta)$ cell reuses them; the pair index also fixes the search seeds. Between two cells of one pair, only the shape changes.
+
+The convex hull of the displaced vertices remains the simulated body. A formerly square face can split into triangles when its vertices are no longer coplanar. Face counts depend on the coplanarity tolerance used to group hull triangles. Here hull triangles are one face when their normals agree within $0.5^\circ$ and their offsets within 0.2 mm, a tolerance checked against Euler's relation on generic polytopes. With it the jittered cubes have 8--9 faces at $k=1$, 9--10 at $k=2$, 9--11 at $k=4$ and 10--12 at $k=8$.
+
+\thesisfigure{ch09_geometry/geometry_ladder.pdf}{Illustrative convex hulls for the geometry progression: a cube, one displaced corner, bounded jitter and a random-plane body. They are generated for explanation, not selected as successful campaign objects.}{fig:geometry-ladder}
+
+\section{Random-plane convex polytopes}
+
+The generator samples outward normals isotropically and intersects half-spaces,
+\begin{equation}
+\mathcal P=\left\{\vect x\in\R^3:
+\vect n_j^\top\vect x\leq d_j,\ j=1,\ldots,N_p\right\},
+\quad
+\vect n_j=\frac{\vect z_j}{\norm{\vect z_j}}.
+\label{eq:random-halfspaces}
+\end{equation}
+Plane offsets vary around a nominal radius. The implementation obtains the intersection, removes repeated vertices, constructs its convex hull and can apply anisotropic scaling. Some sampled planes can be redundant. The number of sampled planes is therefore not the number of final facets.
+
+Adding three axis-aligned plane pairs would insert an artificial box structure and make parallel-face grasps unusually common. The current generator avoids that construction. Apparatus-size checks and numerical-degeneracy checks still constrain the generated population. They must be reported as part of the sampling process.
+
+Because planes are not faces, the campaign bins polytopes by the number of faces \emph{measured} on the hull, with the coplanarity tolerance above: 10--20, 20--50, 50--100 and 100--200 faces, twenty bodies per band. The number of planes is drawn log-uniformly between 10 and 800, and each draw is assigned to the band of its measured face count. The band of 10--20 faces lies below the 20 faces suggested as a starting point in supervision and is kept as the lowest rung. All 146 draws are recorded with their outcome: 80 kept, 64 not used because their band was already full, 2 outside the declared range of 10--200 faces; the generator's own size check rejected 21 further draws. The campaign first ran ten bodies per band and then twenty; the sampling is sequential, so the first ten of each band are identical in both, and the earlier runs were kept. Masses are drawn in 1--4 kg and the CoM lies inside the body.
+
+The generator supports irregular convex bodies, not arbitrary nonconvex geometry. Tetrominoes in the final application use a separate cell-based construction. A successful convex-polytope campaign would not by itself establish grasping of cavities, articulated parts, deformable packages or nonconvex unknown objects.
+
+\section{Facet-specific contacts}
+
+On a polytope, the three pads of one hand can touch different facets. Their normals can diverge even when their support positions form a triangle. The friction cone for each pad must use its own measured outward normal. Replacing all three by a single average normal can hide the very geometry that makes the allocation difficult.
+
+The allocator receives one measured normal per pad, and the campaign records the widest angle between two pad normals of the same hand. On the jittered cubes its median is $6.5^\circ$ on the plate and $25.7^\circ$ on the fixed tool with the controller; on polytopes it is $55$--$66^\circ$ for every tool. On polytopes the three pads of a hand sit on different facets as a rule, not as an exception, and the allocation is solved on those distinct cones throughout.
+
+The contact model and cap remain unchanged. Only the contact parameters change. The estimated CoM enters the moment balance, while the anchored grasp frame supplies the prior query. This separation allows the same local allocator to be used without assuming that a polytope has the same body frame or surface geometry as the training box.
+
+The prior transfer was tested rather than assumed. Removing the prior term loses 51 bodies in the wielding against 15 (Table~\ref{tab:prior-ablation}). An equal-trace identity precision reproduces the learnt one on every cube-family body, and falls slightly behind it on polytopes. The box-trained precision does not hurt on irregular contacts, and on the most irregular ones it helps a little.
+
+\section{Population selection and stage gates}
+
+A population filter is an experimental decision. It can exclude objects that exceed the apparatus opening or the declared workspace. It must not exclude objects because their true CoM predicts failure or because a trial grasp was unsuccessful. Selecting only successful grasps would transform a population test into a survivor test.
+
+\thesisfigure{ch09_geometry/polytope_zoo.pdf}{Bodies of the campaign population, drawn at a common scale. Top: the cube family, with the perfect $120$ mm cube dashed and moved corners in red. Bottom: the first body of each polytope face band. The bodies are taken in file order, not chosen by outcome.}{fig:polytope-zoo}
+
+The generator also rejects degenerate or very small numerical hulls. Those counts should be recorded separately from apparatus exclusions. A facet-size filter, if used in an earlier arm, must be stated as that arm's precondition. It should not silently reappear in the passive-tool population, whose purpose is to tolerate nonplanar local seating. In the campaign the only filter is size, it rejected 21 polytope draws, and no facet-size or unevenness criterion selects any body; unevenness is recorded as a covariate. The face band is a declared stratification, not a filter on success; 2 draws fell outside it.
+
+Per-run gates follow the same principle. Observability and contact measurements may cause abstention. True estimation error may only be computed after the gate. A threshold on true error would remove precisely the runs that the estimator needs to expose and would invalidate the downstream success rate.
+
+\section{Results: where each configuration fails}
+\label{sec:geo-results}
+
+Table~\ref{tab:geo-mortality} counts, over every planned body, how many were placed and at which stage the others stopped. No run crashed and none is missing.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}llll@{}}\toprule
+Family & Fixed, no align. & Fixed, align. & Floating plate\\
+\midrule
+One corner & 6/6 & 4/6 (2W) & 6/6 \\
+Jitter, $k=1$ & 18/24 (6S) & 23/24 (1W) & 24/24 \\
+Jitter, $k=2$ & 17/24 (7S) & 23/24 (1S) & 24/24 \\
+Jitter, $k=4$ & 16/24 (7S, 1W) & 24/24 & 24/24 \\
+Jitter, $k=8$ & 20/24 (4S) & 22/24 (2R) & 24/24 \\
+Jitter, all & 71/96 (24S, 1W) & 92/96 (1S, 1W, 2R) & 96/96 \\
+Polytopes, 10--20 faces & 8/20 (6S, 4L, 2W) & 15/20 (2S, 1L, 1W, 1P) & 14/20 (6W) \\
+Polytopes, 20--50 faces & 17/20 (3S) & 14/20 (2L, 2W, 2R) & 17/20 (1L, 2W) \\
+Polytopes, 50--100 faces & 19/20 (1W) & 16/20 (4W) & 17/20 (3W) \\
+Polytopes, 100--200 faces & 18/20 (1S, 1W) & 19/20 (1L) & 15/20 (1L, 4W) \\
+Polytopes, all & 62/80 (10S, 4L, 4W) & 64/80 (2S, 4L, 7W, 2R, 1P) & 63/80 (2L, 15W) \\
+\bottomrule\end{tabular}
+\caption{Placed bodies over every planned body, TP-GMM prior in all three arms. In parentheses, where the others stopped: S approach and seating, L lift, W wielding (estimation), R reorientation, P placement. Placed includes bodies placed on an edge.}
+\label{tab:geo-mortality}
+\end{table}
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Same body, arm A against arm B & A further & Same & B further & Sign test $p$\\
+\midrule
+Plate against fixed without controller & 46 & 122 & 14 & $<0.001$\\
+Plate against fixed with controller & 29 & 138 & 15 & 0.049\\
+Fixed with against without controller & 41 & 116 & 25 & 0.064\\
+\bottomrule\end{tabular}
+\caption{Paired comparison over the 182 bodies: on how many bodies one arm got to a later stage than the other. Two-sided exact sign test on the bodies where they differ.}
+\label{tab:geo-paired}
+\end{table}
+
+\textbf{On the cube family the floating plate dominates, without active wrist re-alignment.} It places all 96 jittered cubes and all six one-corner bodies, at the first attempt with six seated pads. The fixed tool without the controller cannot seat on a jittered cube: 24 of its 25 failures are at the approach, after five attempts with only two or three pads seated. With the controller it seats, but it loses the easy bodies in the wielding and places only half of the jittered cubes within tolerance (below). The mechanism does what the controller does for the fixed tool, without moving the pads while doing it. The failures of the fixed tool are spread over every $k$ and every $\delta$, mild included; they do not grow with the amplitude, so the difficulty is that the faces are no longer flat, not how far the corners moved.
+
+\textbf{On polytopes the three configurations are level.} They place 62, 64 and 63 of 80. One band separates two of them: on the 10--20-face bodies, few large and often elongated facets, the fixed tool without the controller fails to seat six times and the plate goes further on 13 bodies against 2 ($p=0.007$). Above 20 faces no band separates any pair. The plate's fifteen losses are all in the wielding: fourteen are drops of 126--171 mm and one is the sensor gate's false alarm. On many small facets the plate's conformity no longer buys an advantage. This is a negative result and is reported as one. With twenty bodies per band it is a statement that no difference was detected, not that the configurations are equivalent.
+
+\textbf{Estimation follows the seating.} Over runs that finished the wielding the median CoM error is 0.05 mm on the jittered cubes and 0.21 mm on polytopes for the plate, against 1.2 and 1.5 mm (without controller) and 1.8 and 1.7 mm (with controller) for the fixed tool. The estimator abstained 0 and 5 times on the plate, 10 and 19 on the fixed tool with the controller, 4 and 22 without it. All accepted estimates observe three directions. The mass error is at most 0.2\%, which reflects a simulated wrench without sensor noise rather than the estimator.
+
+\textbf{Sensor noise on the wrench does not change the outcome.} Two declared arms repeat the floating-plate runs on all 182 bodies with Gaussian noise added, per axis and per sample, to the wrench the estimator reads: 0.1 N and 0.005 Nm, about a good six-axis wrist sensor after filtering, and five times that. The contacts the allocator reads are left exact, so the arms isolate identification. Paired with the noise-free arm, the same stage is reached on 181 and 178 of 182 bodies ($p=0.62$ for the higher level), and 166 bodies are placed in both. The median mass error rises from below 0.01\% to 0.1\% and 0.4\% (worst 2.5\%), the median CoM error from 0.07 to 0.09 and 0.21 mm. Each estimate averages about a thousand quasi-static samples, so white noise of this size is averaged out; what this does \emph{not} test is a systematic error, bias or drift of a real sensor, which no amount of averaging removes.
+
+\section{Placement after identification}
+
+Once the object is reoriented, lowering should continue slowly until a measured support transition indicates that the environment is taking the load. The estimator is no longer updated as if all forces came from the hands. Release then reduces squeeze while observing whether the body remains supported.
+
+For a known support polygon, static stability requires the gravity line through the CoM to lie inside that polygon. On a general blind polytope, the polygon may not be known. A support event and a settled pose are observations; they do not establish the same geometric criterion as a mesh-based stability calculation.
+
+The final pose must be measured after the hands are clear. Measuring while the hands still constrain the body can report a commanded orientation that the object does not retain after release. Both requested and settled poses belong in the record. The campaign enforces this: the hands open, retreat 40 mm along their push axes and are held there while the body settles, and the record states whether any tool still touches the body when the pose is read. A body that remains leaning on a pad is its own outcome and is excluded from the pose errors. An earlier launch stepped the simulation without commanding the wrists during the settle, the uncommanded virtual couplings fell under gravity and a pad could land back on the body; that launch is archived and its pose columns are not used.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+ & Fixed, no align. & Fixed, align. & Floating plate\\
+\midrule
+Jitter: placed / hands clear / within tolerance & 71 / 69 / 51 & 92 / 92 / 46 & 96 / 96 / 96\\
+Jitter: position / attitude error, median & 11.2 mm / $3.6^\circ$ & 14.8 mm / $8.5^\circ$ & 6.2 mm / $3.5^\circ$\\
+Polytopes: placed / hands clear / within tolerance & 62 / 60 / 22 & 64 / 62 / 26 & 63 / 56 / 30\\
+Polytopes: position / attitude error, median & 11.3 mm / $11.8^\circ$ & 11.1 mm / $7.6^\circ$ & 10.1 mm / $7.6^\circ$\\
+\bottomrule\end{tabular}
+\caption{Pose after release, read with the hands clear. The tolerance is 20 mm and $10^\circ$ on the full rotation error; it is a declared acceptance radius for a subsequent task, not an error model.}
+\label{tab:geo-placement}
+\end{table}
+
+On the cube family the plate delivers every body within tolerance; the fixed tool with the controller places them but half end more than $10^\circ$ off. On polytopes no configuration controls the attitude well, and above 100 faces the median attitude error is $22$--$31^\circ$ for all three. Polytopes remain leaning on a pad after the release on every configuration, most often on the plate (7 of 63 placed, against 2 and 2 on the fixed tool): the conforming plate is what the body falls back onto.
+
+\section{A separate remote-impedance pilot}
+\label{sec:rcc-pilot}
+
+After the population campaign, the remote impedance of Section~\ref{sec:remote-impedance} was tested on a frozen four-body pilot on 7 October 2026. The bodies were the perfect cube, the 6 mm one-corner body, pair 0 of the eight-corner harsh jitter family and index 0 of the 10--20-face polytope band. Each was run with the fixed tool without re-alignment, the fixed tool with remote impedance and the floating plate. All twelve planned outcomes are retained; none crashed or timed out. This pilot is not pooled with the population campaign.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+Final stage & Wrist & Remote impedance & Plate\\\midrule
+Placed & 4 & 3 & 4\\
+Lost at reorientation & 0 & 1 & 0\\
+Placed within tolerance & 2 & 2 & 4\\
+Planned & 4 & 4 & 4\\\bottomrule
+\end{tabular}
+\caption{Frozen remote-impedance pilot. Within tolerance is a subset of placement, not an additional mortality stage. The wrist arm has no active normal-based re-alignment.}
+\label{tab:rcc-pilot}
+\end{table}
+
+A later consumer audit found that the horizontal script reused the lift pose and squeeze advance after wielding, instead of the last commanded state. That handoff has been corrected, with scalar and independent-axial regression checks. The recorded pilot predates this correction and remains historical evidence; its outcomes do not establish a ranking for the corrected pipeline, which requires a new paired execution.
+
+The mechanically checked remote law does not improve the manipulation outcome in this pilot. It loses the polytope during reorientation. On the harsh jitter body it reduces CoM error from 4.76 to 2.46 mm but increases placement position error from 20.9 to 30.4 mm; the plate places that body at 6.7 mm. Mechanical correctness of the impedance law and utility in the complete manipulation chain are distinct questions. The comparison also changes the finite-rotation torque to the exact potential gradient, and therefore does not isolate relocation of the compliance centre from that correction.
+
+A subsequent frozen validation reran all twelve conditions after correcting the command handoff and enforcing the estimator's abstention verdict before reorientation. Fixed wrist and RCC each place three of four bodies, with two within tolerance; the floating plate places all four within tolerance. Both fixed-tool arms abstain on the polytope: 9.43\% and 20.48\% rejected samples respectively, above the existing 5\% threshold. There are no crashes or timeouts. All placed bodies have clear hands, and all accepted allocation audits pass. This corrected pilot does not show an overall placement advantage of RCC.
+
+Separate evaluation-only motion observations on the cube for each tool sample body velocity at 10 ms. Wielding translational acceleration peaks at 0.63--0.70\% of gravity, but lifting peaks at 8--11\%, and the combined transport/placement/release block at 21--40\%. Its 95th percentile remains below 1\%, so the large values are transients, not a sustained acceleration. Slow commanded motion therefore does not establish a strictly quasi-static complete execution. The combined block has not yet localized the transient to transport, touchdown or release, and this observation does not measure the full rotational inertial wrench. It limits the interpretation of the static model rather than certifying full-pipeline stability. Complete outcomes and verification scope are documented in \sourcefile{lorenzo_data_analysis/10_tripad_passivo/VALIDAZIONE_PIPELINE_2026_10_07.md}.
+
+\section{Acquisition at the first approach}
+\label{sec:plate-search}
+
+Passive conformity and tactile search can both help establish a grasp. To separate their roles, a paired campaign on 9 October 2026 ran the floating plate on all 182 existing bodies with either one acquisition attempt or a budget of five. The first azimuth, coarse-centre reading and initial contact sequence were identical between the arms. Both retained the same session-C TP-GMM, bounded contact SOCP, scalar squeeze feedback, wrist impedance and estimator gates. Active wrist re-alignment was disabled. Only the acquisition budget changed; the search was not restarted after a failure in lift or wielding.
+
+All 364 planned runs completed without crashes or timeouts. The measured first-attempt records match exactly in all 182 pairs. Of those bodies, 181 reach the acquisition threshold on the first attempt; their subsequent records also match between arms, excluding execution times. The comparison therefore does not attribute a change in downstream control to the search budget. It uses the corrected frozen pipeline and is kept separate from the earlier population counts.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+ & Bodies & Clear, one & Clear, five & Tolerance, one & Tolerance, five\\
+\midrule
+One corner & 6 & 6 & 6 & 6 & 6\\
+Jitter & 96 & 96 & 96 & 96 & 96\\
+Polytopes & 80 & 52 & 53 & 29 & 30\\
+All & 182 & 154 & 155 & 131 & 132\\
+\bottomrule\end{tabular}
+\caption{Paired acquisition-budget comparison for the floating plate. Clear means placed with no remaining hand contact; tolerance additionally requires position error at most 20 mm and full rotation error at most $10^\circ$. Every planned body remains in the denominator. Five is the allowed budget, not the number of attempts actually used.}
+\label{tab:plate-search}
+\end{table}
+
+The exception is body 13 of the 10--20-face band. Its first attempt seats three pads and the one-attempt arm stops. The search uses the measured normals to refine the next axis, seats six pads on attempt two and places the body with clear hands, 2.5 mm position error and $1.2^\circ$ rotation error. No body uses a third attempt. The search policy includes a fresh coarse-centre reading and the physical effects of the previous touch; this ablation does not isolate azimuth rotation alone.
+
+The additional opportunity recovers one precise placement out of 80 polytopes. It leaves the three lift losses and seventeen wielding losses unchanged. Initially seated pads therefore do not establish that the grasp will survive the manoeuvre or produce an accurate final pose. On the one-corner and jitter families, the plate apparatus reaches the specified outcome without a second acquisition attempt; this is not a general claim that exploration is unnecessary for other arrivals or tools.
+
+Both arms have zero accepted allocations rejected by the independent audit, zero nonfinite allocated forces and zero observed non-pad load-path ticks. Accepted allocations account for 99.43\% of eligible bimanual ledger ticks, or 97.25\% and 97.26\% of all ledger ticks for one and five attempts. The excluded ticks in the first ratio include a hand losing contact. The median per-run mean resultant-force error during wielding is 0.388 N in both arms. These checks do not turn the scalar execution interface into full-wrench tracking, and the aggregate acceptance rate does not remove the fallback during difficult contacts.
+
+The experiment retains one deterministic arrival per body and the existing transition limitations of the quasi-static approximation. The 96 jitter variants share eight base pairs and are not 96 independent draws for significance. Tool resets between acquisition attempts are a simulation convenience, not validated robot repositioning trajectories. The executed code, prior, populations, commands and raw records are frozen in \sourcefile{lorenzo_data_analysis/10_tripad_passivo/rcc_evidence/plate_search_2026_10_09}; \sourcefile{lorenzo_data_analysis/10_tripad_passivo/PLATE_SEARCH_ABLATION_2026_10_09.md} records the protocol and interpretation.
+
+\subsection{The same acquisition budget on the fixed tri-pad}
+
+The same paired protocol was then run on the fixed tri-pad, with active wrist re-alignment disabled and ordinary wrist impedance rather than RCC. All 182 bodies and all control parameters were retained, including the session-C TP-GMM, contact SOCP, online estimation and scalar squeeze realization. Another 364 runs completed without crashes, timeouts or retries. First-attempt records match in all 182 pairs, and the 72 accepted first-attempt continuations match exactly except for CPU times. The only addition to the control code was passive contact telemetry, using the contact readings already available before the one-hand gate. On a separate reference body, all 166 original result fields remain identical to those obtained with the previous frozen code, excluding CPU time.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+ & Bodies & Clear, one & Clear, five & Tolerance, one & Tolerance, five\\
+\midrule
+One corner & 6 & 5 & 5 & 3 & 3\\
+Jitter & 96 & 32 & 64 & 25 & 47\\
+Polytopes & 80 & 14 & 34 & 6 & 12\\
+All & 182 & 51 & 103 & 34 & 62\\
+\bottomrule\end{tabular}
+\caption{The acquisition-budget ablation on the fixed tri-pad without active re-alignment. The outcome definitions and population are the same as in Table~\ref{tab:plate-search}. Every planned body remains in the denominator.}
+\label{tab:fixed-search}
+\end{table}
+
+Acquisition rises from 72 to 145 bodies. Of the 73 recovered acquisitions, 53 reach nominal placement and 20 fail later: one additional lift loss, two wielding losses, sixteen estimation abstentions and one reorientation loss. The one-attempt arm has 110 acquisition failures, two lift losses, three wielding losses, eleven estimation abstentions, one placement jam and 55 nominal placements. The search arm has respectively 37, three, five, twenty-seven, one and 108, plus the reorientation loss. Nominal placement includes two edge placements in each arm. Clear placement and pose tolerance remain separate requirements: search recovers 28 complete outcomes, 22 jittered and six polytopes. The search budget is used unevenly: 72 bodies need one attempt, 32 two, 21 three, eight four and 49 five.
+
+The plate's complete outcomes change from 131 to 132, whereas the fixed tool's change from 34 to 62. Additional acquisition opportunities therefore matter much more for the fixed tool in this population, but leave a substantial gap to the conforming apparatus. The protocol preserves an already accepted first grasp, so the nonnegative change is built into the comparison; the informative quantities are the size of the recovery and its subsequent mortality. This does not establish a benefit of CoM-directed placement or compare RCC here.
+
+Passive telemetry records the number of active pads on every allocator tick, including one-handed ticks, with per-phase histograms, per-hand counts and per-pad occupancy and contact-loss transitions. Active means a manifold point exists, not that a minimum load is carried. During wielding, polytopes average 3.829 active pads over the 30 sampled runs of the first arm and 4.024 over the 65 sampled runs of the search arm; fewer than four pads occur in 37.67\% and 27.47\% of samples. These are conditional, pooled sample descriptions with different admitted bodies, not matched survivor effects. The earlier plate campaign did not save these histograms, so no retrospective pad-occupancy comparison is made. Both fixed arms have zero independent-audit rejections, nonfinite allocations or observed non-pad load-path ticks; allocation acceptance covers 96.69\% and 96.50\% of eligible bimanual ticks. These numerical checks coexist with the measured downstream failures.
+
+The complete protocol, contact-field definitions and mortality are in \sourcefile{lorenzo_data_analysis/10_tripad_passivo/RIGID_SEARCH_ABLATION_2026_10_09.md}. Frozen inputs, executed commands, raw records and reproducible paired and contact reports are in \sourcefile{lorenzo_data_analysis/10_tripad_passivo/rcc_evidence/rigid_search_2026_10_09}. The same arrival, reset and quasi-static transition limits stated above apply.
+
+\subsection{Remote-point impedance under the same acquisition protocol}
+
+The fixed tool was also run with its existing remote-point impedance, without active normal-based re-alignment. The remote point remains the known nominal pad-centre plane, 20 mm ahead of each wrist; it is not an estimated object surface or CoM. The torsional and tilt gains were retained rather than tuned to this population. The same 364 paired trials completed, with all first-attempt records identical and all 68 accepted first-attempt continuations identical except for CPU times. The contact telemetry is the same as for the fixed arm. SOCP, session-C TP-GMM, online estimation and scalar squeeze realization are unchanged.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+Apparatus & Complete, one & Complete, five & Gain\\
+\midrule
+Fixed & 34/182 (18.68\%) & 62/182 (34.07\%) & 28\\
+Remote-point impedance & 29/182 (15.93\%) & 53/182 (29.12\%) & 24\\
+Floating plate & 131/182 (71.98\%) & 132/182 (72.53\%) & 1\\
+\bottomrule\end{tabular}
+\caption{Complete outcomes under the same acquisition-budget protocol. Complete means placed with clear hands, position within 20 mm and full orientation within $10^\circ$. All 182 planned bodies remain in each denominator; the three campaigns retain separate frozen records.}
+\label{tab:three-acquisition-budgets}
+\end{table}
+
+The population mix is six one-corner bodies (3.30\%), 96 jittered bodies (52.75\%) and 80 polytopes (43.96\%), with rounding. This is an experimental mix, not an industrial shape frequency. Each polytope band contributes twenty bodies (10.99\% of the total). The eight jitter base configurations are reused across four displaced-corner counts and three amplitudes; the 96 variants are not independent draws.
+
+On remote-point impedance, acquisition increases from 68 to 148 bodies. Of the eighty recovered acquisitions, 57 reach nominal placement and 23 fail later: four lift losses, one wielding loss, seventeen estimation abstentions and one reorientation loss. The terminal outcomes for one/five attempts are 114/34 acquisition failures, 1/5 lift losses, 6/7 wielding losses, 7/24 estimation abstentions, 0/1 reorientation losses, 1/1 placement jams and 53/110 nominal placements. Clear placement reaches 51/107 bodies, while complete placement reaches 29/53. Both remote-point arms have zero independent-audit rejections, nonfinite allocations and observed non-pad load-path ticks. Acceptance covers 97.86\% and 96.19\% of eligible bimanual ticks.
+
+Additional search helps both wrist configurations. Remote-point impedance does not outperform the fixed configuration in complete outcomes here: it releases more bodies under search (107 versus 103), but fewer within tolerance (53 versus 62). Both achieve 6/80 and 12/80 complete polytope outcomes with one and five attempts. The difference is on jittered bodies: remote-point impedance achieves 20/96 and 38/96, compared with 25/96 and 47/96 for the fixed wrist. Among the 64 clear jitter placements in each search arm, 24 remote-point cases and fifteen fixed cases exceed the position tolerance; fifteen and eleven exceed the orientation tolerance, with overlapping categories. These admitted sets must not be assumed identical. Keeping contact and attaining the requested pose are different outcomes.
+
+The comparison also retains paired disagreements: with one attempt, five bodies meet the complete criterion only under remote-point impedance and ten only under the fixed wrist; with search, the counts are thirteen and twenty-two. This limits a claim of uniform improvement without discarding cases where the remote impedance helps. The fixed-reference energy argument for the controller is distinct from success of the whole moving-reference task. The nominal configuration is reported as tested rather than adjusted after seeing the outcomes.
+
+The RCC protocol, complete mortality and contact definitions are in \sourcefile{lorenzo_data_analysis/10_tripad_passivo/RCC_SEARCH_ABLATION_2026_10_09.md}; executed code and original trial records are frozen in \sourcefile{lorenzo_data_analysis/10_tripad_passivo/rcc_evidence/rcc_search_2026_10_09}. The three-apparatus table and all 182 paired body outcomes are generated from those campaigns by \sourcefile{lorenzo_data_analysis/10_tripad_passivo/acquisition_comparison_report.py}. The arrival, tool-reset and quasi-static transition limits stated above still apply.
+
+\section{Exploratory placement on a known inclined support}
+\label{sec:inclined-pilot}
+
+A further blind experiment places onto a known 0.4 m square platform inclined by $10^\circ$, with effective support friction $0.6$. The platform is introduced only after mid-air lifting and wielding. Object geometry remains unknown. The vertical line through the estimated CoM is aimed at the platform centre; an ablation instead aims the grasp centre there. This targets the finite apparatus boundary, not an unknown support polygon. Translating on an infinite uniform plane would not change tipping stability.
+
+The support wrench is inferred from gravity minus the measured hand wrench about the estimated CoM. Its line of action is intersected with the known plane. That point is not a measured support polygon, and a free couple is not explained by a single pressure point. The load-transfer test observes both net hand wrench and remaining squeeze: internal forces can otherwise hold an unstable object while cancelling in the resultant. Grip is removed by measured-force feedback at at most 2 mm/s, with the original 40 mm retreat plus 12 mm release-travel budget. Small support accommodation continues during unloading. A one-second dwell with hand force, moment and total normal squeeze below 5\% of their respective weight-based scales permits a \emph{release candidate}; it is not a stability certificate.
+
+All five final planned runs, on three unique bodies, are reported. The perfect cube reaches release. The harsh jitter body abstains at placement for both targeting rules because the free-space tare is inconsistent with the estimated load. The polytope abstains at identification for both rules because 20.2\% of offered samples were rejected. Thus mortality is two at identification, two at placement self-assessment and one released candidate. These are not five independent shape samples.
+
+For the cube, the hand wrench and residual squeeze reach zero for the dwell. After the release decision, simulation truth confirms contact with the inclined platform and clear hands. Translation and rotation drift over release and the subsequent three-second observation are 0.043 mm and $0.037^\circ$. These pose and contact reads are evaluation only. Once hands cease contact, their wrench cannot distinguish a stationary object from one sliding freely. The experiment establishes single-body feasibility; it does not establish a benefit of CoM targeting or stable placement of jittered cubes and polytopes. The earlier fixed-displacement unloading test refused release on this same cube because substantial hand moment remained; that developmental result is archived separately.
+
+Subsequent diagnostics identified a phase-handoff defect: the inclined path reused the lift setpoint although wielding had adjusted the squeeze advance. Exporting and carrying the final wielding commands fixes that discontinuity without changing estimation gates. The original harsh jitter body then reaches release, with posterior drift of 0.014 mm and $0.024^\circ$. On the original polytope, rejected samples are caused by lost pad contacts. Explicitly moving the remote point from the sphere-centre plane (20 mm) to the known nominal contact plane (30 mm) removes these rejections; a four-second post-identification tilt-gain transition from 8 to 40 Nm/rad enables release. The gain transition is outside the fixed-gain energy argument and is checked against measured wrist rotation. These are developmental trials on the same bodies, with unsuccessful alternatives retained, not additional independent samples.
+
+A further paired pilot freezes that 30 mm offset and 40 Nm/rad placement gain for all six planned bodies: two corner bodies, two harsh jitter bodies and two 10--20-face polytopes. Both targeting rules are run on every body. Of all twelve planned runs, two abstain at estimation, four refuse placement after touchdown without satisfying the settling criterion, and six reach release. All six released candidates have clear hands, platform contact and meet the posterior three-second drift criterion. There are no crashes or timeouts. This is three released unique bodies out of six; the paired targets are not independent repetitions.
+
+For those three bodies, the final CoM's horizontal distance from the platform centre is 2.30 versus 12.90 mm on the corner body, 5.31 versus 19.98 mm on the harsh jitter body and 9.76 versus 33.01 mm on the polytope, respectively for estimated-CoM and grasp-centre targeting. These are posterior evaluation reads. They demonstrate a centring benefit on the released bodies, while both targets have identical mortality. They do not establish a general success advantage or identify the unknown support polygon. The uniform high-gain arm refuses two bodies that the original low-gain arm can place, so it is kept as an explicit configuration rather than promoted to the default.
+
+The implementation, frozen commands, source hashes, complete wrench traces and intermediate negative results are in \sourcefile{lorenzo_data_analysis/10_tripad_passivo/rcc_evidence}. The control law and its sensing assumptions are documented in \sourcefile{lorenzo_data_analysis/10_tripad_passivo/RCC_AND_INCLINED_PLACEMENT.md}.
+
+\section{What the campaign establishes, and what it does not}
+\label{sec:geo-limits}
+
+The campaign establishes, in simulation and for the blind-search regime: that the floating plate without active wrist re-alignment seats, holds, estimates and places the cube family better than the fixed tri-pad with or without the re-alignment controller; that this advantage disappears on random polytopes; that a colliding plate leaves the outcome nearly unchanged while invalidating the force model and the estimate (Table~\ref{tab:plate-collision}); that the allocation passes an independent constraint audit on every accepted solution (Table~\ref{tab:socp-audit}); and that the prior contributes mostly through its weight, with a small additional benefit of its learnt shape on polytopes (Table~\ref{tab:prior-ablation}).
+
+It does not establish the following, and each is a declared gap rather than an omission. Rough-size and known-mesh planners do not exist in this implementation and were not run. The axial-travel tool was excluded from the comparison by decision. The simulated contact wrench is exact. White sensor noise on what the estimator reads was tested and does not change the outcome, but sensor bias and drift, and noise on the contacts the allocator reads, were not modelled; an estimator on hardware will not reach the reported errors. Each body is run once from one arrival; variability comes from the population, not from repeated trials. Twenty polytopes per band is still limited power, so the polytope result is a statement of no detected difference, not of equivalence. Finally, the bodies are convex; Chapter~\ref{ch:tetris} uses a separate declared regime and contributes nothing to arbitrary-shape generalization.

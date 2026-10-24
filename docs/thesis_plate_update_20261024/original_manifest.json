@@ -1,0 +1,17 @@
+{
+  "root": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\thesis_english_2026",
+  "files": [
+    {
+      "path": "chapters/04_contact_and_end_effectors.tex",
+      "sha256": "434882702a6e481797219b6a441cc1213baef47bcb6956e855930507d7d5f07b"
+    },
+    {
+      "path": "figures/README.md",
+      "sha256": "19ce479ed9b9458d8a5bb23792666b79396ac973191d338388f65d631ef876b2"
+    },
+    {
+      "path": "build/main.pdf",
+      "sha256": "57c21a18b816622ae013e774192f16fc9d3af54e05bcbd70640979ef211b0163"
+    }
+  ]
+}

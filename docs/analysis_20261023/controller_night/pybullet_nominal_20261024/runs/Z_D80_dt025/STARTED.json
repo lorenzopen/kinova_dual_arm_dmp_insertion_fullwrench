@@ -1,0 +1,14 @@
+{
+  "pid": 18064,
+  "argv": [
+    "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\run_bullet.py",
+    "--piece",
+    "Z",
+    "--dt",
+    "0.00025",
+    "--damping",
+    "80",
+    "--tag",
+    "Z_D80_dt025"
+  ]
+}

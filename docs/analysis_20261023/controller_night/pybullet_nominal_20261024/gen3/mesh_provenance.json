@@ -1,0 +1,66 @@
+{
+  "repository": "Kinovarobotics/ros2_kortex",
+  "commit": "b2aa46b29ae8fadd5b293c57e3500925c61eb8e8",
+  "files": [
+    {
+      "path": "gen3\\assets\\meshes\\base_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/base_link.STL",
+      "git_blob": "0a35a8ae68fa0b8d24507f2cd2a142a59b8fc91e",
+      "sha256": "3e38517e653d58f4160cfdcee34c9dea983d8b3ecb8f2c147444f58235335260"
+    },
+    {
+      "path": "gen3\\assets\\meshes\\bracelet_no_vision_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/bracelet_no_vision_link.STL",
+      "git_blob": "326b1d797fe0725450391d05fbd46f1cdcd8a8ca",
+      "sha256": "5b2ec7dafbf6a3c9a2cac717d18132a8a1efd9fcb8f2c40d9c12c8ece7323ec8"
+    },
+    {
+      "path": "gen3\\assets\\meshes\\bracelet_with_vision_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/bracelet_with_vision_link.STL",
+      "git_blob": "146b69b50b2fd61546c3dc7a4860a037874f084e",
+      "sha256": "8bb05e420a88532b4eee3948a0047fb8e7f341c3e5cc971d54e97e2aaffcf878"
+    },
+    {
+      "path": "gen3\\assets\\meshes\\end_effector_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/end_effector_link.STL",
+      "git_blob": "6dc3cfa9466a85796b24e7a507f7563f30ec0529",
+      "sha256": "5b6fb58e61fa475939767d68a446f97f1bff02c0e5935a3ea8bb51e6515783d8"
+    },
+    {
+      "path": "gen3\\assets\\meshes\\forearm_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/forearm_link.STL",
+      "git_blob": "ac791a3548a21d8ae1650b4b14d173605e6f85bb",
+      "sha256": "a00d96d2c7ec37e9fe4c5fb6d3fa2b4386dfd48fea5ac25632f4cb83b3505105"
+    },
+    {
+      "path": "gen3\\assets\\meshes\\half_arm_1_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/half_arm_1_link.STL",
+      "git_blob": "1df304c0eb9e8630f3be09b39154c1955ad0771b",
+      "sha256": "8df461a71780d8e2d09104a507584424279d85173adf14867e359f7e58b3bba7"
+    },
+    {
+      "path": "gen3\\assets\\meshes\\half_arm_2_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/half_arm_2_link.STL",
+      "git_blob": "78bc722ab2d8ac217b57dc2b85860a9597c771ee",
+      "sha256": "8a9f38de21648804b3ab7076ec73726031f2ade7c95eb2541d070553e025407b"
+    },
+    {
+      "path": "gen3\\assets\\meshes\\shoulder_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/shoulder_link.STL",
+      "git_blob": "69ecb7695c73980fa9e76563d5a66fca373db44a",
+      "sha256": "a98e232e5197f09e9cd520e7a450c21bcec74bc49e2a19ce7cf86c5dc25f2e18"
+    },
+    {
+      "path": "gen3\\assets\\meshes\\spherical_wrist_1_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/spherical_wrist_1_link.STL",
+      "git_blob": "3bbf04a6de017405f402d8b95c3b22d441389a57",
+      "sha256": "0b97a5e3b2de535344f8e8d4176d77f0cdb3455b235f35430fa0413208856e66"
+    },
+    {
+      "path": "gen3\\assets\\meshes\\spherical_wrist_2_link.STL",
+      "url": "https://raw.githubusercontent.com/Kinovarobotics/ros2_kortex/b2aa46b29ae8fadd5b293c57e3500925c61eb8e8/kortex_description/arms/gen3/7dof/meshes/spherical_wrist_2_link.STL",
+      "git_blob": "14bbff58f2f200dd1e1b97ba5226da3f768b69e4",
+      "sha256": "12271fb7d0ee78fb5642424cf5078be20f0476061e74203db964b674031ce879"
+    }
+  ]
+}

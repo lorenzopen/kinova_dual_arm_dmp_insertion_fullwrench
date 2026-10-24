@@ -1,0 +1,48 @@
+[
+  {
+    "setting": "isotropic80",
+    "normal_gain_vs_base_1Hz_min_median_max": [
+      0.9923887832952358,
+      0.9946228418636407,
+      0.996796741633524
+    ],
+    "normal_gain_vs_base_2Hz_min_median_max": [
+      0.9659420486758449,
+      0.9766625442908576,
+      0.986319041355706
+    ],
+    "vertical_extra_phase_lag_ms_1Hz_min_median_max": [
+      12.79438584717226,
+      13.085058822698663,
+      13.718944950680918
+    ],
+    "vertical_extra_phase_lag_ms_2Hz_min_median_max": [
+      8.436449287295053,
+      10.403660102569212,
+      10.737075543925272
+    ]
+  },
+  {
+    "setting": "base_y80",
+    "normal_gain_vs_base_1Hz_min_median_max": [
+      0.9924379875949273,
+      0.9946628853153607,
+      0.9968433178831155
+    ],
+    "normal_gain_vs_base_2Hz_min_median_max": [
+      0.9664165622430387,
+      0.9770182013072234,
+      0.9870009337324193
+    ],
+    "vertical_extra_phase_lag_ms_1Hz_min_median_max": [
+      -2.1518799816552204e-06,
+      0.003490497172218247,
+      0.12447919979667178
+    ],
+    "vertical_extra_phase_lag_ms_2Hz_min_median_max": [
+      -0.0671473002430007,
+      0.000928426447315784,
+      0.022146887104687697
+    ]
+  }
+]

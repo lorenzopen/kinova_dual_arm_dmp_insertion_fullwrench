@@ -1,0 +1,28 @@
+{
+  "actual_production_I_class_updates": 41240,
+  "maximum_production_command_difference_mm": 2.220446049250313e-15,
+  "causal_checks": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "prefix_unchanged": true,
+      "future_logs_and_all_force_values_perturbed": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "prefix_unchanged": true,
+      "future_logs_and_all_force_values_perturbed": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "prefix_unchanged": true,
+      "future_logs_and_all_force_values_perturbed": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "prefix_unchanged": true,
+      "future_logs_and_all_force_values_perturbed": true
+    }
+  ],
+  "max_desired_slew_within_phase_mm_s": 2.0000000000001137,
+  "majorant_max_lowering_same_clock_N": 0.0
+}

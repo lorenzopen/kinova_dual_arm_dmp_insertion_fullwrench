@@ -1,0 +1,41 @@
+{
+  "source": "docs\\runs\\20261023_F75_Zt1_s9012_offline\\F75_Zt1_s9012_c100_five_cut800_offline_20261023_123222.csv",
+  "sha256": "773a605c7c5951457ccbb5986abb82b57b16915ce8572d4e03e5c5a63420da70",
+  "route_duration_s": 19.079800128936768,
+  "samples": 1906,
+  "projection_vs_logged_sum_max_difference_N": 0.013730209133400617,
+  "band_Hz": [
+    0.8,
+    2.5
+  ],
+  "excluded_edge_s": 1.5,
+  "forces": {
+    "sinistra": {
+      "band_rms_N": 0.08949701381877839,
+      "band_peak_to_peak_N": 0.645649014412236,
+      "raw_min_N": 1.0583620330403354,
+      "raw_max_N": 3.1302153255168896,
+      "raw_first_sixth_median_N": 2.339229798894211,
+      "raw_last_sixth_median_N": 1.4545192501232447,
+      "zoom_5_to_10_s_peak_to_peak_N": 0.680627269592629
+    },
+    "destra": {
+      "band_rms_N": 0.0894470170584282,
+      "band_peak_to_peak_N": 0.6505715720882823,
+      "raw_min_N": 1.030060813555353,
+      "raw_max_N": 3.096998612803232,
+      "raw_first_sixth_median_N": 2.3139300921892865,
+      "raw_last_sixth_median_N": 1.4807892042437882,
+      "zoom_5_to_10_s_peak_to_peak_N": 0.6332506566262475
+    },
+    "somma": {
+      "band_rms_N": 0.17874022806914103,
+      "band_peak_to_peak_N": 1.2939216622866325,
+      "raw_min_N": 2.14,
+      "raw_max_N": 6.2,
+      "raw_first_sixth_median_N": 4.66,
+      "raw_last_sixth_median_N": 2.93,
+      "zoom_5_to_10_s_peak_to_peak_N": 1.25
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "source": "docs\\runs\\20261022_F75_Zt1_s9012_offline\\4_2020_K1500_online_gain05\\F75_Zt1_s9012_c100_five_cut800_online_20261022_202036.csv",
+  "sha256": "27d203017182e8a1bfe184ea317f0632a5751332fcf2d3a47f0d27096a0ee763",
+  "route_duration_s": 19.088200092315674,
+  "samples": 1849,
+  "projection_vs_logged_sum_max_difference_N": 0.014772983113079619,
+  "band_Hz": [
+    0.8,
+    2.5
+  ],
+  "excluded_edge_s": 1.5,
+  "forces": {
+    "sinistra": {
+      "band_rms_N": 0.15532171538889317,
+      "band_peak_to_peak_N": 0.9710473803016061,
+      "raw_min_N": 3.28683483127264,
+      "raw_max_N": 5.216978581192934,
+      "raw_first_sixth_median_N": 4.496044564877411,
+      "raw_last_sixth_median_N": 3.9833657923845514,
+      "zoom_5_to_10_s_peak_to_peak_N": 1.2037205245091411
+    },
+    "destra": {
+      "band_rms_N": 0.1560224601434142,
+      "band_peak_to_peak_N": 0.9651566225513128,
+      "raw_min_N": 3.2711896006195587,
+      "raw_max_N": 5.252289770986532,
+      "raw_first_sixth_median_N": 4.474233369719936,
+      "raw_last_sixth_median_N": 4.023748488125677,
+      "zoom_5_to_10_s_peak_to_peak_N": 1.1643593994334838
+    },
+    "somma": {
+      "band_rms_N": 0.311164907541413,
+      "band_peak_to_peak_N": 1.9364180423122117,
+      "raw_min_N": 6.56,
+      "raw_max_N": 10.41,
+      "raw_first_sixth_median_N": 8.97,
+      "raw_last_sixth_median_N": 8.02,
+      "zoom_5_to_10_s_peak_to_peak_N": 2.29
+    }
+  }
+}

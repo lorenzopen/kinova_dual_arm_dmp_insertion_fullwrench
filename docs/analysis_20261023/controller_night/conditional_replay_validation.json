@@ -1,0 +1,90 @@
+[
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "baseline_force_replay_max_error_N": 1.7763568394002505e-15,
+    "baseline_command_replay_max_error_mm": 1.734723475976807e-15,
+    "max_command_speed_mm_s": 2.0000000000000115,
+    "observed_min_individual_normal_N_L_R": [
+      2.9501580276018173,
+      2.9586496861053337
+    ],
+    "note": "Individual observed normals are real; simulated minima are mean-of-hands only."
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+    "baseline_force_replay_max_error_N": 1.7763568394002505e-15,
+    "baseline_command_replay_max_error_mm": 1.3010426069826053e-15,
+    "max_command_speed_mm_s": 2.0000000000000218,
+    "observed_min_individual_normal_N_L_R": [
+      2.9443212416922493,
+      2.909888583290373
+    ],
+    "note": "Individual observed normals are real; simulated minima are mean-of-hands only."
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "baseline_force_replay_max_error_N": 1.3322676295501878e-15,
+    "baseline_command_replay_max_error_mm": 8.673617379884035e-16,
+    "max_command_speed_mm_s": 2.000000000000019,
+    "observed_min_individual_normal_N_L_R": [
+      3.1408346013530974,
+      3.1795496706703936
+    ],
+    "note": "Individual observed normals are real; simulated minima are mean-of-hands only."
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "baseline_force_replay_max_error_N": 1.3322676295501878e-15,
+    "baseline_command_replay_max_error_mm": 1.734723475976807e-15,
+    "max_command_speed_mm_s": 2.000000000000018,
+    "observed_min_individual_normal_N_L_R": [
+      3.12033247413219,
+      3.095626876604061
+    ],
+    "note": "Individual observed normals are real; simulated minima are mean-of-hands only."
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "baseline_force_replay_max_error_N": 1.7763568394002505e-15,
+    "baseline_command_replay_max_error_mm": 1.734723475976807e-15,
+    "max_command_speed_mm_s": 2.0000000000000218,
+    "observed_min_individual_normal_N_L_R": [
+      3.413966840839694,
+      3.3646542016874608
+    ],
+    "note": "Individual observed normals are real; simulated minima are mean-of-hands only."
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+    "baseline_force_replay_max_error_N": 1.7763568394002505e-15,
+    "baseline_command_replay_max_error_mm": 1.3010426069826053e-15,
+    "max_command_speed_mm_s": 2.000000000000016,
+    "observed_min_individual_normal_N_L_R": [
+      2.5499884635540417,
+      3.5780882050185996
+    ],
+    "note": "Individual observed normals are real; simulated minima are mean-of-hands only."
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "baseline_force_replay_max_error_N": 1.3322676295501878e-15,
+    "baseline_command_replay_max_error_mm": 8.673617379884035e-16,
+    "max_command_speed_mm_s": 2.0000000000000115,
+    "observed_min_individual_normal_N_L_R": [
+      2.9466215809237215,
+      3.3935603233697567
+    ],
+    "note": "Individual observed normals are real; simulated minima are mean-of-hands only."
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+    "baseline_force_replay_max_error_N": 1.3322676295501878e-15,
+    "baseline_command_replay_max_error_mm": 8.673617379884035e-16,
+    "max_command_speed_mm_s": 2.000000000000011,
+    "observed_min_individual_normal_N_L_R": [
+      2.4069255648816714,
+      3.1690977136921705
+    ],
+    "note": "Individual observed normals are real; simulated minima are mean-of-hands only."
+  }
+]

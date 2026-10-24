@@ -1,0 +1,343 @@
+\chapter{Convex Contact Force Allocation}
+\label{ch:socp}
+
+The allocator answers a local question: given the contacts available now and the load believed now, which wrench should each wrist apply to the object? Contact positions and normals are parameters during a solve. The human prior supplies the metric in which wrist wrenches are compared. Friction defines admissibility, and a signed friction margin keeps every planned contact force a fixed distance inside its cone.
+
+This chapter presents the active formulation first: two wrist wrenches, twelve decision components, exact equilibrium and signed-distance friction margins. Section~\ref{sec:socp-previous} records the earlier eighteen-force formulation with slack, cap and a scaled cone. The population campaigns of Chapters~\ref{ch:geometry} and~\ref{ch:tetris} were run with that earlier allocator, so its equations and its audit remain part of the evidence.
+
+\section{A short introduction to SOCP}
+
+A second-order cone constraint has the form
+\begin{equation}
+\norm{A\vect x+\vect b}_2\leq\vect c^\top\vect x+d.
+\end{equation}
+Its feasible set is convex. Affine equalities, intersections of such cones and positive-semidefinite quadratic epigraphs remain convex~\cite{boyd2004}. A solver can therefore find a global optimum of the fixed local allocation problem, subject to numerical tolerances.
+
+The exact circular Coulomb cone fits this form. There is no need to approximate it by a friction pyramid. A cone whose apex is displaced along the normal also fits it, which is what the friction margin below requires. CVXPY constructs the conic problem in Python; a conic solver such as CLARABEL, ECOS or SCS executes it. A pure quadratic-program solver does not directly solve the exact norm cones.
+
+The geometry is held fixed only for the solve. A trajectory with changing contacts is a sequence of convex problems, not one globally convex manipulation plan. Contact search, regrasping and passive deflection remain outside this local optimization.
+
+\section{Inputs, outputs and the meaning of a feasible solution}
+\label{sec:socp-interface}
+
+The allocator distributes a load that another part of the system has specified. It needs a contact model, a requested object wrench and a way to compare alternative wrist wrenches. Table~\ref{tab:socp-inputs} collects these inputs. They are held fixed while one problem is solved; the optimizer does not search over object poses or discover new contacts.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}p{0.27\textwidth}p{0.66\textwidth}@{}}\toprule
+Input & Role in the allocation\\\midrule
+Contact geometry & Three pad positions and outward normals per hand, active-contact flags and the two wrist poles define the grasp maps.\\
+Requested load & The six components $\vect b=[\vect b_F^\top,\vect b_\tau^\top]^\top$ specify what the hands must balance, about the stated CoM.\\
+Contact assumptions & Friction $\mu$, tool constraints and the signed-distance margin define which contact forces are admissible.\\
+Human prior & The current attitude queries a twelve-dimensional covariance; its inverse weights the wrist forces and moments, including their correlations.\\\bottomrule
+\end{tabular}
+\caption{The fixed inputs of one allocation. In the unknown-object pipeline, mass, CoM and geometry come from estimates. The catalogue insertion experiments instead declare known nominal mass and geometry; their predicted environment load is supplied by the route model. The two information regimes are kept separate.}
+\label{tab:socp-inputs}
+\end{table}
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[node distance=7mm,box/.style={draw,rounded corners,align=center,text width=85mm,minimum height=11mm},>=Latex]
+\node[box] (inputs) {Contact geometry, requested load, friction\\and orientation-dependent human covariance};
+\node[box,below=of inputs] (solve) {SOCP: choose the two wrist wrenches\\subject to equilibrium and contact cones};
+\node[box,below=of solve] (check) {Independent numerical checks\\of balance, contact forces and margins};
+\node[box,below=of check] (out) {Accepted wrist references\\and auxiliary contact-force witnesses};
+\draw[->] (inputs)--(solve);\draw[->] (solve)--(check);\draw[->] (check)--(out);
+\end{tikzpicture}
+\caption{One local allocation. A failed solve or failed numerical check rejects the candidate. Acceptance establishes feasibility under the supplied model; the execution layer must still realize the accepted wrench through the arms and passive tools.}
+\label{fig:socp-blocks}
+\end{figure}
+
+The twelve wrist components are the physical output of interest. The eighteen auxiliary pad-force components certify that the chosen wrench pair can be supported by the assumed point contacts. An implementation may eliminate $\vect w$ by substituting $\vect w=H\vect f$ and solve directly for those eighteen components; this is the same wrist objective expressed in different variables. It does not provide eighteen independently actuated commands. The human mean is not a reference force: only the covariance enters the active cost.
+
+Evaluation has three separate levels. First, numerical acceptance checks equilibrium and each contact constraint in their stated units. Second, execution compares measured wrist wrenches with the accepted references, reporting tracking error, transients, force minima and command saturation. Third, the task is judged after release: whether the object remains supported and where it comes to rest. A low objective value, a feasible status and a small mean force bias are not substitutes for these physical measurements.
+
+The SOCP receives the pad--object contacts, not a complete collision scene. It cannot infer which shelf edge a future motion will meet. For insertion, the scene and the route model predict an external load before allocation, as explained in Section~\ref{sec:insertion-load-source}. Unexpected contacts can therefore invalidate the supplied load without making the numerical solve incorrect. Chapter~\ref{ch:kinova} distinguishes online reallocation from an offline wrench plan followed with measured-force feedback.
+
+
+\section{Decision variables: two wrist wrenches}
+
+The robot does not command individual pads. Each hand is a passive tri-pad tool on a compliant wrist, and the controller tracks one wrench per wrist. The decision vector is therefore
+\begin{equation}
+\vect w=\begin{bmatrix}\vect F_L^\top&\vect\tau_L^\top&\vect F_R^\top&\vect\tau_R^\top\end{bmatrix}^\top\in\R^{12},
+\end{equation}
+where $\vect F_h$ is the world-frame force that hand $h$ applies to the object and $\vect\tau_h$ is the moment about its own measured wrist pole $\vect b_h$.
+
+The three pads of each hand enter only as auxiliary variables. For $h\in\{L,R\}$ and $j\in\{1,2,3\}$, let $\vect f_{hj}\in\R^3$ be the force of pad $j$ on the object, and let
+\begin{equation}
+H_h\vect f_h=\begin{bmatrix}\sum_j\vect f_{hj}\\ \sum_j(\vect p_{hj}-\vect b_h)\times\vect f_{hj}\end{bmatrix}
+\label{eq:hand-map}
+\end{equation}
+sum the three point forces and their moments about the wrist. The constraint $H_h\vect f_h=\vect w_h$ states that the wrist wrench must be producible by three Coulomb point contacts. The eighteen pad components are feasibility witnesses: they prove that such forces exist, but they are not commands and they are not penalized. Whether the passive tool distributes the load as the witness does is a separate question of realization, measured in Chapter~\ref{ch:evidence}.
+
+There are no independent pad moments. Torsion about a hand axis arises only from the moments of the three point forces, as derived in Chapter~\ref{ch:contacts}. This keeps the coupling between vertical support and torsional capacity.
+
+\section{Exact equilibrium about the estimated CoM}
+
+Let $\hat{\vect p}_c$ be the estimated CoM and $\vect r_h=\vect b_h-\hat{\vect p}_c$. The two balance equations are
+\begin{align}
+\vect F_L+\vect F_R&=\vect b_F,\nonumber\\
+\crossmat{\vect r_L}\vect F_L+\vect\tau_L+\crossmat{\vect r_R}\vect F_R+\vect\tau_R&=\vect b_\tau.
+\label{eq:wrist-balance}
+\end{align}
+In the air the hands must supply the weight with no moment about the believed CoM: $\vect b_F=-\hat m\vect g$, $\vect b_\tau=\vect 0$. During placement, once support is detected, $\vect b$ becomes gravity minus a tared estimate of the support wrench obtained from the wrists. This changes the requested load, not the equations, the decision variables or the objective. It is a quasi-static estimate of the remaining load, not an independent support sensor.
+
+The CoM is believed, not necessarily true. A zero moment target is correct about that point under the estimated gravity model. Writing the same target about the grasp centre when the CoM is offset would solve the wrong equilibrium.
+
+Equation~\eqref{eq:wrist-balance} is a hard equality. Unlike the earlier formulation, there is no equilibrium slack. If the active contacts cannot balance the requested wrench inside the cones, the solver returns infeasible and the allocation is rejected. A mismatch is no longer hidden as a small residual inside an \sourcefile{optimal} status.
+
+\section{The hand wrench cone}
+
+For an active pad with unit outward normal $\vect n_{hj}$, compression and tangential force are
+\begin{equation}
+\lambda_{hj}=-\vect n_{hj}^\top\vect f_{hj},\qquad
+\vect f_{t,hj}=\vect f_{hj}+\lambda_{hj}\vect n_{hj}.
+\label{eq:normal-tangent}
+\end{equation}
+The normal points out of the object and the compressive force points into it, so $\lambda_{hj}\geq0$ forbids pulling through a nonadhesive contact. The admissible wrenches of hand $h$ are
+\begin{equation}
+\mathcal W_h=\Bigl\{H_h\vect f_h:\
+\norm{\vect f_{t,hj}}_2\leq\mu\lambda_{hj}-\rho_{hj}\sqrt{1+\mu^2}\ \text{if }a_{hj}=1,\quad
+\vect f_{hj}=\vect0\ \text{if }a_{hj}=0\Bigr\},
+\label{eq:hand-cone}
+\end{equation}
+with active-contact flags $a_{hj}$ and margins $\rho_{hj}\geq0$ defined in the next section. With $\rho_{hj}>0$ the inequality already implies $\lambda_{hj}>0$. A detached pad keeps its slot in the model but carries no load. The solver rejects a configuration in which either hand has no active pad.
+
+The friction inequality is applied to each of the six contacts separately. Aggregating a hand first and checking only its resultant would lose the individual normals and let one pad's excess tangential demand hide behind another.
+
+The floating plate adds one constraint. Its mount transmits no bending at the contact centre, so for that tool the moment of the three pad forces about their centroid must have no component perpendicular to the mean normal. The rigid tool has no such condition.
+
+\section{Signed friction margins: cones shifted inward}
+\label{sec:signed-margin}
+
+A contact force exactly on the boundary of its cone is about to slip. Any error in the normal estimate, the friction coefficient or the realized force can push it outside. The allocator therefore keeps a margin. The construction follows \citet{frictioncone2026}, with a three-dimensional adaptation described below.
+
+\paragraph{Signed distance.}
+For a force $\vect f$ at a contact with friction $\mu$, define
+\begin{equation}
+\psi_\mu(\vect f)=\frac{\mu\lambda-\norm{\vect f_t}}{\sqrt{1+\mu^2}}.
+\label{eq:signed-distance}
+\end{equation}
+It is positive inside the cone, zero on its surface and negative outside. Its unit is newtons: away from the apex it is the Euclidean distance in force space from $\vect f$ to the cone surface. The gradient of $\psi_\mu$ has unit norm wherever $\vect f_t\neq\vect0$, so $\psi_\mu$ is $1$-Lipschitz. The constraint in Equation~\eqref{eq:hand-cone} is exactly $\psi_\mu(\vect f_{hj})\geq\rho_{hj}$.
+
+\paragraph{What the shift guarantees.}
+If $\psi_\mu(\vect f)\geq\rho$ and $\norm{\delta\vect f}\leq\rho$, then
+\begin{equation}
+\psi_\mu(\vect f+\delta\vect f)\geq\psi_\mu(\vect f)-\norm{\delta\vect f}\geq0.
+\end{equation}
+Every force deviation up to $\rho$ newtons in any direction keeps the contact inside the nominal cone. The guarantee holds for a fixed contact frame and a correct $\mu$. Changes of the normal, slip and the passive realization of the witness forces lie outside it.
+
+\paragraph{Shifted, not narrowed.}
+Figure~\ref{fig:friction-section} compares the two ways of reserving friction. The earlier formulation scaled the slope to $(1-r_s)\mu$. The apex stays at the origin, so a contact with small compression keeps almost no distance from slip, and the reserve grows only in proportion to the load. The signed margin keeps the opening angle $\arctan\mu$ and moves the apex inward along the normal, to
+\begin{equation}
+\lambda_{\min}=\frac{\rho\sqrt{1+\mu^2}}{\mu}.
+\end{equation}
+Every admissible force is then at least $\rho$ from the nominal boundary, including lightly loaded ones, and an active pad cannot be planned with zero load. With $\mu=1$ and $\rho=1$ N, $\lambda_{\min}\approx1.41$ N.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[>=Latex,scale=1.0]
+\draw[->] (0,0)--(6.0,0) node[right] {$\lambda$};
+\draw[->] (0,0)--(0,4.6) node[above] {$\norm{\vect f_t}$};
+\fill[gray!12] (1.41,0)--(5.6,4.19)--(5.6,0)--cycle;
+\draw[dashed] (0,0)--(4.4,4.4) node[above left] {nominal, slope $\mu$};
+\draw[thick,densely dotted] (0,0)--(5.6,3.92) node[right,yshift=-9pt] {scaled, $(1-r_s)\mu$};
+\draw[very thick] (1.41,0)--(5.6,4.19) node[right,yshift=7pt] {shifted by $\rho$};
+\draw[<->] (3.2,1.79)--(2.495,2.495);
+\node[right] at (2.9,2.25) {$\rho$};
+\draw (1.41,0)--(1.41,-0.12) node[below] {$\lambda_{\min}$};
+\end{tikzpicture}
+\caption{A section of friction admissibility at $\mu=1$. The dashed line is the nominal Coulomb boundary. The dotted line is the scaled cone of the earlier formulation, here $r_s=0.30$, whose apex stays at zero compression. The solid line is the signed-distance cone: same opening, apex moved inward so that every admissible force lies at least $\rho$ from the nominal boundary. The shaded region is the shifted admissible set. The two reserved cones cross: at high compression the scaled cone is the stricter one, at low compression it leaves almost no distance from slip.}
+\label{fig:friction-section}
+\end{figure}
+
+\paragraph{Task-adaptive size.}
+A single constant $\rho$ would be too small for a heavy object and too large for a light one. The paper scales the margin with the task. Our lift and wield are in the air and balance six axes at the estimated CoM, so we port the general-task adaptation of its appendix, as implemented for the Kinova experiments. Let $A$ be the force-only grasp map about $\hat{\vect p}_c$, restricted to the columns of active pads, and $A^+$ its pseudoinverse. Then
+\begin{align}
+\vect f_{\mathrm{task}}&=A^+\vect b, &
+\rho_{\mathrm{task}}&=0.25\,\norm{\vect f_{\mathrm{task}}}+1\ \mathrm{N},\nonumber\\
+P&=A^+A, &
+\rho_{hj}&=\norm{P_{hj}}_2\,\rho_{\mathrm{task}},
+\label{eq:task-margin}
+\end{align}
+where $P_{hj}$ is the block of three rows of $P$ that belongs to pad $hj$. The modeled deviation set is $\{A\vect u:\norm{\vect u}\leq\rho_{\mathrm{task}}\}$: wrench errors on the object of bounded size. The correction $-P\vect u$ that absorbs such an error changes pad $hj$ by at most $\rho_{hj}$, which is what the shifted cone tolerates. For a scalar task this reduces to $\norm{G_i}/\norm{G}\,\rho_{\mathrm{task}}$, the paper's own expression. For the plate, deviations must also preserve zero bending; the map is built on the kernel of the bending constraint, so corrections do not bend the mount.
+
+The margins are computed before the solve, from measured geometry and the estimated load. They never depend on the squeeze chosen by the optimizer. A task that the active contacts cannot balance at all is rejected at this step, before optimization.
+
+\paragraph{What the margin is not.}
+The scale $0.25$ is the paper's value. The floor of $1$ N was a tuning choice of the Kinova implementation, not a value mandated by the paper. The deviation set is a design set, not a calibrated bound on sensor or geometry errors, and the margin is not a probability of safety. It is a declared reserve whose effect has to be measured, as done in Section~\ref{sec:margin-comparison}.
+
+\section{The objective: human precision only}
+
+The cost is a quadratic form in the twelve wrist components:
+\begin{equation}
+J(\vect w)=\vect w^\top W(R)\,\vect w,\qquad
+W(R)=T_R^\top\,\Sigma_{\mathrm{TP\text{-}GMM}}(R)^{-1}\,T_R,
+\label{eq:wrist-objective}
+\end{equation}
+where $\Sigma_{\mathrm{TP\text{-}GMM}}(R)$ is the session~C covariance of Chapter~\ref{ch:prior} queried at the current attitude $R$, and $T_R=\diag(R^\top,R^\top,R^\top,R^\top)$ expresses world-frame wrenches in the axes of the prior. The implementation normalizes forces and moments by the human scales before forming the matrix; that scaling cancels algebraically and does not add another metric. A matrix that is not positive definite in all twelve components is rejected.
+
+The cost contains no human mean, no contact-effort term, no added identity and no slack penalty. Directions in which the demonstrations varied little are expensive; directions in which they varied much are cheap. Equilibrium and the cones decide what is admissible; the prior decides which admissible wrench pair is preferred.
+
+\paragraph{Why no effort term is needed.}
+The earlier formulation needed an effort term because its prior cost was blind to the pad forces that leave both wrist wrenches unchanged (Section~\ref{sec:socp-previous}). Here the cost acts only on what is commanded, the wrist wrenches, and the witness forces are not penalized at all. The squeeze that keeps the object held comes from the constraints: equilibrium requires the weight to be carried through friction, and the shifted cones require each active pad to stay a distance $\rho_{hj}$ inside its cone. Without a margin nothing in the program asks for grip beyond the minimum, and the nominal arm of Section~\ref{sec:margin-comparison} shows the consequence.
+
+\paragraph{The complete program.}
+\begin{equation}
+\begin{aligned}
+\underset{\vect w,\ \vect f}{\operatorname{minimize}}\quad&\vect w^\top W(R)\,\vect w\\
+\text{subject to}\quad&\text{Equation~\eqref{eq:wrist-balance}},\qquad H_h\vect f_h=\vect w_h,\\
+&\norm{\vect f_{t,hj}}\leq\mu\lambda_{hj}-\rho_{hj}\sqrt{1+\mu^2}\quad\text{if }a_{hj}=1,\\
+&\vect f_{hj}=\vect0\quad\text{if }a_{hj}=0,\\
+&\text{zero bending at the plate centre (plate only)}.
+\end{aligned}
+\label{eq:wrist-socp}
+\end{equation}
+The candidate pipeline uses $\mu=1$ between pad and object, the task-adaptive margin of Equation~\eqref{eq:task-margin}, and the solvers CLARABEL, ECOS and SCS in that order.
+
+\section{Acceptance}
+
+Solver status alone does not accept a solution. After every solve, the returned numbers are checked independently of the solver: equilibrium of the witness forces and of the wrist wrenches about the estimated CoM, the linkage $H_h\vect f_h=\vect w_h$, compression, the shifted cone on every active pad, zero force on inactive pads and, for the plate, zero bending. The tolerances are numerical, $10^{-4}$ N for forces and contact constraints and $10^{-5}$ Nm for moments; they absorb convergence error and are not sensor noise. An \sourcefile{optimal_inaccurate} result is accepted only if every check passes. A separate execution audit recomputes the margins from the inputs and does not trust the margin reported by the solver.
+
+The source of the active allocator is \sourcefile{lorenzo_data_analysis/full_wrench_socp/lib/socp.py}, and the margin construction is in \sourcefile{lib/friction_margin.py} of the same package. The script \sourcefile{check_socp.py} verifies the precision-only objective on the actual session~C model at three attitudes.
+
+\section{Shifted against scaled and nominal cones}
+\label{sec:margin-comparison}
+
+The margin was compared on a fixed regression panel before it became the default. Five objects were selected before any result was seen: the flat cube \#1 and \#5, the jittered cube \#0 with two displaced corners, the long box \#2 and polytope \#3 of the 20--50-face band. Each was run with the fixed tri-pad, the fixed tri-pad with remote impedance (RCC, Section~\ref{sec:remote-impedance}) and the floating plate, under three cone settings: 45 runs. The settings were
+\begin{itemize}
+\item \emph{nominal}: Coulomb cone, $r_s=0$, $\rho=0$;
+\item \emph{scaled}: the previous narrowing, $r_s=0.30$, $\rho=0$, that is $70\%$ of the friction opening;
+\item \emph{shifted}: the signed-distance margin of Section~\ref{sec:signed-margin}, $r_s=0$.
+\end{itemize}
+View noise, arrival, estimator, motion, release and scoring were identical; only the cone changed. A clean success requires the physical endpoint, meaning hands clear, a verified supported rest and actual CoM error at most $20$ mm, together with zero failed solves and zero audit rejections. A placement reached after a failed solve and fallback is counted as physical but not clean.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lccc@{}}\toprule
+& Nominal & Scaled ($r_s=0.30$) & Shifted ($\rho$)\\\midrule
+Clean successes, fixed tri-pad & 0/5 & 0/5 & 2/5\\
+Clean successes, RCC & 0/5 & 1/5 & 3/5\\
+Clean successes, plate & 0/5 & 2/5 & 2/5\\
+\textbf{Clean successes, total} & \textbf{0/15} & \textbf{3/15} & \textbf{7/15}\\
+Physical endpoint, total & 0/15 & 5/15 & 8/15\\
+Failed solves, summed over runs & 3 & 135 & 11\\
+Object lost during wielding & 1 & 0 & 0\\
+Contacts while wielding$^{a}$, fixed & --- & 4.89 & 6\\
+\quad RCC & --- & 4.17 & 6\\
+\quad plate & --- & 6 & 6\\
+\bottomrule\end{tabular}
+\caption{Paired regression panel of 20 October 2026: five selected objects, three tools, three cone settings. Simulation only; not a population success rate. $^{a}$Median over the five objects of each run's mean measured contact count. The wield supervisor of that date was active in every arm and stopped most nominal runs. The panel report does not give a contact count for the nominal arm. Source: \sourcefile{full_wrench_socp/reports/signed_margin_20261020_43/} and \sourcefile{FRICTION_MARGIN.md}.}
+\label{tab:margin-comparison}
+\end{table}
+
+Table~\ref{tab:margin-comparison} supports three observations.
+
+First, the nominal cone gives no clean success and no physical placement. With $\rho=0$ the program has no reason to squeeze beyond the minimum, and the allocated forces sit on the boundary of the cone. The supervisor active at the time stopped twelve of the fifteen nominal runs during wielding, and one plate run lost the object.
+
+Second, narrowing the cone helps, but it fails often in the solver: 135 failed solves over the panel, concentrated in a few runs (74 in one RCC run). Narrowing removes admissible directions without adding compression, so the problem becomes infeasible more often when contacts are few or poorly oriented.
+
+Third, the shifted cone gives the most clean outcomes and keeps all six contacts in the median while wielding. The jittered cube places cleanly with all three tools (3.4, 2.1 and 1.7 mm), whereas with the scaled cone the fixed tri-pad and RCC stop wielding on that same object. The eighth physical placement, fixed cube \#5 at $8.9$ mm, used eleven fallbacks and is excluded from the clean count. No accepted shifted-cone solution was rejected by the independent audit; the largest accepted cone violation was $4.1\times10^{-7}$ N.
+
+The panel does not show that the margin solves placement. The long box failed support qualification with all three tools, the polytope was stopped during wielding with the fixed and RCC tools, and with the plate it reached placement but timed out while unloading. Plate cube \#5 was stopped during wielding. More preload also raises the measured wrench peaks; the margin buys reserve with force. On this evidence the task-adaptive margin became the default at every entry point, with the scaled cone kept only as an explicit baseline. A smoke test with the new default and no overrides then placed cube \#1 with all three tools at 0.8, 1.5 and 0.8 mm, with no failed solve.
+
+Two limits must be stated. The panel is five selected objects, not a population; no broad sweep with a frozen controller has been run. And the wield supervisor of that date, which held, retraced or stopped the motion on low reserve, is no longer part of the controller: cone reserve is now logged as a diagnostic only. The numbers of Table~\ref{tab:margin-comparison} compare cones under that supervisor and are not results for the current policy.
+
+\section{Realizing the allocation}
+
+The optimizer supplies two wrist wrenches. The wrist controller tracks them through measured-wrench feedback on the compliant wrist, and the passive pads distribute the load by contact mechanics. The witness forces are not commanded, so the realized pad distribution can differ from the planned one. The shifted cone forbids a planned pad with zero load whenever its margin is positive, but it does not force the passive tool to load that pad. Contact counts, the error between planned and measured wrist wrench, and lost contacts must therefore be reported as measurements, not assumed from feasibility.
+
+\section{The previous formulation: eighteen forces, slack and a scaled cone}
+\label{sec:socp-previous}
+
+The geometry campaign of Chapter~\ref{ch:geometry} and the Tetris insertion of Chapter~\ref{ch:tetris} used an earlier allocator. Its decision variables were the eighteen pad forces themselves, plus force and moment slack $\vect s_F,\vect s_T\in\R^3$. It differed from the active formulation in four ways.
+
+\paragraph{Scaled cone, floor and cap.}
+Each active pad obeyed
+\begin{equation}
+\norm{\vect f_{t,hi}}_2\leq(1-r_s)\mu\lambda_{hi},\qquad \lambda_{hi}\geq f_{\min},\qquad \norm{\vect f_{hi}}_2\leq f_{\max},
+\label{eq:friction-cone}
+\end{equation}
+with $r_s=0.10$ in the passive-tool and Tetris allocators, a default floor of $1$ N and a per-pad cap
+\begin{equation}
+f_{\max}=35\ \mathrm{N}.
+\label{eq:pad-cap}
+\end{equation}
+The floor was clipped to $0.9f_{\max}$ to avoid a contradiction with the cap. The cap bounded the total force norm, so the three compressions of one hand could not exceed $105$ N. With $\mu=0.49$, the slope used for allocation was $0.441$.
+
+\paragraph{Soft equilibrium.}
+Balance about the believed CoM was written with slack:
+\begin{align}
+\sum_{h,i}\vect f_{hi}&=\vect F_d+\vect s_F,\nonumber\\
+\sum_{h,i}(\vect p_{hi}-\hat{\vect p}_c)\times\vect f_{hi}&=\vect T_d+\vect s_T.
+\label{eq:slack-balance}
+\end{align}
+The program was therefore always solvable, and an allocation was accepted only if $\norm{\vect s_F}<0.5$ N and $\norm{\vect s_T}<0.05$ Nm.
+
+\paragraph{Objective with effort.}
+With $F_0=\hat m g_0$, $T_0=F_0r_0$, $r_0=0.05$ m and $\vect d_n$ the normalized deviation of the wrist wrenches from the human mean,
+\begin{equation}
+J=\frac{w_F}{F_0^2}\sum_{h,i}\norm{\vect f_{hi}}^2
++\frac{w_P}{2}\vect d_n^\top Q_n(R)\vect d_n
++w_S\left(\frac{\norm{\vect s_F}^2}{F_0^2}+\frac{\norm{\vect s_T}^2}{T_0^2}\right),
+\label{eq:full-objective}
+\end{equation}
+with $w_F=w_P=1$ and $w_S=10^4$. The effort term was necessary there. The map from eighteen pad forces to twelve wrist coordinates has a kernel, and a prior-only cost would have been blind to the pad forces in it. In the active formulation the pad forces are not decision variables of the cost, so the term is no longer needed.
+
+\paragraph{Its audit.}
+The previous allocator was audited independently over the geometry campaign. Table~\ref{tab:socp-audit} is kept as the record of the non-shifted, scaled-cone allocator.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lr@{}}\toprule
+Allocations solved, all 1456 runs & 3\,432\,786\\
+\quad CLARABEL \sourcefile{optimal} & 3\,430\,541\\
+\quad CLARABEL \sourcefile{optimal_inaccurate}, residuals passing & 2\,221\\
+\quad SCS \sourcefile{optimal} & 24\\
+Accepted by the solver, rejected by the independent check & 0\\
+Non-finite force values & 0\\
+Largest force / moment residual of an accepted solution & 0.500 N / 0.050 Nm\\
+Largest cone use $\norm{\vect f_t}/(\mu f_n)$ & 0.900\\
+Largest deviation of a contact normal from unit length & $<10^{-6}$\\
+\bottomrule\end{tabular}
+\caption{Independent audit of the previous, scaled-cone allocator over the geometry campaign ($r_s=0.10$). Solvers are tried in the order CLARABEL, ECOS, SCS with library default tolerances (SCS: $\epsilon=10^{-5}$, 20\,000 iterations); ECOS was never needed.}
+\label{tab:socp-audit}
+\end{table}
+
+The audit never overturned the solver. The largest cone use, 0.900, equals $1-r_s$: the optimum sat on the narrowed cone whenever friction was binding, which is precisely where a scaled cone leaves the least distance from slip at low compression. The fallback fraction, the share of control ticks with no applied allocation, was between 1 and 8\% on the polytopes and 23\% when the colliding plate added an unmodelled contact (Table~\ref{tab:plate-collision}). The largest accepted residuals, 0.5 N and 0.05 Nm, are the acceptance thresholds themselves: soft equilibrium let a small imbalance through by design. The active formulation removes both features, using exact equilibrium and a margin measured as a distance.
+
+In that allocator the realization was a scalar squeeze loop on $F_{\mathrm{req}}=\max(\sum_i\lambda_{Li},\sum_i\lambda_{Ri})$, with a finite fallback squeeze ($21$ N in the blind script) when the allocation was rejected.
+
+\section{Remote Cartesian impedance for the fixed tri-pad}
+\label{sec:remote-impedance}
+
+The compliant wrist is itself a feedback controller. Its original translational spring acts at the wrist, independently of the rotational spring. Active re-alignment changes a reference from contact normals; it does not relocate that compliance centre. An additional experimental arm instead shapes the compliance at the known centre of the three pad spheres, following the remote-compliance principle of \citet{whitney1982}. This arm uses the same allocator as the arm it is compared with.
+
+Let $\vect r=(0.020,0,0)^\top$ m in the tool frame, and let $(\vect p,R)$ and $(\vect p_d,R_d)$ denote measured and commanded wrist poses. Define
+\begin{align}
+\vect c&=\vect p+R\vect r, & \vect c_d&=\vect p_d+R_d\vect r,\\
+\vect e&=R_d^\top(\vect c-\vect c_d), & \vect\phi&=\operatorname{Log}(R_d^\top R)^\vee,\\
+U&=\tfrac12 k_p\vect e^\top\vect e+
+\tfrac12\vect\phi^\top K_r\vect\phi,
+&K_r&=\diag(40,k_{\mathrm{tilt}},k_{\mathrm{tilt}}).
+\end{align}
+The remote point is apparatus geometry; actual sphere--surface contact points need not coincide with its plane. With $J_l$ the left Jacobian of $SO(3)$, the wrist wrench is
+\begin{align}
+\vect v_c&=\vect v+\vect\omega\times R\vect r,\\
+\vect F&=-k_p(\vect c-\vect c_d)-k_d\vect v_c,\\
+\vect T&=(R\vect r)\times\vect F
+-R_dJ_l(\vect\phi)^{-\top}K_r\vect\phi-k_{dr}\vect\omega.
+\label{eq:rcc-wrench}
+\end{align}
+Known tool gravity is compensated separately. No object vision, mesh, true mass or true CoM enters this law. The initial coarse-centre sensor remains part of the surrounding blind approach, and is a distinct declared input.
+
+For fixed references and gains, away from the rotation-log cut at $\pi$, the elastic wrench is the negative gradient of $U$. Its power is $-\dot U$ and damping dissipates $k_d\norm{\vect v_c}^2+k_{dr}\norm{\vect\omega}^2$. Locally,
+\begin{equation}
+K_{\mathrm{wrist}}=\mathcal B^\top
+\diag(k_pI,K_r)\mathcal B,\qquad
+\mathcal B=\begin{bmatrix}I&-\crossmat{\vect r}\\0&I\end{bmatrix}.
+\end{equation}
+This positive-definite stiffness contains the translation--rotation coupling absent from a diagonal wrist spring. A pure tilt couple rotates about the remote point to first order. Torsional stiffness remains $40$ Nm/rad. The commanded-frame gains otherwise remain those of the reference rig.
+
+The energy statement applies to the ideal continuous coupling with fixed references. The outer feedback loops, moving trajectories, gain transitions, sampled integration and contact changes are not covered by it. Retaining the torsional gain does not establish that the prior transfers without error to this altered apparent impedance. Both transmission and performance require measurement. The implementation is \sourcefile{lorenzo_data_analysis/10_tripad_passivo/lib/rcc.py}; finite-difference gradients, dissipation, frame covariance and free-tool linear sampled stability are checked independently.
+
+\section{What is and is not constrained}
+
+The active program constrains exact equilibrium about the estimated CoM, the producibility of each wrist wrench by three point contacts, compression, friction with a signed margin on every active pad, zero force on detached pads and, for the plate, zero bending. It has no force cap, no compression floor beyond the one implied by the margin, and no slack. It does not optimize spring travel, contact persistence, object deformation, damage, joint torque, arm collision, velocity or CoM uncertainty. Some are checked elsewhere; some remain unvalidated. A statement that the SOCP ``contains all physical limits'' would therefore be incorrect.
+
+The useful guarantee is narrow and concrete: for fixed valid inputs, the witness forces lie at least $\rho_{hj}$ inside each nominal cone and balance the requested wrench exactly, to solver accuracy. A force deviation of that size at fixed geometry cannot by itself cause slip. Whether the realized forces stay within that deviation depends on estimation, measurement and transmission. This distinction is the basis of the experimental chapter.

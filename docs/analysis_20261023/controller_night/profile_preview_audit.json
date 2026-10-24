@@ -1,0 +1,362 @@
+[
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "path": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+    "metadata_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+    "file_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+    "hash_matches_raw": true,
+    "hash_matches_LF_normalized": false,
+    "phases": {
+      "to_mouth": {
+        "samples": 101,
+        "first_s": 0.02,
+        "last_s": 2.02,
+        "min_target_N": 3.615508,
+        "max_target_N": 3.615508,
+        "max_abs_target_slope_N_s": 0.0
+      },
+      "route": {
+        "samples": 954,
+        "first_s": 0.02,
+        "last_s": 19.08,
+        "min_target_N": 3.270323,
+        "max_target_N": 5.658788,
+        "max_abs_target_slope_N_s": 59.70915000000126
+      },
+      "slow_seat": {
+        "samples": 101,
+        "first_s": 0.01,
+        "last_s": 2.01,
+        "min_target_N": 3.617238,
+        "max_target_N": 5.513354,
+        "max_abs_target_slope_N_s": 93.19735000000003
+      },
+      "seat_by_feel": {
+        "samples": 1,
+        "first_s": 0.02,
+        "last_s": 0.02,
+        "min_target_N": 3.617238,
+        "max_target_N": 3.617238,
+        "max_abs_target_slope_N_s": 0.0
+      }
+    },
+    "clock_reconstruction_target_rmse_N": 0.00991754017043642,
+    "clock_reconstruction_target_max_error_N": 0.22055928086410592,
+    "note": "Target mismatch audits unlogged phase clock and CSV precision. It is NOT fitted away; delta-preview anchors exact baseline."
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+    "path": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1751_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_175114.csv",
+    "metadata_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+    "file_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+    "hash_matches_raw": true,
+    "hash_matches_LF_normalized": false,
+    "phases": {
+      "to_mouth": {
+        "samples": 101,
+        "first_s": 0.02,
+        "last_s": 2.02,
+        "min_target_N": 3.615508,
+        "max_target_N": 3.615508,
+        "max_abs_target_slope_N_s": 0.0
+      },
+      "route": {
+        "samples": 954,
+        "first_s": 0.02,
+        "last_s": 19.08,
+        "min_target_N": 3.270323,
+        "max_target_N": 5.658788,
+        "max_abs_target_slope_N_s": 59.70915000000126
+      },
+      "slow_seat": {
+        "samples": 101,
+        "first_s": 0.01,
+        "last_s": 2.01,
+        "min_target_N": 3.617238,
+        "max_target_N": 5.513354,
+        "max_abs_target_slope_N_s": 93.19735000000003
+      },
+      "seat_by_feel": {
+        "samples": 1,
+        "first_s": 0.02,
+        "last_s": 0.02,
+        "min_target_N": 3.617238,
+        "max_target_N": 3.617238,
+        "max_abs_target_slope_N_s": 0.0
+      }
+    },
+    "clock_reconstruction_target_rmse_N": 0.026644770329625953,
+    "clock_reconstruction_target_max_error_N": 0.5132403854470962,
+    "note": "Target mismatch audits unlogged phase clock and CSV precision. It is NOT fitted away; delta-preview anchors exact baseline."
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "path": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+    "metadata_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+    "file_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+    "hash_matches_raw": true,
+    "hash_matches_LF_normalized": false,
+    "phases": {
+      "to_mouth": {
+        "samples": 105,
+        "first_s": 0.02,
+        "last_s": 2.1,
+        "min_target_N": 3.463913,
+        "max_target_N": 3.463913,
+        "max_abs_target_slope_N_s": 0.0
+      },
+      "route": {
+        "samples": 1099,
+        "first_s": 0.02,
+        "last_s": 21.98,
+        "min_target_N": 3.463913,
+        "max_target_N": 5.595272,
+        "max_abs_target_slope_N_s": 97.21035
+      },
+      "slow_seat": {
+        "samples": 108,
+        "first_s": 0.01,
+        "last_s": 2.15,
+        "min_target_N": 3.698089,
+        "max_target_N": 3.790485,
+        "max_abs_target_slope_N_s": 0.5094499999999997
+      },
+      "seat_by_feel": {
+        "samples": 1,
+        "first_s": 0.02,
+        "last_s": 0.02,
+        "min_target_N": 3.698089,
+        "max_target_N": 3.698089,
+        "max_abs_target_slope_N_s": 0.0
+      }
+    },
+    "clock_reconstruction_target_rmse_N": 0.010403168915791761,
+    "clock_reconstruction_target_max_error_N": 0.24213155262467456,
+    "note": "Target mismatch audits unlogged phase clock and CSV precision. It is NOT fitted away; delta-preview anchors exact baseline."
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "path": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1837_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_183755.csv",
+    "metadata_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+    "file_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+    "hash_matches_raw": true,
+    "hash_matches_LF_normalized": false,
+    "phases": {
+      "to_mouth": {
+        "samples": 105,
+        "first_s": 0.02,
+        "last_s": 2.1,
+        "min_target_N": 3.463913,
+        "max_target_N": 3.463913,
+        "max_abs_target_slope_N_s": 0.0
+      },
+      "route": {
+        "samples": 1099,
+        "first_s": 0.02,
+        "last_s": 21.98,
+        "min_target_N": 3.463913,
+        "max_target_N": 5.595272,
+        "max_abs_target_slope_N_s": 97.21035
+      },
+      "slow_seat": {
+        "samples": 108,
+        "first_s": 0.01,
+        "last_s": 2.15,
+        "min_target_N": 3.698089,
+        "max_target_N": 3.790485,
+        "max_abs_target_slope_N_s": 0.5094499999999997
+      },
+      "seat_by_feel": {
+        "samples": 1,
+        "first_s": 0.02,
+        "last_s": 0.02,
+        "min_target_N": 3.698089,
+        "max_target_N": 3.698089,
+        "max_abs_target_slope_N_s": 0.0
+      }
+    },
+    "clock_reconstruction_target_rmse_N": 0.021737492247541325,
+    "clock_reconstruction_target_max_error_N": 0.6387002665048636,
+    "note": "Target mismatch audits unlogged phase clock and CSV precision. It is NOT fitted away; delta-preview anchors exact baseline."
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "path": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1904_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_offline_profile_20261023_190423.csv",
+    "metadata_sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4",
+    "file_sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4",
+    "hash_matches_raw": true,
+    "hash_matches_LF_normalized": false,
+    "phases": {
+      "to_mouth": {
+        "samples": 850,
+        "first_s": 0.02,
+        "last_s": 17.0,
+        "min_target_N": 3.539886,
+        "max_target_N": 3.539886,
+        "max_abs_target_slope_N_s": 0.0
+      },
+      "route": {
+        "samples": 770,
+        "first_s": 0.01,
+        "last_s": 15.39,
+        "min_target_N": 3.539886,
+        "max_target_N": 7.368825,
+        "max_abs_target_slope_N_s": 39.95199999999731
+      },
+      "slow_seat": {
+        "samples": 101,
+        "first_s": 0.01,
+        "last_s": 2.01,
+        "min_target_N": 3.545434,
+        "max_target_N": 4.757831,
+        "max_abs_target_slope_N_s": 55.42440000000005
+      },
+      "seat_by_feel": {
+        "samples": 1,
+        "first_s": 0.01,
+        "last_s": 0.01,
+        "min_target_N": 3.545434,
+        "max_target_N": 3.545434,
+        "max_abs_target_slope_N_s": 0.0
+      }
+    },
+    "clock_reconstruction_target_rmse_N": 0.02533813737246801,
+    "clock_reconstruction_target_max_error_N": 0.4718155735321523,
+    "note": "Target mismatch audits unlogged phase clock and CSV precision. It is NOT fitted away; delta-preview anchors exact baseline."
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+    "path": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1913_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_offline_profile_20261023_191316.csv",
+    "metadata_sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4",
+    "file_sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4",
+    "hash_matches_raw": true,
+    "hash_matches_LF_normalized": false,
+    "phases": {
+      "to_mouth": {
+        "samples": 850,
+        "first_s": 0.02,
+        "last_s": 17.0,
+        "min_target_N": 3.539886,
+        "max_target_N": 3.539886,
+        "max_abs_target_slope_N_s": 0.0
+      },
+      "route": {
+        "samples": 770,
+        "first_s": 0.01,
+        "last_s": 15.39,
+        "min_target_N": 3.539886,
+        "max_target_N": 7.368825,
+        "max_abs_target_slope_N_s": 39.95199999999731
+      },
+      "slow_seat": {
+        "samples": 101,
+        "first_s": 0.01,
+        "last_s": 2.01,
+        "min_target_N": 3.545434,
+        "max_target_N": 4.757831,
+        "max_abs_target_slope_N_s": 55.42440000000005
+      },
+      "seat_by_feel": {
+        "samples": 1,
+        "first_s": 0.01,
+        "last_s": 0.01,
+        "min_target_N": 3.545434,
+        "max_target_N": 3.545434,
+        "max_abs_target_slope_N_s": 0.0
+      }
+    },
+    "clock_reconstruction_target_rmse_N": 0.01699192737153415,
+    "clock_reconstruction_target_max_error_N": 0.3480231758092489,
+    "note": "Target mismatch audits unlogged phase clock and CSV precision. It is NOT fitted away; delta-preview anchors exact baseline."
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "path": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1921_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_offline_profile_20261023_192142.csv",
+    "metadata_sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed",
+    "file_sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed",
+    "hash_matches_raw": true,
+    "hash_matches_LF_normalized": false,
+    "phases": {
+      "to_mouth": {
+        "samples": 101,
+        "first_s": 0.02,
+        "last_s": 2.02,
+        "min_target_N": 3.481209,
+        "max_target_N": 3.481209,
+        "max_abs_target_slope_N_s": 0.0
+      },
+      "route": {
+        "samples": 947,
+        "first_s": 0.02,
+        "last_s": 18.94,
+        "min_target_N": 3.481209,
+        "max_target_N": 4.963644,
+        "max_abs_target_slope_N_s": 74.12174999999999
+      },
+      "slow_seat": {
+        "samples": 124,
+        "first_s": 0.01,
+        "last_s": 2.47,
+        "min_target_N": 3.837241,
+        "max_target_N": 4.104359,
+        "max_abs_target_slope_N_s": 13.105949999999991
+      },
+      "seat_by_feel": {
+        "samples": 1,
+        "first_s": 0.02,
+        "last_s": 0.02,
+        "min_target_N": 3.837241,
+        "max_target_N": 3.837241,
+        "max_abs_target_slope_N_s": 0.0
+      }
+    },
+    "clock_reconstruction_target_rmse_N": 0.02188996907609076,
+    "clock_reconstruction_target_max_error_N": 0.6464393041621284,
+    "note": "Target mismatch audits unlogged phase clock and CSV precision. It is NOT fitted away; delta-preview anchors exact baseline."
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+    "path": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1927_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_offline_profile_20261023_192712.csv",
+    "metadata_sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed",
+    "file_sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed",
+    "hash_matches_raw": true,
+    "hash_matches_LF_normalized": false,
+    "phases": {
+      "to_mouth": {
+        "samples": 101,
+        "first_s": 0.02,
+        "last_s": 2.02,
+        "min_target_N": 3.481209,
+        "max_target_N": 3.481209,
+        "max_abs_target_slope_N_s": 0.0
+      },
+      "route": {
+        "samples": 947,
+        "first_s": 0.02,
+        "last_s": 18.94,
+        "min_target_N": 3.481209,
+        "max_target_N": 4.963644,
+        "max_abs_target_slope_N_s": 74.12174999999999
+      },
+      "slow_seat": {
+        "samples": 124,
+        "first_s": 0.01,
+        "last_s": 2.47,
+        "min_target_N": 3.837241,
+        "max_target_N": 4.104359,
+        "max_abs_target_slope_N_s": 13.105949999999991
+      },
+      "seat_by_feel": {
+        "samples": 1,
+        "first_s": 0.02,
+        "last_s": 0.02,
+        "min_target_N": 3.837241,
+        "max_target_N": 3.837241,
+        "max_abs_target_slope_N_s": 0.0
+      }
+    },
+    "clock_reconstruction_target_rmse_N": 0.011006082565170688,
+    "clock_reconstruction_target_max_error_N": 0.289084458821546,
+    "note": "Target mismatch audits unlogged phase clock and CSV precision. It is NOT fitted away; delta-preview anchors exact baseline."
+  }
+]

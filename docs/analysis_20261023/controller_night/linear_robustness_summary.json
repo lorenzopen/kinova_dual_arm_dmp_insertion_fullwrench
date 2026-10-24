@@ -1,0 +1,232 @@
+[
+  {
+    "id": "I_P0_I1.6_D0",
+    "label": "FFI",
+    "stable_cases": 48,
+    "cases": 48,
+    "worst_radius": 0.9786072964150636,
+    "minimum_crossing_phase_margin_deg": 24.643557417211326,
+    "maximum_S_mid_band_over_stable_models": 4.2036200554136425,
+    "maximum_T_high_band_over_stable_models": 0.4446425738663382,
+    "central": {
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k680_d0.18",
+      "control_period_s": 0.025,
+      "closed_loop_spectral_radius": 0.8830837711899604,
+      "independent_state_radius": 0.8830837711899607,
+      "locally_stable": true,
+      "gain_crossings": [
+        {
+          "frequency_Hz": 0.34636387409885144,
+          "phase_margin_deg": 66.62043849832752
+        }
+      ],
+      "minimum_crossing_phase_margin_deg": 66.62043849832752,
+      "S_DC": 0.0,
+      "maximum_S": 1.4494139560807766,
+      "maximum_S_frequency_Hz": 0.9203202177426371,
+      "maximum_S_low_band": 1.433285705510842,
+      "maximum_T_low_band": 0.969489952968618,
+      "maximum_S_mid_band": 1.4494139560807766,
+      "maximum_T_mid_band": 0.6205926454648251,
+      "maximum_S_high_band": 1.0579199638704637,
+      "maximum_T_high_band": 0.1417707468638719,
+      "S_at_1p5Hz": 1.2914088525470746
+    }
+  },
+  {
+    "id": "FF_only_P0_I0_D0",
+    "label": "FF solo",
+    "stable_cases": 48,
+    "cases": 48,
+    "worst_radius": 0.9450204913411335,
+    "minimum_crossing_phase_margin_deg": null,
+    "maximum_S_mid_band_over_stable_models": 1.0,
+    "maximum_T_high_band_over_stable_models": 0.0,
+    "central": {
+      "candidate": "FF_only_P0_I0_D0",
+      "model": "delay_k680_d0.18",
+      "control_period_s": 0.025,
+      "closed_loop_spectral_radius": 0.0,
+      "independent_state_radius": 0.0,
+      "locally_stable": true,
+      "gain_crossings": [],
+      "minimum_crossing_phase_margin_deg": null,
+      "S_DC": 1.0,
+      "maximum_S": 1.0,
+      "maximum_S_frequency_Hz": 0.0001,
+      "maximum_S_low_band": 1.0,
+      "maximum_T_low_band": 0.0,
+      "maximum_S_mid_band": 1.0,
+      "maximum_T_mid_band": 0.0,
+      "maximum_S_high_band": 1.0,
+      "maximum_T_high_band": 0.0,
+      "S_at_1p5Hz": 1.0
+    }
+  },
+  {
+    "id": "P_P0.05_I0_D0",
+    "label": "P",
+    "stable_cases": 48,
+    "cases": 48,
+    "worst_radius": 0.9548793721078802,
+    "minimum_crossing_phase_margin_deg": null,
+    "maximum_S_mid_band_over_stable_models": 1.176470586023984,
+    "maximum_T_high_band_over_stable_models": 0.17647058808821953,
+    "central": {
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k680_d0.18",
+      "control_period_s": 0.025,
+      "closed_loop_spectral_radius": 0.7146009909129789,
+      "independent_state_radius": 0.7146009909129789,
+      "locally_stable": true,
+      "gain_crossings": [],
+      "minimum_crossing_phase_margin_deg": null,
+      "S_DC": 0.9363295880149812,
+      "maximum_S": 1.0729613693495896,
+      "maximum_S_frequency_Hz": 2.4997531590164064,
+      "maximum_S_low_band": 0.9633537655184775,
+      "maximum_T_low_band": 0.06550805605525648,
+      "maximum_S_mid_band": 1.0729613693495896,
+      "maximum_T_mid_band": 0.07296137311577208,
+      "maximum_S_high_band": 1.0729613457840235,
+      "maximum_T_high_band": 0.0729613715133136,
+      "S_at_1p5Hz": 1.0192426602620415
+    }
+  },
+  {
+    "id": "PI_P0.1_I0.8_D0_R0.1",
+    "label": "PI filtrata",
+    "stable_cases": 48,
+    "cases": 48,
+    "worst_radius": 0.9851342834266656,
+    "minimum_crossing_phase_margin_deg": 68.67690912565648,
+    "maximum_S_mid_band_over_stable_models": 1.9620370560515887,
+    "maximum_T_high_band_over_stable_models": 0.4157035224259722,
+    "central": {
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k680_d0.18",
+      "control_period_s": 0.025,
+      "closed_loop_spectral_radius": 0.9722144550687265,
+      "independent_state_radius": 0.9722144550687299,
+      "locally_stable": true,
+      "gain_crossings": [
+        {
+          "frequency_Hz": 0.17775776870629967,
+          "phase_margin_deg": 85.69631020044052
+        }
+      ],
+      "minimum_crossing_phase_margin_deg": 85.69631020044052,
+      "S_DC": 0.0,
+      "maximum_S": 1.2429896819138893,
+      "maximum_S_frequency_Hz": 1.3756462712829174,
+      "maximum_S_low_band": 1.1450592343698223,
+      "maximum_T_low_band": 0.697024452249462,
+      "maximum_S_mid_band": 1.2429896819138893,
+      "maximum_T_mid_band": 0.3362819610256248,
+      "maximum_S_high_band": 1.0596883592803321,
+      "maximum_T_high_band": 0.13974361037715022,
+      "S_at_1p5Hz": 1.2385026656721825
+    }
+  },
+  {
+    "id": "PD_P0.05_I0_D0.005",
+    "label": "PD",
+    "stable_cases": 48,
+    "cases": 48,
+    "worst_radius": 0.9584806034966906,
+    "minimum_crossing_phase_margin_deg": null,
+    "maximum_S_mid_band_over_stable_models": 1.4113349774026336,
+    "maximum_T_high_band_over_stable_models": 0.6316091989623311,
+    "central": {
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k680_d0.18",
+      "control_period_s": 0.025,
+      "closed_loop_spectral_radius": 0.8065899480401468,
+      "independent_state_radius": 0.8065899480401443,
+      "locally_stable": true,
+      "gain_crossings": [],
+      "minimum_crossing_phase_margin_deg": null,
+      "S_DC": 0.9363295880149812,
+      "maximum_S": 1.214597615656109,
+      "maximum_S_frequency_Hz": 17.517486902695104,
+      "maximum_S_low_band": 0.9357518752564673,
+      "maximum_T_low_band": 0.07837568626711625,
+      "maximum_S_mid_band": 1.1368737454638622,
+      "maximum_T_mid_band": 0.15196372005769257,
+      "maximum_S_high_band": 1.2059341711371983,
+      "maximum_T_high_band": 0.20597218773509549,
+      "S_at_1p5Hz": 0.9792776076331638
+    }
+  },
+  {
+    "id": "PID_P0.05_I0.8_D0.005",
+    "label": "PID",
+    "stable_cases": 48,
+    "cases": 48,
+    "worst_radius": 0.9841289517647773,
+    "minimum_crossing_phase_margin_deg": 66.88598580051665,
+    "maximum_S_mid_band_over_stable_models": 1.4263572915293596,
+    "maximum_T_high_band_over_stable_models": 0.697385226957575,
+    "central": {
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k680_d0.18",
+      "control_period_s": 0.025,
+      "closed_loop_spectral_radius": 0.9683220547793505,
+      "independent_state_radius": 0.9683220547793442,
+      "locally_stable": true,
+      "gain_crossings": [
+        {
+          "frequency_Hz": 0.172467031399254,
+          "phase_margin_deg": 82.2914767869103
+        }
+      ],
+      "minimum_crossing_phase_margin_deg": 82.2914767869103,
+      "S_DC": 0.0,
+      "maximum_S": 1.2349207398217321,
+      "maximum_S_frequency_Hz": 17.502219631768554,
+      "maximum_S_low_band": 1.0989029420025436,
+      "maximum_T_low_band": 0.7089813498978249,
+      "maximum_S_mid_band": 1.1568581784387728,
+      "maximum_T_mid_band": 0.22663834127121865,
+      "maximum_S_high_band": 1.2222348905437692,
+      "maximum_T_high_band": 0.22230488711554408,
+      "S_at_1p5Hz": 1.1037452962015117
+    }
+  },
+  {
+    "id": "PI_P0.05_I0.8_D0",
+    "label": "PI semplice",
+    "stable_cases": 48,
+    "cases": 48,
+    "worst_radius": 0.984201334879097,
+    "minimum_crossing_phase_margin_deg": 65.4322975382503,
+    "maximum_S_mid_band_over_stable_models": 1.5585632101292137,
+    "maximum_T_high_band_over_stable_models": 0.3055757984585576,
+    "central": {
+      "candidate": "PI_P0.05_I0.8_D0",
+      "model": "delay_k680_d0.18",
+      "control_period_s": 0.025,
+      "closed_loop_spectral_radius": 0.9687732856893521,
+      "independent_state_radius": 0.9687732856893515,
+      "locally_stable": true,
+      "gain_crossings": [
+        {
+          "frequency_Hz": 0.17372919095094577,
+          "phase_margin_deg": 82.17203796630578
+        }
+      ],
+      "minimum_crossing_phase_margin_deg": 82.17203796630578,
+      "S_DC": 0.0,
+      "maximum_S": 1.1554962643377336,
+      "maximum_S_frequency_Hz": 1.3389610446513749,
+      "maximum_S_low_band": 1.1353157033300532,
+      "maximum_T_low_band": 0.713721346089316,
+      "maximum_S_mid_band": 1.1554962643377336,
+      "maximum_T_mid_band": 0.26219594868890334,
+      "maximum_S_high_band": 1.0920350643381376,
+      "maximum_T_high_band": 0.11553676342969284,
+      "S_at_1p5Hz": 1.1540341018209324
+    }
+  }
+]

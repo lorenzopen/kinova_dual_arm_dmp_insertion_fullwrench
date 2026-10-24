@@ -1,0 +1,16 @@
+{
+  "pid": 27732,
+  "argv": [
+    "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\gen3\\run_lab_damping.py",
+    "--piece",
+    "Z",
+    "--tag",
+    "Gen3Lab_Z_central2700_warm_D80_dt025",
+    "--dt",
+    ".00025",
+    "--kalman-warm-seconds",
+    "2",
+    "--damping",
+    "80"
+  ]
+}

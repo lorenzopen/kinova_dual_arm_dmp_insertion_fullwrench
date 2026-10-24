@@ -1,0 +1,12 @@
+{
+  "grid_s": [
+    0.005,
+    0.0025
+  ],
+  "max_metric_difference_N": {
+    "rmse_N_hand": 0.0006425900400456874,
+    "up_overshoot_N_hand": 0.0002446174621582031,
+    "down_undershoot_N_hand": 0.00024437904357910156
+  },
+  "note": "Controller ticks remain exactly 25 ms on both grids; exact ZOH discretization for plant."
+}

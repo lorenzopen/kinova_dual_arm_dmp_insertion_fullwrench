@@ -1,0 +1,87 @@
+{
+  "checks": [
+    {
+      "side": "L",
+      "base_position_shelf": [
+        0.7525,
+        -0.3025,
+        0.03
+      ],
+      "base_quat_shelf": [
+        -0.0,
+        -0.0,
+        -1.0,
+        0.0
+      ],
+      "fk_vs_independent_chain_position_error_m": 1.7156610089964406e-08,
+      "fk_rotation_error_rad": 2.0448637286385912e-07,
+      "recorded_tool_position_error_m": 6.066764537922451e-06,
+      "open_ik_error_m": 2.4586352449845334e-08,
+      "open_ik_error_rad": 1.4853039669123037e-07,
+      "jacobian_finite_difference_max_error": 0.0035762101607579684,
+      "jacobian_requires_base_rotation": true,
+      "initial_q": [
+        2.317315131490396,
+        -0.7247208793724236,
+        2.420920392332476,
+        -1.0771947602797898,
+        -0.17463363995725734,
+        -1.014888819175205,
+        2.7762631262095785
+      ],
+      "torque_limits": [
+        39.0,
+        39.0,
+        39.0,
+        39.0,
+        39.0,
+        9.0,
+        39.0
+      ]
+    },
+    {
+      "side": "R",
+      "base_position_shelf": [
+        0.7525,
+        0.2975,
+        0.03
+      ],
+      "base_quat_shelf": [
+        -0.0,
+        -0.0,
+        -1.0,
+        0.0
+      ],
+      "fk_vs_independent_chain_position_error_m": 1.0226704230734494e-08,
+      "fk_rotation_error_rad": 2.534262743500041e-07,
+      "recorded_tool_position_error_m": 6.6513554459146054e-06,
+      "open_ik_error_m": 3.8120142374929963e-10,
+      "open_ik_error_rad": 7.607919975648817e-10,
+      "jacobian_finite_difference_max_error": 0.002387858260879819,
+      "jacobian_requires_base_rotation": true,
+      "initial_q": [
+        0.4177866261484085,
+        0.0311437707309791,
+        2.8852281793718895,
+        -1.0848555972033735,
+        1.506247013566509,
+        1.7191940451291299,
+        1.109547786736528
+      ],
+      "torque_limits": [
+        39.0,
+        39.0,
+        39.0,
+        39.0,
+        39.0,
+        9.0,
+        39.0
+      ]
+    }
+  ],
+  "world": "shelf",
+  "kinova_source": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_L_central2700_implicit_dt05\\robot_used.urdf",
+  "base_separation_m": 0.6,
+  "law": "Nominal Cartesian impedance, implicit discrete realization; K1500/20 D60/7,1kHz, gravity+coriolis and projected .2 joint damping",
+  "limitation": "Declared Cartesian impedance, not verified unavailable inner lab controller source"
+}

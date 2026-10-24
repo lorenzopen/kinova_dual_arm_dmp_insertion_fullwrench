@@ -1,0 +1,47 @@
+{
+  "reaction_equivalence_cases": 60,
+  "max_abs_reaction_error": 1.5265566588595902e-16,
+  "free_air_max_force_after_settle_N": 0.00013892940283408126,
+  "static_compression": {
+    "L": {
+      "wrist_normal": 6.608820822031523,
+      "contact_normal": 6.608820846875487,
+      "wrench_difference": [
+        1.587069192696979e-06,
+        1.4819899973872452e-07,
+        2.9578069201188772e-05,
+        1.7032286066900795e-05,
+        -3.7644236387984796e-06,
+        -1.4908088827544252e-07
+      ],
+      "pad_normal_N": [
+        2.3254755353686005,
+        2.141978612898781,
+        2.1417593063790874
+      ],
+      "plate_normal_N": 0.0,
+      "effective_pad_piece_mu": 1.0
+    },
+    "R": {
+      "wrist_normal": 6.608046147476328,
+      "contact_normal": 6.608046122059965,
+      "wrench_difference": [
+        4.111812193905015e-06,
+        -1.6470397046219887e-07,
+        2.3798406707971342e-05,
+        -1.6900005416355763e-05,
+        1.6763431928869124e-06,
+        -1.6090417924810065e-08
+      ],
+      "pad_normal_N": [
+        2.325466709328008,
+        2.141276837028558,
+        2.141701363089622
+      ],
+      "plate_normal_N": 0.0,
+      "effective_pad_piece_mu": 1.0
+    }
+  },
+  "source": "unchanged floating_plate.update_springs, captured actual applied reaction vs independent algebra",
+  "contact_order": "unfiltered body-pair order; force on A = +normal/friction, on B opposite"
+}

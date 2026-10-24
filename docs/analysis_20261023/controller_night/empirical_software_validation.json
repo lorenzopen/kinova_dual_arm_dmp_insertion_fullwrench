@@ -1,0 +1,13 @@
+{
+  "known_system_delay_samples": 8,
+  "recovered_delay_samples": 8,
+  "max_coefficient_error": 6.217248937900877e-15,
+  "independent_input_sequence_free_simulation": {
+    "r2": 1.0,
+    "rmse": 7.805220850635345e-16,
+    "normalized_mse": 1.482708901530227e-29
+  },
+  "causal_prefix_error": 0.0,
+  "LTI_model_shapes_checked": 316,
+  "note": "Software/math verification on an independently generated stable known plant; not validation of the robot model."
+}

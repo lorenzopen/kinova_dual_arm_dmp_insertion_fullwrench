@@ -1,0 +1,132 @@
+--- before/chapters/03_haption_recording.tex
++++ after/chapters/03_haption_recording.tex
+@@ -8,16 +8,58 @@
+ The acquisition code is written in C++. It reads the two device poses, maps their increments into the simulation frame, applies spring-damper forces to the proxies and logs the resulting signals in HDF5. Bullet supplies the rigid-body simulation. Contact data are available through the shared-memory C interface. Python is used afterwards for data quality assessment, mixture modelling and autonomous force allocation.
+ 
+ \begin{figure}[htbp]\centering
+-\begin{tikzpicture}[node distance=9mm,box/.style={draw,rounded corners,align=center,text width=37mm,minimum height=14mm},>=Latex]
+-\node[box] (human) {Two Haption\ interfaces};
+-\node[box,right=of human] (coupling) {Virtual\ coupling};
+-\node[box,right=of coupling] (sim) {Proxy hands\ and object};
+-\node[box,below=of coupling] (log) {HDF5\ synchronized log};
+-\draw[->] (human)--(coupling);\draw[->] (coupling)--(sim);
+-\draw[->] (sim.south) |- (log.east);\draw[->] (coupling)--(log);
+-\draw[->] (sim.north) -- ++(0,7mm) -| (human.north);
++\begin{tikzpicture}[x=1mm,y=1mm,>=Latex,font=\small,line width=0.5pt]
++\definecolor{haptionleft}{HTML}{1F6FB2}
++\definecolor{haptionright}{HTML}{D9622B}
++% Three compact panels: devices, numerical coupling and simulated bodies.
++\draw[rounded corners=2mm,fill=haptionleft!4,draw=black!65] (0,0) rectangle (43,37);
++\draw[rounded corners=2mm,fill=black!3,draw=black!65] (52,0) rectangle (95,37);
++\draw[rounded corners=2mm,fill=haptionright!4,draw=black!65] (104,0) rectangle (147,37);
++\node at (21.5,32) {Two Haption interfaces};
++\node at (73.5,32) {Virtual coupling};
++\node at (125.5,32) {Bullet simulation};
++% Stylised articulated devices; these are explanatory silhouettes, not CAD.
++\foreach \x/\col/\side in {0/haptionleft/L,21/haptionright/R}{
++  \begin{scope}[shift={(\x,0)}]
++  \draw[fill=black!13,draw=black!55,rounded corners=0.5mm] (3,7) rectangle (15,10);
++  \draw[draw=\col!75!black,line width=1.3pt,line cap=round,line join=round]
++    (8,10)--(5,17)--(12,23)--(17,20);
++  \foreach \p in {(8,10),(5,17),(12,23)}
++    \filldraw[fill=white,draw=\col!75!black] \p circle (1mm);
++  \draw[draw=\col,line width=2pt,line cap=round] (16,18)--(18,22);
++  \node[text=\col,font=\footnotesize] at (9,3.5) {\side};
++  \end{scope}
++}
++% Spring and damper icon, standing for the two six-axis coupling channels.
++\draw[draw=haptionleft,line width=0.8pt]
++  (57,21)--(61,21)--(63,24)--(66,18)--(69,24)--(72,18)--(75,24)--(78,18)--(81,21)--(90,21);
++\draw[draw=haptionright,line width=0.8pt] (57,12)--(69,12);
++\draw[draw=haptionright,line width=0.8pt] (69,9)--(69,15)--(78,15) (69,9)--(78,9);
++\draw[draw=haptionright,line width=0.8pt] (75,9)--(75,15) (75,12)--(90,12);
++\draw[draw=black!60] (57,12)--(57,21) (90,12)--(90,21);
++\node[font=\footnotesize] at (73.5,4) {spring and damper};
++% Two opposing proxies and the body they touch.
++\draw[fill=black!12,draw=black!60,rounded corners=0.5mm] (121,10) rectangle (130,26);
++\draw[fill=haptionleft!22,draw=haptionleft,rounded corners=0.7mm] (113,15) rectangle (117,22);
++\draw[fill=haptionright!22,draw=haptionright,rounded corners=0.7mm] (134,15) rectangle (138,22);
++\draw[->,draw=haptionleft,line width=0.8pt] (117,18.5)--(121,18.5);
++\draw[->,draw=haptionright,line width=0.8pt] (134,18.5)--(130,18.5);
++\node[font=\footnotesize] at (125.5,4) {proxies and object};
++\draw[->] (43,18.5)--(52,18.5);
++\node[font=\scriptsize] at (47.5,23) {pose};
++\draw[->] (95,18.5)--(104,18.5);
++\node[font=\scriptsize] at (99.5,23) {wrench};
++% Rendered feedback and logging are distinct branches.
++\draw[rounded corners=1.5mm,fill=haptionleft!5,draw=black!65] (52,-27) rectangle (95,-11);
++\node[align=center,font=\footnotesize] at (73.5,-19) {Filter, scale and clip\\displayed reaction};
++\draw[rounded corners=1.5mm,fill=black!3,draw=black!65] (104,-27) rectangle (147,-11);
++\node[align=center,font=\footnotesize] at (125.5,-19) {HDF5 log\\poses and spring wrenches\\contact data};
++\draw[->] (125.5,0)--(125.5,-11);
++\draw[->] (109,0)--(109,-6)--(99,-6)--(99,-19)--(95,-19);
++\draw[->] (52,-19)--(21.5,-19)--(21.5,0);
++\node[font=\scriptsize] at (36.5,-15.5) {felt reaction};
+ \end{tikzpicture}
+-\caption{Recording architecture. Device targets drive simulated proxies through a virtual coupling. The feedback channel renders a scaled reaction. Acquisition and contact measurements are logged before learning.}
++\caption{Recording architecture, with schematic device silhouettes. The left and right interfaces are blue and orange, as in the wrench plots. Mapped device poses set the targets of numerical spring--damper couplings; these drive the simulated proxies against the object. The operator receives a filtered, scaled and clipped reaction. The log retains the spring-wrench signals and contact data separately from that displayed feedback.}
+ \label{fig:recording}
+ \end{figure}
+ 
+@@ -37,12 +79,45 @@
+ 
+ \section{Virtual coupling}
+ 
++Figure~\ref{fig:virtual-coupling-schematic} shows one translational channel. The mapped handle target and the simulated proxy can have different poses; their displacement produces the elastic part of the interaction.
++
+ For a proxy at $\vect p_h$ with velocity $\vect v_h$, the translational command is
+ \begin{equation}
+ \vect F_{\mathrm{cmd},h}=K_p(\vect p_{t,h}-\vect p_h)-K_d\vect v_h-m_h\vect g.
+ \label{eq:translation-coupling}
+ \end{equation}
+ Here $\vect g$ points downward, so $-m_h\vect g$ compensates the proxy's own weight. This compensation is unrelated to estimating the manipulated object's unknown mass.
++
++\begin{figure}[htbp]\centering
++\begin{tikzpicture}[x=1mm,y=1mm,>=Latex,font=\small,line width=0.6pt]
++\definecolor{haptionleft}{HTML}{1F6FB2}
++% Mapped target is an outline; the proxy is the simulated physical body.
++\node[align=center] at (16,44) {Mapped\\handle target};
++\node[align=center] at (98,44) {Simulated\\proxy};
++\node at (128,44) {Object};
++\draw[dashed,draw=haptionleft,line width=0.8pt,rounded corners=1mm] (8,12) rectangle (24,32);
++\draw[fill=haptionleft!15,draw=haptionleft,line width=0.8pt,rounded corners=1mm] (90,12) rectangle (106,32);
++\fill[haptionleft] (16,22) circle (1mm);
++\fill[haptionleft] (98,22) circle (1mm);
++\draw[fill=black!10,draw=black!65,rounded corners=0.5mm] (110,7) rectangle (143,37);
++\foreach \y in {17,22,27}{\filldraw[fill=haptionleft!25,draw=haptionleft] (108,\y) circle (2mm);}
++% Parallel elastic and damping paths, shown only for translation.
++\draw[draw=haptionleft,line width=0.9pt]
++  (24,27)--(32,27)--(35,30)--(39,24)--(43,30)--(47,24)--(51,30)--(55,24)--(59,30)--(63,24)--(66,27)--(90,27);
++\node[fill=white,inner sep=1pt,text=haptionleft] at (51,32) {$K_p$};
++\draw[draw=black!65,line width=0.8pt] (24,17)--(48,17);
++\draw[draw=black!65,line width=0.8pt] (48,13)--(48,21)--(63,21) (48,13)--(63,13);
++\draw[draw=black!65,line width=0.8pt] (58,13)--(58,21) (58,17)--(90,17);
++\node[fill=white,inner sep=1pt] at (55,8) {$K_d$};
++\draw[<->,draw=black!55] (24,37)--node[fill=white,inner sep=2pt] {$\vect e_p=\vect p_t-\vect p$}(90,37);
++\node[font=\footnotesize,text=haptionleft] at (16,3) {$\vect p_t$};
++\node[font=\footnotesize,text=haptionleft] at (98,3) {$\vect p$};
++\draw[->,draw=haptionleft,line width=0.9pt] (72,22)--(87,22);
++\node[align=center,font=\footnotesize] at (73,-6) {Elastic log: $K_p\vect e_p$\qquad Proxy command: $K_p\vect e_p-K_d\vect v-m_h\vect g$};
++\end{tikzpicture}
++\caption{One translational virtual-coupling channel. The dashed target is obtained from the handle pose; the solid proxy moves under simulated dynamics and contact. The spring is numerical, not a physical spring mounted on the Haption. Damping uses proxy velocity, and gravity compensation is added to the proxy command. Only the elastic component is stored in the spring-wrench log. Rotation has the analogous stiffness--damping channel; the right hand uses the same structure.}
++\label{fig:virtual-coupling-schematic}
++\end{figure}
+ 
+ The rotational error is represented by the relative quaternion
+ \begin{equation}
+--- before/figures/README.md
++++ after/figures/README.md
+@@ -64,3 +64,13 @@
+ inner impedance; the original-source trial is shown separately to its early
+ stop. No new physics or tuning is performed by the plotting script. The three
+ block diagrams are editable TikZ in Chapters 7, 10 and 11.
++
++## Haption and virtual coupling diagrams (24 October 2026)
++
++Chapter 3 contains two editable TikZ illustrations: the recording architecture
++with schematic Haption silhouettes, and one translational spring-damper
++coupling. They use the existing blue `#1f6fb2` and orange `#d9622b` hand
++colours with light tints and neutral grey objects. The silhouettes are
++explanatory drawings, not device CAD. The diagram distinguishes the elastic
++wrench log from the filtered/scaled/clipped feedback and from the complete
++proxy command. No experimental values or controller source are changed.

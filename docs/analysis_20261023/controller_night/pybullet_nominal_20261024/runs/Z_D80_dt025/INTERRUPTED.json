@@ -1,0 +1,5 @@
+{
+  "reason": "User prioritizes 2700N/m spring; D80 comparison stopped, no further original-pad jobs.",
+  "partial_log": "../../Z_D80_dt025.log",
+  "no_complete_force_trace": true
+}

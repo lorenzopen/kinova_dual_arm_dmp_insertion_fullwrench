@@ -1,0 +1,111 @@
+\chapter{Human Coordination and the Orientation-Dependent Prior}
+\label{ch:prior}
+
+Two hands can redistribute a load while leaving the object's resultant wrench unchanged. Demonstrations record how that redistribution occurs. This chapter explains the interpretation of their variability and how it enters the controller. The statistical method is established; the adaptations concern wrench coordinates, changing attitude and the recording apparatus.
+
+\section{Task-equivalent variations and UCM}
+\label{sec:ucm-prior}
+
+The uncontrolled manifold (UCM) approach distinguishes variations that preserve a selected task variable from variations that change it~\cite{scholz1999}. Here the task variable is the resultant object wrench, and the elemental variables are the two wrist wrenches:
+\begin{equation}
+\vect w=\begin{bmatrix}\vect F_L\\\vect\tau_L\\\vect F_R\\\vect\tau_R\end{bmatrix}\in\R^{12}.
+\label{eq:wrench12}
+\end{equation}
+At fixed hand positions, shifting both wrist moments to a common object pole and summing gives a linear map $G_w$. A redistribution is task-equivalent when
+\begin{equation}
+G_w\Delta\vect w=\vect0.
+\label{eq:ucm-wrench}
+\end{equation}
+This null space is the local UCM for the chosen task. An equal increase in opposing squeeze forces is a simple example: it adds no resultant object force, although the hands work harder. Task equivalence does not ensure admissibility under friction or actuator limits.
+
+UCM analysis compares variance within this subspace with variance in directions that change the task, normalized by their dimensions. Force and moment coordinates require an explicit scaling. Campolo et al. show why geometric metrics matter in UCM analysis~\cite{campolo2013}; their pointing task differs from this wrench task.
+
+\thesisfigure{ch05_prior/ucm_session_c.pdf}{Bimanual coupling in session C ($K_{p,\mathrm{rot}}=40$, 13 runs, residuals per run and gravity cell). Left: moment about the grasp axis, left hand against right; the cloud lies along the internal direction, which leaves the sum of the two hand moments unchanged (the moments of the hand forces about the CoM are not included in this panel). Right: the index $r=1-2\,n^\top\Sigma_{LR}n/(n^\top\Sigma_{LL}n+n^\top\Sigma_{RR}n)$ on the grasp triad, $1$ for independent hands, above $1$ when variability goes into the internal mode. Bars show 95\% bootstrap intervals over runs; grey marks an interval that contains $1$. Force indices near $2$ are imposed by quasi-static equilibrium; the moment channel carries the information.}{fig:ucm-session-c}
+
+The index is computed per direction on residuals conditioned on the gravity direction; it is not the full spatial variance ratio of the classical method. An earlier whole-space analysis of the project compared each mode with a surrogate that shuffled every coordinate independently; that surrogate also destroyed the correlation within each hand, and the analysis is not used here. These analyses describe recorded coordination; mechanics can structure covariance too, so they do not establish a neural origin~\cite{valero2009,kutch2012}.
+
+\section{From covariance to precision}
+
+UCM and precision are related, but different. UCM identifies task-preserving directions from a task map. Covariance $\Sigma_w$ describes the observed wrench distribution. Its regularized inverse is the \emph{precision matrix}:
+\begin{equation}
+Q_w=\Sigma_w^{-1},\qquad
+J_{\mathrm{prior}}=\tfrac12(\vect w-\vect\mu_w)^\top Q_w(\vect w-\vect\mu_w).
+\label{eq:prior-mahalanobis}
+\end{equation}
+This is the quadratic part of a Gaussian negative log-likelihood, or a squared Mahalanobis penalty~\cite{bishop2006}. Large demonstrated variance gives a small penalty; little variance gives a larger penalty. Cross-hand covariance retains coordinated departures instead of treating the hands independently.
+
+The intended preference is to permit common demonstrated variations and discourage departures from tightly maintained patterns. A broad covariance direction need not coincide exactly with the UCM. The controller uses the full conditional precision: it does not project its decision onto a learned manifold or put the scalar UCM index in the cost. Contact constraints separately define feasibility.
+
+The active allocator of Chapter~\ref{ch:socp} uses the precision without the mean, $J=\vect w^\top W(R)\vect w$, and imposes equilibrium exactly. The task component of $\vect w$ is then fixed by the constraints, and the cost only ranks the internal wrenches, those that satisfy Equation~\eqref{eq:ucm-wrench}. The precision is therefore used on the subspace that the UCM decomposition calls task-equivalent: directions in which the demonstrations varied are cheap, directions they kept tight are expensive. The mean-centred form of Equation~\eqref{eq:prior-mahalanobis} belongs to the previous allocator (Section~\ref{sec:socp-previous}).
+
+A recording interface that suppresses torsion can create narrow covariance and an excessive torsional penalty. The valid prior therefore comes from high-stiffness session C. Better apparent seating under soft rotational coupling is insufficient if the moment to be learned is attenuated.
+
+\section{Static lift and changing orientation}
+
+A conventional GMM can describe a selected upright lift phase, giving a constant precision. Wielding changes gravity direction in object coordinates, so the expected wrench and covariance must vary with attitude.
+
+Calinon's task-parameterized GMM and Gaussian mixture regression provide this adaptation~\cite{calinon2016}. Demonstrations are encoded in world and box frames. At the current attitude, their transformed Gaussian models are combined and conditioned on local gravity, returning $\vect\mu_w(\hat{\vect g}_{\mathrm{local}})$ and $Q_w(\hat{\vect g}_{\mathrm{local}})$. The general fitting and regression derivations are left to the cited method.
+
+The final training selects the wielding phase and uses five mixture components. These are components within one phase, not five identified task stages. The following details explain the implementation choices needed for wrench data.
+
+\section{Hand convention, units and frame adaptation}
+
+The right-hand force and moment are transformed by the proper rotation $M=\diag(-1,-1,1)$ before training and transformed back at output. Both vectors use the same rotation. This aligns the opposing hand conventions without using a reflection.
+
+Force and moment have different units. One scalar is used for every force axis and another for every moment axis:
+\begin{equation}
+S=\diag(s_F I_3,s_T I_3,s_F I_3,s_T I_3),\qquad
+\tilde{\vect w}=S^{-1}\vect w.
+\label{eq:scale12}
+\end{equation}
+The scalars come from pooled coordinate variances. Isotropic scaling within each vector commutes with rotation; axis-dependent scales would distort the task-frame transform.
+
+The observation combines three unit-gravity coordinates and twelve scaled wrench coordinates. These five three-vectors rotate between frames. Wrist moments retain their wrist poles: rotating coordinates does not move the point about which a moment is measured.
+
+At query time the world model rotates into box coordinates, while the box model is already there. The Gaussian product combines precision rather than averaging covariance. Regression conditions the mixture on local gravity. Its output covariance includes differences between conditional component means; otherwise ambiguous predictions would become artificially precise.
+
+Fitting uses a $10^{-3}$ ridge in normalized coordinates, and the physical query adds a $10^{-5}$ numerical ridge before inversion. These are regularization choices, not measured noise variances. The query uses the learned mixture weights in regression. These details describe the implemented variant rather than new statistical results.
+
+The solver evaluates the physical penalty in normalized coordinates using $Q_n=S^\top Q_wS$. This change of units preserves the quadratic form; Appendix~\ref{app:math} records the check. It does not change the physical preference.
+
+\thesisfigure{ch05_prior/prior_query.pdf}{Queries of the saved session-C prior. Shaded outer ranges exceed the approximate $55^\circ$ empirical support and are extrapolations. These are model outputs, not measured control performance.}{fig:prior-query}
+
+\section{Adapting the query to irregular bodies}
+
+A generated polytope has an arbitrary mesh frame, which need not match the training box. The transfer defines a grasp frame at closure: $x$ follows the line between hands, $z$ is projected upward, and $y=z\times x$. It anchors that initial frame to the body:
+\begin{equation}
+R_{BG,0}=R_{WB,0}^\top R_{WG,0},\qquad
+R_{WG}(t)=R_{WB}(t)R_{BG,0}.
+\label{eq:anchored-grasp}
+\end{equation}
+Gravity is expressed in this moving frame. Rebuilding it from world vertical at every update would erase a roll about the grasp axis from the query.
+
+This makes transfer well defined but does not prove that a box-trained distribution suits every shape. Its attitude coverage is limited and its absolute mean is tied to the demonstrated load. The current query does not automatically rescale the mean to a new estimated mass.
+
+\section{Testing what the prior contributes}
+
+The ablation below was run with the previous allocator of Section~\ref{sec:socp-previous}, which included the human mean and a contact-effort term; it has not been repeated with the active precision-only allocator. The full mode uses learned precision. The identity mode retains its mean and replaces precision with $(\operatorname{tr}Q_n/12)I$, removing directional preference while preserving total weight. The no-prior mode removes the term, leaving effort and equilibrium penalties. These are implemented ablations, not consequences of the UCM hypothesis.
+
+Full versus identity tests demonstrated anisotropy. Full versus no prior tests the entire demonstrated preference. An unscaled identity would also change penalty strength and confound the comparison.
+
+The comparison was run on the floating-plate tool over the 182 bodies of the geometry campaign (Chapter~\ref{ch:geometry}), with identical populations, friction, gates, trajectories and search seeds; only the prior mode changes. The bodies are held out by construction: the precision was learnt from virtual demonstrations on a standardised box, and none of these shapes was seen in training.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+ & Full (TP-GMM) & Equal-trace identity & No prior\\
+\midrule
+Bodies placed, of 182 & 165 & 161 & 120\\
+\quad one corner / jitter / polytopes & 6 / 96 / 63 & 6 / 96 / 59 & 6 / 85 / 29\\
+Lost in the wielding & 15 & 15 & 51\\
+Squeeze target, median & 43.5 N & 38.6 N & 23.4 N\\
+Contact effort $\sum_i\norm{\vect f_i}^2$, measured, median & 1563 N$^2$ & 1472 N$^2$ & 479 N$^2$\\
+Realized force error, median & 3.7 N & 3.5 N & 4.1 N\\
+Realized moment error, median & 0.067 Nm & 0.061 Nm & 0.120 Nm\\
+Estimator abstentions & 5 & 7 & 29\\
+\bottomrule\end{tabular}
+\caption{Prior ablation on the floating plate, same 182 bodies. Realized errors compare the wrench the contacts actually apply with the previous accepted allocation, about the same pole. Paired on the same body, full against identity: 12 bodies go further, 2 less, 168 the same ($p=0.013$), all of them polytopes; full against no prior: 50 further, 3 less ($p<0.001$).}
+\label{tab:prior-ablation}
+\end{table}
+
+The two comparisons differ in size. Removing the prior term entirely lets the effort cost cut the squeeze by half and the contact effort by a factor of three, and objects drop in the wielding: 51 losses against 15, and nearly twice the moment error. Keeping the same total weight without the learnt shape, the identity arm, reproduces the full prior on all 102 cube-family bodies and falls slightly behind it on the 80 polytopes (59 placed against 63). On this apparatus most of the prior's contribution is therefore its \emph{weight} against the effort term; the demonstrated anisotropy adds a small but detectable benefit, and only where the contacts are most irregular. This last effect appeared only when the polytope population was doubled from ten to twenty bodies per band: at ten per band the same comparison gave 4 against 1 ($p=0.38$). Two limits apply: the contacts the allocator reads are exact in simulation, and only one prior model, session C, was tested.
+

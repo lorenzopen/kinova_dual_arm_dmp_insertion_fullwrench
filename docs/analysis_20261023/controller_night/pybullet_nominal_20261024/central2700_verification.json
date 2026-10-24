@@ -1,0 +1,159 @@
+{
+  "created_utc": "2026-10-24T03:51:05.541487+00:00",
+  "primary_parameter_checks": [
+    {
+      "run": "L_central2700_D60_dt025",
+      "central2700_and_total4200_verified": true,
+      "unchanged_controller_parameters_verified": true,
+      "controller_abort": null
+    },
+    {
+      "run": "L_central2700_D60_dt05",
+      "central2700_and_total4200_verified": true,
+      "unchanged_controller_parameters_verified": true,
+      "controller_abort": null
+    },
+    {
+      "run": "S_central2700_D60_dt05",
+      "central2700_and_total4200_verified": true,
+      "unchanged_controller_parameters_verified": true,
+      "controller_abort": null
+    },
+    {
+      "run": "T_central2700_D60_dt05",
+      "central2700_and_total4200_verified": true,
+      "unchanged_controller_parameters_verified": true,
+      "controller_abort": null
+    },
+    {
+      "run": "Z_central2700_D60_dt025",
+      "central2700_and_total4200_verified": true,
+      "unchanged_controller_parameters_verified": true,
+      "controller_abort": null
+    },
+    {
+      "run": "Z_central2700_D60_dt05",
+      "central2700_and_total4200_verified": true,
+      "unchanged_controller_parameters_verified": true,
+      "controller_abort": null
+    }
+  ],
+  "refinements": [
+    {
+      "coarse": "Z_central2700_D60_dt05",
+      "fine": "Z_central2700_D60_dt025",
+      "physical_K_C_identical": true,
+      "route_rmse_difference_N": 0.007693651754591968,
+      "force_band_difference_N": 0.00010371574677718598,
+      "final_worst_cell_difference_mm": 0.7996273632254258
+    },
+    {
+      "coarse": "L_central2700_D60_dt05",
+      "fine": "L_central2700_D60_dt025",
+      "physical_K_C_identical": true,
+      "route_rmse_difference_N": 1.082116486555984e-05,
+      "force_band_difference_N": 2.4888372601859776e-05,
+      "final_worst_cell_difference_mm": 0.9325269415824753
+    }
+  ],
+  "originals_identical": true,
+  "profile_parity": [
+    {
+      "run": "Gen3_L_central2700_implicit_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "archived_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 3.9120600071607115e-05
+    },
+    {
+      "run": "Gen3_Z_central2700_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3_Z_central2700_implicit_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3_Z_central2700_implicit_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3Lab_Z_central2700_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3Lab_Z_central2700_warm_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "L_central2700_D60_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "archived_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 3.9120600071607115e-05
+    },
+    {
+      "run": "L_central2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "archived_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 3.9120600071607115e-05
+    },
+    {
+      "run": "S_central2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_offline_profile_20261023_190423.csv",
+      "archived_sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.0921138186570367e-05
+    },
+    {
+      "run": "T_central2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Tt1_s9007_c100_five_cut800_offline_profile_20261023_192142.csv",
+      "archived_sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 6.349818493123216e-06
+    },
+    {
+      "run": "Z_central2700_D60_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Z_central2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    }
+  ],
+  "scope": "Software/parameter/integrity checks, not hardware model validation"
+}

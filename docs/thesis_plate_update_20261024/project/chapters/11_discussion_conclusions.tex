@@ -1,0 +1,69 @@
+\chapter{Discussion and Conclusions}
+\label{ch:discussion}
+
+The framework links what the hands feel, what the system estimates and what the controller asks the contacts to transmit. Its strongest result is that these quantities depend on the same mechanics. Additional squeeze can deform the grasp. Additional compliance can preserve contact while suppressing the torsional measurement. A learned precision can then reward an apparatus-induced pattern rather than the intended human strategy.
+
+\section{Grip force and geometry cannot be separated}
+
+For fixed geometry and a fixed Coulomb coefficient, normal load increases the model's tangential-force bound. This mathematical monotonicity does not imply monotonic stability of a compliant grasp. The feasible set changes when the wrist moves or a pad detaches. The force ladder demonstrates that distinction on the documented case.
+
+The design response is not simply to select a lower constant. It is to constrain effort, respect finite transmission and locate conformity in mechanical modes that do not unnecessarily disturb the grasp. The peripheral and central spring design makes those modes explicit. The force cap prevents requests outside the declared transmission range, while measured slack identifies a load the present contacts cannot carry.
+
+This also changes the interpretation of fallback. A fallback is an independent control policy with its own setting and failure mechanisms. It cannot inherit the friction feasibility of a rejected allocation. Its use must be visible in the experiment record. A run dominated by fallback is not evidence that the optimizer successfully controlled it.
+
+\section{The prior inherits its recording apparatus}
+
+The session comparison shows that the same nominal manipulation can generate a different torsional covariance when the coupling stiffness changes. The valid prior is therefore tied to the recording gains, display scaling, saturation and contact conditions. It is not a detachable description of ``how humans manipulate boxes''.
+
+The TP-GMM makes orientation adaptation possible, but its output retains the limits of the data. Isotropic vector scaling preserves rotation consistency. Products of Gaussians combine the two task frames. Mixture regression accounts for within- and between-component covariance. These operations are mathematically useful, but they do not enlarge empirical angular coverage or establish transfer to new contact mechanics.
+
+The anchored grasp frame gives the transfer a meaningful coordinate system. Validation still requires the full, equal-trace identity and no-prior comparisons on the same apparatus. Until those comparisons are complete, the prior should be described as the implemented source of coordination preference rather than as a demonstrated cause of every successful grasp.
+
+\section{Estimation should state what it does not know}
+
+The vertical lift has a rank-two gravity regressor. This is an exact structural limitation. The unobserved component is not recovered by collecting more samples at the same orientation, nor should its covariance be set to zero by a pseudoinverse.
+
+Observable-subspace least squares makes the distinction explicit. Slow orientation changes can add the missing direction, while acceptance checks reject samples inconsistent with the free-space model. Abstention is then a legitimate output. A system that records uncertainty and stops is more interpretable than one that returns a plausible number whose unsupported direction is hidden.
+
+There are still model uncertainties beyond the implemented covariance: orientation error, contact-normal error, pole movement, correlated mass error and load paths outside the selected pads. Addressing them requires either measurement or a declared conservative model. A small regression residual does not prove that all such errors are small.
+
+\section{Optimization and realization are separate tests}
+
+The local convex program is well defined when its inputs are fixed. Its exact cones preserve the circular friction model; its force cost penalizes all contact directions; its cap bounds every pad; and its slack measures the unsupported part of the desired wrench.
+
+The execution path does less than the mathematical allocator. It commands a scalar squeeze and relies on contact mechanics for the remaining distribution. This is an intentional practical interface, but it limits the claim. Force and moment tracking errors must be measured rather than assumed away. Full force allocation is a prediction until the realization layer is shown to reproduce it adequately.
+
+No local optimum guarantees persistence of the contacts used to compute it. Nor does a successful simulation establish object-damage limits or industrial robot reachability. These belong to additional mechanics and system-level checks.
+
+\section{What the industrial examples could resolve}
+
+For mixed-content cartons, online load identification can replace a single assumed mass distribution. The useful benefit is not the estimator alone, but its effect on gravitational moment demand before reorientation. A controlled measurement can prevent an unsupported turn or request a different grasp.
+
+For irregular rigid returns, discrete contact masks can prevent the controller from allocating force to a pad that never seated. Passive conformity can improve the contact set without lowering the upstream torsional recording stiffness. The corresponding deployment requirement is direct contact or wrist-wrench sensing, a defined friction range and an apparatus sized for the objects admitted to it.
+
+For crowded shelf insertion, route learning can address a gap that cannot be entered by straight descent with the actual grasp error. Training on played boards exposes the route to neighbour drift. Training with the hands exposes it to finite friction and squeeze. Those two changes are necessary to evaluate the industrial analogy credibly.
+
+These are possible mechanisms of benefit, not measured productivity improvements. The thesis provides no cycle-time, damage-rate or economic comparison with a deployed warehouse system. Such comparisons would need physical robot experiments, calibrated surfaces, repeated loads and a defined operating envelope.
+
+\section{Limitations}
+
+The human data are apparatus-specific and do not support a population-level behavioural conclusion. The valid prior has limited orientation coverage and an absolute load scale. The object mechanics are largely rigid, and the friction coefficient is treated as known within each arm. The allocator does not constrain all mechanical limits of the tool or arms.
+
+The geometry campaign covers the blind-search regime only; rough-size and known-mesh planners were not implemented, and the information regimes are kept separate. It is a simulation: white sensor noise on the estimated wrench was tested and changes nothing, but sensor bias and drift were not modelled; there is one run per body, and twenty polytopes per face band, so the absence of a difference between tools on polytopes is not evidence of equivalence. Convex polytopes do not cover arbitrary nonconvex geometry. The plate can also introduce an extra contact unless its collision configuration is controlled: with a colliding plate it touched 69 of 80 polytopes and broke the estimate on most of them.
+
+The catalogue Tetris task intentionally uses environmental support during staging and insertion. Its mass and geometry are known. It demonstrates reuse of the estimation equation and force allocator under different information, not proof that the complete blind pipeline works on tetrominoes.
+
+The insertion library has incomplete coverage and unresolved worlds. The newer friction and grasp changes are confounded in current pilot outcomes. Final held-out effects cannot be stated until the frozen campaign is complete.
+
+\section{Next experimental steps}
+
+The force-realization audit, the deterministic deformation and jitter comparisons, a polytope population with audited blind decisions, and the same-population comparison of learned anisotropy, equal-trace isotropy and effort alone are now complete (Chapter~\ref{ch:geometry}). The remaining priorities for the geometry half are more polytopes per band, sensor bias and drift in the measured wrench, the rough-size and known-mesh planning arms, and repeated arrivals per body. The prior result, that its weight matters most and its learnt shape helps only slightly and only on polytopes, should be checked with a second prior model before it is generalised. For insertion, the necessary test is a frozen library evaluated on unseen games with coverage and cascaded placement error reported.
+
+A physical passive-tool prototype would then test whether the simulated mode separation survives friction, manufacturing tolerances, travel limits and sensing noise. The stiffness matrix gives predictions for that test: axial support, low conforming tilt and a preserved torsional path. Those predictions should be measured as separate channels rather than compressed into one scalar stiffness.
+
+\section{Conclusions}
+
+The thesis develops a continuous chain from haptic recording to contact-constrained manipulation. Three discrete points per hand supply torsion through force lever arms. The two-frame prior supplies an orientation-dependent cost. Free-space gravity balance supplies inertial estimates with an explicit observability limit. The bounded allocator separates admissible contact forces from unsupported wrench demand.
+
+The established measurements show why that chain must include the apparatus. Force can change geometry, and compliance can change the learned signal. Treating either as an independent tuning parameter can improve a visible outcome while invalidating the model used to explain it. The resulting design principle is to preserve the load path and measurement path first, then evaluate the estimator, prior and optimizer within that operating envelope.
+

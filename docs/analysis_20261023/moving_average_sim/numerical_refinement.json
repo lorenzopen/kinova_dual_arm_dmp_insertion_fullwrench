@@ -1,0 +1,242 @@
+[
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "window_ms": 100.0,
+    "stiffness_N_m": 680,
+    "delay_ms": 170.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.0003245199173889102,
+      "route_band_seen_N": -0.0002896060100338743,
+      "route_tracking_rmse_N": -0.0004967414021142535,
+      "first_seat_peak_physical_N": 0.00044112894841763506,
+      "first_seat_peak_seen_N": 0.00018110240522783982,
+      "max_delta_command_mm": 0.0035939584362288945,
+      "min_force_mean_hand_N": -0.0009500888597977486
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "window_ms": 100.0,
+    "stiffness_N_m": 964,
+    "delay_ms": 230.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.0005064235481024582,
+      "route_band_seen_N": -0.00048079921879951026,
+      "route_tracking_rmse_N": -0.0003640533699660886,
+      "first_seat_peak_physical_N": 0.000190552361763352,
+      "first_seat_peak_seen_N": -6.947418141489692e-05,
+      "max_delta_command_mm": 0.0032378215819232614,
+      "min_force_mean_hand_N": -0.0005019312939595899
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "window_ms": 500.0,
+    "stiffness_N_m": 680,
+    "delay_ms": 170.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.00026028077798122273,
+      "route_band_seen_N": -0.00020991023608998155,
+      "route_tracking_rmse_N": -0.0005313328749882995,
+      "first_seat_peak_physical_N": 0.0020689610822941518,
+      "first_seat_peak_seen_N": 0.0016131295601935491,
+      "max_delta_command_mm": 0.0012458270814308392,
+      "min_force_mean_hand_N": -0.0010982221869277886
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "window_ms": 500.0,
+    "stiffness_N_m": 964,
+    "delay_ms": 230.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": 4.482626497322173e-05,
+      "route_band_seen_N": -0.0001395044847116514,
+      "route_tracking_rmse_N": 0.0010423121354347642,
+      "first_seat_peak_physical_N": 0.010494761859757062,
+      "first_seat_peak_seen_N": 0.010038930337658236,
+      "max_delta_command_mm": 0.001913344689150498,
+      "min_force_mean_hand_N": -0.00011622594857740864
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "window_ms": 100.0,
+    "stiffness_N_m": 680,
+    "delay_ms": 170.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.0002582126548126701,
+      "route_band_seen_N": -0.0002434126702332562,
+      "route_tracking_rmse_N": 0.0002576888891225315,
+      "first_seat_peak_physical_N": -0.0017248448311599773,
+      "first_seat_peak_seen_N": -0.0025795468550624534,
+      "max_delta_command_mm": 0.0038309891519060224,
+      "min_force_mean_hand_N": -0.0023674069984269686
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "window_ms": 100.0,
+    "stiffness_N_m": 964,
+    "delay_ms": 230.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.00037357469373922036,
+      "route_band_seen_N": -0.0003631569623990111,
+      "route_tracking_rmse_N": 0.000415941411407883,
+      "first_seat_peak_physical_N": -0.002363578724735582,
+      "first_seat_peak_seen_N": -0.0032182807486238474,
+      "max_delta_command_mm": 0.004041380524998431,
+      "min_force_mean_hand_N": -0.003895890826098203
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "window_ms": 500.0,
+    "stiffness_N_m": 680,
+    "delay_ms": 170.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.00021506522933963101,
+      "route_band_seen_N": -0.00018298928204487502,
+      "route_tracking_rmse_N": 0.0007477899719364189,
+      "first_seat_peak_physical_N": -0.003580721350123106,
+      "first_seat_peak_seen_N": -0.004104574464849797,
+      "max_delta_command_mm": 0.006586119038257454,
+      "min_force_mean_hand_N": -0.004478560946014731
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "window_ms": 500.0,
+    "stiffness_N_m": 964,
+    "delay_ms": 230.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -4.470815254563332e-05,
+      "route_band_seen_N": -0.00011587092619722711,
+      "route_tracking_rmse_N": 0.0025127650194512463,
+      "first_seat_peak_physical_N": -0.0004127030014204891,
+      "first_seat_peak_seen_N": -0.0011029618833999777,
+      "max_delta_command_mm": 0.004788302945188394,
+      "min_force_mean_hand_N": -0.003668232595922305
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "window_ms": 100.0,
+    "stiffness_N_m": 680,
+    "delay_ms": 170.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -4.777904508787567e-05,
+      "route_band_seen_N": 1.5467494506246626e-05,
+      "route_tracking_rmse_N": 0.0001896736260911247,
+      "first_seat_peak_physical_N": -0.0010440258416277715,
+      "first_seat_peak_seen_N": -0.00221625862176289,
+      "max_delta_command_mm": 0.004212625190931976,
+      "min_force_mean_hand_N": -0.00122515979792448
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "window_ms": 100.0,
+    "stiffness_N_m": 964,
+    "delay_ms": 230.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.000181154157844865,
+      "route_band_seen_N": -0.00011593606666004952,
+      "route_tracking_rmse_N": 0.00019208823768235295,
+      "first_seat_peak_physical_N": -0.0012805924057808227,
+      "first_seat_peak_seen_N": -0.0024528251859425865,
+      "max_delta_command_mm": 0.003896060276644131,
+      "min_force_mean_hand_N": -0.0027721398483464554
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "window_ms": 500.0,
+    "stiffness_N_m": 680,
+    "delay_ms": 170.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -3.198888673133782e-05,
+      "route_band_seen_N": -0.00010855933528388512,
+      "route_tracking_rmse_N": 0.0005913026836811275,
+      "first_seat_peak_physical_N": 0.0002728030427645578,
+      "first_seat_peak_seen_N": -1.9584590566168458e-05,
+      "max_delta_command_mm": 0.007789777548645516,
+      "min_force_mean_hand_N": -0.0032726764056887347
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "window_ms": 500.0,
+    "stiffness_N_m": 964,
+    "delay_ms": 230.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": 9.378504134762572e-05,
+      "route_band_seen_N": -1.0198664391176948e-05,
+      "route_tracking_rmse_N": -8.477832855513512e-06,
+      "first_seat_peak_physical_N": 0.005450673061144329,
+      "first_seat_peak_seen_N": 0.005172835886963156,
+      "max_delta_command_mm": 0.012642508946306807,
+      "min_force_mean_hand_N": -0.006201118249341331
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "window_ms": 100.0,
+    "stiffness_N_m": 680,
+    "delay_ms": 170.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.0004032503437492868,
+      "route_band_seen_N": -0.00037574296027305387,
+      "route_tracking_rmse_N": 9.081305460628686e-05,
+      "first_seat_peak_physical_N": 0.00027875496125684407,
+      "first_seat_peak_seen_N": 0.00035471995727753836,
+      "max_delta_command_mm": 0.0032942132528550883,
+      "min_force_mean_hand_N": -0.00021622790230901856
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "window_ms": 100.0,
+    "stiffness_N_m": 964,
+    "delay_ms": 230.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.0005966362145523596,
+      "route_band_seen_N": -0.0005740081824990584,
+      "route_tracking_rmse_N": 0.00031570481994669386,
+      "first_seat_peak_physical_N": 0.0008043847025049899,
+      "first_seat_peak_seen_N": 0.0010072090834976066,
+      "max_delta_command_mm": 0.002605056428825303,
+      "min_force_mean_hand_N": 0.0003552517969591662
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "window_ms": 500.0,
+    "stiffness_N_m": 680,
+    "delay_ms": 170.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": -0.00022966133195655158,
+      "route_band_seen_N": -0.00011540667946668276,
+      "route_tracking_rmse_N": 0.00020651796173670744,
+      "first_seat_peak_physical_N": 7.956652304041967e-05,
+      "first_seat_peak_seen_N": 8.209241708634352e-06,
+      "max_delta_command_mm": 0.005670477630870807,
+      "min_force_mean_hand_N": -0.00011694094081926565
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "window_ms": 500.0,
+    "stiffness_N_m": 964,
+    "delay_ms": 230.0,
+    "metric_difference_2p5ms_minus_5ms": {
+      "route_band_physical_N": 0.0001258884321792969,
+      "route_band_seen_N": 1.4010786467351377e-05,
+      "route_tracking_rmse_N": 0.00043554038473253565,
+      "first_seat_peak_physical_N": 0.004017410910009289,
+      "first_seat_peak_seen_N": 0.003514280121419411,
+      "max_delta_command_mm": 0.0003251631133971422,
+      "min_force_mean_hand_N": 0.0
+    }
+  }
+]

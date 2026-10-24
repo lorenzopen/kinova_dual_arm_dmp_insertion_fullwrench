@@ -1,0 +1,55 @@
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[x=1mm,y=1mm,>=Latex,font=\small,line width=0.5pt]
+\definecolor{haptionleft}{HTML}{1F6FB2}
+\definecolor{haptionright}{HTML}{D9622B}
+% Three compact panels: devices, numerical coupling and simulated bodies.
+\draw[rounded corners=2mm,fill=haptionleft!4,draw=black!65] (0,0) rectangle (43,37);
+\draw[rounded corners=2mm,fill=black!3,draw=black!65] (52,0) rectangle (95,37);
+\draw[rounded corners=2mm,fill=haptionright!4,draw=black!65] (104,0) rectangle (147,37);
+\node at (21.5,32) {Two Haption interfaces};
+\node at (73.5,32) {Virtual coupling};
+\node at (125.5,32) {Bullet simulation};
+% Stylised articulated devices; these are explanatory silhouettes, not CAD.
+\foreach \x/\col/\side in {0/haptionleft/L,21/haptionright/R}{
+  \begin{scope}[shift={(\x,0)}]
+  \draw[fill=black!13,draw=black!55,rounded corners=0.5mm] (3,7) rectangle (15,10);
+  \draw[draw=\col!75!black,line width=1.3pt,line cap=round,line join=round]
+    (8,10)--(5,17)--(12,23)--(17,20);
+  \foreach \p in {(8,10),(5,17),(12,23)}
+    \filldraw[fill=white,draw=\col!75!black] \p circle (1mm);
+  \draw[draw=\col,line width=2pt,line cap=round] (16,18)--(18,22);
+  \node[text=\col,font=\footnotesize] at (9,3.5) {\side};
+  \end{scope}
+}
+% Spring and damper icon, standing for the two six-axis coupling channels.
+\draw[draw=haptionleft,line width=0.8pt]
+  (57,21)--(61,21)--(63,24)--(66,18)--(69,24)--(72,18)--(75,24)--(78,18)--(81,21)--(90,21);
+\draw[draw=haptionright,line width=0.8pt] (57,12)--(69,12);
+\draw[draw=haptionright,line width=0.8pt] (69,9)--(69,15)--(78,15) (69,9)--(78,9);
+\draw[draw=haptionright,line width=0.8pt] (75,9)--(75,15) (75,12)--(90,12);
+\draw[draw=black!60] (57,12)--(57,21) (90,12)--(90,21);
+\node[font=\footnotesize] at (73.5,4) {spring and damper};
+% Two opposing proxies and the body they touch.
+\draw[fill=black!12,draw=black!60,rounded corners=0.5mm] (121,10) rectangle (130,26);
+\draw[fill=haptionleft!22,draw=haptionleft,rounded corners=0.7mm] (113,15) rectangle (117,22);
+\draw[fill=haptionright!22,draw=haptionright,rounded corners=0.7mm] (134,15) rectangle (138,22);
+\draw[->,draw=haptionleft,line width=0.8pt] (117,18.5)--(121,18.5);
+\draw[->,draw=haptionright,line width=0.8pt] (134,18.5)--(130,18.5);
+\node[font=\footnotesize] at (125.5,4) {proxies and object};
+\draw[->] (43,18.5)--(52,18.5);
+\node[font=\scriptsize] at (47.5,23) {pose};
+\draw[->] (95,18.5)--(104,18.5);
+\node[font=\scriptsize] at (99.5,23) {wrench};
+% Rendered feedback and logging are distinct branches.
+\draw[rounded corners=1.5mm,fill=haptionleft!5,draw=black!65] (52,-27) rectangle (95,-11);
+\node[align=center,font=\footnotesize] at (73.5,-19) {Filter, scale and clip\\displayed reaction};
+\draw[rounded corners=1.5mm,fill=black!3,draw=black!65] (104,-27) rectangle (147,-11);
+\node[align=center,font=\footnotesize] at (125.5,-19) {HDF5 log\\poses and spring wrenches\\contact data};
+\draw[->] (125.5,0)--(125.5,-11);
+\draw[->] (109,0)--(109,-6)--(99,-6)--(99,-19)--(95,-19);
+\draw[->] (52,-19)--(21.5,-19)--(21.5,0);
+\node[font=\scriptsize] at (36.5,-15.5) {felt reaction};
+\end{tikzpicture}
+\caption{Recording architecture, with schematic device silhouettes. The left and right interfaces are blue and orange, as in the wrench plots. Mapped device poses set the targets of numerical spring--damper couplings; these drive the simulated proxies against the object. The operator receives a filtered, scaled and clipped reaction. The log retains the spring-wrench signals and contact data separately from that displayed feedback.}
+\label{fig:recording}
+\end{figure}

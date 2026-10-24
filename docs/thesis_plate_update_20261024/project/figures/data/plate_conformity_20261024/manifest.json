@@ -1,0 +1,68 @@
+{
+  "kind": "Illustrative fixed-flange contact bench",
+  "sources": [
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\lorenzo_data_analysis\\10_tripad_passivo\\spider_ee\\floating_plate.py",
+      "sha256": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\lorenzo_data_analysis\\10_tripad_passivo\\lib\\tool.py",
+      "sha256": "c0a2440793d2820133e0d8b16d011094fdac41d5d279bf9c62309869ba8cdeb9"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\thesis_plate_update_20261024\\bench_plate.py",
+      "sha256": "cf386a78370cf4f4c2fa89548a245449fd3de72a70f9c23374eafb15d249bb40"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\thesis_plate_update_20261024\\render_views.py",
+      "sha256": "ff7993d881c0b3bfddf6e59fa5d5c0d7b919fc78a9c1d9cf4046c5ab4dbc373b"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\thesis_plate_update_20261024\\bench\\results.json",
+      "sha256": "b6c3bcdf62fe254c2d7446ba4e6bc13ed337154ac7b758e87a5f61ed1338f498"
+    }
+  ],
+  "renderer": "PyBullet TinyRenderer, recorded flange/plate poses; visual-only front-facet tints",
+  "files": [
+    {
+      "path": "faceted_first_load.png",
+      "sha256": "829888e05901649ce65d48b708d10b2da309f3d014a8cdd5c74f1adecf1de5f5"
+    },
+    {
+      "path": "faceted_settled.png",
+      "sha256": "94c0c503836979f0aa5e5a3ef94d2d15359b7c2b37bf5ff561631f9373480a95"
+    },
+    {
+      "path": "faceted_trace.csv",
+      "sha256": "155988b35279e688608aa6df9398f05bd78e2881c2ff71c13e8f42d9843d41ff"
+    },
+    {
+      "path": "flat_first_load.png",
+      "sha256": "652c900e632565a3ff842d479a853299b465caf6e09acfd8997bd64e8ce888f3"
+    },
+    {
+      "path": "flat_settled.png",
+      "sha256": "5fad34aeb440fb1b0bfec187caa03e484cbd90e508c05b7f0e140853fcf85aa6"
+    },
+    {
+      "path": "flat_trace.csv",
+      "sha256": "f4e6e816d0f13463629694e055657e8ea18ec44a31037ae92f111c0e094df7ec"
+    },
+    {
+      "path": "results.json",
+      "sha256": "b6c3bcdf62fe254c2d7446ba4e6bc13ed337154ac7b758e87a5f61ed1338f498"
+    },
+    {
+      "path": "tilted_first_load.png",
+      "sha256": "38bb42f2835ddde3bad9683645cec2fd545c2aeb9cf9e28e4b9cf1e227383fa2"
+    },
+    {
+      "path": "tilted_settled.png",
+      "sha256": "bae2d4160db71a37bc41a59e29624cc333e3fc9550f6fd01c2e04790100de20e"
+    },
+    {
+      "path": "tilted_trace.csv",
+      "sha256": "344f6ca6e572bef3f85fabb82293912aacdc9a108c511d213789f17239260362"
+    }
+  ]
+}

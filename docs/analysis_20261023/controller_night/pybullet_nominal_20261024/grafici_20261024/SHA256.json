@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "path": "01_forze_reale_simulazione.png",
+      "sha256": "32177b2270bb6183f48f6f56bcfb0b55ae81065200d6ef8bdc67204b94deb874"
+    },
+    {
+      "path": "02_errori_target.png",
+      "sha256": "f8c5f5a5b5f1e38b124987d0bf13bc64fde922e37ae3b99fa43a1fb9826fe0c2"
+    },
+    {
+      "path": "03_zoom_oscillazioni_Z.png",
+      "sha256": "5ac91e725500234bca232de4c9869126a04417356079a16e09f6d0c788945c36"
+    },
+    {
+      "path": "04_coppie_polsi.png",
+      "sha256": "dcb9692eb1ca3ca82f3d873163eec9f09701c92e87fe4b15a71a9a46f735cc4d"
+    },
+    {
+      "path": "05_impedenza_originale_forze_coppie.png",
+      "sha256": "31b854947e75312cff80a07316da1d852c82c12fa0562dd6675480de59904525"
+    },
+    {
+      "path": "GRAFICI.md",
+      "sha256": "57fc7b353162df1d040c3edf1de807cb7ead22b033cb7a0bc332de1b79c9b55f"
+    },
+    {
+      "path": "L_socp_wrench.png",
+      "sha256": "88d4d028f1a720c98090aac05f34528710c7c6a1fa3d254cb5849766c7d29c33"
+    },
+    {
+      "path": "L_wrist_wrench.png",
+      "sha256": "d160d9ff9367168d0d7004636fefc51e7fec7eae950d2785250dbcf3fee8015d"
+    },
+    {
+      "path": "metriche.csv",
+      "sha256": "f519cb5612509480a6f58286905354174c2b9807f5125dbbe1ce2c490ca1f12c"
+    },
+    {
+      "path": "metriche.json",
+      "sha256": "b33b0bb02505f260baff49925bdc0e2a6bb49b3dc21dd1dac596d2ced82d85d4"
+    },
+    {
+      "path": "originale_sei_componenti.png",
+      "sha256": "f38e9a1416c3377af4c032d8bcc7e756c7c1956a8b6cb95a278f87e7981ba881"
+    },
+    {
+      "path": "Z_socp_wrench.png",
+      "sha256": "01d9228a77ef089f5641da8a701edc036c45398aa7cfe66411979327e58ea490"
+    },
+    {
+      "path": "Z_wrist_wrench.png",
+      "sha256": "cf558cc2e3ab1bcc4376ac7b56580ca09eb1de5a269f785922653a7e79418db6"
+    }
+  ],
+  "source_sha256": "1510ea94f2f4fbb15b0103eed7427bf9854e79767d9a4ec0268aa88dfc408c3d",
+  "inputs": [
+    {
+      "run": "Gen3_Z_central2700_implicit_dt025",
+      "trace_sha256": "778e7c8e0bb91de2d8e404eae9532da3dac9f417ce74e8450f6b63562ade7c7f"
+    },
+    {
+      "run": "Gen3_L_central2700_implicit_dt05",
+      "trace_sha256": "a3fc7302feb84e3df9a71f4ad0d1afb45c63b49f16b152cef014cfe43c02d9b3"
+    },
+    {
+      "run": "Gen3Lab_Z_central2700_warm_dt025",
+      "trace_sha256": "8dc43d11644f65ce577e26358d908942249bcdaae8e08b9fcb24caf3b02b0929"
+    }
+  ]
+}

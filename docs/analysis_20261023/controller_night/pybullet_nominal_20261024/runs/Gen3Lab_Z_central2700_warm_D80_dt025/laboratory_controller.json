@@ -1,0 +1,189 @@
+{
+  "source": {
+    "created_utc": "2026-10-24T03:46:47.839534+00:00",
+    "source": "C:\\Users\\Lorenzo\\Downloads\\kinova_controller_pkgs-20261012T072226Z-1-001\\kinova_controller_pkgs\\kinova_control\\scripts\\kinova_controller.py",
+    "source_sha256": "685c80b14b527d450d6d42a03f779d04f928a4e2d31d22b44c9733d7a98cbfba",
+    "source_lines": 2092,
+    "matches_user_summary": "2092 lines; Cartesian class462, compute_torque563, defaults and main loop agree",
+    "deployed_NVIDIA_hash_verified": false,
+    "extraction": "AST selects pure classes/functions, source text preserved verbatim; ROS/Kortex node is not imported",
+    "segments": [
+      {
+        "name": "ControlMode",
+        "start_line": 93,
+        "end_line": 95,
+        "sha256": "6d9616fcc8b74432c82378c8d3f9c4b0872e71c33ee4686a2502c17a8602bc26"
+      },
+      {
+        "name": "angle_diff",
+        "start_line": 102,
+        "end_line": 113,
+        "sha256": "36e9b5bffa96fa23ceddb4ecc84134c96abe11c1e08235bf2b3d5605d5901684"
+      },
+      {
+        "name": "URDFStribeckFriction",
+        "start_line": 120,
+        "end_line": 225,
+        "sha256": "8848c4d54bcad0af41cc48459851d7cf37544b0c001ab362a1d40ebbc55f1b08"
+      },
+      {
+        "name": "OnlineKalmanState",
+        "start_line": 232,
+        "end_line": 345,
+        "sha256": "201d53701dedf440fff15d2e6c5186edd5cb79d0c841b59ffd588c49a76cd5fd"
+      },
+      {
+        "name": "JointSpaceController",
+        "start_line": 352,
+        "end_line": 455,
+        "sha256": "3433e62d9e646c3cd18e50fb6ea6e75e879f9746119e6de63a37c3b6547f71f8"
+      },
+      {
+        "name": "CartesianImpedanceController",
+        "start_line": 462,
+        "end_line": 690,
+        "sha256": "65a6d17fa9f9345071de3121b13f3fc5bfda3c61e8ee543fbfa7b93c73c9d961"
+      }
+    ],
+    "generated_sha256": "e1db8749b9b367602bd109323b598f913cdbbf8074fe8ba868853cb0cc047677",
+    "literal_node_defaults": {
+      "ee_frame": "tool_frame",
+      "max_torque": [
+        35.0,
+        35.0,
+        35.0,
+        35.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "control_hz": 1000.0,
+      "initial_mode": "cartesian",
+      "cart_k": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cart_d": [
+        0.1,
+        0.1,
+        0.1,
+        0.05,
+        0.05,
+        0.05
+      ],
+      "joint_damping": 0.001,
+      "filter_hz": 100.0,
+      "teleop_lin_scale": 0.001,
+      "teleop_rot_scale": 0.001,
+      "joint_kp": [
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "joint_kd": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "null_space_stiffness": 0.0,
+      "null_space_q_ref": [
+        0.0,
+        0.35,
+        3.14,
+        -1.5,
+        0.0,
+        1.05,
+        1.57
+      ],
+      "friction_enable": false,
+      "friction_urdf_path": "",
+      "friction_scale": 0.0,
+      "stribeck_use_offset": true,
+      "kalman_enable": true,
+      "kalman_r_q": 1e-06,
+      "kalman_r_dq": 2.5e-05,
+      "kalman_q_ddq": 1.0,
+      "gripper_enable": true,
+      "home_on_start": true,
+      "home_joint_angles": [
+        0.0,
+        0.2618,
+        3.1241,
+        4.0143,
+        6.2832,
+        0.9599,
+        1.5708
+      ],
+      "home_seconds": 5.0,
+      "tau_slew_per_tick": 0.5,
+      "velocity_watchdog_limit": 2.0,
+      "velocity_watchdog_ticks": 20,
+      "friction_ramp_seconds": 3.0
+    },
+    "friction_note": "Local robot.launch.py enables friction but does not override source friction_scale default0. Missing deployed gen3_bare.urdf is immaterial only at scale0; do not invent nonzero compensation."
+  },
+  "pinocchio_version": "4.1.0",
+  "control_hz": 1000,
+  "cart_k": [
+    1500,
+    1500,
+    1500,
+    20,
+    20,
+    20
+  ],
+  "cart_d": [
+    80.0,
+    80.0,
+    80.0,
+    7,
+    7,
+    7
+  ],
+  "joint_damping": 0.001,
+  "max_torque": [
+    35,
+    35,
+    35,
+    35,
+    12,
+    12,
+    12
+  ],
+  "filter_hz": 100,
+  "kalman": {
+    "r_q": 1e-06,
+    "r_dq": 2.5e-05,
+    "q_ddq": 1.0
+  },
+  "tau_slew_per_tick": 0.5,
+  "velocity_watchdog_limit": 2.0,
+  "velocity_watchdog_ticks": 20,
+  "friction_enable": true,
+  "friction_scale": 0.0,
+  "friction_ramp_seconds": 3.0,
+  "null_space_stiffness": 0.0,
+  "q_feedback": "Exact simulated joint states converted through degree/radian and0..360 Kortex convention; no invented noise",
+  "transport": "No ROS/Kortex network; deterministic1kHz sample/hold, outer100Hz/FFI50Hz",
+  "dynamics": "Bullet actual arms+compliant plate; original unsplit150g URDF used by Pinocchio controller, as laboratory launch",
+  "startup": {
+    "pose": "Grasp open pose, homing trajectory not simulated",
+    "kalman_covariance_constant_pose_warm_seconds": 2.0,
+    "previous_command": "Nominal gravity",
+    "RC": "Zero actual starting velocity"
+  },
+  "copied_loop_features": "watchdog, friction ramp, Kalman then Cartesian class, slew, finite check",
+  "limitations": "Source hash on currently deployed NVIDIA not confirmed; gen3_bare friction file unavailable but scale0 makes it inactive; no actuator gear/rotor/friction plant identification"
+}

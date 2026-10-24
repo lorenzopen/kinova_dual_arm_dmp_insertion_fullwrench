@@ -1,0 +1,166 @@
+\chapter{Experimental Evidence and Its Limits}
+\label{ch:evidence}
+
+The experiments are organized around the interfaces of the pipeline. The first asks whether the apparatus transmits the moment that learning uses. The second asks whether more squeeze improves a compliant grasp. The third asks whether the current optimization can represent finite contact forces without confusing a solved problem with an executable grasp. The final application asks whether a trajectory learned in one environment transfers to the actual insertion apparatus.
+
+The evidence in this chapter comes from saved analyses and a dated source snapshot. The blind geometry campaign, completed on 5 October 2026, is reported in Chapter~\ref{ch:geometry} and referred to here where it supersedes a pilot; insertion campaigns still running during manuscript preparation are not incorporated. Haption demonstrations involve a physical operator and physical haptic devices coupled to a simulated object. Passive-tool and insertion measurements discussed here are simulation studies unless stated otherwise. They are not demonstrations on two industrial robot arms.
+
+\section{Recording quality in session C}
+
+The valid prior is trained from thirteen unperturbed runs, 024--036. The saved session-C report provides the data-quality measures in Table~\ref{tab:session-c}. These measurements characterize the retained recording apparatus before any claim is made about a controller using its prior.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lr@{}}\toprule
+Session-C measure & Recorded value \\\midrule
+Unperturbed runs & 13\\
+Rotational coupling & 40 Nm/rad\\
+Mean active pads & 5.01 of 6\\
+Samples with all six pads & 30.9\%\\
+Usable samples under the stated drift filter & About 90\%\\
+Display saturation & About 1.1\%\\
+Samples beyond $60^\circ$ tilt & 2.7\%\\
+95th percentile of gravity tilt & $55^\circ$\\
+Reported inertial/applied moment ratio & 0.40\%\\
+\bottomrule\end{tabular}
+\caption{Session-C quality indicators transcribed from the saved analysis. The percentages have different definitions and should not be combined into one quality score.}
+\label{tab:session-c}
+\end{table}
+
+The inertial-moment ratio supports the quasi-static interpretation of the recorded task. It does not validate every sample or every later trajectory. The all-six-pad percentage also shows why the prior should not be described as a six-contact distribution at every instant. The drift filter retains useful portions of runs that contain slip instead of silently discarding the entire difficult run.
+
+The empirical gravity coverage is limited. The report describes useful coverage within the moderate-tilt region, with a $55^\circ$ 95th percentile and a small tail beyond $60^\circ$. The distinction between a percentile and an absolute bound matters. ``Supported up to approximately $55^\circ$'' is appropriate; ``trained uniformly over all orientations'' is not.
+
+\section{The coupling wrench is the spring signal}
+
+The saved comparison reports a ratio of logged moment magnitude to stiffness times angular deflection of approximately one in every recording group. This confirms the definition of the logged channel. Table~\ref{tab:coupling-groups} lists the apparatus indicators.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Group & $K_{p,R}$ & Deflection & Median $|\tau|$ & Pads/6\\
+& Nm/rad & degrees & Nm & \\\midrule
+Earlier recording & 0.5 & 31.4 & 0.27 & 6.00\\
+Session A & 60 & 1.10 & 1.15 & 4.64\\
+Session B & 40 & 1.92 & 1.34 & 4.72\\
+Session C & 40 & 1.74 & 1.22 & 5.01\\
+\bottomrule\end{tabular}
+\caption{Saved comparison of rotational coupling and recording transmission. These are apparatus-specific summaries. The median-moment statistic differs from other moment summaries in the session report.}
+\label{tab:coupling-groups}
+\end{table}
+
+The compliant configuration has the best contact count and the lowest transmitted moment. Relative to the session-C median, $0.27/1.22\simeq22\%$. This ratio quantifies attenuation in this comparison; it is not a universal transfer function of a spring with stiffness $0.5$ Nm/rad.
+
+Mechanically, the proxy can rotate toward the object and reduce the required spring deflection. That helps the pads remain seated. Statistically, it reduces the recorded torsional variation. The apparent improvement in grasp quality therefore changes what the learning algorithm can observe.
+
+\section{Directional UCM-related coordination index}
+
+The comparison evaluates residual hand moments in a grasp basis, following the task-equivalent-variation interpretation in Section~\ref{sec:ucm-prior}. The scalar below is the implemented difference-mode index, not the classical whole-space UCM variance ratio~\cite{scholz1999}. Residuals are formed within gravity-direction cells so that deterministic load changes with orientation do not dominate the covariance. The matched analysis restricts the comparison to common cells.
+
+Let $C_{LL},C_{RR}$ be the residual covariance blocks and $C_{LR}$ their symmetrized cross-covariance. For direction $\vect n$, the implemented index is
+\begin{equation}
+r(\vect n)=1-
+\frac{2\vect n^\top C_{LR}\vect n}
+{\vect n^\top C_{LL}\vect n+\vect n^\top C_{RR}\vect n}.
+\label{eq:directional-r}
+\end{equation}
+Equivalently, it is the variance of the projected difference between the hands divided by the sum of their projected variances. Independent residuals give $r=1$. Positive covariance reduces $r$, indicating suppression of the difference mode. Negative covariance raises it, indicating more variation in that mode. The names ``retained'' and ``free'' describe this relative variance, not an absence or presence of a physical constraint.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lcc@{}}\toprule
+Residual direction & $K_{p,R}=0.5$ & $K_{p,R}=40$\\
+\midrule
+Torsion along grasp axis & 0.61 [0.34, 0.94] & 1.42 [1.29, 1.54]\\
+Moment along $v$ & 0.15 [0.10, 0.23] & 0.99 [0.68, 1.26]\\
+Moment along $w$ & 0.72 [0.60, 0.87] & 0.84 [0.63, 1.08]\\
+\bottomrule\end{tabular}
+\caption{Directional indices and reported confidence intervals from the matched saved analysis. The high-stiffness comparison combines the documented qualifying runs of sessions B and C; it is not the thirteen-run training set alone.}
+\label{tab:ucm-comparison}
+\end{table}
+
+\thesisfigure[0.80]{ch08_evidence/torsional_index.pdf}{Torsional difference-mode indices reconstructed from Table~\ref{tab:ucm-comparison}. Error bars reproduce the reported confidence intervals. The unit reference marks independent residuals. No new statistical fit is represented.}{fig:torsional-index}
+
+The torsional index changes from below to above one, with disjoint reported intervals. The saved run-level Mann--Whitney comparison gives $p=4.4\times10^{-4}$ for seventeen earlier runs and nineteen qualifying high-stiffness runs. Run-level distributions overlap; the result is not that every individual run changes class.
+
+The force-direction indices remain high in both groups. In a settled lift, the net force is constrained by weight, so opposing hand fluctuations are expected. That agreement is a useful consistency check on frames and signs. It does not independently establish a sophisticated human synergy, because the force balance itself constrains the resultant.
+
+\section{Effect on the learned cost}
+
+The older model's moment scale is reported as $0.158$ Nm, compared with $0.716$ Nm for the valid session-C model. Their squared inverse-scale ratio is
+\begin{equation}
+\left(\frac{0.716}{0.158}\right)^2\simeq20.5.
+\end{equation}
+This explains the approximately twenty-one-fold scalar precision difference noted in the project. It is a scale-level comparison, not a claim that every eigenvalue of the full twelve-dimensional precision changes by the same factor.
+
+A controller using the earlier precision would penalize torsional deviations as if they were much more repeatable. The issue is not solved by loading a model with the right matrix dimensions. The dataset, apparatus settings and output conventions must match the intended controller.
+
+\section{A force ladder on one compliant grasp}
+
+The documented comparison applies different per-hand squeeze levels to the same object and compliant-wrist setup.
+
+\begin{table}[htbp]\centering
+\begin{tabular}{@{}rl@{}}\toprule
+Squeeze per hand & Documented terminal outcome\\
+\midrule
+105 N & Object expelled during lift\\
+30 N & Transport reached\\
+21 N & Complete pipeline reached\\
+\bottomrule\end{tabular}
+\caption{Force ladder on the same documented case. It establishes non-monotonic behaviour in that setup; it is not a population success-rate experiment.}
+\label{tab:force-ladder}
+\end{table}
+
+The mechanism is consistent with Equation~\eqref{eq:force-tilt}. Squeeze can deflect the wrist, move the pads and worsen opposition. If rejection invokes a stronger fallback, the resulting loop reinforces the geometric defect. The highest force can therefore fail before the lower-force run.
+
+The experiment supports the statement that force is not a free safety parameter. It does not determine a unique optimal squeeze for every object, nor does it show that $21$ N is generally sufficient. A replicated paired campaign would be needed to map the stable force range against wrist stiffness, contact geometry and load.
+
+\section{Checks on the mathematical implementation}
+
+The source audit verifies that the current optimizer includes per-pad cones, per-pad force caps, zero forces for inactive pads, positive effort on all eighteen contact variables and measured equilibrium slack. The prior query includes the between-component covariance term, physical rescaling and right-hand unmirroring. The estimator preserves prior uncertainty in unobserved directions.
+
+Appendix~\ref{app:math} supplies numerical checks of the corresponding identities. These checks establish algebraic consistency, not physical validation. In particular, they do not establish that a scalar squeeze loop realizes the force vectors selected by the optimizer.
+
+The weakest execution interface is therefore the difference between allocated and realized wrench. An accepted allocation should be accompanied by measured force error, moment error, contact utilization and the fraction of ticks using fallback. An \sourcefile{optimal} solver status alone is not a sufficient experimental outcome. The geometry campaign records all four on every control tick: on the floating plate the realized force error has a median of 3.6 N and the moment error 0.065 Nm (Table~\ref{tab:prior-ablation}), and the independent constraint audit of Table~\ref{tab:socp-audit} never rejected a solution the solver had accepted.
+
+\section{Preliminary passive-plate campaign}
+
+Two saved summary files contain eighteen jittered objects each, six per family. The comparison changes whether the triangular plate carries a collision shape. The values in Table~\ref{tab:plate-pilot} are direct counts from copied CSV files in the manuscript evidence folder.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+Plate configuration & Recorded objects & Held & Estimator abstentions\\
+\midrule
+Visual plate, sphere contacts & 18 & 18 & 0\\
+Colliding plate & 18 & 18 & 1\\
+\bottomrule\end{tabular}
+\caption{Counts in the saved pilot summaries. ``Held'' is the recorded pipeline flag, not a verified final placement outcome. The colliding-plate arm includes a possible extra load path and is not validation of a six-point contact model.}
+\label{tab:plate-pilot}
+\end{table}
+
+These counts are not the final geometry campaign. They do not establish unseen-shape generalization, nor do they compare rigid and passive tools. Their immediate use is to expose a model violation: a plate can help hold an object while invalidating the force set supplied to the estimator. A good visible outcome can therefore coexist with an invalid measurement model.
+
+The pilot is superseded by the geometry campaign of Chapter~\ref{ch:geometry}: frozen populations with a manifest of every generator draw, the contact audit of Table~\ref{tab:plate-collision}, the constraint audit of Table~\ref{tab:socp-audit}, and a paired three-tool comparison on 182 bodies (Tables~\ref{tab:geo-mortality} and~\ref{tab:geo-paired}). Every planned run is in the ledger: 1456 runs, including two declared sensor-noise arms, none crashed and none missing. The generator rejected 21 polytope draws for size, a precondition of the arm opening and workspace; 2 more fell outside the declared face range, and nothing else was excluded. Three runs killed by an operating-system restart were rerun from scratch, and an earlier full launch, archived whole, reproduced every pre-release quantity of the 852 runs it shares with the final one exactly. The pilot's central observation survives on the population: the colliding plate places nearly as many bodies as the clean one while breaking the estimate on most polytopes.
+
+\section{How failures will be reported}
+
+Every object enters the ledger before approach. The report records first failure at approach, seating, lift, estimation, reorientation, transport or release. Estimator abstention is recorded separately from physical loss of the object. An abstention is an honest lack of information, but it still prevents completion when the next stage requires a three-dimensional estimate.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lp{0.57\textwidth}@{}}\toprule
+Stage & Quantity to record before final aggregation\\
+\midrule
+Population construction & Generated bodies, numerical rejections and apparatus exclusions.\\
+Approach and seating & Bodies attempted, contact masks and non-pad contacts.\\
+Lift & Drops, expulsions, accepted SOCP ticks and fallback use.\\
+Estimation & Accepted samples, observed directions, clipping and abstentions.\\
+Reorientation and transport & Contact losses, wrench errors and force peaks.\\
+Release & Final pose error after hands are clear and the object has settled.\\
+\bottomrule\end{tabular}
+\caption{Reporting ledger. The geometry campaign reports every row (Chapter~\ref{ch:geometry}); no unmeasured stage count is filled in.}
+\label{tab:mortality-protocol}
+\end{table}
+
+The scientific value of this reporting is causal. A population that never seats the tool is different from a population that seats it and later loses the object through wrist deflection. Conditioning on survivors would combine those mechanisms and inflate the apparent performance of later stages.
+
+\section{Interpretation}
+
+The strongest established findings concern apparatus dependence. Rotational compliance changes the recorded signal; squeeze changes the realized geometry; and additional unmodelled contact can improve holding while breaking estimation. These findings motivate the architecture. Claims about the net benefit of the human prior, arbitrary-shape handling and held-out insertion performance remain tied to their own controlled comparisons.
+

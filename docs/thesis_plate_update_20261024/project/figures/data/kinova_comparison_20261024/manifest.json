@@ -1,0 +1,163 @@
+{
+  "repository": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench",
+  "evidence_class": "Measured real traces and autonomous simulation; no real-force replay",
+  "cases": {
+    "Z": "Gen3_Z_central2700_implicit_dt025",
+    "L": "Gen3_L_central2700_implicit_dt05"
+  },
+  "real_times": {
+    "Z": "20261023_174143",
+    "L": "20261023_182743"
+  },
+  "sources": [
+    {
+      "path": "docs\\runs\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143.csv",
+      "sha256": "c605fb75dbee7a443b8e10d509b0b77ff266c1138d96670b1f5f1084e21beeb1",
+      "bytes": 10549161
+    },
+    {
+      "path": "docs\\runs\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_meta.json",
+      "sha256": "2ef377ba948a192619c3f0e0db31a5b7e1672405ff452b1f848c46f7146c187e",
+      "bytes": 9021
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_Z_central2700_implicit_dt025\\trace.npz",
+      "sha256": "778e7c8e0bb91de2d8e404eae9532da3dac9f417ce74e8450f6b63562ade7c7f",
+      "bytes": 9064644
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_Z_central2700_implicit_dt025\\result.json",
+      "sha256": "9ab792a6e010492163e89efdb2c07ee5d43961b07af7948e3c00b8ccc88690ac",
+      "bytes": 4299
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_Z_central2700_implicit_dt025\\profile.csv",
+      "sha256": "c50d13d17137db665526da262f060c5dbb3bcbb32f3235b503ecb9621e118637",
+      "bytes": 335334
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_Z_central2700_implicit_dt025\\runner_source.py",
+      "sha256": "fb699be28ca91620db31109039f0a6ba32a0f023ab6a1c9f3227a9ec7c133339",
+      "bytes": 16773
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_Z_central2700_implicit_dt025\\robot_used.urdf",
+      "sha256": "7418ba3b59b2532d62448a66e2765888d2c884fe39c5685e2722e777a0aa7165",
+      "bytes": 11898
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_Z_central2700_implicit_dt025\\socp_allocations.json",
+      "sha256": "f6e77533931ab7cef9bb7e3e8bd294c09f2011826df6d874e81cd2cdae5ed766",
+      "bytes": 1585743
+    },
+    {
+      "path": "docs\\runs\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743.csv",
+      "sha256": "3b1c436ab45db871c78852a1bca1869123e5fe15295cb59aef6c80a995104fe9",
+      "bytes": 11194743
+    },
+    {
+      "path": "docs\\runs\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_meta.json",
+      "sha256": "54931c039cb63f0d55c7bccafe773bff88c7f9ca87066f5d3cfa0c513a2553c5",
+      "bytes": 9026
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_L_central2700_implicit_dt05\\trace.npz",
+      "sha256": "a3fc7302feb84e3df9a71f4ad0d1afb45c63b49f16b152cef014cfe43c02d9b3",
+      "bytes": 9867092
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_L_central2700_implicit_dt05\\result.json",
+      "sha256": "e33713ade046001c5778f923a95b645594f1885ac23d5e73e7e6fc6c5a1d4611",
+      "bytes": 4268
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_L_central2700_implicit_dt05\\profile.csv",
+      "sha256": "c923c8b645bf2d3e8665f92e905404caee8089ea3e731a00efdd859492807f77",
+      "bytes": 377652
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_L_central2700_implicit_dt05\\runner_source.py",
+      "sha256": "fb699be28ca91620db31109039f0a6ba32a0f023ab6a1c9f3227a9ec7c133339",
+      "bytes": 16773
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_L_central2700_implicit_dt05\\robot_used.urdf",
+      "sha256": "7418ba3b59b2532d62448a66e2765888d2c884fe39c5685e2722e777a0aa7165",
+      "bytes": 11898
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3_L_central2700_implicit_dt05\\socp_allocations.json",
+      "sha256": "0a526ae0e6b22a0525f9118daf60ec80ba2c8d9803fe0048f7949b0886b6c1f5",
+      "bytes": 1797574
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3Lab_Z_central2700_warm_dt025\\trace.npz",
+      "sha256": "8dc43d11644f65ce577e26358d908942249bcdaae8e08b9fcb24caf3b02b0929",
+      "bytes": 35126
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3Lab_Z_central2700_warm_dt025\\result.json",
+      "sha256": "2e4136e5c948a659a9307fcd04833dfa9cb882f8300a80eaf9242385c6f8e4a4",
+      "bytes": 4921
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\runs\\Gen3Lab_Z_central2700_warm_dt025\\runner_source.py",
+      "sha256": "9cc8c053e6a3e4c7e55a9431b653101f3159c710f177add969286f1e1ff6b98e",
+      "bytes": 11430
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\gen3\\lab_source\\kinova_controller_original.py",
+      "sha256": "685c80b14b527d450d6d42a03f779d04f928a4e2d31d22b44c9733d7a98cbfba",
+      "bytes": 100365
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\gen3\\run_lab_impedance.py",
+      "sha256": "9cc8c053e6a3e4c7e55a9431b653101f3159c710f177add969286f1e1ff6b98e",
+      "bytes": 11430
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\gen3\\user_reference_check.json",
+      "sha256": "948d33fc3c8fe34caf4a83ce8d1aa1de0490bb6a42258a4ef828331e3e10ee8b",
+      "bytes": 799
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\gen3\\lab_model_checks.json",
+      "sha256": "17f54735f9863723f851c166ec248060dc774a07ac9f3301a5b01622a1977c92",
+      "bytes": 15545
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\damping80_20261024\\results.json",
+      "sha256": "d851cf19c12d2f7d668be9d18077e8a589c6472978e825d7b20dc433f0a98020",
+      "bytes": 11009
+    },
+    {
+      "path": "docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\gen3\\rigid_pin_hold_comparison.png",
+      "sha256": "0de9d08156baafba4e3864722431528b0c1af732add61f361c1aa38f8a469865",
+      "bytes": 82100
+    }
+  ],
+  "plotting": "Own departure clocks; unwarped signals; same paired axes; no display smoothing",
+  "metrics": "Route stage; own 100 Hz interpolation; third-order Butterworth forward-backward bandpass",
+  "local_arrays": [
+    {
+      "path": "L_real.npz",
+      "sha256": "75ca9b45cda49dc988f54b8591ac8d25f6ce5b378acac686c42fe8d97d46752e"
+    },
+    {
+      "path": "L_sim.npz",
+      "sha256": "e5a2f16ff5311ec59c91fccdb6ea79709f100497654fc4c9b96dba8cb8cfd8d6"
+    },
+    {
+      "path": "original_source_stop.npz",
+      "sha256": "3d20cbe71aeb41074d07702bdc7881a760b56ebdde9a85f8ff24d11eff239b06"
+    },
+    {
+      "path": "Z_real.npz",
+      "sha256": "212a2e30d58fcb1d9516e66e6566386a0e02a0a796d4a8fad94ee63f1fa5817b"
+    },
+    {
+      "path": "Z_sim.npz",
+      "sha256": "25c3954add57bf40fd6aff0847d0253d6a9324170d30c7116efcb749981ffe7c"
+    }
+  ]
+}

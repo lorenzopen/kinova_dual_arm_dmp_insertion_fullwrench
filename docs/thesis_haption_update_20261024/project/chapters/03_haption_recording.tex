@@ -1,0 +1,193 @@
+\chapter{Haption Recording and Measurement Quality}
+\label{ch:haption}
+
+The human prior is only as informative as the recording channel that produces it. Two Haption interfaces command simulated proxy hands. A virtual coupling connects each target pose to its proxy. The person feels a scaled, filtered reaction, while the recording stores the simulated motion and the coupling wrench. These signals are related to contact forces, but they are not identical by definition.
+
+\section{System architecture}
+
+The acquisition code is written in C++. It reads the two device poses, maps their increments into the simulation frame, applies spring-damper forces to the proxies and logs the resulting signals in HDF5. Bullet supplies the rigid-body simulation. Contact data are available through the shared-memory C interface. Python is used afterwards for data quality assessment, mixture modelling and autonomous force allocation.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[x=1mm,y=1mm,>=Latex,font=\small,line width=0.5pt]
+\definecolor{haptionleft}{HTML}{1F6FB2}
+\definecolor{haptionright}{HTML}{D9622B}
+% Three compact panels: devices, numerical coupling and simulated bodies.
+\draw[rounded corners=2mm,fill=haptionleft!4,draw=black!65] (0,0) rectangle (43,37);
+\draw[rounded corners=2mm,fill=black!3,draw=black!65] (52,0) rectangle (95,37);
+\draw[rounded corners=2mm,fill=haptionright!4,draw=black!65] (104,0) rectangle (147,37);
+\node at (21.5,32) {Two Haption interfaces};
+\node at (73.5,32) {Virtual coupling};
+\node at (125.5,32) {Bullet simulation};
+% Stylised articulated devices; these are explanatory silhouettes, not CAD.
+\foreach \x/\col/\side in {0/haptionleft/L,21/haptionright/R}{
+  \begin{scope}[shift={(\x,0)}]
+  \draw[fill=black!13,draw=black!55,rounded corners=0.5mm] (3,7) rectangle (15,10);
+  \draw[draw=\col!75!black,line width=1.3pt,line cap=round,line join=round]
+    (8,10)--(5,17)--(12,23)--(17,20);
+  \foreach \p in {(8,10),(5,17),(12,23)}
+    \filldraw[fill=white,draw=\col!75!black] \p circle (1mm);
+  \draw[draw=\col,line width=2pt,line cap=round] (16,18)--(18,22);
+  \node[text=\col,font=\footnotesize] at (9,3.5) {\side};
+  \end{scope}
+}
+% Spring and damper icon, standing for the two six-axis coupling channels.
+\draw[draw=haptionleft,line width=0.8pt]
+  (57,21)--(61,21)--(63,24)--(66,18)--(69,24)--(72,18)--(75,24)--(78,18)--(81,21)--(90,21);
+\draw[draw=haptionright,line width=0.8pt] (57,12)--(69,12);
+\draw[draw=haptionright,line width=0.8pt] (69,9)--(69,15)--(78,15) (69,9)--(78,9);
+\draw[draw=haptionright,line width=0.8pt] (75,9)--(75,15) (75,12)--(90,12);
+\draw[draw=black!60] (57,12)--(57,21) (90,12)--(90,21);
+\node[font=\footnotesize] at (73.5,4) {spring and damper};
+% Two opposing proxies and the body they touch.
+\draw[fill=black!12,draw=black!60,rounded corners=0.5mm] (121,10) rectangle (130,26);
+\draw[fill=haptionleft!22,draw=haptionleft,rounded corners=0.7mm] (113,15) rectangle (117,22);
+\draw[fill=haptionright!22,draw=haptionright,rounded corners=0.7mm] (134,15) rectangle (138,22);
+\draw[->,draw=haptionleft,line width=0.8pt] (117,18.5)--(121,18.5);
+\draw[->,draw=haptionright,line width=0.8pt] (134,18.5)--(130,18.5);
+\node[font=\footnotesize] at (125.5,4) {proxies and object};
+\draw[->] (43,18.5)--(52,18.5);
+\node[font=\scriptsize] at (47.5,23) {pose};
+\draw[->] (95,18.5)--(104,18.5);
+\node[font=\scriptsize] at (99.5,23) {wrench};
+% Rendered feedback and logging are distinct branches.
+\draw[rounded corners=1.5mm,fill=haptionleft!5,draw=black!65] (52,-27) rectangle (95,-11);
+\node[align=center,font=\footnotesize] at (73.5,-19) {Filter, scale and clip\\displayed reaction};
+\draw[rounded corners=1.5mm,fill=black!3,draw=black!65] (104,-27) rectangle (147,-11);
+\node[align=center,font=\footnotesize] at (125.5,-19) {HDF5 log\\poses and spring wrenches\\contact data};
+\draw[->] (125.5,0)--(125.5,-11);
+\draw[->] (109,0)--(109,-6)--(99,-6)--(99,-19)--(95,-19);
+\draw[->] (52,-19)--(21.5,-19)--(21.5,0);
+\node[font=\scriptsize] at (36.5,-15.5) {felt reaction};
+\end{tikzpicture}
+\caption{Recording architecture, with schematic device silhouettes. The left and right interfaces are blue and orange, as in the wrench plots. Mapped device poses set the targets of numerical spring--damper couplings; these drive the simulated proxies against the object. The operator receives a filtered, scaled and clipped reaction. The log retains the spring-wrench signals and contact data separately from that displayed feedback.}
+\label{fig:recording}
+\end{figure}
+
+\section{Position mapping and mirrored hands}
+
+Let $\vect p_{H,h}(t)$ be the device position for hand $h$, and let the initial calibrated position be $\vect p_{H,h}(0)$. The target is
+\begin{equation}
+\vect p_{t,h}(t)=\vect p_{0,h}+R_{H\rightarrow W}
+\bigl(\vect p_{H,h}(t)-\vect p_{H,h}(0)\bigr),
+\qquad
+R_{H\rightarrow W}=\begin{bmatrix}0&1&0\\-1&0&0\\0&0&1\end{bmatrix}.
+\label{eq:haptic-map}
+\end{equation}
+The constant rotation aligns the workspace directions. Separate baseline orientations make the tools face each other. A bilateral setup cannot be treated as two copies of one local frame: a positive local push on each tool must correspond to opposite world directions.
+
+For rotations, device increments are conjugated by the same frame rotation and composed with the hand baseline. Feedback vectors are mapped back with $R_{H\rightarrow W}^\top$. Because this map is a proper rotation, it preserves vector lengths and cross products. The later statistical right-hand convention is also a proper $180^\circ$ rotation; it must not be confused with a reflection of only one axis.
+
+\section{Virtual coupling}
+
+Figure~\ref{fig:virtual-coupling-schematic} shows one translational channel. The mapped handle target and the simulated proxy can have different poses; their displacement produces the elastic part of the interaction.
+
+For a proxy at $\vect p_h$ with velocity $\vect v_h$, the translational command is
+\begin{equation}
+\vect F_{\mathrm{cmd},h}=K_p(\vect p_{t,h}-\vect p_h)-K_d\vect v_h-m_h\vect g.
+\label{eq:translation-coupling}
+\end{equation}
+Here $\vect g$ points downward, so $-m_h\vect g$ compensates the proxy's own weight. This compensation is unrelated to estimating the manipulated object's unknown mass.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[x=1mm,y=1mm,>=Latex,font=\small,line width=0.6pt]
+\definecolor{haptionleft}{HTML}{1F6FB2}
+% Mapped target is an outline; the proxy is the simulated physical body.
+\node[align=center] at (16,44) {Mapped\\handle target};
+\node[align=center] at (98,44) {Simulated\\proxy};
+\node at (128,44) {Object};
+\draw[dashed,draw=haptionleft,line width=0.8pt,rounded corners=1mm] (8,12) rectangle (24,32);
+\draw[fill=haptionleft!15,draw=haptionleft,line width=0.8pt,rounded corners=1mm] (90,12) rectangle (106,32);
+\fill[haptionleft] (16,22) circle (1mm);
+\fill[haptionleft] (98,22) circle (1mm);
+\draw[fill=black!10,draw=black!65,rounded corners=0.5mm] (110,7) rectangle (143,37);
+\foreach \y in {17,22,27}{\filldraw[fill=haptionleft!25,draw=haptionleft] (108,\y) circle (2mm);}
+% Parallel elastic and damping paths, shown only for translation.
+\draw[draw=haptionleft,line width=0.9pt]
+  (24,27)--(32,27)--(35,30)--(39,24)--(43,30)--(47,24)--(51,30)--(55,24)--(59,30)--(63,24)--(66,27)--(90,27);
+\node[fill=white,inner sep=1pt,text=haptionleft] at (51,32) {$K_p$};
+\draw[draw=black!65,line width=0.8pt] (24,17)--(48,17);
+\draw[draw=black!65,line width=0.8pt] (48,13)--(48,21)--(63,21) (48,13)--(63,13);
+\draw[draw=black!65,line width=0.8pt] (58,13)--(58,21) (58,17)--(90,17);
+\node[fill=white,inner sep=1pt] at (55,8) {$K_d$};
+\draw[<->,draw=black!55] (24,37)--node[fill=white,inner sep=2pt] {$\vect e_p=\vect p_t-\vect p$}(90,37);
+\node[font=\footnotesize,text=haptionleft] at (16,3) {$\vect p_t$};
+\node[font=\footnotesize,text=haptionleft] at (98,3) {$\vect p$};
+\draw[->,draw=haptionleft,line width=0.9pt] (72,22)--(87,22);
+\node[align=center,font=\footnotesize] at (73,-6) {Elastic log: $K_p\vect e_p$\qquad Proxy command: $K_p\vect e_p-K_d\vect v-m_h\vect g$};
+\end{tikzpicture}
+\caption{One translational virtual-coupling channel. The dashed target is obtained from the handle pose; the solid proxy moves under simulated dynamics and contact. The spring is numerical, not a physical spring mounted on the Haption. Damping uses proxy velocity, and gravity compensation is added to the proxy command. Only the elastic component is stored in the spring-wrench log. Rotation has the analogous stiffness--damping channel; the right hand uses the same structure.}
+\label{fig:virtual-coupling-schematic}
+\end{figure}
+
+The rotational error is represented by the relative quaternion
+\begin{equation}
+q_e=q_t\otimes q_h^{-1}.
+\end{equation}
+The implementation extracts its axis and shortest rotation angle, setting the rotation vector to zero near the identity. If $\vect e_R=\theta\vect a$ denotes that vector, the command moment is
+\begin{equation}
+\vect \tau_{\mathrm{cmd},h}=K_{p,R}\vect e_R-K_{d,R}\vect\omega_h.
+\label{eq:rotation-coupling}
+\end{equation}
+Quaternion coordinates avoid Euler-angle singularities, but the shortest-axis convention remains ambiguous at exactly $180^\circ$. The recorded operating range does not justify describing the orientation controller as globally nonsingular.
+
+The source inspected for Experiment 13 uses $K_p=1500$ N/m and $K_{p,R}=40$ Nm/rad. These are gains of the virtual coupling, not stiffness measurements of a human arm. The translation and rotation channels have different units. A characteristic length $d$ relates their stiffness scales through $K_{p,R}=K_p d^2$; for these values, $d\simeq0.163$ m.
+
+\section{What the wrench log contains}
+
+The datasets \sourcefile{wrench_L} and \sourcefile{wrench_R} contain the elastic spring components, $K_p\vect e_p$ and $K_{p,R}\vect e_R$. The C++ command also contains damping and gravity compensation. Consequently, the logged wrench is a proxy for the transmitted quasi-static load, not an exact direct contact-wrench measurement at every instant.
+
+For a settled proxy, acceleration and damping become small and the spring reaction can approximate the external contact load. During rapid movement, the equality no longer follows. This is why the recording protocol and later sample selection must restrict motion and check residuals. A high sampling frequency cannot itself make a trajectory quasi-static.
+
+Direct contact data provide a complementary measurement. Each pad supplies a normal magnitude, two lateral-friction magnitudes and their directions. Their vector sum reconstructs the force on the selected body, with the sign determined by the body ordering. Summing moment arms reconstructs a wrench about a chosen pole. Comparing this contact wrench with the coupling wrench is a measurement check; replacing one silently with the other would change what the model learns.
+
+\section{Filtering, display scale and saturation}
+
+The feedback uses an exponential filter,
+\begin{equation}
+\bar{\vect F}_k=\alpha\vect F_k+(1-\alpha)\bar{\vect F}_{k-1},
+\qquad \alpha=0.15,
+\end{equation}
+with the analogous expression for moment. The displayed wrench is then scaled and clipped to device limits. The session-C metadata report force and moment scales of $0.25$, a displayed-force limit of $20$ N and a displayed-moment limit of $2$ Nm. The corresponding pre-scale thresholds are $80$ N and $8$ Nm.
+
+Equal force and moment scales preserve the geometric ratio associated with a moment arm while neither channel is saturated. More precisely, if $\vect\tau=\vect r\times\vect F$, the observable perpendicular offset is
+\begin{equation}
+\vect r_\perp=\frac{\vect F\times\vect\tau}{\norm{\vect F}^2}.
+\end{equation}
+Scaling force by $a_F$ and moment by $a_T$ multiplies this offset by $a_T/a_F$. This is a geometric property of the displayed signal. It does not prove that the operator's perceived CoM equals the physical CoM, especially after filtering, clipping or contact slip.
+
+\section{Protocol and file structure}
+
+The standardized recording divides the task into timed phases: grasp from $0$ to $7$ s, lift from $7$ to $15$ s, wielding from $15$ to $37$ s, and replacement from $37$ to $44$ s, followed by the final phase. The phase labels are stored explicitly. Learning can select a phase without inferring it from a force threshold whose behaviour changes with object mass.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lp{0.60\textwidth}@{}}\toprule
+Signal group & Purpose \\\midrule
+Time and phase & Synchronization and separation of manipulation phases.\\
+Hand and object poses & Frame transforms, tilt coverage and relative drift.\\
+Left and right spring wrenches & Twelve-dimensional coordination signal.\\
+Velocities & Checks on motion and quasi-static validity.\\
+Pad contact records & Contact availability and friction-force reconstruction.\\
+Gain, scale and limit metadata & Identification of the recording apparatus.\\
+True simulated CoM and mass & Construction and retrospective error reporting.\\
+Perturbation metadata & Separation of unperturbed and disturbed trials.\\
+\bottomrule\end{tabular}
+\caption{Roles of the HDF5 data groups. The presence of ground truth in a log does not authorize its use in autonomous decisions.}
+\label{tab:hdf5}
+\end{table}
+
+Unperturbed demonstrations and disturbance trials answer different questions. A person resisting an injected torque is not simply performing the same natural wielding task with more samples. The prior training therefore excludes perturbed trials according to their recorded metadata.
+
+\section{Why the rotational channel changed}
+
+The earlier rotational coupling used $0.5$ Nm/rad. A $0.2$ Nm spring moment requires $0.4$ rad, approximately $23^\circ$, of angular lag at that stiffness. At $40$ Nm/rad, the same spring moment requires $0.005$ rad, approximately $0.29^\circ$. This calculation explains why a low-gain proxy can change orientation substantially instead of transmitting the intended torsional signal.
+
+The measurements in Chapter~\ref{ch:evidence} show the resulting trade-off. The compliant recording retained nearly all pads, but only about $22\%$ of the reference moment was transmitted. The torsional covariance therefore cannot be interpreted as a property of human coordination alone. Raising rotational stiffness was a correction to the measurement apparatus, with a cost in surface conformity that later motivates the passive tool.
+
+The valid prior uses session C, runs 024--036, at $K_{p,R}=40$ Nm/rad. A missing model file is treated as an error. Substituting the earlier model would change the apparatus represented by the prior without changing the controller configuration.
+
+\section{Recording limitations}
+
+The demonstrations come from a limited recording population and a standardized object. Their coverage is not a complete sphere of gravity directions. The useful empirical support is approximately $55^\circ$ of tilt for the final prior. A numerical GMR output outside that range is an extrapolation, even if its covariance remains finite.
+
+The acquisition loop records many samples per run, but neighbouring samples share the same movement and contact history. They are not independent experimental repetitions. Statistical comparisons should retain run-level structure. The purpose of the dataset is to construct an apparatus-specific coordination prior and to test its transmission properties, not to establish a population-wide law of human manipulation.
+

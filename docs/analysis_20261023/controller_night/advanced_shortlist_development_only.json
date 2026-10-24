@@ -1,0 +1,96 @@
+{
+  "shortlist": [
+    {
+      "id": "I_P0_I1.6_D0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "mean_run_worst_model_score": 11.887384334635788,
+      "worst_score": 16.668543876302138,
+      "minimum_mean_hand_force_N": 2.4249065323101124
+    },
+    {
+      "id": "P_P0.05_I0_D0",
+      "family": "P",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "mean_run_worst_model_score": 15.844409555229662,
+      "worst_score": 24.95027343166077,
+      "minimum_mean_hand_force_N": 0.687720888127676
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority",
+      "mean_run_worst_model_score": 11.844729282270979,
+      "worst_score": 16.451597329968603,
+      "minimum_mean_hand_force_N": 2.4272227261364234
+    },
+    {
+      "id": "PD_P0.05_I0_D0.005",
+      "family": "PD",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "mean_run_worst_model_score": 15.774529566669123,
+      "worst_score": 24.860234177937855,
+      "minimum_mean_hand_force_N": 0.640140541636796
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "mean_run_worst_model_score": 11.959784893440846,
+      "worst_score": 16.680097983037427,
+      "minimum_mean_hand_force_N": 2.2819356232043546
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "feedback_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "mean_run_worst_model_score": 12.766510694484687,
+      "worst_score": 18.235049284192044,
+      "minimum_mean_hand_force_N": 0.3805662085864139
+    },
+    {
+      "id": "PI_P0.05_I0.8_D0__combined_total",
+      "family": "PI",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "combined_total",
+      "pd_rolloff_tau_s": 0.0,
+      "mean_run_worst_model_score": 12.157287017873916,
+      "worst_score": 16.281331871186758,
+      "minimum_mean_hand_force_N": 2.1259258932261287
+    }
+  ],
+  "caveat": "Still conditional replay; holdout untouched, no validated robot controller."
+}

@@ -1,0 +1,511 @@
+{
+  "created_utc": "2026-10-23T19:20:20.991559+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "scope": "Saved-output consistency, not new holdout evaluation, plant validation or controller selection.",
+  "script_sha256": "b233ba1b98fe123040c7a8a62a9afb84bf79bf6ec8c79b89bda76c26a0f66d98",
+  "deliveries": [
+    {
+      "manifest": "HOLDOUT_DELIVERY_MANIFEST.json",
+      "manifest_sha256": "375fd01bc675801a5effbfec865063a76eb5b73a959eb83d29c1a83e54b3db94",
+      "artifacts_verified": 19
+    },
+    {
+      "manifest": "LINEAR_ROBUSTNESS_DELIVERY_MANIFEST.json",
+      "manifest_sha256": "1b50cc5b8c4f23d9ece6ed676c1c59d5cfbafc1c5bea64524d7e01d7f19e48ea",
+      "artifacts_verified": 11
+    },
+    {
+      "manifest": "SIGNAL_PIPELINE_DELIVERY_MANIFEST.json",
+      "manifest_sha256": "ed843bbee0f37f75c7100cc565604c51f31b78fad2749e3026cc88a99bded6c7",
+      "artifacts_verified": 6
+    },
+    {
+      "manifest": "THESIS_DELIVERY_MANIFEST.json",
+      "manifest_sha256": "e98a8da62aeacfd1cb80622f7371a84a7c599dad6fdae5922a14e3dfcb3bc6b3",
+      "artifacts_verified": 7
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "tranche_20261023_2314.zip",
+      "sha256": "61e54bc0cee776acd29b20b439239f9c8b8116fbfd238fcafafe83c104f5605c",
+      "entries": 58
+    },
+    {
+      "path": "tranche_20261023_2344.zip",
+      "sha256": "4f396017f092b7c8d896eeedcf9b26e426f49c177c3fa6b3ead450d33f6c0736",
+      "entries": 79
+    },
+    {
+      "path": "tranche_20261024_0014.zip",
+      "sha256": "7101bf68ec7c5983520cba7c429ff2bb7ee1e3fb0fab6111eb07eeefa31be8b9",
+      "entries": 101
+    },
+    {
+      "path": "tranche_20261024_0044.zip",
+      "sha256": "1eb1f017f034ebc5d087da0a7c90b65769429da3c1b1202c12e5e128641ec11e",
+      "entries": 138
+    },
+    {
+      "path": "tranche_20261024_0114.zip",
+      "sha256": "f38aee5d3c9105153ad1bc336a398c0c351cfee902fd82d434a7dd92fdb9a44c",
+      "entries": 156
+    },
+    {
+      "path": "tranche_20261024_0144.zip",
+      "sha256": "79ffd358ffca909e1c3738b07e56335225b9039747dacff3f91cb50fb32ef000",
+      "entries": 167
+    },
+    {
+      "path": "tranche_20261024_0214.zip",
+      "sha256": "16330da496cd70bea9b16e536b112f0da10314388735235f5d4372eba5c104b1",
+      "entries": 174
+    },
+    {
+      "path": "tranche_20261024_0244.zip",
+      "sha256": "e61d6dfd75a3f2639db5815e81dac81a28a13e6ce364c543466889fc22c2d23f",
+      "entries": 181
+    }
+  ],
+  "links": [
+    {
+      "report": "HOLDOUT_REPORT.md",
+      "target": "14_holdout_forze_osservate.png"
+    },
+    {
+      "report": "HOLDOUT_REPORT.md",
+      "target": "16_holdout_score_compromessi.png"
+    },
+    {
+      "report": "HOLDOUT_REPORT.md",
+      "target": "holdout_metrics.csv"
+    },
+    {
+      "report": "HOLDOUT_REPORT.md",
+      "target": "holdout_summary.json"
+    },
+    {
+      "report": "HOLDOUT_REPORT.md",
+      "target": "15_holdout_confronto_condizionato.png"
+    },
+    {
+      "report": "HOLDOUT_REPORT.md",
+      "target": "DAMPING_AB_PROTOCOL.md"
+    },
+    {
+      "report": "LINEAR_ROBUSTNESS_REPORT.md",
+      "target": "17_robustezza_locale_sensibilita.png"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "SIGNAL_PIPELINE_AUDIT.json"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/ati_node.py:48"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/ati_node.py:40"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/ros_backend.py:181"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/ros_backend.py:189"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/ros_backend.py:393"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/ros_backend.py:383"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/controller.py:174"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/insert_ffi.py:143"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/insert_ffi.py:45"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "18_filtri_esistenti_e_ritardo.png"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/controller.py:364"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/controller.py:146"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/ros_backend.py:315"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "C:/Users/Lorenzo/Desktop/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py:76"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "DAMPING_AB_PROTOCOL.md"
+    },
+    {
+      "report": "SIGNAL_PIPELINE_REPORT.md",
+      "target": "MINIMUM_IDENTIFICATION_PROTOCOL.md"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "DAMPING_AB_PROTOCOL.md"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "19_risultati_sperimentali_per_tesi.png"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "../archive_review/REPORT.md"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "THESIS_EVIDENCE.json"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "../archive_review/L_TRANSIENT.md"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "EMPIRICAL_CONTROL_REPORT.md"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "MINIMUM_IDENTIFICATION_PROTOCOL.md"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "SIGNAL_PIPELINE_REPORT.md"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "thesis_observed_runs.csv"
+    },
+    {
+      "report": "THESIS_SYNTHESIS.md",
+      "target": "THESIS_EVIDENCE.json"
+    },
+    {
+      "report": "DAMPING_REPORT.md",
+      "target": "02_damping_modello_fisico.png"
+    },
+    {
+      "report": "DAMPING_REPORT.md",
+      "target": "03_damping_FFI_sintetico.png"
+    },
+    {
+      "report": "DAMPING_REPORT.md",
+      "target": "04_verifica_modello_vs_log.png"
+    },
+    {
+      "report": "MINIMUM_IDENTIFICATION_PROTOCOL.md",
+      "target": "DAMPING_AB_PROTOCOL.md"
+    },
+    {
+      "report": "EMPIRICAL_CONTROL_REPORT.md",
+      "target": "05_modelli_empirici_crossrun.png"
+    },
+    {
+      "report": "EMPIRICAL_CONTROL_REPORT.md",
+      "target": "06_predizione_vs_simulazione.png"
+    },
+    {
+      "report": "EMPIRICAL_CONTROL_REPORT.md",
+      "target": "07_controllori_replay_condizionato.png"
+    },
+    {
+      "report": "ADVANCED_CONTROL_REPORT.md",
+      "target": "08_PD_forte_e_priorita.png"
+    },
+    {
+      "report": "ADVANCED_CONTROL_REPORT.md",
+      "target": "09_stress_autonomi_filtri.png"
+    },
+    {
+      "report": "PROFILE_PREVIEW_REPORT.md",
+      "target": "10_preview_profilo_reale.png"
+    },
+    {
+      "report": "PROFILE_PREVIEW_REPORT.md",
+      "target": "11_fattibilita_nominale.png"
+    },
+    {
+      "report": "PLANNED_REFERENCE_REPORT.md",
+      "target": "12_piani_e_riferimenti.png"
+    },
+    {
+      "report": "PLANNED_REFERENCE_REPORT.md",
+      "target": "13_picco_tempi_esatti.png"
+    }
+  ],
+  "external_links_not_revalidated": [
+    {
+      "report": "DAMPING_REPORT.md",
+      "target": "https://link.springer.com/article/10.1186/s40648-021-00199-0"
+    },
+    {
+      "report": "EMPIRICAL_CONTROL_REPORT.md",
+      "target": "https://www.mathworks.com/help/ident/ug/definition-simulation-and-prediction.html"
+    }
+  ],
+  "trace_checks": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "saved_cases": 112,
+      "reduction_fields": 9,
+      "max_saved_vs_trace_difference": 0.0,
+      "baseline_max_error_N": 2.6645352591003757e-15,
+      "FFI_used_dt_command_max_slew_mm_s": 2.000000000000026,
+      "logger_dt_command_max_slew_mm_s": 2.1385217382347044
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "saved_cases": 112,
+      "reduction_fields": 9,
+      "max_saved_vs_trace_difference": 0.0,
+      "baseline_max_error_N": 1.3322676295501878e-15,
+      "FFI_used_dt_command_max_slew_mm_s": 2.000000000000026,
+      "logger_dt_command_max_slew_mm_s": 2.1273540430742903
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "saved_cases": 112,
+      "reduction_fields": 9,
+      "max_saved_vs_trace_difference": 0.0,
+      "baseline_max_error_N": 3.1086244689504383e-15,
+      "FFI_used_dt_command_max_slew_mm_s": 2.000000000000028,
+      "logger_dt_command_max_slew_mm_s": 2.0452548202056393
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "saved_cases": 112,
+      "reduction_fields": 9,
+      "max_saved_vs_trace_difference": 0.0,
+      "baseline_max_error_N": 1.3322676295501878e-15,
+      "FFI_used_dt_command_max_slew_mm_s": 2.0000000000000275,
+      "logger_dt_command_max_slew_mm_s": 2.0743882947241152
+    }
+  ],
+  "failures_preserved": [
+    {
+      "path": "advanced_numerical_refinement.json",
+      "sha256": "5e4a953583fc9328ac48b49e4c980454c6983f469737be5e42f63ea3596921ef",
+      "scenarios": 128,
+      "maximum_absolute_difference_N": {
+        "route_rmse_N": 0.026489539774333437,
+        "route_band_rms_N": 0.01800185862677034,
+        "route_high_band_rms_N": 0.002121243508023861,
+        "first_seat_peak_N": 0.055526204465444096,
+        "minimum_mean_hand_force_N": 0.061956812735489475
+      },
+      "passed": null,
+      "thresholds_from_source": {
+        "route_rmse_N": 0.03,
+        "route_band_rms_N": 0.01,
+        "first_seat_peak_N": 0.05
+      },
+      "threshold_source": "advanced_refinement.py",
+      "threshold_source_sha256": "816fc57da5c0910cfb640d883392f6d13e4dae33f4e837e41f722c4d35a45c54",
+      "provenance": "Retained development-study numerical failure, not a new holdout run."
+    },
+    {
+      "path": "advanced_numerical_refinement_1p25ms.json",
+      "sha256": "91849a66e6214c503b020d7a40017ca90a342ee319d0169eba07473424abe8d5",
+      "scenarios": 128,
+      "maximum_absolute_difference_N": {
+        "route_rmse_N": 0.03905463616669458,
+        "route_band_rms_N": 0.018808173997390543,
+        "route_high_band_rms_N": 0.005732410351290962,
+        "first_seat_peak_N": 0.06272648043503981,
+        "minimum_mean_hand_force_N": 0.059650902771231085
+      },
+      "passed": null,
+      "thresholds_from_source": {
+        "route_rmse_N": 0.03,
+        "route_band_rms_N": 0.01,
+        "first_seat_peak_N": 0.05
+      },
+      "threshold_source": "advanced_refinement.py",
+      "threshold_source_sha256": "816fc57da5c0910cfb640d883392f6d13e4dae33f4e837e41f722c4d35a45c54",
+      "provenance": "Retained development-study numerical failure, not a new holdout run."
+    },
+    {
+      "path": "planned_reference_refinement.json",
+      "sha256": "e4ce3d26aef93e28219928ba1248e7f92cde6953ac0bf635a1fc87887409aa4f",
+      "scenarios": 608,
+      "maximum_absolute_difference_N": {
+        "route_rmse_N": 0.0028566344157285872,
+        "route_band_rms_N": 0.0011665549718871543,
+        "route_high_band_rms_N": 0.0007523417542242145,
+        "first_seat_peak_N": 0.18389583014037747,
+        "minimum_mean_hand_force_N": 0.009878838694189263
+      },
+      "passed": false,
+      "thresholds_from_source": {
+        "route_rmse_N": 0.03,
+        "route_band_rms_N": 0.01,
+        "first_seat_peak_N": 0.05
+      },
+      "threshold_source": "planned_reference_validation.py",
+      "threshold_source_sha256": "e3875373f917df7d5c5f9d6d939cea6e322838bfb2e284018c73e71594386134",
+      "provenance": "Retained development-study numerical failure, not a new holdout run."
+    }
+  ],
+  "first_failed_attempt": {
+    "created_utc": "2026-10-23T19:18:25.556367+00:00",
+    "attempt_source": "audit_saved_evidence_attempt1.py",
+    "attempt_source_sha256": "55f2a9c470d43dfd32d55130e9356e7200d33922ec44876ee4ba72d5ddd18cbc",
+    "log": "evidence_audit_process.log",
+    "log_sha256": "812be08a068b7457fa223390484c7f67c362238b06f925279aeb955a97b39bd5",
+    "failed_assertion": "max command increment / log-wall-time interval <=2mm/s",
+    "note": "QA initially treated saved event_time (CSV write clock) as FFI integration dt. Preserve this failure; diagnose actual dt without changing frozen results."
+  },
+  "clock_diagnostic": {
+    "created_utc": "2026-10-23T19:18:26.139405+00:00",
+    "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "verification": {
+      "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+      "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+      "source_files_verified": 14,
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1"
+    },
+    "scope": "Read only ffi_seq,t_wall,ffi_dt_ms from reserved CSVs solely to audit clocks; no force/target analysis, simulation, tuning or changed selection.",
+    "result": "All saved alternatives respect2mm/s per FFI integration/clamped dt; dividing by logger-wall intervals is a different quantity and can exceed2.",
+    "limitation": "This does not measure actual robot tool velocity or actual target consumption times. Frozen replay timing remains based on CSV event times; timing uncertainty is not removed.",
+    "runs": [
+      {
+        "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+        "piece": "Z",
+        "source_csv_sha256": "d4227676d5aa41cee48e07f133b6331e624e013565f8bb4c6839bd92e4498e2f",
+        "events": 882,
+        "max_increment_per_FFI_used_dt_mm_s": 2.000000000000026,
+        "max_increment_per_log_time_dt_mm_s": 2.1385217382347044,
+        "max_abs_log_dt_minus_FFI_dt_ms": 3.4376534676994197,
+        "log_dt_p50_min_max_ms": [
+          28.100013732910156,
+          15.69986343383789,
+          89.69998359680176
+        ],
+        "at_max_log_ratio": {
+          "event_index": 81,
+          "candidate": "P_P0.05_I0_D0",
+          "model": "delay_k480_d0.12",
+          "log_interval_ms": 21.80004119873047,
+          "FFI_used_interval_ms": 23.309930998948403,
+          "command_increment_mm": 0.04661986199789725
+        },
+        "clock_file": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_saved_clock_audit.npz",
+        "clock_sha256": "22a0a964b8ed928637f61bfd2309b109da15758c0f2d76c95c79f80392205a18"
+      },
+      {
+        "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+        "piece": "L",
+        "source_csv_sha256": "2e8fedfad66cee8a6df775f6cfca40b17478191ca9b4d33a8d22a186bfba2c99",
+        "events": 1012,
+        "max_increment_per_FFI_used_dt_mm_s": 2.000000000000026,
+        "max_increment_per_log_time_dt_mm_s": 2.1273540430742903,
+        "max_abs_log_dt_minus_FFI_dt_ms": 11.299991607665927,
+        "log_dt_p50_min_max_ms": [
+          27.500152587890625,
+          14.699935913085938,
+          111.29999160766602
+        ],
+        "at_max_log_ratio": {
+          "event_index": 910,
+          "candidate": "FF_only_P0_I0_D0",
+          "model": "delay_k480_d0.12",
+          "log_interval_ms": 20.30014991760254,
+          "FFI_used_interval_ms": 21.59280300111277,
+          "command_increment_mm": 0.043185606002225985
+        },
+        "clock_file": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_saved_clock_audit.npz",
+        "clock_sha256": "ddc42964eb09d449fc2edd088735678989e77387714c28e8a23b1c114e7ed737"
+      },
+      {
+        "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+        "piece": "S",
+        "source_csv_sha256": "52b1cb21ae95b0390c5d73b52064fc600af451d10a33e3f648b0a926218ee3b4",
+        "events": 1320,
+        "max_increment_per_FFI_used_dt_mm_s": 2.000000000000028,
+        "max_increment_per_log_time_dt_mm_s": 2.0452548202056393,
+        "max_abs_log_dt_minus_FFI_dt_ms": 2.8880045720143244,
+        "log_dt_p50_min_max_ms": [
+          27.899980545043945,
+          15.900135040283203,
+          60.80007553100586
+        ],
+        "at_max_log_ratio": {
+          "event_index": 659,
+          "candidate": "PI_P0.1_I0.8_D0_R0.1",
+          "model": "delay_k680_d0.12",
+          "log_interval_ms": 23.10013771057129,
+          "FFI_used_interval_ms": 23.622833999979775,
+          "command_increment_mm": 0.047245667999959995
+        },
+        "clock_file": "S_s7073m3_c100_narrow75_ffi_20261023_191548_saved_clock_audit.npz",
+        "clock_sha256": "c04e35b3673ba5d6774720ff4687b5590685a80e90ec1df997acf0ef8a8c7f36"
+      },
+      {
+        "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+        "piece": "T",
+        "source_csv_sha256": "db533d89a9e83913c2123a5c38f8c259b2f118e01e3d5b55b8ffa78082039c72",
+        "events": 899,
+        "max_increment_per_FFI_used_dt_mm_s": 2.0000000000000275,
+        "max_increment_per_log_time_dt_mm_s": 2.0743882947241152,
+        "max_abs_log_dt_minus_FFI_dt_ms": 1.8759301456157118,
+        "log_dt_p50_min_max_ms": [
+          27.80008316040039,
+          15.399932861328125,
+          91.00008010864258
+        ],
+        "at_max_log_ratio": {
+          "event_index": 107,
+          "candidate": "P_P0.05_I0_D0",
+          "model": "delay_k480_d0.12",
+          "log_interval_ms": 30.20000457763672,
+          "FFI_used_interval_ms": 31.32326799823204,
+          "command_increment_mm": 0.0626465359964643
+        },
+        "clock_file": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_saved_clock_audit.npz",
+        "clock_sha256": "20e78b65933fac17c27fc065d193f435cf0b5c6a49c0974808c8370951507ea4"
+      }
+    ]
+  },
+  "saved_cases_checked": 448,
+  "same_metric_reductions_checked": 4032,
+  "max_saved_vs_trace_difference": 0.0,
+  "joint_provisional_goals_met_cases": 0,
+  "consistency_passed": true,
+  "physical_model_validated": false,
+  "new_controller_selected": false,
+  "statement": "Software/storage checks passed; all previously documented model and numerical limitations remain. No new simulated trajectories, score weights or parameter choices."
+}

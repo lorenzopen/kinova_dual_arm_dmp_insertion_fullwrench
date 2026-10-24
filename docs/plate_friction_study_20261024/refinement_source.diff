@@ -1,0 +1,29 @@
+--- study.py
++++ study_refinement.py
+@@ -18,7 +18,7 @@
+ from kinova_dual_arm_dmp_insertion.prior import HumanPrior,MODEL
+ from socp_reference import GraspSOCP,wrench_map
+ FP.PLATE_COLLISION=False
+-DT=.0005
++DT=.00025
+ GRAV=np.array([0.,0.,-9.81])
+ CENTER=np.array([0.,0.,.35])
+ KW=1500.;DW=15.;KR=40.;DR=1.15
+@@ -201,7 +201,7 @@
+     for h in range(2):
+         k=2700. if job['mechanism']=='floating2700' else 20000.
+         pos=bases[h]+np.array([-.01 if h==0 else .01,0,0])
+-        tool=FP.FloatingPlateTool(pos,rotations[h].as_quat(),pads=FP.PadSprings(dt=DT),centre=FP.CentralSpring(k_push=k,dt=DT),mu=job['mu'],dt=DT,quiet=True)
++        tool=FP.FloatingPlateTool(pos,rotations[h].as_quat(),pads=FP.PadSprings(dt=.0005),centre=FP.CentralSpring(k_push=k,dt=.0005),mu=job['mu'],dt=DT,quiet=True)
+         tools.append(tool)
+         if job['mechanism']=='welded':
+             weld=p.createConstraint(tool.id,-1,tool.plate_id,-1,p.JOINT_FIXED,[0,0,0],[LT.PAD_X,0,0],[0,0,0])
+@@ -239,7 +239,7 @@
+             p.applyExternalForce(tool.id,-1,force,pos,p.WORLD_FRAME);p.applyExternalTorque(tool.id,-1,torque,p.WORLD_FRAME)
+             tool.update_springs()
+         p.stepSimulation()
+-        if step%20:continue
++        if step%round(.01/DT):continue
+         F,points,normals,N,slip,spread,entries=native_contacts(body,tools)
+         op,oq=p.getBasePositionAndOrientation(body);ov,ow=p.getBaseVelocity(body)
+         measured=np.zeros((2,6));toolposes=[];toolquats=[];deflections=[]

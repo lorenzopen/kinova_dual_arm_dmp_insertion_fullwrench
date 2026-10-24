@@ -1,0 +1,4751 @@
+{
+  "created_utc": "2026-10-23T15:18:20.479404+00:00",
+  "dt_s": 0.01,
+  "development": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_meta.json",
+      "csv_sha256": "de16feb4b73c491a40f3d928b74816722b16bb96c194d3d0ec3e15819d64bc5c"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1751_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1751_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_meta.json",
+      "csv_sha256": "575b789b7ba0f7fb70f35c8d5cd0d5622d343c7294c744424d3fb12dfec53ed0"
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_meta.json",
+      "csv_sha256": "34faf9658e529d3783ed4490fb1bcf9f4773a9a2df8f9f836e5c721be14079d9"
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1837_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1837_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_meta.json",
+      "csv_sha256": "7441f021b501dab8333c4d8e0d738534831903b602c7ae478bc1e3050066a1a3"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1904_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_190407.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1904_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_190407_meta.json",
+      "csv_sha256": "02f693fd538d748a2dd00dc8e0b12bb58679b450b8594d23964a9a8daf4fa9c9"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1913_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191302.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1913_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191302_meta.json",
+      "csv_sha256": "75327a0c28f39f05fad23e6e17bc1de460c733f99465862ba2b5f12515aa76ff"
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1921_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1921_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_meta.json",
+      "csv_sha256": "12a2f3411ac2e7518cf0cfdc5e64ab28186e4b93693c037b0124e84b13b88367"
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1927_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1927_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_meta.json",
+      "csv_sha256": "b982e31a77cd3f18d5e5295e0b71ec444b202a8a1a8b6f19398b00a40aa9929c"
+    }
+  ],
+  "preprocessing": {
+    "resample": "causal ZOH, never linear interpolation of future samples",
+    "closing_axis": "opposing normal from the FIRST observed route pose, fixed thereafter",
+    "filter": "causal Butterworth bandpass order 2, 0.3-8 Hz; signal minus first sample; zero filter state",
+    "score_window": "route from 3 seconds through last sample minus 0.5 seconds"
+  },
+  "models": [
+    {
+      "id": "lag_d0_t0",
+      "family": "delay",
+      "delay_samples": 0,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d0_t30",
+      "family": "first_order",
+      "delay_samples": 0,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d0_t60",
+      "family": "first_order",
+      "delay_samples": 0,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d0_t120",
+      "family": "first_order",
+      "delay_samples": 0,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d0_t200",
+      "family": "first_order",
+      "delay_samples": 0,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d0_t350",
+      "family": "first_order",
+      "delay_samples": 0,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d10_t0",
+      "family": "delay",
+      "delay_samples": 1,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d10_t30",
+      "family": "first_order",
+      "delay_samples": 1,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d10_t60",
+      "family": "first_order",
+      "delay_samples": 1,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d10_t120",
+      "family": "first_order",
+      "delay_samples": 1,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d10_t200",
+      "family": "first_order",
+      "delay_samples": 1,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d10_t350",
+      "family": "first_order",
+      "delay_samples": 1,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d20_t0",
+      "family": "delay",
+      "delay_samples": 2,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d20_t30",
+      "family": "first_order",
+      "delay_samples": 2,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d20_t60",
+      "family": "first_order",
+      "delay_samples": 2,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d20_t120",
+      "family": "first_order",
+      "delay_samples": 2,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d20_t200",
+      "family": "first_order",
+      "delay_samples": 2,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d20_t350",
+      "family": "first_order",
+      "delay_samples": 2,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d30_t0",
+      "family": "delay",
+      "delay_samples": 3,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d30_t30",
+      "family": "first_order",
+      "delay_samples": 3,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d30_t60",
+      "family": "first_order",
+      "delay_samples": 3,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d30_t120",
+      "family": "first_order",
+      "delay_samples": 3,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d30_t200",
+      "family": "first_order",
+      "delay_samples": 3,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d30_t350",
+      "family": "first_order",
+      "delay_samples": 3,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d40_t0",
+      "family": "delay",
+      "delay_samples": 4,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d40_t30",
+      "family": "first_order",
+      "delay_samples": 4,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d40_t60",
+      "family": "first_order",
+      "delay_samples": 4,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d40_t120",
+      "family": "first_order",
+      "delay_samples": 4,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d40_t200",
+      "family": "first_order",
+      "delay_samples": 4,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d40_t350",
+      "family": "first_order",
+      "delay_samples": 4,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d50_t0",
+      "family": "delay",
+      "delay_samples": 5,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d50_t30",
+      "family": "first_order",
+      "delay_samples": 5,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d50_t60",
+      "family": "first_order",
+      "delay_samples": 5,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d50_t120",
+      "family": "first_order",
+      "delay_samples": 5,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d50_t200",
+      "family": "first_order",
+      "delay_samples": 5,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d50_t350",
+      "family": "first_order",
+      "delay_samples": 5,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d60_t0",
+      "family": "delay",
+      "delay_samples": 6,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d60_t30",
+      "family": "first_order",
+      "delay_samples": 6,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d60_t60",
+      "family": "first_order",
+      "delay_samples": 6,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d60_t120",
+      "family": "first_order",
+      "delay_samples": 6,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d60_t200",
+      "family": "first_order",
+      "delay_samples": 6,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d60_t350",
+      "family": "first_order",
+      "delay_samples": 6,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d70_t0",
+      "family": "delay",
+      "delay_samples": 7,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d70_t30",
+      "family": "first_order",
+      "delay_samples": 7,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d70_t60",
+      "family": "first_order",
+      "delay_samples": 7,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d70_t120",
+      "family": "first_order",
+      "delay_samples": 7,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d70_t200",
+      "family": "first_order",
+      "delay_samples": 7,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d70_t350",
+      "family": "first_order",
+      "delay_samples": 7,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d80_t0",
+      "family": "delay",
+      "delay_samples": 8,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d80_t30",
+      "family": "first_order",
+      "delay_samples": 8,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d80_t60",
+      "family": "first_order",
+      "delay_samples": 8,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d80_t120",
+      "family": "first_order",
+      "delay_samples": 8,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d80_t200",
+      "family": "first_order",
+      "delay_samples": 8,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d80_t350",
+      "family": "first_order",
+      "delay_samples": 8,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d90_t0",
+      "family": "delay",
+      "delay_samples": 9,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d90_t30",
+      "family": "first_order",
+      "delay_samples": 9,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d90_t60",
+      "family": "first_order",
+      "delay_samples": 9,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d90_t120",
+      "family": "first_order",
+      "delay_samples": 9,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d90_t200",
+      "family": "first_order",
+      "delay_samples": 9,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d90_t350",
+      "family": "first_order",
+      "delay_samples": 9,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d100_t0",
+      "family": "delay",
+      "delay_samples": 10,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d100_t30",
+      "family": "first_order",
+      "delay_samples": 10,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d100_t60",
+      "family": "first_order",
+      "delay_samples": 10,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d100_t120",
+      "family": "first_order",
+      "delay_samples": 10,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d100_t200",
+      "family": "first_order",
+      "delay_samples": 10,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d100_t350",
+      "family": "first_order",
+      "delay_samples": 10,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d110_t0",
+      "family": "delay",
+      "delay_samples": 11,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d110_t30",
+      "family": "first_order",
+      "delay_samples": 11,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d110_t60",
+      "family": "first_order",
+      "delay_samples": 11,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d110_t120",
+      "family": "first_order",
+      "delay_samples": 11,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d110_t200",
+      "family": "first_order",
+      "delay_samples": 11,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d110_t350",
+      "family": "first_order",
+      "delay_samples": 11,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d120_t0",
+      "family": "delay",
+      "delay_samples": 12,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d120_t30",
+      "family": "first_order",
+      "delay_samples": 12,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d120_t60",
+      "family": "first_order",
+      "delay_samples": 12,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d120_t120",
+      "family": "first_order",
+      "delay_samples": 12,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d120_t200",
+      "family": "first_order",
+      "delay_samples": 12,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d120_t350",
+      "family": "first_order",
+      "delay_samples": 12,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d130_t0",
+      "family": "delay",
+      "delay_samples": 13,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d130_t30",
+      "family": "first_order",
+      "delay_samples": 13,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d130_t60",
+      "family": "first_order",
+      "delay_samples": 13,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d130_t120",
+      "family": "first_order",
+      "delay_samples": 13,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d130_t200",
+      "family": "first_order",
+      "delay_samples": 13,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d130_t350",
+      "family": "first_order",
+      "delay_samples": 13,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d140_t0",
+      "family": "delay",
+      "delay_samples": 14,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d140_t30",
+      "family": "first_order",
+      "delay_samples": 14,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d140_t60",
+      "family": "first_order",
+      "delay_samples": 14,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d140_t120",
+      "family": "first_order",
+      "delay_samples": 14,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d140_t200",
+      "family": "first_order",
+      "delay_samples": 14,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d140_t350",
+      "family": "first_order",
+      "delay_samples": 14,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d150_t0",
+      "family": "delay",
+      "delay_samples": 15,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d150_t30",
+      "family": "first_order",
+      "delay_samples": 15,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d150_t60",
+      "family": "first_order",
+      "delay_samples": 15,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d150_t120",
+      "family": "first_order",
+      "delay_samples": 15,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d150_t200",
+      "family": "first_order",
+      "delay_samples": 15,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d150_t350",
+      "family": "first_order",
+      "delay_samples": 15,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d160_t0",
+      "family": "delay",
+      "delay_samples": 16,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d160_t30",
+      "family": "first_order",
+      "delay_samples": 16,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d160_t60",
+      "family": "first_order",
+      "delay_samples": 16,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d160_t120",
+      "family": "first_order",
+      "delay_samples": 16,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d160_t200",
+      "family": "first_order",
+      "delay_samples": 16,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d160_t350",
+      "family": "first_order",
+      "delay_samples": 16,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d170_t0",
+      "family": "delay",
+      "delay_samples": 17,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d170_t30",
+      "family": "first_order",
+      "delay_samples": 17,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d170_t60",
+      "family": "first_order",
+      "delay_samples": 17,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d170_t120",
+      "family": "first_order",
+      "delay_samples": 17,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d170_t200",
+      "family": "first_order",
+      "delay_samples": 17,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d170_t350",
+      "family": "first_order",
+      "delay_samples": 17,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d180_t0",
+      "family": "delay",
+      "delay_samples": 18,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d180_t30",
+      "family": "first_order",
+      "delay_samples": 18,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d180_t60",
+      "family": "first_order",
+      "delay_samples": 18,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d180_t120",
+      "family": "first_order",
+      "delay_samples": 18,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d180_t200",
+      "family": "first_order",
+      "delay_samples": 18,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d180_t350",
+      "family": "first_order",
+      "delay_samples": 18,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d190_t0",
+      "family": "delay",
+      "delay_samples": 19,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d190_t30",
+      "family": "first_order",
+      "delay_samples": 19,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d190_t60",
+      "family": "first_order",
+      "delay_samples": 19,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d190_t120",
+      "family": "first_order",
+      "delay_samples": 19,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d190_t200",
+      "family": "first_order",
+      "delay_samples": 19,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d190_t350",
+      "family": "first_order",
+      "delay_samples": 19,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d200_t0",
+      "family": "delay",
+      "delay_samples": 20,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d200_t30",
+      "family": "first_order",
+      "delay_samples": 20,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d200_t60",
+      "family": "first_order",
+      "delay_samples": 20,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d200_t120",
+      "family": "first_order",
+      "delay_samples": 20,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d200_t200",
+      "family": "first_order",
+      "delay_samples": 20,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d200_t350",
+      "family": "first_order",
+      "delay_samples": 20,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d210_t0",
+      "family": "delay",
+      "delay_samples": 21,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d210_t30",
+      "family": "first_order",
+      "delay_samples": 21,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d210_t60",
+      "family": "first_order",
+      "delay_samples": 21,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d210_t120",
+      "family": "first_order",
+      "delay_samples": 21,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d210_t200",
+      "family": "first_order",
+      "delay_samples": 21,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d210_t350",
+      "family": "first_order",
+      "delay_samples": 21,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d220_t0",
+      "family": "delay",
+      "delay_samples": 22,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d220_t30",
+      "family": "first_order",
+      "delay_samples": 22,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d220_t60",
+      "family": "first_order",
+      "delay_samples": 22,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d220_t120",
+      "family": "first_order",
+      "delay_samples": 22,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d220_t200",
+      "family": "first_order",
+      "delay_samples": 22,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d220_t350",
+      "family": "first_order",
+      "delay_samples": 22,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d230_t0",
+      "family": "delay",
+      "delay_samples": 23,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d230_t30",
+      "family": "first_order",
+      "delay_samples": 23,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d230_t60",
+      "family": "first_order",
+      "delay_samples": 23,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d230_t120",
+      "family": "first_order",
+      "delay_samples": 23,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d230_t200",
+      "family": "first_order",
+      "delay_samples": 23,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d230_t350",
+      "family": "first_order",
+      "delay_samples": 23,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d240_t0",
+      "family": "delay",
+      "delay_samples": 24,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d240_t30",
+      "family": "first_order",
+      "delay_samples": 24,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d240_t60",
+      "family": "first_order",
+      "delay_samples": 24,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d240_t120",
+      "family": "first_order",
+      "delay_samples": 24,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d240_t200",
+      "family": "first_order",
+      "delay_samples": 24,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d240_t350",
+      "family": "first_order",
+      "delay_samples": 24,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d250_t0",
+      "family": "delay",
+      "delay_samples": 25,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d250_t30",
+      "family": "first_order",
+      "delay_samples": 25,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d250_t60",
+      "family": "first_order",
+      "delay_samples": 25,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d250_t120",
+      "family": "first_order",
+      "delay_samples": 25,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d250_t200",
+      "family": "first_order",
+      "delay_samples": 25,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d250_t350",
+      "family": "first_order",
+      "delay_samples": 25,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d260_t0",
+      "family": "delay",
+      "delay_samples": 26,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d260_t30",
+      "family": "first_order",
+      "delay_samples": 26,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d260_t60",
+      "family": "first_order",
+      "delay_samples": 26,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d260_t120",
+      "family": "first_order",
+      "delay_samples": 26,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d260_t200",
+      "family": "first_order",
+      "delay_samples": 26,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d260_t350",
+      "family": "first_order",
+      "delay_samples": 26,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d270_t0",
+      "family": "delay",
+      "delay_samples": 27,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d270_t30",
+      "family": "first_order",
+      "delay_samples": 27,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d270_t60",
+      "family": "first_order",
+      "delay_samples": 27,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d270_t120",
+      "family": "first_order",
+      "delay_samples": 27,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d270_t200",
+      "family": "first_order",
+      "delay_samples": 27,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d270_t350",
+      "family": "first_order",
+      "delay_samples": 27,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d280_t0",
+      "family": "delay",
+      "delay_samples": 28,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d280_t30",
+      "family": "first_order",
+      "delay_samples": 28,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d280_t60",
+      "family": "first_order",
+      "delay_samples": 28,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d280_t120",
+      "family": "first_order",
+      "delay_samples": 28,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d280_t200",
+      "family": "first_order",
+      "delay_samples": 28,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d280_t350",
+      "family": "first_order",
+      "delay_samples": 28,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d290_t0",
+      "family": "delay",
+      "delay_samples": 29,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d290_t30",
+      "family": "first_order",
+      "delay_samples": 29,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d290_t60",
+      "family": "first_order",
+      "delay_samples": 29,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d290_t120",
+      "family": "first_order",
+      "delay_samples": 29,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d290_t200",
+      "family": "first_order",
+      "delay_samples": 29,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d290_t350",
+      "family": "first_order",
+      "delay_samples": 29,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d300_t0",
+      "family": "delay",
+      "delay_samples": 30,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d300_t30",
+      "family": "first_order",
+      "delay_samples": 30,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d300_t60",
+      "family": "first_order",
+      "delay_samples": 30,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d300_t120",
+      "family": "first_order",
+      "delay_samples": 30,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d300_t200",
+      "family": "first_order",
+      "delay_samples": 30,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d300_t350",
+      "family": "first_order",
+      "delay_samples": 30,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d310_t0",
+      "family": "delay",
+      "delay_samples": 31,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d310_t30",
+      "family": "first_order",
+      "delay_samples": 31,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d310_t60",
+      "family": "first_order",
+      "delay_samples": 31,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d310_t120",
+      "family": "first_order",
+      "delay_samples": 31,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d310_t200",
+      "family": "first_order",
+      "delay_samples": 31,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d310_t350",
+      "family": "first_order",
+      "delay_samples": 31,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d320_t0",
+      "family": "delay",
+      "delay_samples": 32,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d320_t30",
+      "family": "first_order",
+      "delay_samples": 32,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d320_t60",
+      "family": "first_order",
+      "delay_samples": 32,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d320_t120",
+      "family": "first_order",
+      "delay_samples": 32,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d320_t200",
+      "family": "first_order",
+      "delay_samples": 32,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d320_t350",
+      "family": "first_order",
+      "delay_samples": 32,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d330_t0",
+      "family": "delay",
+      "delay_samples": 33,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d330_t30",
+      "family": "first_order",
+      "delay_samples": 33,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d330_t60",
+      "family": "first_order",
+      "delay_samples": 33,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d330_t120",
+      "family": "first_order",
+      "delay_samples": 33,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d330_t200",
+      "family": "first_order",
+      "delay_samples": 33,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d330_t350",
+      "family": "first_order",
+      "delay_samples": 33,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d340_t0",
+      "family": "delay",
+      "delay_samples": 34,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d340_t30",
+      "family": "first_order",
+      "delay_samples": 34,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d340_t60",
+      "family": "first_order",
+      "delay_samples": 34,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d340_t120",
+      "family": "first_order",
+      "delay_samples": 34,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d340_t200",
+      "family": "first_order",
+      "delay_samples": 34,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d340_t350",
+      "family": "first_order",
+      "delay_samples": 34,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "lag_d350_t0",
+      "family": "delay",
+      "delay_samples": 35,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ]
+    },
+    {
+      "id": "lag_d350_t30",
+      "family": "first_order",
+      "delay_samples": 35,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ]
+    },
+    {
+      "id": "lag_d350_t60",
+      "family": "first_order",
+      "delay_samples": 35,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ]
+    },
+    {
+      "id": "lag_d350_t120",
+      "family": "first_order",
+      "delay_samples": 35,
+      "tau_s": 0.12,
+      "b": [
+        0.0,
+        0.07995558537067671
+      ],
+      "a": [
+        1.0,
+        -0.9200444146293233
+      ]
+    },
+    {
+      "id": "lag_d350_t200",
+      "family": "first_order",
+      "delay_samples": 35,
+      "tau_s": 0.2,
+      "b": [
+        0.0,
+        0.048770575499285984
+      ],
+      "a": [
+        1.0,
+        -0.951229424500714
+      ]
+    },
+    {
+      "id": "lag_d350_t350",
+      "family": "first_order",
+      "delay_samples": 35,
+      "tau_s": 0.35,
+      "b": [
+        0.0,
+        0.028167124967018897
+      ],
+      "a": [
+        1.0,
+        -0.9718328750329811
+      ]
+    },
+    {
+      "id": "second_d0_f1_z0.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.001956844760450327,
+        0.0019405175506871375
+      ],
+      "a": [
+        1.0,
+        -1.971283094473305,
+        0.9751804567844427
+      ]
+    },
+    {
+      "id": "second_d0_f1_z0.5",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.0019325872530520094,
+        0.0018925281030981456
+      ],
+      "a": [
+        1.0,
+        -1.9352762520681428,
+        0.9391013674242928
+      ]
+    },
+    {
+      "id": "second_d0_f1_z0.8",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.0019087798893808738,
+        0.0018458724046482855
+      ],
+      "a": [
+        1.0,
+        -1.9006024563442923,
+        0.9043571086383215
+      ]
+    },
+    {
+      "id": "second_d0_f1_z1.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.0018777196895984893,
+        0.001785671400048261
+      ],
+      "a": [
+        1.0,
+        -1.8563593496425663,
+        0.8600227407322133
+      ]
+    },
+    {
+      "id": "second_d0_f1.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.004382795262469985,
+        0.00432804850380053
+      ],
+      "a": [
+        1.0,
+        -1.9542918096307047,
+        0.9630026533969752
+      ]
+    },
+    {
+      "id": "second_d0_f1.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.004301854731161292,
+        0.004168778635177284
+      ],
+      "a": [
+        1.0,
+        -1.901586607309686,
+        0.9100572406760247
+      ]
+    },
+    {
+      "id": "second_d0_f1.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.004223149743928678,
+        0.004016092180631259
+      ],
+      "a": [
+        1.0,
+        -1.8517834988076531,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d0_f1.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.004121559798589081,
+        0.003822251737216953
+      ],
+      "a": [
+        1.0,
+        -1.7896190126171696,
+        0.7975628241529755
+      ]
+    },
+    {
+      "id": "second_d0_f2.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.012057909096444552,
+        0.011807798736584552
+      ],
+      "a": [
+        1.0,
+        -1.9152356595912639,
+        0.9391013674242931
+      ]
+    },
+    {
+      "id": "second_d0_f2.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.011691817475669275,
+        0.011095014290543825
+      ],
+      "a": [
+        1.0,
+        -1.8318491673870203,
+        0.8546359991532333
+      ]
+    },
+    {
+      "id": "second_d0_f2.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.011342319204927342,
+        0.010430511198176617
+      ],
+      "a": [
+        1.0,
+        -1.755994848768685,
+        0.777767679171789
+      ]
+    },
+    {
+      "id": "second_d0_f2.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.01090058519480741,
+        0.00961362809463584
+      ],
+      "a": [
+        1.0,
+        -1.665407952644723,
+        0.6859221659341662
+      ]
+    },
+    {
+      "id": "second_d0_f4_z0.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.03039107005812336,
+        0.02938752610272466
+      ],
+      "a": [
+        1.0,
+        -1.8445785124774732,
+        0.9043571086383211
+      ]
+    },
+    {
+      "id": "second_d0_f4_z0.5",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.028944871870303146,
+        0.026615129889901
+      ],
+      "a": [
+        1.0,
+        -1.722207677411585,
+        0.7777676791717894
+      ]
+    },
+    {
+      "id": "second_d0_f4_z0.8",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.027601167354533773,
+        0.024135772346224105
+      ],
+      "a": [
+        1.0,
+        -1.6171609513934968,
+        0.6688978910942547
+      ]
+    },
+    {
+      "id": "second_d0_f4_z1.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.02595410663048292,
+        0.021229382907971828
+      ],
+      "a": [
+        1.0,
+        -1.499882530273125,
+        0.5470660198115794
+      ]
+    },
+    {
+      "id": "second_d0_f6_z0.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.0668309454042999,
+        0.06354002202244058
+      ],
+      "a": [
+        1.0,
+        -1.7296517733054724,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d0_f6_z0.5",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.06219082286795263,
+        0.0548213184737083
+      ],
+      "a": [
+        1.0,
+        -1.5689100245925052,
+        0.6859221659341661
+      ]
+    },
+    {
+      "id": "second_d0_f6_z0.8",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.05802923727573872,
+        0.04744039589800908
+      ],
+      "a": [
+        1.0,
+        -1.4415963866378316,
+        0.5470660198115793
+      ]
+    },
+    {
+      "id": "second_d0_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 0,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ]
+    },
+    {
+      "id": "second_d60_f1_z0.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.001956844760450327,
+        0.0019405175506871375
+      ],
+      "a": [
+        1.0,
+        -1.971283094473305,
+        0.9751804567844427
+      ]
+    },
+    {
+      "id": "second_d60_f1_z0.5",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.0019325872530520094,
+        0.0018925281030981456
+      ],
+      "a": [
+        1.0,
+        -1.9352762520681428,
+        0.9391013674242928
+      ]
+    },
+    {
+      "id": "second_d60_f1_z0.8",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.0019087798893808738,
+        0.0018458724046482855
+      ],
+      "a": [
+        1.0,
+        -1.9006024563442923,
+        0.9043571086383215
+      ]
+    },
+    {
+      "id": "second_d60_f1_z1.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.0018777196895984893,
+        0.001785671400048261
+      ],
+      "a": [
+        1.0,
+        -1.8563593496425663,
+        0.8600227407322133
+      ]
+    },
+    {
+      "id": "second_d60_f1.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.004382795262469985,
+        0.00432804850380053
+      ],
+      "a": [
+        1.0,
+        -1.9542918096307047,
+        0.9630026533969752
+      ]
+    },
+    {
+      "id": "second_d60_f1.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.004301854731161292,
+        0.004168778635177284
+      ],
+      "a": [
+        1.0,
+        -1.901586607309686,
+        0.9100572406760247
+      ]
+    },
+    {
+      "id": "second_d60_f1.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.004223149743928678,
+        0.004016092180631259
+      ],
+      "a": [
+        1.0,
+        -1.8517834988076531,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d60_f1.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.004121559798589081,
+        0.003822251737216953
+      ],
+      "a": [
+        1.0,
+        -1.7896190126171696,
+        0.7975628241529755
+      ]
+    },
+    {
+      "id": "second_d60_f2.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.012057909096444552,
+        0.011807798736584552
+      ],
+      "a": [
+        1.0,
+        -1.9152356595912639,
+        0.9391013674242931
+      ]
+    },
+    {
+      "id": "second_d60_f2.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.011691817475669275,
+        0.011095014290543825
+      ],
+      "a": [
+        1.0,
+        -1.8318491673870203,
+        0.8546359991532333
+      ]
+    },
+    {
+      "id": "second_d60_f2.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.011342319204927342,
+        0.010430511198176617
+      ],
+      "a": [
+        1.0,
+        -1.755994848768685,
+        0.777767679171789
+      ]
+    },
+    {
+      "id": "second_d60_f2.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.01090058519480741,
+        0.00961362809463584
+      ],
+      "a": [
+        1.0,
+        -1.665407952644723,
+        0.6859221659341662
+      ]
+    },
+    {
+      "id": "second_d60_f4_z0.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.03039107005812336,
+        0.02938752610272466
+      ],
+      "a": [
+        1.0,
+        -1.8445785124774732,
+        0.9043571086383211
+      ]
+    },
+    {
+      "id": "second_d60_f4_z0.5",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.028944871870303146,
+        0.026615129889901
+      ],
+      "a": [
+        1.0,
+        -1.722207677411585,
+        0.7777676791717894
+      ]
+    },
+    {
+      "id": "second_d60_f4_z0.8",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.027601167354533773,
+        0.024135772346224105
+      ],
+      "a": [
+        1.0,
+        -1.6171609513934968,
+        0.6688978910942547
+      ]
+    },
+    {
+      "id": "second_d60_f4_z1.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.02595410663048292,
+        0.021229382907971828
+      ],
+      "a": [
+        1.0,
+        -1.499882530273125,
+        0.5470660198115794
+      ]
+    },
+    {
+      "id": "second_d60_f6_z0.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.0668309454042999,
+        0.06354002202244058
+      ],
+      "a": [
+        1.0,
+        -1.7296517733054724,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d60_f6_z0.5",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.06219082286795263,
+        0.0548213184737083
+      ],
+      "a": [
+        1.0,
+        -1.5689100245925052,
+        0.6859221659341661
+      ]
+    },
+    {
+      "id": "second_d60_f6_z0.8",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.05802923727573872,
+        0.04744039589800908
+      ],
+      "a": [
+        1.0,
+        -1.4415963866378316,
+        0.5470660198115793
+      ]
+    },
+    {
+      "id": "second_d60_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 6,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ]
+    },
+    {
+      "id": "second_d120_f1_z0.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.001956844760450327,
+        0.0019405175506871375
+      ],
+      "a": [
+        1.0,
+        -1.971283094473305,
+        0.9751804567844427
+      ]
+    },
+    {
+      "id": "second_d120_f1_z0.5",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.0019325872530520094,
+        0.0018925281030981456
+      ],
+      "a": [
+        1.0,
+        -1.9352762520681428,
+        0.9391013674242928
+      ]
+    },
+    {
+      "id": "second_d120_f1_z0.8",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.0019087798893808738,
+        0.0018458724046482855
+      ],
+      "a": [
+        1.0,
+        -1.9006024563442923,
+        0.9043571086383215
+      ]
+    },
+    {
+      "id": "second_d120_f1_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.0018777196895984893,
+        0.001785671400048261
+      ],
+      "a": [
+        1.0,
+        -1.8563593496425663,
+        0.8600227407322133
+      ]
+    },
+    {
+      "id": "second_d120_f1.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.004382795262469985,
+        0.00432804850380053
+      ],
+      "a": [
+        1.0,
+        -1.9542918096307047,
+        0.9630026533969752
+      ]
+    },
+    {
+      "id": "second_d120_f1.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.004301854731161292,
+        0.004168778635177284
+      ],
+      "a": [
+        1.0,
+        -1.901586607309686,
+        0.9100572406760247
+      ]
+    },
+    {
+      "id": "second_d120_f1.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.004223149743928678,
+        0.004016092180631259
+      ],
+      "a": [
+        1.0,
+        -1.8517834988076531,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d120_f1.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.004121559798589081,
+        0.003822251737216953
+      ],
+      "a": [
+        1.0,
+        -1.7896190126171696,
+        0.7975628241529755
+      ]
+    },
+    {
+      "id": "second_d120_f2.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.012057909096444552,
+        0.011807798736584552
+      ],
+      "a": [
+        1.0,
+        -1.9152356595912639,
+        0.9391013674242931
+      ]
+    },
+    {
+      "id": "second_d120_f2.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.011691817475669275,
+        0.011095014290543825
+      ],
+      "a": [
+        1.0,
+        -1.8318491673870203,
+        0.8546359991532333
+      ]
+    },
+    {
+      "id": "second_d120_f2.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.011342319204927342,
+        0.010430511198176617
+      ],
+      "a": [
+        1.0,
+        -1.755994848768685,
+        0.777767679171789
+      ]
+    },
+    {
+      "id": "second_d120_f2.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.01090058519480741,
+        0.00961362809463584
+      ],
+      "a": [
+        1.0,
+        -1.665407952644723,
+        0.6859221659341662
+      ]
+    },
+    {
+      "id": "second_d120_f4_z0.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.03039107005812336,
+        0.02938752610272466
+      ],
+      "a": [
+        1.0,
+        -1.8445785124774732,
+        0.9043571086383211
+      ]
+    },
+    {
+      "id": "second_d120_f4_z0.5",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.028944871870303146,
+        0.026615129889901
+      ],
+      "a": [
+        1.0,
+        -1.722207677411585,
+        0.7777676791717894
+      ]
+    },
+    {
+      "id": "second_d120_f4_z0.8",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.027601167354533773,
+        0.024135772346224105
+      ],
+      "a": [
+        1.0,
+        -1.6171609513934968,
+        0.6688978910942547
+      ]
+    },
+    {
+      "id": "second_d120_f4_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.02595410663048292,
+        0.021229382907971828
+      ],
+      "a": [
+        1.0,
+        -1.499882530273125,
+        0.5470660198115794
+      ]
+    },
+    {
+      "id": "second_d120_f6_z0.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.0668309454042999,
+        0.06354002202244058
+      ],
+      "a": [
+        1.0,
+        -1.7296517733054724,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d120_f6_z0.5",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.06219082286795263,
+        0.0548213184737083
+      ],
+      "a": [
+        1.0,
+        -1.5689100245925052,
+        0.6859221659341661
+      ]
+    },
+    {
+      "id": "second_d120_f6_z0.8",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.05802923727573872,
+        0.04744039589800908
+      ],
+      "a": [
+        1.0,
+        -1.4415963866378316,
+        0.5470660198115793
+      ]
+    },
+    {
+      "id": "second_d120_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ]
+    },
+    {
+      "id": "second_d180_f1_z0.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.001956844760450327,
+        0.0019405175506871375
+      ],
+      "a": [
+        1.0,
+        -1.971283094473305,
+        0.9751804567844427
+      ]
+    },
+    {
+      "id": "second_d180_f1_z0.5",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.0019325872530520094,
+        0.0018925281030981456
+      ],
+      "a": [
+        1.0,
+        -1.9352762520681428,
+        0.9391013674242928
+      ]
+    },
+    {
+      "id": "second_d180_f1_z0.8",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.0019087798893808738,
+        0.0018458724046482855
+      ],
+      "a": [
+        1.0,
+        -1.9006024563442923,
+        0.9043571086383215
+      ]
+    },
+    {
+      "id": "second_d180_f1_z1.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.0018777196895984893,
+        0.001785671400048261
+      ],
+      "a": [
+        1.0,
+        -1.8563593496425663,
+        0.8600227407322133
+      ]
+    },
+    {
+      "id": "second_d180_f1.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.004382795262469985,
+        0.00432804850380053
+      ],
+      "a": [
+        1.0,
+        -1.9542918096307047,
+        0.9630026533969752
+      ]
+    },
+    {
+      "id": "second_d180_f1.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.004301854731161292,
+        0.004168778635177284
+      ],
+      "a": [
+        1.0,
+        -1.901586607309686,
+        0.9100572406760247
+      ]
+    },
+    {
+      "id": "second_d180_f1.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.004223149743928678,
+        0.004016092180631259
+      ],
+      "a": [
+        1.0,
+        -1.8517834988076531,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d180_f1.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.004121559798589081,
+        0.003822251737216953
+      ],
+      "a": [
+        1.0,
+        -1.7896190126171696,
+        0.7975628241529755
+      ]
+    },
+    {
+      "id": "second_d180_f2.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.012057909096444552,
+        0.011807798736584552
+      ],
+      "a": [
+        1.0,
+        -1.9152356595912639,
+        0.9391013674242931
+      ]
+    },
+    {
+      "id": "second_d180_f2.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.011691817475669275,
+        0.011095014290543825
+      ],
+      "a": [
+        1.0,
+        -1.8318491673870203,
+        0.8546359991532333
+      ]
+    },
+    {
+      "id": "second_d180_f2.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.011342319204927342,
+        0.010430511198176617
+      ],
+      "a": [
+        1.0,
+        -1.755994848768685,
+        0.777767679171789
+      ]
+    },
+    {
+      "id": "second_d180_f2.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.01090058519480741,
+        0.00961362809463584
+      ],
+      "a": [
+        1.0,
+        -1.665407952644723,
+        0.6859221659341662
+      ]
+    },
+    {
+      "id": "second_d180_f4_z0.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.03039107005812336,
+        0.02938752610272466
+      ],
+      "a": [
+        1.0,
+        -1.8445785124774732,
+        0.9043571086383211
+      ]
+    },
+    {
+      "id": "second_d180_f4_z0.5",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.028944871870303146,
+        0.026615129889901
+      ],
+      "a": [
+        1.0,
+        -1.722207677411585,
+        0.7777676791717894
+      ]
+    },
+    {
+      "id": "second_d180_f4_z0.8",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.027601167354533773,
+        0.024135772346224105
+      ],
+      "a": [
+        1.0,
+        -1.6171609513934968,
+        0.6688978910942547
+      ]
+    },
+    {
+      "id": "second_d180_f4_z1.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.02595410663048292,
+        0.021229382907971828
+      ],
+      "a": [
+        1.0,
+        -1.499882530273125,
+        0.5470660198115794
+      ]
+    },
+    {
+      "id": "second_d180_f6_z0.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.0668309454042999,
+        0.06354002202244058
+      ],
+      "a": [
+        1.0,
+        -1.7296517733054724,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d180_f6_z0.5",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.06219082286795263,
+        0.0548213184737083
+      ],
+      "a": [
+        1.0,
+        -1.5689100245925052,
+        0.6859221659341661
+      ]
+    },
+    {
+      "id": "second_d180_f6_z0.8",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.05802923727573872,
+        0.04744039589800908
+      ],
+      "a": [
+        1.0,
+        -1.4415963866378316,
+        0.5470660198115793
+      ]
+    },
+    {
+      "id": "second_d180_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 18,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ]
+    },
+    {
+      "id": "second_d240_f1_z0.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.001956844760450327,
+        0.0019405175506871375
+      ],
+      "a": [
+        1.0,
+        -1.971283094473305,
+        0.9751804567844427
+      ]
+    },
+    {
+      "id": "second_d240_f1_z0.5",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.0019325872530520094,
+        0.0018925281030981456
+      ],
+      "a": [
+        1.0,
+        -1.9352762520681428,
+        0.9391013674242928
+      ]
+    },
+    {
+      "id": "second_d240_f1_z0.8",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.0019087798893808738,
+        0.0018458724046482855
+      ],
+      "a": [
+        1.0,
+        -1.9006024563442923,
+        0.9043571086383215
+      ]
+    },
+    {
+      "id": "second_d240_f1_z1.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 1.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.0018777196895984893,
+        0.001785671400048261
+      ],
+      "a": [
+        1.0,
+        -1.8563593496425663,
+        0.8600227407322133
+      ]
+    },
+    {
+      "id": "second_d240_f1.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.004382795262469985,
+        0.00432804850380053
+      ],
+      "a": [
+        1.0,
+        -1.9542918096307047,
+        0.9630026533969752
+      ]
+    },
+    {
+      "id": "second_d240_f1.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.004301854731161292,
+        0.004168778635177284
+      ],
+      "a": [
+        1.0,
+        -1.901586607309686,
+        0.9100572406760247
+      ]
+    },
+    {
+      "id": "second_d240_f1.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.004223149743928678,
+        0.004016092180631259
+      ],
+      "a": [
+        1.0,
+        -1.8517834988076531,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d240_f1.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.004121559798589081,
+        0.003822251737216953
+      ],
+      "a": [
+        1.0,
+        -1.7896190126171696,
+        0.7975628241529755
+      ]
+    },
+    {
+      "id": "second_d240_f2.5_z0.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.012057909096444552,
+        0.011807798736584552
+      ],
+      "a": [
+        1.0,
+        -1.9152356595912639,
+        0.9391013674242931
+      ]
+    },
+    {
+      "id": "second_d240_f2.5_z0.5",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.011691817475669275,
+        0.011095014290543825
+      ],
+      "a": [
+        1.0,
+        -1.8318491673870203,
+        0.8546359991532333
+      ]
+    },
+    {
+      "id": "second_d240_f2.5_z0.8",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.011342319204927342,
+        0.010430511198176617
+      ],
+      "a": [
+        1.0,
+        -1.755994848768685,
+        0.777767679171789
+      ]
+    },
+    {
+      "id": "second_d240_f2.5_z1.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 2.5,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.01090058519480741,
+        0.00961362809463584
+      ],
+      "a": [
+        1.0,
+        -1.665407952644723,
+        0.6859221659341662
+      ]
+    },
+    {
+      "id": "second_d240_f4_z0.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.03039107005812336,
+        0.02938752610272466
+      ],
+      "a": [
+        1.0,
+        -1.8445785124774732,
+        0.9043571086383211
+      ]
+    },
+    {
+      "id": "second_d240_f4_z0.5",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.028944871870303146,
+        0.026615129889901
+      ],
+      "a": [
+        1.0,
+        -1.722207677411585,
+        0.7777676791717894
+      ]
+    },
+    {
+      "id": "second_d240_f4_z0.8",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.027601167354533773,
+        0.024135772346224105
+      ],
+      "a": [
+        1.0,
+        -1.6171609513934968,
+        0.6688978910942547
+      ]
+    },
+    {
+      "id": "second_d240_f4_z1.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.02595410663048292,
+        0.021229382907971828
+      ],
+      "a": [
+        1.0,
+        -1.499882530273125,
+        0.5470660198115794
+      ]
+    },
+    {
+      "id": "second_d240_f6_z0.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.2,
+      "b": [
+        0.0,
+        0.0668309454042999,
+        0.06354002202244058
+      ],
+      "a": [
+        1.0,
+        -1.7296517733054724,
+        0.8600227407322131
+      ]
+    },
+    {
+      "id": "second_d240_f6_z0.5",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.5,
+      "b": [
+        0.0,
+        0.06219082286795263,
+        0.0548213184737083
+      ],
+      "a": [
+        1.0,
+        -1.5689100245925052,
+        0.6859221659341661
+      ]
+    },
+    {
+      "id": "second_d240_f6_z0.8",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.05802923727573872,
+        0.04744039589800908
+      ],
+      "a": [
+        1.0,
+        -1.4415963866378316,
+        0.5470660198115793
+      ]
+    },
+    {
+      "id": "second_d240_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 24,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ]
+    }
+  ],
+  "arx": {
+    "order": 2,
+    "input_taps": 2,
+    "delays_samples": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      34
+    ],
+    "ridge": [
+      0.0,
+      0.001,
+      0.1
+    ],
+    "require_pole_modulus_below": 1.0
+  },
+  "fitting": "equal normalized error weight per run; positive pooled gain for LTI; stable ARX selected by FREE simulation training error, not one-step error",
+  "validation": "8 leave-one-run-out folds; fit on 7 development runs then simulate eighth without observed outputs; four original holdout runs unused",
+  "provisional_model_gate": {
+    "median_crossrun_force_r2_min": 0.7,
+    "worst_crossrun_force_r2_min": 0.5
+  },
+  "caveat": "Retrospective development cross-validation of recorded command sequences under the same FFI; no independent excitation, no change-of-controller causal guarantee. DC/absolute force is not identified by the band-limited model."
+}

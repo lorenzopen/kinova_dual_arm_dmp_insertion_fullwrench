@@ -1,0 +1,13 @@
+{
+  "pid": 3492,
+  "argv": [
+    "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/gen3/run_lab_impedance.py",
+    "--piece",
+    "Z",
+    "--tag",
+    "Gen3Lab_Z_hold_dt0125",
+    "--dt",
+    ".000125",
+    "--scene-only"
+  ]
+}

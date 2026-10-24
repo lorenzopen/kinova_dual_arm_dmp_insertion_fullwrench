@@ -1,0 +1,15 @@
+\section{The Kinova comparison of 24 October}
+
+The supplementary robot workspace is \sourcefile{kinova_dual_arm_dmp_insertion_fullwrench}. Its experimental archive \sourcefile{NVIDIA_RUNS/} is read-only. The analysis and simulations are stored under \sourcefile{docs/analysis_20261023/controller_night/pybullet_nominal_20261024/}; the thesis figure data are compact copies of the plotted signals with source hashes, not replacements for the original logs.
+
+The selected real recordings end in \sourcefile{20261023_174143.csv} (Z) and \sourcefile{20261023_182743.csv} (L). They are the first development run of each piece. Their simulated counterparts are \sourcefile{Gen3_Z_central2700_implicit_dt025} and \sourcefile{Gen3_L_central2700_implicit_dt05}. The original-source trial is \sourcefile{Gen3Lab_Z_central2700_warm_dt025}; damping variants and all failed or coarse-step trials remain separately identified in the simulation archive.
+
+The plotting script \sourcefile{figures/scripts/fig_kinova_comparison.py} reads the compact arrays in \sourcefile{figures/data/kinova_comparison_20261024/} and writes the four comparison figures. Its manifest identifies the original CSV and NPZ inputs by SHA-256, the simulation results and the copied laboratory-controller source. A separate metrics JSON records the stage masks, resampling and filter definition. The existing common plotting style supplies the serif typography and the same blue/orange hand colours as the earlier chapters. The three new block diagrams are TikZ source in the relevant chapters.
+
+The frozen laboratory file has SHA-256
+\begin{center}\footnotesize\ttfamily
+685c80b14b527d450d6d42a03f779d04\\
+f928a4e2d31d22b44c9733d7a98cbfba
+\end{center}
+Matching its executable methods to the supplied reference does not establish the identity of the entire deployed ROS node. This provenance limit and the original-source failure are retained beside the completed approximate simulations.
+

@@ -6,3 +6,24 @@ install/
 log/
 tmp/
 config/local.yaml
+
+# Experimental source archive: preserve locally; never include in bulk staging.
+/NVIDIA_RUNS/
+
+# Rebuildable runtimes and caches from the analysis campaigns.
+/docs/analysis_20261023/controller_night/pybullet_nominal_20261024/deps/
+/docs/analysis_20261023/controller_night/checkpoints/
+/docs/analysis_20261023/controller_night/deliveries/
+**/mplconfig/
+**/scratch/
+
+# Preserve the sealed friction study's small execution logs with its checksums.
+!/docs/plate_friction_study_20261024/*.log
+
+# Dense analysis traces are retained locally, outside the published commit.
+/docs/analysis_20261023/**/*.npz
+/docs/plate_friction_study_20261024/**/*.npz
+!/docs/plate_friction_study_20261024/inputs/prior_torsional_C.npz
+/docs/thesis_update_20261024/**/*.npz
+/docs/thesis_haption_update_20261024/**/*.npz
+/docs/thesis_plate_update_20261024/**/*.npz

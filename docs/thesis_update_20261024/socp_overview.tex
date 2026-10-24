@@ -1,0 +1,35 @@
+\section{Inputs, outputs and the meaning of a feasible solution}
+\label{sec:socp-interface}
+
+The allocator distributes a load that another part of the system has specified. It needs a contact model, a requested object wrench and a way to compare alternative wrist wrenches. Table~\ref{tab:socp-inputs} collects these inputs. They are held fixed while one problem is solved; the optimizer does not search over object poses or discover new contacts.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}p{0.27\textwidth}p{0.66\textwidth}@{}}\toprule
+Input & Role in the allocation\\\midrule
+Contact geometry & Three pad positions and outward normals per hand, active-contact flags and the two wrist poles define the grasp maps.\\
+Requested load & The six components $\vect b=[\vect b_F^\top,\vect b_\tau^\top]^\top$ specify what the hands must balance, about the stated CoM.\\
+Contact assumptions & Friction $\mu$, tool constraints and the signed-distance margin define which contact forces are admissible.\\
+Human prior & The current attitude queries a twelve-dimensional covariance; its inverse weights the wrist forces and moments, including their correlations.\\\bottomrule
+\end{tabular}
+\caption{The fixed inputs of one allocation. In the unknown-object pipeline, mass, CoM and geometry come from estimates. The catalogue insertion experiments instead declare known nominal mass and geometry; their predicted environment load is supplied by the route model. The two information regimes are kept separate.}
+\label{tab:socp-inputs}
+\end{table}
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[node distance=7mm,box/.style={draw,rounded corners,align=center,text width=85mm,minimum height=11mm},>=Latex]
+\node[box] (inputs) {Contact geometry, requested load, friction\\and orientation-dependent human covariance};
+\node[box,below=of inputs] (solve) {SOCP: choose the two wrist wrenches\\subject to equilibrium and contact cones};
+\node[box,below=of solve] (check) {Independent numerical checks\\of balance, contact forces and margins};
+\node[box,below=of check] (out) {Accepted wrist references\\and auxiliary contact-force witnesses};
+\draw[->] (inputs)--(solve);\draw[->] (solve)--(check);\draw[->] (check)--(out);
+\end{tikzpicture}
+\caption{One local allocation. A failed solve or failed numerical check rejects the candidate. Acceptance establishes feasibility under the supplied model; the execution layer must still realize the accepted wrench through the arms and passive tools.}
+\label{fig:socp-blocks}
+\end{figure}
+
+The twelve wrist components are the physical output of interest. The eighteen auxiliary pad-force components certify that the chosen wrench pair can be supported by the assumed point contacts. An implementation may eliminate $\vect w$ by substituting $\vect w=H\vect f$ and solve directly for those eighteen components; this is the same wrist objective expressed in different variables. It does not provide eighteen independently actuated commands. The human mean is not a reference force: only the covariance enters the active cost.
+
+Evaluation has three separate levels. First, numerical acceptance checks equilibrium and each contact constraint in their stated units. Second, execution compares measured wrist wrenches with the accepted references, reporting tracking error, transients, force minima and command saturation. Third, the task is judged after release: whether the object remains supported and where it comes to rest. A low objective value, a feasible status and a small mean force bias are not substitutes for these physical measurements.
+
+The SOCP receives the pad--object contacts, not a complete collision scene. It cannot infer which shelf edge a future motion will meet. For insertion, the scene and the route model predict an external load before allocation, as explained in Section~\ref{sec:insertion-load-source}. Unexpected contacts can therefore invalidate the supplied load without making the numerical solve incorrect. Chapter~\ref{ch:kinova} distinguishes online reallocation from an offline wrench plan followed with measured-force feedback.
+

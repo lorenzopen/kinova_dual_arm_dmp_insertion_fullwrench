@@ -1,0 +1,121 @@
+{
+  "created_utc": "2026-10-23T19:21:41.068170+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "preservation": {
+    "verified_utc": "2026-10-23T19:20:48.658827+00:00",
+    "archive_identical": true,
+    "files": 765,
+    "bytes": 4080005175,
+    "baseline_zip_sha256_verified": true,
+    "preserved_zip_files_verified": 431,
+    "unchanged_runtime_source_files": 332
+  },
+  "files": [
+    {
+      "path": "audit_saved_evidence.py",
+      "bytes": 18729,
+      "sha256": "b233ba1b98fe123040c7a8a62a9afb84bf79bf6ec8c79b89bda76c26a0f66d98"
+    },
+    {
+      "path": "audit_saved_evidence_attempt1.py",
+      "bytes": 15366,
+      "sha256": "55f2a9c470d43dfd32d55130e9356e7200d33922ec44876ee4ba72d5ddd18cbc"
+    },
+    {
+      "path": "audit_saved_evidence_attempt2.py",
+      "bytes": 17986,
+      "sha256": "dc30d85042c06a53866a3f2b970f9270332e21115853f54631ac70afb355af1a"
+    },
+    {
+      "path": "SAVED_EVIDENCE_AUDIT.json",
+      "bytes": 20085,
+      "sha256": "9c52fb9632a3738a0f2536cec9e741ec62755075dbb3e9b1c02827e2309bf6f2"
+    },
+    {
+      "path": "SAVED_EVIDENCE_AUDIT_ATTEMPT2.json",
+      "bytes": 19173,
+      "sha256": "bfbc287fab51c457451e58fdb031eeeaa3cdd6b7fbb7dedfb88a0bfa279a2014"
+    },
+    {
+      "path": "SAVED_EVIDENCE_AUDIT.md",
+      "bytes": 5011,
+      "sha256": "eabc8b1f93c4b2930da34f35f4c6563bc8c5a680ed88d9034feef20acf7a4701"
+    },
+    {
+      "path": "SAVED_EVIDENCE_ATTEMPT1_FAILURE.json",
+      "bytes": 584,
+      "sha256": "60c73b5926f8826be0cd0eb55f55793e8e8d07bad410581c341062ab6e86e63b"
+    },
+    {
+      "path": "READING_GUIDE.md",
+      "bytes": 3394,
+      "sha256": "27247f4cbb3448a85a914e034bebd06ce218b8efe3251d96182e81bd6581a346"
+    },
+    {
+      "path": "diagnose_saved_tick_timing.py",
+      "bytes": 4679,
+      "sha256": "0c8c397799a8343e65337fabc2a5d3dbbc4441d7793d3a258320c843cdbb6574"
+    },
+    {
+      "path": "SAVED_CLOCK_DIAGNOSTIC.json",
+      "bytes": 5149,
+      "sha256": "6ee978a2ffc19ab5d2c57f3d1706dbffe9e4330a6b229eb24414aca1133b92de"
+    },
+    {
+      "path": "evidence_audit_process.log",
+      "bytes": 503,
+      "sha256": "812be08a068b7457fa223390484c7f67c362238b06f925279aeb955a97b39bd5"
+    },
+    {
+      "path": "evidence_audit_process_attempt2.log",
+      "bytes": 177,
+      "sha256": "127c4fc57b6505020c1ff1dcce4f5a8f0d849b4bbec612c862575938500f712d"
+    },
+    {
+      "path": "evidence_audit_process_attempt3.log",
+      "bytes": 177,
+      "sha256": "127c4fc57b6505020c1ff1dcce4f5a8f0d849b4bbec612c862575938500f712d"
+    },
+    {
+      "path": "saved_clock_diagnostic_process.log",
+      "bytes": 413,
+      "sha256": "ccffc36fe5c4cf5b40c886c20359411882b1da8b0419604645efc4fe2d6a0f76"
+    },
+    {
+      "path": "finalize_evidence_audit.py",
+      "bytes": 9931,
+      "sha256": "758909faf245e9bd91eac4c3759d15dfef8e64ed4464dfc3fee9bca78e47673e"
+    },
+    {
+      "path": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_saved_clock_audit.npz",
+      "bytes": 10391,
+      "sha256": "22a0a964b8ed928637f61bfd2309b109da15758c0f2d76c95c79f80392205a18"
+    },
+    {
+      "path": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_saved_clock_audit.npz",
+      "bytes": 11807,
+      "sha256": "ddc42964eb09d449fc2edd088735678989e77387714c28e8a23b1c114e7ed737"
+    },
+    {
+      "path": "S_s7073m3_c100_narrow75_ffi_20261023_191548_saved_clock_audit.npz",
+      "bytes": 15225,
+      "sha256": "c04e35b3673ba5d6774720ff4687b5590685a80e90ec1df997acf0ef8a8c7f36"
+    },
+    {
+      "path": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_saved_clock_audit.npz",
+      "bytes": 10554,
+      "sha256": "20e78b65933fac17c27fc065d193f435cf0b5c6a49c0974808c8370951507ea4"
+    }
+  ],
+  "scope": "Consistency of saved outputs plus timing-only diagnostic; no altered comparison/parameters/weights or claimed robot speed certificate.",
+  "first_audit_failure_retained": true,
+  "threshold_transcription_correction_retained": true
+}

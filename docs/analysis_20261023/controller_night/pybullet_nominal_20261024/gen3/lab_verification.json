@@ -1,0 +1,138 @@
+{
+  "created_utc": "2026-10-24T03:52:13.858205+00:00",
+  "reference": {
+    "user_reference": "Lorenzo supplied verbatim pure controller source and node contract in chat",
+    "executable_method_AST_equal": {
+      "compute_torque": true,
+      "estimate_wrench": true
+    },
+    "original_source_sha256": "685c80b14b527d450d6d42a03f779d04f928a4e2d31d22b44c9733d7a98cbfba",
+    "boundary": "Confirms supplied compute_torque and estimate_wrench executable bodies; not deployed binary/full-file hash verification",
+    "explicit_contract": {
+      "torque_sensor": "minus previous applied motor torque",
+      "publish_hz": 250,
+      "friction_scale": 0.0,
+      "home_seconds_launch": 8.0,
+      "cart_k": [
+        1500,
+        1500,
+        1500,
+        20,
+        20,
+        20
+      ],
+      "cart_d": [
+        60,
+        60,
+        60,
+        7,
+        7,
+        7
+      ]
+    }
+  },
+  "original_core_classes_verbatim": true,
+  "model_FK_max_error_m": 3.584884168826953e-08,
+  "model_J_max_error": 2.9976021664879227e-15,
+  "model_gravity_max_error_Nm": 3.3843072522188322e-06,
+  "initial_robot_contacts": [],
+  "latest_cases": [
+    {
+      "run": "Gen3Lab_Z_central2700_warm_dt025",
+      "dt_ms": 0.25,
+      "seconds": 0.12,
+      "error": "Abort('right flange 43 mm from its target')",
+      "last_phase": "to_open_pose",
+      "ever_route": false,
+      "events": [
+        {
+          "t": 0.07200000000000001,
+          "side": "R",
+          "event": "velocity_watchdog_gravity_only"
+        },
+        {
+          "t": 0.089,
+          "side": "L",
+          "event": "velocity_watchdog_gravity_only"
+        }
+      ],
+      "planning": {
+        "feasible": 232,
+        "solves": 232,
+        "samples": 1157,
+        "profile_sha256": "c50d13d17137db665526da262f060c5dbb3bcbb32f3235b503ecb9621e118637",
+        "method": "unchanged NominalPlanner / GraspSOCP / TP-GMM, recomputed before Bullet"
+      },
+      "warmup": {
+        "pose": "Grasp open pose, homing trajectory not simulated",
+        "kalman_covariance_constant_pose_warm_seconds": 2.0,
+        "previous_command": "Nominal gravity",
+        "RC": "Zero actual starting velocity"
+      },
+      "all_normal_correction_limits_unchanged": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3
+      },
+      "max_abs_Kalman_velocity_rad_s": 119.39713373079863,
+      "loop_sample_any_torque_clipped_fraction": 0.20416666666666666,
+      "loop_sample_slew_active_fraction": 0.3625,
+      "max_abs_raw_velocity_rad_s": 100.0,
+      "feedback_negative_previous_torque_max_error": 0.0,
+      "max_abs_torque_step_Nm": 0.5000000000000004
+    },
+    {
+      "run": "Gen3Lab_Z_hold_warm_dt0125",
+      "dt_ms": 0.125,
+      "seconds": 0.12,
+      "error": "Abort('right flange 47 mm from its target')",
+      "last_phase": "start",
+      "ever_route": false,
+      "events": [
+        {
+          "t": 0.067,
+          "side": "L",
+          "event": "velocity_watchdog_gravity_only"
+        },
+        {
+          "t": 0.073,
+          "side": "R",
+          "event": "velocity_watchdog_gravity_only"
+        }
+      ],
+      "planning": {
+        "feasible": 232,
+        "solves": 232,
+        "samples": 1157,
+        "profile_sha256": "c50d13d17137db665526da262f060c5dbb3bcbb32f3235b503ecb9621e118637",
+        "method": "unchanged NominalPlanner / GraspSOCP / TP-GMM, recomputed before Bullet"
+      },
+      "warmup": {
+        "pose": "Grasp open pose, homing trajectory not simulated",
+        "kalman_covariance_constant_pose_warm_seconds": 2.0,
+        "previous_command": "Nominal gravity",
+        "RC": "Zero actual starting velocity"
+      },
+      "all_normal_correction_limits_unchanged": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3
+      },
+      "max_abs_Kalman_velocity_rad_s": 120.06498073811521,
+      "loop_sample_any_torque_clipped_fraction": 0.1375,
+      "loop_sample_slew_active_fraction": 0.31666666666666665,
+      "max_abs_raw_velocity_rad_s": 100.0,
+      "feedback_negative_previous_torque_max_error": 0.0,
+      "max_abs_torque_step_Nm": 0.5000000000000004
+    }
+  ],
+  "interpretation": "Original controller executes; nominal URDF plant fails stationary hold; no valid insertion verdict"
+}

@@ -1,0 +1,30 @@
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[x=1mm,y=1mm,>=Latex,font=\small,line width=0.6pt]
+\definecolor{haptionleft}{HTML}{1F6FB2}
+% Mapped target is an outline; the proxy is the simulated physical body.
+\node[align=center] at (16,44) {Mapped\\handle target};
+\node[align=center] at (98,44) {Simulated\\proxy};
+\node at (128,44) {Object};
+\draw[dashed,draw=haptionleft,line width=0.8pt,rounded corners=1mm] (8,12) rectangle (24,32);
+\draw[fill=haptionleft!15,draw=haptionleft,line width=0.8pt,rounded corners=1mm] (90,12) rectangle (106,32);
+\fill[haptionleft] (16,22) circle (1mm);
+\fill[haptionleft] (98,22) circle (1mm);
+\draw[fill=black!10,draw=black!65,rounded corners=0.5mm] (110,7) rectangle (143,37);
+\foreach \y in {17,22,27}{\filldraw[fill=haptionleft!25,draw=haptionleft] (108,\y) circle (2mm);}
+% Parallel elastic and damping paths, shown only for translation.
+\draw[draw=haptionleft,line width=0.9pt]
+  (24,27)--(32,27)--(35,30)--(39,24)--(43,30)--(47,24)--(51,30)--(55,24)--(59,30)--(63,24)--(66,27)--(90,27);
+\node[fill=white,inner sep=1pt,text=haptionleft] at (51,32) {$K_p$};
+\draw[draw=black!65,line width=0.8pt] (24,17)--(48,17);
+\draw[draw=black!65,line width=0.8pt] (48,13)--(48,21)--(63,21) (48,13)--(63,13);
+\draw[draw=black!65,line width=0.8pt] (58,13)--(58,21) (58,17)--(90,17);
+\node[fill=white,inner sep=1pt] at (55,8) {$K_d$};
+\draw[<->,draw=black!55] (24,37)--node[fill=white,inner sep=2pt] {$\vect e_p=\vect p_t-\vect p$}(90,37);
+\node[font=\footnotesize,text=haptionleft] at (16,3) {$\vect p_t$};
+\node[font=\footnotesize,text=haptionleft] at (98,3) {$\vect p$};
+\draw[->,draw=haptionleft,line width=0.9pt] (72,22)--(87,22);
+\node[align=center,font=\footnotesize] at (73,-6) {Elastic log: $K_p\vect e_p$\qquad Proxy command: $K_p\vect e_p-K_d\vect v-m_h\vect g$};
+\end{tikzpicture}
+\caption{One translational virtual-coupling channel. The dashed target is obtained from the handle pose; the solid proxy moves under simulated dynamics and contact. The spring is numerical, not a physical spring mounted on the Haption. Damping uses proxy velocity, and gravity compensation is added to the proxy command. Only the elastic component is stored in the spring-wrench log. Rotation has the analogous stiffness--damping channel; the right hand uses the same structure.}
+\label{fig:virtual-coupling-schematic}
+\end{figure}

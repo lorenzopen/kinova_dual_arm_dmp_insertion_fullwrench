@@ -1,0 +1,2331 @@
+{
+  "created_utc": "2026-10-23T18:17:53.167605+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "scope": "Source and original metadata only. No CSV numerical loading, no replay or tuning. Source revision congruence is not proof of deployed uncommitted file contents.",
+  "sources": [
+    {
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "references": [
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+          "anchor": "AtiNode.__init__",
+          "line": 29,
+          "end_line": 38,
+          "source_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+          "semantic_sha256": "a328f0a9f2973dddffd9a13af031b6357cfa4549178c8fba44b79aca1768a6d7"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+          "anchor": "AtiNode._msg",
+          "line": 40,
+          "end_line": 46,
+          "source_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+          "semantic_sha256": "caf2195e5a65c6b8e245627bcf7570740ca8f41981bc53459a222b82ce7d4382"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+          "anchor": "AtiNode._rx",
+          "line": 48,
+          "end_line": 72,
+          "source_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+          "semantic_sha256": "c298e76e8e4f43bd7aade2b71e32fc5f38d1cfebf8d6f55d0cc6c6c6440e642c"
+        }
+      ]
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "references": [
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+          "anchor": "_Arm._ft",
+          "line": 181,
+          "end_line": 187,
+          "source_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+          "semantic_sha256": "318bf5360e426485b0ffb13c21dfbc2819d3086a62dd08cc1f6541a11804cdd1"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+          "anchor": "_Arm.ft_last",
+          "line": 189,
+          "end_line": 192,
+          "source_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+          "semantic_sha256": "71903f30b3c93047c3497567e5c7feebb2786c35160985fd943aeba02a03ea8e"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+          "anchor": "RosBackend.read",
+          "line": 393,
+          "end_line": 449,
+          "source_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+          "semantic_sha256": "bb1cfd3478238a3245c364e5a67c7e190ae6c76f3d88f356f92ebc4ac83db328"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+          "anchor": "RosBackend.command",
+          "line": 315,
+          "end_line": 328,
+          "source_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+          "semantic_sha256": "91d8c6d6da63cb3a2fa062b03019f531f659ccc3cc140580f527bdf8e928f6ae"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+          "anchor": "RosBackend.now",
+          "line": 303,
+          "end_line": 304,
+          "source_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+          "semantic_sha256": "5ac20ba90b27bc32c03b5126b8557fe91415f7f3e3b4a6ea0765b00fe2aad143"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+          "anchor": "RosBackend.wait",
+          "line": 306,
+          "end_line": 312,
+          "source_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+          "semantic_sha256": "63af1a2784ea18af95a48285c77e7dbc8eb6646e4e8c16a843f51e2a45d29030"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+          "anchor": "RosBackend.ft_on_tool",
+          "line": 383,
+          "end_line": 391,
+          "source_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+          "semantic_sha256": "b8418620b784e6a40a9a58c40e411b66f86c97bf01bb409bfdfeb75908f89fd8"
+        }
+      ]
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "references": [
+        {
+          "path": "kinova_dual_arm_dmp_insertion/controller.py",
+          "anchor": "CONTROL_PERIOD",
+          "line": 39,
+          "end_line": 39,
+          "source_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+          "semantic_sha256": "60fba94c7e0ebc237bcb519f3097e7877ff63d9038be0873b0bdbe209ced77f8"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/controller.py",
+          "anchor": "SOCP_PERIOD",
+          "line": 40,
+          "end_line": 40,
+          "source_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+          "semantic_sha256": "3c18bcfa23cde1b544c75063cca2bb0e5a57a55c1eb97786273aaccd2254ac2b"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/controller.py",
+          "anchor": "Insertion.tick",
+          "line": 146,
+          "end_line": 161,
+          "source_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+          "semantic_sha256": "844c71f53c0a0b8211f0c4b39f6a7af44780c4ca5cc127c109c1da32a2c396e1"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/controller.py",
+          "anchor": "Insertion.normal_force",
+          "line": 174,
+          "end_line": 179,
+          "source_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+          "semantic_sha256": "2fb7171d2193f6e1ba3a487206aa6499b702cb99ff58ea7d7da5eb218a6060e8"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/controller.py",
+          "anchor": "Insertion.drive",
+          "line": 364,
+          "end_line": 374,
+          "source_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+          "semantic_sha256": "52049650d0fbae9b973250287a0727ccbc20fd16d277beb69345e6ea7bf6b023"
+        }
+      ]
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "references": [
+        {
+          "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+          "anchor": "FFISettings",
+          "line": 21,
+          "end_line": 42,
+          "source_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+          "semantic_sha256": "693ce3a7e59650842eb32f13c39aaac5b494f0a20376a18b52e22a0954341717"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+          "anchor": "NominalIntegral",
+          "line": 45,
+          "end_line": 112,
+          "source_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+          "semantic_sha256": "e4c48780bc8366b588eb223c9bc0ca263cedfd112829b6c58772e85a097f00a8"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+          "anchor": "FFIMixin._squeeze_update",
+          "line": 143,
+          "end_line": 146,
+          "source_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+          "semantic_sha256": "db41441714e024f46505790f474bc08776ad5ac76b16392035a85f726c75e178"
+        }
+      ]
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "references": [
+        {
+          "path": "kinova_dual_arm_dmp_insertion/main.py",
+          "anchor": "Log",
+          "line": 76,
+          "end_line": 124,
+          "source_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+          "semantic_sha256": "4a969fed29422ed8ec737cea1f3ba28fdedf46c58c0854b79038982e14733a6a"
+        },
+        {
+          "path": "kinova_dual_arm_dmp_insertion/main.py",
+          "anchor": "write_meta",
+          "line": 127,
+          "end_line": 175,
+          "source_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+          "semantic_sha256": "6ee569410bcd2410bd2b1f2cb4b8f863ac0e716a619bd12d9922f3fe0e34b457"
+        }
+      ]
+    },
+    {
+      "path": "launch/robot.launch.py",
+      "sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "references": [
+        {
+          "path": "launch/robot.launch.py",
+          "anchor": "_setup",
+          "line": 39,
+          "end_line": 77,
+          "source_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+          "semantic_sha256": "d4b23030d15cf1d2510c380deeb0d5a1008327acdda4a51377665bae965d623a"
+        },
+        {
+          "path": "launch/robot.launch.py",
+          "anchor": "generate_launch_description",
+          "line": 80,
+          "end_line": 101,
+          "source_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+          "semantic_sha256": "541fc21905d897fdc5b622f55f2b3a33c090fe7fb1eb935f5d095a43cf2315c8"
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_meta.json",
+      "metadata_sha256": "2ef377ba948a192619c3f0e0db31a5b7e1672405ff452b1f848c46f7146c187e",
+      "git": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1751_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_meta.json",
+      "metadata_sha256": "ca2785bc9958a623a849f7fecd48a4d6406320786a0040f51244f5b456dac902",
+      "git": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1756_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_meta.json",
+      "metadata_sha256": "89bd0ed05030bb8e6a39a50c6f32eb632b8d958661cd091a5936df58a106f310",
+      "git": "bd457b8093530cb699c1833302f17fb283094924",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_meta.json",
+      "metadata_sha256": "54931c039cb63f0d55c7bccafe773bff88c7f9ca87066f5d3cfa0c513a2553c5",
+      "git": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1837_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_meta.json",
+      "metadata_sha256": "412b27d90ac0d764f0176946ce1cd36f6f4a47ec7903c777a6c5c1ecb4ee1e0e",
+      "git": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1841_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_meta.json",
+      "metadata_sha256": "9c6aa312c78d3b1e25687950d9f6b2fe0c9047c092e7003334fa3cd12d47ba67",
+      "git": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1904_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_190407_meta.json",
+      "metadata_sha256": "484588ff9aadff41f7138f59bc0aa76c3066eb5e462be732a1baac5d163143bc",
+      "git": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1913_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191302_meta.json",
+      "metadata_sha256": "1df7eecf0e3d93485effe9f54b909e693d65941d275ef4e3242b0c38669b8479",
+      "git": "2361f01f861790570fad23431f4641545c6cae6a",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1915_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191548_meta.json",
+      "metadata_sha256": "ff2c15b30638d1ec1346b021ce20c25af301c1187dcda9ee8804726ab3453fe4",
+      "git": "f761b60099df9fe286050349d28b135bb85254eb",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1921_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_meta.json",
+      "metadata_sha256": "87e4b59a6dd17b8df48da3e3b6e40d71d84ce6ebd342b3b8214176884761ad21",
+      "git": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1927_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_meta.json",
+      "metadata_sha256": "e44d8ef25a060109df9be2c89e28644cadd86493d10a03ba4d0398ee5d953a90",
+      "git": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1931_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_meta.json",
+      "metadata_sha256": "976b918e4fbbe5cd81e01e7ed6b49c8b67c293e60c88a8d26bff98e5c235089e",
+      "git": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "git_dirty": false,
+      "configured_stream_rate_hz": 100,
+      "log_timing": "poses are commands already sent; measured wrench is read after wait; ds/target/wdes are updated after that reading for subsequent commands. Source stamps identify the latest message, ages are since local receipt; ATI values average the last configured samples.",
+      "arms": {
+        "L": {
+          "wrench_source": "ft",
+          "ft_topic": "/left_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        },
+        "R": {
+          "wrench_source": "ft",
+          "ft_topic": "/right_arm/ft_data_avg",
+          "declared_ft_rate_hz": 200,
+          "backend_mean_samples": 2
+        }
+      }
+    }
+  ],
+  "historical_source_checks": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "revision": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "revision": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "revision": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "revision": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "revision": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "revision": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "revision": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "revision": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "revision": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "revision": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "revision": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "revision": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "revision": "bd457b8093530cb699c1833302f17fb283094924",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "revision": "bd457b8093530cb699c1833302f17fb283094924",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "revision": "bd457b8093530cb699c1833302f17fb283094924",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "revision": "bd457b8093530cb699c1833302f17fb283094924",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "revision": "bd457b8093530cb699c1833302f17fb283094924",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "revision": "bd457b8093530cb699c1833302f17fb283094924",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "revision": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "revision": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "revision": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "revision": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "revision": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "revision": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "revision": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "revision": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "revision": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "revision": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "revision": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "revision": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "revision": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "revision": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "revision": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "revision": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "revision": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "revision": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "revision": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "revision": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "revision": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "revision": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "revision": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "revision": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "revision": "2361f01f861790570fad23431f4641545c6cae6a",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "revision": "2361f01f861790570fad23431f4641545c6cae6a",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "revision": "2361f01f861790570fad23431f4641545c6cae6a",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "revision": "2361f01f861790570fad23431f4641545c6cae6a",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "revision": "2361f01f861790570fad23431f4641545c6cae6a",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "revision": "2361f01f861790570fad23431f4641545c6cae6a",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "revision": "f761b60099df9fe286050349d28b135bb85254eb",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "revision": "f761b60099df9fe286050349d28b135bb85254eb",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "revision": "f761b60099df9fe286050349d28b135bb85254eb",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "revision": "f761b60099df9fe286050349d28b135bb85254eb",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "revision": "f761b60099df9fe286050349d28b135bb85254eb",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "revision": "f761b60099df9fe286050349d28b135bb85254eb",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "revision": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "revision": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "revision": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "revision": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "revision": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "revision": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "revision": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "revision": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "revision": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "revision": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "revision": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "revision": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "revision": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "available": true,
+      "historical_bytes_sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed",
+      "anchors": [
+        {
+          "anchor": "AtiNode.__init__",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._msg",
+          "semantic_match": true
+        },
+        {
+          "anchor": "AtiNode._rx",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "revision": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "available": true,
+      "historical_bytes_sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e",
+      "anchors": [
+        {
+          "anchor": "_Arm._ft",
+          "semantic_match": true
+        },
+        {
+          "anchor": "_Arm.ft_last",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.read",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.command",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.now",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.wait",
+          "semantic_match": true
+        },
+        {
+          "anchor": "RosBackend.ft_on_tool",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "revision": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "available": true,
+      "historical_bytes_sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c",
+      "anchors": [
+        {
+          "anchor": "CONTROL_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "SOCP_PERIOD",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.tick",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.normal_force",
+          "semantic_match": true
+        },
+        {
+          "anchor": "Insertion.drive",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "revision": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "available": true,
+      "historical_bytes_sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991",
+      "anchors": [
+        {
+          "anchor": "FFISettings",
+          "semantic_match": true
+        },
+        {
+          "anchor": "NominalIntegral",
+          "semantic_match": true
+        },
+        {
+          "anchor": "FFIMixin._squeeze_update",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "revision": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "available": true,
+      "historical_bytes_sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a",
+      "anchors": [
+        {
+          "anchor": "Log",
+          "semantic_match": true
+        },
+        {
+          "anchor": "write_meta",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "revision": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "path": "launch/robot.launch.py",
+      "available": true,
+      "historical_bytes_sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed",
+      "anchors": [
+        {
+          "anchor": "_setup",
+          "semantic_match": true
+        },
+        {
+          "anchor": "generate_launch_description",
+          "semantic_match": true
+        }
+      ],
+      "all_selected_anchors_match": true
+    }
+  ],
+  "filter_hypothesis": {
+    "assumptions": "Ideal uniform 1kHz sensor input, every=5 block means at200Hz and last2 consecutive block means; launch defaults, not runtime sensor-rate/every evidence. No queueing, sensor firmware filter or consume-age included.",
+    "raw_sample_count": 10,
+    "ideal_group_delay_ms": 4.5,
+    "metrics": [
+      {
+        "frequency_Hz": 0.8,
+        "gain": 0.9998957801923208,
+        "amplitude_reduction_percent": 0.010421980767916228
+      },
+      {
+        "frequency_Hz": 1.0,
+        "gain": 0.9998371593759416,
+        "amplitude_reduction_percent": 0.016284062405835797
+      },
+      {
+        "frequency_Hz": 1.5,
+        "gain": 0.9996336306688189,
+        "amplitude_reduction_percent": 0.03663693311810601
+      },
+      {
+        "frequency_Hz": 2.5,
+        "gain": 0.9989825035940643,
+        "amplitude_reduction_percent": 0.10174964059357361
+      },
+      {
+        "frequency_Hz": 5.0,
+        "gain": 0.9959336908696992,
+        "amplitude_reduction_percent": 0.4066309130300816
+      },
+      {
+        "frequency_Hz": 10.0,
+        "gain": 0.983793462635928,
+        "amplitude_reduction_percent": 1.620653736407196
+      }
+    ]
+  },
+  "source_checks_summary": {
+    "file_revision_comparisons": 72,
+    "available": 72,
+    "all_selected_anchors_match": 72,
+    "selected_anchors_per_revision": 22
+  },
+  "software_checks": {
+    "dc_gain": 1.0,
+    "cascade_matches_ten_consecutive_samples": true,
+    "max_cascade_gain_difference": 3.3306690738754696e-16
+  }
+}

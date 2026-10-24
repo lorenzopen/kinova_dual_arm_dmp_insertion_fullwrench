@@ -1,0 +1,119 @@
+{
+  "created_utc": "2026-10-23T17:23:11.674734+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "files": [
+    {
+      "path": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_holdout_result.json",
+      "bytes": 169157,
+      "sha256": "8c2edcd34fe5fa2850615d48e93f7125184d40fb2bcd6bccbc5fee7e2efd85a6"
+    },
+    {
+      "path": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_holdout_attempt1_traces.npz",
+      "bytes": 3003723,
+      "sha256": "de1b701d6368b43b04551d44147568fd9db57416a1e4309da851016f74654d09"
+    },
+    {
+      "path": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_holdout_result.json",
+      "bytes": 169101,
+      "sha256": "3134d7d13c271829ce05b5b8f3311c5f05691f3ab3b8b3e354494cd6e784e6a0"
+    },
+    {
+      "path": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_holdout_attempt1_traces.npz",
+      "bytes": 3438363,
+      "sha256": "d25da2d4d5a664ba3b30acc20607bf315b099414154673085a8f9d430066ad06"
+    },
+    {
+      "path": "S_s7073m3_c100_narrow75_ffi_20261023_191548_holdout_result.json",
+      "bytes": 168522,
+      "sha256": "52329bcf51460aa2a8ebf9d4c4aa58c3ea75d1cc426236f285a9ea7b3243c8ec"
+    },
+    {
+      "path": "S_s7073m3_c100_narrow75_ffi_20261023_191548_holdout_attempt1_traces.npz",
+      "bytes": 4464982,
+      "sha256": "b9a5043a1c88f46141d2835e24d369186f54b1ce7cc080052882b22e7c27b044"
+    },
+    {
+      "path": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_holdout_result.json",
+      "bytes": 169184,
+      "sha256": "90a9ef79d0a28f3a78cbe148fd00912521153d3004c98382bf29446215a54576"
+    },
+    {
+      "path": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_holdout_attempt1_traces.npz",
+      "bytes": 3098538,
+      "sha256": "395c8c9f6aa3c1c6e02556428680ff8a1999af306929eb0d3d65f525b63de2fd"
+    },
+    {
+      "path": "evaluate_locked_holdout.py",
+      "bytes": 11308,
+      "sha256": "3452c797767bee5e6c8af48072e13a94c778e98bdef5ed42f277f02561de14a8"
+    },
+    {
+      "path": "holdout_report.py",
+      "bytes": 19665,
+      "sha256": "55910c83498ed5e96c8726daf3675bdcef0104381843332f042347afc22732e3"
+    },
+    {
+      "path": "finalize_holdout_tranche.py",
+      "bytes": 9689,
+      "sha256": "1672cc3f83acc928fae5383f27f16a4bc805a25004f9c4fa9ceb16da55cd8543"
+    },
+    {
+      "path": "HOLDOUT_REPORT.md",
+      "bytes": 10205,
+      "sha256": "454c86e480613a6fb0c1d7e2a349c57cfa97b379c26595f6f9cad5e035513582"
+    },
+    {
+      "path": "holdout_metrics.csv",
+      "bytes": 237439,
+      "sha256": "61bcefcca604c1e1035a78752dcfb08632d990b37210ee582e7d8f90c0b1cd29"
+    },
+    {
+      "path": "holdout_summary.json",
+      "bytes": 18085,
+      "sha256": "b0279f08d22af1516c5a28afd3bca45e9a56b4193760806794270c7f8ebcb01a"
+    },
+    {
+      "path": "HOLDOUT_EVALUATION_STARTED.json",
+      "bytes": 1109,
+      "sha256": "49408587fd040621c04599501ded45eb0ae2b63b3d9943be2847057a2621704a"
+    },
+    {
+      "path": "HOLDOUT_EVALUATION_COMPLETED.json",
+      "bytes": 2602,
+      "sha256": "f4a9c8e600fd90f0d09ae63e41720b5e76ebbb63ec44ccb38a356578535386b5"
+    },
+    {
+      "path": "14_holdout_forze_osservate.png",
+      "bytes": 745173,
+      "sha256": "c6b5c2659363fae386d8c4a74357c537077492f5547cd68ae1c70525e42aed99"
+    },
+    {
+      "path": "15_holdout_confronto_condizionato.png",
+      "bytes": 409633,
+      "sha256": "ac0266abf1f43d49374091226a05cbd43be9ea9b51e25ce8c580a446504b8376"
+    },
+    {
+      "path": "16_holdout_score_compromessi.png",
+      "bytes": 107014,
+      "sha256": "0d69f69ddea80d462be084492a659bd7abc20adda0ef76590e04a51d3cdd6690"
+    }
+  ],
+  "preservation_at_delivery": {
+    "verified_utc": "2026-10-23T17:22:08.574247+00:00",
+    "archive_identical": true,
+    "files": 765,
+    "bytes": 4080005175,
+    "baseline_zip_sha256_verified": true,
+    "preserved_zip_files_verified": 431,
+    "unchanged_runtime_source_files": 332
+  },
+  "note": "Completed retrospective holdout comparison, no tuning after frozen parameters. Results/NPZ hashes are also in the exclusive completion marker. No hardware candidate selected."
+}

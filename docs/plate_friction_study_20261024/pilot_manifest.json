@@ -1,0 +1,107 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "cvxpy": "1.9.3",
+  "solvers": [
+    "CLARABEL",
+    "SCS",
+    "SCIPY",
+    "HIGHS",
+    "OSQP"
+  ],
+  "source_sha256": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2",
+  "protocol_sha256": "72fc25d688a5fb5d4f9eeb6a15dbb379644e837c801b3d7dac16dd01b8cad7ce",
+  "prior_sha256": "2d229d367e70de99a0bc1b6cdf7004642b73bda5935bde5202ddccf636b0eadd",
+  "solver_sha256": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+  "plate_sha256": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+  "jobs": [
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_spatial_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_spatial_2"
+    }
+  ]
+}

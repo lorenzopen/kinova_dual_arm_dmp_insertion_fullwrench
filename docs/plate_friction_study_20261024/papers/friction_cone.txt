@@ -1,0 +1,952 @@
+
+=== PAGE 1 ===
+Keeping Contact: Task-Adaptive Friction Margins
+for Bimanual Non-Prehensile Manipulation
+Anonymous authors
+Abstract—Maintaining contact in non-prehensile manipulation
+requires more than nominal friction cone feasibility: a force
+barely inside the cone and one well inside it are both feasible, but
+they provide different margins against slip and contact loss. This
+paper uses signed friction distance to measure friction margin
+in force space and derives a task-adaptive margin from the
+force correction needed to balance pivot moment deviations in
+bimanual tilting. The resulting contact margins are embedded in
+a sequence of second-order cone programs (SOCPs), each giving
+a globally optimal contact force solution at a tilt angle. The
+optimizer balances the object about an environmental pivot while
+keeping robot and pivot contact forces away from the nominal
+friction boundary. Optimizer-level results show interpretable
+force redistribution and adaptation to object property changes.
+Real-world experiments demonstrate successful execution under
+object property variations and model mismatch, while fixed
+margin and no-margin comparisons illustrate the importance of
+adapting the margin to task demand. These results support signed
+friction distance margins as a force planning mechanism for
+maintaining contact in bimanual non-prehensile manipulation.
+Index Terms—Manipulation planning, bimanual manipulation,
+contact force planning, friction margin, convex optimization.
+I. INTRODUCTION
+Non-prehensile manipulation extends robotic manipulation
+beyond rigid grasping by exploiting contact interactions as part
+of the task mechanics. This enables behaviors such as pushing
+[1], rolling [2], and pivoting [3]. Since the resulting motion is
+governed by frictional contacts, planning must reason about
+both contact motion and forces. Recent optimization-based
+formulations incorporate trajectory optimization with frictional
+contact constraints and simultaneous contact selection [4, 5].
+In these formulations, friction constraints primarily specify
+admissible contact forces or contact modes along the motion.
+Yet admissibility does not specify where a maintained contact
+force lies within the friction cone: a nominally feasible force
+profile may still operate near a friction boundary and remain
+sensitive to modeling error or tracking deviation.
+A useful clue comes from everyday manipulation. When
+lifting an unfamiliar object, a person rarely knows its inertial
+parameters exactly, yet contact is often maintained stably.
+Rather than regulating contact force at the minimum value
+that barely avoids slip, people maintain a margin above the slip
+threshold and adjust it as perceived task demand changes [6,
+7]. This contrasts with friction cones used only as feasibility
+tests: a force that barely clears the boundary and one well
+inside the cone are accepted alike, although only the latter
+carries a meaningful margin. The question is thus not merely
+whether a planned force is feasible, but what margin it should
+maintain and how that margin should vary with the task.
+Fig. 1: Bimanual non-prehensile tilting. Inset illustrates two feasible contact
+forces in the local force plane. Translucent circles show equal force perturba-
+tions around each force tip: a near boundary force can leave the friction cone
+and slip, whereas a force with finite margin remains feasible.
+Motivated by this view, we plan contact forces by lower
+bounding their signed distance from the nominal friction
+boundary. This lower bound gives each maintained contact a
+force space margin against deviations from the planned force.
+The remaining question is how to choose this margin along
+the motion: a fixed value treats margin as uniform, while a
+task-adaptive value can vary with the force demand imposed
+by the manipulation task. We study this construction on the
+planar bimanual tilting task in Fig. 1. This task has a structured
+but nonuniform force requirement: the gravitational moment
+varies with tilt angle and object properties, changing the forces
+required from the two robot contacts. The motion is especially
+sensitive to slip at the initial and final configurations, making
+sufficient tangential support and friction margin important
+throughout the tilt. Unlike prior pivoting studies that often
+rely on symmetric robot–object contact arrangements [3, 8],
+our setup uses non-opposing contacts and exploits an environ-
+mental pivot to accomplish the task. Maintaining both robot
+contacts is therefore central to the task, since slip or contact
+loss at either contact can lead to task failure.
+In summary, the main contributions of this work are:
+1) We use signed friction distance to the nominal friction
+boundary as an explicit force space measure of margin for
+contact force planning.
+2) We introduce a task-adaptive margin construction that
+lower bounds this signed distance based on the force
+demand required by the task.
+3) We embed this margin in a convex force planner with
+globally optimal contact force solutions and evaluate it in
+real-world experiments.
+
+=== PAGE 2 ===
+II. RELATEDWORK
+A. Non-Prehensile Manipulation with Force Planning
+Prior work in non-prehensile manipulation has shown that
+useful object motion can be generated by exploiting frictional
+and environmental contacts instead of rigidly grasping the
+object [9–11]. Existing methods have studied contact mode
+planning, reorientation with environmental support, and bi-
+manual coordination under changing contact conditions [3,
+8, 12–15]. These works demonstrate the value of planning
+through contact, but many emphasize object motion, contact
+modes, or contact feasibility. For non-prehensile manipulation,
+force planning is also central because the object is not rigidly
+held. Even with a prescribed motion and contact mode, the
+contact force distribution determines whether the required
+wrench can be transmitted without slip or unloading [9,
+16]. However, less attention has been given to how large a
+friction margin should be maintained at each contact during
+execution, especially when the contacts are non-opposing and
+the required wrench changes over the motion. Bimanual tilting
+with an environmental pivot exposes this issue: losing either
+robot contact can remove the force needed to support or
+regulate the object.
+B. Contact Force Optimization and Friction Margins
+Optimization is widely used in contact-rich manipulation
+to reason about object motion, contact forces, and frictional
+constraints [4, 5, 17]. For known contact geometry and motion,
+force planning becomes more structured and can be formulated
+as a convex optimization problem, such as a quadratic program
+or second-order cone program [18–20]. Beyond computing
+feasible contact forces, an important question is how explicitly
+the optimized forces maintain margin from frictional limits.
+Friction margins have been used in broader manipulation
+optimization problems to improve feasibility and stability [21,
+22]. Such margins are useful, but they are not generally
+selected as local contact-wise force space margins. At the
+local contact level, conservatism can be introduced through the
+friction model or objective, such as using a reduced friction
+coefficient or adding penalty and barrier terms [23]. Cone
+shrinking provides a relative margin that vanishes as normal
+force approaches zero, while objective penalties depend on
+weights and compete with the force objective. Recent work
+has used a minimum friction margin to generate behavior that
+is distilled into a learning-based controller [24]. There, the
+margin serves as an intermediate data generation constraint
+rather than a constraint directly enforced during contact force
+planning, and its required value is fixed. When task force de-
+mand changes over a motion, a fixed margin can be insufficient
+in demanding configurations or add unnecessary loading when
+demand is small.
+Together, these works leave open how to impose a contact-
+wise margin directly on planned contact forces, with a force
+space interpretation, while allowing the required margin to
+vary with task demand. We address this by enforcing a
+task-adaptive lower bound on the signed distance from each
+planned contact force to the nominal friction boundary as a
+hard constraint in a convex force planner.
+ft
+fn
+f ρ
+fn, min
+ψμ(f)=
+0
+ψμ(f)=
+ρ
+Increasing Ftask
+Fig. 2: Signed friction distance in the contact force plane. The nominal
+boundaryψ µ(f) = 0is the friction limit, whileψ µ(f)≥ρkeeps the
+planned force a finite signed distance inside the cone. Whenf t = 0, the
+same constraint induces a minimum normal forcef n,min. The color bar
+schematically indicates increasing task force demandF task and marginρ.
+III. METHOD
+This section first introduces signed friction distance as a
+measure of force space margin. We then derive the pivot-
+centered task demand and the resulting affine task-adaptive
+margin for bimanual tilting, and embeds the margin in a
+convex force planner. Unless otherwise stated, vectors are
+expressed in the object frame and norms are Euclidean.
+A. Signed Friction Distance as a Force Space Margin
+For a planar frictional point contact, letn∈R 2 be the
+outward unit normal and letf∈R 2 be the force applied
+to the object. We decomposefinto normal and tangential
+components as
+fn =−n ⊤f,f t =f+f nn,(1)
+wheref n ≥0denotes compression. For a contact with friction
+coefficientµ >0, the nominal Coulomb friction cone is
+∥f t∥ ≤µf n, f n ≥0.(2)
+Nominal feasibility only requires the force to lie inside this
+cone. It does not distinguish forces near the boundary from
+forces well inside the cone.
+Figure 2 illustrates the margin measure used here: the signed
+distance from a contact force to the slip boundary in the local
+force plane. We define this quantity assigned friction distance,
+ψµ(f) = µfn − ∥f t∥p
+1 +µ 2 .(3)
+Thus,ψ µ(f)>0inside the nominal cone,ψ µ(f) = 0on the
+slip boundary, andψ µ(f)<0outside the cone. It also relates
+the margin directly to force deviations. Let∆fdenote the
+force deviation expressed in the same nominal contact frame.
+Applying the decomposition in Eq. (1) to the perturbed force,
+the triangle inequality and Cauchy–Schwarz give
+ψµ(f+ ∆f)≥ψ µ(f)− ∥∆f∥.(4)
+Therefore, letρ≥0be the required margin, measured in force
+units. If the planned force satisfies
+ψµ(f)≥ρ,(5)
+
+=== PAGE 3 ===
+fn
+ft fn
+ft
+Fig. 3: Bimanual tilting model. Two robot contacts apply forces to the object
+while an environmental pivot supplies a passive reaction.
+then any realized force deviation with∥∆f∥ ≤ρremains
+inside the nominal cone:
+ψµ(f+ ∆f)≥ψ µ(f)− ∥∆f∥ ≥ρ−ρ= 0.(6)
+Thus,ρlower bounds the force space deviation that the
+planned contact force can tolerate before reaching the nominal
+slip boundary. The margin constraint in Eq. (5) is equivalent
+to the second-order cone (SOC) constraint,
+µfn −ρ
+p
+1 +µ 2
+f t
+
+∈ L3,(7)
+whereL 3 ={(t,x)∈R×R 2 :t≥ ∥x∥}is the Lorentz cone.
+In particular, whenf t =0, Eq. (7) implies
+fn ≥ ρ
+p
+1 +µ 2
+µ ,(8)
+so a positive margin also induces a minimum compressive
+normal force and discourages contact unloading. Moreover,
+the margin quantifies tolerance to friction coefficient overesti-
+mation. Ifµis overestimated byδµ≥0, then, forf n >0, the
+planned force remains feasible under the true coefficient if
+∥f t∥ ≤(µ−δµ)f n ⇐ ⇒δµ≤∆µ:= µfn − ∥f t∥
+fn
+,(9)
+where∆µis the exact overestimation tolerance. From Eq. (5),
+µfn − ∥f t∥ ≥ρ
+p
+1 +µ 2.(10)
+Dividing byf n >0, the imposed margin certifies friction
+feasibility for any overestimation satisfying
+δµ≤ ρ
+p
+1 +µ 2
+fn
+.(11)
+A conservatively reduced coefficient may also be used in
+Eq. (5) when an uncertainty bound is known.
+B. Pivot-Centered Model for Bimanual Tilting
+Problem formulation.For the bimanual tilting task in
+Fig. 3, the object is rotated quasi-statically inSE(2)about
+an environmental pivot by two robot contacts. We assume that
+the (i) environmental contact occurs at a known object vertex,
+(ii) object motion is prescribed, and (iii) robot contacts remain
+sticking at known, fixed locations in the object frame.
+Notation.The commanded tilt angle is denoted byθ. Robot
+contacts are indexed byi∈ {1,2}, and the pivot contact is
+indexed byp. Letp i,p p, andx com ∈R 2 denote the robot
+contact positions, pivot position, and nominal center of mass
+(CoM), respectively, all expressed in the object frame. For a
+planar lever armr= [r x, ry]⊤, definer ⊥ = [−ry, rx]⊤, so that
+the scalar moment generated by a forcefisr×f= (r ⊥)⊤f.
+For the tilting model in Fig. 3, the environmental pivot is
+passive, so its reaction force is not a decision variable. Given
+the robot contact forces, force balance determines
+f p =−f 1 −f 2 −mg(θ),(12)
+wheremis the object mass andg(θ)is the gravity expressed
+in the object frame at tilt angleθ. Thus, the planned force
+vector contains only the two robot contact forces,
+F=
+
+f1
+⊤ f2
+⊤⊤
+∈R 4.(13)
+Taking moments about the pivot eliminates the pivot reaction,
+since its moment arm is zero. The resulting task balance is
+GF+τ g(θ) = 0,(14)
+where
+G=
+G1 G2
+
+, τ g(θ) = (xcom −p p)⊥⊤mg(θ).(15)
+Here,G i = (pi −pp)⊥⊤ ∈R 1×2 maps the robot contact force
+f i to its moment contribution about the pivot, andτ g(θ)is the
+gravitational moment.
+C. Task-Adaptive Margin
+The task force demand is the minimum-norm robot contact
+force vector needed to balance this pivot moment:
+Ftask(θ) = arg min
+F
+1
+2 ∥F∥2 s.t.GF+τ g(θ) = 0.(16)
+Because the robot contacts must have nonzero moment-
+generating capability about the pivot, we assumeG̸=0.
+The minimum-norm task force in Eq. (16) can equivalently
+be written as
+Ftask(θ) =−G ⊤
+
+GG⊤
+−1
+τg(θ).(17)
+The corresponding scalar demand is
+Ftask(θ) =∥F task(θ)∥=|τ g(θ)|
+
+GG⊤
+−1/2
+.(18)
+This scalar demand measures the pivot moment demand after
+mapping it through the minimum-norm contact force map,
+before the margin or objective-dependent force redistribution.
+The same minimum-norm map converts a scalar pivot-
+moment deviationδτ g into a robot contact force correction
+of magnitude
+∥∆F∥=|δτ g|
+
+GG⊤
+−1/2
+.(19)
+This correction magnitude provides the task-level force devi-
+ation bound used to allocate the robot contact margins. Con-
+sider deviations in object mass and CoM location. Perturbing
+Eq. (15) to first order gives
+δτg = δm
+m τg(θ) +m(δx com)⊥⊤ g(θ).(20)
+If the property deviations are bounded as|δm| ≤∆mand
+∥δxcom∥ ≤∆x, then
+|δτg| ≤ ∆m
+m |τg(θ)|+mg∆x. (21)
+
+=== PAGE 4 ===
+Combining Eqs. (19) and (21) gives the sufficient task-level
+margin
+ρreq(θ) =
+∆m
+m |τg(θ)|+mg∆x
+
+GG⊤
+−1/2
+.(22)
+Using Eq. (18), this motivates an affine task-adaptive margin
+ρ(θ) =λ mFtask(θ) +λ CoM.(23)
+When such property deviation bounds are identified, a conser-
+vative parameter choice is
+λm ≥ ∆m
+m , λ CoM ≥mg∆x
+
+GG⊤
+−1/2
+.(24)
+The contact-iblock of the minimum-norm correction allocates
+the margin to robot contactias
+ρi(θ) =∥G i∥
+
+GG⊤
+−1/2
+ρ(θ).(25)
+The preceding force correction derivation applies to the robot
+contacts and does not directly bound the passive pivot reaction.
+We therefore heuristically define the pivot margin as
+ρp(θ) =ρ 1(θ) +ρ 2(θ).(26)
+The model-based force deviation derivation determines the
+configuration dependent structure of task-adaptive margin in
+Eq. (23).
+D. Contact Force Planning
+For each tilt angleθ, the optimizer computes robot contact
+forces that satisfy pivot moment balance and signed friction
+distance margin constraints:
+F∗(θ) = arg min
+F∈R4
+1
+2
+2X
+i=1
+∥f i∥2
+s.t.GF+τ g(θ) = 0,
+f p =−f 1 −f 2 −mg(θ),
+ψµi(f i)≥ρ i(θ), i∈ {1,2},
+ψµp(f p)≥ρ p(θ).
+(27)
+The contact-specific marginsρ i(θ)are applied to the robot
+contacts, whileρ p(θ)is applied to the pivot reaction, with
+each contact using its corresponding friction coefficient.
+For fixedθ,ρ i(θ)andρ p(θ)are fixed parameters. The
+moment constraint is linear inF, and each friction margin
+constraint has the SOC form in Eq. (7). Therefore, Eq. (27) is
+an SOCP and can be solved using interior-point methods [25].
+The task-adaptive margins only shift the lower bounds inside
+the same friction constraints, preserving convexity.
+E. Robot Execution
+The optimized robot contact forces are executed through
+impedance control by converting each desired force into an
+equilibrium point. Letqdenote the object pose used for frame
+transformations, with tilde quantities expressed in roboti’s
+base frame. For each robot contacti∈ {1,2}, the commanded
+Cartesian equilibrium point is
+˜u∗
+i (q) = ˜pi(q) +K −1
+i ˜f
+∗
+i (θ).(28)
+Here,K i ∈R 2×2 is the robot translational stiffness matrix.
+The end-effector orientation follows the object tilt with a fixed
+object frame offset.
+Fig. 4: Experimental setup. (a) Kinova Gen3 robot arm with an ATI Mini40
+force/torque sensor at the wrist and a hemispherical end-effector covered with
+friction tape. (b) Hole pattern plate for varying the object CoM. (c) Calibration
+weights used for varying the object mass.
+TABLE I: Object property and margin evaluation conditions. Mass and CoM
+offset define the optimizer model. Object property variations retain the same
+contact-specific margin law and parameters, while the no-margin condition
+uses nominal properties withρ i = 0. CoM offsets are relative to the nominal.
+Condition Varied factor Mass (kg) CoM offset (mm) Margins
+Nominal – 1.9 0ρ i(θ)
+Light object Mass 1.7 0ρ i(θ)
+Heavy object Mass 2.2 0ρ i(θ)
+Toward pivot CoM CoM 1.9−6.3ρ i(θ)
+Away from pivot CoM CoM 1.9+6.3ρ i(θ)
+No margin Margin 1.9 00
+IV. EXPERIMENTS
+A. Setup
+As illustrated in Fig. 1, the experiments used two 7-DoF
+Kinova Gen3 manipulators for bimanual tilting. Each wrist
+had an ATI Mini40 force/torque sensor and a hemispherical
+end-effector covered with friction tape, as shown in Fig. 4a.
+The manipulated box measured0.3×0.2×0.2 mand had a
+base mass of1.7 kg. The nominal condition added a centered
+200 gcalibration weight using the plate in Fig. 4b, giving a
+total mass of1.9 kgand defining the centered CoM model. The
+measured friction coefficients, averaged over three trials, were
+µ1 =µ 2 = 0.75for the robot–object contacts andµ p = 0.5for
+the object–environment contact. The margin valuesλ m = 0.25
+andλ CoM = 0.5 Nare design parameters selected once from
+the nominal setup and kept fixed across all conditions. Thus,
+the experiments evaluate the resulting contact behavior rather
+than identifying tight physical deviation bounds. For the fixed
+experimental contact geometry, the resulting margins were
+ρ1(θ)≈0.56ρ(θ),ρ 2(θ)≈0.83ρ(θ), andρ p(θ)≈1.39ρ(θ).
+The optimization was implemented in CVXPY [26] and solved
+with ECOS [27] at0.1 ◦ angle increments. Execution used
+impedance control with translational stiffness1000 N/mand
+rotational stiffness20 Nm/rad.
+B. Evaluation Conditions
+Object property and margin evaluation.Table I summarizes
+the evaluation conditions. The light object condition removes
+the calibration weight, while the heavy object condition re-
+places it with a centered500 gweight. The CoM variation
+conditions place the200g weight at plate holes displaced by
+60 mmfrom the centered position, producing the net CoM
+offsets listed in Table I. The no margin ablation uses the
+nominal object properties withρ i = 0.
+Model mismatch evaluation.With the physical setup fixed
+at the nominal condition, we independently evaluated three
+model mismatches. The optimizer assumed a mass10%below
+nominal, a CoM shifted toward the pivot by10%of the object
+
+=== PAGE 5 ===
+0
+10
+20
+30
+fn (N)
+fn; min fn; min
+Left
+Right
+0 30 60 90
+−10
+0
+10
+ft (N) 0 2
+fn
+−3
+0
+3
+ft ½i
+0 30 60 90
+0 1
+fn
+−1
+0
+1
+ft ½i
+0 30 60 90
+1
+2
+½i (N)
+Optimizer Experiment
+µ (deg)
+With margin No margin Difference Margin
+Fig. 5: Nominal contact force profiles and margin effects. Optimized columns
+compare robot contact forces with and without margins. Shading indicates
+their difference. Orange curves show contact-specific marginsρ i(θ). Dotted
+lines markf n,min andθ tip. Insets show force vectors, with open and filled
+markers denoting no margin and margin solutions. The experiment column
+overlays all trials and their means.
+half-width, and friction coefficients10%above their measured
+values. All other experimental settings were unchanged.
+For all conditions, five trials were conducted with the
+object tilted leftward. Success required completing the tilt
+while maintaining both robot contacts. Failure corresponded to
+severe slip, contact loss, or object drop preventing completion.
+V. RESULTS
+In this section, we evaluate the proposed method from five
+perspectives:
+1) whether the optimized contact forces follow the task me-
+chanics under nominal tilting,
+2) whether the task-adaptive margin captures object property
+effects through the task-demand model,
+3) whether the method remains effective under model mis-
+match,
+4) whether task-adaptive margins improve robustness over a
+fixed margin,
+5) whether positive margins support successful task execution.
+A. Contact Force Profiles and Margin Effects
+We first examine how the optimized forces follow the task
+mechanics in the nominal condition and how the margin
+changes their distance from the friction boundary. Figure 5
+compares optimized force profiles with and without the task-
+adaptive margin, together with experimental force profiles.
+For the box with centered CoM, the geometric tipping line
+occurs at approximatelyθ tip = 55 ◦, where the gravity line
+of action nearly aligns with the environmental pivot. The
+gravitational momentτ g(θ)about the pivot and the optimized
+force demand therefore decrease nearθ tip and increase after
+the object passes this configuration. The optimized tangential
+forcesf t also transition from support to braking. Under the
+contact force sign convention in Fig. 3, the tangential forces
+are positive beforeθ tip, when the robot contacts oppose gravity
+to support rotation, and negative afterward, when gravity
+assists the rotation. The experimental responses follow the
+optimized profiles and show the same transition, although
+a magnitude offset remains, consistent with pose deviations
+under impedance execution and unmodeled contact effects.
+Figure 5 also shows how the margins affect the optimized
+force distribution. Both margins decrease nearθ tip as task
+force demand falls, while the right contact margin remains
+larger because that contact has greater moment leverage about
+the pivot, as reflected in Eq. (25). Near tipping, the normal
+forces remain above the no margin solution due to the force-
+independent term, preventing the optimized normal forces
+from collapsing toward zero. The force plane insets show these
+effects geometrically: the margin moves the optimized force
+away from the nominal friction boundary at early tilt, and
+retains a positive normal force near tipping. The tangential
+forces also change to satisfy the same moment balance with
+the full contact force vectors.
+We also measured solve time at each tilt angle. The no mar-
+gin case setsρ i(θ) = 0, while the with margin case changes
+only the lower bound in the same SOC friction constraint.
+Both preserve the same SOCP structure. Mean solve times
+were8.99±1.22ms with the margin and9.05±1.45ms
+without it, indicating comparable computational costs.
+B. Adaptation to Object Property Variations
+We next examine how the margin adapts to object property
+changes through the task-demand model and how this adap-
+tation affects the optimized force profiles. Figure 7 shows the
+summed marginρ Σ =ρ 1 +ρ 2 and combined force magnitude
+FΣ =∥f 1∥+∥f 2∥for the variations listed in Table I.
+In the mass sweep, changing mass scales the gravitational
+moment over the motion without changing the tipping angle.
+Increasing mass produces largerρ Σ and optimizedF Σ, while
+the lighter object produces lower profiles. This illustrates
+the role of the task-dependent gain: scaling the margin with
+Ftask(θ)places a larger margin at high demand while reducing
+the optimized loading near tipping configuration.
+In the CoM sweep, shifting the CoM changes the moment
+arm inτ g(θ). The resulting moment differences are larger at
+early tilt angles, where the gravity lines of action have more
+distinct perpendicular distances to the pivot. These distances
+converge toward the final configuration, bringing the moment
+demands, margins, and force profiles closer together. The CoM
+shift also changes where the gravity line passes through the
+pivot, shifting the profile minima. This sensitivity motivates
+the force-independent margin term: CoM deviations can in-
+duce nonzero force corrections even when at low nominal task
+demand, thus this term prevents the margin from collapsing in
+these configurations.
+Table II summarizes the execution outcomes. All trials under
+object property variations completed with contact maintained.
+These results support the adaptability of the margin law:
+using the same parameters, the margin followsF task(θ)under
+mass and CoM variations, producing the expected scaling
+and shifting trends while maintaining contact across all tested
+conditions.
+
+=== PAGE 6 ===
+Fig. 6: Representative tilting sequences under nominal, no margin, and fixed margin CoM mismatch conditions. The nominal trial completes the tilt with both
+contacts maintained, while removing the margin leads to contact loss. Both fixed margin trials exhibit severe slip: the bottom left terminates before completing
+the tilt, and the bottom right loses the left contact as it slips below the box.
+1
+2
+3
+½§
+magnitude scaling
+0
+20
+40
+Optimizer F§
+20
+40
+Experiment F§
+0 30 60 90
+1
+2
+3 shifted minima
+0 30 60 90
+0
+20
+40
+50 55 60
+2
+4
+0 30 60 90
+20
+40
+µ (deg)
+MassCoM
+Nominal Light Heavy Toward pivot Away from pivot
+Fig. 7: Adaptation to object property variations. Rows show mass and CoM
+variations. Columns showρ Σ, optimized and experimentalF Σ, all in newtons.
+Mass changes scale the profiles, CoM changes shift their minima. Markers
+indicate profile minima. Vertical dotted lines markθ tip.
+TABLE II: Real-world experiment outcomes. Successful trials complete the
+tilt with both robot contacts maintained. Force standard deviation summarizes
+trial-to-trial variation in experimental contact forces and is omitted for failed
+conditions. Violation rate is the percentage of samples withf n ≤0.5 Nor
+|ft|/(µfn)>1. †Omitted as failed trials were terminated early for safety.
+FM: fixed margin.
+Condition Success trials Force std. dev. (N) Violation rate (%)
+Nominal 5/5 0.46 6.9
+Light object 5/5 0.50 3.9
+Heavy object 5/5 0.40 4.0
+Toward pivot CoM 5/5 0.38 3.3
+Away from pivot CoM 5/5 0.36 2.9
+No margin 0/5 – 90.7
+Mass−10%5/5 0.59 9.1
+CoM−10%5/5 0.63 7.9
+Friction+10%5/5 0.64 7.8
+Nominal (FM) 5/5 1.12 7.5
+CoM−10%(FM) 0/5 – – †
+C. Robustness to Model Mismatch
+Under the model mismatch conditions defined in Sec-
+tion IV-B, all trials completed successfully, although their vio-
+lation rates exceeded those in the model matched trials, shown
+in Table II. This increase is expected because inaccurate model
+parameters can misrepresent the actual force requirements or
+contact feasibility. Specifically, underestimating mass reduces
+the predicted gravitational moment, while shifting the assumed
+CoM toward the pivot reduces it at early tilt angles. Both can
+underestimate the required forces. Nevertheless, the margin
+0 10 20
+−5
+0
+5
+ft (N)
+Left
+6 8
+−6
+−4
+0 10 20
+Right
+0
+90
+µ (deg)
+fn (N)
+Planned (¹ = 0:825) Measured (¹ = 0:75) Margin
+Fig. 8: Friction mismatch at robot contacts. Dashed and solid lines denote the
+planning and measured friction cones, respectively. Red shading marks the
+region feasible only under the planning coefficient. Dotted lines show margin
+boundaries at30 ◦ intervals. Optimized forces and experimental samples are
+colored by tilt angle. Inset magnifies one boundary’s intersection with the
+measured cone.
+constraints keep the optimized forces away from the friction
+boundary, supporting successful task completion despite these
+discrepancies.
+The margins also provide tolerance to friction coefficient
+overestimation, with the admissible error depends on both
+the imposed margin and the optimized force, as quantified
+by Eq. (9). Figure 8 shows that overestimation enlarges the
+planning cone, allowing portions of the margin boundary to
+lie outside the measured cone. The inset magnifies one such
+intersection. Increasing the margin shifts the boundary inward
+and moves its intersection with the measured cone farther
+from the cone apex, providing greater tolerance to friction
+uncertainty. Under the tested overestimation, the optimized
+forces remained inside the measured cone, and all trials
+completed successfully. Together, these results support the role
+of margins in tolerating model uncertainty during real-world
+execution.
+D. Fixed Margin Study
+The task-adaptive margin follows from the model-derived
+force correction required to accommodate uncertainty and
+therefore varies with task demand. To examine the role of this
+configuration dependence, we compare it with a fixed margin
+under model-matched and mismatched conditions. For each
+condition, the constant marginρ fix is calibrated to match the
+task-adaptive solution’s average combined force magnitude,
+
+=== PAGE 7 ===
+0 45 90
+µ (deg)
+0
+1
+2½ (N)
+0 90µ (deg)
+Adaptive (nominal)
+Adaptive (mismatch)
+Fixed (mismatch)
+−10
+0
+10
+7 8 9fn
+4
+5ft
+10 ±
+0 10 20
+−10
+0
+10
+0 10 20
+Task-level margin Left Right
+OptimizedExperiment
+fn (N)
+ft (N)
+Fig. 9: Task-adaptive and fixed margins under CoM mismatch with matched
+average combined force magnitude. Left: task-level margins, with red (blue)
+shading where the fixed margin is lower (higher) than the task-adaptive
+margin. Force plane panels show optimized profiles (top) and task-adaptive
+experimental samples (bottom) for both contacts. Inset magnifies the opti-
+mized forces atθ= 10 ◦. Line style denotes formulation and color denotes
+tilt angle.
+FΣ = 1
+N
+PN
+n=1 (∥f1(θn)∥+∥f 2(θn)∥). Within each condi-
+tion, only the margin schedule differs.
+Table II shows that both formulations completed all nom-
+inal trials. Under CoM mismatch, however, the task-adaptive
+formulation completed all trials, whereas the fixed margin
+formulation failed all. The bottom sequences in Fig. 6 illustrate
+two such failures. Both show severe slip: the left sequence
+terminates before completing the tilt, while the right sequence
+subsequently loses the left contact as it slips below the box.
+Neither satisfies the success criterion in Section IV-B.
+Figure 9 relates these outcomes to how margin is distributed
+across configurations. The top-left panel shows that the fixed
+margin is smaller than the task-adaptive margin during the
+higher demand portions at the beginning and end of the tilt,
+but larger near minimum task demand, as indicated by the
+red and blue shading. Thus, matching average combined force
+magnitude does not reproduce the configuration dependent
+allocation of protection. Through the coupled equilibrium con-
+straints, this redistribution changes both normal and tangential
+forces, as shown in the top force plane panels. Atθ= 10 ◦, the
+inset shows that the fixed margin solution produces lowerf n
+andf t and lies closer to the friction boundary. Under model
+mismatch, this provides less local tolerance for underestimated
+task demand, consistent with the observed failures. Together,
+these outcomes support allocating margin according to task
+demand rather than using a constant value.
+E. No Margin Ablation Study
+We use the no margin ablation to test whether nominal
+friction feasibility alone is sufficient for maintaining contact.
+In this ablation,ρ i(θ) = 0at all contacts while retaining the
+nominal object properties. The top-left panel of Fig. 10 reports
+the optimized robot contact friction utilization,η max(θ) =
+maxi∈{1,2}
+|f (i)
+t (θ)|
+µf (i)
+n (θ) , where values near one indicate forces
+close to the nominal friction boundary. The no margin solution
+stays nearη max = 1, indicating little distance from the
+boundary. In contrast, the with margin solution maintains
+0 45 90
+µ (deg)
+0.0
+0.5
+1.0
+´max
+With margin
+No margin
+−10
+0
+10
+With margin
+0 10 20
+−10
+0
+10
+No margin
+0 10 20
+0 90µ (deg)
+Optimized friction
+utilization
+Left Right
+fn (N)
+ft (N)
+Fig. 10: Left: optimized friction utilizationη max with and without margins.
+Right: experimental robot contact forces over trials for the with margin (top
+row) and no margin (bottom row) conditions. Points show experimental forces,
+curves show optimized forces, with color indicates tilt angle. Shading shows
+the robot–object friction cone, and crosses markf n ≤0.5 N, indicating
+contact loss.
+lower utilization by keeping the optimized forces away from
+the boundary.
+The right panels of Fig. 10 show the experimental contact
+forces across all trials. The with margin samples remain
+mostly inside or near the friction cone and above the normal
+force threshold, whereas the no margin samples frequently
+lie outside the cone or below the threshold. This contrast
+is consistent with the severe slip and contact loss observed
+in Fig. 6. We count a measured sample as a violation if
+fn ≤0.5 N, or if|f t|/(µfn)>1for samples withf n >0.5 N,
+and average this fraction over contacts and trials. Table II
+shows that the with margin nominal condition completed all
+trials with a6.9%violation rate, whereas the no margin
+ablation failed all trials and reached90.7%. These results
+indicate that, in the tested setup, enforcing a finite lower bound
+on signed friction distance helps maintain contact compared
+with nominal friction feasibility alone.
+VI. CONCLUSION
+This work presented signed friction distance margins for
+contact force planning in bimanual non-prehensile manip-
+ulation. Lower bounding each planned force’s distance to
+the nominal friction boundary yields a force space margin
+directly comparable to force deviations. For bimanual tilting,
+pivot moment deviations yield an affine task-adaptive margin,
+allocated to robot contacts by their moment contributions
+and combined with a heuristic pivot margin in a convex
+planner. The optimized and measured force profiles reflected
+the evaluated object property variations, and all task-adaptive
+trials completed successfully under all tested task-adaptive
+conditions. At matched average combined force magnitude,
+the fixed margin completed the nominal trials but failed under
+model mismatch, supporting configuration dependent margin
+allocation to accommodate model uncertainty. The no-margin
+ablation produced a larger violation fraction that led to contact
+loss and task failure.
+The same margin principle can be generalized by defining
+the task-level margin from the largest minimum-norm con-
+tact force correction over admissible wrench deviations, with
+
+=== PAGE 8 ===
+parameters set by the deviation representation. They add no
+decision variables to a fixed mode solve. For problems with
+multiple candidate modes, a higher-level search could prune
+modes lacking sufficient margin before sequence planning,
+while closed-loop extensions could update margins, forces,
+and modes online from state estimates. Overall, these results
+support lower bounding signed friction distance as a physically
+interpretable means of moving contact force planning beyond
+nominal friction feasibility toward force space margins.
+APPENDIX
+GENERALTASK-ADAPTIVEMARGIN
+For a general quasi-static task at configurationq, consider
+G(q)F+w ext(q) =0, where the external wrench may
+be multidimensional. For an admissible wrench deviation set
+D(q), define the minimum-norm contact force correction as
+∆F∗(q, δw) = arg min
+∆F
+1
+2 ∥∆F∥2
+s.t.G(q)∆F+δw=0.
+Assuming all admissible deviations admit balancing correc-
+tions and the maximum exists, the general task-level margin
+is
+ρ(q) = max
+δw∈D(q)
+∥∆F∗(q, δw)∥.
+REFERENCES
+[1] A. Heins and A. P. Schoellig, “Force push: Robust single-point
+pushing with force feedback,”IEEE Robotics and Automation Letters,
+vol. 9, no. 8, pp. 6856–6863, 2024.
+[2] J. Z. Woodruff and K. M. Lynch, “Robotic contact juggling,”IEEE
+Transactions on Robotics, vol. 39, no. 3, pp. 1964–1981, 2023.
+[3] A. Zhang, K. Koyama, W. Wan, and K. Harada, “Manipulation
+planning for large objects through pivoting, tumbling, and regrasping,”
+Applied Sciences, vol. 11, no. 19, p. 9103, 2021.
+[4] Y . Shirai, A. Raghunathan, and D. K. Jha, “Hierarchical contact-rich
+trajectory optimization for multi-modal manipulation using tight con-
+vex relaxations,” in2025 IEEE International Conference on Robotics
+and Automation (ICRA), IEEE, 2025, pp. 9199–9205.
+[5] M. Zhang, D. K. Jha, A. U. Raghunathan, and K. Hauser, “Si-
+multaneous trajectory optimization and contact selection for contact-
+rich manipulation with high-fidelity geometry,”IEEE Transactions on
+Robotics, 2025.
+[6] G. Westling and R. S. Johansson, “Factors influencing the force
+control during precision grip,”Experimental brain research, vol. 53,
+no. 2, pp. 277–284, 1984.
+[7] J. R. Flanagan and A. M. Wing, “The role of internal models in motion
+planning and control: Evidence from grip force adjustments during
+movements of hand-held loads,”Journal of Neuroscience, vol. 17,
+no. 4, pp. 1519–1528, 1997.
+[8] A. Fakhari, A. Patankar, and N. Chakraborty, “Motion and force plan-
+ning for manipulating heavy objects by pivoting,” in2021 IEEE/RSJ
+International Conference on Intelligent Robots and Systems (IROS),
+IEEE, 2021, pp. 9393–9400.
+[9] F. Ruggiero, V . Lippiello, and B. Siciliano, “Nonprehensile dynamic
+manipulation: A survey,”IEEE Robotics and Automation Letters,
+vol. 3, no. 3, pp. 1711–1718, 2018.
+[10] Y . Aiyama, M. Inaba, and H. Inoue, “Pivoting: A new method of
+graspless manipulation of object by robot fingers,” inProceedings of
+1993 IEEE/RSJ International Conference on Intelligent Robots and
+Systems (IROS’93), IEEE, vol. 1, 1993, pp. 136–143.
+[11] N. C. Dafle et al., “Extrinsic dexterity: In-hand manipulation with
+external forces,” in2014 IEEE International Conference on Robotics
+and Automation (ICRA), IEEE, 2014, pp. 1578–1585.
+[12] Y . Hou, Z. Jia, and M. T. Mason, “Manipulation with shared grasp-
+ing,”arXiv preprint arXiv:2006.02996, 2020.
+[13] X. Cheng, E. Huang, Y . Hou, and M. T. Mason, “Contact mode
+guided sampling-based planning for quasistatic dexterous manipula-
+tion in 2d,” in2021 IEEE International Conference on Robotics and
+Automation (ICRA), IEEE, 2021, pp. 6520–6526.
+[14] M. Wang, A. ¨O. ¨Onol, P. Long, and T. Padır, “Contact-implicit
+planning and control for non-prehensile manipulation using state-
+triggered constraints,” inThe International Symposium of Robotics
+Research, Springer, 2022, pp. 189–204.
+[15] R. Di Leva, H. Gattringer, A. M ¨uller, and M. Carricato, “Force and
+time-optimal trajectory planning for dual-arm unilateral cooperative
+grasping,”Mechanism and Machine Theory, vol. 201, p. 105 729,
+2024.DOI: 10.1016/j.mechmachtheory.2024.105729
+[16] M. T. Mason,Mechanics of robotic manipulation. MIT press, 2001.
+[17] T. Pang, H. T. Suh, L. Yang, and R. Tedrake, “Global planning
+for contact-rich manipulation via local smoothing of quasi-dynamic
+contact models,”IEEE Transactions on robotics, vol. 39, no. 6,
+pp. 4691–4711, 2023.
+[18] S. P. Boyd and B. Wegbreit, “Fast computation of optimal contact
+forces,”IEEE Transactions on Robotics, vol. 23, no. 6, pp. 1117–
+1132, 2007.
+[19] V . Lippiello, B. Siciliano, and L. Villani, “A grasping force optimiza-
+tion algorithm for multiarm robots with multifingered hands,”IEEE
+Transactions on Robotics, vol. 29, no. 1, pp. 55–67, 2012.
+[20] A. Patankar, A. Fakhari, and N. Chakraborty, “Hand-object contact
+force synthesis for manipulating objects by exploiting environment,”
+in2020 IEEE/RSJ International Conference on Intelligent Robots and
+Systems (IROS), IEEE, 2020, pp. 9182–9189.
+[21] S. Makita and Y . Maeda, “Joint torque optimization for quasi-static
+graspless manipulation,” in2013 IEEE International Conference on
+Robotics and Automation, IEEE, 2013, pp. 3730–3735.
+[22] Y . Shirai, D. K. Jha, and A. U. Raghunathan, “Robust pivoting ma-
+nipulation using contact implicit bilevel optimization,”IEEE Trans-
+actions on Robotics, vol. 40, pp. 3425–3444, 2024.
+[23] Z. Chen, Q. Wu, C. Hong, and X. Zhang, “Multi-fingered grasping
+force optimization based on generalized penalty-function concepts,”
+Robotics and Autonomous Systems, vol. 135, p. 103 672, 2021.
+[24] D. Winkelbauer, R. Triebel, and B. B ¨auml, “A learning-based con-
+troller for multi-contact grasps on unknown objects with a dexterous
+hand,” in2024 IEEE/RSJ International Conference on Intelligent
+Robots and Systems (IROS), IEEE, 2024, pp. 7331–7337.
+[25] M. S. Lobo, L. Vandenberghe, S. Boyd, and H. Lebret, “Applications
+of second-order cone programming,”Linear algebra and its applica-
+tions, vol. 284, no. 1-3, pp. 193–228, 1998.
+[26] S. Diamond and S. Boyd, “Cvxpy: A python-embedded modeling
+language for convex optimization,”Journal of Machine Learning
+Research, vol. 17, no. 83, pp. 1–5, 2016.
+[27] A. Domahidi, E. Chu, and S. Boyd, “Ecos: An socp solver for
+embedded systems,” in2013 European control conference (ECC),
+IEEE, 2013, pp. 3071–3076.

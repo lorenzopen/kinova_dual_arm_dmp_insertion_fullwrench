@@ -1,0 +1,30 @@
+{
+  "job": {
+    "group": "stress",
+    "mechanism": "floating",
+    "method": "adaptive",
+    "case": "heavy_known",
+    "seed": 0,
+    "mass": 2.2,
+    "model_mass": 2.2,
+    "com": [
+      0.015,
+      0.015,
+      0
+    ],
+    "model_com": [
+      0.015,
+      0.015,
+      0
+    ],
+    "mu": 0.75,
+    "model_mu": 0.75,
+    "id": "stress_floating_adaptive_heavy_known_0"
+  },
+  "error": null,
+  "seconds": 4.4905,
+  "wall_seconds": 9.703015399980359,
+  "stage": "airborne",
+  "samples": 450,
+  "source_sha256": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2"
+}

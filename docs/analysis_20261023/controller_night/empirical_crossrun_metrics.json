@@ -1,0 +1,1250 @@
+[
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "piece": "Z",
+    "family": "delay",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d190_t0",
+      "family": "delay",
+      "delay_samples": 19,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ],
+      "gain": 0.29750836380511136,
+      "training_score": 0.5302070958879307
+    },
+    "force_gain_N_per_mm_projected_closure": 2.325444167569539,
+    "motion_free": {
+      "r2": 0.4189823683395675,
+      "rmse": 0.046892967296051365,
+      "normalized_mse": 0.5808769244591523
+    },
+    "force_free": {
+      "r2": 0.37844250435780535,
+      "rmse": 0.12667583607078506,
+      "normalized_mse": 0.6211489434268609
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9236682200172488,
+      "rmse": 0.044392113293612444,
+      "normalized_mse": 0.07628160680001116
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "piece": "Z",
+    "family": "first_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d140_t60",
+      "family": "first_order",
+      "delay_samples": 14,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ],
+      "gain": 0.30356253526683014,
+      "training_score": 0.5292688689186693
+    },
+    "force_gain_N_per_mm_projected_closure": 2.325444167569539,
+    "motion_free": {
+      "r2": 0.4049761775635984,
+      "rmse": 0.04745480966154664,
+      "normalized_mse": 0.5948797233037972
+    },
+    "force_free": {
+      "r2": 0.3627676868025965,
+      "rmse": 0.12826318510149054,
+      "normalized_mse": 0.6368134578621137
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9236682200172488,
+      "rmse": 0.044392113293612444,
+      "normalized_mse": 0.07628160680001116
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "piece": "Z",
+    "family": "second_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "second_d120_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ],
+      "gain": 0.30214256784778404,
+      "training_score": 0.5300139497278482
+    },
+    "force_gain_N_per_mm_projected_closure": 2.325444167569539,
+    "motion_free": {
+      "r2": 0.41180366491105225,
+      "rmse": 0.047181768581697044,
+      "normalized_mse": 0.588053889394353
+    },
+    "force_free": {
+      "r2": 0.372676162848082,
+      "rmse": 0.12726208094352318,
+      "normalized_mse": 0.6269114946973631
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9236682200172488,
+      "rmse": 0.044392113293612444,
+      "normalized_mse": 0.07628160680001116
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "piece": "Z",
+    "family": "ARX2",
+    "trained_on": 7,
+    "selected_model": {
+      "family": "ARX2",
+      "id": "arx_d14_ridge0.1",
+      "delay_samples": 14,
+      "ridge": 0.1,
+      "coefficients": [
+        0.39741155322808636,
+        0.3673167562839797,
+        0.03665991212641679,
+        0.03340532615629643
+      ],
+      "max_pole_modulus": 0.8365151070128465,
+      "training_score": 0.529555474320164
+    },
+    "force_gain_N_per_mm_projected_closure": 2.325444167569539,
+    "motion_free": {
+      "r2": 0.4066613587318735,
+      "rmse": 0.0473875630656192,
+      "normalized_mse": 0.5931949502421145
+    },
+    "force_free": {
+      "r2": 0.36672713205307716,
+      "rmse": 0.12786408229977766,
+      "normalized_mse": 0.6328566151707526
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9236682200172488,
+      "rmse": 0.044392113293612444,
+      "normalized_mse": 0.07628160680001116
+    },
+    "motion_one_step": {
+      "r2": 0.947178565100359,
+      "rmse": 0.014138982481550865,
+      "normalized_mse": 0.052808642936252315
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+    "piece": "Z",
+    "family": "delay",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d200_t0",
+      "family": "delay",
+      "delay_samples": 20,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ],
+      "gain": 0.29901798816367947,
+      "training_score": 0.5207254485776401
+    },
+    "force_gain_N_per_mm_projected_closure": 2.317930116211776,
+    "motion_free": {
+      "r2": 0.34115180075049534,
+      "rmse": 0.05432641671073767,
+      "normalized_mse": 0.658794064135417
+    },
+    "force_free": {
+      "r2": 0.28890926382159143,
+      "rmse": 0.14984523959246235,
+      "normalized_mse": 0.7098186124566034
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9378981419625054,
+      "rmse": 0.044282561770125885,
+      "normalized_mse": 0.06199075935098626
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+    "piece": "Z",
+    "family": "first_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d140_t60",
+      "family": "first_order",
+      "delay_samples": 14,
+      "tau_s": 0.06,
+      "b": [
+        0.0,
+        0.15351827510938598
+      ],
+      "a": [
+        1.0,
+        -0.846481724890614
+      ],
+      "gain": 0.30534877423829615,
+      "training_score": 0.5197355536712746
+    },
+    "force_gain_N_per_mm_projected_closure": 2.317930116211776,
+    "motion_free": {
+      "r2": 0.3394526657147193,
+      "rmse": 0.054396424096659325,
+      "normalized_mse": 0.660493059559566
+    },
+    "force_free": {
+      "r2": 0.2880443366598653,
+      "rmse": 0.1499363431775448,
+      "normalized_mse": 0.7106819922850511
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9378981419625054,
+      "rmse": 0.044282561770125885,
+      "normalized_mse": 0.06199075935098626
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+    "piece": "Z",
+    "family": "second_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "second_d120_f4_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 4.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.02595410663048292,
+        0.021229382907971828
+      ],
+      "a": [
+        1.0,
+        -1.499882530273125,
+        0.5470660198115794
+      ],
+      "gain": 0.30846995364082835,
+      "training_score": 0.5202866009328513
+    },
+    "force_gain_N_per_mm_projected_closure": 2.317930116211776,
+    "motion_free": {
+      "r2": 0.3203041341442291,
+      "rmse": 0.05517923728245772,
+      "normalized_mse": 0.6796400177662034
+    },
+    "force_free": {
+      "r2": 0.26956822810999403,
+      "rmse": 0.1518693967492694,
+      "normalized_mse": 0.7291250475341591
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9378981419625054,
+      "rmse": 0.044282561770125885,
+      "normalized_mse": 0.06199075935098626
+    }
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+    "piece": "Z",
+    "family": "ARX2",
+    "trained_on": 7,
+    "selected_model": {
+      "family": "ARX2",
+      "id": "arx_d16_ridge0.1",
+      "delay_samples": 16,
+      "ridge": 0.1,
+      "coefficients": [
+        0.39473198164361106,
+        0.3643683158320123,
+        0.03799599183396845,
+        0.03365805677174681
+      ],
+      "max_pole_modulus": 0.8324420887542385,
+      "training_score": 0.5200297474305339
+    },
+    "force_gain_N_per_mm_projected_closure": 2.317930116211776,
+    "motion_free": {
+      "r2": 0.3257238398301633,
+      "rmse": 0.05495880504537396,
+      "normalized_mse": 0.6742207573973938
+    },
+    "force_free": {
+      "r2": 0.2742331619673358,
+      "rmse": 0.1513836597521175,
+      "normalized_mse": 0.7244684591279933
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9378981419625054,
+      "rmse": 0.044282561770125885,
+      "normalized_mse": 0.06199075935098626
+    },
+    "motion_one_step": {
+      "r2": 0.9385799521317968,
+      "rmse": 0.016587214247151292,
+      "normalized_mse": 0.06141500121056274
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "piece": "L",
+    "family": "delay",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d190_t0",
+      "family": "delay",
+      "delay_samples": 19,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ],
+      "gain": 0.3031173068168667,
+      "training_score": 0.5335190293262847
+    },
+    "force_gain_N_per_mm_projected_closure": 2.342278377922727,
+    "motion_free": {
+      "r2": 0.4413702676901633,
+      "rmse": 0.05928992149985912,
+      "normalized_mse": 0.5550302409721993
+    },
+    "force_free": {
+      "r2": 0.4031519608021378,
+      "rmse": 0.1584092195188775,
+      "normalized_mse": 0.5948433508825096
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8508185722689182,
+      "rmse": 0.07919649256792768,
+      "normalized_mse": 0.14868035837104493
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "piece": "L",
+    "family": "first_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d160_t30",
+      "family": "first_order",
+      "delay_samples": 16,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ],
+      "gain": 0.3049431001174711,
+      "training_score": 0.5337012466698808
+    },
+    "force_gain_N_per_mm_projected_closure": 2.342278377922727,
+    "motion_free": {
+      "r2": 0.4404284665197865,
+      "rmse": 0.0593398792795754,
+      "normalized_mse": 0.555965973713063
+    },
+    "force_free": {
+      "r2": 0.3994747998785868,
+      "rmse": 0.15889644718990742,
+      "normalized_mse": 0.5985081609880081
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8508185722689182,
+      "rmse": 0.07919649256792768,
+      "normalized_mse": 0.14868035837104493
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "piece": "L",
+    "family": "second_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "second_d120_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ],
+      "gain": 0.3078601432941773,
+      "training_score": 0.5350129476123182
+    },
+    "force_gain_N_per_mm_projected_closure": 2.342278377922727,
+    "motion_free": {
+      "r2": 0.44617919265427985,
+      "rmse": 0.05903417334228546,
+      "normalized_mse": 0.5502523019774119
+    },
+    "force_free": {
+      "r2": 0.4061045166990658,
+      "rmse": 0.15801691535393142,
+      "normalized_mse": 0.5919007120061937
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8508185722689182,
+      "rmse": 0.07919649256792768,
+      "normalized_mse": 0.14868035837104493
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "piece": "L",
+    "family": "ARX2",
+    "trained_on": 7,
+    "selected_model": {
+      "family": "ARX2",
+      "id": "arx_d16_ridge0.001",
+      "delay_samples": 16,
+      "ridge": 0.001,
+      "coefficients": [
+        1.3008756376321593,
+        -0.31814970612325466,
+        0.14712659946109294,
+        -0.1409544718757976
+      ],
+      "max_pole_modulus": 0.9743508473020679,
+      "training_score": 0.5315076368037193
+    },
+    "force_gain_N_per_mm_projected_closure": 2.342278377922727,
+    "motion_free": {
+      "r2": 0.41749637318299093,
+      "rmse": 0.06054358992829241,
+      "normalized_mse": 0.5787503057214766
+    },
+    "force_free": {
+      "r2": 0.3514256245545141,
+      "rmse": 0.1651309432098609,
+      "normalized_mse": 0.6463959491347618
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8508185722689182,
+      "rmse": 0.07919649256792768,
+      "normalized_mse": 0.14868035837104493
+    },
+    "motion_one_step": {
+      "r2": 0.9969982693172474,
+      "rmse": 0.004346150030356796,
+      "normalized_mse": 0.0029823892425005407
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "piece": "L",
+    "family": "delay",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d190_t0",
+      "family": "delay",
+      "delay_samples": 19,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ],
+      "gain": 0.3055056884622826,
+      "training_score": 0.5320716448864031
+    },
+    "force_gain_N_per_mm_projected_closure": 2.324018745585944,
+    "motion_free": {
+      "r2": 0.43141263335562097,
+      "rmse": 0.06154094867734346,
+      "normalized_mse": 0.5647833071595597
+    },
+    "force_free": {
+      "r2": 0.39354996180998325,
+      "rmse": 0.16666494037990362,
+      "normalized_mse": 0.6046020274536572
+    },
+    "force_given_measured_motion": {
+      "r2": 0.928124333621872,
+      "rmse": 0.057376979181684086,
+      "normalized_mse": 0.07165664255953579
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "piece": "L",
+    "family": "first_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d150_t30",
+      "family": "first_order",
+      "delay_samples": 15,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ],
+      "gain": 0.30744548299666485,
+      "training_score": 0.5322088010319939
+    },
+    "force_gain_N_per_mm_projected_closure": 2.324018745585944,
+    "motion_free": {
+      "r2": 0.43269933165320995,
+      "rmse": 0.061471276462050924,
+      "normalized_mse": 0.5635052173488105
+    },
+    "force_free": {
+      "r2": 0.3956626354533268,
+      "rmse": 0.16637438402920454,
+      "normalized_mse": 0.6024957916754788
+    },
+    "force_given_measured_motion": {
+      "r2": 0.928124333621872,
+      "rmse": 0.057376979181684086,
+      "normalized_mse": 0.07165664255953579
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "piece": "L",
+    "family": "second_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "second_d120_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ],
+      "gain": 0.31049755536782275,
+      "training_score": 0.5328561067088196
+    },
+    "force_gain_N_per_mm_projected_closure": 2.324018745585944,
+    "motion_free": {
+      "r2": 0.4312987522061904,
+      "rmse": 0.06154711132137726,
+      "normalized_mse": 0.5648964264020397
+    },
+    "force_free": {
+      "r2": 0.39349323699651684,
+      "rmse": 0.16667273477020506,
+      "normalized_mse": 0.6046585794118879
+    },
+    "force_given_measured_motion": {
+      "r2": 0.928124333621872,
+      "rmse": 0.057376979181684086,
+      "normalized_mse": 0.07165664255953579
+    }
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "piece": "L",
+    "family": "ARX2",
+    "trained_on": 7,
+    "selected_model": {
+      "family": "ARX2",
+      "id": "arx_d16_ridge0.001",
+      "delay_samples": 16,
+      "ridge": 0.001,
+      "coefficients": [
+        1.3027004874203407,
+        -0.3197984156058211,
+        0.1456720656438344,
+        -0.13965152269407383
+      ],
+      "max_pole_modulus": 0.9745509930525524,
+      "training_score": 0.5280914866542273
+    },
+    "force_gain_N_per_mm_projected_closure": 2.324018745585944,
+    "motion_free": {
+      "r2": 0.39271853380082566,
+      "rmse": 0.06360050986926827,
+      "normalized_mse": 0.6032185288970608
+    },
+    "force_free": {
+      "r2": 0.3453670801999137,
+      "rmse": 0.17315923479336373,
+      "normalized_mse": 0.6526380833123592
+    },
+    "force_given_measured_motion": {
+      "r2": 0.928124333621872,
+      "rmse": 0.057376979181684086,
+      "normalized_mse": 0.07165664255953579
+    },
+    "motion_one_step": {
+      "r2": 0.9968694473446759,
+      "rmse": 0.004566422488976078,
+      "normalized_mse": 0.0031096081018222206
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "piece": "S",
+    "family": "delay",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d170_t0",
+      "family": "delay",
+      "delay_samples": 17,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ],
+      "gain": 0.3396201612970866,
+      "training_score": 0.5383360162375662
+    },
+    "force_gain_N_per_mm_projected_closure": 2.332074390771793,
+    "motion_free": {
+      "r2": 0.42100392954473476,
+      "rmse": 0.06842735258467929,
+      "normalized_mse": 0.5784076017926796
+    },
+    "force_free": {
+      "r2": 0.4356100793777923,
+      "rmse": 0.16679999149579813,
+      "normalized_mse": 0.564118588277612
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9833093128402558,
+      "rmse": 0.02868425060405673,
+      "normalized_mse": 0.01668266305599165
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "piece": "S",
+    "family": "first_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d140_t30",
+      "family": "first_order",
+      "delay_samples": 14,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ],
+      "gain": 0.3419538636793443,
+      "training_score": 0.5390808991838684
+    },
+    "force_gain_N_per_mm_projected_closure": 2.332074390771793,
+    "motion_free": {
+      "r2": 0.4284448668723032,
+      "rmse": 0.06798623550513873,
+      "normalized_mse": 0.5709742271389546
+    },
+    "force_free": {
+      "r2": 0.4431318729342383,
+      "rmse": 0.1656847665693055,
+      "normalized_mse": 0.5566004108486103
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9833093128402558,
+      "rmse": 0.02868425060405673,
+      "normalized_mse": 0.01668266305599165
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "piece": "S",
+    "family": "second_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "second_d120_f6_z0.8",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 0.8,
+      "b": [
+        0.0,
+        0.05802923727573872,
+        0.04744039589800908
+      ],
+      "a": [
+        1.0,
+        -1.4415963866378316,
+        0.5470660198115793
+      ],
+      "gain": 0.34060587309319973,
+      "training_score": 0.5397203762890517
+    },
+    "force_gain_N_per_mm_projected_closure": 2.332074390771793,
+    "motion_free": {
+      "r2": 0.41511396519112853,
+      "rmse": 0.06877451803103765,
+      "normalized_mse": 0.5842915798199138
+    },
+    "force_free": {
+      "r2": 0.42989333825385634,
+      "rmse": 0.1676426269152613,
+      "normalized_mse": 0.5698325810591061
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9833093128402558,
+      "rmse": 0.02868425060405673,
+      "normalized_mse": 0.01668266305599165
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "piece": "S",
+    "family": "ARX2",
+    "trained_on": 7,
+    "selected_model": {
+      "family": "ARX2",
+      "id": "arx_d12_ridge0.1",
+      "delay_samples": 12,
+      "ridge": 0.1,
+      "coefficients": [
+        0.4236013190080695,
+        0.37775489272353224,
+        0.037531362119102164,
+        0.031932121274195605
+      ],
+      "max_pole_modulus": 0.8618886628465641,
+      "training_score": 0.5421297097401441
+    },
+    "force_gain_N_per_mm_projected_closure": 2.332074390771793,
+    "motion_free": {
+      "r2": 0.43561574928807467,
+      "rmse": 0.06755840266481741,
+      "normalized_mse": 0.5638106329239155
+    },
+    "force_free": {
+      "r2": 0.45075513200860906,
+      "rmse": 0.1645467858276238,
+      "normalized_mse": 0.5489808166815714
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9833093128402558,
+      "rmse": 0.02868425060405673,
+      "normalized_mse": 0.01668266305599165
+    },
+    "motion_one_step": {
+      "r2": 0.9755109842046726,
+      "rmse": 0.014072705370036366,
+      "normalized_mse": 0.024464126130080126
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+    "piece": "S",
+    "family": "delay",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d180_t0",
+      "family": "delay",
+      "delay_samples": 18,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ],
+      "gain": 0.3197744489704983,
+      "training_score": 0.5661431280390586
+    },
+    "force_gain_N_per_mm_projected_closure": 2.329241202339525,
+    "motion_free": {
+      "r2": 0.6631883186430862,
+      "rmse": 0.05345217453732377,
+      "normalized_mse": 0.3328815368214394
+    },
+    "force_free": {
+      "r2": 0.66659144799152,
+      "rmse": 0.13262624580340823,
+      "normalized_mse": 0.3299853703316514
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9814481616388109,
+      "rmse": 0.031284886561184465,
+      "normalized_mse": 0.018361362403788127
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+    "piece": "S",
+    "family": "first_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d150_t30",
+      "family": "first_order",
+      "delay_samples": 15,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ],
+      "gain": 0.3218895324396436,
+      "training_score": 0.5668479697940354
+    },
+    "force_gain_N_per_mm_projected_closure": 2.329241202339525,
+    "motion_free": {
+      "r2": 0.6679689823283581,
+      "rmse": 0.05307147199408587,
+      "normalized_mse": 0.3281566571255557
+    },
+    "force_free": {
+      "r2": 0.6712493043876895,
+      "rmse": 0.13169656541912578,
+      "normalized_mse": 0.3253753372098778
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9814481616388109,
+      "rmse": 0.031284886561184465,
+      "normalized_mse": 0.018361362403788127
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+    "piece": "S",
+    "family": "second_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "second_d120_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ],
+      "gain": 0.32553048394161677,
+      "training_score": 0.5679871344474279
+    },
+    "force_gain_N_per_mm_projected_closure": 2.329241202339525,
+    "motion_free": {
+      "r2": 0.6696041002789406,
+      "rmse": 0.05294063298730502,
+      "normalized_mse": 0.3265406188275923
+    },
+    "force_free": {
+      "r2": 0.673130932718579,
+      "rmse": 0.13131913718662624,
+      "normalized_mse": 0.32351302798639003
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9814481616388109,
+      "rmse": 0.031284886561184465,
+      "normalized_mse": 0.018361362403788127
+    }
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+    "piece": "S",
+    "family": "ARX2",
+    "trained_on": 7,
+    "selected_model": {
+      "family": "ARX2",
+      "id": "arx_d16_ridge0.001",
+      "delay_samples": 16,
+      "ridge": 0.001,
+      "coefficients": [
+        1.3802721737642951,
+        -0.39686723991472983,
+        0.143139827469708,
+        -0.13737645991291283
+      ],
+      "max_pole_modulus": 0.971952655774527,
+      "training_score": 0.5691465528250491
+    },
+    "force_gain_N_per_mm_projected_closure": 2.329241202339525,
+    "motion_free": {
+      "r2": 0.716079079360286,
+      "rmse": 0.04907615194917857,
+      "normalized_mse": 0.2806079409643548
+    },
+    "force_free": {
+      "r2": 0.7119379492446368,
+      "rmse": 0.12327758920121597,
+      "normalized_mse": 0.2851044519535473
+    },
+    "force_given_measured_motion": {
+      "r2": 0.9814481616388109,
+      "rmse": 0.031284886561184465,
+      "normalized_mse": 0.018361362403788127
+    },
+    "motion_one_step": {
+      "r2": 0.9993386383072288,
+      "rmse": 0.00236859780927649,
+      "normalized_mse": 0.0006536444810867465
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "piece": "T",
+    "family": "delay",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d190_t0",
+      "family": "delay",
+      "delay_samples": 19,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ],
+      "gain": 0.29877609735474997,
+      "training_score": 0.5262163689775102
+    },
+    "force_gain_N_per_mm_projected_closure": 2.415427329781934,
+    "motion_free": {
+      "r2": 0.3908908372749941,
+      "rmse": 0.06089743535327237,
+      "normalized_mse": 0.607992436658389
+    },
+    "force_free": {
+      "r2": 0.37335056488370677,
+      "rmse": 0.13163042749359416,
+      "normalized_mse": 0.6242473159870899
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8411847539222095,
+      "rmse": 0.06626589399408146,
+      "normalized_mse": 0.15820646368809316
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "piece": "T",
+    "family": "first_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d150_t30",
+      "family": "first_order",
+      "delay_samples": 15,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ],
+      "gain": 0.30063994203669564,
+      "training_score": 0.5263623419168841
+    },
+    "force_gain_N_per_mm_projected_closure": 2.415427329781934,
+    "motion_free": {
+      "r2": 0.3921679782066798,
+      "rmse": 0.06083355893909115,
+      "normalized_mse": 0.6067176372061235
+    },
+    "force_free": {
+      "r2": 0.3750090836674784,
+      "rmse": 0.13145612256005293,
+      "normalized_mse": 0.6225951547606275
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8411847539222095,
+      "rmse": 0.06626589399408146,
+      "normalized_mse": 0.15820646368809316
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "piece": "T",
+    "family": "second_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "second_d120_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ],
+      "gain": 0.3036150448248951,
+      "training_score": 0.5270116256892647
+    },
+    "force_gain_N_per_mm_projected_closure": 2.415427329781934,
+    "motion_free": {
+      "r2": 0.39077500920515107,
+      "rmse": 0.06090322519976424,
+      "normalized_mse": 0.608108052371839
+    },
+    "force_free": {
+      "r2": 0.3738392196431256,
+      "rmse": 0.1315790954604501,
+      "normalized_mse": 0.6237605343753664
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8411847539222095,
+      "rmse": 0.06626589399408146,
+      "normalized_mse": 0.15820646368809316
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "piece": "T",
+    "family": "ARX2",
+    "trained_on": 7,
+    "selected_model": {
+      "family": "ARX2",
+      "id": "arx_d16_ridge0.001",
+      "delay_samples": 16,
+      "ridge": 0.001,
+      "coefficients": [
+        1.2681298350846404,
+        -0.28502553541538095,
+        0.14930030547140255,
+        -0.14333566702003434
+      ],
+      "max_pole_modulus": 0.9761362320990488,
+      "training_score": 0.5265440482606368
+    },
+    "force_gain_N_per_mm_projected_closure": 2.415427329781934,
+    "motion_free": {
+      "r2": 0.3687899410717811,
+      "rmse": 0.06199239175043061,
+      "normalized_mse": 0.6300528136108732
+    },
+    "force_free": {
+      "r2": 0.35549535837779667,
+      "rmse": 0.13349253803865552,
+      "normalized_mse": 0.6420340785900772
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8411847539222095,
+      "rmse": 0.06626589399408146,
+      "normalized_mse": 0.15820646368809316
+    },
+    "motion_one_step": {
+      "r2": 0.9953800800010469,
+      "rmse": 0.0053035743842175425,
+      "normalized_mse": 0.004611449948912383
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+    "piece": "T",
+    "family": "delay",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d190_t0",
+      "family": "delay",
+      "delay_samples": 19,
+      "tau_s": 0,
+      "b": [
+        1.0
+      ],
+      "a": [
+        1.0
+      ],
+      "gain": 0.29954007368507773,
+      "training_score": 0.5306640044731352
+    },
+    "force_gain_N_per_mm_projected_closure": 2.3933394062897198,
+    "motion_free": {
+      "r2": 0.4233365183206045,
+      "rmse": 0.053361051680405926,
+      "normalized_mse": 0.5764264708540586
+    },
+    "force_free": {
+      "r2": 0.42461190684558137,
+      "rmse": 0.11981048599445115,
+      "normalized_mse": 0.5741045715390228
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8352521187539641,
+      "rmse": 0.06410978398754688,
+      "normalized_mse": 0.16438037717498247
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+    "piece": "T",
+    "family": "first_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "lag_d150_t30",
+      "family": "first_order",
+      "delay_samples": 15,
+      "tau_s": 0.03,
+      "b": [
+        0.0,
+        0.28346868942621073
+      ],
+      "a": [
+        1.0,
+        -0.7165313105737893
+      ],
+      "gain": 0.3013997852910899,
+      "training_score": 0.5308287897994538
+    },
+    "force_gain_N_per_mm_projected_closure": 2.3933394062897198,
+    "motion_free": {
+      "r2": 0.42474573717029585,
+      "rmse": 0.053295811380554725,
+      "normalized_mse": 0.5750178311985303
+    },
+    "force_free": {
+      "r2": 0.4268472544650408,
+      "rmse": 0.11957753130824436,
+      "normalized_mse": 0.5718742103226914
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8352521187539641,
+      "rmse": 0.06410978398754688,
+      "normalized_mse": 0.16438037717498247
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+    "piece": "T",
+    "family": "second_order",
+    "trained_on": 7,
+    "selected_model": {
+      "id": "second_d120_f6_z1.2",
+      "family": "second_order",
+      "delay_samples": 12,
+      "frequency_Hz": 6.0,
+      "damping_ratio": 1.2,
+      "b": [
+        0.0,
+        0.05312422229825464,
+        0.03930840204997005
+      ],
+      "a": [
+        1.0,
+        -1.3121988021601279,
+        0.4046314265083527
+      ],
+      "gain": 0.30426540869237223,
+      "training_score": 0.5317632378611882
+    },
+    "force_gain_N_per_mm_projected_closure": 2.3933394062897198,
+    "motion_free": {
+      "r2": 0.42528922545316916,
+      "rmse": 0.053270629043235956,
+      "normalized_mse": 0.5744745662913529
+    },
+    "force_free": {
+      "r2": 0.42887317201064856,
+      "rmse": 0.1193660094467287,
+      "normalized_mse": 0.5698528120033098
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8352521187539641,
+      "rmse": 0.06410978398754688,
+      "normalized_mse": 0.16438037717498247
+    }
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+    "piece": "T",
+    "family": "ARX2",
+    "trained_on": 7,
+    "selected_model": {
+      "family": "ARX2",
+      "id": "arx_d14_ridge0.1",
+      "delay_samples": 14,
+      "ridge": 0.1,
+      "coefficients": [
+        0.399320310474561,
+        0.3665281753752207,
+        0.03708121698250501,
+        0.033387048256432905
+      ],
+      "max_pole_modulus": 0.8371492555084896,
+      "training_score": 0.5315575850197095
+    },
+    "force_gain_N_per_mm_projected_closure": 2.3933394062897198,
+    "motion_free": {
+      "r2": 0.4236278396423271,
+      "rmse": 0.05334757139563567,
+      "normalized_mse": 0.5761352692664775
+    },
+    "force_free": {
+      "r2": 0.4277624577230583,
+      "rmse": 0.11948202320048575,
+      "normalized_mse": 0.5709610486139831
+    },
+    "force_given_measured_motion": {
+      "r2": 0.8352521187539641,
+      "rmse": 0.06410978398754688,
+      "normalized_mse": 0.16438037717498247
+    },
+    "motion_one_step": {
+      "r2": 0.9535392896598965,
+      "rmse": 0.015146283388466141,
+      "normalized_mse": 0.046441614816191676
+    }
+  }
+]

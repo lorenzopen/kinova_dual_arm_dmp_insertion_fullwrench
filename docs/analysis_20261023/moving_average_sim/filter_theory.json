@@ -1,0 +1,37 @@
+[
+  {
+    "window_ms": 25.0,
+    "samples": 5,
+    "delay_ms": 10.0,
+    "attenuation_amplitude_1Hz_percent": 0.0986684482398803,
+    "attenuation_amplitude_2Hz_percent": 0.39434281029001594
+  },
+  {
+    "window_ms": 50.0,
+    "samples": 10,
+    "delay_ms": 22.5,
+    "attenuation_amplitude_1Hz_percent": 0.4066309130300816,
+    "attenuation_amplitude_2Hz_percent": 1.6206537364072071
+  },
+  {
+    "window_ms": 100.0,
+    "samples": 20,
+    "delay_ms": 47.5,
+    "attenuation_amplitude_1Hz_percent": 1.6327905522116049,
+    "attenuation_amplitude_2Hz_percent": 6.435681667152792
+  },
+  {
+    "window_ms": 250.0,
+    "samples": 50,
+    "delay_ms": 122.5,
+    "attenuation_amplitude_1Hz_percent": 9.964665875259504,
+    "attenuation_amplitude_2Hz_percent": 36.32754958180475
+  },
+  {
+    "window_ms": 500.0,
+    "samples": 100,
+    "delay_ms": 247.5,
+    "attenuation_amplitude_1Hz_percent": 36.33540469399943,
+    "attenuation_amplitude_2Hz_percent": 99.99999999999999
+  }
+]

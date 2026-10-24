@@ -1,0 +1,43 @@
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\centering
+{\Large Universit\`a degli Studi di Genova\par}
+\vspace{5mm}
+{\large Polytechnic School\par}
+\vspace{3mm}
+{\normalsize Department of Informatics, Bioengineering,\par
+Robotics and Systems Engineering (DIBRIS)\par}
+\vspace{12mm}
+{\large Master's Degree in Robotics Engineering\par}
+\vspace{19mm}
+{\LARGE\bfseries\ThesisTitle\par}
+\vspace{9mm}
+{\large Master's Thesis\par}
+\vfill
+\begin{minipage}[t]{0.46\textwidth}\raggedright
+\textbf{Candidate}\par\ThesisAuthor\par
+Student number: \StudentNumber
+\end{minipage}\hfill
+\begin{minipage}[t]{0.46\textwidth}\raggedright
+\textbf{Supervisor}\par\SupervisorName\par\medskip
+\textbf{Co-supervisor}\par\CoSupervisorName
+\end{minipage}
+\vspace{19mm}
+\par Academic year \AcademicYear
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+Two arms can hold an object whose mass distribution is unknown, but the forces needed to hold it depend on both the load and the contacts that remain available. This thesis studies that dependence through a pipeline connecting haptic demonstrations, inertial estimation, contact force allocation and passive end-effector compliance.
+
+Human demonstrations are recorded with two Haption interfaces controlling simulated hands. Each hand uses three discrete contact points arranged in a triangle. Their friction forces produce a resultant wrench and resist torsion through their lever arms. A task-parameterized Gaussian mixture model represents the joint distribution of gravity direction and bimanual wrist wrenches in world and object frames. Gaussian mixture regression provides an orientation-dependent mean and precision matrix for the control cost.
+
+An autonomous lift estimates mass and the observable components of the centre of mass. Slow rotations in free space provide the additional directions needed to identify its vertical component. A second-order cone program allocates the six contact forces subject to unilateral compression, Coulomb friction and actuator limits. Equilibrium errors are penalized and reported separately from solver status. A force cost acts on every contact variable, including internal forces invisible to the resultant wrench.
+
+The main experimental finding is that grip force is not a freely adjustable safety parameter. On a compliant wrist, additional squeeze can change the contact geometry and destroy a grasp. The same compliance also affects the torsional signal recorded during human demonstrations. These observations motivate a passive tri-pad whose conforming modes are separated from its load-bearing modes. The framework is then extended to progressively less regular geometries and to catalogue tetromino insertion using dynamic movement primitives. The latter is a distinct task with known mass and geometry and uncertain pose. A blind simulation campaign over 182 bodies finds that the floating-plate tri-pad, with no re-alignment controller, seats, estimates and places every jittered cube, while a fixed tri-pad needs a controller to seat and then loses the easiest bodies; on random polytopes the configurations are level. A colliding plate leaves the outcome nearly unchanged while invalidating the force model, and the learnt prior helps mostly through its weight, its shape adding a small benefit only on polytopes. Ongoing insertion campaigns are identified explicitly; they are not treated as completed validation.
+
+\chapter*{Scope of this draft}
+\addcontentsline{toc}{chapter}{Scope of this draft}
+This manuscript is a source-checked working draft dated 30 September 2026. It distinguishes equations verified against the implementation, measurements documented in the project, and experiments still required. Numerical results from campaigns running at the time of writing are not final results. Visible TODO paragraphs identify the missing evidence. The intended final length is approximately 115 pages including front matter, references and appendices. The page allocation and completion checklist are maintained separately from the scientific text.
+
+

@@ -1,0 +1,18 @@
+{
+  "perturbation_j7_rad": 1e-07,
+  "plant": "Original rigid150g tool URDF, Pinocchio ABA, semi-implicit Euler",
+  "controller": "Verbatim source Cartesian+Kalman, same1kHz, clip/slew/watchdog; friction scale0",
+  "limitation": "Isolated rigid plant diagnostic, no tri-pad, contacts, robot or hardware identification",
+  "trials": [
+    {
+      "dt": 2.5e-05,
+      "watchdog_time_s": 0.060000000000000005,
+      "peak_abs_dq_rad_s": 94.40491335766094
+    },
+    {
+      "dt": 1.25e-05,
+      "watchdog_time_s": 0.060000000000000005,
+      "peak_abs_dq_rad_s": 94.41779211086218
+    }
+  ]
+}

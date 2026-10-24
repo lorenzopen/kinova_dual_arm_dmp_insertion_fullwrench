@@ -1,0 +1,9 @@
+[
+  {
+    "coarse": "Gen3_Z_central2700_implicit_dt05",
+    "fine": "Gen3_Z_central2700_implicit_dt025",
+    "same_physical_and_servo_parameters": true,
+    "delta_route_rmse_N": 0.06743228430525003,
+    "delta_final_worst_cell_mm": 72.74238231648951
+  }
+]

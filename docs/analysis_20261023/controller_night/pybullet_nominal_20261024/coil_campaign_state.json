@@ -1,0 +1,13 @@
+{
+  "started_utc": "2026-10-24T03:04:41.229376+00:00",
+  "supervisor_pid": null,
+  "active_child": null,
+  "completed": [
+    "Z_axial2700_D60_dt05",
+    "L_axial2700_D60_dt05",
+    "S_axial2700_D60_dt05"
+  ],
+  "superseded": "User explicitly corrected CENTRAL2700: total2700/central1200 cases are superseded, not primary.",
+  "stopped_utc": "2026-10-24T03:09:53.582073+00:00",
+  "operations_note": "Initial state update did not stop old supervisor; detected actual old PIDs10448/20256 while central run alive, terminated only attributable old processes. Brief overlap affects wall time only in independent deterministic DIRECT simulations; retained here. One physical worker from this point."
+}

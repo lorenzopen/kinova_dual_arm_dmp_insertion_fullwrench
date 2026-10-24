@@ -1,0 +1,1558 @@
+{
+  "scenarios": 128,
+  "dt_s": 0.00125,
+  "reference_dt_s": 0.005,
+  "maximum_absolute_difference_N": {
+    "route_rmse_N": 0.03905463616669458,
+    "route_band_rms_N": 0.018808173997390543,
+    "route_high_band_rms_N": 0.005732410351290962,
+    "first_seat_peak_N": 0.06272648043503981,
+    "minimum_mean_hand_force_N": 0.059650902771231085
+  },
+  "cases": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0016042275452641253,
+        "route_band_rms_N": 1.779470387300308e-05,
+        "route_high_band_rms_N": 0.00016882158690838256,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0016042275452639587,
+        "route_band_rms_N": 1.779470387025528e-05,
+        "route_high_band_rms_N": 0.00016882158690832705,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0016042275452640142,
+        "route_band_rms_N": 1.779470387237858e-05,
+        "route_high_band_rms_N": 0.00016882158690853521,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.0016042275452639587,
+        "route_band_rms_N": 1.7794703871837347e-05,
+        "route_high_band_rms_N": 0.00016882158690781357,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.001172533331123382,
+        "route_band_rms_N": 8.12300161757984e-06,
+        "route_high_band_rms_N": 0.00018339575308747025,
+        "first_seat_peak_N": 8.881784197001252e-16,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0009613562861817138,
+        "route_band_rms_N": 6.379266869610545e-06,
+        "route_high_band_rms_N": 0.00015269426329914126,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": -1.4196909452479645e-06
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0002531797402574032,
+        "route_band_rms_N": 6.739542142447652e-05,
+        "route_high_band_rms_N": 0.00010895053738256555,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.001009106470407195,
+        "route_band_rms_N": -0.0004161697857179292,
+        "route_high_band_rms_N": 0.00019360277717159202,
+        "first_seat_peak_N": 0.00013059942852944317,
+        "minimum_mean_hand_force_N": -0.0019040088780659659
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0011590128811439504,
+        "route_band_rms_N": -1.1873335434869903e-05,
+        "route_high_band_rms_N": 0.00022933448929127187,
+        "first_seat_peak_N": 2.5816939697165253e-09,
+        "minimum_mean_hand_force_N": -3.2760150148192224e-10
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0009553181732064875,
+        "route_band_rms_N": -1.466751306007652e-05,
+        "route_high_band_rms_N": 0.00015956585453809347,
+        "first_seat_peak_N": -2.141883737039052e-07,
+        "minimum_mean_hand_force_N": 4.333603421891041e-06
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0002605613270959539,
+        "route_band_rms_N": 1.3832291991464074e-05,
+        "route_high_band_rms_N": -1.5200782302215998e-05,
+        "first_seat_peak_N": -0.00040842408665575647,
+        "minimum_mean_hand_force_N": 0.000280338495101784
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.0009995983629406124,
+        "route_band_rms_N": -0.00037058103558879063,
+        "route_high_band_rms_N": 0.00019960034256218118,
+        "first_seat_peak_N": 0.0002936289577890605,
+        "minimum_mean_hand_force_N": -0.004263750207277983
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0014526729632514668,
+        "route_band_rms_N": -0.00011017914761451975,
+        "route_high_band_rms_N": 0.0002204004971040896,
+        "first_seat_peak_N": -0.0005332592831486238,
+        "minimum_mean_hand_force_N": 9.381109173478563e-06
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0013159123414755447,
+        "route_band_rms_N": 2.4810449446646676e-05,
+        "route_high_band_rms_N": 0.000161604268177587,
+        "first_seat_peak_N": 2.6980178874147498e-05,
+        "minimum_mean_hand_force_N": -0.0007161680911931256
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0006118406445305147,
+        "route_band_rms_N": 0.00038343079231847876,
+        "route_high_band_rms_N": 0.00015079739360082667,
+        "first_seat_peak_N": 0.0034556527705040807,
+        "minimum_mean_hand_force_N": 0.0014841627567983018
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.0015204303944598707,
+        "route_band_rms_N": -0.00024506317196415495,
+        "route_high_band_rms_N": 0.00018658427316647908,
+        "first_seat_peak_N": -0.00011713427605641868,
+        "minimum_mean_hand_force_N": -0.00013752266556865678
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0015347099122584584,
+        "route_band_rms_N": 1.0118239833267761e-05,
+        "route_high_band_rms_N": 0.00016982636348049363,
+        "first_seat_peak_N": 2.455334126238995e-05,
+        "minimum_mean_hand_force_N": -3.9451291188097315e-05
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.001472154026452288,
+        "route_band_rms_N": 2.48783659900359e-05,
+        "route_high_band_rms_N": 0.0001692509586936619,
+        "first_seat_peak_N": 6.985711653495486e-05,
+        "minimum_mean_hand_force_N": -9.701209392787291e-05
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0009555649479821571,
+        "route_band_rms_N": 0.00011967819526741141,
+        "route_high_band_rms_N": 0.00018839898997181914,
+        "first_seat_peak_N": 0.001370360971786333,
+        "minimum_mean_hand_force_N": -0.0008349184520728414
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.0014820159816873457,
+        "route_band_rms_N": -0.00017003460697508077,
+        "route_high_band_rms_N": 0.00017187491443275416,
+        "first_seat_peak_N": -0.00013714992002267223,
+        "minimum_mean_hand_force_N": -0.00012036972974360793
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0009441995133442349,
+        "route_band_rms_N": 0.0001536804054921015,
+        "route_high_band_rms_N": 4.423957377046317e-05,
+        "first_seat_peak_N": -0.0007769685741401133,
+        "minimum_mean_hand_force_N": -5.848144676212641e-05
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0006000756666834084,
+        "route_band_rms_N": 0.0010763305890033603,
+        "route_high_band_rms_N": 0.00012597893670147908,
+        "first_seat_peak_N": 0.000986786955790464,
+        "minimum_mean_hand_force_N": -0.0001460901814231974
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.0023263911104975943,
+        "route_band_rms_N": 0.00015174746062796007,
+        "route_high_band_rms_N": -0.001071706127159594,
+        "first_seat_peak_N": -0.04456841775092979,
+        "minimum_mean_hand_force_N": -0.01952036439323024
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.0013024972159327852,
+        "route_band_rms_N": -0.0012090171368872304,
+        "route_high_band_rms_N": 0.00013210083456909744,
+        "first_seat_peak_N": -0.012095501558005317,
+        "minimum_mean_hand_force_N": -0.006708687512983591
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.001447970758115369,
+        "route_band_rms_N": -3.7773783980454834e-06,
+        "route_high_band_rms_N": 0.00018539508792815573,
+        "first_seat_peak_N": 7.938782922600751e-06,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0013870704581813165,
+        "route_band_rms_N": 1.2094338001464311e-05,
+        "route_high_band_rms_N": 0.00017849467245284467,
+        "first_seat_peak_N": 0.00010622976416208019,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0006243755572066245,
+        "route_band_rms_N": 0.0001740134783415337,
+        "route_high_band_rms_N": 0.00015562104957488054,
+        "first_seat_peak_N": 0.0013643591122818322,
+        "minimum_mean_hand_force_N": -0.0014748160390176679
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.0013560486220521306,
+        "route_band_rms_N": -0.00023027839812890527,
+        "route_high_band_rms_N": 0.000179623553946906,
+        "first_seat_peak_N": -0.0001644118461019417,
+        "minimum_mean_hand_force_N": -0.0005812372901496943
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0014094073609269842,
+        "route_band_rms_N": -9.327548594366408e-05,
+        "route_high_band_rms_N": 0.0002245293073363519,
+        "first_seat_peak_N": -0.0005143830586513687,
+        "minimum_mean_hand_force_N": 8.189774830746899e-06
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0008387775710122503,
+        "route_band_rms_N": 8.450663382800205e-06,
+        "route_high_band_rms_N": 0.00015283477001147572,
+        "first_seat_peak_N": 0.00015808971949660133,
+        "minimum_mean_hand_force_N": -0.0013492054445221058
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.0036527657436009053,
+        "route_band_rms_N": 0.0003545235634107857,
+        "route_high_band_rms_N": 0.00012864492088700274,
+        "first_seat_peak_N": -0.0009860495811988557,
+        "minimum_mean_hand_force_N": 0.001429021392523655
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.000882402144622263,
+        "route_band_rms_N": -0.0002121922687991079,
+        "route_high_band_rms_N": 0.0001838617456432351,
+        "first_seat_peak_N": 0.00011680415600867633,
+        "minimum_mean_hand_force_N": -0.010901685703635255
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.0005046448361408773,
+        "route_band_rms_N": -9.883683340801419e-05,
+        "route_high_band_rms_N": -7.423865830223642e-05,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0005046448361409328,
+        "route_band_rms_N": -9.883683341072036e-05,
+        "route_high_band_rms_N": -7.42386583023752e-05,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.0005046448361409328,
+        "route_band_rms_N": -9.883683341681271e-05,
+        "route_high_band_rms_N": -7.423865830219478e-05,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.0005046448361408773,
+        "route_band_rms_N": -9.883683341731231e-05,
+        "route_high_band_rms_N": -7.423865830233356e-05,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.0003846865419623313,
+        "route_band_rms_N": -6.123540913693937e-05,
+        "route_high_band_rms_N": -0.00011476451643194219,
+        "first_seat_peak_N": -2.4096280526464398e-12,
+        "minimum_mean_hand_force_N": -2.4096280526464398e-12
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0003201109503491173,
+        "route_band_rms_N": -5.978284832382219e-05,
+        "route_high_band_rms_N": -6.107860985837821e-05,
+        "first_seat_peak_N": 3.455014052633487e-13,
+        "minimum_mean_hand_force_N": -5.0812687391044165e-12
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.00020343446896164963,
+        "route_band_rms_N": 6.289466229995877e-05,
+        "route_high_band_rms_N": 0.00011191880697354606,
+        "first_seat_peak_N": -7.617496855516492e-09,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.0003622409108494651,
+        "route_band_rms_N": -0.00043315037884107677,
+        "route_high_band_rms_N": -5.279939141225598e-05,
+        "first_seat_peak_N": 3.404979008969633e-06,
+        "minimum_mean_hand_force_N": -0.0031668116388465783
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.00037870657207317304,
+        "route_band_rms_N": -4.269730544805006e-05,
+        "route_high_band_rms_N": -0.00012395331420815558,
+        "first_seat_peak_N": -1.4654943925052066e-13,
+        "minimum_mean_hand_force_N": 2.4368596029944456e-10
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0003101132911921267,
+        "route_band_rms_N": -4.786751470201023e-05,
+        "route_high_band_rms_N": -5.368599571405064e-05,
+        "first_seat_peak_N": -1.0916376247394055e-08,
+        "minimum_mean_hand_force_N": -4.089022638709139e-06
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.00023453355189939629,
+        "route_band_rms_N": 0.00017463404678579042,
+        "route_high_band_rms_N": 0.0003744602912292144,
+        "first_seat_peak_N": -5.547040252462665e-05,
+        "minimum_mean_hand_force_N": 0.0015204406996072173
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.00036073157715321713,
+        "route_band_rms_N": -0.00045421931599194665,
+        "route_high_band_rms_N": -5.04544473899915e-05,
+        "first_seat_peak_N": -9.921917258015611e-05,
+        "minimum_mean_hand_force_N": -0.0031967501757454997
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.00023421427665409889,
+        "route_band_rms_N": -7.72615089822265e-05,
+        "route_high_band_rms_N": -0.00010333583322657408,
+        "first_seat_peak_N": 0.0006518527215995107,
+        "minimum_mean_hand_force_N": 0.0006518527215999548
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0004931935960643674,
+        "route_band_rms_N": -4.7861035423243936e-05,
+        "route_high_band_rms_N": -5.685090722078179e-05,
+        "first_seat_peak_N": -0.00035849320817860075,
+        "minimum_mean_hand_force_N": -0.00037438503162023906
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0012071181752651428,
+        "route_band_rms_N": 0.0006718731617912505,
+        "route_high_band_rms_N": 0.0005070767703664603,
+        "first_seat_peak_N": 0.0043700058560460775,
+        "minimum_mean_hand_force_N": 0.004884398852750493
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.00024088104334701876,
+        "route_band_rms_N": -0.00040843945639114365,
+        "route_high_band_rms_N": -5.6079743441211916e-05,
+        "first_seat_peak_N": -1.9943649544273967e-05,
+        "minimum_mean_hand_force_N": -0.0013987656235037171
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.00038952543193493394,
+        "route_band_rms_N": -9.541701760763799e-05,
+        "route_high_band_rms_N": -8.132618355567722e-05,
+        "first_seat_peak_N": 1.3629082602051312e-05,
+        "minimum_mean_hand_force_N": 1.3629082602051312e-05
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0003399305233749428,
+        "route_band_rms_N": -9.400241941066867e-05,
+        "route_high_band_rms_N": -6.903734736475597e-05,
+        "first_seat_peak_N": -5.321409026137758e-05,
+        "minimum_mean_hand_force_N": -5.524417218127908e-05
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.00026018743436312386,
+        "route_band_rms_N": -2.2359524917400786e-05,
+        "route_high_band_rms_N": -2.360677124935151e-05,
+        "first_seat_peak_N": -0.0004982526800230147,
+        "minimum_mean_hand_force_N": -0.0007847067316033574
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.00031178330992504,
+        "route_band_rms_N": -0.0002694666049875838,
+        "route_high_band_rms_N": -6.967490766129902e-05,
+        "first_seat_peak_N": 0.00012940090975188667,
+        "minimum_mean_hand_force_N": -0.0012032011125042708
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.00038258258773937737,
+        "route_band_rms_N": -2.357304631564472e-05,
+        "route_high_band_rms_N": -0.0003373166882733314,
+        "first_seat_peak_N": -6.746773246657511e-05,
+        "minimum_mean_hand_force_N": 0.0033864328888411066
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.00042345055395887066,
+        "route_band_rms_N": 0.0002357300555957259,
+        "route_high_band_rms_N": -6.474544811028993e-05,
+        "first_seat_peak_N": 0.0010068141668977404,
+        "minimum_mean_hand_force_N": -4.47823363103339e-06
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.002709461060403484,
+        "route_band_rms_N": -0.00027650640135515325,
+        "route_high_band_rms_N": 0.00026021085677732647,
+        "first_seat_peak_N": -0.015565062554625086,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.00013849418960587556,
+        "route_band_rms_N": -0.0005343863610617894,
+        "route_high_band_rms_N": -8.39367706640115e-05,
+        "first_seat_peak_N": 0.0007871768476857,
+        "minimum_mean_hand_force_N": -1.6970193933651956e-05
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.00030111977269958734,
+        "route_band_rms_N": -7.94267524975717e-05,
+        "route_high_band_rms_N": -9.48175067060214e-05,
+        "first_seat_peak_N": -9.222846591949718e-05,
+        "minimum_mean_hand_force_N": -9.2228465918609e-05
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.00023661102069266748,
+        "route_band_rms_N": -7.097600358713096e-05,
+        "route_high_band_rms_N": -4.7497066322510495e-05,
+        "first_seat_peak_N": -0.00015308191418750283,
+        "minimum_mean_hand_force_N": -0.0001585009427258477
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0004338617716774795,
+        "route_band_rms_N": 7.146988434900137e-05,
+        "route_high_band_rms_N": 8.825595286125754e-05,
+        "first_seat_peak_N": 0.0018607566893056315,
+        "minimum_mean_hand_force_N": 0.0019967801044646905
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.0002482806070560617,
+        "route_band_rms_N": -0.00031310991556489365,
+        "route_high_band_rms_N": -6.856098001976896e-05,
+        "first_seat_peak_N": -2.907376225813607e-05,
+        "minimum_mean_hand_force_N": -0.002447627356477078
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.00046652867900204287,
+        "route_band_rms_N": -1.621567506009114e-05,
+        "route_high_band_rms_N": -9.976898739431916e-05,
+        "first_seat_peak_N": -0.0001820745316090111,
+        "minimum_mean_hand_force_N": -0.0001820745316090111
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0002496011317505431,
+        "route_band_rms_N": -0.00010335086145656092,
+        "route_high_band_rms_N": -9.182047236888646e-05,
+        "first_seat_peak_N": 3.099618471225085e-05,
+        "minimum_mean_hand_force_N": 3.222930709334548e-05
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.0012364093332612458,
+        "route_band_rms_N": 0.0002948667734953697,
+        "route_high_band_rms_N": 0.0006108417448246334,
+        "first_seat_peak_N": 0.0006190060599662317,
+        "minimum_mean_hand_force_N": 0.0006502029315278435
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.0006042181915328348,
+        "route_band_rms_N": -0.0003990938569906899,
+        "route_high_band_rms_N": -5.423669341333981e-05,
+        "first_seat_peak_N": 5.1302757793081355e-06,
+        "minimum_mean_hand_force_N": -0.0014468177790560866
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.0004191395892257921,
+        "route_band_rms_N": 0.0002068305152347072,
+        "route_high_band_rms_N": 0.00013499681876208078,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0004191395892257921,
+        "route_band_rms_N": 0.00020683051524303386,
+        "route_high_band_rms_N": 0.00013499681876269487,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.00041913958922512595,
+        "route_band_rms_N": 0.00020683051524049423,
+        "route_high_band_rms_N": 0.0001349968187619073,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.0004191395892257921,
+        "route_band_rms_N": 0.00020683051523898155,
+        "route_high_band_rms_N": 0.00013499681876281977,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.0003282316505286431,
+        "route_band_rms_N": 0.0002408971798799342,
+        "route_high_band_rms_N": 0.00012213163203050187,
+        "first_seat_peak_N": 1.3089973549540446e-10,
+        "minimum_mean_hand_force_N": -0.007780001195065722
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0002744252571023065,
+        "route_band_rms_N": 0.0002245872489200565,
+        "route_high_band_rms_N": 8.100262785475792e-05,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 8.828164591923038e-05,
+        "route_band_rms_N": 0.0001401661810256291,
+        "route_high_band_rms_N": 2.957171159321398e-05,
+        "first_seat_peak_N": -2.1449508835758024e-12,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.00041700796800192563,
+        "route_band_rms_N": 2.3680514681198583e-05,
+        "route_high_band_rms_N": 0.0001535923789384129,
+        "first_seat_peak_N": 0.0002609874600931761,
+        "minimum_mean_hand_force_N": 0.0002539299854715793
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.0003294703488764261,
+        "route_band_rms_N": 0.00023800225920959928,
+        "route_high_band_rms_N": 0.00011306390318774687,
+        "first_seat_peak_N": 7.782648365761702e-07,
+        "minimum_mean_hand_force_N": -0.009928281429440133
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0002767306348793186,
+        "route_band_rms_N": 0.00024414114831473877,
+        "route_high_band_rms_N": 5.1482472107955424e-05,
+        "first_seat_peak_N": -3.993957691772465e-05,
+        "minimum_mean_hand_force_N": 5.9968641576535475e-05
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.0001190278036361514,
+        "route_band_rms_N": 0.00014243679649519198,
+        "route_high_band_rms_N": -0.00015583314686019867,
+        "first_seat_peak_N": 0.004150424622046955,
+        "minimum_mean_hand_force_N": -0.0003306282484665246
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.00040473279094765946,
+        "route_band_rms_N": 2.169600763227142e-06,
+        "route_high_band_rms_N": 0.00015948475137047766,
+        "first_seat_peak_N": 0.00027400249738995797,
+        "minimum_mean_hand_force_N": 0.0003326450023570793
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.000549207848865696,
+        "route_band_rms_N": 0.00021805152275894413,
+        "route_high_band_rms_N": 0.00012278302227395135,
+        "first_seat_peak_N": 0.0008666502017415922,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0004169999228555987,
+        "route_band_rms_N": 0.00023112956879729057,
+        "route_high_band_rms_N": 7.085797990047382e-05,
+        "first_seat_peak_N": -0.00040855448524013127,
+        "minimum_mean_hand_force_N": 0.0015758130350169708
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.0005921521371670124,
+        "route_band_rms_N": 0.00017075852674704184,
+        "route_high_band_rms_N": -5.235724706398326e-06,
+        "first_seat_peak_N": -0.004652465139796114,
+        "minimum_mean_hand_force_N": -0.006115076468538927
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.00046704245546491663,
+        "route_band_rms_N": 9.792505937257501e-05,
+        "route_high_band_rms_N": 0.00015485272632253036,
+        "first_seat_peak_N": 0.0001563522097400849,
+        "minimum_mean_hand_force_N": -0.0005889910233136675
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.00043697182297641746,
+        "route_band_rms_N": 0.00021331133218487064,
+        "route_high_band_rms_N": 0.0001353029222805613,
+        "first_seat_peak_N": -0.0001472863244433853,
+        "minimum_mean_hand_force_N": 5.443681739736306e-05
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.00042554629254709653,
+        "route_band_rms_N": 0.0002023575899204183,
+        "route_high_band_rms_N": 0.0001104526953644297,
+        "first_seat_peak_N": -0.00014548506392486615,
+        "minimum_mean_hand_force_N": 5.31670480956592e-05
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.000623942889449336,
+        "route_band_rms_N": 0.00034130500482892207,
+        "route_high_band_rms_N": 0.00011735354462015166,
+        "first_seat_peak_N": -0.00013761986288773898,
+        "minimum_mean_hand_force_N": -0.0014715066965216295
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.0005067459267447116,
+        "route_band_rms_N": 0.00013080311234078823,
+        "route_high_band_rms_N": 0.0001452729926815846,
+        "first_seat_peak_N": 5.850328604051214e-05,
+        "minimum_mean_hand_force_N": -0.0007927043433495484
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.00016620366566821865,
+        "route_band_rms_N": 7.649688198745758e-05,
+        "route_high_band_rms_N": 0.00017048591818155656,
+        "first_seat_peak_N": -0.0003852632217276053,
+        "minimum_mean_hand_force_N": -0.00041587436239742814
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0014577149018349944,
+        "route_band_rms_N": 0.002311556366830711,
+        "route_high_band_rms_N": 0.00035506063885937245,
+        "first_seat_peak_N": -0.009627792986472983,
+        "minimum_mean_hand_force_N": -0.0030613507004311202
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.0012681849986884153,
+        "route_band_rms_N": 0.016781114523686635,
+        "route_high_band_rms_N": -0.005732410351290962,
+        "first_seat_peak_N": -0.012201202232037467,
+        "minimum_mean_hand_force_N": -0.059650902771231085
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.002530197005102708,
+        "route_band_rms_N": -0.002003636480552101,
+        "route_high_band_rms_N": -0.0002187152382268666,
+        "first_seat_peak_N": -0.002879803942025916,
+        "minimum_mean_hand_force_N": -0.002613043231745049
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.0004405779801177623,
+        "route_band_rms_N": 0.00022033564075962797,
+        "route_high_band_rms_N": 0.00013175305967542267,
+        "first_seat_peak_N": -6.015836524575491e-05,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.000415550225040473,
+        "route_band_rms_N": 0.000217548885615107,
+        "route_high_band_rms_N": 0.00010662968356964925,
+        "first_seat_peak_N": -0.0013210976221866844,
+        "minimum_mean_hand_force_N": -7.672587017548693e-05
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.0007072871327551411,
+        "route_band_rms_N": 0.0002880105342717085,
+        "route_high_band_rms_N": 9.94190704033393e-05,
+        "first_seat_peak_N": -0.001942352770194944,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.000517370546321505,
+        "route_band_rms_N": 0.00010904123189066361,
+        "route_high_band_rms_N": 0.00014817945219143883,
+        "first_seat_peak_N": 5.046708715994441e-05,
+        "minimum_mean_hand_force_N": -0.00017235297483342293
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 0.0009080286640599233,
+        "route_band_rms_N": 0.00015236610730634537,
+        "route_high_band_rms_N": 0.00010015670284049816,
+        "first_seat_peak_N": -0.0016232158377684769,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0003092060298774957,
+        "route_band_rms_N": 0.00027269605578331135,
+        "route_high_band_rms_N": 4.9871319345938525e-05,
+        "first_seat_peak_N": -0.0011795037835495847,
+        "minimum_mean_hand_force_N": 0.0025895565701470336
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.0021678963821286645,
+        "route_band_rms_N": 0.00018068003207986905,
+        "route_high_band_rms_N": -2.6547343829688708e-06,
+        "first_seat_peak_N": -0.006491788724988901,
+        "minimum_mean_hand_force_N": 0.004207560151529677
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.0007955574882333449,
+        "route_band_rms_N": 0.00019934737880594744,
+        "route_high_band_rms_N": 0.00015218463422960946,
+        "first_seat_peak_N": 0.0008805967189786656,
+        "minimum_mean_hand_force_N": 0.001948649137376135
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0007168891795301113,
+        "route_band_rms_N": -0.00010594771718616669,
+        "route_high_band_rms_N": -0.0005110248431294123,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0007168891795301113,
+        "route_band_rms_N": -0.00010594771718616669,
+        "route_high_band_rms_N": -0.0005110248431293707,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0007168891795301113,
+        "route_band_rms_N": -0.00010594771718251683,
+        "route_high_band_rms_N": -0.0005110248431300368,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "I_P0_I1.6_D0",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.0007168891795301113,
+        "route_band_rms_N": -0.00010594771718616669,
+        "route_high_band_rms_N": -0.0005110248431294123,
+        "first_seat_peak_N": 0.0,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0005080052302419147,
+        "route_band_rms_N": -7.21158822845347e-05,
+        "route_high_band_rms_N": -0.0005432349417194005,
+        "first_seat_peak_N": 0.00834669196003901,
+        "minimum_mean_hand_force_N": -0.0001862181994165546
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.00038227320056283265,
+        "route_band_rms_N": -9.87045446433632e-05,
+        "route_high_band_rms_N": -0.0004992660302554353,
+        "first_seat_peak_N": 0.008819403249946234,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 4.358670676585241e-05,
+        "route_band_rms_N": -7.504117206388883e-05,
+        "route_high_band_rms_N": -0.0004975975244889824,
+        "first_seat_peak_N": 0.014407814871684188,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "P_P0.05_I0_D0",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -8.859691622337129e-05,
+        "route_band_rms_N": -0.0006344853079763568,
+        "route_high_band_rms_N": -0.0004736433947535035,
+        "first_seat_peak_N": 0.001626296857373255,
+        "minimum_mean_hand_force_N": -0.0005496949563843501
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0004925263164198279,
+        "route_band_rms_N": -5.8823453433637374e-05,
+        "route_high_band_rms_N": -0.000548185455607822,
+        "first_seat_peak_N": -0.0001417639075063093,
+        "minimum_mean_hand_force_N": -0.0005236093817897469
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.00037118742405983784,
+        "route_band_rms_N": -9.647856928264587e-05,
+        "route_high_band_rms_N": -0.00052339903850597,
+        "first_seat_peak_N": 0.018985261089135896,
+        "minimum_mean_hand_force_N": -4.443672145582056e-05
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.00012303446363282067,
+        "route_band_rms_N": 9.388479669941718e-06,
+        "route_high_band_rms_N": -0.0006356493367209448,
+        "first_seat_peak_N": 0.024313620525115986,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PD_P0.05_I0_D0.005",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -7.902993810898762e-05,
+        "route_band_rms_N": -0.0006934016121592362,
+        "route_high_band_rms_N": -0.000461122284088164,
+        "first_seat_peak_N": 0.001830692943350698,
+        "minimum_mean_hand_force_N": -0.0006035669320545445
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0006384292616626319,
+        "route_band_rms_N": -0.00011318902671192399,
+        "route_high_band_rms_N": -0.0005172275799520815,
+        "first_seat_peak_N": -4.4695269665773196e-05,
+        "minimum_mean_hand_force_N": -9.476360464200084e-05
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.000981485508494584,
+        "route_band_rms_N": -8.707432487733979e-05,
+        "route_high_band_rms_N": -0.0005369196799264869,
+        "first_seat_peak_N": -0.00019497677234614486,
+        "minimum_mean_hand_force_N": -0.0006446728428191051
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.000358529088565096,
+        "route_band_rms_N": 0.0001927092521219198,
+        "route_high_band_rms_N": -0.0006663465232455701,
+        "first_seat_peak_N": -0.0014217781166792065,
+        "minimum_mean_hand_force_N": -0.010952826604873511
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PID_P0.05_I0.8_D0.005",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.0005433503116565874,
+        "route_band_rms_N": -0.0005275298082064311,
+        "route_high_band_rms_N": -0.0004788127012545079,
+        "first_seat_peak_N": 0.0012271391514913077,
+        "minimum_mean_hand_force_N": -0.0009170480412552529
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0007046440215488503,
+        "route_band_rms_N": -0.00011626235503986448,
+        "route_high_band_rms_N": -0.0005227174022693487,
+        "first_seat_peak_N": 3.8788142455281616e-05,
+        "minimum_mean_hand_force_N": -1.4684282546806315e-05
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0007647531993036916,
+        "route_band_rms_N": -9.428872249367393e-05,
+        "route_high_band_rms_N": -0.0005063447885094718,
+        "first_seat_peak_N": -4.930693258131669e-05,
+        "minimum_mean_hand_force_N": -1.4992457917806234e-05
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.00042482906316726465,
+        "route_band_rms_N": 5.300173002753539e-05,
+        "route_high_band_rms_N": -0.0005185148404643763,
+        "first_seat_peak_N": -0.0006098918928820751,
+        "minimum_mean_hand_force_N": -0.009344649741075628
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PI_P0.1_I0.8_D0_R0.1",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.000622741448183417,
+        "route_band_rms_N": -0.0003939701602132806,
+        "route_high_band_rms_N": -0.0005067302579142841,
+        "first_seat_peak_N": 0.0014102121507892917,
+        "minimum_mean_hand_force_N": -0.00038706741786098675
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": 1.360184617982263e-05,
+        "route_band_rms_N": -3.924068536635683e-05,
+        "route_high_band_rms_N": -0.0006459108278816655,
+        "first_seat_peak_N": 0.000241256425676184,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": 0.0003663060325184153,
+        "route_band_rms_N": 6.280520472953799e-06,
+        "route_high_band_rms_N": -0.0005958383495001107,
+        "first_seat_peak_N": 0.0004816011876309645,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.03905463616669458,
+        "route_band_rms_N": 0.018808173997390543,
+        "route_high_band_rms_N": -2.1795951426276106e-05,
+        "first_seat_peak_N": 0.06272648043503981,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PD_P0.3_I0_D0.1_R0.1",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": 0.0010606791333565013,
+        "route_band_rms_N": -0.0009830173074369397,
+        "route_high_band_rms_N": -0.0005934420372106647,
+        "first_seat_peak_N": 0.005781677380240602,
+        "minimum_mean_hand_force_N": -0.0003226897056882727
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0007362699870641087,
+        "route_band_rms_N": -0.0001050306461976569,
+        "route_high_band_rms_N": -0.0005281103619737965,
+        "first_seat_peak_N": -0.0004859195810897887,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0006331426139373764,
+        "route_band_rms_N": -9.215995015145195e-05,
+        "route_high_band_rms_N": -0.0005138026792464723,
+        "first_seat_peak_N": -0.00012017325598545625,
+        "minimum_mean_hand_force_N": 0.0
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": -0.0008820854724033711,
+        "route_band_rms_N": -9.553913075489862e-05,
+        "route_high_band_rms_N": -0.0005505768277535017,
+        "first_seat_peak_N": -0.002856352170887533,
+        "minimum_mean_hand_force_N": -0.0010235613817726197
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PI_P0.05_I0.8_D0__combined_total",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -0.0006454873801425287,
+        "route_band_rms_N": -0.0004604943252267957,
+        "route_high_band_rms_N": -0.0004930258590492564,
+        "first_seat_peak_N": 0.001961189642995187,
+        "minimum_mean_hand_force_N": -0.0005789967733678125
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k480_d0.12",
+      "difference": {
+        "route_rmse_N": -0.0005545716145531343,
+        "route_band_rms_N": -0.00010420720174074416,
+        "route_high_band_rms_N": -0.0005207476407756151,
+        "first_seat_peak_N": -0.00020680814313234208,
+        "minimum_mean_hand_force_N": -0.0003818599601528305
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k680_d0.18",
+      "difference": {
+        "route_rmse_N": -0.0005278833864287291,
+        "route_band_rms_N": -6.685077626873703e-05,
+        "route_high_band_rms_N": -0.0005299682203497441,
+        "first_seat_peak_N": -0.00027457061244362535,
+        "minimum_mean_hand_force_N": -0.0014717820012299931
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "delay_k1500_d0.23",
+      "difference": {
+        "route_rmse_N": 0.00047605643633763517,
+        "route_band_rms_N": 0.00024556017858039236,
+        "route_high_band_rms_N": -0.0006520224582443751,
+        "first_seat_peak_N": -0.001518298860556655,
+        "minimum_mean_hand_force_N": 0.0014356651193869752
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "candidate": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "model": "resonant680_d18_z0.3",
+      "difference": {
+        "route_rmse_N": -6.959564831593434e-05,
+        "route_band_rms_N": -0.0004969427182565794,
+        "route_high_band_rms_N": -0.0004800299531748792,
+        "first_seat_peak_N": 0.0009256736701104273,
+        "minimum_mean_hand_force_N": -0.0009170480412552529
+      }
+    }
+  ],
+  "original_tolerance_passed": false,
+  "max_difference_vs_2p5ms_N": {
+    "route_rmse_N": 0.012565096392361141,
+    "route_band_rms_N": 0.009710763418150192,
+    "route_high_band_rms_N": 0.003611166843267101,
+    "first_seat_peak_N": 0.04162707742228999,
+    "minimum_mean_hand_force_N": 0.022629264525465764
+  }
+}

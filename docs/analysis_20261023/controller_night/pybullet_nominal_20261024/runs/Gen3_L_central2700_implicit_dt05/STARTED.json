@@ -1,0 +1,14 @@
+{
+  "pid": 16924,
+  "argv": [
+    "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\gen3\\run_gen3.py",
+    "--piece",
+    "L",
+    "--tag",
+    "Gen3_L_central2700_implicit_dt05",
+    "--dt",
+    ".0005",
+    "--servo",
+    "implicit"
+  ]
+}

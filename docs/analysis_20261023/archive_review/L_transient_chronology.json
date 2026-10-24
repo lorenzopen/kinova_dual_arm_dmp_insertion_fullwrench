@@ -1,0 +1,92 @@
+[
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "label": "23/10 18:27",
+    "target_drop_route_end_offset_s": 0.013599872589111328,
+    "target_before_drop_N_per_hand": 5.36,
+    "target_after_drop_N_per_hand": 3.79,
+    "peak_route_end_offset_s": 0.4596998691558838,
+    "peak_delay_after_target_drop_s": 0.44609999656677246,
+    "force_at_drop_N_mean_hand": 4.8,
+    "force_peak_N_mean_hand": 6.425,
+    "target_at_peak_N_per_hand": 3.79,
+    "commanded_closure_drop_to_peak_mm_per_hand": -0.9399999999999977,
+    "measured_closure_drop_to_peak_mm_per_hand": 0.5510452247274884,
+    "ff_state_delta_drop_to_peak_mm": -0.8779692739990421,
+    "trim_state_delta_drop_to_peak_mm": -4.3021142204224816e-16,
+    "total_state_delta_drop_to_peak_mm": -0.8779692739990426,
+    "trim_at_peak_mm": -0.06131687954548945,
+    "rate_limited_at_peak": 1,
+    "joint_data_age_at_peak_ms_L_R": [
+      7.035651000478538,
+      10.74162700024317
+    ],
+    "ATI_data_age_at_peak_ms_L_R": [
+      2.3627010014024563,
+      1.5842430002521724
+    ],
+    "ext_z_at_drop_N": 0.24,
+    "ext_z_at_peak_N": 0.2,
+    "closure_force_correlation_drop_to_1p5s": 0.9898202562635243
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "label": "23/10 18:37",
+    "target_drop_route_end_offset_s": 0.0214998722076416,
+    "target_before_drop_N_per_hand": 5.36,
+    "target_after_drop_N_per_hand": 3.79,
+    "peak_route_end_offset_s": 0.3603999614715576,
+    "peak_delay_after_target_drop_s": 0.338900089263916,
+    "force_at_drop_N_mean_hand": 4.475,
+    "force_peak_N_mean_hand": 6.23,
+    "target_at_peak_N_per_hand": 3.79,
+    "commanded_closure_drop_to_peak_mm_per_hand": -0.7199999999999989,
+    "measured_closure_drop_to_peak_mm_per_hand": 0.5858738078091221,
+    "ff_state_delta_drop_to_peak_mm": -0.6610049619994245,
+    "trim_state_delta_drop_to_peak_mm": 2.220446049250313e-16,
+    "total_state_delta_drop_to_peak_mm": -0.6610049619994245,
+    "trim_at_peak_mm": 0.264063898127772,
+    "rate_limited_at_peak": 1,
+    "joint_data_age_at_peak_ms_L_R": [
+      2.796892000333173,
+      9.566487999109086
+    ],
+    "ATI_data_age_at_peak_ms_L_R": [
+      3.2566830013820436,
+      1.4994410012150183
+    ],
+    "ext_z_at_drop_N": -0.02,
+    "ext_z_at_peak_N": 0.15,
+    "closure_force_correlation_drop_to_1p5s": 0.9501450344577999
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+    "label": "23/10 18:41",
+    "target_drop_route_end_offset_s": 0.020800113677978516,
+    "target_before_drop_N_per_hand": 5.36,
+    "target_after_drop_N_per_hand": 3.79,
+    "peak_route_end_offset_s": 0.4335000514984131,
+    "peak_delay_after_target_drop_s": 0.41269993782043457,
+    "force_at_drop_N_mean_hand": 4.925,
+    "force_peak_N_mean_hand": 6.61,
+    "target_at_peak_N_per_hand": 3.79,
+    "commanded_closure_drop_to_peak_mm_per_hand": -0.799999999999983,
+    "measured_closure_drop_to_peak_mm_per_hand": 0.5511624114119513,
+    "ff_state_delta_drop_to_peak_mm": -0.8253208020032616,
+    "trim_state_delta_drop_to_peak_mm": 0.0,
+    "total_state_delta_drop_to_peak_mm": -0.8253208020032614,
+    "trim_at_peak_mm": 0.3267036122428456,
+    "rate_limited_at_peak": 1,
+    "joint_data_age_at_peak_ms_L_R": [
+      16.997580998577178,
+      2.21107999823289
+    ],
+    "ATI_data_age_at_peak_ms_L_R": [
+      1.8521889978728723,
+      0.9286709973821416
+    ],
+    "ext_z_at_drop_N": 0.08,
+    "ext_z_at_peak_N": 0.13,
+    "closure_force_correlation_drop_to_1p5s": 0.98241127240097
+  }
+]

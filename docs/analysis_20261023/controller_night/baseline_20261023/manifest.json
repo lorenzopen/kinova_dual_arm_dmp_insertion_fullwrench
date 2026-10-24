@@ -1,0 +1,2359 @@
+{
+  "created_utc": "2026-10-23T14:12:50.404219+00:00",
+  "head": "51834b7ff741f8b0adb03ba05ab868034e5080c9",
+  "branch": "codex/feedforward-i-20261023",
+  "run_revisions": [
+    "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+    "1e7d3e52f564479432aabebcd91871ac1c083eac",
+    "21fa4a8ebfad626210833c9e9577387922868a64",
+    "2361f01f861790570fad23431f4641545c6cae6a",
+    "6b1a36da5f119760355c4060044a6897f0353db7",
+    "9444de22218bdd1160ba5af337d0b50098f3df9d",
+    "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+    "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+    "bd457b8093530cb699c1833302f17fb283094924",
+    "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+    "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+    "f761b60099df9fe286050349d28b135bb85254eb"
+  ],
+  "source_comparison": [
+    {
+      "revision": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "2361f01f861790570fad23431f4641545c6cae6a",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "2361f01f861790570fad23431f4641545c6cae6a",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "2361f01f861790570fad23431f4641545c6cae6a",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "bd457b8093530cb699c1833302f17fb283094924",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "bd457b8093530cb699c1833302f17fb283094924",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "bd457b8093530cb699c1833302f17fb283094924",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "f761b60099df9fe286050349d28b135bb85254eb",
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "f761b60099df9fe286050349d28b135bb85254eb",
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "current_matches_run_normalized": true
+    },
+    {
+      "revision": "f761b60099df9fe286050349d28b135bb85254eb",
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "current_matches_run_normalized": true
+    }
+  ],
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 32,
+      "sha256": "6438c41bd2ba0925199917a4cb83903375957857349b14ef6fc81bbae815cf34"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 77,
+      "sha256": "bee2f676c7498dcee813583968b1d6ddfceece83b3c4ca0496ce6d2a7c2a6c90"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 433,
+      "sha256": "9a47bb558cf9a9a7afb92f1052d97e441018002a32a3f7f850348fb11a85da8b"
+    },
+    {
+      "path": "FULL_WRENCH.md",
+      "bytes": 4903,
+      "sha256": "90a40810049defcf81b9e7e06e58bb18a816f9856f121085961d7d522e6beb53"
+    },
+    {
+      "path": "GUIDA.md",
+      "bytes": 29331,
+      "sha256": "943d34988a9d30882b0b5fc3c5f7dfc713e0856f24eeafc4cbaedf86b344402a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2313,
+      "sha256": "196b81bb642903c8e173c33c408fad2ef427ebe41a623094688aa77b6d265ef2"
+    },
+    {
+      "path": "config/cell.yaml",
+      "bytes": 11629,
+      "sha256": "a7bc678143b8ddc5e7c6bc6965a36a2d83143cb289d1545e5abf22ba3de5b12b"
+    },
+    {
+      "path": "docs/FFI_CONTROLLER.md",
+      "bytes": 8696,
+      "sha256": "b085a7ae3de5f4a18d4ab37d07b1bb0a7bcc2dd5141b2ad1b688c11d4c805665"
+    },
+    {
+      "path": "docs/analysis_20261023/analyze_runs.py",
+      "bytes": 8090,
+      "sha256": "1e6b018611dcb7c83fb523743b72b0f1e53176161053e1cc4131fb30f5510352"
+    },
+    {
+      "path": "docs/analysis_20261023/archive_review/analyze.py",
+      "bytes": 21884,
+      "sha256": "18e51c5469c78293777032dca9d77d22e3d0e370ec2b35d226d86eb04f720f88"
+    },
+    {
+      "path": "docs/analysis_20261023/archive_review/bags.py",
+      "bytes": 12887,
+      "sha256": "bca63f9503e081ca115f3bb6c48048373f6518070438bdd435eab57b91a08b34"
+    },
+    {
+      "path": "docs/analysis_20261023/archive_review/integrator_probe.py",
+      "bytes": 5433,
+      "sha256": "40f60d631d75d94d0834812346c986fb068778f1abdd5e97c103a99f0d06a88e"
+    },
+    {
+      "path": "docs/analysis_20261023/archive_review/inventory.py",
+      "bytes": 2629,
+      "sha256": "2788a43e18cc566f047dab12522090d92cb11daf26660d62437157548faf5b55"
+    },
+    {
+      "path": "docs/analysis_20261023/archive_review/report.py",
+      "bytes": 19422,
+      "sha256": "412f545186b0c928ead4690806d888041bfb540428cc17fe22116b82e8fad20f"
+    },
+    {
+      "path": "docs/analysis_20261023/archive_review/transient_diagnosis.py",
+      "bytes": 5357,
+      "sha256": "cdc5201d6c801488ea3e675fb006e251811ac0038a52f249ffbb687a3ce3bd0d"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/preserve_baseline.py",
+      "bytes": 4636,
+      "sha256": "59695944687a8ac2c29f18299cee3b397a695e387b0d5c46b53c50b81f684703"
+    },
+    {
+      "path": "docs/analysis_20261023/ffi_three_successes/review.py",
+      "bytes": 22404,
+      "sha256": "f78aa794ac61c6c2c9a6e4cc6317036956dbc942f1e0f8f57e1fc5ce1fdd7a3a"
+    },
+    {
+      "path": "docs/analysis_20261023/model_sensitivity.py",
+      "bytes": 3096,
+      "sha256": "ee1c9afa87486f8313243bbd48066d4c2c0f38a9f676da9659883aba68a51e9a"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/check_and_report.py",
+      "bytes": 12783,
+      "sha256": "00598b715395ba02776d8ee53c3b385d52c0118610b7c590b21230ca09b68957"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/simulate.py",
+      "bytes": 17130,
+      "sha256": "9e09127e36d0951a30934bdc9dd1580676880c3ebfdb3a9a12465d1dca263a1b"
+    },
+    {
+      "path": "docs/analysis_20261023/plot_feedforward_clear.py",
+      "bytes": 7952,
+      "sha256": "3d730e0819e22715542482ec15a610c7c67d5890d69d12e05b5e5ab32211afff"
+    },
+    {
+      "path": "docs/analysis_20261023/plot_gain01_external.py",
+      "bytes": 9636,
+      "sha256": "dc678ee95838b53f82b11291b39e7c85e29661d4ec1f54f44959d2b6393d7248"
+    },
+    {
+      "path": "docs/analysis_20261023/review_new_runs.py",
+      "bytes": 6015,
+      "sha256": "b1df21dd686b8c7d7617f904bbee05e28fd2f42734159232e93fdfa9ebd6bee3"
+    },
+    {
+      "path": "docs/analysis_20261023/sim_gain1_to_05/sim_gain05.py",
+      "bytes": 8212,
+      "sha256": "f3ea2961bb2a8e85ab0667c8ed41a67fdba38902ff0de8538374cc27aa865bec"
+    },
+    {
+      "path": "docs/analysis_20261023/validate_execution.py",
+      "bytes": 3398,
+      "sha256": "f395cacd791fd10822d2bc657cb46888f0207dc7e0d056585ff27111de1e553c"
+    },
+    {
+      "path": "docs/analysis_20261023/validate_ffi.py",
+      "bytes": 5083,
+      "sha256": "d7183773e30387da7cc0b0b593bb5e934d66d22303e11264da94b024560ef87c"
+    },
+    {
+      "path": "docs/analysis_20261023/validate_pi.py",
+      "bytes": 4304,
+      "sha256": "fd2a21d1d72d721712609a3cb899840a9a27035e421f29e7d4cc2df85d6f450b"
+    },
+    {
+      "path": "dual_kinova_shelf_top_view.png",
+      "bytes": 305848,
+      "sha256": "f7695982355198526e549f93e2adb5d78d27ec71ff7d486c3b73c135ddcdf544"
+    },
+    {
+      "path": "git_status.txt",
+      "bytes": 525,
+      "sha256": "f5ee136e264285abc0de6822f93bf3789f48b6535210679ccaeaf72915cbdf09"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/analyze_run.py",
+      "bytes": 11379,
+      "sha256": "3e3e7358208f253698f7fa0bd4c972e16b922b23390e1e0f19c12afcd80921ef"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/ati_node.py",
+      "bytes": 3941,
+      "sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/audit_run.py",
+      "bytes": 9749,
+      "sha256": "905db9b5facf234603b2d2e687b0b3078a35021c71852256ba8d35e76056bd7d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/board.py",
+      "bytes": 10304,
+      "sha256": "42461eca2fd4180aa578e3194ecac5464929161eb9bd31c0dd09eccb226f957b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/calibrate_cell.py",
+      "bytes": 9536,
+      "sha256": "ef6a9b2d32f0eaf1e4c26907c627aa5dde467a855714c33ca692450002891b12"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/compare_friction_margin.py",
+      "bytes": 10072,
+      "sha256": "3145536fa5805a2d462db5d068a9c3abfc3b3b921c05107b519f123212b24570"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/dryrun.py",
+      "bytes": 3353,
+      "sha256": "706d4e0fc39936273afcd15277a8509eca90258d611724605ef8b7fed2e93058"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/follow_one_arm.py",
+      "bytes": 11690,
+      "sha256": "39ccd54f9e2d4a408fbde4041cf498e4d6880f384f35062438141a37360dc7fc"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/follow_two_arms.py",
+      "bytes": 16593,
+      "sha256": "7ac9f614a481e74c441cbe66d3d80990e4e7909b30b0fc4369f8f585335347e5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/ft_check.py",
+      "bytes": 8730,
+      "sha256": "944bc3b3cf29d6e0b7a6225e532428664fe86a9f35fcfccd20e4e35435f360a1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/geometry.py",
+      "bytes": 4401,
+      "sha256": "1172e4fc783941d8389698768376f39b2cb46a359342241574fcf5c43e00e45d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/insert_open.py",
+      "bytes": 16175,
+      "sha256": "58fbd5381e9c33a18d72cc143dd648ce4a71e8d9e333147373eeac925884a66c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/insert_pi.py",
+      "bytes": 11354,
+      "sha256": "100778e2f073754b3cc3c841b7558a0c6076a67d172b35e7b4c995724dcacbef"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/insert_pick.py",
+      "bytes": 12542,
+      "sha256": "b3704e678e933391f849a0af46af24d0f0d221c26e50b96e8e6b51c27162016e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/inspect_sampling.py",
+      "bytes": 8069,
+      "sha256": "8e07577e3efc818f244502993ec072530d5bdc5fea5f73a3d534b56065408883"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/main.py",
+      "bytes": 22350,
+      "sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/pair.py",
+      "bytes": 3996,
+      "sha256": "8cb206f8453c1fae87f87ed91e1161c01cc75a981193917e3ed0a81eb1447389"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/prior.py",
+      "bytes": 8579,
+      "sha256": "a57e69e3cd3593b986b20ff2b705c187f93f86bfad3da2f2901887b942bb45c5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/prior_torsional_C.npz",
+      "bytes": 20726,
+      "sha256": "2d229d367e70de99a0bc1b6cdf7004642b73bda5935bde5202ddccf636b0eadd"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/reach_ik.py",
+      "bytes": 5918,
+      "sha256": "22f8535f99b7c9f8b1f8ebb41d3e548d0d972b471b8155f544cf034634bb4558"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/route.py",
+      "bytes": 4923,
+      "sha256": "34032d21d23882cf5c0c39dc36513532a6b3b54a62c8f80c72b43361f5fcef70"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_It1_s9001.json",
+      "bytes": 264693,
+      "sha256": "986e207c9b0f5e787e3b12a6a95ee3c8fa3eaf0868518e6029bb66ebde99650b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_It1_s9001_trace.npz",
+      "bytes": 59669,
+      "sha256": "17b8fc4ab282b69cc8eef4d574ab5c662cf712530a51c49ee960d6e88481eb34"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_It1_s9002.json",
+      "bytes": 84889,
+      "sha256": "8565542193eb685e67d2a6ea0ac4632e27de9b7fa13e3f294b0ddbc3f75eade4"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_It1_s9002_trace.npz",
+      "bytes": 72571,
+      "sha256": "b995d256a2a7ef8bbbb73b34dcbe88a3b6b230181e8ccc615eb6807acdd30380"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_It1_s9003.json",
+      "bytes": 263501,
+      "sha256": "251f880444ecb496b38efa5351fea3837ac841d4afb0034947cd1f36c2af8e6c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_It1_s9003_trace.npz",
+      "bytes": 58819,
+      "sha256": "f7df04ce5bfd824c04a78c34f70bced5e209b1c0e1a1ff62ea87a7beb61f1667"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Jt3_s9013.json",
+      "bytes": 148713,
+      "sha256": "8bb294edc8f81630df1d2228196be4e1a9b65ecd7a04cd0667c99f0b925e68bf"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Jt3_s9013_trace.npz",
+      "bytes": 37626,
+      "sha256": "37166286f7a5ad4391fddba4a403403467e4e20fdee181ecab551d6feceb13ba"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Lt1_s9014.json",
+      "bytes": 261193,
+      "sha256": "3347cbeadc2ea97ee93964fc1731b9d19fd831cc4481b2b99e8dc78a9e3a5a8e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Lt1_s9014_trace.npz",
+      "bytes": 62006,
+      "sha256": "df4e334be371295d18b9f067545aa721a9c8ad51fd9c6df64500f526c59e9867"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Lt1_s9015.json",
+      "bytes": 114495,
+      "sha256": "1204568bd7dd1a2b848eb63bc5794f1e78a4dc07b1cf1fca87e85be156f111c4"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Lt1_s9015_trace.npz",
+      "bytes": 48273,
+      "sha256": "01a3c764ae28eb59d904c31ee42b527b6f64b801bdf7345de854a116f6fc1ebd"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Ot0_s9004.json",
+      "bytes": 264463,
+      "sha256": "2ecf98337bfa32cd9e2257f892d8f3aa0372987f200639675c40ef9e1be150dd"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Ot0_s9004_trace.npz",
+      "bytes": 60893,
+      "sha256": "82f4d8c689e8aebb81beb2afdc9c617b65d304ac4b1bd1eea8e622247825032a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Ot0_s9005.json",
+      "bytes": 264801,
+      "sha256": "1bc17354d023d9094db29c7fe5e2de1883babbb58598d378cb67f9208aa85dc5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Ot0_s9005_trace.npz",
+      "bytes": 72786,
+      "sha256": "724615e68901dacf6c5f6034d22e183bde39356bb08634b5f6aff3cdc0085645"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Ot0_s9006.json",
+      "bytes": 264113,
+      "sha256": "0130f4d16a0461b0312ace213b034f6c4c13a6c5de4b1ecc040e782c4612c845"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Ot0_s9006_trace.npz",
+      "bytes": 59635,
+      "sha256": "2e5f574be7aa6fbc575a564129bd290d4e8d981a0b5d92dde19c0b133ee0c736"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_St0_s9010.json",
+      "bytes": 264766,
+      "sha256": "0952afc7b6fec2262d974d7221fa9a940407cd4a07b66e22bab975f9bd72fac1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_St0_s9010_trace.npz",
+      "bytes": 62278,
+      "sha256": "aef52e5877bdefbabf7852c4686a92b89acddbee348c391fb6aba38e02d0371e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Tt1_s9007.json",
+      "bytes": 263181,
+      "sha256": "69484b8fa992ab1a11912d0de7333e7dff0b24f546f9577d566f2f9109785745"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Tt1_s9007_trace.npz",
+      "bytes": 53095,
+      "sha256": "d2a67809cbb400a74654b15fceaf6827c41de1d8f7eab41c93c31b35dd45f18b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Tt1_s9009.json",
+      "bytes": 229423,
+      "sha256": "d89e337951ad14fc52e8fcf304b4d28a8c0d6ea241c2ba9c715bd5cb4ee54e8d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Tt1_s9009_trace.npz",
+      "bytes": 63762,
+      "sha256": "c14f15d1b9ae03b4e740ce490047f7e3ff45ba10aac20892a11b62432b56f977"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Tt3_s9008.json",
+      "bytes": 244825,
+      "sha256": "b31817c6aabb168d393511e25948245d90998a32d783f346754464b9f45173f1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Tt3_s9008_trace.npz",
+      "bytes": 60834,
+      "sha256": "87f4e1678727d3fac6961490b65817319ba9b63d697ce1ff8f3edca343a105c5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Zt1_s9011.json",
+      "bytes": 264938,
+      "sha256": "2ec8639bbfe57da17e455dfc91f1d0b07303ff866af1ce5dd355f6626bf60933"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Zt1_s9011_trace.npz",
+      "bytes": 61592,
+      "sha256": "1cb937a29fb16675702a77ece475644bd32bddac7ef15304be5b1752fd480756"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Zt1_s9012.json",
+      "bytes": 263151,
+      "sha256": "1d43f2c53268b40bed11186752fe3db750610020feb5a3f499a89203b2f1d7be"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five/F75_Zt1_s9012_trace.npz",
+      "bytes": 52749,
+      "sha256": "ac04c85dd3da135f2d2e9dbb84e597605af681b9391a7326276be5ecee41373e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_It1_s9001.json",
+      "bytes": 262614,
+      "sha256": "f7e14c7c4a4dcc8223c3056829ad17542ea313b231bf90d9120bcab84633c051"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_It1_s9001_trace.npz",
+      "bytes": 63495,
+      "sha256": "d4e00141020f5988b7ed1070882956bb5652c111ab032f5f055f8cb17565450c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_It1_s9002.json",
+      "bytes": 102582,
+      "sha256": "36b461880e71f265dd97f290a4926d22568f77976ca4916aa31ff5504189489d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_It1_s9002_trace.npz",
+      "bytes": 39082,
+      "sha256": "32d91936b86f67d315718b7f3de88e3720b2fe48a4668e7f1cdd1c7439db2b39"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_It1_s9003.json",
+      "bytes": 218029,
+      "sha256": "b0b76a059d600b391f030b353b928c3729a38f848629ea3fc95b137f9f9a8bfb"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_It1_s9003_trace.npz",
+      "bytes": 49808,
+      "sha256": "4d815f804dff0e1381d67e4b829b4f0a411f41e581a6f2787edccdee34d421ff"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Jt3_s9013.json",
+      "bytes": 264931,
+      "sha256": "c542a72a055b2d22e4be3683b2cae1fbee2deb538f7ecbc3cdca4c7cd5e488c9"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Jt3_s9013_trace.npz",
+      "bytes": 61349,
+      "sha256": "4b63db8fb3ad8800c10a3cc44c8c149306aa7e6c9d67f695b67b6e7842d2e529"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Lt1_s9014.json",
+      "bytes": 223976,
+      "sha256": "ccf0ece228b02e96757fd988ba8d331808c318d0745b9c9097a186c317a75f60"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Lt1_s9014_trace.npz",
+      "bytes": 54784,
+      "sha256": "e77154da6320fce0313c6de0b9cb5c18336698f73162b0ef720f97ac8c2486cc"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Lt1_s9015.json",
+      "bytes": 169505,
+      "sha256": "2a84b2a04a510d726c190ade10b6e6353d71e7baaaddd84707432898a3fd6f39"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Lt1_s9015_trace.npz",
+      "bytes": 62560,
+      "sha256": "01649987b091a9a28155437d9b34c2265ca68e836431f66208a8d3ee68b5d08c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Ot0_s9004.json",
+      "bytes": 234454,
+      "sha256": "18b7698c309dadc46637e32dace399c3e7a3b40079b98132b6edc93eb2de7edb"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Ot0_s9004_trace.npz",
+      "bytes": 44032,
+      "sha256": "fe3b544ce22beb31ceae254cdcc382a4c402718ed5f765a2ec5b8975fb498c44"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Ot0_s9005.json",
+      "bytes": 262197,
+      "sha256": "16c5fa6cbfafd07eb009faec37cf29df6bbe56d8ca5a4887d420e141c3b3706d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Ot0_s9005_trace.npz",
+      "bytes": 66923,
+      "sha256": "bdf0ed2d5f95e1362db1c5330068056ee73f4dc13b5bf72259c9ae6dc8b87890"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Ot0_s9006.json",
+      "bytes": 212037,
+      "sha256": "a66e22c4abf49ac652d1ca0e06fd49aa5fab673d7419b0f391395410da6b89e3"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Ot0_s9006_trace.npz",
+      "bytes": 50914,
+      "sha256": "a79e68e3fe9f40cd069fde87602822c04d0e53dcc6d5bc192c9d244d5d415ec2"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_St0_s9010.json",
+      "bytes": 262628,
+      "sha256": "47fa517b9ad2426fc97c26ac34eeebcab9ad1f28f204afa6e63da6f1a36e3c1c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_St0_s9010_trace.npz",
+      "bytes": 61191,
+      "sha256": "2cdf20844e655d1fac7c248cd306ba1ea029f4af4da1fbf9e1f58665a3685772"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Tt1_s9007.json",
+      "bytes": 263190,
+      "sha256": "49871fecd07291d448deb49f40f6343023745ed93ebe10e76bb55a2aeced7517"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Tt1_s9007_trace.npz",
+      "bytes": 53095,
+      "sha256": "d2a67809cbb400a74654b15fceaf6827c41de1d8f7eab41c93c31b35dd45f18b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Tt1_s9009.json",
+      "bytes": 133868,
+      "sha256": "64a595f0d8882ca4d283d278abdac3895e275e18bb759fe3c8666793791062e5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Tt1_s9009_trace.npz",
+      "bytes": 51952,
+      "sha256": "1d01355c29f3a4a0e4800d01609ac53ecefc38eba17a31fa6ec35fb2748cbc74"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Tt3_s9008.json",
+      "bytes": 117045,
+      "sha256": "bf04146299c35b0d02e6119a4adbc4f0b9719d516a257ee9b962ab437ecd6566"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Tt3_s9008_trace.npz",
+      "bytes": 66853,
+      "sha256": "84fb2d3774e003cad0c090f88b731a7bc145a0b7b486ce8de84edf3bd887b99b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Zt1_s9011.json",
+      "bytes": 264952,
+      "sha256": "8e224617e914e6a633554c28172da2f63b2c451c54df9a8ea114373c07060fe7"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Zt1_s9011_trace.npz",
+      "bytes": 63180,
+      "sha256": "756dc9ee126e3086a1a23ac0976551cf0afebd42bd1ad8991fef82ca59099514"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Zt1_s9012.json",
+      "bytes": 232687,
+      "sha256": "6f0a461f0954781be3192d80f00abada7b7156a55b855d3ce0382f084b2c948c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five625/F625_Zt1_s9012_trace.npz",
+      "bytes": 55292,
+      "sha256": "c186587c5471c96f7938018886045a87ff17568afb804df270630a4c454e8491"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_It1_s9001.json",
+      "bytes": 199711,
+      "sha256": "8843246f670338059ee98a717a1b97b4a82e396cc721879643df37b8c59e8aaa"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_It1_s9001_trace.npz",
+      "bytes": 45685,
+      "sha256": "6adf994ae4d0107cf116fd26266085b363b0bcf542aa20a9daefe82c88132468"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_It1_s9003.json",
+      "bytes": 195216,
+      "sha256": "34107133de39b5aebc24f5b593759981c1f606d872d1abe07574604bd1d01410"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_It1_s9003_trace.npz",
+      "bytes": 44956,
+      "sha256": "16ebb62edd8545c1ebec13041fcb85e7b2bf82beaf8805dc1453c4091a4b0ecc"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Lt1_s9014.json",
+      "bytes": 217788,
+      "sha256": "67fa5c6e2e6d5ad14950f486cd67eeee1c3bb7f49d7f3c04a295a32347745efa"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Lt1_s9014_trace.npz",
+      "bytes": 51574,
+      "sha256": "9add57abb79dd068de796c73a21a163ec08b79872004592cac358789a6f7cfe9"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Ot0_s9004.json",
+      "bytes": 223638,
+      "sha256": "d7f7c5ab23a3d67c0c0796b8263f7f7c6fb9cb2d336d39f81eb486108e1a9f3c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Ot0_s9004_trace.npz",
+      "bytes": 52099,
+      "sha256": "4ea18b17172938459abdba283c17f4781c4e993e719266ed4e8bf602f154300b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Ot0_s9005.json",
+      "bytes": 216671,
+      "sha256": "7f80d48ba68445e683e97232679b208847fc3c07eacd46bc5cc9c80b048890e0"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Ot0_s9005_trace.npz",
+      "bytes": 64274,
+      "sha256": "ec64104507abcf52530e14eb42f5a88e09e92503dd00fa83ff4cac4aee27fa4e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Ot0_s9006.json",
+      "bytes": 228811,
+      "sha256": "1125605aed8e5736f859d1adac6c115c32f965fb61ef35fb376ad4226c9e7e21"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Ot0_s9006_trace.npz",
+      "bytes": 50022,
+      "sha256": "f17f408b14cab97a16f216605c370eaf80f35d085f2cb4277cb10b4185298bb8"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_St0_s9010.json",
+      "bytes": 226803,
+      "sha256": "7ef02095320ece6a5e9ff3fe3318dd1d078442843f28ba5ef24fc81dcb33a977"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_St0_s9010_trace.npz",
+      "bytes": 51993,
+      "sha256": "b3086af8d54fa97b39b518ee00f0e5f150c7e9e8ad4cfa7ba02a07d62d01346c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Tt1_s9007.json",
+      "bytes": 210464,
+      "sha256": "e23aacb66956fe93c8a3c0d924780dcb8b9d5d49d2912b5bc9384a80dfea2e9f"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Tt1_s9007_trace.npz",
+      "bytes": 45931,
+      "sha256": "bcfbd60d5d3cec996d3db4101361f7705268bc46f45d9f4c8c5d98d6c67052fc"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Tt1_s9009.json",
+      "bytes": 195279,
+      "sha256": "47f73b55d31fa90ced5612ec972fd0900c752f3a047b0cc014ec1b852b6d7294"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Tt1_s9009_trace.npz",
+      "bytes": 54174,
+      "sha256": "0ea34d3d0a4925c7b59cfde7a44c0eca7acc0924e589ad9a077f76f251ae8566"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Tt3_s9008.json",
+      "bytes": 207235,
+      "sha256": "4e6e929aa4cb4c4668ecbbd159e7b44836ac7f3ae4fe28a89ef040bd0257e631"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Tt3_s9008_trace.npz",
+      "bytes": 52648,
+      "sha256": "3acb141b9045caa6a15d76fb33c94280902d5ae2e1cfc9c39bcbfecbe6cbb62f"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Zt1_s9011.json",
+      "bytes": 223362,
+      "sha256": "873aa547f4d2a97786c3b508f72a769a1fc7a2627a817dd7afd5609d96f395c1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Zt1_s9011_trace.npz",
+      "bytes": 54961,
+      "sha256": "73526c0d69d200621c84ea2188974277150bc1cf7c9f9ea228fc28828a621085"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Zt1_s9012.json",
+      "bytes": 222546,
+      "sha256": "54275de168df49c8599200296afdfe1a821f1d7956b8975b41a1a36a6c4f94c3"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut700/F75_Zt1_s9012_trace.npz",
+      "bytes": 45845,
+      "sha256": "3e2c083ddf9f896d148176150e181f02ecdf8cf439710477415383936b4a31e0"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_It1_s9001.json",
+      "bytes": 222604,
+      "sha256": "6232eed4d4053824dd1b1814efffc3047cd154623100ce455908e5787ba53c67"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_It1_s9001_trace.npz",
+      "bytes": 50760,
+      "sha256": "379e0400371b655b0dcffaa572f97565da00f1c5bf103c5afa9e5897a2ca1150"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_It1_s9003.json",
+      "bytes": 220326,
+      "sha256": "7a06aa719e6128d2fc3fb8d3fc9a21d0df1c3c6ad6a2d3530a5424e8aab1355b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_It1_s9003_trace.npz",
+      "bytes": 51700,
+      "sha256": "76e914ac2994a59f10dc68595061ee4fa08ad0ead82816f37f579865f756f3d4"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Lt1_s9014.json",
+      "bytes": 236216,
+      "sha256": "e9d59ccdc4318e238028264388fc72fb5725ffb6c67ff9185b59aa87520a9226"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Lt1_s9014_trace.npz",
+      "bytes": 57805,
+      "sha256": "a29dfc6a04f811b4dfac0c87629dc9d62b39bce3fb228068792def70cec95703"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Ot0_s9004.json",
+      "bytes": 264447,
+      "sha256": "411a791cfb0db7521f4d75c1e04e40a6b1358f9c0f2303f7d9cd63656af40f7c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Ot0_s9004_trace.npz",
+      "bytes": 60498,
+      "sha256": "eea78e1dea6f0a1b9624d9e73fc372d7c9ed45d99dff005f030587006c1775d3"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Ot0_s9005.json",
+      "bytes": 264786,
+      "sha256": "b4010aac67d6969bd8bffa1f0c65784e476173ae2fdefab981abf50ffa7ea938"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Ot0_s9005_trace.npz",
+      "bytes": 71899,
+      "sha256": "ea36d8c5ab341f9789578a5104f29caa7d824d590e8b17ec4b352a2d813446b3"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Ot0_s9006.json",
+      "bytes": 264096,
+      "sha256": "cbf6dd388d451a60c0467e57ef8c9f53a1cc0ef7c48ccbd1bfac52efae683c16"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Ot0_s9006_trace.npz",
+      "bytes": 58826,
+      "sha256": "e24a6468fc78d050c2d32f83d33892cad74a981e8481e3d83f6a0e1de439b433"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_St0_s9010.json",
+      "bytes": 264748,
+      "sha256": "91125d05acd94ea3d0c15b4266d32f02b057c8adf81f348c5ef02ddc4506e7f7"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_St0_s9010_trace.npz",
+      "bytes": 61793,
+      "sha256": "89ea93fe242af7271f9d4b6f8b9ee2b694fd8f5d13d1ab39fcecff970a118de1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Tt1_s9007.json",
+      "bytes": 234632,
+      "sha256": "d92643c765535b5b52ff06144aa13a73799dd83533f113555c7d332cb4a08529"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Tt1_s9007_trace.npz",
+      "bytes": 51082,
+      "sha256": "67c19a6c046133da8c6d51f5056bd5611004afc83ab08675f7c77dbf95e3541e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Tt1_s9009.json",
+      "bytes": 213345,
+      "sha256": "dafd79e834577ea87fae4341ca726fc6b02eb1a68574fda3e7b0b8c5b6eb06cb"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Tt1_s9009_trace.npz",
+      "bytes": 61566,
+      "sha256": "003bcfc13b0d408f471eedd27253d3a44a874331e5600c284ae3dd97880e3b0c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Tt3_s9008.json",
+      "bytes": 225398,
+      "sha256": "d3f72f7baff634d6d0e5f45130dd8fee32f57c348259bbf3cd511c745e28ef0b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Tt3_s9008_trace.npz",
+      "bytes": 59188,
+      "sha256": "1536e486f957f568653cb0eb2fd513013dafb56871ccab04970254d153bbf0da"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Zt1_s9011.json",
+      "bytes": 243625,
+      "sha256": "a8c4857ee9a32fa054b2045cd2c7f77b125e5564b5f0bd41a64375a8e3cd9c4c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Zt1_s9011_trace.npz",
+      "bytes": 58969,
+      "sha256": "912c160c2c1940890781f9a287c8ce3ebda6af0b62a97dcfd02c426ba9501e7b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Zt1_s9012.json",
+      "bytes": 242574,
+      "sha256": "a17a6c0bb2ab6d543c3687f9c19b72ebd8114c9e7a0350801f98c21804d11158"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_five_cut800/F75_Zt1_s9012_trace.npz",
+      "bytes": 51306,
+      "sha256": "3b7e29fd28182bec098fde2b3b2bc2715eda3d51a49b2b677308f51838cfffbb"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/I_cmpiidoff_s7196m6.json",
+      "bytes": 182046,
+      "sha256": "91d5420fc12327c6f6402ea5a5b2a2cb5400adb5f0bd904c0c38ff1a90f4926c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/I_cmpiidoff_s7196m6_trace.npz",
+      "bytes": 39618,
+      "sha256": "d1475b0b01fa7b9f4532fb20918c92b153f979e0009efc020348b9ca1a04dd0c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_cmpiidoff_s7161m5.json",
+      "bytes": 266312,
+      "sha256": "282c36a43f7fed8361b01df06678ea9bbd8cca05572abd0383c1c4c904c85e8c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_cmpiidoff_s7161m5_trace.npz",
+      "bytes": 43647,
+      "sha256": "ec8a4acb05a3cbfbe85bd8b4dbfc132ab6c6faad019b390b0ca55db3dd5fe9fb"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_s7034m5.json",
+      "bytes": 68648,
+      "sha256": "327c9c111657717f83a85986ed69fc5339c7173cbfd11ff7ecf3ea26b915c6d3"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_s7034m5_trace.npz",
+      "bytes": 57796,
+      "sha256": "f237c74f9d11c89bea3387baf2055876d2f9e3697dbb0ec0461e10f2948a68fb"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_s7037m7.json",
+      "bytes": 266353,
+      "sha256": "86ef4403b2e27785bf611d3e0f2cb00548beed35c1d66b167a8cc47c000468f5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_s7037m7_trace.npz",
+      "bytes": 54923,
+      "sha256": "aa3e555db064a3f24e16ee31897e2825960478c9d8c4c3a1796b5353ace67844"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_s7038m7.json",
+      "bytes": 266396,
+      "sha256": "947b3983ab150d37badd4297b97ef70cc78cb4bff6baa49b124abf592e537d6e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_s7038m7_trace.npz",
+      "bytes": 53801,
+      "sha256": "6bd327f68b2d871ab86d68929036054329e0ef7c1dfece72ca420d4dee7652e5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_s7109m3.json",
+      "bytes": 263930,
+      "sha256": "98c0ac3a9e4ca1f85e1c99499b14fe6fd5d0fe51edf3a627d5a3e5d563124c5b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/J_s7109m3_trace.npz",
+      "bytes": 50900,
+      "sha256": "bd857dc70a6f6ab9281e00e2a3ba2300793e57c87fa7578e4222c707be8d0ee1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_dmpoff_s7010m6.json",
+      "bytes": 264429,
+      "sha256": "2561aa13c8ad0b833c60a27c28d4706c8e351ebe04ec05af468426a3fb976095"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_dmpoff_s7010m6_trace.npz",
+      "bytes": 49704,
+      "sha256": "2968db13cec27f3fa003928c4c84bb9dec5376c0e456d05ac46f2c0dbd824ba1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_s7040m6.json",
+      "bytes": 232012,
+      "sha256": "ea461ad9c9ba523534251fe4a8234636ac2990753a4af50a7254daa7f2a54a85"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_s7040m6_trace.npz",
+      "bytes": 63988,
+      "sha256": "f214e0c5a1b01af5a1472fe9894384f85eae942614200af8172f61b47e568f0d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_s7066m6.json",
+      "bytes": 189684,
+      "sha256": "1ced189af9026b9d4496ba6033415e4f580419d83bad351fee3ef88174491a96"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_s7066m6_trace.npz",
+      "bytes": 52521,
+      "sha256": "37a45efa179100f73f664d069ab5af86be9b5029da17a1d0553f3754fbd240c5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_s7087m6.json",
+      "bytes": 266556,
+      "sha256": "a965df55106c93dd2d30ab454ad921968285988a6c0dbaaf5e04550401630d05"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_s7087m6_trace.npz",
+      "bytes": 60040,
+      "sha256": "2532c2a3c0132dc8595cb41e6246456b0de7a21338dce2ec834ca5b4483f9838"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_s7098m4.json",
+      "bytes": 267775,
+      "sha256": "7bdd84452718ff8cb6a61737cae9038ae0270514aa385413854a303309e5dece"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/L_s7098m4_trace.npz",
+      "bytes": 45156,
+      "sha256": "83c9882ec5823ec758084513418021ea10ee04dbc2381f9ee7e31c4f820af8ff"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/O_s7091m3.json",
+      "bytes": 265046,
+      "sha256": "db8cf2e69fa12b1cf541a13178d03e9e56e6fc09745b2f06f57be276682f0f7a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/O_s7091m3_trace.npz",
+      "bytes": 13564,
+      "sha256": "7de64ba4c35d2d83f45f0b5f2db49f48cb1bff1ac7ad0b2be07ca52734d8f461"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/O_s7094m3.json",
+      "bytes": 263166,
+      "sha256": "d324248110e9dd4ff132bdd91f29d5229a20c592581c66e32f837fc1c0f77b2f"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/O_s7094m3_trace.npz",
+      "bytes": 52232,
+      "sha256": "2a90449e6c4fb49a6a093eab5c0e62a437d70b0676c33b095a0cc0446ce7489b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/O_s7199m4.json",
+      "bytes": 265307,
+      "sha256": "ec3240dd78376c904b454310a05b8d66f90f01a8e4e3c947a4e1376d44e44366"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/O_s7199m4_trace.npz",
+      "bytes": 13564,
+      "sha256": "7de64ba4c35d2d83f45f0b5f2db49f48cb1bff1ac7ad0b2be07ca52734d8f461"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_dmpoff_s7023m4.json",
+      "bytes": 242238,
+      "sha256": "d43a4d8eff2d4c8a8be240719e97444f25980e6e399b8ce3a094f763f2d2a5c6"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_dmpoff_s7023m4_trace.npz",
+      "bytes": 61130,
+      "sha256": "11f63d7f698b3850e18c12fd8669aef432d9a313d3201e6e1a1967688fb3330e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_s7073m3.json",
+      "bytes": 149963,
+      "sha256": "f83216b57baa824c606b03ba6a61484d46ee007c17dfa608294cb01923852b7d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_s7073m3_trace.npz",
+      "bytes": 50731,
+      "sha256": "0806fbe555bc464845d94bc68411015ec2de04566a70dc4d3a0d5673b193219d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_s7075m4.json",
+      "bytes": 263044,
+      "sha256": "929c2ca7a5cd2a0a624b5a221ccc6fff6030bb114ab30d9116ea8fe2d5fc3eba"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_s7075m4_trace.npz",
+      "bytes": 71357,
+      "sha256": "91ba907a5b0e78499ee558d13bb02d79022ef38b7b6cc252042060a295df45d0"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_s7103m3.json",
+      "bytes": 262783,
+      "sha256": "12337f8085e2b0f11064ae30969fd779c5fa8b3a595088be41e9f94a4685d193"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_s7103m3_trace.npz",
+      "bytes": 75665,
+      "sha256": "2e539e6579040a4a2149f6226584711addc7c7ae178cdb27845be847e6ece60a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_s7118m4.json",
+      "bytes": 155068,
+      "sha256": "85348a874086684344547dae6e39181a4d9edd9e34674df195ad9ac07db6254d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/S_s7118m4_trace.npz",
+      "bytes": 37349,
+      "sha256": "1dddc38d2b7ed11fb1993deeac4d925e4005cfa4714739aee99429ab952ffdc4"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7030m5.json",
+      "bytes": 137351,
+      "sha256": "e281a8af377eb0d8f39aad7160096246fd316ffaa2202315c67de6b9888fec8f"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7030m5_trace.npz",
+      "bytes": 45936,
+      "sha256": "96a53cf9a1c92b73277711700b14d53aa92390a04799378c5fe485b4da3aac8c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7031m4.json",
+      "bytes": 138998,
+      "sha256": "01bdd245705b9260f993b39d6cb5fa9b09ec1fcfbaa9fc19a74687ee515b59a2"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7031m4_trace.npz",
+      "bytes": 50391,
+      "sha256": "fe1e0fd9b9f6ea617b9d84ca85bc7ed0dc0e6d5e1b91550ec920cf7240e8b005"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7037m3.json",
+      "bytes": 262895,
+      "sha256": "a83e6fba57089b05a8e4892b427586c76e8b962a11546facf6fe35cbe251a8ab"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7037m3_trace.npz",
+      "bytes": 80513,
+      "sha256": "281a2e1f9784837bf1b23d56620cd8a21454eb1bd5a57e8e8dc0ea4eb9164b25"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7039m4.json",
+      "bytes": 266467,
+      "sha256": "1124ba326a8a38ba1a4fd25e0139d54405e4b1c97621b55546e048ce1f8989b0"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7039m4_trace.npz",
+      "bytes": 52854,
+      "sha256": "2ab671b405651bce12e3e97a11b52e6155ad0f0fa2aea116d2f97439db2acb5f"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7072m4.json",
+      "bytes": 263426,
+      "sha256": "724e45eef2bef8d841b185671f52e4c2edec8efdbf917e9dc6ba5c7e4967eda0"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/T_s7072m4_trace.npz",
+      "bytes": 48305,
+      "sha256": "087e9cfe8f085aee1006f2aa85300a34fe9d69ec28689a6fa481571874f55636"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_cmpiidoff_s7182m3.json",
+      "bytes": 264053,
+      "sha256": "997b23c0f4fd7724d749a67b70bed818da9a4a9196d771761e44f76ee1e5c735"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_cmpiidoff_s7182m3_trace.npz",
+      "bytes": 44575,
+      "sha256": "2a0cf88a204fe0b079f11d9ee32426cda1988fcf55af3ba7a609d4748522b589"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_s7033m4.json",
+      "bytes": 146147,
+      "sha256": "b2d8e35276b5ee80d646360f9bd42147d2668144ee29624049ccb1d92b46b6b2"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_s7033m4_trace.npz",
+      "bytes": 33228,
+      "sha256": "e539bbd10eb4661a2dd52b675326c43f7f316e207fe25d44ea63ce2f0244a021"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_s7058m4.json",
+      "bytes": 146138,
+      "sha256": "0992bb3d6e16a421f0684c3d2f474408bef30618d39f0ff0e97e40d027db874e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_s7058m4_trace.npz",
+      "bytes": 33228,
+      "sha256": "e539bbd10eb4661a2dd52b675326c43f7f316e207fe25d44ea63ce2f0244a021"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_s7100m3.json",
+      "bytes": 264143,
+      "sha256": "4c2f98a4d83051e1442f407a540a6e6fe6e98bae240402e43a6cd0311ca845ed"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_s7100m3_trace.npz",
+      "bytes": 61665,
+      "sha256": "e5a475e080836d1049d1d8c4d440f3f2c7a3ecd17d30a2ccb94e68b0dc79b439"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_s7133m3.json",
+      "bytes": 263580,
+      "sha256": "b85c9ab3e32bee9157c0ed297a2730a43bb08e66fac4486c0409b818f9afc748"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75/Z_s7133m3_trace.npz",
+      "bytes": 56774,
+      "sha256": "ef982fe7ac0266fca2d4fc7f7e7ef01dd2bca3fcd7613dfd4f58deed22136105"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/J_s7034m5.json",
+      "bytes": 263404,
+      "sha256": "18aa3dfb7cbcc6d8e39b61fc5f1084f033cde8f550db53329c244c71a15a41c9"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/J_s7034m5_trace.npz",
+      "bytes": 63754,
+      "sha256": "7acfa56b96cf3ed7a218b0e40f5254d37b5d1f88cb182dbf91a26aa1504e11a7"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/J_s7037m7.json",
+      "bytes": 265690,
+      "sha256": "acae335b466ae40ec55dd06108b78416dc1a5054ed1f7d11bef41350f2b81842"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/J_s7037m7_trace.npz",
+      "bytes": 48379,
+      "sha256": "6a3248575ed14d19452663666042907c7cb2e398333a756a0b6bb44ee831c202"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/L_s7087m6.json",
+      "bytes": 261085,
+      "sha256": "04907618e26681eb415b91d677a2168eb8b1ed30249ac152ad8f9dcde5a3167e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/L_s7087m6_trace.npz",
+      "bytes": 60573,
+      "sha256": "4d3030bd4a087be949674c15aab3cbb29b4b6e300346939e5e04a2aa3f420b3b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/O_s7091m3.json",
+      "bytes": 264366,
+      "sha256": "add143a58166031fa2b994564390652d375c9c2412fa910c352f49267ea06f45"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/O_s7091m3_trace.npz",
+      "bytes": 61496,
+      "sha256": "952f7e8f105ca5e13ce85723a139809a44b027e144c506ecd22cea6a9d1f008b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/O_s7199m4.json",
+      "bytes": 264626,
+      "sha256": "6e61c54658e9cfdf2b06f5c42858ceea46a6115450289dd2ea0b8604f7c525e1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/O_s7199m4_trace.npz",
+      "bytes": 61496,
+      "sha256": "952f7e8f105ca5e13ce85723a139809a44b027e144c506ecd22cea6a9d1f008b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/S_s7118m4.json",
+      "bytes": 264530,
+      "sha256": "6c2bdb0e736673710a28144dbb79aa65cb53f0339d97acb8c2603110c9a610c1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/S_s7118m4_trace.npz",
+      "bytes": 58267,
+      "sha256": "540620bef9d9e786f9fccca755a800b726a3dacb583a39bffd9d61d88e9ff948"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/T_s7030m5.json",
+      "bytes": 171431,
+      "sha256": "757076accdbaa5cb71804b4c0d7c9786a0b7d6cf84db9021115ff6ebf8326cc9"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/T_s7030m5_trace.npz",
+      "bytes": 56131,
+      "sha256": "9d07a8252d1a7e3dbce3d95b663ad76ecf31f50782a4235ff49c60f620efc6a7"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/T_s7031m4.json",
+      "bytes": 261952,
+      "sha256": "934b5096afec025a0afd21e6971fdbfff851a47d7b35ae1a6039a5a0380a451b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/T_s7031m4_trace.npz",
+      "bytes": 58710,
+      "sha256": "d60f3a63ad76723a4d62dfa31a68a31faf4cd451260fb7192e6a94fd5d6db3e4"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/Z_s7033m4.json",
+      "bytes": 167845,
+      "sha256": "6ab8d222e4667bdfb69a7e903f7ee4e423b7e13588b4e068af758275e6dfd006"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/Z_s7033m4_trace.npz",
+      "bytes": 49383,
+      "sha256": "2f88c5b7928bd6cdf5bd6beb04b99ae3ad457e7403460d27108a3b32f71466b2"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/Z_s7058m4.json",
+      "bytes": 182948,
+      "sha256": "f59043de1ff059ca9b708b8a19d9f46064629660f5312e1402d41faaad18321f"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/c100_narrow75hs/Z_s7058m4_trace.npz",
+      "bytes": 48311,
+      "sha256": "3b6ea8effc834f4461729980a97e859a090bf768bc51ec531050d6df193fe053"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/I_cmpiidoff_s7196m6.json",
+      "bytes": 178005,
+      "sha256": "b055383daf2257f677e25a50cca308a966d1020ba30585d3492f3f38b4b4f2e8"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/I_cmpiidoff_s7196m6_trace.npz",
+      "bytes": 74228,
+      "sha256": "e950a431a343adfc968f93faa0b2da6545ff275d13b156866e862d61b9461d20"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_cmpiidoff_s7161m5.json",
+      "bytes": 266330,
+      "sha256": "1858f07efa9ef10ba6f2a21eae762163cbaf95f11e53e68683d0f803f654938e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_cmpiidoff_s7161m5_trace.npz",
+      "bytes": 96617,
+      "sha256": "516f8d699134defd19fae4f2fbce4f4ac9b1567fa1739f73504ad51d5d67c3a1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_s7034m5.json",
+      "bytes": 113236,
+      "sha256": "cd2311bd9fa3c17c599e96392895a22102d670e367880361913ffe4a3133b78c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_s7034m5_trace.npz",
+      "bytes": 53781,
+      "sha256": "bf126eeb2bbc05ba0492124524200d7eefd9ab3c1329c282bbf2df272304f306"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_s7037m7.json",
+      "bytes": 266252,
+      "sha256": "51c82025186afc356fce0a28925efbf5b1494bce09ef9fb909421933f4a429a7"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_s7037m7_trace.npz",
+      "bytes": 86067,
+      "sha256": "fa1f1471ab7c5e1ee17a9c5ec2bac5d48146729e6369adf6cafdd73ba39af693"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_s7038m7.json",
+      "bytes": 265691,
+      "sha256": "8506e601aa5e066572a22d77cb7d666953603a51b19fa362758aff0580228d71"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_s7038m7_trace.npz",
+      "bytes": 103868,
+      "sha256": "0419bf192d2d902a9f2c2d6739299760eae6658b2aceef7a0f3919a4c62ca3d2"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_s7109m3.json",
+      "bytes": 229709,
+      "sha256": "eaef286e77175d18e80dfa2fb4f5e914d148febced6a82904821bb87f9b802fc"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/J_s7109m3_trace.npz",
+      "bytes": 80250,
+      "sha256": "85f1ada2eb5321f01337b487deb5e3aea39d159e2586d78cd253fd28bd4483c1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_dmpoff_s7010m6.json",
+      "bytes": 232260,
+      "sha256": "54b653c314a13fcc6d88bc0ed9bbe6ac1706a3f1b6f55e0160b8b3901c6595ba"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_dmpoff_s7010m6_trace.npz",
+      "bytes": 99939,
+      "sha256": "d8d3e7ce39307f44faca0431af54a7d82e525b67a24a3c7647ad59ac4dd3564a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_s7040m6.json",
+      "bytes": 233459,
+      "sha256": "b576797af62002378bded1323a3f3c0d21c1661489e3cbb48272c37ed0dfce2e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_s7040m6_trace.npz",
+      "bytes": 108028,
+      "sha256": "04695e03fa6ca862fc75b5a9c360fc050e3f3e278ab0a16afdf82a726bb1e2be"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_s7066m6.json",
+      "bytes": 228916,
+      "sha256": "70140c2148dd51f977a40b2e3ee1f236735cfe0a511e9789552d6cf0c995254d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_s7066m6_trace.npz",
+      "bytes": 103760,
+      "sha256": "499a6d5d052c605ca642e8cc0a241a9060b07634127cc353e658ce64b36b3b4d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_s7087m6.json",
+      "bytes": 261329,
+      "sha256": "aa3e34b30c1c6cdc51c5dc49a19de9d38026da497fccea6829aa0f364c87a050"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_s7087m6_trace.npz",
+      "bytes": 81353,
+      "sha256": "9d19925f1a883165a3cf8ea70d887cc38ce9a5d57133b0c56be6aa8a94c86a0d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_s7098m4.json",
+      "bytes": 265505,
+      "sha256": "1e15aa91af8c993a42edea860d359bfe5a7ac7db5622965e81f65c48300db940"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/L_s7098m4_trace.npz",
+      "bytes": 100071,
+      "sha256": "ad33df9442e34e23270b7a8144d21e8a77ed688b4a3482e84cee3c99fc36ac67"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/O_s7091m3.json",
+      "bytes": 264117,
+      "sha256": "11c0db84755ec4f4844c526eb497a9e475c6fba362abb308499cd0115c8a7786"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/O_s7091m3_trace.npz",
+      "bytes": 62290,
+      "sha256": "35893f2c66dcbaac69d9758caebfc67be6f99e1cfc90df794f4f4b5a937397e8"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/O_s7094m3.json",
+      "bytes": 262385,
+      "sha256": "a3795eb3a3a88989f9b4e5678e41a9e2431c6c5a7480563ee30145c239b24034"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/O_s7094m3_trace.npz",
+      "bytes": 97001,
+      "sha256": "7f99f5644425c9ada5290e49455b0fd5daf8294dd954196f4f9e21ecc97d4343"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/O_s7199m4.json",
+      "bytes": 91616,
+      "sha256": "78e182d97babca29837c5182e63715bef65e7adce68951a3fa009d2b49cc13dc"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/O_s7199m4_trace.npz",
+      "bytes": 57201,
+      "sha256": "45b2cd67996ad966817af0019bcb4d0ed01bca6f14bbb2b8dff4d441d20471dd"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_dmpoff_s7023m4.json",
+      "bytes": 262062,
+      "sha256": "ea40ff95970be593886b14dbadd10d5b6ddb800c5b1c2db26d221ee2e85e5b8e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_dmpoff_s7023m4_trace.npz",
+      "bytes": 99389,
+      "sha256": "1598ac395b101d708a6016ed4dc7207cb3945affd53b0dd018b1907bf0dda3ba"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_s7073m3.json",
+      "bytes": 200536,
+      "sha256": "ee08f10f11a748f55fc724e5c24a9fa1e8f16a14fc033eb44c0a0f445e87e3a7"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_s7073m3_trace.npz",
+      "bytes": 106167,
+      "sha256": "2f52c61b3ac91f79cc12ee712624ef1ccbb42ab069ea52c9e3b67624ed4f0bac"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_s7075m4.json",
+      "bytes": 263127,
+      "sha256": "b55f4d78324f652b0e63996b4db76e118f3cb6effc0aa5d196cf20967ff83c6d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_s7075m4_trace.npz",
+      "bytes": 131283,
+      "sha256": "030f1bbb57833f64562175fcd8a99d49159a40c945a3ec77bdb3745ebb6a6a63"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_s7103m3.json",
+      "bytes": 262549,
+      "sha256": "d429b0da16e9298143a931f385d483886023a8d260d7bdb2e74be3c168005362"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_s7103m3_trace.npz",
+      "bytes": 108781,
+      "sha256": "1652d1ac25e35c35367610858a73115aff4c6a1b2df364b3a7c7633957571b63"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_s7118m4.json",
+      "bytes": 259071,
+      "sha256": "d4f24d72cd40c62d759bc1f24656fe2840bd52a7c82f464c819291b569d5c9bd"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/S_s7118m4_trace.npz",
+      "bytes": 60129,
+      "sha256": "fcbf49038a2381f0357d3eae8814de9c6a90d5e2c53ce1e256722098a025d310"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7030m5.json",
+      "bytes": 147245,
+      "sha256": "d9a53e82c0a4a31b48eec03db31c4d02f695f6b2e0a43f4f49075fdb961c7bf0"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7030m5_trace.npz",
+      "bytes": 93016,
+      "sha256": "8917363022922e7b23177d9fb2db9a09635b42c1ce43bb29fc3e3dd3f1bc7ea4"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7031m4.json",
+      "bytes": 211723,
+      "sha256": "cbad440eb664557854a7307950b8dcaa07b833d627f15b84a90e77ed9c54053c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7031m4_trace.npz",
+      "bytes": 98219,
+      "sha256": "1a6a842340d972abc045069aa82c32e4d593d802497034b5610f691024e6776a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7037m3.json",
+      "bytes": 262709,
+      "sha256": "f67f4fa624f08325b7ab2e4960a86954fe76caf50bfb11dfe2b9a3d81a6021fe"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7037m3_trace.npz",
+      "bytes": 244870,
+      "sha256": "123767242da35fac02be01dafebfc6ded96ba7eb08901df17e3959795b2189be"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7039m4.json",
+      "bytes": 265510,
+      "sha256": "e05eb3b01f48de2bb2b21543f824a89b90497a1ec901595ba5ba4249f914cd08"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7039m4_trace.npz",
+      "bytes": 94385,
+      "sha256": "e97a95e270940249b954541a0b705dc731b0f41095e1499a47739a844d924adf"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7072m4.json",
+      "bytes": 261535,
+      "sha256": "933130fb6047059d8400abc49adeb499a57fff8a92c5e3aa626a6f7859473e6a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/T_s7072m4_trace.npz",
+      "bytes": 103186,
+      "sha256": "49d18a3ea7f26da4d75bb64e309f0b6d8a02a584bc0ab82753d26491b8680b5e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_cmpiidoff_s7182m3.json",
+      "bytes": 261868,
+      "sha256": "938de0d70a29e6202a92eedd694d850f0a401d31e600841e6e4f86fa099a156d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_cmpiidoff_s7182m3_trace.npz",
+      "bytes": 100823,
+      "sha256": "ddd78c14bf1300e5bec1c8d7b8509c08b2443e9a23ecdfaa6f27413be879a17a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_s7033m4.json",
+      "bytes": 133867,
+      "sha256": "8628eeae9fcafab38d066cb1be91cf08803f1e905462916d27b7c50e1c75d4a1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_s7033m4_trace.npz",
+      "bytes": 67239,
+      "sha256": "2b4acb1def8fe489ea55a9f5add9b4850f94fef104b8fa2a809368a4542844ef"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_s7058m4.json",
+      "bytes": 145647,
+      "sha256": "b1148c2ea05a8b332938a00b5f723beac74a403cbf19a4ffc62a4189240bac26"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_s7058m4_trace.npz",
+      "bytes": 59715,
+      "sha256": "ba51f1d10581538f265308fca282f78b3511ee395cd0fd84425d370922a19f07"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_s7100m3.json",
+      "bytes": 263248,
+      "sha256": "1b26414623c8096c2a707f7d243aa45c6d9c61efc8d54662b3a6190feb9c4530"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_s7100m3_trace.npz",
+      "bytes": 118897,
+      "sha256": "71da95af08da09467715fb4885465d68a3694000d938ad87cba6edf64550ba67"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_s7133m3.json",
+      "bytes": 262499,
+      "sha256": "fdbdb950019217d7f1031eb4f7583f734a5bf3caa4ba17c0858c8ef9f8e3f138"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/hwd/Z_s7133m3_trace.npz",
+      "bytes": 103795,
+      "sha256": "e7df8a12bbe921852406dc335d7e3387b488e11798b061e73409a9ccfbcd7839"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/I_cmpiidoff_s7196m6.json",
+      "bytes": 181456,
+      "sha256": "341e3bb387e7370e71c5c39915a2b278ec505393a7b791f64a6f61d2a52c34d4"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/I_cmpiidoff_s7196m6_trace.npz",
+      "bytes": 47173,
+      "sha256": "662a10b17f2b53acd879b5689906d75fde28a487c160934a7865423bbe7ce81b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_cmpiidoff_s7161m5.json",
+      "bytes": 265396,
+      "sha256": "9cf52dccbb693d05c8534891d2e4b84f6d996415c605fb6353b4832300e4ee60"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_cmpiidoff_s7161m5_trace.npz",
+      "bytes": 51988,
+      "sha256": "72ec9007749c5bdd0a594d6132184d268d8ed2f394d6bcbc94caaee2d7bb2dae"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_s7034m5.json",
+      "bytes": 268807,
+      "sha256": "054e2439a6189025eae4705750b846941c8a7e5fc5acd6d479d49336af371de1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_s7034m5_trace.npz",
+      "bytes": 76685,
+      "sha256": "5ba17a27c384b7a0d21d66c981dce046eab793e03125d9ce4a5d7f5da031da3f"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_s7037m7.json",
+      "bytes": 266236,
+      "sha256": "f4c493c896f18ac8ba080aa3a1d02cc39352b464cb536407f323a50a7df20a20"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_s7037m7_trace.npz",
+      "bytes": 50199,
+      "sha256": "60aa647bad9eff8bf0d24bfef5ed88a7203ae3e404ad807f66b7316ce3b65745"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_s7038m7.json",
+      "bytes": 265677,
+      "sha256": "bf9ccfc690e022f5784e8057f5b720ef4c5bc1b3b4615a338d4c07cd719660ec"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_s7038m7_trace.npz",
+      "bytes": 60569,
+      "sha256": "991cd8f31ea86946fd3babbd96ec79d38c948e90c7fed808ecb3737cca691eab"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_s7109m3.json",
+      "bytes": 261555,
+      "sha256": "bea0d64b3a9ae527f0b3e3180ecba5fc90574dfbc3483f67ac217b95739a6760"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/J_s7109m3_trace.npz",
+      "bytes": 53749,
+      "sha256": "fe03450c56640d8730f3e33a3248a742f846ba3718e375cc62c78f16bf5e2fe1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_dmpoff_s7010m6.json",
+      "bytes": 264200,
+      "sha256": "0fd3fce2d2b047d1709d1a6bdcad401650fa994442d59c154b4dd6bf8e14cf87"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_dmpoff_s7010m6_trace.npz",
+      "bytes": 65535,
+      "sha256": "75b86af8d3089de2835f707e13c53373ada1d431e5675c887a93820aecea9e0a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_s7040m6.json",
+      "bytes": 231213,
+      "sha256": "516ac99aa238516fed529faffbab434d70b6b7d3abe3cdcb7052353836644690"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_s7040m6_trace.npz",
+      "bytes": 69213,
+      "sha256": "69f90f3fc843bcf870720956f7885eff6c47e0d259643448ff05ece67e0abaa3"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_s7066m6.json",
+      "bytes": 228904,
+      "sha256": "9560858f42a74581fc5e0307879beec512ea33d774c48a942201906b8ff48969"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_s7066m6_trace.npz",
+      "bytes": 61096,
+      "sha256": "5d9d8615794f0a41a452ca717103808c13e5d982e533efe460330120c4754aa6"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_s7087m6.json",
+      "bytes": 261317,
+      "sha256": "3ed5164191cc30d07c127d28c5b259d45db5f1325159f1213df0cddd0ee2caf3"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_s7087m6_trace.npz",
+      "bytes": 45970,
+      "sha256": "d00e32554d973bf239399f1a06f4281984538b7a902492e1de99f4330c432d20"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_s7098m4.json",
+      "bytes": 267834,
+      "sha256": "7a8f76764a83f664e80f7d275707b82b471e9f294a7540ec4f35796c88447d9d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/L_s7098m4_trace.npz",
+      "bytes": 52343,
+      "sha256": "e4de9c2d944de09b8920cbccb27c17a4b22746a39ec69f0b8d69c08c96c9fd4b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/O_s7091m3.json",
+      "bytes": 264102,
+      "sha256": "ce92bcb90afb7b0d1e6c18a13f0d349920f82391ce87b93f4da68ef914d0fad2"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/O_s7091m3_trace.npz",
+      "bytes": 41728,
+      "sha256": "c40065e52912f72ce44c6ccdb928d9a6a520cf49990c14832b573341f4664f1f"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/O_s7094m3.json",
+      "bytes": 262377,
+      "sha256": "8cb640e2f26c8f8a4b3e1388bf996a8e5b477d084e18aacdeda3e799159181ad"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/O_s7094m3_trace.npz",
+      "bytes": 60113,
+      "sha256": "4638b7f88b37a23cc79e256b48420fa57f251148b71ae325c65e723ed237cf3d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/O_s7199m4.json",
+      "bytes": 264362,
+      "sha256": "99c272cd8c1d3735eb8afedd1e99df5e6b0249319b8f1580afd73f82d0075f6d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/O_s7199m4_trace.npz",
+      "bytes": 41680,
+      "sha256": "69bfd015c7ff0c07f2a75c7a6b938520de64a32956c5ea65b4e0909c8282cd07"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_dmpoff_s7023m4.json",
+      "bytes": 241338,
+      "sha256": "f93fd054252e09559b4e51f77306fa0e8f1e3f1a527eabf9b14f3ea15263fc77"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_dmpoff_s7023m4_trace.npz",
+      "bytes": 66655,
+      "sha256": "394f94bfe047f0da09f3f3969dc00419fd59ca65094c4ca40453562c52ff2ab8"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_s7073m3.json",
+      "bytes": 149402,
+      "sha256": "d35b4354c2e3e3a0d36ab7d63127f0606e2da2e706d55f9c5f0c29ca781690dc"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_s7073m3_trace.npz",
+      "bytes": 58406,
+      "sha256": "549b9077cdb8c83fdb136f4cf731fbd7589c3ecb744c829d17e7aa05c44964ca"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_s7075m4.json",
+      "bytes": 263113,
+      "sha256": "95e8bad353d0e98206413f3c6c44d2fff4ebc48c1e948410dfbf0d8679a0b94f"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_s7075m4_trace.npz",
+      "bytes": 77356,
+      "sha256": "57eb53a6911a9b683fc6352f6438cdb3093f506989e112f6ea604d974a301af2"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_s7103m3.json",
+      "bytes": 261872,
+      "sha256": "ebdb038135306d6e8b36ff22960eeef235889224cc3d72a4de1d792b8f3f357d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_s7103m3_trace.npz",
+      "bytes": 87062,
+      "sha256": "5c2910c264fb4a511c6b0c45a356dd9f8e05bef0f5007651e5c17d0874a6cd76"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_s7118m4.json",
+      "bytes": 228350,
+      "sha256": "4f3398f4649daf38ddb6e29fb3af0d50c6d2bf831a9a67e0a6d7d0589ddfc514"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/S_s7118m4_trace.npz",
+      "bytes": 53848,
+      "sha256": "bcfd92a5884810928c11ed8eed2f9a492d0d829f7af93ea0d5c5aec789c1cf4e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7030m5.json",
+      "bytes": 147231,
+      "sha256": "c9751e4b2d18ca752cc9332160d1e42f819e1691ac0bc59e644e2c23021d54dd"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7030m5_trace.npz",
+      "bytes": 57835,
+      "sha256": "ea63025f748e96dfb6c325d4f7de617b885c4064714eef536d4e5f53a2e8aa3b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7031m4.json",
+      "bytes": 211708,
+      "sha256": "5ff99cc7e29b56b7432a0c1f47d93f260c89251174497e008cc9cc4b581bed94"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7031m4_trace.npz",
+      "bytes": 58336,
+      "sha256": "0209a423412ba2ec04ceeaa83e94a5848eb407685e6cb467c7ef28920bbc6068"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7037m3.json",
+      "bytes": 261942,
+      "sha256": "29414bb1fcaedaf5b41dc33993ba25b0fe1ab517b4d186d0902ea103da78cfc2"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7037m3_trace.npz",
+      "bytes": 92017,
+      "sha256": "5b6cb8e4888eaaedc0c55cd5aa1971713e4b7552cc4b046cf827fc31bd403611"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7039m4.json",
+      "bytes": 265497,
+      "sha256": "cdd124534b50141a0b86c901538379e9cc21453c01d62264c5354b3521afc496"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7039m4_trace.npz",
+      "bytes": 59555,
+      "sha256": "de981582d910d01a2a051ad1ba776fe7e94eff71bb786cf44f35ad7baa7008e8"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7072m4.json",
+      "bytes": 261899,
+      "sha256": "b226abc7f653251b4e178b2698716fb93e3c970a3a3f3288cc661d09b017fb95"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/T_s7072m4_trace.npz",
+      "bytes": 53782,
+      "sha256": "3413a948d893f15887dde1c1ae35227d5fcd2264dc601c7bf31d1328fdb263bc"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_cmpiidoff_s7182m3.json",
+      "bytes": 261855,
+      "sha256": "aa37bbc863f890dcf367df795f6dd4ffc7c38eb63538996a770c6ce059f29d38"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_cmpiidoff_s7182m3_trace.npz",
+      "bytes": 61726,
+      "sha256": "c4d65d54b475e5c3c914fe7cbbd8e4500c1977aa69dbbb2a0885bae70511c3f8"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_s7033m4.json",
+      "bytes": 145632,
+      "sha256": "3a8044334b1a07772ce07c8af02a73c479c3bc1d439be5a29a077bbee3c279e7"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_s7033m4_trace.npz",
+      "bytes": 38838,
+      "sha256": "c6afce226079a0cc83303c44d97e4109ed03f147c16ac9a2520a2e803bb220ba"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_s7058m4.json",
+      "bytes": 145634,
+      "sha256": "1fb69e25e410c11e0fcaecad809665b12319ae535ccf62e9b1b0adf8344e9dbd"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_s7058m4_trace.npz",
+      "bytes": 38843,
+      "sha256": "651ba480607c89762d58706a8c8a5289cd92e74c14d7e6f9f17edda810695626"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_s7100m3.json",
+      "bytes": 263235,
+      "sha256": "1604031173f3eca124127b46636da2103ffd45f93d688061b7ca1f65cd80bb9e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_s7100m3_trace.npz",
+      "bytes": 70507,
+      "sha256": "aa7a6e558e40c919e3338d9963f3fa82d2dab4b6fdd571b7548d41ba0bcb777d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_s7133m3.json",
+      "bytes": 262599,
+      "sha256": "fd6a1fcb16d7ca86b188bbd69bd3dc0dd22d4096a3aeca1f679e01d9e0faba78"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/routes/scalar/Z_s7133m3_trace.npz",
+      "bytes": 61697,
+      "sha256": "30e723ab270f34f6c416907a71a478294bf4ffc82bee8c7d1a7944d05df7200b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/socp.py",
+      "bytes": 16986,
+      "sha256": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion/wrench_log.py",
+      "bytes": 5355,
+      "sha256": "4539d99daa3cd8b0cd3a5a25263085795977918f8744117318a435df8aaba6c0"
+    },
+    {
+      "path": "launch/robot.launch.py",
+      "bytes": 6156,
+      "sha256": "8b6ec9af0eb4a11f7d195902f2ed3d13bf4e85c8221a21f1c090a90a8fe425ed"
+    },
+    {
+      "path": "offline_profiles/F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "bytes": 182353,
+      "sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462"
+    },
+    {
+      "path": "offline_profiles/F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_183755.csv",
+      "bytes": 182353,
+      "sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462"
+    },
+    {
+      "path": "offline_profiles/F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_184151.csv",
+      "bytes": 182353,
+      "sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462"
+    },
+    {
+      "path": "offline_profiles/F75_Tt1_s9007_c100_five_cut800_offline_profile_20261023_192142.csv",
+      "bytes": 162643,
+      "sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed"
+    },
+    {
+      "path": "offline_profiles/F75_Tt1_s9007_c100_five_cut800_offline_profile_20261023_192712.csv",
+      "bytes": 162643,
+      "sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed"
+    },
+    {
+      "path": "offline_profiles/F75_Tt1_s9007_c100_five_cut800_offline_profile_20261023_193125.csv",
+      "bytes": 162643,
+      "sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed"
+    },
+    {
+      "path": "offline_profiles/F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "bytes": 160623,
+      "sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171"
+    },
+    {
+      "path": "offline_profiles/F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_175114.csv",
+      "bytes": 160623,
+      "sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171"
+    },
+    {
+      "path": "offline_profiles/F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_175703.csv",
+      "bytes": 160623,
+      "sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171"
+    },
+    {
+      "path": "offline_profiles/S_s7073m3_c100_narrow75_offline_profile_20261023_190423.csv",
+      "bytes": 243190,
+      "sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4"
+    },
+    {
+      "path": "offline_profiles/S_s7073m3_c100_narrow75_offline_profile_20261023_191316.csv",
+      "bytes": 243190,
+      "sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4"
+    },
+    {
+      "path": "offline_profiles/S_s7073m3_c100_narrow75_offline_profile_20261023_191604.csv",
+      "bytes": 243190,
+      "sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4"
+    },
+    {
+      "path": "package.xml",
+      "bytes": 1008,
+      "sha256": "d92747b5b416e1bcea945014206d15a225b90511bae49d01949834b5c492bdd7"
+    },
+    {
+      "path": "resource/kinova_dual_arm_dmp_insertion",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run_metadata/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_meta.json",
+      "bytes": 9026,
+      "sha256": "54931c039cb63f0d55c7bccafe773bff88c7f9ca87066f5d3cfa0c513a2553c5"
+    },
+    {
+      "path": "run_metadata/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_meta.json",
+      "bytes": 9025,
+      "sha256": "412b27d90ac0d764f0176946ce1cd36f6f4a47ec7903c777a6c5c1ecb4ee1e0e"
+    },
+    {
+      "path": "run_metadata/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_meta.json",
+      "bytes": 9022,
+      "sha256": "9c6aa312c78d3b1e25687950d9f6b2fe0c9047c092e7003334fa3cd12d47ba67"
+    },
+    {
+      "path": "run_metadata/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_meta.json",
+      "bytes": 9018,
+      "sha256": "87e4b59a6dd17b8df48da3e3b6e40d71d84ce6ebd342b3b8214176884761ad21"
+    },
+    {
+      "path": "run_metadata/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_meta.json",
+      "bytes": 9018,
+      "sha256": "e44d8ef25a060109df9be2c89e28644cadd86493d10a03ba4d0398ee5d953a90"
+    },
+    {
+      "path": "run_metadata/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_meta.json",
+      "bytes": 9024,
+      "sha256": "976b918e4fbbe5cd81e01e7ed6b49c8b67c293e60c88a8d26bff98e5c235089e"
+    },
+    {
+      "path": "run_metadata/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_meta.json",
+      "bytes": 9021,
+      "sha256": "2ef377ba948a192619c3f0e0db31a5b7e1672405ff452b1f848c46f7146c187e"
+    },
+    {
+      "path": "run_metadata/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_meta.json",
+      "bytes": 9026,
+      "sha256": "ca2785bc9958a623a849f7fecd48a4d6406320786a0040f51244f5b456dac902"
+    },
+    {
+      "path": "run_metadata/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_meta.json",
+      "bytes": 9023,
+      "sha256": "89bd0ed05030bb8e6a39a50c6f32eb632b8d958661cd091a5936df58a106f310"
+    },
+    {
+      "path": "run_metadata/S_s7073m3_c100_narrow75_ffi_20261023_190407_meta.json",
+      "bytes": 8997,
+      "sha256": "484588ff9aadff41f7138f59bc0aa76c3066eb5e462be732a1baac5d163143bc"
+    },
+    {
+      "path": "run_metadata/S_s7073m3_c100_narrow75_ffi_20261023_191302_meta.json",
+      "bytes": 9003,
+      "sha256": "1df7eecf0e3d93485effe9f54b909e693d65941d275ef4e3242b0c38669b8479"
+    },
+    {
+      "path": "run_metadata/S_s7073m3_c100_narrow75_ffi_20261023_191548_meta.json",
+      "bytes": 9005,
+      "sha256": "ff2c15b30638d1ec1346b021ce20c25af301c1187dcda9ee8804726ab3453fe4"
+    },
+    {
+      "path": "run_provenance.json",
+      "bytes": 51468,
+      "sha256": "ff12f7519dd3e3f31eecba358e60ae677f91f068b5966558d15d384f4595e1de"
+    },
+    {
+      "path": "run_revisions/1c25bd71c85df127c523dd500fc39a612eaa7c62/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/1c25bd71c85df127c523dd500fc39a612eaa7c62/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/1c25bd71c85df127c523dd500fc39a612eaa7c62/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/1e7d3e52f564479432aabebcd91871ac1c083eac/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/1e7d3e52f564479432aabebcd91871ac1c083eac/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/1e7d3e52f564479432aabebcd91871ac1c083eac/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/21fa4a8ebfad626210833c9e9577387922868a64/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/21fa4a8ebfad626210833c9e9577387922868a64/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/21fa4a8ebfad626210833c9e9577387922868a64/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/2361f01f861790570fad23431f4641545c6cae6a/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/2361f01f861790570fad23431f4641545c6cae6a/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/2361f01f861790570fad23431f4641545c6cae6a/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/6b1a36da5f119760355c4060044a6897f0353db7/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/6b1a36da5f119760355c4060044a6897f0353db7/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/6b1a36da5f119760355c4060044a6897f0353db7/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/9444de22218bdd1160ba5af337d0b50098f3df9d/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/9444de22218bdd1160ba5af337d0b50098f3df9d/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/9444de22218bdd1160ba5af337d0b50098f3df9d/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/9ee63a7153f5c2c118d00cc68548a2e343aa83ce/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/9ee63a7153f5c2c118d00cc68548a2e343aa83ce/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/9ee63a7153f5c2c118d00cc68548a2e343aa83ce/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/bd457b8093530cb699c1833302f17fb283094924/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/bd457b8093530cb699c1833302f17fb283094924/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/bd457b8093530cb699c1833302f17fb283094924/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/c44821a96b78d62604ad0a63ccb768ae07c1ef27/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/c44821a96b78d62604ad0a63ccb768ae07c1ef27/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/c44821a96b78d62604ad0a63ccb768ae07c1ef27/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/c80dd7800d695ccdff9115ab2b17bedf46d072b4/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/c80dd7800d695ccdff9115ab2b17bedf46d072b4/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/c80dd7800d695ccdff9115ab2b17bedf46d072b4/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "run_revisions/f761b60099df9fe286050349d28b135bb85254eb/kinova_dual_arm_dmp_insertion/controller.py",
+      "bytes": 30436,
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "run_revisions/f761b60099df9fe286050349d28b135bb85254eb/kinova_dual_arm_dmp_insertion/insert_ffi.py",
+      "bytes": 11158,
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "run_revisions/f761b60099df9fe286050349d28b135bb85254eb/kinova_dual_arm_dmp_insertion/ros_backend.py",
+      "bytes": 24075,
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "setup.cfg",
+      "bytes": 127,
+      "sha256": "723ac82c1af078e2ef6f9461af2415a25cee4ee5c70e469dc19b7edf169b4106"
+    },
+    {
+      "path": "setup.py",
+      "bytes": 787,
+      "sha256": "6ca232939adbf80392f2c5d9914533b1c09eb3a8a71048ad6b810e23a3023452"
+    },
+    {
+      "path": "tests/test_analyze_run.py",
+      "bytes": 1499,
+      "sha256": "9b8c4a0a5dce9fa0354a48291309a7c57f8b2d4b7bc5c9524f80d5ea86fabd46"
+    },
+    {
+      "path": "tests/test_execution.py",
+      "bytes": 12401,
+      "sha256": "926982260f4aafe5cae7da475b2717e1c8a85266fdfc6f55b51d1ec6ec76234b"
+    },
+    {
+      "path": "tests/test_friction_margin.py",
+      "bytes": 12323,
+      "sha256": "c0e9d371bb0cbf0dfcd9bbfc44bfbaf4554f5a6e45c73f14d1390aeec5b10dba"
+    },
+    {
+      "path": "tests/test_ros_snapshots.py",
+      "bytes": 5028,
+      "sha256": "8d18b4631f6d018b0505441a66a39ece6f384927dfc99ff29de212af38ec2930"
+    },
+    {
+      "path": "tests/test_squeeze_ffi.py",
+      "bytes": 6725,
+      "sha256": "252ecf4ba2cebd392119f3af48c0f52137b456e457fc0c99a7a230d1d9bef31c"
+    },
+    {
+      "path": "tests/test_squeeze_pi.py",
+      "bytes": 5697,
+      "sha256": "534f5578577a87bf17390094336719c9d3c3f0addeae42d8608d04be16fb0e74"
+    },
+    {
+      "path": "urdf/gen3_ati_tool.urdf",
+      "bytes": 9438,
+      "sha256": "a0ebb5a79a1c25cbf069374d39d55570be83a6c86ee6ec9d0c35e15a125ce2db"
+    }
+  ],
+  "zip_sha256": "7f8f9715977dd2735a84df1d5eb90aa6733c80a71724656726a28a7e4fdbe37f"
+}

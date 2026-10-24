@@ -1,0 +1,7 @@
+{
+  "pure_I_boundary_max_root_error": 6.661338147750939e-16,
+  "checks": "Closed-form I stability boundaries and one-tick pole; exact no-delay lag transfer; all336 independent state-matrix radius comparisons follow.",
+  "max_state_vs_polynomial_radius_difference": 5.493383525845275e-13,
+  "all_cases": 336,
+  "all_passed": true
+}

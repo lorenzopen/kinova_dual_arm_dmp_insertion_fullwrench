@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-10-23T19:18:25.556367+00:00",
+  "attempt_source": "audit_saved_evidence_attempt1.py",
+  "attempt_source_sha256": "55f2a9c470d43dfd32d55130e9356e7200d33922ec44876ee4ba72d5ddd18cbc",
+  "log": "evidence_audit_process.log",
+  "log_sha256": "812be08a068b7457fa223390484c7f67c362238b06f925279aeb955a97b39bd5",
+  "failed_assertion": "max command increment / log-wall-time interval <=2mm/s",
+  "note": "QA initially treated saved event_time (CSV write clock) as FFI integration dt. Preserve this failure; diagnose actual dt without changing frozen results."
+}

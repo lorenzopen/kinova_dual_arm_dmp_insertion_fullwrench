@@ -1,0 +1,383 @@
+{
+  "verified_utc": "2026-10-24T04:09:22.759850+00:00",
+  "NVIDIA_originals_identical": true,
+  "NVIDIA_files": 765,
+  "NVIDIA_bytes": 4080005175,
+  "baseline_sha256_verified": true,
+  "unchanged_runtime_files": 332,
+  "vendor": [
+    {
+      "path": "vendor/lib/tool.py",
+      "source": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\lorenzo_data_analysis\\10_tripad_passivo\\lib\\tool.py",
+      "sha256": "c0a2440793d2820133e0d8b16d011094fdac41d5d279bf9c62309869ba8cdeb9"
+    },
+    {
+      "path": "vendor/lib/wrist.py",
+      "source": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\lorenzo_data_analysis\\10_tripad_passivo\\lib\\wrist.py",
+      "sha256": "ddf1732313401976c7f378703cbc8f18bb1b3c8062613f046c2c61ad4ec832a2"
+    },
+    {
+      "path": "vendor/spider_ee/floating_plate.py",
+      "source": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\lorenzo_data_analysis\\10_tripad_passivo\\spider_ee\\floating_plate.py",
+      "sha256": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478"
+    },
+    {
+      "path": "vendor/shelf.py",
+      "source": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\lorenzo_data_analysis\\10_tripad_passivo\\tetris\\shelf.py",
+      "sha256": "622007082ede0393ab43323d1cbd4887ed42e458e810e2e92b0a19442b6f87a4"
+    },
+    {
+      "path": "vendor/pieces.py",
+      "source": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\lorenzo_data_analysis\\10_tripad_passivo\\tetris\\pieces.py",
+      "sha256": "767c8167d4cd0d0be1483ff7e079e6ac65176c3ecc1444e2477376d89e9ac271"
+    }
+  ],
+  "runtime_sources": [
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\analyze_run.py",
+      "sha256": "3e3e7358208f253698f7fa0bd4c972e16b922b23390e1e0f19c12afcd80921ef"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\ati_node.py",
+      "sha256": "decb4f5a89e6f36b538858664696620f76b280fb8f70fa03493ab9c220450bed"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\audit_run.py",
+      "sha256": "905db9b5facf234603b2d2e687b0b3078a35021c71852256ba8d35e76056bd7d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\board.py",
+      "sha256": "42461eca2fd4180aa578e3194ecac5464929161eb9bd31c0dd09eccb226f957b"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\calibrate_cell.py",
+      "sha256": "ef6a9b2d32f0eaf1e4c26907c627aa5dde467a855714c33ca692450002891b12"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\compare_friction_margin.py",
+      "sha256": "3145536fa5805a2d462db5d068a9c3abfc3b3b921c05107b519f123212b24570"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\controller.py",
+      "sha256": "172985df45cb9ded2bd21d5744953a94f71f5732546af28775ed68b28fdd9f2c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\dryrun.py",
+      "sha256": "706d4e0fc39936273afcd15277a8509eca90258d611724605ef8b7fed2e93058"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\follow_one_arm.py",
+      "sha256": "39ccd54f9e2d4a408fbde4041cf498e4d6880f384f35062438141a37360dc7fc"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\follow_two_arms.py",
+      "sha256": "7ac9f614a481e74c441cbe66d3d80990e4e7909b30b0fc4369f8f585335347e5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\ft_check.py",
+      "sha256": "944bc3b3cf29d6e0b7a6225e532428664fe86a9f35fcfccd20e4e35435f360a1"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\geometry.py",
+      "sha256": "1172e4fc783941d8389698768376f39b2cb46a359342241574fcf5c43e00e45d"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\insert_ffi.py",
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\insert_open.py",
+      "sha256": "58fbd5381e9c33a18d72cc143dd648ce4a71e8d9e333147373eeac925884a66c"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\insert_pi.py",
+      "sha256": "100778e2f073754b3cc3c841b7558a0c6076a67d172b35e7b4c995724dcacbef"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\insert_pick.py",
+      "sha256": "b3704e678e933391f849a0af46af24d0f0d221c26e50b96e8e6b51c27162016e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\inspect_sampling.py",
+      "sha256": "8e07577e3efc818f244502993ec072530d5bdc5fea5f73a3d534b56065408883"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\main.py",
+      "sha256": "f3f7861c2f3b9fd9aa8edd976f1b513ec9a71116c7c494d377a7367fb18db68a"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\pair.py",
+      "sha256": "8cb206f8453c1fae87f87ed91e1161c01cc75a981193917e3ed0a81eb1447389"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\prior.py",
+      "sha256": "a57e69e3cd3593b986b20ff2b705c187f93f86bfad3da2f2901887b942bb45c5"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\reach_ik.py",
+      "sha256": "22f8535f99b7c9f8b1f8ebb41d3e548d0d972b471b8155f544cf034634bb4558"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\ros_backend.py",
+      "sha256": "94a7646a8d45e850b207acaaac680fab0fbf5806dc916391332e89ef5aaf2f0e"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\route.py",
+      "sha256": "34032d21d23882cf5c0c39dc36513532a6b3b54a62c8f80c72b43361f5fcef70"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\socp.py",
+      "sha256": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\wrench_log.py",
+      "sha256": "4539d99daa3cd8b0cd3a5a25263085795977918f8744117318a435df8aaba6c0"
+    },
+    {
+      "path": "kinova_dual_arm_dmp_insertion\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "profiles": [
+    {
+      "run": "Gen3_L_central2700_implicit_D80_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "archived_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 3.9120600071607115e-05
+    },
+    {
+      "run": "Gen3_L_central2700_implicit_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "archived_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 3.9120600071607115e-05
+    },
+    {
+      "run": "Gen3_Z_central2700_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3_Z_central2700_implicit_D80_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3_Z_central2700_implicit_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3_Z_central2700_implicit_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3_Z_lab_hold_implicit",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3_Z_lab_scene_masschecked",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3_Z_lab_scene_v1",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3Lab_Z_central2700_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3Lab_Z_central2700_warm_D80_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3Lab_Z_central2700_warm_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3Lab_Z_hold_dt0125",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3Lab_Z_hold_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Gen3Lab_Z_hold_warm_dt0125",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "L_axial2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "archived_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 3.9120600071607115e-05
+    },
+    {
+      "run": "L_central2700_D60_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "archived_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 3.9120600071607115e-05
+    },
+    {
+      "run": "L_central2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "archived_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 3.9120600071607115e-05
+    },
+    {
+      "run": "L_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Lt1_s9014_c100_five_cut800_offline_profile_20261023_182755.csv",
+      "archived_sha256": "85df1689204b9dc8d36b92ef8e3ed6efdd0a4b9db9cd5b99c9147a6f3ff75462",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 3.9120600071607115e-05
+    },
+    {
+      "run": "S_axial2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_offline_profile_20261023_190423.csv",
+      "archived_sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.0921138186570367e-05
+    },
+    {
+      "run": "S_central2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_offline_profile_20261023_190423.csv",
+      "archived_sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.0921138186570367e-05
+    },
+    {
+      "run": "S_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_offline_profile_20261023_190423.csv",
+      "archived_sha256": "e94fd9595729f956628271b8a7321c2b3886d5cbaeddd3081492a210be1de5a4",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.0921138186570367e-05
+    },
+    {
+      "run": "T_central2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Tt1_s9007_c100_five_cut800_offline_profile_20261023_192142.csv",
+      "archived_sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 6.349818493123216e-06
+    },
+    {
+      "run": "T_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Tt1_s9007_c100_five_cut800_offline_profile_20261023_192142.csv",
+      "archived_sha256": "1250bc23d0eeaf5b96e404dcc031996fc7dd6fcc161ca2193904e606e668e9ed",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 6.349818493123216e-06
+    },
+    {
+      "run": "Z_axial2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Z_central2700_D60_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Z_central2700_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Z_D60_dt025",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Z_D60_dt05",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    },
+    {
+      "run": "Z_D60_dt1",
+      "archived_profile": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_offline_profile_20261023_174157.csv",
+      "archived_sha256": "9b9dc18136ca8d80a3cc68d177ea329c1bf41c50aa049df6af964ff4a309e171",
+      "same_rows": true,
+      "same_phases": true,
+      "max_abs_numeric_difference": 1.5239992328882918e-05
+    }
+  ]
+}

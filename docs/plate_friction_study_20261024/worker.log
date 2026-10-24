@@ -1,0 +1,128 @@
+pybullet build time: May 17 2025 21:12:02
+  prior: 5 components, std_f 12.09 N, std_tau 0.7160 Nm
+PROFILE 39649136810f none centered
+PROFILE 1069b37db0d0 none planar
+PROFILE fb86eaccfbc8 none spatial
+PROFILE cf0c85fa468b fixed centered
+C:\Users\Lorenzo\Desktop\kinova_dual_arm_dmp_insertion_fullwrench\docs\plate_friction_study_20261024\socp_reference.py:247: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  P["prob"].solve(solver=s, **kw)
+PROFILE 06c2deaa264c fixed planar
+PROFILE 022e0b42bd2a fixed spatial
+PROFILE 50a65e7c3c2d adaptive planar
+PROFILE ebf623b58f1b wong centered
+PROFILE 85f2c2da8155 wong planar
+PROFILE e5fc363cbba6 adaptive light_known
+PROFILE f5d68bba84b1 adaptive heavy_known
+PROFILE 7454135b9792 adaptive mass_under10
+PROFILE 90931df23875 adaptive mu_over10
+{"index": 1, "total": 111, "id": "core_welded_none_centered_0", "error": null, "seconds": 4.4905}
+{"index": 2, "total": 111, "id": "core_welded_none_centered_1", "error": null, "seconds": 4.4905}
+{"index": 3, "total": 111, "id": "core_welded_none_centered_2", "error": null, "seconds": 4.4905}
+{"index": 4, "total": 111, "id": "core_welded_none_planar_0", "error": "object_lost", "seconds": 1.5405}
+{"index": 5, "total": 111, "id": "core_welded_none_planar_1", "error": "object_lost", "seconds": 1.5505}
+{"index": 6, "total": 111, "id": "core_welded_none_planar_2", "error": "object_lost", "seconds": 1.5205}
+{"index": 7, "total": 111, "id": "core_welded_none_spatial_0", "error": "object_lost", "seconds": 1.4605}
+{"index": 8, "total": 111, "id": "core_welded_none_spatial_1", "error": "object_lost", "seconds": 1.4705}
+{"index": 9, "total": 111, "id": "core_welded_none_spatial_2", "error": "object_lost", "seconds": 1.4605}
+{"index": 10, "total": 111, "id": "core_welded_fixed_centered_0", "error": null, "seconds": 4.4905}
+{"index": 11, "total": 111, "id": "core_welded_fixed_centered_1", "error": null, "seconds": 4.4905}
+{"index": 12, "total": 111, "id": "core_welded_fixed_centered_2", "error": null, "seconds": 4.4905}
+{"index": 13, "total": 111, "id": "core_welded_fixed_planar_0", "error": null, "seconds": 4.4905}
+{"index": 14, "total": 111, "id": "core_welded_fixed_planar_1", "error": null, "seconds": 4.4905}
+{"index": 15, "total": 111, "id": "core_welded_fixed_planar_2", "error": null, "seconds": 4.4905}
+{"index": 16, "total": 111, "id": "core_welded_fixed_spatial_0", "error": null, "seconds": 4.4905}
+{"index": 17, "total": 111, "id": "core_welded_fixed_spatial_1", "error": null, "seconds": 4.4905}
+{"index": 18, "total": 111, "id": "core_welded_fixed_spatial_2", "error": null, "seconds": 4.4905}
+{"index": 19, "total": 111, "id": "core_welded_adaptive_centered_0", "error": null, "seconds": 4.4905}
+{"index": 20, "total": 111, "id": "core_welded_adaptive_centered_1", "error": null, "seconds": 4.4905}
+{"index": 21, "total": 111, "id": "core_welded_adaptive_centered_2", "error": null, "seconds": 4.4905}
+{"index": 22, "total": 111, "id": "core_welded_adaptive_planar_0", "error": null, "seconds": 4.4905}
+{"index": 23, "total": 111, "id": "core_welded_adaptive_planar_1", "error": null, "seconds": 4.4905}
+{"index": 24, "total": 111, "id": "core_welded_adaptive_planar_2", "error": null, "seconds": 4.4905}
+{"index": 25, "total": 111, "id": "core_welded_adaptive_spatial_0", "error": null, "seconds": 4.4905}
+{"index": 26, "total": 111, "id": "core_welded_adaptive_spatial_1", "error": null, "seconds": 4.4905}
+{"index": 27, "total": 111, "id": "core_welded_adaptive_spatial_2", "error": null, "seconds": 4.4905}
+{"index": 28, "total": 111, "id": "core_welded_wong_centered_0", "error": null, "seconds": 4.4905}
+{"index": 29, "total": 111, "id": "core_welded_wong_centered_1", "error": null, "seconds": 4.4905}
+{"index": 30, "total": 111, "id": "core_welded_wong_centered_2", "error": null, "seconds": 4.4905}
+{"index": 31, "total": 111, "id": "core_welded_wong_planar_0", "error": null, "seconds": 4.4905}
+{"index": 32, "total": 111, "id": "core_welded_wong_planar_1", "error": null, "seconds": 4.4905}
+{"index": 33, "total": 111, "id": "core_welded_wong_planar_2", "error": null, "seconds": 4.4905}
+{"index": 34, "total": 111, "id": "core_welded_wong_spatial_0", "error": null, "seconds": 4.4905}
+{"index": 35, "total": 111, "id": "core_welded_wong_spatial_1", "error": null, "seconds": 4.4905}
+{"index": 36, "total": 111, "id": "core_welded_wong_spatial_2", "error": null, "seconds": 4.4905}
+{"index": 37, "total": 111, "id": "core_floating_none_centered_0", "error": "object_lost", "seconds": 1.4204999999999999}
+{"index": 38, "total": 111, "id": "core_floating_none_centered_1", "error": "object_lost", "seconds": 1.4204999999999999}
+{"index": 39, "total": 111, "id": "core_floating_none_centered_2", "error": "object_lost", "seconds": 1.4204999999999999}
+{"index": 40, "total": 111, "id": "core_floating_none_planar_0", "error": "object_lost", "seconds": 1.3505}
+{"index": 41, "total": 111, "id": "core_floating_none_planar_1", "error": "object_lost", "seconds": 1.3505}
+{"index": 42, "total": 111, "id": "core_floating_none_planar_2", "error": "object_lost", "seconds": 1.3405}
+{"index": 43, "total": 111, "id": "core_floating_none_spatial_0", "error": "object_lost", "seconds": 1.3405}
+{"index": 44, "total": 111, "id": "core_floating_none_spatial_1", "error": "object_lost", "seconds": 1.3405}
+{"index": 45, "total": 111, "id": "core_floating_none_spatial_2", "error": "object_lost", "seconds": 1.3305}
+{"index": 46, "total": 111, "id": "core_floating_fixed_centered_0", "error": null, "seconds": 4.4905}
+{"index": 47, "total": 111, "id": "core_floating_fixed_centered_1", "error": null, "seconds": 4.4905}
+{"index": 48, "total": 111, "id": "core_floating_fixed_centered_2", "error": null, "seconds": 4.4905}
+{"index": 49, "total": 111, "id": "core_floating_fixed_planar_0", "error": null, "seconds": 4.4905}
+{"index": 50, "total": 111, "id": "core_floating_fixed_planar_1", "error": null, "seconds": 4.4905}
+{"index": 51, "total": 111, "id": "core_floating_fixed_planar_2", "error": null, "seconds": 4.4905}
+{"index": 52, "total": 111, "id": "core_floating_fixed_spatial_0", "error": null, "seconds": 4.4905}
+{"index": 53, "total": 111, "id": "core_floating_fixed_spatial_1", "error": null, "seconds": 4.4905}
+{"index": 54, "total": 111, "id": "core_floating_fixed_spatial_2", "error": null, "seconds": 4.4905}
+{"index": 55, "total": 111, "id": "core_floating_adaptive_centered_0", "error": null, "seconds": 4.4905}
+{"index": 56, "total": 111, "id": "core_floating_adaptive_centered_1", "error": null, "seconds": 4.4905}
+{"index": 57, "total": 111, "id": "core_floating_adaptive_centered_2", "error": null, "seconds": 4.4905}
+{"index": 58, "total": 111, "id": "core_floating_adaptive_planar_0", "error": null, "seconds": 4.4905}
+{"index": 59, "total": 111, "id": "core_floating_adaptive_planar_1", "error": null, "seconds": 4.4905}
+{"index": 60, "total": 111, "id": "core_floating_adaptive_planar_2", "error": null, "seconds": 4.4905}
+{"index": 61, "total": 111, "id": "core_floating_adaptive_spatial_0", "error": null, "seconds": 4.4905}
+{"index": 62, "total": 111, "id": "core_floating_adaptive_spatial_1", "error": null, "seconds": 4.4905}
+{"index": 63, "total": 111, "id": "core_floating_adaptive_spatial_2", "error": null, "seconds": 4.4905}
+{"index": 64, "total": 111, "id": "core_floating_wong_centered_0", "error": "object_lost", "seconds": 1.4405}
+{"index": 65, "total": 111, "id": "core_floating_wong_centered_1", "error": "object_lost", "seconds": 1.4405}
+{"index": 66, "total": 111, "id": "core_floating_wong_centered_2", "error": "object_lost", "seconds": 1.4405}
+{"index": 67, "total": 111, "id": "core_floating_wong_planar_0", "error": null, "seconds": 4.4905}
+{"index": 68, "total": 111, "id": "core_floating_wong_planar_1", "error": null, "seconds": 4.4905}
+{"index": 69, "total": 111, "id": "core_floating_wong_planar_2", "error": null, "seconds": 4.4905}
+{"index": 70, "total": 111, "id": "core_floating_wong_spatial_0", "error": null, "seconds": 4.4905}
+{"index": 71, "total": 111, "id": "core_floating_wong_spatial_1", "error": null, "seconds": 4.4905}
+{"index": 72, "total": 111, "id": "core_floating_wong_spatial_2", "error": null, "seconds": 4.4905}
+{"index": 73, "total": 111, "id": "stress_welded_adaptive_light_known_0", "error": null, "seconds": 4.4905}
+{"index": 74, "total": 111, "id": "stress_welded_adaptive_light_known_1", "error": null, "seconds": 4.4905}
+{"index": 75, "total": 111, "id": "stress_welded_adaptive_light_known_2", "error": null, "seconds": 4.4905}
+{"index": 76, "total": 111, "id": "stress_welded_adaptive_heavy_known_0", "error": null, "seconds": 4.4905}
+{"index": 77, "total": 111, "id": "stress_welded_adaptive_heavy_known_1", "error": null, "seconds": 4.4905}
+{"index": 78, "total": 111, "id": "stress_welded_adaptive_heavy_known_2", "error": null, "seconds": 4.4905}
+{"index": 79, "total": 111, "id": "stress_welded_adaptive_mass_under10_0", "error": null, "seconds": 4.4905}
+{"index": 80, "total": 111, "id": "stress_welded_adaptive_mass_under10_1", "error": null, "seconds": 4.4905}
+{"index": 81, "total": 111, "id": "stress_welded_adaptive_mass_under10_2", "error": null, "seconds": 4.4905}
+{"index": 82, "total": 111, "id": "stress_welded_adaptive_com_unmodelled_0", "error": null, "seconds": 4.4905}
+{"index": 83, "total": 111, "id": "stress_welded_adaptive_com_unmodelled_1", "error": null, "seconds": 4.4905}
+{"index": 84, "total": 111, "id": "stress_welded_adaptive_com_unmodelled_2", "error": null, "seconds": 4.4905}
+{"index": 85, "total": 111, "id": "stress_welded_adaptive_mu_over10_0", "error": null, "seconds": 4.4905}
+{"index": 86, "total": 111, "id": "stress_welded_adaptive_mu_over10_1", "error": null, "seconds": 4.4905}
+{"index": 87, "total": 111, "id": "stress_welded_adaptive_mu_over10_2", "error": null, "seconds": 4.4905}
+{"index": 88, "total": 111, "id": "stress_floating_adaptive_light_known_0", "error": null, "seconds": 4.4905}
+{"index": 89, "total": 111, "id": "stress_floating_adaptive_light_known_1", "error": null, "seconds": 4.4905}
+{"index": 90, "total": 111, "id": "stress_floating_adaptive_light_known_2", "error": null, "seconds": 4.4905}
+{"index": 91, "total": 111, "id": "stress_floating_adaptive_heavy_known_0", "error": null, "seconds": 4.4905}
+{"index": 92, "total": 111, "id": "stress_floating_adaptive_heavy_known_1", "error": null, "seconds": 4.4905}
+{"index": 93, "total": 111, "id": "stress_floating_adaptive_heavy_known_2", "error": null, "seconds": 4.4905}
+{"index": 94, "total": 111, "id": "stress_floating_adaptive_mass_under10_0", "error": null, "seconds": 4.4905}
+{"index": 95, "total": 111, "id": "stress_floating_adaptive_mass_under10_1", "error": null, "seconds": 4.4905}
+{"index": 96, "total": 111, "id": "stress_floating_adaptive_mass_under10_2", "error": null, "seconds": 4.4905}
+{"index": 97, "total": 111, "id": "stress_floating_adaptive_com_unmodelled_0", "error": null, "seconds": 4.4905}
+{"index": 98, "total": 111, "id": "stress_floating_adaptive_com_unmodelled_1", "error": null, "seconds": 4.4905}
+{"index": 99, "total": 111, "id": "stress_floating_adaptive_com_unmodelled_2", "error": null, "seconds": 4.4905}
+{"index": 100, "total": 111, "id": "stress_floating_adaptive_mu_over10_0", "error": null, "seconds": 4.4905}
+{"index": 101, "total": 111, "id": "stress_floating_adaptive_mu_over10_1", "error": null, "seconds": 4.4905}
+{"index": 102, "total": 111, "id": "stress_floating_adaptive_mu_over10_2", "error": null, "seconds": 4.4905}
+{"index": 103, "total": 111, "id": "central2700_floating2700_adaptive_centered_0", "error": null, "seconds": 4.4905}
+{"index": 104, "total": 111, "id": "central2700_floating2700_adaptive_centered_1", "error": null, "seconds": 4.4905}
+{"index": 105, "total": 111, "id": "central2700_floating2700_adaptive_centered_2", "error": null, "seconds": 4.4905}
+{"index": 106, "total": 111, "id": "central2700_floating2700_adaptive_planar_0", "error": null, "seconds": 4.4905}
+{"index": 107, "total": 111, "id": "central2700_floating2700_adaptive_planar_1", "error": null, "seconds": 4.4905}
+{"index": 108, "total": 111, "id": "central2700_floating2700_adaptive_planar_2", "error": null, "seconds": 4.4905}
+{"index": 109, "total": 111, "id": "central2700_floating2700_adaptive_spatial_0", "error": null, "seconds": 4.4905}
+{"index": 110, "total": 111, "id": "central2700_floating2700_adaptive_spatial_1", "error": null, "seconds": 4.4905}
+{"index": 111, "total": 111, "id": "central2700_floating2700_adaptive_spatial_2", "error": null, "seconds": 4.4905}

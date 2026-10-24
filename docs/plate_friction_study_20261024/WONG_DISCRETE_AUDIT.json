@@ -1,0 +1,383 @@
+{
+  "note": "Relaxation is a diagnostic witness of incompatibility; never used in active planner or physical execution.",
+  "records": [
+    {
+      "case": "spatial",
+      "angle": 0.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 4.684704431042395e-10,
+      "force_residual_N": 1.8459913244779074e-15,
+      "moment_residual_Nm": 8.868324639740041e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 0.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 0.0,
+      "force_residual_N": 1.0838731118017157e-16,
+      "moment_residual_Nm": 3.6355332341502963e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 2.5,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 7.540593205839692e-12,
+      "force_residual_N": 1.7790111516265277e-15,
+      "moment_residual_Nm": 2.964296775167217e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 2.5,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 2.052967015753175e-11,
+      "force_residual_N": 3.5605384226165826e-15,
+      "moment_residual_Nm": 6.675868679006192e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 5.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 0.09405404139843683,
+      "force_residual_N": 3.665838073340989e-15,
+      "moment_residual_Nm": 8.582937747229195e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 5.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 7.086845066550135e-10,
+      "force_residual_N": 3.5566146649215975e-15,
+      "moment_residual_Nm": 6.691626947686432e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 7.5,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 0.3030731231964996,
+      "force_residual_N": 3.885780586188048e-16,
+      "moment_residual_Nm": 1.4946834900704541e-16
+    },
+    {
+      "case": "spatial",
+      "angle": 7.5,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 6.251113075848302e-10,
+      "force_residual_N": 1.784146017590271e-15,
+      "moment_residual_Nm": 5.43054346022841e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 10.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 0.31923477254567834,
+      "force_residual_N": 2.220446049250313e-16,
+      "moment_residual_Nm": 5.003707553108401e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 10.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 6.708099052758515e-10,
+      "force_residual_N": 1.7798229048217483e-15,
+      "moment_residual_Nm": 7.473417450352271e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 12.5,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 0.2842433164683128,
+      "force_residual_N": 4.440892098500626e-16,
+      "moment_residual_Nm": 5.721958498152797e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 12.5,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 5.168990880421061e-10,
+      "force_residual_N": 3.985994439185401e-15,
+      "moment_residual_Nm": 1.195827321860277e-16
+    },
+    {
+      "case": "spatial",
+      "angle": 15.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 0.23820909340005658,
+      "force_residual_N": 6.280369834735101e-16,
+      "moment_residual_Nm": 7.473417450352271e-17
+    },
+    {
+      "case": "spatial",
+      "angle": 15.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 7.28375783430149e-10,
+      "force_residual_N": 1.8610729195778454e-15,
+      "moment_residual_Nm": 6.691626947686432e-17
+    },
+    {
+      "case": "planar",
+      "angle": 0.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 4.4044354704652466e-10,
+      "force_residual_N": 8.881784197001252e-16,
+      "moment_residual_Nm": 3.160055498639298e-17
+    },
+    {
+      "case": "planar",
+      "angle": 0.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 0.0,
+      "force_residual_N": 4.857876649047687e-24,
+      "moment_residual_Nm": 5.738136585291802e-17
+    },
+    {
+      "case": "planar",
+      "angle": 2.5,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 3.622898890315139e-10,
+      "force_residual_N": 3.972054645195637e-15,
+      "moment_residual_Nm": 1.0976000821320828e-17
+    },
+    {
+      "case": "planar",
+      "angle": 2.5,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 6.636230428031483e-10,
+      "force_residual_N": 1.776356839400255e-15,
+      "moment_residual_Nm": 7.493831128521316e-17
+    },
+    {
+      "case": "planar",
+      "angle": 5.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 7.650805137015979e-11,
+      "force_residual_N": 5.071782495777993e-24,
+      "moment_residual_Nm": 8.376646744806787e-17
+    },
+    {
+      "case": "planar",
+      "angle": 5.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 7.427290539551173e-10,
+      "force_residual_N": 5.0242958677880805e-15,
+      "moment_residual_Nm": 6.917155539640886e-17
+    },
+    {
+      "case": "planar",
+      "angle": 7.5,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 3.989607692155858e-11,
+      "force_residual_N": 1.9860273225978185e-15,
+      "moment_residual_Nm": 3.532183611592558e-17
+    },
+    {
+      "case": "planar",
+      "angle": 7.5,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 7.481376550618949e-10,
+      "force_residual_N": 3.972054645195637e-15,
+      "moment_residual_Nm": 1.241257361927383e-16
+    },
+    {
+      "case": "planar",
+      "angle": 10.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 4.831761533625109e-11,
+      "force_residual_N": 8.881784197001252e-16,
+      "moment_residual_Nm": 6.558681221078313e-17
+    },
+    {
+      "case": "planar",
+      "angle": 10.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 7.473228310359328e-10,
+      "force_residual_N": 1.7763568394002505e-15,
+      "moment_residual_Nm": 1.2962470942552056e-16
+    },
+    {
+      "case": "planar",
+      "angle": 12.5,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 8.513960709700023e-11,
+      "force_residual_N": 4.440892098502923e-16,
+      "moment_residual_Nm": 3.7860636117918834e-17
+    },
+    {
+      "case": "planar",
+      "angle": 12.5,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 7.508788268393248e-10,
+      "force_residual_N": 3.972054645195637e-15,
+      "moment_residual_Nm": 2.97217275934259e-17
+    },
+    {
+      "case": "planar",
+      "angle": 15.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 1.541893779751944e-10,
+      "force_residual_N": 7.113020337288997e-24,
+      "moment_residual_Nm": 2.796335875973304e-17
+    },
+    {
+      "case": "planar",
+      "angle": 15.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 7.591784643609212e-10,
+      "force_residual_N": 4.3125277178236293e-23,
+      "moment_residual_Nm": 1.1364356966966978e-16
+    },
+    {
+      "case": "centered",
+      "angle": 0.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 9.303838963342636e-10,
+      "force_residual_N": 2.512147933894041e-15,
+      "moment_residual_Nm": 1.8382543195861875e-17
+    },
+    {
+      "case": "centered",
+      "angle": 0.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 0.0,
+      "force_residual_N": 1.7763568394002505e-15,
+      "moment_residual_Nm": 3.2121370125654213e-17
+    },
+    {
+      "case": "centered",
+      "angle": 2.5,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 5.25441474833629e-10,
+      "force_residual_N": 1.7763568394002505e-15,
+      "moment_residual_Nm": 2.8896732660624603e-18
+    },
+    {
+      "case": "centered",
+      "angle": 2.5,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 8.164104691032941e-10,
+      "force_residual_N": 1.6212090004374963e-24,
+      "moment_residual_Nm": 6.268685479144155e-17
+    },
+    {
+      "case": "centered",
+      "angle": 5.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 5.89191585827649e-10,
+      "force_residual_N": 3.972054645195637e-15,
+      "moment_residual_Nm": 1.1247189905581676e-16
+    },
+    {
+      "case": "centered",
+      "angle": 5.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 8.10073531770048e-10,
+      "force_residual_N": 3.972054645195637e-15,
+      "moment_residual_Nm": 1.699745501644618e-17
+    },
+    {
+      "case": "centered",
+      "angle": 7.5,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 5.9454601567102e-10,
+      "force_residual_N": 1.9860273225978185e-15,
+      "moment_residual_Nm": 1.41917581236649e-17
+    },
+    {
+      "case": "centered",
+      "angle": 7.5,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 3.699990936195297e-10,
+      "force_residual_N": 5.617333549722722e-15,
+      "moment_residual_Nm": 2.2605924777092354e-16
+    },
+    {
+      "case": "centered",
+      "angle": 10.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 5.945622914987654e-10,
+      "force_residual_N": 3.552713678800501e-15,
+      "moment_residual_Nm": 1.837256540378583e-17
+    },
+    {
+      "case": "centered",
+      "angle": 10.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 1.830216145312468e-10,
+      "force_residual_N": 2.5121479338940403e-15,
+      "moment_residual_Nm": 5.924368161918543e-17
+    },
+    {
+      "case": "centered",
+      "angle": 12.5,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 5.974567515454033e-10,
+      "force_residual_N": 1.9860273225978185e-15,
+      "moment_residual_Nm": 1.6332312615217475e-17
+    },
+    {
+      "case": "centered",
+      "angle": 12.5,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 6.583930917492167e-11,
+      "force_residual_N": 2.5121479338940403e-15,
+      "moment_residual_Nm": 6.034989752855912e-17
+    },
+    {
+      "case": "centered",
+      "angle": 15.0,
+      "hand": 0,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 6.034085452438609e-10,
+      "force_residual_N": 2.5121479338940403e-15,
+      "moment_residual_Nm": 4.2250909461767716e-17
+    },
+    {
+      "case": "centered",
+      "angle": 15.0,
+      "hand": 1,
+      "status": "optimal",
+      "diagnostic_minimum_cone_excess_N": 6.946169398522142e-10,
+      "force_residual_N": 7.324106877635586e-15,
+      "moment_residual_Nm": 3.444053846387207e-17
+    }
+  ]
+}

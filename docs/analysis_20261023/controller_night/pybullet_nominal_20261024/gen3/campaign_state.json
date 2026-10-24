@@ -1,0 +1,23 @@
+{
+  "started_utc": "2026-10-24T03:34:55.897774+00:00",
+  "supervisor_pid": null,
+  "active_child": null,
+  "completed": [
+    {
+      "name": "L_articulated",
+      "returncode": 0,
+      "finished_utc": "2026-10-24T03:36:59.485599+00:00"
+    },
+    {
+      "name": "articulated_sensor",
+      "returncode": 0,
+      "finished_utc": "2026-10-24T03:37:12.579436+00:00"
+    },
+    {
+      "name": "floating_sensor",
+      "returncode": 0,
+      "finished_utc": "2026-10-24T03:37:17.130665+00:00"
+    }
+  ],
+  "completed_utc": "2026-10-24T03:37:17.130665+00:00"
+}

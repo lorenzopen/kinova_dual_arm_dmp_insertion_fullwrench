@@ -1,0 +1,12 @@
+{
+  "scenarios": 1792,
+  "max_absolute_difference_N": {
+    "route_rmse_N": 0.0004282767067492754,
+    "route_band_rms_N": 0.0002636409569527487,
+    "route_high_band_rms_N": 1.7635344696257868e-05,
+    "low_band_rms_N": 0.0012648371175020268,
+    "first_seat_peak_N": 0.001410780648638088
+  },
+  "identical_control_events_and_noise": true,
+  "passed": true
+}

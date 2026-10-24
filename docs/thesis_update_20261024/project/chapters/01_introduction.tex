@@ -1,0 +1,43 @@
+\chapter{Introduction}
+\label{ch:introduction}
+
+A closed carton gives little information about the distribution of its contents. Its dimensions may be visible while its mass and \CoM{} remain unknown. Two robots lifting it must supply the weight, balance its moments and maintain contact. A larger squeeze increases the friction capacity of a fixed Coulomb contact, but a real grasp need not remain fixed. The wrist can deflect, a pad can leave the surface, and the object can move relative to the hands. This thesis examines the consequences of that dependence rather than treating grip force as an unlimited reserve.
+
+The experimental chain begins with a person manipulating a simulated object through two haptic interfaces. The demonstrations provide a model of how the two wrist wrenches vary together. The autonomous system then measures the load through a slow lift and, where necessary, rotates the object in the air to observe the remaining mass-distribution components. A convex program chooses contact forces that fit those estimates and the current contact geometry. Passive compliance is introduced when a rigid tool and a compliant wrist cannot provide both surface conformity and useful torsional measurements.
+
+The central question is therefore practical: \emph{which aspects of a grasp must be measured, constrained or mechanically preserved before an optimized force allocation can be useful?} The human prior, the estimator and the optimizer each answer a different part of this question. None replaces the contact apparatus on which the other parts rely.
+
+\section{Motivation in industrial handling}
+
+Warehouse handling provides a direct example. Two cartons with the same external shape can contain a dense item near one corner or light contents distributed across the volume. A trajectory that is harmless for one carton can create a large gravitational moment for the other. A mass measurement alone cannot distinguish them. A vertical lift reveals the horizontal offset of the \CoM{}, while a change of orientation is required to identify the component initially parallel to gravity.
+
+A second example is a return bin containing an irregular rigid object. A rough visual estimate may be adequate to bring two tools near opposite sides, but it does not establish three flat contact points per hand. The forces must be allocated on the contacts that actually exist. A detached pad cannot support a force simply because a nominal drawing places it on the surface. This motivates explicit contact masks and an end-effector able to accommodate small geometric mismatch.
+
+A third example is replenishment into a crowded shelf. The grasp may be adequate in free space but inadequate once a neighbouring item opposes insertion. The hands must carry the additional interaction wrench. The trajectory can also matter: a small lateral movement or turn may allow the neighbouring item to move before the incoming part is lowered. This motivates the final insertion application. These examples identify possible uses of the framework; they are not claims of industrial deployment or throughput validation.
+
+\section{Problem definition}
+
+Consider a rigid body held by two hands, with three discrete contacts on each hand. In the blind handling task, its mass and \CoM{} are unknown. Geometry information is restricted to what the chosen experimental arm declares: an approximate size, a coarse visual representation or a known mesh used as a comparison. The controller receives estimated load parameters and measured contact information. Ground truth is reserved for constructing the simulation and calculating errors after execution.
+
+The manipulation is slow enough for contact equilibrium to be an informative approximation. During lift estimation and wielding, the object is supported only by the two hands. No table, pivot or wall contributes to the load balance. The method assumes a known friction coefficient, rigid object mechanics and a contact measurement consistent with the sign and frame conventions of the model. The consequences of relaxing these assumptions are part of the discussion.
+
+The final Tetris task changes the information available. Mass and geometry are taken from a declared catalogue; pose is uncertain. The wrench is then used to identify the offset between the planned grasp and the grasp that was obtained. Environmental contacts are deliberately present during staging and insertion. Results from this application are not pooled with blind inertial-estimation results.
+
+\section{Research questions}
+
+The work addresses four connected questions. First, can a haptic recording preserve the rotational signal that the force model is intended to learn? Second, what can be estimated from a vertical lift, and what requires an additional change of gravity direction? Third, how should the optimizer represent detached contacts, friction, effort and finite actuation? Fourth, how can the resulting grasp be used in an insertion task without replacing its finite force capacity with an ideal clamp?
+
+The sequence matters. A statistical model trained on attenuated moments describes the recording apparatus as well as the person. An accurate optimizer can solve an inappropriate model precisely. A good free-space allocation can still be insufficient during insertion. These are different failure mechanisms, and the experiments must distinguish them.
+
+\section{Contribution and boundaries}
+
+The measured contribution is the dependence of grasp quality and measurement quality on force and compliance. In the documented wrist comparison, increasing squeeze does not monotonically improve the outcome. In the recording comparison, a more compliant rotational channel preserves contact more easily while transmitting less of the torsional signal. These findings explain why conformity, torsional transmission and grip effort cannot be adjusted independently by one scalar stiffness or squeeze setting.
+
+The implementation supporting those observations combines a six-contact model, an orientation-dependent bimanual prior, observable-subspace inertial estimation and a bounded convex allocation. The TP-GMM supplies a coordination prior in the cost; it is an established modelling technique, not a new learning algorithm. The DMP insertion formulation is likewise attributed to its source. The present work concerns their use on a finite, compliant dual-hand apparatus and the conditions under which their predictions survive execution.
+
+This thesis does not establish a universal slip-free guarantee. Friction feasibility is conditional on the contact model, the parameter estimates and the realization of the allocated forces. Contact changes and wrist deflection can invalidate those conditions. The geometry extension and ongoing insertion campaign also require further controlled comparisons before broad generalization can be claimed.
+
+\section{Organization}
+
+Chapter~\ref{ch:related} positions the work among active perception, task-parameterized learning, convex force allocation and compliant insertion. Chapter~\ref{ch:haption} describes what the Haption apparatus records. Chapter~\ref{ch:contacts} explains the contact model and end-effector evolution. Chapters~\ref{ch:prior}--\ref{ch:socp} develop the learned prior, estimation and force allocation. Chapter~\ref{ch:evidence} collects the established measurements and their limits. Chapter~\ref{ch:geometry} presents the geometry progression with explicit completion tasks. Chapter~\ref{ch:tetris} documents the catalogue insertion application and DMP adaptation. Chapter~\ref{ch:kinova} executes the insertion on two Kinova Gen3 arms with wrist force/torque sensors. Chapter~\ref{ch:discussion} returns to industrial relevance and the limits of the available evidence. The appendices provide mathematical checks and a reproducibility record.
+

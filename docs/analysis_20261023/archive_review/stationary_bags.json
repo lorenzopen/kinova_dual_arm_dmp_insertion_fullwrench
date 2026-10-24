@@ -1,0 +1,112 @@
+[
+  {
+    "bag": "NVIDIA_RUNS\\bags\\fermo_20261023_122511\\fermo_20261023_122511_0.mcap",
+    "duration_s": 81.16185760498047,
+    "std_whole_N": 1.6934720292695817,
+    "range_whole_N": 8.780148193033838,
+    "candidate_quiet_windows": [
+      {
+        "start_s": 0.0,
+        "end_s": 10.0,
+        "std_force_N": 1.8487349641550828,
+        "band_rms_N": 0.03518826409022921,
+        "joint_position_max_std_rad_L_R": [
+          1.871760945618507,
+          0.025650237984943803
+        ]
+      },
+      {
+        "start_s": 10.0,
+        "end_s": 20.0,
+        "std_force_N": 0.3175718172625301,
+        "band_rms_N": 0.03916323917118876,
+        "joint_position_max_std_rad_L_R": [
+          1.2839937666631138,
+          0.004960741980785225
+        ]
+      },
+      {
+        "start_s": 20.0,
+        "end_s": 30.0,
+        "std_force_N": 0.008624663869784584,
+        "band_rms_N": 0.0012804374351969708,
+        "joint_position_max_std_rad_L_R": [
+          6.662455158427043e-06,
+          2.1271530799222013e-05
+        ]
+      },
+      {
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "std_force_N": 0.01041257867530269,
+        "band_rms_N": 0.0011159622856790755,
+        "joint_position_max_std_rad_L_R": [
+          3.992136190795455e-06,
+          1.6414550866059188e-05
+        ]
+      },
+      {
+        "start_s": 40.0,
+        "end_s": 50.0,
+        "std_force_N": 0.009031895249047765,
+        "band_rms_N": 0.0010601071888865401,
+        "joint_position_max_std_rad_L_R": [
+          1.400851617824986e-06,
+          1.579269873058147e-06
+        ]
+      },
+      {
+        "start_s": 50.0,
+        "end_s": 60.0,
+        "std_force_N": 0.008694440869760563,
+        "band_rms_N": 0.0011504784124834494,
+        "joint_position_max_std_rad_L_R": [
+          1.1017237976351782e-06,
+          3.2982546539661533e-06
+        ]
+      },
+      {
+        "start_s": 60.0,
+        "end_s": 70.0,
+        "std_force_N": 0.45072332897390227,
+        "band_rms_N": 0.15823324344427153,
+        "joint_position_max_std_rad_L_R": [
+          2.5700770693631663,
+          3.1087016911341947
+        ]
+      },
+      {
+        "start_s": 70.0,
+        "end_s": 80.0,
+        "std_force_N": 0.30203392665053447,
+        "band_rms_N": 0.12611015127957537,
+        "joint_position_max_std_rad_L_R": [
+          0.3812422413813179,
+          0.3588423152718484
+        ]
+      }
+    ],
+    "fixed_window_20_60s": {
+      "std_force_mean_hand_N": 0.012962284950206916,
+      "bands_mean_hand": {
+        "0.8_2.5": {
+          "rms_N": 0.0010740859135331055,
+          "p95_absolute_N": 0.0021869305425807747
+        },
+        "2.5_10": {
+          "rms_N": 0.004048168529120298,
+          "p95_absolute_N": 0.008357229254404828
+        }
+      },
+      "joint_position_max_std_rad_L_R": [
+        1.261776475349481e-05,
+        3.96445888003744e-05
+      ]
+    }
+  },
+  {
+    "bag": "NVIDIA_RUNS\\bags\\fermo_20261023_123102\\fermo_20261023_123102_0.mcap",
+    "usable_force_data": false,
+    "reason": "No bilateral ft_data_avg samples; this bag contains rosout only."
+  }
+]

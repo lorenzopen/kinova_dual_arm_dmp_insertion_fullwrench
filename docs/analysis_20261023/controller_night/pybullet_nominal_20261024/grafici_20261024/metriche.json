@@ -1,0 +1,99 @@
+{
+  "created_utc": "2026-10-24T03:57:44.159138+00:00",
+  "comparisons": [
+    {
+      "piece": "Z",
+      "run": "Gen3_Z_central2700_implicit_dt025",
+      "real_source": "docs\\runs\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143.csv",
+      "real": {
+        "route_rmse_N": 0.3008220619800265,
+        "route_force_band_08_25_N": 0.1254124600281349,
+        "route_error_band_08_25_N": 0.16198920033795544,
+        "route_force_band_25_10_N": 0.06618925416370934,
+        "active_min_L_N": 2.9360363216093903,
+        "active_min_R_N": 2.9243646005601414,
+        "seat_positive_error_N": 1.445897531187518,
+        "route_max_positive_error_N": 0.7330811970162427,
+        "route_max_negative_error_N": -2.1970700647105295,
+        "L_route_force_band_08_25_N": 0.12553674133586332,
+        "L_route_force_band_25_10_N": 0.06739159020453435,
+        "R_route_force_band_08_25_N": 0.1255932126545132,
+        "R_route_force_band_25_10_N": 0.06709851002654205
+      },
+      "simulation": {
+        "route_rmse_N": 0.20861644879055058,
+        "route_force_band_08_25_N": 0.04179601937567324,
+        "route_error_band_08_25_N": 0.08585447877295924,
+        "route_force_band_25_10_N": 0.013841277016153715,
+        "active_min_L_N": 3.0726023236454068,
+        "active_min_R_N": 3.0726055642803973,
+        "seat_positive_error_N": 0.8495437477978682,
+        "route_max_positive_error_N": 0.48911919092821154,
+        "route_max_negative_error_N": -1.6390862702766906,
+        "L_route_force_band_08_25_N": 0.04194680620463105,
+        "L_route_force_band_25_10_N": 0.01460503453957536,
+        "R_route_force_band_08_25_N": 0.0416805837201063,
+        "R_route_force_band_25_10_N": 0.01361446942842016
+      },
+      "final_worst_cell_mm": 4.412807471205099,
+      "realization": "Original FFI/SOCP; approximate locally implicit inner Cartesian impedance, not the verbatim lab loop",
+      "dt": 0.00025
+    },
+    {
+      "piece": "L",
+      "run": "Gen3_L_central2700_implicit_dt05",
+      "real_source": "docs\\runs\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743.csv",
+      "real": {
+        "route_rmse_N": 0.28195686479224785,
+        "route_force_band_08_25_N": 0.114798587231525,
+        "route_error_band_08_25_N": 0.1397115235400942,
+        "route_force_band_25_10_N": 0.06604521779140854,
+        "active_min_L_N": 3.1408346013530974,
+        "active_min_R_N": 3.1795496706703936,
+        "seat_positive_error_N": 2.6375172546851067,
+        "route_max_positive_error_N": 0.6222600302969461,
+        "route_max_negative_error_N": -1.5123511319581153,
+        "L_route_force_band_08_25_N": 0.1118936978686545,
+        "L_route_force_band_25_10_N": 0.06578546301697721,
+        "R_route_force_band_08_25_N": 0.11842430723285459,
+        "R_route_force_band_25_10_N": 0.06956679251351644
+      },
+      "simulation": {
+        "route_rmse_N": 0.2775172103252413,
+        "route_force_band_08_25_N": 0.043497133222354566,
+        "route_error_band_08_25_N": 0.08896548264272285,
+        "route_force_band_25_10_N": 0.01176836147230418,
+        "active_min_L_N": 2.912710993603803,
+        "active_min_R_N": 2.91275575405475,
+        "seat_positive_error_N": 1.4704923523271436,
+        "route_max_positive_error_N": 0.48310270905084174,
+        "route_max_negative_error_N": -1.9476131294768217,
+        "L_route_force_band_08_25_N": 0.043365527245039906,
+        "L_route_force_band_25_10_N": 0.011943432770570186,
+        "R_route_force_band_08_25_N": 0.04374620981144487,
+        "R_route_force_band_25_10_N": 0.011736332972971072
+      },
+      "final_worst_cell_mm": 4.781921159987842,
+      "realization": "Original FFI/SOCP; approximate locally implicit inner Cartesian impedance, not the verbatim lab loop",
+      "dt": 0.0005
+    }
+  ],
+  "exact_source_trial": {
+    "run": "Gen3Lab_Z_central2700_warm_dt025",
+    "end_seconds": 0.12,
+    "error": "Abort('right flange 43 mm from its target')",
+    "events": [
+      {
+        "t": 0.07200000000000001,
+        "side": "R",
+        "event": "velocity_watchdog_gravity_only"
+      },
+      {
+        "t": 0.089,
+        "side": "L",
+        "event": "velocity_watchdog_gravity_only"
+      }
+    ]
+  },
+  "interpretation": "Full insertion curves are available only for approximate inner impedance. Verbatim source trial stops before pickup. No force extrapolation or refitting."
+}

@@ -1,0 +1,143 @@
+[
+  {
+    "family": "delay",
+    "motion_free_r2_min_median_max": [
+      0.34115180075049534,
+      0.4221702239326696,
+      0.6631883186430862
+    ],
+    "motion_free_rmse_min_median_max": [
+      0.046892967296051365,
+      0.0568081691052984,
+      0.06842735258467929
+    ],
+    "force_free_r2_min_median_max": [
+      0.28890926382159143,
+      0.3983509613060605,
+      0.66659144799152
+    ],
+    "force_free_rmse_min_median_max": [
+      0.11981048599445115,
+      0.1412357426979353,
+      0.16679999149579813
+    ],
+    "force_given_measured_motion_r2_min_median_max": [
+      0.8352521187539641,
+      0.9258962768195604,
+      0.9833093128402558
+    ],
+    "force_given_measured_motion_rmse_min_median_max": [
+      0.02868425060405673,
+      0.050884546237648265,
+      0.07919649256792768
+    ],
+    "passes_provisional_gate": false
+  },
+  {
+    "family": "first_order",
+    "motion_free_r2_min_median_max": [
+      0.3394526657147193,
+      0.4265953020212995,
+      0.6679689823283581
+    ],
+    "motion_free_rmse_min_median_max": [
+      0.04745480966154664,
+      0.05686815168811736,
+      0.06798623550513873
+    ],
+    "force_free_r2_min_median_max": [
+      0.2880443366598653,
+      0.3975687176659568,
+      0.6712493043876895
+    ],
+    "force_free_rmse_min_median_max": [
+      0.11957753130824436,
+      0.14081645429833528,
+      0.16637438402920454
+    ],
+    "force_given_measured_motion_r2_min_median_max": [
+      0.8352521187539641,
+      0.9258962768195604,
+      0.9833093128402558
+    ],
+    "force_given_measured_motion_rmse_min_median_max": [
+      0.02868425060405673,
+      0.050884546237648265,
+      0.07919649256792768
+    ],
+    "passes_provisional_gate": false
+  },
+  {
+    "family": "second_order",
+    "motion_free_r2_min_median_max": [
+      0.3203041341442291,
+      0.42020159532214885,
+      0.6696041002789406
+    ],
+    "motion_free_rmse_min_median_max": [
+      0.047181768581697044,
+      0.057106705312371595,
+      0.06877451803103765
+    ],
+    "force_free_r2_min_median_max": [
+      0.26956822810999403,
+      0.3997988768477913,
+      0.673130932718579
+    ],
+    "force_free_rmse_min_median_max": [
+      0.1193660094467287,
+      0.14172424610485973,
+      0.1676426269152613
+    ],
+    "force_given_measured_motion_r2_min_median_max": [
+      0.8352521187539641,
+      0.9258962768195604,
+      0.9833093128402558
+    ],
+    "force_given_measured_motion_rmse_min_median_max": [
+      0.02868425060405673,
+      0.050884546237648265,
+      0.07919649256792768
+    ],
+    "passes_provisional_gate": false
+  },
+  {
+    "family": "ARX2",
+    "motion_free_r2_min_median_max": [
+      0.3257238398301633,
+      0.4120788659574322,
+      0.716079079360286
+    ],
+    "motion_free_rmse_min_median_max": [
+      0.0473875630656192,
+      0.05775119748683319,
+      0.06755840266481741
+    ],
+    "force_free_r2_min_median_max": [
+      0.2742331619673358,
+      0.3611112452154369,
+      0.7119379492446368
+    ],
+    "force_free_rmse_min_median_max": [
+      0.11948202320048575,
+      0.1424380988953865,
+      0.17315923479336373
+    ],
+    "force_given_measured_motion_r2_min_median_max": [
+      0.8352521187539641,
+      0.9258962768195604,
+      0.9833093128402558
+    ],
+    "force_given_measured_motion_rmse_min_median_max": [
+      0.02868425060405673,
+      0.050884546237648265,
+      0.07919649256792768
+    ],
+    "passes_provisional_gate": false,
+    "motion_one_step_r2_min_median_max": [
+      0.9385799521317968,
+      0.9854455321028598,
+      0.9993386383072288
+    ]
+  }
+]

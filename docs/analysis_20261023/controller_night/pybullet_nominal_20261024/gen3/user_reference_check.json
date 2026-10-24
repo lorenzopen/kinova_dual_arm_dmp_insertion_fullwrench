@@ -1,0 +1,31 @@
+{
+  "user_reference": "Lorenzo supplied verbatim pure controller source and node contract in chat",
+  "executable_method_AST_equal": {
+    "compute_torque": true,
+    "estimate_wrench": true
+  },
+  "original_source_sha256": "685c80b14b527d450d6d42a03f779d04f928a4e2d31d22b44c9733d7a98cbfba",
+  "boundary": "Confirms supplied compute_torque and estimate_wrench executable bodies; not deployed binary/full-file hash verification",
+  "explicit_contract": {
+    "torque_sensor": "minus previous applied motor torque",
+    "publish_hz": 250,
+    "friction_scale": 0.0,
+    "home_seconds_launch": 8.0,
+    "cart_k": [
+      1500,
+      1500,
+      1500,
+      20,
+      20,
+      20
+    ],
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ]
+  }
+}

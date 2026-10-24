@@ -1,2 +1,9 @@
 * text=auto eol=lf
 *.npz binary
+
+# Preserve exact bytes of analysis snapshots and SHA-256-sealed deliverables.
+docs/analysis_20261023/controller_night/** -text
+docs/plate_friction_study_20261024/** -text
+docs/thesis_update_20261024/** -text
+docs/thesis_haption_update_20261024/** -text
+docs/thesis_plate_update_20261024/** -text

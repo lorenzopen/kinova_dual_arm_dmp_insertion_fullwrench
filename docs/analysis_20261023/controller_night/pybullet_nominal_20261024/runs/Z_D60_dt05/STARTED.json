@@ -1,0 +1,13 @@
+{
+  "pid": 17768,
+  "argv": [
+    "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/run_bullet.py",
+    "--piece",
+    "Z",
+    "--dt",
+    ".0005",
+    "--tag",
+    "Z_D60_dt05",
+    "--video"
+  ]
+}

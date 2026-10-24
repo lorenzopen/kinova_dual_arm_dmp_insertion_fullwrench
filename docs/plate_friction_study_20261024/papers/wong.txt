@@ -1,0 +1,1319 @@
+
+=== PAGE 1 ===
+Industrial Dual-Arm Box Handling via Online Inertial Estimation and Convex Wrench
+Optimization
+Kenzhi Iskandar Wonga,1, Lin Yanga,1, Qian Ying Leea, Domenico Campoloa,∗
+aSchool of Mechanical and Aerospace Engineering, Nanyang Technological University, Singapore
+Abstract
+Industrial robotic object handling often involves boxes and packages whose mass and center of mass are not known in advance.
+These uncertainties affect the force–moment balance required for stable lifting, and improper regulation of contact wrenches can
+lead to slip, object drop, orientation deviation, or excessive squeezing. This paper presents a friction-aware dual-arm box-handling
+framework for objects with unknown inertial properties. The proposed approach estimates the object mass and center of mass online
+from measured contact wrenches, and computes friction-feasible contact forces and torsional moments through a second-order cone
+program (SOCP) under ellipsoidal friction-limit-surface constraints. An offline trajectory refinement stage is also included to reduce
+undesired object–environment contact when geometric constraints are present. By enforcing friction feasibility as a hard constraint
+and minimizing contact effort within the feasible region, the framework achieves stable lifting without treating slip avoidance and
+excessive squeezing as separately tuned objectives. Experiments on a real dual-arm robotic system under different center-of-mass
+configurations demonstrate that the method lifts objects with unknown inertial properties while maintaining stable frictional contact.
+Keywords:dual-arm manipulation, online inertial parameter estimation, friction limit surface, torsional friction, second-order
+cone programming
+1. Introduction
+Industrial robotic box handling is a central operation in mod-
+ern manufacturing and warehouse automation, where robots are
+increasingly expected to move boxes, containers, and packages
+across shelves, workstations, and storage systems [1, 2]. In
+these environments, boxes often have simple external geometry
+but uncertain physical properties: the mass may not be known
+in advance, and the center of mass may vary depending on the
+distribution of contents inside the box. These uncertainties di-
+rectly affect the force–moment balance required for stable lift-
+ing. If not accounted for, they can cause object tilt, slip, drop,
+or excessive squeezing during manipulation.
+In practical settings, industrial manipulation systems are
+commonly performed using position-controlled parallel-jaw
+grippers [3] or suction-based grippers [4, 5], which are widely
+used in industrial and warehouse automation [2]. While effec-
+tive for objects with compatible geometry, these end-effectors
+depend on dedicated grasp conditions: parallel-jaw grippers re-
+quire accessible grasp surfaces, while suction grippers require
+a reliable seal. These assumptions are difficult to satisfy for
+common packaging items such as boxes that are large relative
+to the gripper, have permeable surfaces, or contain uneven mass
+distributions.
+An alternative is dual-arm frictional handling, where two
+arms support and transport an object through frictional contacts
+∗Corresponding author.
+Email address:d.campolo@ntu.edu.sg(Domenico Campolo)
+1These authors contributed equally to this work.
+Figure 1: Dual-arm box handling whose mass and center of mass are unknown
+to the robotic system. The system estimates these properties online and gen-
+erates appropriate contact forces and torques to achieve stable lifting through
+frictional contacts without slip or excessive squeezing.
+on opposite sides rather than through dedicated grasp closures
+[6, 7], as illustrated in Fig. 1. This approach is attractive for
+industrial box handling because it can accommodate a wider
+range of object geometries and contact conditions. However,
+because support is provided entirely through friction, improper
+regulation of the contact wrench can lead to slip, object drop,
+orientation deviation, or excessive squeezing. This makes ex-
+plicit reasoning about contact forces and torques essential.
+To build physical intuition, consider the case where the ob-
+
+=== PAGE 2 ===
+Figure 2: Dual-arm lifting under different known CoM configurations. (a) Cen-
+tered CoM: force equilibrium and friction constraints are sufficient. (b) Planar
+off-center CoM: the gravitational moment is balanced by redistributing contact
+forces. (c) 3D off-center CoM: contact torques are required when gravity does
+not intersect the contact line.
+ject CoM is known. When the CoM coincides with the geo-
+metric center and lies along the line connecting the two contact
+points, the lifting problem can be treated as planar, as shown
+in Fig. 2(a). In this case, gravity is symmetrically shared by
+the two manipulators, and lifting can be achieved by enforc-
+ing force equilibrium and friction cone constraints at each con-
+tact [8, 9], without requiring explicit contact torques. When
+the CoM is offset, the required force-torque balance changes.
+In planar lifting, the gravitational moment can still be compen-
+sated by redistributing the contact forces, as shown in Fig. 2(b).
+In three-dimensional lifting, however, an offset CoM can in-
+duce moments that cannot be balanced by contact forces alone.
+When the line of action of gravity does not intersect the line
+connecting the contact points, contact torques are required in
+addition to contact forces, as shown in Fig. 2(c). Thus, stable
+dual-arm box handling in 3D requires contact wrench distri-
+bution under friction constraints, online estimation of inertial
+parameters, and physical execution of the resulting wrench. We
+review prior work along these axes.
+Existing approaches to cooperative manipulation have
+largely focused on object-level impedance, compliance, and
+internal-force control strategies for coordinating multiple ma-
+nipulators while maintaining grasp stability [10, 11, 12]. These
+methods have shown strong practical effectiveness for coordi-
+nated transport and disturbance rejection, but they generally do
+not explicitly optimize the full contact wrench under friction
+constraints, and instead rely on prescribed impedance behaviors
+or user-specified internal force references [13, 11]. More recent
+work has also considered cooperative manipulation under input
+constraints and underactuation using switching or constraint-
+aware control strategies [14].
+Related work on quasi-static grasp analysis and force distri-
+bution studies how to balance a given external load while satis-
+fying contact constraints [15, 9]. However, these formulations
+typically assume that object properties and external loads are
+known a priori. In contrast, the framework proposed here es-
+timates the object mass and CoM online from contact wrench
+measurements and uses the estimates during wrench distribu-
+tion.
+In parallel, learning-based grasping methods have also
+demonstrated strong empirical performance in selecting feasi-
+ble grasps from sensory observations [16, 17], and end-to-end
+methods can map perception directly to grasping and lifting ac-
+tions [18]. However, mass and CoM are inertial properties that
+cannot be reliably inferred from visual appearance alone, since
+identical visual appearance does not imply identical mass distri-
+bution. Identifying these properties therefore requires physical
+interaction [19]. Our approach follows this interaction-driven
+viewpoint and combines online inertial-parameter estimation
+with analytic, friction-aware wrench optimization.
+In this work, we address dual-arm handling of objects with
+unknown mass and CoM. Under a quasi-static assumption,
+we estimate object properties online and compute friction-
+feasible contact forces and torques through convex optimiza-
+tion. The optimized wrenches are then executed on a real dual-
+arm robotic system equipped with force–torque sensors. Ex-
+periments show that the proposed method can lift objects with
+different CoM configurations while avoiding slip, object drop,
+and excessive squeezing. The results also show the importance
+of contact torques in three-dimensional lifting, especially when
+the object CoM is offset from the geometric center.
+The main contributions of this work are threefold:
+•We introduce a dual-arm box-handling framework for ob-
+jects with unknown mass and CoM, integrating offline tra-
+jectory refinement, online inertial-parameter estimation,
+convex wrench optimization, and impedance-based execu-
+tion into a closed-loop robotic manipulation pipeline.
+•We formulate the 3D dual-arm contact wrench distribution
+problem as a second-order cone program (SOCP) under el-
+lipsoidal friction-limit-surface constraints, explicitly cap-
+turing the coupling between tangential force and torsional
+moment about the contact normal.
+•We introduce a safety-margin tightening of the ellip-
+soidal friction-limit-surface constraint, parameterized by
+rs, which defines a conservative inner feasible wrench set
+and ensures that the commanded contact wrench remains
+strictly inside the friction-feasible region rather than oper-
+ating on its boundary.
+2. Methods
+We consider dual-arm handling of a rigid object through two
+frictional contacts. The object is lifted quasi-statically along a
+Cartesian trajectory obtained from demonstration [20] or prior
+planning. While the desired object trajectory is known, the ob-
+ject mass and center of mass (CoM) are initially unknown. The
+objective is to estimate these parameters online and compute
+friction-feasible contact forces and torques that enable slip-free
+and drop-free lifting without excessive squeezing.
+As summarized in Fig. 3, the proposed framework consists
+of three phases and a wrench execution layer:
+•Phase I (offline)refines the nominal object trajectory of-
+fline to avoid undesired object–environment contact while
+remaining close to the reference motion.
+2
+
+=== PAGE 3 ===
+Figure 3: Overview of the proposed framework. An offline trajectory refinement stage is followed by online object parameter estimation and contact wrench
+optimization. The optimized wrenches are executed through command synthesis and wrench correction in closed-loop interaction with the physical system.
+Figure 4: Phase I trajectory refinement via black-box optimization. The ob-
+jective is to refine a given object trajectory by minimizing object–environment
+contact while remaining close to the reference trajectory. Optimization is done
+using DMP-based black-box optimization and physics-based simulation.
+•Phase II (online)estimates the object mass and CoM on-
+line from measured contact wrenches and robot kinemat-
+ics.
+•Phase III (online)computes the contact forces and
+torques by solving a convex optimization problem subject
+to force–moment equilibrium and friction constraints.
+The resulting wrenches are executed through Cartesian
+impedance control with wrench feedback during lifting.
+2.1. Phase I: Trajectory Refinement for Collision Avoidance
+Phase I refines the object trajectory offline to reduce unde-
+sired object–environment contact while remaining close to the
+reference motion. Letz ∗
+box(t)∈R 6 denote the object pose ref-
+erence trajectory in local Cartesian pose coordinates. If the tra-
+jectory is obtained from demonstration [20], an associated co-
+varianceΣ z∗
+box ∈R 6×6 may also be available.
+The trajectory is represented using Dynamical Movement
+Primitives (DMPs) [21]. For each dimensiond=1, . . . ,6, the
+DMP is parameterized by weightsΘ d ∈R N, initialized by Lo-
+cally Weighted Regression on the reference trajectory [22]. To
+refine the trajectory, we define an exploration covariance over
+the DMP parameters:
+ΣΘd =cI N,(1)
+wherec>0 controls the exploration magnitude. At each itera-
+tion,Rcandidate parameter vectors are sampled as
+Θd,r ∼ N Θd,Σ Θd
+,r=1, . . . ,R.(2)
+Solving the sampled DMPs produces per-dimension candidate
+trajectoriesz box,d,r(t), which are stacked to form the full can-
+didate object trajectoryz box,r(t). Each candidate is simulated
+in Drake [23], producing the simulated object trajectory and
+object–environment contact forces:
+ z′
+box,r(t),F env,r(t) ←Drake  zbox,r(t).(3)
+Each rollout is evaluated using
+Jr =αJ 1,r +(1−α)J 2,r,(4)
+whereα∈(0,1) balances tracking of the reference trajectory
+and avoidance of object–environment contact. The tracking and
+contact costs are
+J1,r =
+X
+t
+ z′
+box,r(t)−z ∗
+box(t)⊤Σ−1
+z∗
+box
+ z′
+box,r(t)−z ∗
+box(t),(5)
+J2,r =
+X
+t
+∥Fenv,r(t)∥2
+2.(6)
+The first term (5) is a Mahalanobis tracking cost, which reduces
+to a squared Euclidean tracking cost when covariance infor-
+mation is unavailable. The second term (6) penalizes object–
+environment contact through the squared Euclidean norm of the
+contact force between the object and environmentF env,r(t).
+The rollouts are sorted by cost, with permutationπsatisfying
+Jπ(1) ≤J π(2) ≤ · · · ≤J π(R).(7)
+3
+
+=== PAGE 4 ===
+(a)
+ (b)
+Figure 5: Phase II overview. (a) Impedance-based interaction model dur-
+ing dual-arm lifting. Commanded task-space poses generate contact wrenches
+through virtual spring. (b) Lift initiation by ramping commanded end-effector
+poses along predefined directions.
+Figure 6: Object, left handle, and right handle coordinate frames. The box-
+fixed{B}frame{x local,y local,z local}is defined at the geometric center, withz local
+aligned with the lifting direction. The center of mass (CoM) is expressed in this
+frame. The contact normal directionsn L andn R at the left and right handles are
+indicated. An additional weight is used to vary the mass distribution.
+The DMP parameters are updated using the lowest-cost rollout,
+Θd ←Θ d,π(1),d=1, . . . ,6,(8)
+and the exploration covariance is updated using the Cross-
+Entropy Method (CEM) [24] over the bestKe ≤Relite rollouts:
+ΣΘd ← 1
+Ke
+KeX
+k=1
+ Θd,π(k) −Θ d
+ Θd,π(k) −Θ d
+⊤,
+d=1, . . . ,6.
+(9)
+The procedure repeats until
+max
+i,j
+ ΣΘd
+
+i j < ϵconv,d=1, . . . ,6,(10)
+where 0< ϵ conv <c. Upon convergence, the optimized DMP
+parameters define the refined object trajectoryz ref
+box(t), from
+which the end-effector reference trajectoriesz ref
+L (t) andz ref
+R (t)
+are obtained using the known grasp geometry.
+2.2. Phase II: Estimation of Object Parameters
+Throughout the proposed framework, robot-object interac-
+tion is modeled through Cartesian impedance control, where
+the interaction wrench is proportional to the difference between
+the commanded and measured end-effector poses [25]:
+w=K(u−z),(11)
+wherew∈R 6 is the task-space wrench, andu,z∈R 6 are
+the commanded pose, and end-effector pose, respectively.K∈
+R6×6 is a positive definite stiffness matrix. Damping is omitted
+because it is handled by the low-level controller.
+For each handlei∈ {L,R}, the contact is represented by a
+point located at the center of the handle–box contact region. Its
+position relative to the box geometric center is denoted byr i ∈
+R3. During Phase II, the measured contact wrench is written as
+ˆwi =[ ˆf⊤
+i ˆτ⊤
+i ]⊤ ∈R 6, where ˆ(·) denotes a measured quantity.
+Here, ˆfi is the measured force applied on the object and ˆτi is the
+measured free contact moment about the contact point. Both
+are expressed in the object-fixed frame{B}shown in Fig. 6.
+2.2.1. Lift initiation and lift-offdetection
+In Phase II, we estimate the object mass and CoM after lift-
+off. To initiate lifting, the commanded end-effector poses are
+ramped along predefined unit lifting directionsℓ i, whose orien-
+tation components are zero:
+ui(k)=u i(0)+α(k)ℓ i,i∈ {L,R},(12)
+wherekis the discrete control step,u i(0) is the initial com-
+manded pose, andα(k) is a scalar lift magnitude. The lift mag-
+nitude is initialized asα(0)=0 and increased monotonically:
+α(k+1)=α(k)+ ∆α,(13)
+where∆α >0 is the lift increment. This gradually increases the
+commanded lift until the object detaches from the ground.
+Lift-offis detected from end-effector feedback. Letp i(k)∈
+R3 denote the position component of the measured end-effector
+pose. The vertical displacement of each handle is
+∆hi(k)=  pi(k)−p i(0)⊤ˆzlocal,i∈ {L,R}.(14)
+Lift-offis declared when
+min{∆hL(k),∆h R(k)} ≥h lift,(15)
+whereh lift is chosen conservatively to ensure clearance even
+under small object tilting.
+2.2.2. Mass estimation
+Once lift-offis achieved, the object is assumed to be in equi-
+librium, and the mass is estimated from force balance along the
+lifting direction. We collectMpost-lift-offmeasurements and
+formulate the estimation as a least-squares problem. All quanti-
+ties are expressed in the box-fixed frame{B}, where the contact
+locations and CoM are constant.
+The gravity vector expressed in{B}is defined as
+g=−g ˆzlocal,g>0,(16)
+wheregis the gravitational acceleration magnitude.
+For thej-th post-lift-offmeasurement, withj=1, . . . ,M,
+define the total measured contact force as
+ˆF j = ˆfL,j + ˆfR,j .(17)
+4
+
+=== PAGE 5 ===
+Force equilibrium gives
+ˆF j +mg≈0,(18)
+wheremis the object mass. Accounting for measurement noise
+and quasi-static modeling error, this can be written as
+ˆF j =−gm+ϵ F,j .(19)
+whereϵ F,j captures measurement noise and quasi-static model-
+ing error. Stacking all measurements gives the linear regression
+model:
+yF =Φ Fm+ϵ F,(20)
+where
+yF =
+
+ˆF1
+...
+ˆFM
+
+∈R 3M ,Φ F =
+
+−g
+...
+−g
+
+∈R 3M×1 .(21)
+The mass estimate is obtained as
+ˆm=Φ†
+FyF,(22)
+where (·)† denotes the Moore–Penrose pseudoinverse.
+2.2.3. CoM estimation
+The CoM is expressed in the object-fixed frame as
+rcom =
+h
+rx ry rz
+i⊤
+.(23)
+For thej-th measurement, define the resultant measured contact
+moment about the box geometric center as
+ˆs j =
+X
+i∈{L,R}
+
+ri × ˆfi,j + ˆτi,j
+
+,(24)
+wherer i is the vector from the box geometric center to contact
+i. Moment equilibrium gives
+ˆs j +r com × ( ˆmg) ≈0.(25)
+Rewriting the cross product in skew-symmetric matrix form and
+accounting for measurement noise and quasi-static modeling er-
+ror gives
+ˆs j =[ ˆmg]×rcom +ϵ r,j .(26)
+Stacking all measurements gives the linear regression model:
+yr =Φ rrcom +ϵ r,(27)
+where
+yr =
+
+ˆs1
+...
+ˆsM
+
+∈R 3M ,Φ r =
+
+[ ˆmg]×
+...
+[ ˆmg]×
+
+∈R 3M×3 .(28)
+The CoM estimate is then
+ˆrcom =Φ †
+r yr.(29)
+The rank ofΦ r determines which CoM components are ob-
+servable. In the present lifting setting, gravity acts alongz local,
+so only the in-plane CoM coordinates affect the lifting moment
+equilibrium. The componentr z does not contribute to the gravi-
+tational moment during upright lifting. Therefore, the estimated
+in-plane coordinates ˆrx and ˆry are used in Phase III for contact
+wrench optimization.
+2.3. Phase III: Contact Force and Torque Optimization via
+SOCP
+In Phase III, the objective is to compute optimal contact
+wrenches at the two robot end-effectors that support the object
+against gravity while respecting frictional contact constraints.
+The formulation is based on the quasi-static assumption and
+uses the online estimated object mass and CoM obtained in
+Phase II.
+2.3.1. Contact model
+Let ˆni ∈R 3 denote the outward unit normal at contacti∈
+{L,R}, see Fig. 6. The orthogonal projector onto the tangent
+plane is defined as
+Πi =I 3 − ˆni ˆn⊤
+i .(30)
+The signed normal force and tangential force are then
+fn,i = ˆn⊤
+i fi,f t,i =Π ifi,(31)
+where compression corresponds tof n,i ≤0. Similarly, the con-
+tact moment is decomposed into its torsional and tangential
+components as
+τn,i = ˆn⊤
+i τi,τ t,i =Π iτi.(32)
+Since rotational balance due to CoM offsets can be achieved
+by the contact forces together with the torsional moment about
+the contact normal, the contact model does not require bending
+moments about the tangent directions. Therefore, we impose
+τt,i =Π iτi =0.(33)
+2.3.2. Equilibrium constraints
+Under quasi-static equilibrium condition, the desired con-
+tact wrenches must balance the estimated gravitational wrench.
+Force and moment equilibrium about the box geometric center
+require
+X
+i∈{L,R}
+fi +ˆmg=0,(34)
+X
+i∈{L,R}
+(ri ×f i +τ i) + ˆrcom ×ˆmg=0,(35)
+wherer i is the vector from the box geometric center to contact
+i.
+2.3.3. Wrench redundancy and nullspace interpretation
+The equilibrium constraints define the object-level wrench
+required for stable lifting, but they do not uniquely determine
+the individual contact wrenches. To make this redundancy ex-
+plicit, define the stacked contact wrench
+x=
+h
+w⊤
+L w⊤
+R
+i⊤
+=
+h
+f⊤
+L τ⊤
+L f⊤
+R τ⊤
+R
+i⊤
+∈R 12.(36)
+The net wrench applied to the object about the box geometric
+center can be written as
+wobj =Gx,(37)
+5
+
+=== PAGE 6 ===
+where the grasp map is
+G=
+" I3 03 I3 03
+[rL]× I3 [rR]× I3
+#
+∈R 6×12.(38)
+Here, [r i]×fi =r i ×f i. The equilibrium constraints (34)–(35)
+can therefore be written compactly as
+Gx=−
+" ˆmg
+ˆrcom ×ˆmg
+#
+.(39)
+SinceGmaps a 12-dimensional contact wrench vector to a 6-
+dimensional object wrench, the contact wrench distribution is
+generally redundant at the equilibrium level. This means that
+there can be nonzero contact-wrench variationsx null that satisfy
+Gxnull =0.(40)
+Such variations lie in the kernel, or nullspace, ofG, and there-
+fore do not change the net wrench applied to the box. Physi-
+cally,x null represents an internal wrench: it changes how forces
+and torques are distributed between the two contacts without
+changing the object-level equilibrium. Next, the friction con-
+straints and minimum-effort objective are introduced to select
+one physically feasible wrench distribution from this redundant
+set.
+2.3.4. Friction constraints
+Slip at each contact is prevented using a friction limit surface
+[26], which captures the coupling between tangential force and
+torsional moment. For contacti∈ {L,R}, the limit surface is
+modeled using the ellipsoidal approximation [27] as:
+
+∥ft,i∥
+f max
+t,i
+
+2
++
+
+τn,i
+τmax
+n,i
+
+2
+≤(1−r s)2,(41)
+wherer s ∈[0,1) is a safety margin. More details on this safety
+margin can be found in Appendix A.
+The size of the friction limit surface depends on the contact
+normal force, the friction coefficient, and the contact geome-
+try. Since compression corresponds tof n,i ≤0, the compressive
+normal-force magnitude is−f n,i. Hence, the maximum admis-
+sible tangential force follows from Coulomb friction, while a
+finite contact patch can also sustain a torsional moment about
+the contact normal:
+f max
+t,i =µ(−f n,i),(42)
+τmax
+n,i =µ(−f n,i)Reff,i.(43)
+whereµis the friction coefficient, andReff,iis an effective con-
+tact radius determined by the contact geometry and pressure
+distribution [26, 27]. The derivation ofR eff,iis given in Ap-
+pendix B.
+2.3.5. Optimization problem
+Using the stacked contact wrenchxdefined in (36), the con-
+tact wrenches are selected by minimizing a weighted wrench
+effort. For each contact wrenchwi, define the weighting matrix
+Qc =diag
+ 
+1,1,1, 1
+l2c
+, 1
+l2c
+, 1
+l2c
+!
+,(44)
+wherel c >0 is a characteristic contact length chosen from the
+contact patch size to account for the different units of force and
+moment in the weighted wrench cost. The stacked weighting
+matrix is then
+Q=blkdiag(Q c,Q c).(45)
+The contact wrenches are selected by minimizing the
+weighted wrench effort:
+min
+x
+x⊤Qx=min
+x
+
+w⊤
+L QcwL +w ⊤
+RQcwR
+
+.(46)
+SinceQis positive definite, minimizing the squared weighted
+effortx⊤Qxhas the same minimizer as minimizing∥Q 1/2x∥2.
+Introducing an auxiliary variablet∈R, the optimization prob-
+lem is written in epigraph form as
+min
+x,t
+t
+s.t. ˆn⊤
+i fi ≤0,i∈ {L,R},(compression)
+Πiτi =0,i∈ {L,R},(no bending moment)
+equilibrium constraints (34)–(35),
+friction limit constraints (41),i∈ {L,R},Q1/2x
+2 ≤t,
+(47)
+whereQ 1/2 is the square-root weighting matrix.
+The squared-norm epigraph constraint can be written as a
+second-order cone constraint, so the resulting problem is a con-
+vex second-order cone program (SOCP) and can be solved effi-
+ciently using standard interior-point methods [28]. The optimal
+solution is denoted byw des
+i ,i∈ {L,R}, and is passed to the
+execution layer to control the box trajectory from Phase I in
+quasi-static manner.
+2.4. Execution
+Phase III provides the desired contact wrenchesw des
+i ,i∈
+{L,R}. These wrenches are executed along the end-effector ref-
+erencesz ref
+i (t), which are inferred from the refined object tra-
+jectoryz ref
+box(t) from Phase I using the known grasp geometry.
+Using the Cartesian impedance relation introduced in Fig. 5a,
+the desired wrench is realized by biasing the commanded pose
+relative to the reference trajectory. The nominal command is
+defined as
+ui,0(t)=z ref
+i (t)+K −1wdes
+i ,(48)
+whereKis a positive-definite Cartesian stiffness matrix.
+In practice, the realized wrench may differ from the desired
+value due to actuator dynamics, sensor noise, and environmen-
+tal uncertainty [29]. To compensate for these effects, wrench
+feedback is added. Let ˆwi(t) denote the measured wrench, and
+define the wrench error as
+ei(t)= ˆwi(t)−w des
+i (49)
+A PID controller maps this error to a bounded corrective pose
+increment∆u i(t), applied primarily along the squeezing direc-
+tion. The final command is then given by
+ui(t)=u i,0(t)+ ∆u i(t),(50)
+which is sent to the robot controller and executed under Carte-
+sian impedance control.
+6
+
+=== PAGE 7 ===
+(a)
+ (b)
+ (c)
+Figure 7: Experimental setup for dual-arm box manipulation. (a) Dual-arm
+robotic system interacting with the box in a shelf environment. (b) Close-up of
+the end-effector equipped with an ATI Mini40 force/torque (F/T) sensor and a
+friction-enhanced contact surface. (c) The test box with an additional weight
+used to vary the total mass and center-of-mass (CoM) location.
+Figure 8: Object motion before (top) and after (bottom) Phase I trajectory re-
+finement, evaluated in the Drake physics engine. The refined trajectory reduces
+object–environment contact while maintaining the intended motion.
+3. Experiments and Results
+3.1. Experiment Setup
+The experimental setup is shown in Fig. 7. The system con-
+sists of two 7-DoF Kinova robotic arms, each equipped with an
+ATI Mini40 force/torque (F/T) sensor at the wrist. A custom
+handle with a friction-enhanced contact surface (coefficient of
+friction 0.4) is attached to each sensor. The handle contact patch
+has dimensions of 7 cm×10 cm. The manipulated object is a
+rectangular box with a base mass of 1.7 kg. An additional mass
+of 0.5 kg is placed inside the box to vary the CoM location. The
+Cartesian impedance controller uses a diagonal stiffness matrix
+with translational stiffness of 1000 N/m and rotational stiffness
+of 10 Nm/rad.
+Two CoM configurations are considered in the experiments.
+In Configuration 1, the additional mass is placed with an offset
+in the positivex local andy local directions, as illustrated in Fig. 6.
+In Configuration 2, the mass is repositioned to produce a differ-
+ent CoM offset, resulting in a distinct mass distribution. Each
+configuration is repeated three times, resulting in three indepen-
+dent runs per configuration.
+3.2. Phase I Result (Trajectory Refinement for Collision Avoid-
+ance)
+Phase I refinement is demonstrated for Configuration 1,
+where the nominal trajectory produces object–environment
+Figure 9: Environment contact wrench before and after Phase I refinement.
+After optimization, most force and torque components remain close to zero,
+indicating successful collision avoidance.
+contact during extraction. Configuration 2 does not require re-
+finement because its nominal trajectory is already collision-free
+in the simulated environment. For Configuration 1, the initial
+object trajectoryz ∗
+box(t) was generated using [20]. The refine-
+ment was performed in Drake [23] withR=50 rollouts per
+iteration,c=1000 in (1) to set the initial exploration mag-
+nitude,α=0.2 in (4) to balance trajectory tracking and con-
+tact avoidance,K e =5 elite samples for the update in (9), and
+ϵconv =10 −2 in (10) as the convergence threshold.
+In this work, the undesired collision is primarily associated
+with object motion along they box- andz box-position compo-
+nents. Thus, trajectory exploration is restricted to these compo-
+nents, while the remaining position and orientation components
+are kept fixed to the reference trajectory.
+Fig. 8 shows the object motion before and after trajectory re-
+finement. The initial trajectory produces collision with the en-
+vironment, whereas the refined trajectory avoids the unintended
+contact while remaining close to the original motion.
+The environment contact wrench in Fig. 9 represents the
+wrench exerted by the environment on the object, where the
+environment may correspond to either the ground or the shelf
+depending on the stage of the motion. Before refinement,
+the nominal trajectory produces large contact force and torque
+components, indicating undesired object–environment collision
+during extraction. These large components correspond to con-
+tact between the box and the shelf. After refinement, most
+force and torque components remain close to zero, confirming
+that the unintended contact is reduced. The nonzerof y andf z
+components near the end of the motion correspond to the in-
+tended box–shelf interaction during placement, wheref y rep-
+resents friction between the box and the shelf surface andf z
+represents the normal support from the shelf. Therefore, these
+final nonzero components are not considered collision during
+extraction.
+The refined trajectory is then used as the reference object
+motion in the execution experiments in Section 3.5.
+7
+
+=== PAGE 8 ===
+Table 1: Mass estimation results for two configurations.
+Config Run Experiment Mass (kg) Error (%)
+1
+– GT 2.20 –
+Run 1 Sim 2.2016 0.07
+Real 2.3073 4.88
+Run 2 Sim 2.1998 0.01
+Real 2.2989 4.50
+Run 3 Sim 2.1993 0.03
+Real 2.3292 5.87
+2
+– GT 2.20 –
+Run 1 Sim 2.2016 0.07
+Real 2.2839 3.81
+Run 2 Sim 2.1990 0.05
+Real 2.3528 6.04
+Run 3 Sim 2.2003 0.01
+Real 2.3918 8.72
+Table 2: Center-of-mass (CoM) estimation results for two configurations.
+Config Run Experiment CoM(r x,r y)(mm) Error (%)
+1
+– GT (20.50,11.40) –
+Run 1 Sim (20.51,11.44) 0.01
+Real (8.58,14.19) 3.63
+Run 2 Sim (20.53,11.40) 0.01
+Real (7.65,13.87) 3.90
+Run 3 Sim (20.47,11.39) 0.03
+Real (8.21,14.33) 3.76
+2
+– GT (6.80,−11.40) –
+Run 1 Sim (6.79,−11.42) 0.02
+Real (5.31,−16.01) 3.34
+Run 2 Sim (6.85,−11.48) 0.03
+Real (1.65,−16.48) 4.50
+Run 3 Sim (6.83,−11.47) 0.03
+Real (3.00,−18.79) 4.49
+3.3. Phase II Result (Estimation of Object Parameters)
+The estimated object parameters from Phase II are summa-
+rized in Table 1 and Table 2, where GT, Sim, and Real denote
+ground truth, simulation, and real-world experiments, respec-
+tively. Three independent runs are reported for each configu-
+ration. In simulation, small measurement noise is introduced
+to the contact wrench signals to reflect realistic sensing con-
+ditions. For both configurations, the simulation results closely
+match the ground truth across all runs, with negligible errors in
+both mass and CoM location. The mass error remains below
+0.1%, and the CoM error also remains below 0.1%, confirming
+the correctness of the estimation formulation under near-ideal
+conditions.
+In the real-world experiments, both the estimated mass and
+CoM exhibit consistent deviations from the ground truth across
+runs. The mass is overestimated by approximately 3–9%. De-
+spite this bias, the estimates remain consistent across repeated
+runs, indicating that the error is systematic rather than purely
+random. Similarly, the CoM estimates show an offset from the
+ground truth but remain tightly clustered within each configu-
+ration, indicating low run-to-run variability.
+Overall, the CoM error remains within a few percent relative
+to the object dimensions (300 mm×200 mm), demonstrating
+that the method provides reasonably accurate and repeatable pa-
+rameter estimates in practical settings. The sources of the ob-
+served systematic error are discussed further in Section 4.
+-150 -100 -50 0 50 100 150
+-100
+-50
+0
+50
+100
+Figure 10: Phase II CoM estimation results visualized as the inferred
+additional-mass location for Configuration 2 (Run 1). The additional-mass lo-
+cation is inferred from the estimated CoM of the combined box-additional mass
+system using the known box mass and additional mass. Simulation estimates
+closely align with the ground truth, while real-world experiment estimates show
+a consistent offset but remain tightly clustered, indicating low variability. The
+observed deviations in the real-world are on the order of a few percent relative
+to the object size (300 mm).
+To provide a more intuitive visualization of the observed
+CoM offset, Fig. 10 shows the CoM estimation result for Con-
+figuration 2, Run 1, represented as the inferred additional-mass
+location. This visualization converts the estimated CoM of the
+combined box–additional-mass system into the corresponding
+location of the internal added mass, making the effect of the
+CoM estimation error easier to interpret.
+3.4. Phase III Result (Contact Force and Torque Optimization
+via SOCP)
+The optimized contact wrenches obtained from solving (47)
+are visualized in Fig. 11 for both configurations, shown for a
+representative run (Run 1). The results from the remaining
+runs exhibit similar trends and are therefore omitted for clarity.
+The figure evaluates the optimized wrenches from two comple-
+mentary perspectives: the Coulomb friction cone in Fig. 11(a),
+which shows the contact force feasibility, and the friction limit
+surface in Fig. 11(b), which shows the coupling between tan-
+gential force and torsional moment.
+As shown in Fig. 11(a), the contact force vectors are plot-
+ted in the localx-zplane, where thex-direction corresponds
+to the contact normal direction and thez-direction corresponds
+to the load-support direction. The solid gray lines denote the
+nominal Coulomb friction cone, while the dashed gray lines
+denote the contracted cone associated with the safety margin
+rs =0.10. For both configurations, the optimized contact
+forces remain within the contracted cones, confirming that the
+load-supporting tangential forces are feasible for the generated
+squeezing forces.
+The contact force distribution is physically consistent with
+the estimated CoM offset. In both configurations, the tangen-
+tial force component at the right handle is larger than that at the
+left handle. This occurs because the CoM is offset along the
++xlocal-direction (see Table 2), requiring an asymmetric distri-
+bution of load-supporting tangential forces to satisfy moment
+equilibrium. At the same time, the normal force components
+8
+
+=== PAGE 9 ===
+-150 0 150
+-100
+0
+100
+Left contact Right contact
+Left Handle
+Sim: [34.08, 9.32] N
+Real: [34.55, 10.67] N
+Right Handle
+Sim: [-34.08, 12.27] N
+Real: [-34.55, 11.96] N
+-150 0 150
+-100
+0
+100
+Left contact Right contact
+Left Handle
+Sim: [32.01, 10.30] N
+Real: [34.72, 10.81] N
+Right Handle
+Sim: [-32.01, 11.28] N
+Real: [-34.72, 11.60] N
+(a)
+0 5 10 15
+-0.4
+-0.2
+0
+0.2
+0.4
+Right Handle
+Sim: (12.27, 0.001)
+Real: (11.96, 0.111)
+Left Handle
+Sim: (9.32, -0.246)
+Real: (10.67, -0.210)
+0 5 10 15
+-0.4
+-0.2
+0
+0.2
+0.4
+Right Handle
+Sim: (11.28, -0.077)
+Real: (11.60, -0.153)
+Left Handle
+Sim: (10.30, 0.169)
+Real: (10.81, 0.206) (b)
+Figure 11: Phase III friction feasibility results for Configuration 1 and 2 (both Run 1). (a) Coulomb friction cone defined by (42) and incorporated in the friction
+limit surface (41). Contact forces are shown in the localx-zplane. Solid and dashed gray lines denote the ground-truth friction cone and its contracted version,
+respectively. Blue and orange arrows indicate resultant contact forces from simulation and real-world experiments. (b) Friction limit surfaces defined by (41) and
+optimized tangential force–torsional moment samples. Solid curves denote ground-truth limit surfaces, while dashed curves denote contracted feasible regions with
+safety marginr s =0.10.
+at the two contacts act as opposing squeezing forces with equal
+magnitude and opposite direction, consistent with force equi-
+librium in the contact-normal direction.
+The corresponding tangential force–torsional moment pairs
+are shown in Fig. 11(b). The horizontal axis represents the tan-
+gential force magnitude∥f t∥, and the vertical axis represents the
+torsional momentτ n about the contact normal. The solid curves
+denote the nominal friction limit surfaces, while the dashed
+curves denote the contracted feasible regions with safety mar-
+ginr s =0.10. The optimized wrench samples lie inside the
+contracted feasible regions for both configurations, indicating
+that the SOCP solution satisfies the friction limit surface con-
+straints with the prescribed safety margin.
+The smaller torsional moment magnitude at the right handle
+is also consistent with the friction-limit-surface coupling, as de-
+fined in (41). Since the right handle carries a larger tangential
+force, it uses a larger portion of the available friction budget.
+As a result, the admissible torsional moment about the contact
+normal is reduced at that contact, and the optimized solution
+assigns a smaller|τ n|to the right handle. This illustrates why
+tangential force and torsional moment cannot be selected inde-
+pendently when the friction limit surface is considered.
+Across Configuration 1 and Configuration 2, the sign of the
+torsional moment at each handle reverses. This is consistent
+with the change in CoM offset along they local-direction: Con-
+figuration 1 has a positivey local offset, whereas Configuration 2
+has a negativey local offset. The reversal indicates that the re-
+quired torsional compensation changes direction when the ob-
+ject mass distribution is changed.
+Differences between the simulation and real-world results
+are mainly due to the mass and CoM estimation errors from
+Phase II. Nevertheless, the optimized contact wrenches remain
+inside the friction-feasible regions and follow the expected
+force–torque distribution for each CoM configuration. The
+optimized wrench values are then used as the desired contact
+wrenches for the execution stage in Sec. 3.5.
+3.5. Execution Result
+We evaluate the full pipeline on the dual-arm system de-
+scribed in Sec. 3.1. Fig. 12(a) shows representative execu-
+9
+
+=== PAGE 10 ===
+(a)
+(b)
+Figure 12: Execution results for the full pipeline. (a) Representative image se-
+quences for Configuration 1 Run 1 (top) and Configuration 2 Run 1 (bottom).
+(b) Reconstructed 3D box motion in the shelf environment for the two con-
+figurations. In both cases, the motion is executed using the optimized contact
+wrench from Phase III based on the online CoM estimate from Phase II.
+tion sequences for the two CoM configurations, and Fig. 12(b)
+shows the corresponding reconstructed 3D box trajectories. As
+discussed in Sec. 3.2, Configuration 1 uses the refined trajec-
+tory from Phase I, whereas Configuration 2 does not require
+trajectory refinement. In both cases, execution uses the opti-
+mized contact wrench from Phase III based on the online CoM
+estimates from Phase II. Each configuration is repeated three
+times, and all runs show consistent behavior.
+3.6. Ablation Study
+An ablation study is conducted to evaluate the contribution of
+each phase in the proposed pipeline, as summarized in Table 3.
+The full pipeline achieves collision-free manipulation while
+maintaining the desired object orientation by combining trajec-
+tory refinement (Phase I), online CoM estimation (Phase II),
+and contact wrench optimization (Phase III).
+When Phase I is removed, the system relies on the nominal
+trajectory, which may violate environmental constraints and re-
+sult in collisions in confined settings, as also can be observed in
+Fig. 8.
+Table 3: Ablation study evaluating the contribution of each phase in the pro-
+posed pipeline.
+Method
+Variant Collision Orientation
+Deviation
+Wrench
+Quality Notes
+Full pipeline No No Optimal Uses Phase I-III
+w/o Phase I Yes – –
+Trajectory may
+collide with
+environment
+w/o Phase II No Yes (tilted) Suboptimal
+Incorrect CoM
+estimate leads to
+wrong wrench
+w/o Phase III No Yes (tilted)
+Inefficient,
+unbalanced,
+excessive
+squeezing
+No optimal
+wrench
+When Phase II is removed, the system relies on a nominal
+assumption that the center of mass is located at the geometric
+center of the object, causing the computed contact wrench to
+be inconsistent with the true mass distribution. As a result, the
+applied forces and torques do not properly balance the object,
+leading to noticeable orientation deviation during manipulation.
+When Phase III is removed, no optimal contact wrench is
+available, and the system instead relies on a naive symmetric
+force assignment, where both arms apply equal normal forces,
+share the tangential load equally, and no contact moment is
+commanded. As a result, the forces and torques are not prop-
+erly adapted to the object’s mass distribution. This leads to in-
+efficient and unbalanced force application, often requiring ex-
+cessive squeezing to maintain the grasp, and may still result in
+tilted motion due to the lack of appropriate moment compensa-
+tion.
+These results highlight that each phase plays a distinct and
+complementary role: Phase I ensures collision-free motion,
+Phase II provides accurate object parameter estimation, and
+Phase III enables physically consistent and efficient force ex-
+ecution.
+4. Discussion
+The proposed framework combines online CoM estimation
+with friction-constrained wrench optimization to address dual-
+arm box handling under frictional contact, where improper reg-
+ulation of interaction forces can lead to slip, object drop, orien-
+tation deviation, or excessive squeezing.
+Slip avoidance and reduced squeezing as two facets of op-
+timization formulation.The experiments achieved slip-free
+and drop-free object handling under both CoM configurations
+without exhibiting excessive squeezing. In conventional ap-
+proaches, these two objectives are often in tension: a con-
+servatively large normal force prevents slip and drop but pro-
+duces excessive squeezing, while a smaller normal force re-
+duces squeezing at the risk of losing the grasp. The proposed
+framework resolves this tension by treating the friction limit
+surface as a hard constraint, while the cost function minimizes
+contact effort. Online CoM estimation in Phase II makes this
+minimum-effort solution tractable to compute, and the Phase
+10
+
+=== PAGE 11 ===
+III SOCP automatically selects the solution with minimum con-
+tact effort within the friction-feasible region. Slip and drop
+avoidance arise from the hard satisfaction of the friction con-
+straint, whereas reduced squeezing arises from the minimiza-
+tion of contact effort; the two are realized jointly by the same
+optimization problem rather than balanced as independent ob-
+jectives.
+Influence of the cost function on the force-torque distribution.
+The force-torque distribution in Phase III is strongly influenced
+by the contact model. In the current formulation, the tangen-
+tial components of the contact moment are constrained to be
+zero, as imposed by (33). Therefore, moment balance due to
+an offset CoM is achieved mainly through differences in tan-
+gential forces between the two contacts: the tangential force at
+one handle becomes larger than at the other, so that the object
+remains in equilibrium. Under this contact model, the role of
+lc in (44) is limited, as the tangential moment components are
+fixed to zero and the torsional moment is largely determined by
+the equilibrium requirement.
+If the constraint in (33) were removed, tangential contact mo-
+ments would also become admissible. The optimizer could then
+distribute the required moment balance between force asym-
+metry and contact torques, with the tradeoffinfluenced by the
+moment weighting throughl c. Both cases satisfy the same equi-
+librium constraints, but correspond to different contact models
+and force–torque distributions.
+Simulation-to-Real Setup Consistency in Phase I.Phase I tra-
+jectory refinement is performed in simulation, and its effec-
+tiveness depends on how closely the simulated environment
+matches the real-world setup. In practice, even small differ-
+ences in object geometry, contact properties, or shelf configu-
+ration can lead to residual contact during execution. In addi-
+tion, the current formulation assumes that the object geometry
+(e.g., box dimensions) is known beforehand. In more general
+settings, this information would need to be obtained through
+perception before trajectory refinement can be applied.
+Systematic Error in CoM Estimation in Phase II.Experimental
+results show a consistent bias in the estimated center of mass.
+These errors are attributed to sensor noise, robot kinematic in-
+accuracies, and, most importantly, modeling mismatch arising
+from the handle contact locations not being perfectly aligned
+with the geometric center of the box as assumed in the model
+[29]. In practice, such deviations introduce moment offsets that
+directly affect the estimation, leading to systematic rather than
+random error.
+Overall, the results indicate that the framework can success-
+fully execute stable lifting with online estimation of unknown
+object properties, while highlighting key areas for improve-
+ment.
+5. Conclusion
+This work presented a friction-aware dual-arm box-handling
+framework for objects with unknown mass and center of
+(a)
+(b)
+Figure A.13: Illustration of the safety marginr s for (a) the friction cone and (b)
+the friction limit surface. The green ball represents the admissible perturbation
+set used to contract the nominal friction constraints.
+mass. The approach combines offline trajectory refinement,
+online parameter estimation, and optimization-based contact
+wrench computation under friction constraints. The optimized
+wrenches are executed through impedance control on a real
+dual-arm robotic system.
+Experiments show that the proposed method lifts objects un-
+der different CoM configurations while avoiding slip, object
+drop, and excessive squeezing. The results demonstrate the im-
+portance of online CoM estimation and explicit force–torque
+optimization for efficient frictional manipulation.
+Future work will focus on improving robustness to model-
+ing mismatch, integrating perception for object geometry esti-
+mation, and extending the framework to dynamic manipulation
+tasks and richer contact interactions.
+Appendix A. Safety Margin for Friction Constraints
+We introduce a normalized safety marginr s ∈[0,1) by con-
+tracting the nominal admissible friction set. LetFdenote a
+nominal feasible friction set, such as the friction coneCor the
+friction limit surfaceL. Letwdenote a contact force or wrench
+vector.
+The contracted feasible set is defined as
+Frs =F ⊖B rs ,(A.1)
+where⊖denotes the Pontryagin difference, also known as the
+Minkowski set difference [30, 31], and
+Brs = {∆ ¯w| ∥∆ ¯w∥2 ≤r s} (A.2)
+11
+
+=== PAGE 12 ===
+is a closed ball of radiusr s in normalized force/wrench space.
+Here,∆ ¯wdenotes a normalized perturbation of the selected
+contact force or wrench ¯w. As illustrated in Fig. A.13, the
+green ball represents the perturbation setB rs, and the center
+of the ball corresponds to the selected contact force or wrench.
+Equivalently,
+Frs =  ¯w| ¯w+B rs ⊆ F 	 .(A.3)
+Thus, the selected force or wrench must remain inside the
+nominal friction set even after any normalized perturbation of
+sizer s.
+For the friction cone, the contraction is implemented as
+∥ft∥ ≤(1−r s)µ(−f n),f n ≤0,(A.4)
+and for the friction limit surface, the contraction is implemented
+as  ∥ft∥
+−µf n
+!2
++
+ τn
+τmaxn
+!2
+≤(1−r s)2,f n ≤0,(A.5)
+wheref n is the signed normal force,f t is the tangential force,µ
+is the friction coefficient,τn is the torsional moment about the
+contact normal, and compression corresponds tof n ≤0.
+Whenr s =0, the nominal friction constraints are recov-
+ered. Increasingr s shrinks both admissible sets and therefore
+increases the friction safety margin.
+Appendix B. Derivation of Torsional Friction Limit
+Appendix B.1. General derivation
+Following [26], consider a rigid contact with a fixed con-
+tact areaAunder pure twist about the contact normal. Letp(r)
+denote the normal pressure distribution over the patch, where
+r∈R 2 is the in-plane position vector measured from the center
+of rotation. Under Coulomb friction, the maximum admissible
+torsional moment about the normal direction can be written as
+τn,max =µ
+Z
+A
+p(r)∥r∥dA,(B.1)
+whereµis the friction coefficient. Defining the normal force
+magnitude as
+fn ≜
+Z
+A
+p(r)dA,(B.2)
+we introduce theeffective contact radius
+Reff≜ 1
+fn
+Z
+A
+p(r)∥r∥dA,(B.3)
+so that (B.1) becomes the compact expression
+τn,max =µf nReff.(B.4)
+The value ofR effdepends on the contact geometry and the as-
+sumed pressure distributionp(r).
+Appendix B.2. Evaluation for uniform pressure over a rectan-
+gular patch
+Assume the contact patch is a rectangle of sizea×b(in me-
+ters), centered at the origin, with a uniform pressure distribution
+p(r)= fn
+ab ,(x,y)∈
+
+−a
+2 , a
+2
+
+×
+"
+−b
+2 , b
+2
+#
+.(B.5)
+Substituting into (B.3) yields
+Reff= 1
+ab
+Z a/2
+−a/2
+Z b/2
+−b/2
+q
+x2 +y 2 dy dx.(B.6)
+Evaluating (B.6) gives the closed-form expression
+Reff=
+√
+a2 +b 2
+6 + a2
+12b asinh
+ b
+a
+!
++ b2
+12a asinh
+a
+b
+
+,(B.7)
+where asinh(·) denotes the inverse hyperbolic sine.
+For the contact geometry used in this work, witha=0.07 m
+andb=0.10 m, (B.7) yieldsR eff≈0.0328 m.
+Declaration of generative AI and AI-assisted technologies in
+the manuscript preparation process
+During the preparation of this work the authors used Ope-
+nAI’s ChatGPT in order to assist with language refinement and
+readability of selected manuscript sections. After using this
+tool/service, the authors reviewed and edited the content as
+needed and take full responsibility for the content of the pub-
+lished article.
+References
+[1] C. Smith, Y . Karayiannidis, L. Nalpantidis, X. Gratal,
+P. Qi, D. V . Dimarogonas, D. Kragic, Dual arm ma-
+nipulation—a survey, Robotics and Autonomous systems
+60 (10) (2012) 1340–1353.
+[2] N. Correll, K. E. Bekris, D. Berenson, O. Brock,
+A. Causo, K. Hauser, K. Okada, A. Rodriguez, J. M. Ro-
+mano, P. R. Wurman, Analysis and observations from the
+first amazon picking challenge, IEEE Transactions on Au-
+tomation Science and Engineering 15 (1) (2016) 172–188.
+[3] M. Guo, D. V . Gealy, J. Liang, J. Mahler, A. Goncalves,
+S. McKinley, J. A. Ojea, K. Goldberg, Design of parallel-
+jaw gripper tip surfaces for robust grasping, in: 2017
+IEEE international conference on robotics and automation
+(ICRA), IEEE, 2017, pp. 2831–2838.
+[4] J. Mahler, M. Matl, X. Liu, A. Li, D. Gealy, K. Goldberg,
+Dex-net 3.0: Computing robust vacuum suction grasp
+targets in point clouds using a new analytic model and
+deep learning, in: 2018 IEEE International Conference on
+robotics and automation (ICRA), IEEE, 2018, pp. 5620–
+5627.
+12
+
+=== PAGE 13 ===
+[5] H. Cao, H.-S. Fang, W. Liu, C. Lu, Suctionnet-1billion:
+A large-scale benchmark for suction grasping, IEEE
+Robotics and Automation Letters 6 (4) (2021) 8718–8725.
+[6] A. Wu, D. Kruse, In the wild ungraspable object pick-
+ing with bimanual nonprehensile manipulation, in: 2025
+IEEE International Conference on Robotics and Automa-
+tion (ICRA), IEEE, 2025, pp. 5669–5676.
+[7] L. Koutras, I. Ntoliou, Z. Doulgeri, Towards passivity
+based nonprehensile bimanual manipulation of large ob-
+jects, in: 2023 IEEE-RAS 22nd International Conference
+on Humanoid Robots (Humanoids), IEEE, 2023, pp. 1–8.
+[8] R. M. Murray, Z. Li, S. S. Sastry, A mathematical intro-
+duction to robotic manipulation, CRC press, 2017.
+[9] A. Bicchi, V . Kumar, Robotic grasping and contact: A
+review, in: Proceedings 2000 ICRA. Millennium confer-
+ence. IEEE international conference on robotics and au-
+tomation. Symposia proceedings (Cat. No. 00CH37065),
+V ol. 1, IEEE, 2000, pp. 348–353.
+[10] S. Schneider, R. H. Cannon, Object impedance control for
+cooperative manipulation: Theory and experimental re-
+sults, in: Proceedings, 1989 international conference on
+robotics and automation, IEEE, 1989, pp. 1076–1083.
+[11] F. Caccavale, P. Chiacchio, A. Marino, L. Villani, Six-dof
+impedance control of dual-arm cooperative manipulators,
+IEEE/ASME Transactions On Mechatronics 13 (5) (2008)
+576–586.
+[12] S. Erhart, D. Sieber, S. Hirche, An impedance-based con-
+trol architecture for multi-robot cooperative dual-arm mo-
+bile manipulation, in: 2013 IEEE/RSJ International Con-
+ference on Intelligent Robots and Systems, IEEE, 2013,
+pp. 315–322.
+[13] T. Yoshikawa, X.-Z. Zheng, Coordinated dynamic hy-
+brid position/force control for multiple robot manipulators
+handling one constrained object, The International journal
+of robotics research 12 (3) (1993) 219–230.
+[14] D. Lee, D. V . Dimarogonas, H. J. Kim, Switching control
+of underactuated multichannel systems with input con-
+straints for cooperative manipulation, IEEE Transactions
+on Control Systems Technology (2026).
+[15] J. Kerr, B. Roth, Analysis of multifingered hands, The In-
+ternational Journal of Robotics Research 4 (4) (1986) 3–
+17.
+[16] J. Bohg, A. Morales, T. Asfour, D. Kragic, Data-driven
+grasp synthesis—a survey, IEEE Transactions on robotics
+30 (2) (2013) 289–309.
+[17] K. Kleeberger, R. Bormann, W. Kraus, M. F. Huber, A sur-
+vey on learning-based robotic grasping, Current Robotics
+Reports 1 (4) (2020) 239–249.
+[18] S. Levine, P. Pastor, A. Krizhevsky, J. Ibarz, D. Quillen,
+Learning hand-eye coordination for robotic grasping with
+deep learning and large-scale data collection, The Inter-
+national journal of robotics research 37 (4-5) (2018) 421–
+436.
+[19] A. Dutta, E. Burdet, M. Kaboli, Predictive visuo-tactile
+interactive perception framework for object properties in-
+ference, IEEE Transactions on Robotics (2025).
+[20] Q. Y . Lee, S. R. Kulkarni, K. I. Wong, L. Yang,
+B. Noronha, Y . Wee, D. Campolo, Generalizing robot tra-
+jectories from single-context human demonstrations: A
+probabilistic approach (2025). arXiv:2503.05619.
+URLhttps://arxiv.org/abs/2503.05619
+[21] M. Saveriano, F. J. Abu-Dakka, A. Kramberger, L. Peter-
+nel, Dynamic movement primitives in robotics: A tutorial
+survey, The International Journal of Robotics Research
+42 (13) (2023) 1133–1184.
+[22] A. J. Ijspeert, J. Nakanishi, H. Hoffmann, P. Pastor,
+S. Schaal, Dynamical movement primitives: learning at-
+tractor models for motor behaviors, Neural computation
+25 (2) (2013) 328–373.
+[23] R. Tedrake, the Drake Development Team, Drake: Model-
+based design and verification for robotics (2019).
+URLhttps://drake.mit.edu
+[24] F. Stulp, O. Sigaud, Path integral policy improve-
+ment with covariance matrix adaptation, arXiv preprint
+arXiv:1206.4621 (2012).
+[25] D. Campolo, F. Cardin, A geometric framework for quasi-
+static manipulation of a network of elastically connected
+rigid bodies, Applied Mathematical Modelling 143 (2025)
+116003.
+[26] R. D. Howe, M. R. Cutkosky, Practical force-motion mod-
+els for sliding manipulation, The International Journal of
+Robotics Research 15 (6) (1996) 557–572.
+[27] N. Xydas, I. Kao, Modeling of contact mechanics and fric-
+tion limit surfaces for soft fingers in robotics, with exper-
+imental results, The International Journal of Robotics Re-
+search 18 (9) (1999) 941–950.
+[28] S. Boyd, L. Vandenberghe, Convex optimization, Cam-
+bridge university press, 2004.
+[29] S. H. Turlapati, V . P. Nguyen, J. Gurnani, M. Z. Bin Ar-
+iffin, S. Kana, A. H. Yee Wong, B. S. Han, D. Campolo,
+Identification of intrinsic friction and torque ripple
+for a robotic joint with integrated torque sensors with
+application to wheel-bearing characterization, Sensors
+24 (23) (2024). doi:10.3390/s24237465.
+URLhttps://www.mdpi.com/1424-8220/24/23/
+7465
+13
+
+=== PAGE 14 ===
+[30] A. Cotorruelo, I. Kolmanovsky, E. Garone, A sum-of-
+squares-based procedure to approximate the pontryagin
+difference of basic semi-algebraic sets, Automatica 135
+(2022) 109783. doi:10.1016/j.automatica.2021.109783.
+[31] R. Schneider, Convex Bodies: The Brunn–Minkowski
+Theory, 2nd Edition, V ol. 151 of Encyclopedia of Mathe-
+matics and its Applications, Cambridge University Press,
+2013.
+14

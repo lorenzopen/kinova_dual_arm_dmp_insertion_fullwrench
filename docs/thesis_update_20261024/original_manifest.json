@@ -1,0 +1,29 @@
+{
+  "root": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\thesis_english_2026",
+  "files": [
+    {
+      "path": "chapters/07_socp_control.tex",
+      "sha256": "910f530223e7da247dad7a3e701589854a23bca89d2b28df3c9632fdd3b74b2f"
+    },
+    {
+      "path": "chapters/10_tetris_dmp.tex",
+      "sha256": "4034ec9a4fb20fbc66974e241ba560dca0727ee7ec9b1418c4b9df852dd9ffc1"
+    },
+    {
+      "path": "chapters/11_kinova_hardware.tex",
+      "sha256": "d235d7427f3f97feed0e0138be0f194fa2d9cbd2af915e994a4d8316fb4e3480"
+    },
+    {
+      "path": "chapters/B_reproducibility.tex",
+      "sha256": "67b1bd921d5258c13bb744e095b4b21d3a8672312cc88da0b644118da8535030"
+    },
+    {
+      "path": "figures/README.md",
+      "sha256": "525fbe822ecc19e87987cefe765127daf399cdba9e13560f3f35759903e59f2f"
+    },
+    {
+      "path": "build/main.pdf",
+      "sha256": "b4d2b012c910fbff7b9a6a6e5fdad2f5c38bffc4865a283eb6092435bbd7f0e3"
+    }
+  ]
+}

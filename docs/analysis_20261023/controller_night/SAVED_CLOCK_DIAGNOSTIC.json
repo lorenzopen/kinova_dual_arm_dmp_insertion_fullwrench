@@ -1,0 +1,113 @@
+{
+  "created_utc": "2026-10-23T19:18:26.139405+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "scope": "Read only ffi_seq,t_wall,ffi_dt_ms from reserved CSVs solely to audit clocks; no force/target analysis, simulation, tuning or changed selection.",
+  "result": "All saved alternatives respect2mm/s per FFI integration/clamped dt; dividing by logger-wall intervals is a different quantity and can exceed2.",
+  "limitation": "This does not measure actual robot tool velocity or actual target consumption times. Frozen replay timing remains based on CSV event times; timing uncertainty is not removed.",
+  "runs": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "piece": "Z",
+      "source_csv_sha256": "d4227676d5aa41cee48e07f133b6331e624e013565f8bb4c6839bd92e4498e2f",
+      "events": 882,
+      "max_increment_per_FFI_used_dt_mm_s": 2.000000000000026,
+      "max_increment_per_log_time_dt_mm_s": 2.1385217382347044,
+      "max_abs_log_dt_minus_FFI_dt_ms": 3.4376534676994197,
+      "log_dt_p50_min_max_ms": [
+        28.100013732910156,
+        15.69986343383789,
+        89.69998359680176
+      ],
+      "at_max_log_ratio": {
+        "event_index": 81,
+        "candidate": "P_P0.05_I0_D0",
+        "model": "delay_k480_d0.12",
+        "log_interval_ms": 21.80004119873047,
+        "FFI_used_interval_ms": 23.309930998948403,
+        "command_increment_mm": 0.04661986199789725
+      },
+      "clock_file": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_saved_clock_audit.npz",
+      "clock_sha256": "22a0a964b8ed928637f61bfd2309b109da15758c0f2d76c95c79f80392205a18"
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "piece": "L",
+      "source_csv_sha256": "2e8fedfad66cee8a6df775f6cfca40b17478191ca9b4d33a8d22a186bfba2c99",
+      "events": 1012,
+      "max_increment_per_FFI_used_dt_mm_s": 2.000000000000026,
+      "max_increment_per_log_time_dt_mm_s": 2.1273540430742903,
+      "max_abs_log_dt_minus_FFI_dt_ms": 11.299991607665927,
+      "log_dt_p50_min_max_ms": [
+        27.500152587890625,
+        14.699935913085938,
+        111.29999160766602
+      ],
+      "at_max_log_ratio": {
+        "event_index": 910,
+        "candidate": "FF_only_P0_I0_D0",
+        "model": "delay_k480_d0.12",
+        "log_interval_ms": 20.30014991760254,
+        "FFI_used_interval_ms": 21.59280300111277,
+        "command_increment_mm": 0.043185606002225985
+      },
+      "clock_file": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_saved_clock_audit.npz",
+      "clock_sha256": "ddc42964eb09d449fc2edd088735678989e77387714c28e8a23b1c114e7ed737"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "piece": "S",
+      "source_csv_sha256": "52b1cb21ae95b0390c5d73b52064fc600af451d10a33e3f648b0a926218ee3b4",
+      "events": 1320,
+      "max_increment_per_FFI_used_dt_mm_s": 2.000000000000028,
+      "max_increment_per_log_time_dt_mm_s": 2.0452548202056393,
+      "max_abs_log_dt_minus_FFI_dt_ms": 2.8880045720143244,
+      "log_dt_p50_min_max_ms": [
+        27.899980545043945,
+        15.900135040283203,
+        60.80007553100586
+      ],
+      "at_max_log_ratio": {
+        "event_index": 659,
+        "candidate": "PI_P0.1_I0.8_D0_R0.1",
+        "model": "delay_k680_d0.12",
+        "log_interval_ms": 23.10013771057129,
+        "FFI_used_interval_ms": 23.622833999979775,
+        "command_increment_mm": 0.047245667999959995
+      },
+      "clock_file": "S_s7073m3_c100_narrow75_ffi_20261023_191548_saved_clock_audit.npz",
+      "clock_sha256": "c04e35b3673ba5d6774720ff4687b5590685a80e90ec1df997acf0ef8a8c7f36"
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "piece": "T",
+      "source_csv_sha256": "db533d89a9e83913c2123a5c38f8c259b2f118e01e3d5b55b8ffa78082039c72",
+      "events": 899,
+      "max_increment_per_FFI_used_dt_mm_s": 2.0000000000000275,
+      "max_increment_per_log_time_dt_mm_s": 2.0743882947241152,
+      "max_abs_log_dt_minus_FFI_dt_ms": 1.8759301456157118,
+      "log_dt_p50_min_max_ms": [
+        27.80008316040039,
+        15.399932861328125,
+        91.00008010864258
+      ],
+      "at_max_log_ratio": {
+        "event_index": 107,
+        "candidate": "P_P0.05_I0_D0",
+        "model": "delay_k480_d0.12",
+        "log_interval_ms": 30.20000457763672,
+        "FFI_used_interval_ms": 31.32326799823204,
+        "command_increment_mm": 0.0626465359964643
+      },
+      "clock_file": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_saved_clock_audit.npz",
+      "clock_sha256": "20e78b65933fac17c27fc065d193f435cf0b5c6a49c0974808c8370951507ea4"
+    }
+  ]
+}

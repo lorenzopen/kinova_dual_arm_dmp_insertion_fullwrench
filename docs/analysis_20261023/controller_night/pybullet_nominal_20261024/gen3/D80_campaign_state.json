@@ -1,0 +1,20 @@
+{
+  "started_utc": "2026-10-24T04:06:27.234617+00:00",
+  "supervisor_pid": null,
+  "active_child": null,
+  "completed": [
+    {
+      "name": "L_D80",
+      "tag": "Gen3_L_central2700_implicit_D80_dt05",
+      "returncode": 0,
+      "finished_utc": "2026-10-24T04:08:28.417374+00:00"
+    },
+    {
+      "name": "Lab_D80",
+      "tag": "Gen3Lab_Z_central2700_warm_D80_dt025",
+      "returncode": 0,
+      "finished_utc": "2026-10-24T04:08:32.746204+00:00"
+    }
+  ],
+  "completed_utc": "2026-10-24T04:08:32.747207+00:00"
+}

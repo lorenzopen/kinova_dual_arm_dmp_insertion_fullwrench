@@ -1,0 +1,2638 @@
+{
+  "note": "Only runtime cart_d metadata counts as confirmed. Missing metadata is unknown, not D=60. No matched damping-only FFI experiment exists among these records.",
+  "groups": [
+    {
+      "cart_d": "{'L': [60.0, 60.0, 60.0, 7.0, 7.0, 7.0], 'R': [60.0, 60.0, 60.0, 7.0, 7.0, 7.0]}",
+      "count": 34,
+      "ids": [
+        "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+        "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+        "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+        "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+        "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+        "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_160550",
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165531",
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165902",
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_173734",
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+        "F75_Zt1_s9012_c100_five_cut800_offline_20261023_123222",
+        "F75_Zt1_s9012_c100_five_cut800_offline_20261023_124009",
+        "F75_Zt1_s9012_c100_five_cut800_offline_20261023_124328",
+        "F75_Zt1_s9012_c100_five_cut800_online_20261023_121224",
+        "F75_Zt1_s9012_c100_five_cut800_online_20261023_163846",
+        "F75_Zt1_s9012_c100_five_cut800_online_20261023_164249",
+        "F75_Zt1_s9012_c100_five_cut800_pi_20261023_114142",
+        "F75_Zt1_s9012_c100_five_cut800_pi_20261023_114314",
+        "F75_Zt1_s9012_c100_five_cut800_pi_20261023_114326",
+        "F75_Zt1_s9012_c100_five_cut800_pi_20261023_120122",
+        "S_s7073m3_c100_narrow75_ffi_20261023_184907",
+        "S_s7073m3_c100_narrow75_ffi_20261023_185410",
+        "S_s7073m3_c100_narrow75_ffi_20261023_185733",
+        "S_s7073m3_c100_narrow75_ffi_20261023_185905",
+        "S_s7073m3_c100_narrow75_ffi_20261023_185926",
+        "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+        "S_s7073m3_c100_narrow75_ffi_20261023_190824",
+        "S_s7073m3_c100_narrow75_ffi_20261023_191002",
+        "S_s7073m3_c100_narrow75_ffi_20261023_191027",
+        "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+        "S_s7073m3_c100_narrow75_ffi_20261023_191548"
+      ]
+    },
+    {
+      "cart_d": "{'L': [80.0, 80.0, 80.0, 7.0, 7.0, 7.0], 'R': [80.0, 80.0, 80.0, 7.0, 7.0, 7.0]}",
+      "count": 2,
+      "ids": [
+        "F75_Zt1_s9012_c100_five_cut800_online_20261023_121841",
+        "F75_Zt1_s9012_c100_five_cut800_online_20261023_122447"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_meta.json",
+      "piece": "L",
+      "status": "curated_seat_found",
+      "label": "23/10 18:27",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.6283522343413726,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 2.5256835621446374,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 0.9544704017547122,
+        "squeeze_median": 4.6286844159397456
+      },
+      "git": "c80dd7800d695ccdff9115ab2b17bedf46d072b4",
+      "measured": {
+        "duration_s": 21.977200031280518,
+        "tracking_rmse_mean_hand_N": 0.28378531388281836,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.11468740853423082,
+            "p95_absolute_N": 0.20758360398343212
+          },
+          "2.5_10": {
+            "rms_N": 0.06493585668971141,
+            "p95_absolute_N": 0.12542475583453022
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1837_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1837_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_meta.json",
+      "piece": "L",
+      "status": "curated_seat_found",
+      "label": "23/10 18:37",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.887977561947829,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 2.9629456100542795,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 1.2738714219641842,
+        "squeeze_median": 4.6286844159397456
+      },
+      "git": "a34d2baaa7d77d7e4e27c394c0b0ed1ae26033f1",
+      "measured": {
+        "duration_s": 21.971500158309937,
+        "tracking_rmse_mean_hand_N": 0.30488670430384135,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.11626192180958667,
+            "p95_absolute_N": 0.22493522819046136
+          },
+          "2.5_10": {
+            "rms_N": 0.06378549477197244,
+            "p95_absolute_N": 0.12317364154720287
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1841_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1841_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_meta.json",
+      "piece": "L",
+      "status": "curated_seat_found",
+      "label": "23/10 18:41",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.949010089301641,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 1.987645639554364,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 1.182131640511341,
+        "squeeze_median": 4.6286844159397456
+      },
+      "git": "9ee63a7153f5c2c118d00cc68548a2e343aa83ce",
+      "measured": {
+        "duration_s": 21.97699999809265,
+        "tracking_rmse_mean_hand_N": 0.27443657824079537,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.10375873764597747,
+            "p95_absolute_N": 0.20158920595805513
+          },
+          "2.5_10": {
+            "rms_N": 0.06585315232331658,
+            "p95_absolute_N": 0.1322978573499677
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1921_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1921_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_meta.json",
+      "piece": "T",
+      "status": "curated_seat_found",
+      "label": "23/10 19:21",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.806155552048324,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 0.4930440859011176,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 1.4531053516310195,
+        "squeeze_median": 4.461203106587036
+      },
+      "git": "21fa4a8ebfad626210833c9e9577387922868a64",
+      "measured": {
+        "duration_s": 18.93250012397766,
+        "tracking_rmse_mean_hand_N": 0.2734139880916634,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.11107052894713045,
+            "p95_absolute_N": 0.23500355665180955
+          },
+          "2.5_10": {
+            "rms_N": 0.06979376599422928,
+            "p95_absolute_N": 0.15506856956304696
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1927_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1927_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_meta.json",
+      "piece": "T",
+      "status": "curated_seat_found",
+      "label": "23/10 19:27",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.828434618580769,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 0.3165957278615239,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 1.6273588556719567,
+        "squeeze_median": 4.473855531427374
+      },
+      "git": "1e7d3e52f564479432aabebcd91871ac1c083eac",
+      "measured": {
+        "duration_s": 18.932899951934814,
+        "tracking_rmse_mean_hand_N": 0.269625922115042,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.09408691697194316,
+            "p95_absolute_N": 0.19591173747754217
+          },
+          "2.5_10": {
+            "rms_N": 0.06379556036652034,
+            "p95_absolute_N": 0.13503492580528714
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1931_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1931_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_meta.json",
+      "piece": "T",
+      "status": "curated_seat_found",
+      "label": "23/10 19:31",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.725924601883737,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 0.36792362823323543,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 1.4464289798943046,
+        "squeeze_median": 4.466115766797804
+      },
+      "git": "9444de22218bdd1160ba5af337d0b50098f3df9d",
+      "measured": {
+        "duration_s": 18.93059992790222,
+        "tracking_rmse_mean_hand_N": 0.2779845285068433,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.10380287776217094,
+            "p95_absolute_N": 0.20853819275329225
+          },
+          "2.5_10": {
+            "rms_N": 0.061817391623376065,
+            "p95_absolute_N": 0.12954766428006123
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_160550",
+      "source": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_160550.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_160550_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 16:05",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 964.2857142857142,
+        "pickup_measured_N_per_hand": 5.8274547035343645,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "1c25bd71c85df127c523dd500fc39a612eaa7c62"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165531",
+      "source": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165531.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165531_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 16:55",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 1e-06,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.79034775853392,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "1c25bd71c85df127c523dd500fc39a612eaa7c62"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165902",
+      "source": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165902.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165902_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 16:59",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 1e-06,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.7616893792329,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "1c25bd71c85df127c523dd500fc39a612eaa7c62"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_173734",
+      "source": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_173734.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_173734_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 17:37",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.864787240311617,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "1c25bd71c85df127c523dd500fc39a612eaa7c62"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_meta.json",
+      "piece": "Z",
+      "status": "curated_seat_found",
+      "label": "23/10 17:43",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.808987710139101,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": -0.4488054915232076,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 0.8844028017105096,
+        "squeeze_median": 4.096453023097517
+      },
+      "git": "1c25bd71c85df127c523dd500fc39a612eaa7c62",
+      "measured": {
+        "duration_s": 19.08769989013672,
+        "tracking_rmse_mean_hand_N": 0.3042854600098224,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.11930139868450353,
+            "p95_absolute_N": 0.2266210440390957
+          },
+          "2.5_10": {
+            "rms_N": 0.0638811751859252,
+            "p95_absolute_N": 0.123157357228266
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1751_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1751_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_meta.json",
+      "piece": "Z",
+      "status": "curated_seat_found",
+      "label": "23/10 17:51",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.869236021025643,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": -0.05377378689602752,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 1.3155323454459977,
+        "squeeze_median": 4.095809798944145
+      },
+      "git": "6b1a36da5f119760355c4060044a6897f0353db7",
+      "measured": {
+        "duration_s": 19.071899890899658,
+        "tracking_rmse_mean_hand_N": 0.33929093243271297,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.12306358922541398,
+            "p95_absolute_N": 0.2581552600023773
+          },
+          "2.5_10": {
+            "rms_N": 0.07147720750075724,
+            "p95_absolute_N": 0.14078039445618892
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1756_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1756_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_meta.json",
+      "piece": "Z",
+      "status": "curated_seat_found",
+      "label": "23/10 17:56",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 6.065623458075127,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 0.20072713874508263,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 1.4682091046795076,
+        "squeeze_median": 4.102076492284856
+      },
+      "git": "bd457b8093530cb699c1833302f17fb283094924",
+      "measured": {
+        "duration_s": 19.0832998752594,
+        "tracking_rmse_mean_hand_N": 0.3226463313541134,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.11106786740430516,
+            "p95_absolute_N": 0.22128719568837563
+          },
+          "2.5_10": {
+            "rms_N": 0.06560045817669292,
+            "p95_absolute_N": 0.12744076371000407
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_offline_20261023_123222",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_F75_Zt1_s9012_offline\\F75_Zt1_s9012_c100_five_cut800_offline_20261023_123222.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_F75_Zt1_s9012_offline\\F75_Zt1_s9012_c100_five_cut800_offline_20261023_123222_meta.json",
+      "piece": "Z",
+      "status": "curated_seat_found",
+      "label": "23/10 12:32",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_feedforward",
+      "squeeze_gain": 0.1,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": -0.426477954317106,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 1.1415035491438235,
+        "squeeze_median": 4.100666445275307
+      },
+      "git": "cd53f2da2035592b5c67a978652fa46025dd09e7",
+      "measured": {
+        "duration_s": 19.079800128936768,
+        "tracking_rmse_mean_hand_N": 2.0219764811555736,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.08937011403457051,
+            "p95_absolute_N": 0.17857610061326123
+          },
+          "2.5_10": {
+            "rms_N": 0.06234493430528173,
+            "p95_absolute_N": 0.1214541196103894
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_offline_20261023_124009",
+      "source": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_offline_20261023_124009.csv",
+      "metadata": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_offline_20261023_124009_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 12:40",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_feedforward",
+      "squeeze_gain": 0.1,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "24438fdab0ad07b12b6b1492ef4fe05d57496d91"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_offline_20261023_124328",
+      "source": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_offline_20261023_124328.csv",
+      "metadata": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_offline_20261023_124328_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 12:43",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_feedforward",
+      "squeeze_gain": 0.1,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "24438fdab0ad07b12b6b1492ef4fe05d57496d91"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_online_20261023_121224",
+      "source": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_online_20261023_121224.csv",
+      "metadata": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_online_20261023_121224_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 12:12",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "online_socp_ati_feedback",
+      "squeeze_gain": 0.5,
+      "channels": "twist",
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "cd53f2da2035592b5c67a978652fa46025dd09e7"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_online_20261023_121841",
+      "source": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_online_20261023_121841.csv",
+      "metadata": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_online_20261023_121841_meta.json",
+      "piece": "Z",
+      "status": "metadata_seat_found_only",
+      "label": "23/10 12:18",
+      "cart_d": {
+        "L": [
+          80.0,
+          80.0,
+          80.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          80.0,
+          80.0,
+          80.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "online_socp_ati_feedback",
+      "squeeze_gain": 0.5,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 0.11378353203228553,
+        "socp_ok": 206,
+        "socp_ticks": 207,
+        "socp_failed": 0,
+        "side_force_max": 1.708079504465895,
+        "squeeze_median": 4.370290056186642
+      },
+      "git": "cd53f2da2035592b5c67a978652fa46025dd09e7",
+      "measured": {
+        "duration_s": 19.084500074386597,
+        "tracking_rmse_mean_hand_N": 0.30972176566794646,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.15832031013318149,
+            "p95_absolute_N": 0.3118060333873724
+          },
+          "2.5_10": {
+            "rms_N": 0.07449846983925869,
+            "p95_absolute_N": 0.14857531367716406
+          }
+        }
+      }
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_online_20261023_122447",
+      "source": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_online_20261023_122447.csv",
+      "metadata": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_online_20261023_122447_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 12:24",
+      "cart_d": {
+        "L": [
+          80.0,
+          80.0,
+          80.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          80.0,
+          80.0,
+          80.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "online_socp_ati_feedback",
+      "squeeze_gain": 0.5,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "cd53f2da2035592b5c67a978652fa46025dd09e7"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_online_20261023_163846",
+      "source": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_online_20261023_163846.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_online_20261023_163846_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 16:38",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "online_socp_ati_feedback",
+      "squeeze_gain": 0.4,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "1c25bd71c85df127c523dd500fc39a612eaa7c62"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_online_20261023_164249",
+      "source": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_online_20261023_164249.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\F75_Zt1_s9012_c100_five_cut800_online_20261023_164249_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 16:42",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "online_socp_ati_feedback",
+      "squeeze_gain": 0.4,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "1c25bd71c85df127c523dd500fc39a612eaa7c62"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_pi_20261023_114142",
+      "source": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_pi_20261023_114142.csv",
+      "metadata": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_pi_20261023_114142_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 11:41",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "online_socp_ati_pi",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "squeeze"
+      },
+      "git": "cd53f2da2035592b5c67a978652fa46025dd09e7"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_pi_20261023_114314",
+      "source": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_pi_20261023_114314.csv",
+      "metadata": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_pi_20261023_114314_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 11:43",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "online_socp_ati_pi",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "to_open_pose"
+      },
+      "git": "cd53f2da2035592b5c67a978652fa46025dd09e7"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_pi_20261023_114326",
+      "source": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_pi_20261023_114326.csv",
+      "metadata": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_pi_20261023_114326_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 11:43",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "online_socp_ati_pi",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "cd53f2da2035592b5c67a978652fa46025dd09e7"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_pi_20261023_120122",
+      "source": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_pi_20261023_120122.csv",
+      "metadata": "NVIDIA_RUNS\\NVIDIA_LOG_RUNS_no_insertion\\F75_Zt1_s9012_c100_five_cut800_pi_20261023_120122_meta.json",
+      "piece": "Z",
+      "status": "other_or_interrupted",
+      "label": "23/10 12:01",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "online_socp_ati_pi",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": null,
+      "result": {
+        "stopped": "PI update interval 120.2 ms outside (0, 100] ms",
+        "phase": "route"
+      },
+      "git": "cd53f2da2035592b5c67a978652fa46025dd09e7"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_184907",
+      "source": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_184907.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_184907_meta.json",
+      "piece": "S",
+      "status": "other_or_interrupted",
+      "label": "23/10 18:49",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.777635899602226,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "route"
+      },
+      "git": "c44821a96b78d62604ad0a63ccb768ae07c1ef27"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_185410",
+      "source": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_185410.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_185410_meta.json",
+      "piece": "S",
+      "status": "metadata_seat_found_only",
+      "label": "23/10 18:54",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.849026571503257,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 2.7832032985818933,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 3.366283452020399,
+        "squeeze_median": 3.572669289158608
+      },
+      "git": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "measured": {
+        "duration_s": 15.392499923706055,
+        "tracking_rmse_mean_hand_N": 0.5047560672833851,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.07308191791638033,
+            "p95_absolute_N": 0.15146019027991298
+          },
+          "2.5_10": {
+            "rms_N": 0.030168920963796635,
+            "p95_absolute_N": 0.0644020625374852
+          }
+        }
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_185733",
+      "source": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_185733.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_185733_meta.json",
+      "piece": "S",
+      "status": "other_or_interrupted",
+      "label": "23/10 18:57",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.952241488765303,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "to_mouth"
+      },
+      "git": "c44821a96b78d62604ad0a63ccb768ae07c1ef27"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_185905",
+      "source": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_185905.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_185905_meta.json",
+      "piece": "S",
+      "status": "other_or_interrupted",
+      "label": "23/10 18:59",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": null,
+      "squeeze_gain": null,
+      "channels": null,
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "preparation"
+      },
+      "git": "c44821a96b78d62604ad0a63ccb768ae07c1ef27"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_185926",
+      "source": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_185926.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_185926_meta.json",
+      "piece": "S",
+      "status": "other_or_interrupted",
+      "label": "23/10 18:59",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.854753597663562,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "slow_seat"
+      },
+      "git": "c44821a96b78d62604ad0a63ccb768ae07c1ef27"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1904_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_190407.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1904_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_190407_meta.json",
+      "piece": "S",
+      "status": "curated_seat_found",
+      "label": "23/10 19:04",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.858603626833825,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 2.8781895311446037,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 1.7178174746881307,
+        "squeeze_median": 3.572669289158608
+      },
+      "git": "c44821a96b78d62604ad0a63ccb768ae07c1ef27",
+      "measured": {
+        "duration_s": 15.38789987564087,
+        "tracking_rmse_mean_hand_N": 0.5539083498079693,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.0703866410064487,
+            "p95_absolute_N": 0.13714879938356273
+          },
+          "2.5_10": {
+            "rms_N": 0.029819085977801717,
+            "p95_absolute_N": 0.06138833812314496
+          }
+        }
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190824",
+      "source": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_190824.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_190824_meta.json",
+      "piece": "S",
+      "status": "other_or_interrupted",
+      "label": "23/10 19:08",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": null,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "stopped": "PI pickup did not settle in 6 s: 18.14/12.00 N total; keep supporting the piece",
+        "phase": "squeeze"
+      },
+      "git": "2361f01f861790570fad23431f4641545c6cae6a"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191002",
+      "source": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_191002.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_191002_meta.json",
+      "piece": "S",
+      "status": "other_or_interrupted",
+      "label": "23/10 19:10",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": null,
+      "squeeze_gain": null,
+      "channels": null,
+      "ffi": null,
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "preparation"
+      },
+      "git": "2361f01f861790570fad23431f4641545c6cae6a"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191027",
+      "source": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_191027.csv",
+      "metadata": "NVIDIA_RUNS\\logs\\S_s7073m3_c100_narrow75_ffi_20261023_191027_meta.json",
+      "piece": "S",
+      "status": "other_or_interrupted",
+      "label": "23/10 19:10",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.737462400436025,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "stopped": "Ctrl-C",
+        "phase": "release"
+      },
+      "git": "2361f01f861790570fad23431f4641545c6cae6a"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1913_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191302.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1913_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191302_meta.json",
+      "piece": "S",
+      "status": "curated_seat_found",
+      "label": "23/10 19:13",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.795887782276504,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 2.899060916927848,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 2.9925581326012067,
+        "squeeze_median": 3.572669289158608
+      },
+      "git": "2361f01f861790570fad23431f4641545c6cae6a",
+      "measured": {
+        "duration_s": 15.39299988746643,
+        "tracking_rmse_mean_hand_N": 0.4591981032035139,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.059114038047269335,
+            "p95_absolute_N": 0.11510290702105332
+          },
+          "2.5_10": {
+            "rms_N": 0.032529558482758285,
+            "p95_absolute_N": 0.07251641225446945
+          }
+        }
+      }
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1915_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191548.csv",
+      "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1915_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191548_meta.json",
+      "piece": "S",
+      "status": "curated_seat_found",
+      "label": "23/10 19:15",
+      "cart_d": {
+        "L": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ],
+        "R": [
+          60.0,
+          60.0,
+          60.0,
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      "cart_k": {
+        "L": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "R": [
+          1500.0,
+          1500.0,
+          1500.0,
+          20.0,
+          20.0,
+          20.0
+        ]
+      },
+      "controller_mode": "offline_socp_ati_feedforward_I",
+      "squeeze_gain": null,
+      "channels": "none",
+      "ffi": {
+        "ki_m_per_N_s": 0.0016,
+        "trim_limit_m": 0.003,
+        "trim_speed_m_per_s": 0.002,
+        "total_limit_m": 0.012,
+        "total_speed_m_per_s": 0.002,
+        "max_dt_s": 0.1,
+        "stall_dt_s": 0.3,
+        "k_eff_N_per_m": 680.0,
+        "pickup_measured_N_per_hand": 5.905992365761264,
+        "nominal": "(target_N_per_hand - pickup_measured_N_per_hand) / k_eff",
+        "normal_error": "2*target_N_per_hand - measured_normal_sum_N",
+        "entry": "zero ff and trim at frozen pickup pose; feedforward ramps",
+        "anti_windup": "track feasible integral after trim and combined command limits",
+        "hardware_tuned": false
+      },
+      "result": {
+        "route_followed": true,
+        "jammed": false,
+        "seat_found": true,
+        "landed_high": false,
+        "drop_mm": 0.0,
+        "believed_mm": 2.4529416859692676,
+        "socp_ok": 0,
+        "socp_ticks": 0,
+        "socp_failed": 0,
+        "side_force_max": 3.156164011942885,
+        "squeeze_median": 3.597156974247142
+      },
+      "git": "f761b60099df9fe286050349d28b135bb85254eb",
+      "measured": {
+        "duration_s": 15.3996000289917,
+        "tracking_rmse_mean_hand_N": 0.531404060931064,
+        "bands_mean_hand": {
+          "0.8_2.5": {
+            "rms_N": 0.07692611334148441,
+            "p95_absolute_N": 0.14793022075139858
+          },
+          "2.5_10": {
+            "rms_N": 0.03471161845532508,
+            "p95_absolute_N": 0.07083197399504085
+          }
+        }
+      }
+    }
+  ]
+}

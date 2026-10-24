@@ -1,0 +1,7 @@
+{
+  "actual_FFI_update_max_error_m": 9.974659986866641e-18,
+  "candidate_count": 46,
+  "model_count": 27,
+  "scenarios": 1242,
+  "command_speed_limit_respected": true
+}

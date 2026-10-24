@@ -1,0 +1,387 @@
+{
+  "generated_utc": "2026-10-23T17:21:50.272185+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "completed_utc": "2026-10-23T17:18:59.815903+00:00",
+  "cases": 448,
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "metric_note": "Retrospective conditional replay, mean-hand N. No retuning. Primary score unchanged; worst model per run then mean over four reserved runs.",
+  "joint_goal_pass_cases": 0,
+  "controllers": [
+    {
+      "id": "I_P0_I1.6_D0",
+      "label": "FFI attuale",
+      "development_mean_run_worst_model_score": 11.887384334635788,
+      "development_penalty_cases": 0,
+      "holdout_mean_run_worst_model_score": 11.007019527738427,
+      "holdout_per_piece_worst_score": {
+        "Z": 8.844770302876126,
+        "L": 15.902369518659347,
+        "S": 11.63961741732922,
+        "T": 7.641320872089017
+      },
+      "exploratory_joint_pass_cases": 0,
+      "central_mean": {
+        "route_rmse_N": 0.35385800894559377,
+        "route_force_low_band_rms_N": 0.17953390894878546,
+        "route_error_low_band_rms_N": 0.20358091632177192,
+        "route_force_mid_band_rms_N": 0.09889131046262406,
+        "route_error_mid_band_rms_N": 0.10141917269345095,
+        "route_force_high_band_rms_N": 0.05612687330926081,
+        "route_error_high_band_rms_N": 0.05766083981124677,
+        "rate_limited_tick_fraction": 0.1724708221351345,
+        "trim_limited_tick_fraction": 0.17723751650622463
+      },
+      "central_L": {
+        "first_seat_peak_N": 6.609924545224477,
+        "first_seat_max_positive_error_N": 2.8246862887331026,
+        "first_seat_max_negative_error_N": 0.4752198223457764,
+        "first_seat_max_200ms_trailing_mean_force_N": 6.431181331866355,
+        "first_seat_max_200ms_trailing_mean_positive_error_N": 2.646394119873605
+      },
+      "full_model_minimum_mean_hand_force_N": 2.585347115199994,
+      "full_model_max_route_undershoot_N": 2.221212822462017,
+      "full_model_max_seat_overshoot_N": 2.8246862887331026,
+      "max_command_speed_mm_s": 2.0000000000000147,
+      "holdout_score_change_percent_vs_baseline": 0.0
+    },
+    {
+      "id": "FF_only_P0_I0_D0",
+      "label": "FF solo",
+      "development_mean_run_worst_model_score": 125000013.08632962,
+      "development_penalty_cases": 2,
+      "holdout_mean_run_worst_model_score": 14.803711579313084,
+      "holdout_per_piece_worst_score": {
+        "Z": 11.227816184642139,
+        "L": 19.205819164049444,
+        "S": 14.271011813413221,
+        "T": 14.510199155147529
+      },
+      "exploratory_joint_pass_cases": 0,
+      "central_mean": {
+        "route_rmse_N": 0.46467906550384735,
+        "route_force_low_band_rms_N": 0.18361507942302135,
+        "route_error_low_band_rms_N": 0.20014268033473584,
+        "route_force_mid_band_rms_N": 0.07833721702588478,
+        "route_error_mid_band_rms_N": 0.0819172620447875,
+        "route_force_high_band_rms_N": 0.056759677470538505,
+        "route_error_high_band_rms_N": 0.058331563331890324,
+        "rate_limited_tick_fraction": 0.18211028178115424,
+        "trim_limited_tick_fraction": 0.0
+      },
+      "central_L": {
+        "first_seat_peak_N": 6.387766088899343,
+        "first_seat_max_positive_error_N": 2.602527832407969,
+        "first_seat_max_negative_error_N": 0.69737827867091,
+        "first_seat_max_200ms_trailing_mean_force_N": 6.209022875540086,
+        "first_seat_max_200ms_trailing_mean_positive_error_N": 2.424235663548461
+      },
+      "full_model_minimum_mean_hand_force_N": 0.70811630968115,
+      "full_model_max_route_undershoot_N": 2.291066210398467,
+      "full_model_max_seat_overshoot_N": 2.6678685548565375,
+      "max_command_speed_mm_s": 2.0000000000000115,
+      "holdout_score_change_percent_vs_baseline": 34.49337072589669
+    },
+    {
+      "id": "P_P0.05_I0_D0",
+      "label": "FF + P",
+      "development_mean_run_worst_model_score": 15.844409555229662,
+      "development_penalty_cases": 0,
+      "holdout_mean_run_worst_model_score": 16.158305583516366,
+      "holdout_per_piece_worst_score": {
+        "Z": 12.309108187294628,
+        "L": 20.755108864463313,
+        "S": 15.149285303480047,
+        "T": 16.419719978827466
+      },
+      "exploratory_joint_pass_cases": 0,
+      "central_mean": {
+        "route_rmse_N": 0.5025115094116885,
+        "route_force_low_band_rms_N": 0.1775474365443613,
+        "route_error_low_band_rms_N": 0.1946144242974231,
+        "route_force_mid_band_rms_N": 0.07867824332178086,
+        "route_error_mid_band_rms_N": 0.08209368144668727,
+        "route_force_high_band_rms_N": 0.05800721986971351,
+        "route_error_high_band_rms_N": 0.05954218402161186,
+        "rate_limited_tick_fraction": 0.1385140422584505,
+        "trim_limited_tick_fraction": 0.1385140422584505
+      },
+      "central_L": {
+        "first_seat_peak_N": 6.57225023600274,
+        "first_seat_max_positive_error_N": 2.7870119795113664,
+        "first_seat_max_negative_error_N": 0.5128941315675126,
+        "first_seat_max_200ms_trailing_mean_force_N": 6.393507022644007,
+        "first_seat_max_200ms_trailing_mean_positive_error_N": 2.6087198106518543
+      },
+      "full_model_minimum_mean_hand_force_N": 1.3656454607376023,
+      "full_model_max_route_undershoot_N": 2.0016961520250356,
+      "full_model_max_seat_overshoot_N": 2.8005503584772504,
+      "max_command_speed_mm_s": 2.0000000000000115,
+      "holdout_score_change_percent_vs_baseline": 46.80000832919713
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1",
+      "label": "FF + PI filtrata",
+      "development_mean_run_worst_model_score": 11.844729282270979,
+      "development_penalty_cases": 0,
+      "holdout_mean_run_worst_model_score": 10.829279152111525,
+      "holdout_per_piece_worst_score": {
+        "Z": 9.180652705120547,
+        "L": 15.299327508149457,
+        "S": 11.187592325216913,
+        "T": 7.649544069959185
+      },
+      "exploratory_joint_pass_cases": 0,
+      "central_mean": {
+        "route_rmse_N": 0.36150919691248395,
+        "route_force_low_band_rms_N": 0.1752325181842792,
+        "route_error_low_band_rms_N": 0.19595283193934135,
+        "route_force_mid_band_rms_N": 0.09139100660595763,
+        "route_error_mid_band_rms_N": 0.09427452729890715,
+        "route_force_high_band_rms_N": 0.05668877648833281,
+        "route_error_high_band_rms_N": 0.05821353547335416,
+        "rate_limited_tick_fraction": 0.1444117613575021,
+        "trim_limited_tick_fraction": 0.1444117613575021
+      },
+      "central_L": {
+        "first_seat_peak_N": 6.328537246999462,
+        "first_seat_max_positive_error_N": 2.5432989905080876,
+        "first_seat_max_negative_error_N": 0.7566071205707914,
+        "first_seat_max_200ms_trailing_mean_force_N": 6.149794033640774,
+        "first_seat_max_200ms_trailing_mean_positive_error_N": 2.365006821648592
+      },
+      "full_model_minimum_mean_hand_force_N": 2.621340039361356,
+      "full_model_max_route_undershoot_N": 2.1840430230728236,
+      "full_model_max_seat_overshoot_N": 2.6169237149995337,
+      "max_command_speed_mm_s": 2.000000000000019,
+      "holdout_score_change_percent_vs_baseline": -1.614791135592919
+    },
+    {
+      "id": "PD_P0.05_I0_D0.005",
+      "label": "FF + PD",
+      "development_mean_run_worst_model_score": 15.774529566669123,
+      "development_penalty_cases": 0,
+      "holdout_mean_run_worst_model_score": 15.955265852748967,
+      "holdout_per_piece_worst_score": {
+        "Z": 12.093003600989626,
+        "L": 20.646202277195375,
+        "S": 14.8444678912751,
+        "T": 16.237389641535763
+      },
+      "exploratory_joint_pass_cases": 0,
+      "central_mean": {
+        "route_rmse_N": 0.5018745278177397,
+        "route_force_low_band_rms_N": 0.17586384877262312,
+        "route_error_low_band_rms_N": 0.19365468690447235,
+        "route_force_mid_band_rms_N": 0.07645504948173937,
+        "route_error_mid_band_rms_N": 0.08007654873201622,
+        "route_force_high_band_rms_N": 0.06033295048017109,
+        "route_error_high_band_rms_N": 0.06181873051284028,
+        "rate_limited_tick_fraction": 0.17928338118800227,
+        "trim_limited_tick_fraction": 0.18407781697076164
+      },
+      "central_L": {
+        "first_seat_peak_N": 6.553985432424167,
+        "first_seat_max_positive_error_N": 2.7687471759327926,
+        "first_seat_max_negative_error_N": 0.5192459145256629,
+        "first_seat_max_200ms_trailing_mean_force_N": 6.375242219064694,
+        "first_seat_max_200ms_trailing_mean_positive_error_N": 2.5904550070732797
+      },
+      "full_model_minimum_mean_hand_force_N": 1.3460531714790116,
+      "full_model_max_route_undershoot_N": 2.0004192523385584,
+      "full_model_max_seat_overshoot_N": 2.784591043992347,
+      "max_command_speed_mm_s": 2.0000000000000115,
+      "holdout_score_change_percent_vs_baseline": 44.9553697305672
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005",
+      "label": "FF + PID",
+      "development_mean_run_worst_model_score": 11.959784893440846,
+      "development_penalty_cases": 0,
+      "holdout_mean_run_worst_model_score": 10.898924374074992,
+      "holdout_per_piece_worst_score": {
+        "Z": 9.39328806632504,
+        "L": 15.065134321554261,
+        "S": 11.183211078572262,
+        "T": 7.954064029848402
+      },
+      "exploratory_joint_pass_cases": 0,
+      "central_mean": {
+        "route_rmse_N": 0.3692138871802463,
+        "route_force_low_band_rms_N": 0.1775754082588313,
+        "route_error_low_band_rms_N": 0.20131804139744147,
+        "route_force_mid_band_rms_N": 0.08381971568837225,
+        "route_error_mid_band_rms_N": 0.08690693558966789,
+        "route_force_high_band_rms_N": 0.059929721033427384,
+        "route_error_high_band_rms_N": 0.061402447770588606,
+        "rate_limited_tick_fraction": 0.1848927705079906,
+        "trim_limited_tick_fraction": 0.19550187827264626
+      },
+      "central_L": {
+        "first_seat_peak_N": 6.281626505726352,
+        "first_seat_max_positive_error_N": 2.4963882492349776,
+        "first_seat_max_negative_error_N": 0.8002201407088485,
+        "first_seat_max_200ms_trailing_mean_force_N": 6.102883292366551,
+        "first_seat_max_200ms_trailing_mean_positive_error_N": 2.318096080375483
+      },
+      "full_model_minimum_mean_hand_force_N": 2.479328379506964,
+      "full_model_max_route_undershoot_N": 2.25292229543646,
+      "full_model_max_seat_overshoot_N": 2.586248617762473,
+      "max_command_speed_mm_s": 2.000000000000012,
+      "holdout_score_change_percent_vs_baseline": -0.9820565266648873
+    },
+    {
+      "id": "PI_P0.05_I0.8_D0",
+      "label": "FF + PI semplice",
+      "development_mean_run_worst_model_score": 11.890739423335132,
+      "development_penalty_cases": 0,
+      "holdout_mean_run_worst_model_score": 10.861602642196068,
+      "holdout_per_piece_worst_score": {
+        "Z": 9.296971182096447,
+        "L": 15.225474341043743,
+        "S": 11.131723268494929,
+        "T": 7.7922417771491475
+      },
+      "exploratory_joint_pass_cases": 0,
+      "central_mean": {
+        "route_rmse_N": 0.3680864130117994,
+        "route_force_low_band_rms_N": 0.18051324575340305,
+        "route_error_low_band_rms_N": 0.20229972823604658,
+        "route_force_mid_band_rms_N": 0.0873716590333453,
+        "route_error_mid_band_rms_N": 0.09039094697505196,
+        "route_force_high_band_rms_N": 0.057785341239198,
+        "route_error_high_band_rms_N": 0.05930030354346494,
+        "rate_limited_tick_fraction": 0.14680659369276178,
+        "trim_limited_tick_fraction": 0.14792555144728753
+      },
+      "central_L": {
+        "first_seat_peak_N": 6.302975394510066,
+        "first_seat_max_positive_error_N": 2.5177371380186924,
+        "first_seat_max_negative_error_N": 0.7821689730601875,
+        "first_seat_max_200ms_trailing_mean_force_N": 6.124232181151001,
+        "first_seat_max_200ms_trailing_mean_positive_error_N": 2.339444969159196
+      },
+      "full_model_minimum_mean_hand_force_N": 2.4806874994756494,
+      "full_model_max_route_undershoot_N": 2.185167331128426,
+      "full_model_max_seat_overshoot_N": 2.5982611798506103,
+      "max_command_speed_mm_s": 2.000000000000019,
+      "holdout_score_change_percent_vs_baseline": -1.3211286232017505
+    }
+  ],
+  "observed": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "piece": "Z",
+      "route_duration_s": 19.09369993209839,
+      "route_rmse_mean_hand_N": 0.32208494201081683,
+      "active_min_hand_L_R_N": [
+        3.1306433156662363,
+        3.1184650325471868
+      ],
+      "route_min_hand_minus_common_request_L_R_N": [
+        -2.0241661061874527,
+        -1.9596811693681766
+      ],
+      "fraction_route_time_hand_below_common_request_by025N_L_R": [
+        0.11281735149132328,
+        0.14678661421591932
+      ],
+      "logged_sum_normal_reconstruction_max_discrepancy_N": 0.013679258783255044,
+      "band_method": "Offline linear interpolation of observed CSV forces, ZOH logged target, cubic detrend/zero-phase bandpass. Not a controller filter.",
+      "limitation": "Clipped projected normals as in controller. Deviation from common scalar request is NOT full-wrench/friction margin; logging target and sensor timestamps are not simultaneous.",
+      "force_low_band_rms_N": 0.0930109759501731,
+      "error_low_band_rms_N": 0.11549124005359232,
+      "force_mid_band_rms_N": 0.11092194341450701,
+      "error_mid_band_rms_N": 0.11243874792627513,
+      "force_high_band_rms_N": 0.06557048984764208,
+      "error_high_band_rms_N": 0.06861336174295726
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "piece": "L",
+      "route_duration_s": 21.986299991607666,
+      "route_rmse_mean_hand_N": 0.27457296720917296,
+      "active_min_hand_L_R_N": [
+        3.3083518206034457,
+        3.291497708079888
+      ],
+      "route_min_hand_minus_common_request_L_R_N": [
+        -1.5997944153797716,
+        -1.6096118891445759
+      ],
+      "fraction_route_time_hand_below_common_request_by025N_L_R": [
+        0.16036810736423582,
+        0.15824859012783576
+      ],
+      "logged_sum_normal_reconstruction_max_discrepancy_N": 0.014046199637530066,
+      "band_method": "Offline linear interpolation of observed CSV forces, ZOH logged target, cubic detrend/zero-phase bandpass. Not a controller filter.",
+      "limitation": "Clipped projected normals as in controller. Deviation from common scalar request is NOT full-wrench/friction margin; logging target and sensor timestamps are not simultaneous.",
+      "force_low_band_rms_N": 0.1899210424952407,
+      "error_low_band_rms_N": 0.0979465881138851,
+      "force_mid_band_rms_N": 0.10380495485417217,
+      "error_mid_band_rms_N": 0.1042793084017193,
+      "force_high_band_rms_N": 0.06581034874235747,
+      "error_high_band_rms_N": 0.06757593487560917
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "piece": "S",
+      "route_duration_s": 15.40999984741211,
+      "route_rmse_mean_hand_N": 0.5304663893406748,
+      "active_min_hand_L_R_N": [
+        2.0547679326053343,
+        3.380493515460061
+      ],
+      "route_min_hand_minus_common_request_L_R_N": [
+        -2.2282023360475467,
+        -2.2218994805483128
+      ],
+      "fraction_route_time_hand_below_common_request_by025N_L_R": [
+        0.24067487837403292,
+        0.25308890534525486
+      ],
+      "logged_sum_normal_reconstruction_max_discrepancy_N": 0.014296002455237655,
+      "band_method": "Offline linear interpolation of observed CSV forces, ZOH logged target, cubic detrend/zero-phase bandpass. Not a controller filter.",
+      "limitation": "Clipped projected normals as in controller. Deviation from common scalar request is NOT full-wrench/friction margin; logging target and sensor timestamps are not simultaneous.",
+      "force_low_band_rms_N": 0.24916326483319587,
+      "error_low_band_rms_N": 0.4533596326912694,
+      "force_mid_band_rms_N": 0.07725605107968982,
+      "error_mid_band_rms_N": 0.08628952224278291,
+      "force_high_band_rms_N": 0.034630886476508395,
+      "error_high_band_rms_N": 0.03659522616252866
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "piece": "T",
+      "route_duration_s": 18.937399864196777,
+      "route_rmse_mean_hand_N": 0.27660520954104756,
+      "active_min_hand_L_R_N": [
+        2.5456733933613354,
+        3.2802834362015787
+      ],
+      "route_min_hand_minus_common_request_L_R_N": [
+        -1.524260437145502,
+        -1.5165585516532158
+      ],
+      "fraction_route_time_hand_below_common_request_by025N_L_R": [
+        0.16754152112197715,
+        0.1162778122487228
+      ],
+      "logged_sum_normal_reconstruction_max_discrepancy_N": 0.014373539275229774,
+      "band_method": "Offline linear interpolation of observed CSV forces, ZOH logged target, cubic detrend/zero-phase bandpass. Not a controller filter.",
+      "limitation": "Clipped projected normals as in controller. Deviation from common scalar request is NOT full-wrench/friction margin; logging target and sensor timestamps are not simultaneous.",
+      "force_low_band_rms_N": 0.18359984792287254,
+      "error_low_band_rms_N": 0.1425831162254401,
+      "force_mid_band_rms_N": 0.10374824328000848,
+      "error_mid_band_rms_N": 0.10137833568484776,
+      "force_high_band_rms_N": 0.06175290736311348,
+      "error_high_band_rms_N": 0.06176812423512397
+    }
+  ]
+}

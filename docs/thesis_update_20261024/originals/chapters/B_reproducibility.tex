@@ -1,0 +1,75 @@
+\chapter{Reproducibility and Evidence Status}
+\label{app:reproducibility}
+
+The manuscript is kept separate from the experiment folders. No controller, recording script, policy library or running campaign is changed during drafting. A source manifest records paths and SHA-256 hashes of the inspected implementation. This snapshot is necessary because the active project can change while its description is being written.
+
+\section{Mathematical sources and implementation choices}
+
+The manuscript distinguishes established methods, mechanical derivations, implemented choices and measured results. A citation supplies the background method; it does not prove that this apparatus meets its assumptions. Numerical identity checks likewise do not validate a physical manipulation.
+
+\begin{longtable}{@{}p{0.27\textwidth}p{0.66\textwidth}@{}}\toprule
+Topic & Origin and claim made here\\\midrule\endhead
+UCM and task-equivalent variability & Scholz and Sch\"oner~\cite{scholz1999}; geometric metrics in Campolo et al.~\cite{campolo2013}. The wrench map specializes the idea to this task. The directional index is the project's statistic, not a universal UCM theorem.\\
+Covariance and precision & Gaussian conditioning, inverse covariance and quadratic likelihood in Bishop~\cite[Sections 2.3 and 3.1]{bishop2006}. A precision-weighted control preference is an implementation choice; neural interpretation requires independent evidence~\cite{kutch2012}.\\
+TP-GMM and GMR & Calinon~\cite{calinon2016}. Wrench outputs, gravity inputs, scaling, frame anchoring and regularization describe this implementation. Their effectiveness requires validation.\\
+Gravity balance and identification & Static force and moment balance, also used in dual-arm estimation~\cite{wong2026}. Upright rank two follows from the cross-product matrix. Gates and unobserved-direction priors are code choices.\\
+Convex allocation & Convexity and norm cones from Boyd and Vandenberghe~\cite{boyd2004}. Geometry, weights, caps, slack and realization are the implemented problem. No source proves a guarantee for uncertain, changing contacts.\\
+Passive-tool stiffness & Local energy differentiation, informed by spring mechanics~\cite{herder2001,guest2006}. Stiffness values are calculated for this geometry, not measured on a physical prototype.\\
+Insertion and DMPs & Source manipulation methods~\cite{yang2025haptic,yang2025multicontact}. Tetromino geometry, finite grasp, board state and error sampling are application adaptations.\\
+Geometry and outcomes & Jitter and half-space sampling are synthetic test designs. Force ladders and reported statistics are project measurements, not conclusions from a background paper.\\
+\bottomrule\end{longtable}
+
+Appendix~\ref{app:math} makes signs, units and approximation boundaries inspectable through direct identities and local derivations. These are not new general theorems. Full-rank regression is identifiable under its model; sensor bias, elastic drift or support contact can still make it inaccurate.
+
+\section{Implementation map}
+
+\begin{longtable}{@{}p{0.28\textwidth}p{0.65\textwidth}@{}}\toprule
+Thesis component & Source within the project\\\midrule\endhead
+Haption recording & \sourcefile{lorenzo_code/Haption_Control/experiments/2_thesis_core/13-human_exploration_standardized_torsional.cpp}\\
+Prior training & \sourcefile{lorenzo_data_analysis/07_torsional_ucm/C_prior_socp/25_prior_e_socp_sessione_C.py}\\
+TP-GMM fitting and GMR & \sourcefile{lorenzo_data_analysis/04_tp_gmm_wielding/01_standardized_box/tpgmm_core.py}\\
+Original bounded allocator & \sourcefile{lorenzo_data_analysis/07_torsional_ucm/lib/socp.py}\\
+Passive-tool allocator & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/lib/socp.py}\\
+Array-based prior query & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/lib/prior.py}\\
+Observable-subspace estimator & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/lib/estimator.py}\\
+Axial-travel geometry & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/lib/tool.py}\\
+Floating plate & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/spider_ee/floating_plate.py}\\
+Contact-to-solver interface & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/lib/convex.py}\\
+Insertion allocation & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/tetris/allocation.py}\\
+Handling and grasp inversion & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/tetris/handling.py}\\
+DMP and search & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/tetris/yl/dmp.py} and \sourcefile{yl/bbo.py}\\
+Played-board training & \sourcefile{lorenzo_data_analysis/10_tripad_passivo/tetris/43_train_in_pybullet.py}\\
+\bottomrule\end{longtable}
+
+The passive-tool solver is a local counterpart of the bounded allocator. The mathematical chapter describes their common allocation, while recording the wrapper defaults that differ. The older force allocator supplies historical comparisons and prior-query functionality; it is not described as the current default solver.
+
+\section{Evidence classes}
+
+The manuscript uses four evidence classes. An implementation statement is checked against code. A measured statement is checked against a saved analysis or copied data table. An explanatory example is derived from declared synthetic geometry or an algebraic identity. A TODO specifies work required before an experimental claim can be made.
+
+The figure manifest records the origin of every generated or copied asset. Model-query curves come from the saved prior. The observability figure uses prescribed attitudes. The directional-index figure reproduces reported values and intervals. The geometry gallery is illustrative and is not selected from successful grasps. The insertion image is a saved unresolved case retained unchanged.
+
+\section{Data and configuration to freeze}
+
+A final recording result needs the run identifiers, perturbation metadata, gains, display scales, saturation limits, drift filter and retained sample count. A final prior result needs the model file hash, training runs, component count, isotropic scales, regularization and empirical gravity coverage.
+
+A final grasp result needs the body manifest, information regime, arrival-error distribution, tool variant, collision configuration, spring settings, friction values, force cap, compression floor, trajectory, estimator gates and fallback policy. These settings define the experiment. Omitting one can make two apparently similar rows represent different mechanical systems.
+
+A final insertion result additionally needs the board snapshot, world key, policy hash, selected route, persistent-error scenarios, search settings, completion threshold, seating rule and post-release measurement time. A frozen library is distinct from a library being updated while games run.
+
+\section{Ground truth and reporting}
+
+Ground truth can construct the simulated body and calculate retrospective error. It cannot determine which objects enter a blind campaign, decide whether estimation is acceptable or select an action. The audit must include defaults and gates, not only direct parameters passed to the SOCP.
+
+Catalogue Tetris is declared separately. Its known mass and geometry are legitimate task assumptions. Pose observation must still use the stated injected error, and the grasp inversion must use available tool signals rather than the body's true pose. Different information regimes cannot share a success-rate denominator without an explicit analysis of that difference.
+
+\section{Unfinished work}
+
+The visible TODO paragraphs are part of the draft review process. They are not suppressed by a ``final'' switch that would leave unsupported prose looking complete. Before submission, each TODO should be resolved by adding evidence, narrowing the corresponding claim or deleting an unvalidated section.
+
+The final length target is approximately 115 pages. The current text should grow through the missing controlled results, selected physical illustrations and their interpretation. Empty result pages, oversized plots and repeated background are not substitutes for those additions. The editorial page allocation is maintained outside the manuscript so that it does not become a scientific claim.
+
+\todo{Complete the candidate and supervisor metadata, confirm the front-page requirements for the candidate's course cohort, and insert only an authorized university logo if required. The present layout is a clean UniGe-labelled adaptation, not a verified mandatory Robotics Engineering class file.}
+
+\todo{Freeze the final experiment snapshot, rerun the mathematical and source checks, verify bibliography metadata and render the full manuscript. Inspect equations, figure labels, table widths and cross-references before submission.}
+

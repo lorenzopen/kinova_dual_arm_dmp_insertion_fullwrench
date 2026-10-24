@@ -1,0 +1,102 @@
+\chapter{Mathematical Checks}
+\label{app:math}
+
+This appendix collects direct identities used to check the implementation, rather than new general theorems. Methodological sources and separate code choices are identified in Appendix~\ref{app:reproducibility}. The numerical script tests frame transforms, moment regression, mixture covariance and the spring Hessian without running a campaign. Numerical agreement is not a physical success rate.
+
+\section{Cross-product and moment signs}
+
+For $\vect a=(a_x,a_y,a_z)^\top$,
+\begin{equation}
+\crossmat{\vect a}=\begin{bmatrix}0&-a_z&a_y\\a_z&0&-a_x\\-a_y&a_x&0\end{bmatrix}.
+\end{equation}
+This gives $\crossmat{\vect a}\vect b=\vect a\times\vect b$ and $\crossmat{\vect a}^\top=-\crossmat{\vect a}$. With contact force acting on the object, static balance about $\vect c$ is
+\begin{equation}
+\vect T_c=-(\vect p_c-\vect c)\times m\vect g
+=m\vect g\times(\vect p_c-\vect c).
+\end{equation}
+The upright signs in Equation~\eqref{eq:planar-estimate} follow directly. A positive $r_x$ gives a negative contact moment about $y$ for downward gravity.
+
+\section{Rotation and pole shift}
+
+For a proper rotation $R$,
+\begin{equation}
+R(\vect a\times\vect b)=(R\vect a)\times(R\vect b),\qquad
+\crossmat{R\vect a}=R\crossmat{\vect a}R^\top.
+\end{equation}
+Changing only coordinates sends $\vect F$ to $R^\top\vect F$ and $\vect T_c$ to $R^\top\vect T_c$. Changing the pole from $\vect c$ to $\vect d$ gives
+\begin{equation}
+\vect T_d=\vect T_c+(\vect c-\vect d)\times\vect F.
+\end{equation}
+The two transformations are tested separately. Rotating a wrist moment cannot replace shifting it to the estimated CoM.
+
+\section{Equilibrium matrices and null spaces}
+
+The global contact map has six rows and eighteen columns. Its null space contains force redistributions with zero net object wrench. The two-wrist map has twelve rows and eighteen columns, so it also has a nontrivial null space. Its kernel leaves each wrist wrench unchanged. In the previous allocator, whose decision variables were the pad forces, this kernel was invisible to the prior cost.
+
+For a consistent fixed geometry, the object wrench can be obtained from the two wrist wrenches by shifting both to a common pole and summing. Therefore $G=AB$ for a fixed linear map $A$, and $\ker B\subseteq\ker G$. The converse generally fails. This distinguishes cost blindness from the broader definition of internal force.
+
+In that previous allocator, adding $\gamma I_{18}$ to the contact-force Hessian, with $\gamma>0$, made the quadratic cost positive definite on every force direction; its effort term supplied this property after normalization, and a finite cap bounded the feasible set. In the active allocator the pad forces are feasibility witnesses outside the cost, and the cost is positive definite on the twelve wrist components it ranks.
+
+\section{An upper bound is not a separate torsion constraint}
+
+For equal contact radius $r$ and parallel normals,
+\begin{equation}
+|\tau_x|\leq\sum_i r\norm{\vect f_{t,i}}\leq\mu r\sum_i\lambda_i.
+\end{equation}
+Equality requires appropriately oriented tangential forces and can be prevented by simultaneous resultant-force demand. The allocator does not impose this bound as a replacement for six cones. It imposes the cones and computes the moment from their forces, retaining the coupling automatically.
+
+\section{Observability identity}
+
+Using $\crossmat{\vect g}^\top\crossmat{\vect g}=\norm{\vect g}^2I-\vect g\vect g^\top$,
+\begin{equation}
+H_k^\top H_k=R_k^\top\left(g_0^2I-\vect g\vect g^\top\right)R_k.
+\end{equation}
+It has two eigenvalues $g_0^2$ and one zero eigenvalue. The zero direction is $R_k^\top\vect g$. Repetition at one attitude multiplies the two nonzero eigenvalues but leaves the third zero. Distinct nonparallel directions make the intersection of kernels trivial.
+
+The numerical check uses synthetic moments from a known first mass moment. Ground truth is appropriate here because this is an algebraic test outside any planner or controller decision. It checks recovery at full rank and confirms that the upright case does not recover the missing direction.
+
+\section{Precision under a change of units}
+
+Let $\vect d=S\vect d_n$ with invertible diagonal $S$. Then
+\begin{equation}
+\vect d^\top Q\vect d=\vect d_n^\top(S^\top QS)\vect d_n.
+\end{equation}
+If $C_n=S^{-1}CS^{-\top}$, its inverse is $Q_n=S^\top C^{-1}S$. This is the solver normalization. Multiplying precision by $S^{-1}$ instead would invert the intended unit correction.
+
+For an isotropic vector block, scaling commutes with a rotation. The numerical check confirms that property and contrasts it with an axis-dependent scale. The latter is not prohibited for every statistical purpose; it is inappropriate for a model whose frame transformation assumes ordinary vector rotation after scaling.
+
+\section{Conditional mixture covariance}
+
+If component $k$ has conditional mean $\vect m_k$ and covariance $C_k$, and weights $\beta_k$, then
+\begin{equation}
+\operatorname{Cov}(\vect y\mid\vect x)=\sum_k\beta_kC_k
++\sum_k\beta_k(\vect m_k-\vect m)(\vect m_k-\vect m)^\top.
+\end{equation}
+The second term follows from the law of total covariance. For two components with equal within-component covariance but different means, it is strictly positive along the mean-separation direction. This test guards against a common implementation that returns only the averaged component covariance.
+
+\section{Spring stiffness and the small-rotation approximation}
+
+For attachment displacement $\Delta_i=B_i\vect\xi$, the quadratic energy is
+\begin{equation}
+U(\vect\xi)=\frac12\sum_i\vect\xi^\top B_i^\top K_iB_i\vect\xi.
+\end{equation}
+Its Hessian is $\sum_iB_i^\top K_iB_i$. A finite-difference Hessian of this same small-displacement energy should agree with the analytic matrix. That agreement checks the algebra and signs; it does not test large-angle mechanics.
+
+For the axial-only triangle at its centre,
+\begin{equation}
+K_{\mathrm{axial}}=\diag\left(3k+K_c,0,0,0,\tfrac32kr^2,\tfrac32kr^2\right).
+\end{equation}
+The zero spring entries do not mean unconstrained motion in an actual prismatic-joint assembly. Joint constraints and contacts provide additional load paths. For the floating plate, lateral spring terms and the central six-dimensional spring must be added before deriving effective channels.
+
+\section{Convexity conditions}
+
+At a fixed contact geometry, the tangent projection is linear, compression is affine and the norm inequalities are convex. The prior Hessian is positive semidefinite after numerical projection, and effort is positive definite in the forces. Slack penalties are positive definite in slack.
+
+These statements require unit normals and valid parameter ranges. A nonunit normal changes the tangent decomposition. Negative friction or an incompatible compression floor changes the admissible set. The source audit and numerical checks do not authorize omitting parameter validation in a final controller.
+
+The quadratic objective can be converted to SOCP form through an epigraph. For example, $t\geq\norm{L\vect x}^2$ can be represented by
+\begin{equation}
+\norm{\begin{bmatrix}2L\vect x\\t-1\end{bmatrix}}\leq t+1.
+\end{equation}
+Thus the presence of a quadratic objective is consistent with conic canonicalization. It does not make the exact-friction problem a quadratic program with only linear constraints.
+

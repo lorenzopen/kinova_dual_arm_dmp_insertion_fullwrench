@@ -1,0 +1,96 @@
+{
+  "jobs": [
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_spatial_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_spatial_2"
+    }
+  ],
+  "source_sha256": "a888fd03b3e8611fa4633a73d3ebde9b06e9840139802e9029d4b6e8edaf1106",
+  "original_source_sha256": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2",
+  "protocol_sha256": "a06d4d401149417a1c7c6371aad4cff63799b327afb031f4f3f833891d0c32cf",
+  "time": 1792823804.6100457
+}

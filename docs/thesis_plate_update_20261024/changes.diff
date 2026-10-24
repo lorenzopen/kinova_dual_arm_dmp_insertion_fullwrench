@@ -1,0 +1,121 @@
+--- before/chapters/04_contact_and_end_effectors.tex
++++ after/chapters/04_contact_and_end_effectors.tex
+@@ -25,19 +25,8 @@
+ \end{equation}
+ The inspected implementation uses $d=20$ mm, $r=30$ mm and sphere radius $10$ mm. Earlier device conventions used a different local pushing axis. Coordinates must be transformed explicitly rather than merged by reusing axis names.
+ 
+-\begin{figure}[htbp]\centering
+-\begin{tikzpicture}[scale=1.25,>=Latex]
+-\coordinate (a) at (0,1.45);\coordinate (b) at (1.255,-0.725);\coordinate (c) at (-1.255,-0.725);
+-\draw[fill=gray!8] (a)--(b)--(c)--cycle;
+-\foreach \pt/\lab in {a/1,b/2,c/3}{\draw[fill=gray!45] (\pt) circle (0.16);\node[above right] at (\pt) {$\vect c_{\lab}$};\draw[dashed] (0,0)--(\pt);}
+-\fill (0,0) circle (1pt);\draw[->] (0,0)--(0.72,0) node[right] {$y$};\draw[->] (0,0)--(0,0.65) node[left] {$z$};
+-\node at (0,-1.35) {Pad plane; push direction normal to the page};
+-\draw[->,thick] (a)--++(-0.7,0) node[left] {$\vect f_{t,1}$};
+-\draw[->,thick] (b)--++(0.34,0.58);\draw[->,thick] (c)--++(0.34,-0.58);
+-\end{tikzpicture}
+-\caption{Three discrete contact points. Tangential forces act at nonzero lever arms and create torsion about the push axis. No local torsional moment is assigned to a point.}
+-\label{fig:tripad-geometry}
+-\end{figure}
++\thesisfigure[1.0]{ch04_contacts/plate_front_side.pdf}{Three discrete contact spheres in front view (a), and the floating-plate mechanism in side view (b), introduced in Section~\ref{sec:floating-plate}. The side view exaggerates deformation and is not to scale; the lower two spheres overlap in this projection. Rigid supports place the zero-free-length spring anchors at the unloaded sphere centres. The central and peripheral springs connect the same flange and plate in parallel. Tangential contact forces create torsion through their lever arms; a point contact has no local moment.}{fig:tripad-geometry}
++
+ 
+ The spheres are geometric contact elements. Their use does not turn the model into a soft-finger contact or a continuous friction patch. In the allocator, each sphere contributes one resultant point force, and each hand always has three possible force slots. A slot is set to zero when its pad is inactive.
+ 
+@@ -100,13 +89,30 @@
+ Finite travel limits conformity. With $r=30$ mm and travel $8$ mm, a simple one-pad differential displacement corresponds to an angle of approximately $\arcsin(8/30)=15.5^\circ$. At a travel stop the tool changes behaviour. Reporting spring stiffness without reporting travel would omit the condition under which the mechanism becomes effectively rigid.
+ 
+ \section{Floating triangular plate}
++\label{sec:floating-plate}
+ 
+ The later tool joins the three spheres to one rigid triangular plate. Peripheral springs connect flange supports to the sphere centres, and a central six-degree-of-freedom spring connects the flange to the plate centre. Both spring sets act between the same two rigid bodies and therefore contribute in parallel. The wrist coupling is upstream of this tool; its compliance combines in series only in an uncoupled channel approximation.
+ 
+-Let $\vect\xi=(\vect d,\vect\phi)$ be a small displacement of the plate. At attachment $\vect a_i$, measured from the plate centre,
++\subsection{What zero free length means in the implementation}
++\label{sec:plate-zero-length}
++
++The side view in Figure~\ref{fig:tripad-geometry} distinguishes a rigid support from the spring at its tip. Let $\vect a_i$ be that tip and $\vect s_i$ the centre of sphere $i$. They coincide in the unloaded configuration. The support still places both points $d=20$ mm ahead of the flange. In the flange axes the implemented deformation and peripheral force are
++\begin{equation}
++\vect\Delta_i=R_f^\top(\vect s_i-\vect a_i),\qquad
++\vect f_i^{\mathrm{spring}}=-K_i\vect\Delta_i-C_i\vect u_i.
++\label{eq:plate-point-spring}
++\end{equation}
++Here $\vect u_i=R_f^\top(\vect v_{s_i}-\vect v_{a_i})$ is the relative attachment-point velocity expressed in the flange axes, as used by the numerical damper. The elastic potential is $U_i=\tfrac12\vect\Delta_i^\top K_i\vect\Delta_i$: no nonzero scalar rest length is subtracted from $\norm{\vect s_i-\vect a_i}$. Thus $\ell_0=0$ describes this point-spring model; it does not collapse the support or set the flange--plate spacing to zero. The central six-axis spring likewise uses a relative pose about a prescribed rest transform, rather than the absolute distance between the flange and plate centres.
++
++The three sphere centres remain fixed in the rigid plate frame. Their different displacements relative to the support tips arise from one plate translation and rotation, not from three independently controlled pad motions. A tilted surface can therefore rotate the plate while the flange retains its attitude. A more irregular surface may give different contact normals or leave a pad unloaded; compliance does not guarantee that every shape admits three loaded contacts.
++
++The current floating-plate source applies these springs without hard travel stops. Its $\pm8$ mm range is a nominal design reference, not a simulated stop. This differs from the axial-rail mechanism described earlier. The zero-free-length potential is quadratic in attachment displacement, while finite plate rotations still make the complete pose-to-displacement relation nonlinear.
++
++
++Let $\vect\xi=(\vect d,\vect\phi)$ be a small displacement of the plate. With rest-frame lever arm $\vect r_i=\vect c_i-[d,0,0]^\top$ about the plate centre,
+ \begin{equation}
+ \Delta_i\simeq B_i\vect\xi,\qquad
+-B_i=\begin{bmatrix}I&-\crossmat{\vect a_i}\end{bmatrix}.
++B_i=\begin{bmatrix}I&-\crossmat{\vect r_i}\end{bmatrix}.
+ \end{equation}
+ For peripheral stiffness matrices $K_i$ and central stiffness $K_c^{(6)}$,
+ \begin{equation}
+@@ -127,9 +133,25 @@
+ 
+ The plate's torsional mounting stiffness does not add a soft-finger moment at the object. It transmits the moment generated by the three contact forces from the plate to the wrist. Keeping these two levels distinct preserves the discrete-point model.
+ 
++\subsection{Seeing the plate conform in PyBullet}
++\label{sec:plate-visual-bench}
++
++Figure~\ref{fig:plate-conformity-bullet} adds an isolated contact bench using the floating-plate implementation, with the geometry and default stiffnesses stated above. The three prescribed surfaces are a flat face, a face tilted by $12^\circ$ and a convex body with two front facets. The flange translates along the push axis while its orientation is held fixed. Gravity is disabled to isolate this contact response. The plate collision is disabled, so all object load passes through the three sphere links. No SOCP, unknown-object estimator or wrist controller is used in this illustration.
++
++\thesisfigure[1.0]{ch04_contacts/plate_conformity_bullet.pdf}{Recorded PyBullet poses at the first loaded contact state (top) and after settling (bottom), using one fixed camera. Blue is the flange and its rigid supports, gold the rigid floating plate, orange the three spheres and grey the contacted body. In the faceted case, two grey tints distinguish the actual front facets. A pad is counted as loaded above $0.05$ N. The springs are numerical force elements and are explained in the side-view schematic, rather than rendered as physical coils.}{fig:plate-conformity-bullet}
++
++Each trial lasts $3$ s at a $0.25$ ms physics step. A smooth $1.4$ s approach ends $1.2$ mm beyond the average nominal sphere tangency for that surface, followed by a hold. Peripheral stiffness is $500$ N/m in each direction; the central translation is $20000$ N/m, central torsion $40$ Nm/rad and central tilt stiffness zero. Contact stiffness and damping are $8000$ N/m and $207$ N\,s/m, with friction $0.7$. These are the general floating-plate defaults, distinct from the $2700$ N/m central axial spring in the later Kinova model.
++
++The flat case has three loaded pads from its first recorded loaded state. The tilted and faceted cases initially have two and finish with three. On the $12^\circ$ face the plate settles at approximately $11.0^\circ$ relative to the flange. Figure~\ref{fig:plate-conformity-trace} shows that this is passive conformity accompanied by unequal contact loading: the final normal forces are approximately $0.24$, $6.33$ and $6.64$ N. Counting three contacts does not mean that all three carry the same force or have a large friction reserve.
++
++\thesisfigure[0.94]{ch04_contacts/plate_conformity_trace.pdf}{The tilted-face bench. Top: actual normal force on each sphere link. Bottom: plate tilt relative to the fixed-attitude flange, compared with the $12^\circ$ face. The dotted line marks the end of commanded approach; the remaining interval is a hold. The plate acquires contact through its passive degrees of freedom, without a command to its individual spheres.}{fig:plate-conformity-trace}
++
++These prescribed surfaces illustrate the mechanism; they are not a population success rate or an insertion test. Only the plate pose and the three contact resultants are measured here. The archived geometry campaign in Chapter~\ref{ch:geometry} evaluates more varied shapes and the complete manipulation sequence. The figure data, copied model hashes and plotting script are listed in the figure manifest.
++
++
+ \section{Compliance centre and transmission}
+ 
+-In the symmetric arrangement, $\sum_i\vect a_i=0$, and the translation--rotation coupling block vanishes at the plate centre. More generally, the compliance centre follows the stiffness-weighted attachment geometry. This connects the design to the remote-centre-compliance reasoning of Whitney~\cite{whitney1982}.
++In the symmetric arrangement, $\sum_i\vect r_i=0$, and the translation--rotation coupling block vanishes at the plate centre. More generally, the compliance centre follows the stiffness-weighted attachment geometry. This connects the design to the remote-centre-compliance reasoning of Whitney~\cite{whitney1982}.
+ 
+ If the full stiffness matrix contains coupling, a channel's effective stiffness under free motion of the other coordinates is obtained from the compliance $C=K^{-1}$, as $1/C_{jj}$. Reading $K_{jj}$ gives the stiffness when the other coordinates are held fixed. The two measurements need not agree. The floating-plate code explicitly uses the compliance interpretation.
+ 
+@@ -148,7 +170,7 @@
+ The geometry campaign therefore records, on every control tick, every contact between the object and any tool part that is not one of the six spheres, with the normal force it carries. Table~\ref{tab:plate-collision} compares the same 182 bodies with the plate visual only and with the plate colliding; nothing else changes, and neither arm uses the wrist re-alignment controller.
+ 
+ \begin{table}[htbp]\centering\small
+-\begin{tabular}{@{}lrr@{}}\toprule
++\resizebox{\textwidth}{!}{\begin{tabular}{@{}lrr@{}}\toprule
+  & Visual-only plate & Colliding plate\\
+ \midrule
+ Bodies on which the plate touched the object & 0 / 182 & 74 / 182\\
+@@ -160,7 +182,7 @@
+ Polytopes: SOCP allocations accepted & 0.985 & 0.768\\
+ Polytopes: realized wrench error (median) & 4.0 N & 30.1 N\\
+ Polytopes: bodies placed & 63 & 61\\
+-\bottomrule\end{tabular}
++\bottomrule\end{tabular}}
+ \caption{Load-path audit of the floating plate on the geometry campaign. A colliding plate touches 69 of 80 random polytopes, carries up to 92\% of the squeeze, and breaks the estimate on most of them, while the number of bodies placed hardly changes.}
+ \label{tab:plate-collision}
+ \end{table}
+--- before/figures/README.md
++++ after/figures/README.md
+@@ -74,3 +74,16 @@
+ explanatory drawings, not device CAD. The diagram distinguishes the elastic
+ wrench log from the filtered/scaled/clipped feedback and from the complete
+ proxy command. No experimental values or controller source are changed.
++
++## Floating-plate mechanism and conformity (24 October 2026)
++
++`scripts/fig_plate_conformity.py` creates `ch04_contacts/plate_front_side`,
++`plate_conformity_bullet` and `plate_conformity_trace` as vector PDF/PNG.
++Compact figure inputs and model/runtime identities are in
++`data/plate_conformity_20261024/manifest.json`. The two copied model modules
++match the originals by SHA-256. The bench is a prescribed fixed-flange contact
++illustration (zero gravity, visual-only plate), not a new population or SOCP
++campaign. The images render recorded poses, with visual-only facet tints.
++The side view exaggerates deformation to show the point springs; unloaded
++support tips and sphere centres coincide, giving l0=0 despite a 20 mm flange
++offset. The plate and all three spheres remain one rigid body.

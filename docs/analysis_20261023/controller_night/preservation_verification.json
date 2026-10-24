@@ -1,0 +1,9 @@
+{
+  "verified_utc": "2026-10-23T19:48:14.250160+00:00",
+  "archive_identical": true,
+  "files": 765,
+  "bytes": 4080005175,
+  "baseline_zip_sha256_verified": true,
+  "preserved_zip_files_verified": 431,
+  "unchanged_runtime_source_files": 332
+}

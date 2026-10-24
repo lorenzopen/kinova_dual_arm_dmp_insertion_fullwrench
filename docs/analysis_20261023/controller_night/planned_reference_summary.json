@@ -1,0 +1,326 @@
+{
+  "conditional_comparisons": [
+    {
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "original",
+      "feedback_reference": "original",
+      "mean_run_worst_model_and_clock_score": 12.184448683787663,
+      "candidate_ids": [
+        "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBoriginal_O-0.04",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBoriginal_O0",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBoriginal_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.427222933798287,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 133.88620418007645,
+      "score_change_vs_matched_clock_control_percent": 0.0,
+      "max_plan_below_original_same_clock_N": 0.0
+    },
+    {
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "original",
+      "feedback_reference": "planned",
+      "mean_run_worst_model_and_clock_score": 12.373428461378294,
+      "candidate_ids": [
+        "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBplanned_O-0.04",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBplanned_O0",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBplanned_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.4272230830163517,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 133.88620418007645,
+      "score_change_vs_matched_clock_control_percent": 0.0,
+      "max_plan_below_original_same_clock_N": 0.0
+    },
+    {
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "original",
+      "feedback_reference": "original",
+      "mean_run_worst_model_and_clock_score": 12.497209034067751,
+      "candidate_ids": [
+        "I_P0_I1.6_D0__ABS_original_FBoriginal_O-0.04",
+        "I_P0_I1.6_D0__ABS_original_FBoriginal_O0",
+        "I_P0_I1.6_D0__ABS_original_FBoriginal_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.424906683043215,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 133.88620418007645,
+      "score_change_vs_matched_clock_control_percent": 0.0,
+      "max_plan_below_original_same_clock_N": 0.0
+    },
+    {
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "original",
+      "feedback_reference": "planned",
+      "mean_run_worst_model_and_clock_score": 12.668617446367534,
+      "candidate_ids": [
+        "I_P0_I1.6_D0__ABS_original_FBplanned_O-0.04",
+        "I_P0_I1.6_D0__ABS_original_FBplanned_O0",
+        "I_P0_I1.6_D0__ABS_original_FBplanned_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.4249067459799725,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 133.88620418007645,
+      "score_change_vs_matched_clock_control_percent": 0.0,
+      "max_plan_below_original_same_clock_N": 0.0
+    },
+    {
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "minimax",
+      "feedback_reference": "original",
+      "mean_run_worst_model_and_clock_score": 12.753282361832216,
+      "candidate_ids": [
+        "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBoriginal_O-0.04",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBoriginal_O0",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBoriginal_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.427222933798287,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 2.0000000000001137,
+      "score_change_vs_matched_clock_control_percent": 4.668522087514959,
+      "max_plan_below_original_same_clock_N": 0.9534034481201177
+    },
+    {
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "minimax",
+      "feedback_reference": "planned",
+      "mean_run_worst_model_and_clock_score": 12.952586644713234,
+      "candidate_ids": [
+        "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBplanned_O-0.04",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBplanned_O0",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBplanned_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.4272230830163517,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 2.0000000000001137,
+      "score_change_vs_matched_clock_control_percent": 4.680660539176262,
+      "max_plan_below_original_same_clock_N": 0.9534034481201177
+    },
+    {
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "minimax",
+      "feedback_reference": "original",
+      "mean_run_worst_model_and_clock_score": 13.04397622466756,
+      "candidate_ids": [
+        "I_P0_I1.6_D0__ABS_minimax_FBoriginal_O-0.04",
+        "I_P0_I1.6_D0__ABS_minimax_FBoriginal_O0",
+        "I_P0_I1.6_D0__ABS_minimax_FBoriginal_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.424906683043215,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 2.0000000000001137,
+      "score_change_vs_matched_clock_control_percent": 4.375114388415091,
+      "max_plan_below_original_same_clock_N": 0.9534034481201177
+    },
+    {
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "minimax",
+      "feedback_reference": "planned",
+      "mean_run_worst_model_and_clock_score": 13.412013457210673,
+      "candidate_ids": [
+        "I_P0_I1.6_D0__ABS_minimax_FBplanned_O-0.04",
+        "I_P0_I1.6_D0__ABS_minimax_FBplanned_O0",
+        "I_P0_I1.6_D0__ABS_minimax_FBplanned_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.4249067459799725,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 2.0000000000001137,
+      "score_change_vs_matched_clock_control_percent": 5.868012148841806,
+      "max_plan_below_original_same_clock_N": 0.9534034481201177
+    },
+    {
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "majorant",
+      "feedback_reference": "original",
+      "mean_run_worst_model_and_clock_score": 14.412214116250643,
+      "candidate_ids": [
+        "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBoriginal_O-0.04",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBoriginal_O0",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBoriginal_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.350017485017166,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 2.0000000000000857,
+      "score_change_vs_matched_clock_control_percent": 18.283678566656803,
+      "max_plan_below_original_same_clock_N": 0.0
+    },
+    {
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "majorant",
+      "feedback_reference": "original",
+      "mean_run_worst_model_and_clock_score": 14.512522581711783,
+      "candidate_ids": [
+        "I_P0_I1.6_D0__ABS_majorant_FBoriginal_O-0.04",
+        "I_P0_I1.6_D0__ABS_majorant_FBoriginal_O0",
+        "I_P0_I1.6_D0__ABS_majorant_FBoriginal_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.337676514211081,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 2.0000000000000857,
+      "score_change_vs_matched_clock_control_percent": 16.126108974813725,
+      "max_plan_below_original_same_clock_N": 0.0
+    },
+    {
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "majorant",
+      "feedback_reference": "planned",
+      "mean_run_worst_model_and_clock_score": 16.211077663561916,
+      "candidate_ids": [
+        "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBplanned_O-0.04",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBplanned_O0",
+        "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBplanned_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.4272230830163517,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 2.0000000000000857,
+      "score_change_vs_matched_clock_control_percent": 31.015245403989987,
+      "max_plan_below_original_same_clock_N": 0.0
+    },
+    {
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "majorant",
+      "feedback_reference": "planned",
+      "mean_run_worst_model_and_clock_score": 16.25432671626366,
+      "candidate_ids": [
+        "I_P0_I1.6_D0__ABS_majorant_FBplanned_O-0.04",
+        "I_P0_I1.6_D0__ABS_majorant_FBplanned_O0",
+        "I_P0_I1.6_D0__ABS_majorant_FBplanned_O0.04"
+      ],
+      "minimum_mean_hand_force_N": 2.4249067459799725,
+      "maximum_same_phase_desired_nominal_slew_mm_s": 2.0000000000000857,
+      "score_change_vs_matched_clock_control_percent": 28.303872029258038,
+      "max_plan_below_original_same_clock_N": 0.0
+    }
+  ],
+  "autonomous_summary": [
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1",
+      "score": 11.87754222113088,
+      "maximum_route_rmse_N": 0.5964360315206929,
+      "maximum_seat_positive_error_N": 1.7418567901941517,
+      "maximum_low_band_N": 0.4268949515459851,
+      "maximum_route_band_N": 0.20567807897512705,
+      "minimum_mean_hand_force_N": 2.3075654303071835
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBoriginal_O0",
+      "score": 11.87754222113088,
+      "maximum_route_rmse_N": 0.5964360315206929,
+      "maximum_seat_positive_error_N": 1.7418567901941517,
+      "maximum_low_band_N": 0.4268949515459851,
+      "maximum_route_band_N": 0.20567807897512705,
+      "minimum_mean_hand_force_N": 2.3075654303071835
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBplanned_O0",
+      "score": 11.87754222113088,
+      "maximum_route_rmse_N": 0.5964360315206929,
+      "maximum_seat_positive_error_N": 1.7418567901941517,
+      "maximum_low_band_N": 0.4268949515459851,
+      "maximum_route_band_N": 0.20567807897512705,
+      "minimum_mean_hand_force_N": 2.3075654303071835
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBoriginal_O0",
+      "score": 12.264165055366222,
+      "maximum_route_rmse_N": 0.4773699168927439,
+      "maximum_seat_positive_error_N": 2.202024015826202,
+      "maximum_low_band_N": 0.4074695910111587,
+      "maximum_route_band_N": 0.21139565830125062,
+      "minimum_mean_hand_force_N": 2.7357675891664828
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBplanned_O0",
+      "score": 12.302837406849294,
+      "maximum_route_rmse_N": 0.42133495749799577,
+      "maximum_seat_positive_error_N": 2.1940885885641412,
+      "maximum_low_band_N": 0.2791777790231141,
+      "maximum_route_band_N": 0.21170741617126387,
+      "minimum_mean_hand_force_N": 2.858361542022244
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBoriginal_O0",
+      "score": 12.86884570727778,
+      "maximum_route_rmse_N": 0.4656537796805581,
+      "maximum_seat_positive_error_N": 2.2897430429887398,
+      "maximum_low_band_N": 0.3890458606734864,
+      "maximum_route_band_N": 0.21014378215749127,
+      "minimum_mean_hand_force_N": 2.4294851289659594
+    },
+    {
+      "id": "I_P0_I1.6_D0",
+      "score": 13.164073227676171,
+      "maximum_route_rmse_N": 0.6034679184062525,
+      "maximum_seat_positive_error_N": 1.8246325545265614,
+      "maximum_low_band_N": 0.4594200396229843,
+      "maximum_route_band_N": 0.2588053663991364,
+      "minimum_mean_hand_force_N": 2.365582911752592
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_original_FBoriginal_O0",
+      "score": 13.164073227676171,
+      "maximum_route_rmse_N": 0.6034679184062525,
+      "maximum_seat_positive_error_N": 1.8246325545265614,
+      "maximum_low_band_N": 0.4594200396229843,
+      "maximum_route_band_N": 0.2588053663991364,
+      "minimum_mean_hand_force_N": 2.365582911752592
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_original_FBplanned_O0",
+      "score": 13.164073227676171,
+      "maximum_route_rmse_N": 0.6034679184062525,
+      "maximum_seat_positive_error_N": 1.8246325545265614,
+      "maximum_low_band_N": 0.4594200396229843,
+      "maximum_route_band_N": 0.2588053663991364,
+      "minimum_mean_hand_force_N": 2.365582911752592
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_minimax_FBoriginal_O0",
+      "score": 13.286526161081111,
+      "maximum_route_rmse_N": 0.5183553159617803,
+      "maximum_seat_positive_error_N": 2.3509797640742804,
+      "maximum_low_band_N": 0.44553452648754505,
+      "maximum_route_band_N": 0.2631587850689013,
+      "minimum_mean_hand_force_N": 2.6830642179833335
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_minimax_FBplanned_O0",
+      "score": 13.340938939342266,
+      "maximum_route_rmse_N": 0.41858150062392335,
+      "maximum_seat_positive_error_N": 2.1589850879950157,
+      "maximum_low_band_N": 0.2726061085692132,
+      "maximum_route_band_N": 0.2609074931698493,
+      "minimum_mean_hand_force_N": 2.829885195299621
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_majorant_FBoriginal_O0",
+      "score": 13.699722016106382,
+      "maximum_route_rmse_N": 0.4758110447052205,
+      "maximum_seat_positive_error_N": 2.1878349402880883,
+      "maximum_low_band_N": 0.4073331290780087,
+      "maximum_route_band_N": 0.2631198113821855,
+      "minimum_mean_hand_force_N": 2.3479312783360298
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBplanned_O0",
+      "score": 15.225382628610607,
+      "maximum_route_rmse_N": 0.7541811959672898,
+      "maximum_seat_positive_error_N": 3.2209737265532867,
+      "maximum_low_band_N": 0.33059813672225796,
+      "maximum_route_band_N": 0.2097716374558635,
+      "minimum_mean_hand_force_N": 2.678102479332957
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_majorant_FBplanned_O0",
+      "score": 16.46563173664624,
+      "maximum_route_rmse_N": 0.6778412105279666,
+      "maximum_seat_positive_error_N": 3.006519293945578,
+      "maximum_low_band_N": 0.30477731728587604,
+      "maximum_route_band_N": 0.26257366764994405,
+      "minimum_mean_hand_force_N": 2.7506914794371564
+    }
+  ],
+  "failed_conditional_peak_refinement": true,
+  "event_exact_diagnostic_scenarios": 456,
+  "critical_case": {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "candidate": "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBplanned_O0.04",
+    "model": "delay_k1500_d0.23",
+    "event_exact_seat_peak_N": 6.981271718111349,
+    "grid5ms_seat_peak_N": 6.804284687600957,
+    "grid2p5ms_seat_peak_N": 6.988180517741334,
+    "event_exact_minus_grid5ms_peak_N": 0.176987030510392
+  },
+  "no_holdout_evaluated": true,
+  "no_cart_d_change": true,
+  "caveat": "No validated controller emerges. Full-wrench margins unvalidated; original-target errors retained; minimax can lower required normal. Numerical coarse-grid point extrema are unreliable in flagged cases."
+}

@@ -1,0 +1,6 @@
+{
+  "actual_production_I_updates": 123720,
+  "maximum_command_difference_mm": 2.6645352591003757e-15,
+  "passed": true,
+  "scope": "Pure I with planned nominal and planned feedback, plus logged baseline; all3 delay models and4 development shapes. Production classes AST-extracted, no ROS."
+}

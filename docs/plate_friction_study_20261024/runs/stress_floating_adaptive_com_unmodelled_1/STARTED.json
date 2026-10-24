@@ -1,0 +1,27 @@
+{
+  "job": {
+    "group": "stress",
+    "mechanism": "floating",
+    "method": "adaptive",
+    "case": "com_unmodelled",
+    "seed": 1,
+    "mass": 1.9,
+    "model_mass": 1.9,
+    "com": [
+      0.015,
+      0.015,
+      0
+    ],
+    "model_com": [
+      0,
+      0,
+      0
+    ],
+    "mu": 0.75,
+    "model_mu": 0.75,
+    "id": "stress_floating_adaptive_com_unmodelled_1"
+  },
+  "pid": 12460,
+  "source_sha256": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2",
+  "time": 1792823635.248031
+}

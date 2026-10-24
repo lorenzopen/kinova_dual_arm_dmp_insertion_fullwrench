@@ -1,0 +1,440 @@
+{
+  "urdf": "urdf/gen3_ati_tool.urdf",
+  "sha256": "a0ebb5a79a1c25cbf069374d39d55570be83a6c86ee6ec9d0c35e15a125ce2db",
+  "model_note": "Rigid link inertial parameters, no reflected drive inertia/friction/flexible joints; actual internal controller source not found on Desktop.",
+  "moving_link_mass_kg": 6.504899999999999,
+  "samples": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "side": "L",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 3.270723884653165e-06,
+      "fk_orientation_error_rad": 4.6874489971316196e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002874261324333888
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "side": "R",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 5.178655519123428e-06,
+      "fk_orientation_error_rad": 7.346602386398234e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028737410751947316
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "side": "L",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 7.036481219075213e-06,
+      "fk_orientation_error_rad": 4.434117259481439e-06,
+      "finite_difference_jacobian_max_error": 1.9728796374351987e-10,
+      "joint_mass_min_eigenvalue": 0.000287351777195763
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "side": "R",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 6.067606690811857e-06,
+      "fk_orientation_error_rad": 7.537347334552313e-06,
+      "finite_difference_jacobian_max_error": 1.7817758379834459e-10,
+      "joint_mass_min_eigenvalue": 0.00028713510734663955
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "side": "L",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 1.06492368916626e-06,
+      "fk_orientation_error_rad": 1.313067060878778e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028733028658865393
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "side": "R",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 4.458371699354015e-06,
+      "fk_orientation_error_rad": 9.689640848914242e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002859551927272355
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "side": "L",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 5.095667422428836e-06,
+      "fk_orientation_error_rad": 1.000201307710274e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002873846740337568
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "side": "R",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 5.574367284628832e-06,
+      "fk_orientation_error_rad": 1.3762745805473243e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028737151058879626
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "side": "L",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 2.2970499369206546e-06,
+      "fk_orientation_error_rad": 3.3940402789995796e-06,
+      "finite_difference_jacobian_max_error": 1.6882040210219884e-10,
+      "joint_mass_min_eigenvalue": 0.0002873166295380966
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "side": "R",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 5.662705160792784e-06,
+      "fk_orientation_error_rad": 1.3266728790330378e-05,
+      "finite_difference_jacobian_max_error": 1.7797086027115938e-10,
+      "joint_mass_min_eigenvalue": 0.00028708324942910757
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "side": "L",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 7.4840261809278165e-06,
+      "fk_orientation_error_rad": 9.288557992395583e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002873443121127774
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "side": "R",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 1.187472209656758e-06,
+      "fk_orientation_error_rad": 1.2899300826119674e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002854709708286371
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "side": "L",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 7.0489669286251095e-06,
+      "fk_orientation_error_rad": 1.3560098901277005e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002874549423550671
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "side": "R",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 5.917829538902635e-06,
+      "fk_orientation_error_rad": 1.219468264230397e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002871739358473455
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "side": "L",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 4.60615202281095e-06,
+      "fk_orientation_error_rad": 1.083993582992604e-05,
+      "finite_difference_jacobian_max_error": 1.697834095537587e-10,
+      "joint_mass_min_eigenvalue": 0.00028752389274618755
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "side": "R",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 3.868095540486254e-06,
+      "fk_orientation_error_rad": 7.351470130430302e-06,
+      "finite_difference_jacobian_max_error": 1.296541762840775e-10,
+      "joint_mass_min_eigenvalue": 0.00028727302835129733
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "side": "L",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 5.9212074574098695e-06,
+      "fk_orientation_error_rad": 9.143192392611395e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002873308456531382
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "side": "R",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 5.431483408975274e-06,
+      "fk_orientation_error_rad": 6.202048777332298e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028585376975674796
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "side": "L",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 5.718116966969443e-06,
+      "fk_orientation_error_rad": 1.0980207225156722e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002874518793752923
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "side": "R",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 2.031089593240475e-06,
+      "fk_orientation_error_rad": 1.0446952957599136e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028719067304537496
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "side": "L",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 6.252985179819899e-06,
+      "fk_orientation_error_rad": 1.2663316703025086e-05,
+      "finite_difference_jacobian_max_error": 1.5340217984771698e-10,
+      "joint_mass_min_eigenvalue": 0.00028752462192407105
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "side": "R",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 3.5678148318855383e-06,
+      "fk_orientation_error_rad": 1.481897061638082e-05,
+      "finite_difference_jacobian_max_error": 2.1441892705809096e-10,
+      "joint_mass_min_eigenvalue": 0.0002872853975279821
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "side": "L",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 5.765694355580069e-06,
+      "fk_orientation_error_rad": 1.335267439187601e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002873311668311191
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "side": "R",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 3.082940098512874e-06,
+      "fk_orientation_error_rad": 8.201951773659795e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.000285929530299458
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "side": "L",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 3.0697827094555717e-06,
+      "fk_orientation_error_rad": 8.850075563441819e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028741550297803033
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "side": "R",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 6.240651756323783e-06,
+      "fk_orientation_error_rad": 1.3024353565812442e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028711276609603585
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "side": "L",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 3.820926181323145e-06,
+      "fk_orientation_error_rad": 1.3534890298361498e-05,
+      "finite_difference_jacobian_max_error": 2.0599633110407467e-10,
+      "joint_mass_min_eigenvalue": 0.0002874287656567268
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "side": "R",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 3.98637382283346e-06,
+      "fk_orientation_error_rad": 1.197006277152533e-05,
+      "finite_difference_jacobian_max_error": 1.6806755986920052e-10,
+      "joint_mass_min_eigenvalue": 0.000286983171106981
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "side": "L",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 3.648320961893983e-06,
+      "fk_orientation_error_rad": 1.0198520048609988e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028742517521238275
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "side": "R",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 1.6774842168453592e-06,
+      "fk_orientation_error_rad": 1.0434697947533995e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002868977578842149
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "side": "L",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 4.81709057658906e-06,
+      "fk_orientation_error_rad": 1.3134785295374572e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002874302952592908
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "side": "R",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 3.843785174878576e-06,
+      "fk_orientation_error_rad": 7.342960654842326e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028711747398776514
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "side": "L",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 2.07367546186439e-06,
+      "fk_orientation_error_rad": 9.305960871538773e-06,
+      "finite_difference_jacobian_max_error": 2.381942421081362e-10,
+      "joint_mass_min_eigenvalue": 0.00028744203486840374
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "side": "R",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 2.727486569187027e-06,
+      "fk_orientation_error_rad": 6.714202942175204e-06,
+      "finite_difference_jacobian_max_error": 2.013280653301308e-10,
+      "joint_mass_min_eigenvalue": 0.0002870049320700081
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "side": "L",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 5.54770781236227e-06,
+      "fk_orientation_error_rad": 1.2075706547326546e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028743984779619085
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "side": "R",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 2.127548150389524e-06,
+      "fk_orientation_error_rad": 6.708173943326183e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002869375402605292
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "side": "L",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 3.038851748352563e-06,
+      "fk_orientation_error_rad": 9.048027314200366e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.000286813848200451
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "side": "R",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 3.920573174706072e-06,
+      "fk_orientation_error_rad": 8.488702982844185e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002870448419672843
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "side": "L",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 6.584173604947405e-06,
+      "fk_orientation_error_rad": 8.516271453657939e-06,
+      "finite_difference_jacobian_max_error": 1.53465795627028e-10,
+      "joint_mass_min_eigenvalue": 0.0002871376085856085
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "side": "R",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 3.93504215152505e-06,
+      "fk_orientation_error_rad": 1.3407722599639811e-05,
+      "finite_difference_jacobian_max_error": 1.2177236996535612e-10,
+      "joint_mass_min_eigenvalue": 0.0002873694320490737
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "side": "L",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 4.479481729538331e-06,
+      "fk_orientation_error_rad": 4.7517304474099095e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028666591627100354
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "side": "R",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 5.680664667111221e-06,
+      "fk_orientation_error_rad": 7.891078548382013e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028720106528750886
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "side": "L",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 3.514243164923342e-06,
+      "fk_orientation_error_rad": 8.602592211086314e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028681401195559107
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "side": "R",
+      "route_fraction": 0.1,
+      "fk_position_error_m": 1.7593081013160973e-06,
+      "fk_orientation_error_rad": 5.038359599240568e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028705574490388275
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "side": "L",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 6.720482715268625e-06,
+      "fk_orientation_error_rad": 8.870816140321769e-06,
+      "finite_difference_jacobian_max_error": 1.6399681612710992e-10,
+      "joint_mass_min_eigenvalue": 0.0002871374820399999
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "side": "R",
+      "route_fraction": 0.5,
+      "fk_position_error_m": 5.526680292917181e-06,
+      "fk_orientation_error_rad": 9.092752280295292e-06,
+      "finite_difference_jacobian_max_error": 1.198356969212e-10,
+      "joint_mass_min_eigenvalue": 0.00028737626478080145
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "side": "L",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 4.701365666388332e-06,
+      "fk_orientation_error_rad": 1.2828334519594855e-05,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.0002866776676242758
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "side": "R",
+      "route_fraction": 0.9,
+      "fk_position_error_m": 5.05545525618719e-06,
+      "fk_orientation_error_rad": 9.615705316605478e-06,
+      "finite_difference_jacobian_max_error": null,
+      "joint_mass_min_eigenvalue": 0.00028720987088667595
+    }
+  ]
+}

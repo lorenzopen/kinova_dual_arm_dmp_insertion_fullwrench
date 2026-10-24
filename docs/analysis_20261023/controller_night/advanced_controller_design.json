@@ -1,0 +1,1242 @@
+{
+  "created_utc": "2026-10-23T15:48:04.727413+00:00",
+  "candidates": [
+    {
+      "id": "FF_only_P0_I0_D0",
+      "family": "FF_only",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "I_P0_I0.4_D0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "ID_P0_I0.4_D0.005",
+      "family": "ID",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "ID_P0_I0.4_D0.015",
+      "family": "ID",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "I_P0_I0.8_D0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "ID_P0_I0.8_D0.005",
+      "family": "ID",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "ID_P0_I0.8_D0.015",
+      "family": "ID",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "I_P0_I1.6_D0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "ID_P0_I1.6_D0.005",
+      "family": "ID",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "ID_P0_I1.6_D0.015",
+      "family": "ID",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "P_P0.05_I0_D0",
+      "family": "P",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PD_P0.05_I0_D0.005",
+      "family": "PD",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PD_P0.05_I0_D0.015",
+      "family": "PD",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.05_I0.4_D0",
+      "family": "PI",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I0.4_D0.005",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I0.4_D0.015",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.05_I0.8_D0",
+      "family": "PI",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.015",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.05_I1.6_D0",
+      "family": "PI",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I1.6_D0.005",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I1.6_D0.015",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "P_P0.1_I0_D0",
+      "family": "P",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PD_P0.1_I0_D0.005",
+      "family": "PD",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PD_P0.1_I0_D0.015",
+      "family": "PD",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.1_I0.4_D0",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.1_I0.4_D0.005",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.1_I0.4_D0.015",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.1_I0.8_D0.005",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.1_I0.8_D0.015",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.1_I1.6_D0",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.1_I1.6_D0.005",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.1_I1.6_D0.015",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "P_P0.2_I0_D0",
+      "family": "P",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PD_P0.2_I0_D0.005",
+      "family": "PD",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PD_P0.2_I0_D0.015",
+      "family": "PD",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.2_I0.4_D0",
+      "family": "PI",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.2_I0.4_D0.005",
+      "family": "PID",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.2_I0.4_D0.015",
+      "family": "PID",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.2_I0.8_D0",
+      "family": "PI",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.2_I0.8_D0.005",
+      "family": "PID",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.2_I0.8_D0.015",
+      "family": "PID",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.2_I1.6_D0",
+      "family": "PI",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.2_I1.6_D0.005",
+      "family": "PID",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.2_I1.6_D0.015",
+      "family": "PID",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "P_P0.1_I0_D0_R0.03",
+      "family": "P",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "P_P0.1_I0_D0_R0.1",
+      "family": "P",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.1_I0_D0.03_R0.03",
+      "family": "PD",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.1_I0_D0.03_R0.1",
+      "family": "PD",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.1_I0_D0.1_R0.03",
+      "family": "PD",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.1_I0_D0.1_R0.1",
+      "family": "PD",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.1_I0.4_D0_R0.03",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.1_I0.4_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.1_I0.4_D0.03_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.1_I0.4_D0.03_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.1_I0.4_D0.1_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.1_I0.4_D0.1_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.03",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.1_I0.8_D0.03_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.1_I0.8_D0.03_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.1_I0.8_D0.1_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.1_I0.8_D0.1_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "P_P0.3_I0_D0_R0.03",
+      "family": "P",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "P_P0.3_I0_D0_R0.1",
+      "family": "P",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.3_I0_D0.03_R0.03",
+      "family": "PD",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.3_I0_D0.03_R0.1",
+      "family": "PD",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.3_I0_D0.1_R0.03",
+      "family": "PD",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.3_I0_D0.1_R0.1",
+      "family": "PD",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.3_I0.4_D0_R0.03",
+      "family": "PI",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.3_I0.4_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.3_I0.4_D0.03_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.3_I0.4_D0.03_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.3_I0.4_D0.1_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.3_I0.4_D0.1_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.3_I0.8_D0_R0.03",
+      "family": "PI",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.3_I0.8_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.3_I0.8_D0.03_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.3_I0.8_D0.03_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.3_I0.8_D0.1_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.3_I0.8_D0.1_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "P_P0.8_I0_D0_R0.03",
+      "family": "P",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "P_P0.8_I0_D0_R0.1",
+      "family": "P",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.8_I0_D0.03_R0.03",
+      "family": "PD",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.8_I0_D0.03_R0.1",
+      "family": "PD",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.8_I0_D0.1_R0.03",
+      "family": "PD",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.8_I0_D0.1_R0.1",
+      "family": "PD",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.8_I0.4_D0_R0.03",
+      "family": "PI",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.8_I0.4_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.8_I0.4_D0.03_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.8_I0.4_D0.03_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.8_I0.4_D0.1_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.8_I0.4_D0.1_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0004,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.8_I0.8_D0_R0.03",
+      "family": "PI",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.8_I0.8_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.8_I0.8_D0.03_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.8_I0.8_D0.03_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.8_I0.8_D0.1_R0.03",
+      "family": "PID",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PID_P0.8_I0.8_D0.1_R0.1",
+      "family": "PID",
+      "kp_m_N": 0.0008,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "I_P0_I1.6_D0__feedback_priority",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "feedback_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "I_P0_I1.6_D0__combined_total",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "combined_total",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.05_I0.8_D0__feedback_priority",
+      "family": "PI",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "feedback_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.05_I0.8_D0__combined_total",
+      "family": "PI",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "combined_total",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "feedback_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005__combined_total",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "combined_total",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PD_P0.2_I0_D0.015__feedback_priority",
+      "family": "PD",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "feedback_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PD_P0.2_I0_D0.015__combined_total",
+      "family": "PD",
+      "kp_m_N": 0.0002,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 1.5e-05,
+      "derivative_tau_s": 0.05,
+      "allocation": "combined_total",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.3_I0.8_D0.1_R0.1__feedback_priority",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "feedback_priority"
+    },
+    {
+      "id": "PID_P0.3_I0.8_D0.1_R0.1__combined_total",
+      "family": "PID",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "combined_total"
+    },
+    {
+      "id": "PD_P0.3_I0_D0.03_R0.03__feedback_priority",
+      "family": "PD",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "feedback_priority"
+    },
+    {
+      "id": "PD_P0.3_I0_D0.03_R0.03__combined_total",
+      "family": "PD",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 3e-05,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.03,
+      "allocation": "combined_total"
+    }
+  ],
+  "models": [
+    {
+      "id": "delay_k480_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k480_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k480_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k680_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k680_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k680_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k964_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k964_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k964_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k1500_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k1500_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k1500_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "lag680_d18_t0.03",
+      "kind": "lag",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "tau_s": 0.03
+    },
+    {
+      "id": "lag680_d18_t0.12",
+      "kind": "lag",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "tau_s": 0.12
+    },
+    {
+      "id": "resonant680_d18_z0.3",
+      "kind": "resonant",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.3
+    },
+    {
+      "id": "resonant680_d18_z0.7",
+      "kind": "resonant",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.7
+    }
+  ],
+  "baseline_id": "I_P0_I1.6_D0",
+  "dt_s": 0.005,
+  "score": "mean over 8 runs of worst model (RMSEroute/0.2 + RMSband0.8-2.5/0.05 + maxpositiveerror_firstseat/0.25 + p95absrouteerror/0.5); reject if mean-of-hands force<=0 in any scenario. No individual-contact guarantee.",
+  "data_split": "Only fixed 8 development runs, no holdout",
+  "rolloff": "Causal backward-Euler low-pass on the combined P and filtered measurement-D term; I is not low-pass filtered. Initial PD state equals entry P. Tracking antiwindup uses achieved trim minus filtered PD and entry bias.",
+  "allocations": {
+    "ff_priority": "Original FFI allocation.",
+    "feedback_priority": "First project desired trim into feasible trim interval, then allocate remaining feasible sum rate to nominal FF.",
+    "combined_total": "First project desired sum FF+trim into feasible total interval, then choose the closest equal-weight split to the two desired component positions subject to component and sum bounds."
+  },
+  "limits": "All policies: component FF and trim speed2mm/s, sum speed2mm/s, FF+-9mm, trim+-3mm, sum+-12mm.",
+  "caveat": "Assumed delta-command-to-force responses; stiffness1500 is an upper-gain stress, not newly identified stiffness. Empirical free simulation passed no provisional model gate. These models do not map a change in cart_d. Original phase timing/stop events are fixed; contact, geometry, residual, failure mechanisms and left/right delta sharing are not re-simulated; derivative input has FFI measurement cadence, not full 200Hz ATI.",
+  "no_claim": "Neither stronger derivative nor allocation changes internal Cartesian cart_d. No robot recommendation. Development shortlist only."
+}

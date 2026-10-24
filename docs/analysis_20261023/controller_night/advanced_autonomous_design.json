@@ -1,0 +1,217 @@
+{
+  "created_utc": "2026-10-23T15:51:09.320880+00:00",
+  "candidates": [
+    {
+      "id": "I_P0_I1.6_D0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "P_P0.05_I0_D0",
+      "family": "P",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PD_P0.05_I0_D0.005",
+      "family": "PD",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.3_I0_D0.1_R0.1",
+      "family": "PD",
+      "kp_m_N": 0.0003,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0001,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PI_P0.05_I0.8_D0__combined_total",
+      "family": "PI",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "combined_total",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005__feedback_priority",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "feedback_priority",
+      "pd_rolloff_tau_s": 0.0
+    }
+  ],
+  "models": [
+    {
+      "id": "delay_k480_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k480_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k480_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k680_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k680_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k680_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k964_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k964_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k964_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k1500_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k1500_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k1500_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "lag680_d18_t0.03",
+      "kind": "lag",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "tau_s": 0.03
+    },
+    {
+      "id": "lag680_d18_t0.12",
+      "kind": "lag",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "tau_s": 0.12
+    },
+    {
+      "id": "resonant680_d18_z0.3",
+      "kind": "resonant",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.3
+    },
+    {
+      "id": "resonant680_d18_z0.7",
+      "kind": "resonant",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.7
+    }
+  ],
+  "variants": [
+    {
+      "id": "clean",
+      "noise_N_hand": 0.0,
+      "jitter": false,
+      "wave_N_hand": 0.0,
+      "bias_N_hand": 0.0
+    },
+    {
+      "id": "noise_jitter",
+      "noise_N_hand": 0.013,
+      "jitter": true,
+      "wave_N_hand": 0.0,
+      "bias_N_hand": 0.0
+    },
+    {
+      "id": "physical_wave_noise_jitter",
+      "noise_N_hand": 0.013,
+      "jitter": true,
+      "wave_N_hand": 0.15,
+      "bias_N_hand": 0.5
+    }
+  ],
+  "tests": "32 seconds; target4 to6 at3s, back4 at9s. Wave1.2Hz starts12s; bias+0.5N/hand at16-22s in third variant. Jitter ticks 15-35ms quantized at2.5ms. Noise sampled at control events, common between candidates and plant scenarios. Seed23442026.",
+  "measurement": "Sum force, derivative on measured sum with 50ms filter plus each selected PD roll-off. No measured-force preview. Same rate/travel/component bounds and allocation implementations as conditional replay.",
+  "initialization": "4N/hand preload; zero FF/trim/output/I/PD/derivative. Nominal=(original target-4)/680.",
+  "limitation": "Synthetic scalar symmetric contact; no real phase transitions, slip, board, friction or failures. cart_d unchanged and not represented as a tunable delay. No new model identification.",
+  "purpose": "Independent autonomous stress and convergence check of frozen hypotheses, not parameter optimization or validated prediction."
+}

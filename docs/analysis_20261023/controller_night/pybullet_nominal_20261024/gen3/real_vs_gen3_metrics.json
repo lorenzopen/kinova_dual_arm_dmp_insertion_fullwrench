@@ -1,0 +1,46 @@
+[
+  {
+    "run": "Gen3_L_central2700_implicit_dt05",
+    "real_source": "docs\\runs\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743.csv",
+    "real": {
+      "route_rmse_N": 0.28195686479224785,
+      "route_force_band_08_25_N": 0.114798587231525,
+      "route_error_band_08_25_N": 0.1397115235400942,
+      "route_force_band_25_10_N": 0.06604521779140854,
+      "active_min_L_N": 3.1408346013530974,
+      "active_min_R_N": 3.1795496706703936,
+      "seat_positive_error_N": 2.6375172546851067
+    },
+    "simulation": {
+      "route_rmse_N": 0.2775172103252413,
+      "route_force_band_08_25_N": 0.043497133222354566,
+      "route_error_band_08_25_N": 0.08896548264272285,
+      "route_force_band_25_10_N": 0.01176836147230418,
+      "active_min_L_N": 2.912710993603803,
+      "active_min_R_N": 2.91275575405475,
+      "seat_positive_error_N": 1.4704923523271436
+    }
+  },
+  {
+    "run": "Gen3_Z_central2700_implicit_dt05",
+    "real_source": "docs\\runs\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143.csv",
+    "real": {
+      "route_rmse_N": 0.3008220619800265,
+      "route_force_band_08_25_N": 0.1254124600281349,
+      "route_error_band_08_25_N": 0.16198920033795544,
+      "route_force_band_25_10_N": 0.06618925416370934,
+      "active_min_L_N": 2.9360363216093903,
+      "active_min_R_N": 2.9243646005601414,
+      "seat_positive_error_N": 1.445897531187518
+    },
+    "simulation": {
+      "route_rmse_N": 0.27604873309566547,
+      "route_force_band_08_25_N": 0.04238201324199912,
+      "route_error_band_08_25_N": 0.08849834024588599,
+      "route_force_band_25_10_N": 0.015039825789151865,
+      "active_min_L_N": 3.004603410394145,
+      "active_min_R_N": 3.0725835469591836,
+      "seat_positive_error_N": -0.06903349567617001
+    }
+  }
+]

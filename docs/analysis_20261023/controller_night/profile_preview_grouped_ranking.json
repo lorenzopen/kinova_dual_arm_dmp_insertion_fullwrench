@@ -1,0 +1,194 @@
+[
+  {
+    "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+    "preview": "rise_envelope",
+    "preview_s": 0.15,
+    "mean_run_worst_model_and_clock_score": 12.564405768124317,
+    "candidate_ids": [
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H0.15_O-0.04",
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H0.15_O0",
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H0.15_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4272227261364234
+  },
+  {
+    "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+    "preview": "shift",
+    "preview_s": 0.15,
+    "mean_run_worst_model_and_clock_score": 12.764278971035875,
+    "candidate_ids": [
+      "PI_P0.1_I0.8_D0_R0.1__shift_H0.15_O-0.04",
+      "PI_P0.1_I0.8_D0_R0.1__shift_H0.15_O0",
+      "PI_P0.1_I0.8_D0_R0.1__shift_H0.15_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4272227261364234
+  },
+  {
+    "base_controller": "I_P0_I1.6_D0",
+    "preview": "rise_envelope",
+    "preview_s": 0.15,
+    "mean_run_worst_model_and_clock_score": 12.937478365585783,
+    "candidate_ids": [
+      "I_P0_I1.6_D0__rise_envelope_H0.15_O-0.04",
+      "I_P0_I1.6_D0__rise_envelope_H0.15_O0",
+      "I_P0_I1.6_D0__rise_envelope_H0.15_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4249065323101124
+  },
+  {
+    "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+    "preview": "rise_envelope",
+    "preview_s": 0.3,
+    "mean_run_worst_model_and_clock_score": 12.943624520336513,
+    "candidate_ids": [
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H0.3_O-0.04",
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H0.3_O0",
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H0.3_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4272227261364234
+  },
+  {
+    "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+    "preview": "rise_envelope",
+    "preview_s": 0.6,
+    "mean_run_worst_model_and_clock_score": 13.173146951896221,
+    "candidate_ids": [
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H0.6_O-0.04",
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H0.6_O0",
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H0.6_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4272227261364234
+  },
+  {
+    "base_controller": "I_P0_I1.6_D0",
+    "preview": "rise_envelope",
+    "preview_s": 0.3,
+    "mean_run_worst_model_and_clock_score": 13.298624859140006,
+    "candidate_ids": [
+      "I_P0_I1.6_D0__rise_envelope_H0.3_O-0.04",
+      "I_P0_I1.6_D0__rise_envelope_H0.3_O0",
+      "I_P0_I1.6_D0__rise_envelope_H0.3_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4249065323101124
+  },
+  {
+    "base_controller": "I_P0_I1.6_D0",
+    "preview": "shift",
+    "preview_s": 0.15,
+    "mean_run_worst_model_and_clock_score": 13.314753994848807,
+    "candidate_ids": [
+      "I_P0_I1.6_D0__shift_H0.15_O-0.04",
+      "I_P0_I1.6_D0__shift_H0.15_O0",
+      "I_P0_I1.6_D0__shift_H0.15_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4249065323101124
+  },
+  {
+    "base_controller": "I_P0_I1.6_D0",
+    "preview": "rise_envelope",
+    "preview_s": 0.6,
+    "mean_run_worst_model_and_clock_score": 13.593728059185839,
+    "candidate_ids": [
+      "I_P0_I1.6_D0__rise_envelope_H0.6_O-0.04",
+      "I_P0_I1.6_D0__rise_envelope_H0.6_O0",
+      "I_P0_I1.6_D0__rise_envelope_H0.6_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4249065323101124
+  },
+  {
+    "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+    "preview": "rise_envelope",
+    "preview_s": 1.2,
+    "mean_run_worst_model_and_clock_score": 13.930195789647534,
+    "candidate_ids": [
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H1.2_O-0.04",
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H1.2_O0",
+      "PI_P0.1_I0.8_D0_R0.1__rise_envelope_H1.2_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4272227261364234
+  },
+  {
+    "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+    "preview": "shift",
+    "preview_s": 0.3,
+    "mean_run_worst_model_and_clock_score": 13.998819580801088,
+    "candidate_ids": [
+      "PI_P0.1_I0.8_D0_R0.1__shift_H0.3_O-0.04",
+      "PI_P0.1_I0.8_D0_R0.1__shift_H0.3_O0",
+      "PI_P0.1_I0.8_D0_R0.1__shift_H0.3_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4272227261364234
+  },
+  {
+    "base_controller": "I_P0_I1.6_D0",
+    "preview": "rise_envelope",
+    "preview_s": 1.2,
+    "mean_run_worst_model_and_clock_score": 14.353501384959221,
+    "candidate_ids": [
+      "I_P0_I1.6_D0__rise_envelope_H1.2_O-0.04",
+      "I_P0_I1.6_D0__rise_envelope_H1.2_O0",
+      "I_P0_I1.6_D0__rise_envelope_H1.2_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4249065323101124
+  },
+  {
+    "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+    "preview": "shift",
+    "preview_s": 0.6,
+    "mean_run_worst_model_and_clock_score": 14.416613615461053,
+    "candidate_ids": [
+      "PI_P0.1_I0.8_D0_R0.1__shift_H0.6_O-0.04",
+      "PI_P0.1_I0.8_D0_R0.1__shift_H0.6_O0",
+      "PI_P0.1_I0.8_D0_R0.1__shift_H0.6_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4272227261364234
+  },
+  {
+    "base_controller": "I_P0_I1.6_D0",
+    "preview": "shift",
+    "preview_s": 0.3,
+    "mean_run_worst_model_and_clock_score": 14.785341140884178,
+    "candidate_ids": [
+      "I_P0_I1.6_D0__shift_H0.3_O-0.04",
+      "I_P0_I1.6_D0__shift_H0.3_O0",
+      "I_P0_I1.6_D0__shift_H0.3_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4249065323101124
+  },
+  {
+    "base_controller": "I_P0_I1.6_D0",
+    "preview": "shift",
+    "preview_s": 1.2,
+    "mean_run_worst_model_and_clock_score": 15.161802344109933,
+    "candidate_ids": [
+      "I_P0_I1.6_D0__shift_H1.2_O-0.04",
+      "I_P0_I1.6_D0__shift_H1.2_O0",
+      "I_P0_I1.6_D0__shift_H1.2_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.3655257427403535
+  },
+  {
+    "base_controller": "I_P0_I1.6_D0",
+    "preview": "shift",
+    "preview_s": 0.6,
+    "mean_run_worst_model_and_clock_score": 15.206792492170768,
+    "candidate_ids": [
+      "I_P0_I1.6_D0__shift_H0.6_O-0.04",
+      "I_P0_I1.6_D0__shift_H0.6_O0",
+      "I_P0_I1.6_D0__shift_H0.6_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4249065323101124
+  },
+  {
+    "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+    "preview": "shift",
+    "preview_s": 1.2,
+    "mean_run_worst_model_and_clock_score": 15.410759855331419,
+    "candidate_ids": [
+      "PI_P0.1_I0.8_D0_R0.1__shift_H1.2_O-0.04",
+      "PI_P0.1_I0.8_D0_R0.1__shift_H1.2_O0",
+      "PI_P0.1_I0.8_D0_R0.1__shift_H1.2_O0.04"
+    ],
+    "minimum_force_mean_hand_N": 2.4247474841508296
+  }
+]

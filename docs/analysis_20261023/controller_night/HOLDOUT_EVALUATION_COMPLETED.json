@@ -1,0 +1,46 @@
+{
+  "completed_utc": "2026-10-23T17:18:59.815903+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "runner_sha256": "3452c797767bee5e6c8af48072e13a94c778e98bdef5ed42f277f02561de14a8",
+  "total_cases": 448,
+  "results": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "result_file": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_holdout_result.json",
+      "result_sha256": "8c2edcd34fe5fa2850615d48e93f7125184d40fb2bcd6bccbc5fee7e2efd85a6",
+      "trace_file": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_holdout_attempt1_traces.npz",
+      "trace_sha256": "de1b701d6368b43b04551d44147568fd9db57416a1e4309da851016f74654d09"
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "result_file": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_holdout_result.json",
+      "result_sha256": "3134d7d13c271829ce05b5b8f3311c5f05691f3ab3b8b3e354494cd6e784e6a0",
+      "trace_file": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_holdout_attempt1_traces.npz",
+      "trace_sha256": "d25da2d4d5a664ba3b30acc20607bf315b099414154673085a8f9d430066ad06"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "result_file": "S_s7073m3_c100_narrow75_ffi_20261023_191548_holdout_result.json",
+      "result_sha256": "52329bcf51460aa2a8ebf9d4c4aa58c3ea75d1cc426236f285a9ea7b3243c8ec",
+      "trace_file": "S_s7073m3_c100_narrow75_ffi_20261023_191548_holdout_attempt1_traces.npz",
+      "trace_sha256": "b9a5043a1c88f46141d2835e24d369186f54b1ce7cc080052882b22e7c27b044"
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "result_file": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_holdout_result.json",
+      "result_sha256": "90a9ef79d0a28f3a78cbe148fd00912521153d3004c98382bf29446215a54576",
+      "trace_file": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_holdout_attempt1_traces.npz",
+      "trace_sha256": "395c8c9f6aa3c1c6e02556428680ff8a1999af306929eb0d3d65f525b63de2fd"
+    }
+  ],
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "baseline_force_max_error_N": 3.1086244689504383e-15,
+  "baseline_command_max_error_mm": 2.168404344971009e-15
+}

@@ -1,0 +1,5474 @@
+[
+  {
+    "posture_index": 0,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 0,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924848597840008,
+    "vertical_extra_phase_lag_ms_1Hz": 12.794847407015052,
+    "normal_gain_vs_base_2Hz": 0.9679283678138638,
+    "vertical_extra_phase_lag_ms_2Hz": 10.733566144343298
+  },
+  {
+    "posture_index": 0,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924938400588351,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0027234669148493403,
+    "normal_gain_vs_base_2Hz": 0.9680059551285634,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0010476565852199679
+  },
+  {
+    "posture_index": 0,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 0,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967959687924755,
+    "vertical_extra_phase_lag_ms_1Hz": 12.794993803313147,
+    "normal_gain_vs_base_2Hz": 0.9863020791011243,
+    "vertical_extra_phase_lag_ms_2Hz": 10.733297153291009
+  },
+  {
+    "posture_index": 0,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967989878010591,
+    "vertical_extra_phase_lag_ms_1Hz": 0.005864696417372289,
+    "normal_gain_vs_base_2Hz": 0.9863410148919495,
+    "vertical_extra_phase_lag_ms_2Hz": 0.003770304659097177
+  },
+  {
+    "posture_index": 1,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 1,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924835942001164,
+    "vertical_extra_phase_lag_ms_1Hz": 12.795422368116643,
+    "normal_gain_vs_base_2Hz": 0.9679031618831155,
+    "vertical_extra_phase_lag_ms_2Hz": 10.737075543925272
+  },
+  {
+    "posture_index": 1,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924875473461701,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0018376506544103479,
+    "normal_gain_vs_base_2Hz": 0.9679288117059232,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0007584411129446929
+  },
+  {
+    "posture_index": 1,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 1,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967955688097649,
+    "vertical_extra_phase_lag_ms_1Hz": 12.795521597148614,
+    "normal_gain_vs_base_2Hz": 0.9862925780069044,
+    "vertical_extra_phase_lag_ms_2Hz": 10.736897882303316
+  },
+  {
+    "posture_index": 1,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967965851026063,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0039679378312761785,
+    "normal_gain_vs_base_2Hz": 0.9863034921438291,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0026057303791746805
+  },
+  {
+    "posture_index": 2,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 2,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924839682351789,
+    "vertical_extra_phase_lag_ms_1Hz": 12.983573447838607,
+    "normal_gain_vs_base_2Hz": 0.9679059323454053,
+    "vertical_extra_phase_lag_ms_2Hz": 10.308427601695819
+  },
+  {
+    "posture_index": 2,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924958065173772,
+    "vertical_extra_phase_lag_ms_1Hz": 0.010398927063826282,
+    "normal_gain_vs_base_2Hz": 0.9678915635359825,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0008762567446542826
+  },
+  {
+    "posture_index": 2,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 2,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967955679575741,
+    "vertical_extra_phase_lag_ms_1Hz": 12.98483145293281,
+    "normal_gain_vs_base_2Hz": 0.9862896486873878,
+    "vertical_extra_phase_lag_ms_2Hz": 10.308671276410701
+  },
+  {
+    "posture_index": 2,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967961511508571,
+    "vertical_extra_phase_lag_ms_1Hz": 0.020943384082312055,
+    "normal_gain_vs_base_2Hz": 0.9862491387286684,
+    "vertical_extra_phase_lag_ms_2Hz": 0.011822495613278776
+  },
+  {
+    "posture_index": 3,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 3,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924858957915582,
+    "vertical_extra_phase_lag_ms_1Hz": 12.987137252775849,
+    "normal_gain_vs_base_2Hz": 0.9679518119046276,
+    "vertical_extra_phase_lag_ms_2Hz": 10.361303780914975
+  },
+  {
+    "posture_index": 3,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924956105763622,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0042072634168935,
+    "normal_gain_vs_base_2Hz": 0.968019182751967,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0009746518130529871
+  },
+  {
+    "posture_index": 3,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 3,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967963527537825,
+    "vertical_extra_phase_lag_ms_1Hz": 12.987363272182515,
+    "normal_gain_vs_base_2Hz": 0.9863129101796758,
+    "vertical_extra_phase_lag_ms_2Hz": 10.360847605488585
+  },
+  {
+    "posture_index": 3,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967991904302868,
+    "vertical_extra_phase_lag_ms_1Hz": 0.008948358583515234,
+    "normal_gain_vs_base_2Hz": 0.986341322670487,
+    "vertical_extra_phase_lag_ms_2Hz": 0.005065407516463518
+  },
+  {
+    "posture_index": 4,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 4,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924625754721547,
+    "vertical_extra_phase_lag_ms_1Hz": 13.618686859595195,
+    "normal_gain_vs_base_2Hz": 0.9674999709863216,
+    "vertical_extra_phase_lag_ms_2Hz": 8.868097252424656
+  },
+  {
+    "posture_index": 4,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924816291620151,
+    "vertical_extra_phase_lag_ms_1Hz": 0.06776766004484099,
+    "normal_gain_vs_base_2Hz": 0.9667807379864188,
+    "vertical_extra_phase_lag_ms_2Hz": -0.06165387542413792
+  },
+  {
+    "posture_index": 4,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 4,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967871727418116,
+    "vertical_extra_phase_lag_ms_1Hz": 13.630943380146622,
+    "normal_gain_vs_base_2Hz": 0.9860978508413794,
+    "vertical_extra_phase_lag_ms_2Hz": 8.895609621777893
+  },
+  {
+    "posture_index": 4,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967650382635113,
+    "vertical_extra_phase_lag_ms_1Hz": 0.12447919979667178,
+    "normal_gain_vs_base_2Hz": 0.9854582447020263,
+    "vertical_extra_phase_lag_ms_2Hz": 0.022146887104687697
+  },
+  {
+    "posture_index": 5,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 5,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924232283571507,
+    "vertical_extra_phase_lag_ms_1Hz": 13.629396399826584,
+    "normal_gain_vs_base_2Hz": 0.9666813000407242,
+    "vertical_extra_phase_lag_ms_2Hz": 9.200291982639033
+  },
+  {
+    "posture_index": 5,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925728849357315,
+    "vertical_extra_phase_lag_ms_1Hz": 0.01682022261943866,
+    "normal_gain_vs_base_2Hz": 0.968718083676398,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0033492884129503347
+  },
+  {
+    "posture_index": 5,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 5,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967717679412991,
+    "vertical_extra_phase_lag_ms_1Hz": 13.624218140420385,
+    "normal_gain_vs_base_2Hz": 0.9857048187779022,
+    "vertical_extra_phase_lag_ms_2Hz": 9.214665991378206
+  },
+  {
+    "posture_index": 5,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968433178831155,
+    "vertical_extra_phase_lag_ms_1Hz": 0.042389122850714195,
+    "normal_gain_vs_base_2Hz": 0.9870009337324193,
+    "vertical_extra_phase_lag_ms_2Hz": 0.015036472025206334
+  },
+  {
+    "posture_index": 6,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 6,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924856388842577,
+    "vertical_extra_phase_lag_ms_1Hz": 12.79438584717226,
+    "normal_gain_vs_base_2Hz": 0.9679459524633438,
+    "vertical_extra_phase_lag_ms_2Hz": 10.732413294687625
+  },
+  {
+    "posture_index": 6,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924928561060847,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0032195282969088917,
+    "normal_gain_vs_base_2Hz": 0.9679895453120633,
+    "vertical_extra_phase_lag_ms_2Hz": 0.001280296649354721
+  },
+  {
+    "posture_index": 6,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 6,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967962574437468,
+    "vertical_extra_phase_lag_ms_1Hz": 12.794572334343874,
+    "normal_gain_vs_base_2Hz": 0.9863101960300614,
+    "vertical_extra_phase_lag_ms_2Hz": 10.732100411985494
+  },
+  {
+    "posture_index": 6,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967982443547133,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0069253772535792955,
+    "normal_gain_vs_base_2Hz": 0.986326906626694,
+    "vertical_extra_phase_lag_ms_2Hz": 0.004520685247578132
+  },
+  {
+    "posture_index": 7,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 7,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924834312544486,
+    "vertical_extra_phase_lag_ms_1Hz": 12.795597995691871,
+    "normal_gain_vs_base_2Hz": 0.9678984449277606,
+    "vertical_extra_phase_lag_ms_2Hz": 10.736727336363485
+  },
+  {
+    "posture_index": 7,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924871044539723,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0017918548831802187,
+    "normal_gain_vs_base_2Hz": 0.9679198273227364,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0007481156571030989
+  },
+  {
+    "posture_index": 7,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 7,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967954922213786,
+    "vertical_extra_phase_lag_ms_1Hz": 12.795692400653595,
+    "normal_gain_vs_base_2Hz": 0.9862898830721896,
+    "vertical_extra_phase_lag_ms_2Hz": 10.736554115017393
+  },
+  {
+    "posture_index": 7,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996796337803752,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0038741449660576496,
+    "normal_gain_vs_base_2Hz": 0.9862982842536149,
+    "vertical_extra_phase_lag_ms_2Hz": 0.002549312259872905
+  },
+  {
+    "posture_index": 8,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 8,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924850485152038,
+    "vertical_extra_phase_lag_ms_1Hz": 12.98147489434462,
+    "normal_gain_vs_base_2Hz": 0.9679301447377299,
+    "vertical_extra_phase_lag_ms_2Hz": 10.296547456108916
+  },
+  {
+    "posture_index": 8,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925020942323666,
+    "vertical_extra_phase_lag_ms_1Hz": 0.012642563941286369,
+    "normal_gain_vs_base_2Hz": 0.9679428486909385,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0007345529283366174
+  },
+  {
+    "posture_index": 8,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 8,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967959786270087,
+    "vertical_extra_phase_lag_ms_1Hz": 12.982821320990965,
+    "normal_gain_vs_base_2Hz": 0.9863010957404976,
+    "vertical_extra_phase_lag_ms_2Hz": 10.296360146991343
+  },
+  {
+    "posture_index": 8,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967977897208872,
+    "vertical_extra_phase_lag_ms_1Hz": 0.025667347101802428,
+    "normal_gain_vs_base_2Hz": 0.9862674216825261,
+    "vertical_extra_phase_lag_ms_2Hz": 0.013684426733336188
+  },
+  {
+    "posture_index": 9,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 9,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924855315891442,
+    "vertical_extra_phase_lag_ms_1Hz": 12.990370471388596,
+    "normal_gain_vs_base_2Hz": 0.9679430268145883,
+    "vertical_extra_phase_lag_ms_2Hz": 10.340528391527501
+  },
+  {
+    "posture_index": 9,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.992496997292686,
+    "vertical_extra_phase_lag_ms_1Hz": 0.00425337754522499,
+    "normal_gain_vs_base_2Hz": 0.968038185527619,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0010703141751327258
+  },
+  {
+    "posture_index": 9,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 9,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967962041507346,
+    "vertical_extra_phase_lag_ms_1Hz": 12.990512209415252,
+    "normal_gain_vs_base_2Hz": 0.9863084432835124,
+    "vertical_extra_phase_lag_ms_2Hz": 10.340043097812039
+  },
+  {
+    "posture_index": 9,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967999593491039,
+    "vertical_extra_phase_lag_ms_1Hz": 0.009170880796182014,
+    "normal_gain_vs_base_2Hz": 0.9863545336422511,
+    "vertical_extra_phase_lag_ms_2Hz": 0.005119374824102524
+  },
+  {
+    "posture_index": 10,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 10,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924589087406839,
+    "vertical_extra_phase_lag_ms_1Hz": 13.620110453693322,
+    "normal_gain_vs_base_2Hz": 0.9674267891295434,
+    "vertical_extra_phase_lag_ms_2Hz": 8.883712225705711
+  },
+  {
+    "posture_index": 10,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924697218949513,
+    "vertical_extra_phase_lag_ms_1Hz": 0.06468737792599447,
+    "normal_gain_vs_base_2Hz": 0.9666257845414339,
+    "vertical_extra_phase_lag_ms_2Hz": -0.061229569654216914
+  },
+  {
+    "posture_index": 10,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 10,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967857066341984,
+    "vertical_extra_phase_lag_ms_1Hz": 13.63223288024158,
+    "normal_gain_vs_base_2Hz": 0.9860622268815801,
+    "vertical_extra_phase_lag_ms_2Hz": 8.91367160002586
+  },
+  {
+    "posture_index": 10,
+    "piece": "Z",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996760694382536,
+    "vertical_extra_phase_lag_ms_1Hz": 0.11788360428607386,
+    "normal_gain_vs_base_2Hz": 0.9853833371626182,
+    "vertical_extra_phase_lag_ms_2Hz": 0.02084537337022849
+  },
+  {
+    "posture_index": 11,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 11,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9923887832952358,
+    "vertical_extra_phase_lag_ms_1Hz": 13.606524415020134,
+    "normal_gain_vs_base_2Hz": 0.9659420486758449,
+    "vertical_extra_phase_lag_ms_2Hz": 9.300015530916546
+  },
+  {
+    "posture_index": 11,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925591216373714,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0133059695508001,
+    "normal_gain_vs_base_2Hz": 0.9684066800626722,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0017852905163888656
+  },
+  {
+    "posture_index": 11,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 11,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967583658808251,
+    "vertical_extra_phase_lag_ms_1Hz": 13.599189651810086,
+    "normal_gain_vs_base_2Hz": 0.9853504562203119,
+    "vertical_extra_phase_lag_ms_2Hz": 9.32686941790551
+  },
+  {
+    "posture_index": 11,
+    "piece": "Z",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968431521710432,
+    "vertical_extra_phase_lag_ms_1Hz": 0.03676346624028023,
+    "normal_gain_vs_base_2Hz": 0.9869593834656557,
+    "vertical_extra_phase_lag_ms_2Hz": 0.012688195975364849
+  },
+  {
+    "posture_index": 12,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 12,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924721615926907,
+    "vertical_extra_phase_lag_ms_1Hz": 12.845873240231194,
+    "normal_gain_vs_base_2Hz": 0.9676446703141022,
+    "vertical_extra_phase_lag_ms_2Hz": 10.614718452767235
+  },
+  {
+    "posture_index": 12,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924877290816152,
+    "vertical_extra_phase_lag_ms_1Hz": 0.002164213777862797,
+    "normal_gain_vs_base_2Hz": 0.9678803366263923,
+    "vertical_extra_phase_lag_ms_2Hz": 0.000877834621290139
+  },
+  {
+    "posture_index": 12,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 12,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967911697483005,
+    "vertical_extra_phase_lag_ms_1Hz": 12.845664061268739,
+    "normal_gain_vs_base_2Hz": 0.9861688034714828,
+    "vertical_extra_phase_lag_ms_2Hz": 10.614939473045787
+  },
+  {
+    "posture_index": 12,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996798551739527,
+    "vertical_extra_phase_lag_ms_1Hz": 0.005081674686168032,
+    "normal_gain_vs_base_2Hz": 0.9863217220584142,
+    "vertical_extra_phase_lag_ms_2Hz": 0.002929613161464587
+  },
+  {
+    "posture_index": 13,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 13,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924860493461963,
+    "vertical_extra_phase_lag_ms_1Hz": 12.841961973963366,
+    "normal_gain_vs_base_2Hz": 0.967955021924897,
+    "vertical_extra_phase_lag_ms_2Hz": 10.634006400510339
+  },
+  {
+    "posture_index": 13,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924885983769484,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0012254562643534605,
+    "normal_gain_vs_base_2Hz": 0.9679661786047733,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0005488169951345483
+  },
+  {
+    "posture_index": 13,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 13,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967964074895058,
+    "vertical_extra_phase_lag_ms_1Hz": 12.84206700353254,
+    "normal_gain_vs_base_2Hz": 0.9863143156099128,
+    "vertical_extra_phase_lag_ms_2Hz": 10.633964377067137
+  },
+  {
+    "posture_index": 13,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967969959253031,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0025909577262382493,
+    "normal_gain_vs_base_2Hz": 0.9863169472139536,
+    "vertical_extra_phase_lag_ms_2Hz": 0.001802279381752752
+  },
+  {
+    "posture_index": 14,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 14,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924708862423077,
+    "vertical_extra_phase_lag_ms_1Hz": 12.932551396910767,
+    "normal_gain_vs_base_2Hz": 0.9676110154672664,
+    "vertical_extra_phase_lag_ms_2Hz": 10.461075268925956
+  },
+  {
+    "posture_index": 14,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925210917425239,
+    "vertical_extra_phase_lag_ms_1Hz": 0.001613817425713351,
+    "normal_gain_vs_base_2Hz": 0.9682202915956525,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0014445562292123714
+  },
+  {
+    "posture_index": 14,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 14,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967906756948659,
+    "vertical_extra_phase_lag_ms_1Hz": 12.933038879543547,
+    "normal_gain_vs_base_2Hz": 0.9861523573035497,
+    "vertical_extra_phase_lag_ms_2Hz": 10.463070395803062
+  },
+  {
+    "posture_index": 14,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968116134094477,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0030021211297400346,
+    "normal_gain_vs_base_2Hz": 0.9865104940962408,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00345447568245539
+  },
+  {
+    "posture_index": 15,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 15,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924853157339918,
+    "vertical_extra_phase_lag_ms_1Hz": 12.914731618207561,
+    "normal_gain_vs_base_2Hz": 0.9679388767724799,
+    "vertical_extra_phase_lag_ms_2Hz": 10.493826161831555
+  },
+  {
+    "posture_index": 15,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925008657185425,
+    "vertical_extra_phase_lag_ms_1Hz": 0.004609626987322619,
+    "normal_gain_vs_base_2Hz": 0.9680348829244523,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0021869958303611693
+  },
+  {
+    "posture_index": 15,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 15,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967961385983558,
+    "vertical_extra_phase_lag_ms_1Hz": 12.915205290698596,
+    "normal_gain_vs_base_2Hz": 0.9863069696898177,
+    "vertical_extra_phase_lag_ms_2Hz": 10.493570942640842
+  },
+  {
+    "posture_index": 15,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968004923270251,
+    "vertical_extra_phase_lag_ms_1Hz": 0.009739374378732806,
+    "normal_gain_vs_base_2Hz": 0.9863444999427299,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0070909576373011166
+  },
+  {
+    "posture_index": 16,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -7.662090177627393e-15,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 16,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.992452302058517,
+    "vertical_extra_phase_lag_ms_1Hz": 13.70444565130131,
+    "normal_gain_vs_base_2Hz": 0.9673429196602821,
+    "vertical_extra_phase_lag_ms_2Hz": 8.455689548043855
+  },
+  {
+    "posture_index": 16,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924410766243803,
+    "vertical_extra_phase_lag_ms_1Hz": 0.04905120110627812,
+    "normal_gain_vs_base_2Hz": 0.9664511592743311,
+    "vertical_extra_phase_lag_ms_2Hz": -0.06552440634537858
+  },
+  {
+    "posture_index": 16,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 16,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967829059389175,
+    "vertical_extra_phase_lag_ms_1Hz": 13.714582440674496,
+    "normal_gain_vs_base_2Hz": 0.986022185778048,
+    "vertical_extra_phase_lag_ms_2Hz": 8.487945004288544
+  },
+  {
+    "posture_index": 16,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967541219267124,
+    "vertical_extra_phase_lag_ms_1Hz": 0.08670930539389213,
+    "normal_gain_vs_base_2Hz": 0.9853364482212842,
+    "vertical_extra_phase_lag_ms_2Hz": 0.003446133093358799
+  },
+  {
+    "posture_index": 17,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 17,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.992406421666722,
+    "vertical_extra_phase_lag_ms_1Hz": 13.703666854871688,
+    "normal_gain_vs_base_2Hz": 0.9664425428020458,
+    "vertical_extra_phase_lag_ms_2Hz": 8.748392131278822
+  },
+  {
+    "posture_index": 17,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925466976671875,
+    "vertical_extra_phase_lag_ms_1Hz": 0.010651816988384116,
+    "normal_gain_vs_base_2Hz": 0.9683973351872959,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0016778447960764209
+  },
+  {
+    "posture_index": 17,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 17,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967646097919564,
+    "vertical_extra_phase_lag_ms_1Hz": 13.697801205054564,
+    "normal_gain_vs_base_2Hz": 0.9855862935273074,
+    "vertical_extra_phase_lag_ms_2Hz": 8.774884936661419
+  },
+  {
+    "posture_index": 17,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968364659271453,
+    "vertical_extra_phase_lag_ms_1Hz": 0.029233707795291983,
+    "normal_gain_vs_base_2Hz": 0.986889070502489,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0095502744907767
+  },
+  {
+    "posture_index": 18,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 18,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924730483726036,
+    "vertical_extra_phase_lag_ms_1Hz": 12.845359500335721,
+    "normal_gain_vs_base_2Hz": 0.9676642820944306,
+    "vertical_extra_phase_lag_ms_2Hz": 10.617277025101528
+  },
+  {
+    "posture_index": 18,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924858466858193,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0019386755516116341,
+    "normal_gain_vs_base_2Hz": 0.9678579254673214,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0008104541906415367
+  },
+  {
+    "posture_index": 18,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 18,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967915035741017,
+    "vertical_extra_phase_lag_ms_1Hz": 12.845165294762335,
+    "normal_gain_vs_base_2Hz": 0.986177963706072,
+    "vertical_extra_phase_lag_ms_2Hz": 10.617485552339469
+  },
+  {
+    "posture_index": 18,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996797495411074,
+    "vertical_extra_phase_lag_ms_1Hz": 0.004570430641174379,
+    "normal_gain_vs_base_2Hz": 0.9863044078024008,
+    "vertical_extra_phase_lag_ms_2Hz": 0.002676861260287305
+  },
+  {
+    "posture_index": 19,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 19,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924860169502896,
+    "vertical_extra_phase_lag_ms_1Hz": 12.841375323281898,
+    "normal_gain_vs_base_2Hz": 0.9679544587429822,
+    "vertical_extra_phase_lag_ms_2Hz": 10.634929944598028
+  },
+  {
+    "posture_index": 19,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924889931884158,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0014647000318117023,
+    "normal_gain_vs_base_2Hz": 0.9679676858375249,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0006437930567153465
+  },
+  {
+    "posture_index": 19,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 19,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967963981555412,
+    "vertical_extra_phase_lag_ms_1Hz": 12.841488607629865,
+    "normal_gain_vs_base_2Hz": 0.9863141398600859,
+    "vertical_extra_phase_lag_ms_2Hz": 10.634864805258877
+  },
+  {
+    "posture_index": 19,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967970909709255,
+    "vertical_extra_phase_lag_ms_1Hz": 0.003112003863112052,
+    "normal_gain_vs_base_2Hz": 0.9863173602846179,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0021305360598966433
+  },
+  {
+    "posture_index": 20,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 20,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924708032414962,
+    "vertical_extra_phase_lag_ms_1Hz": 12.932216264295972,
+    "normal_gain_vs_base_2Hz": 0.9676091390729866,
+    "vertical_extra_phase_lag_ms_2Hz": 10.462215931059848
+  },
+  {
+    "posture_index": 20,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925206395060051,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0014715563324644808,
+    "normal_gain_vs_base_2Hz": 0.9682190166828832,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0013558959221581536
+  },
+  {
+    "posture_index": 20,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 20,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967906446434349,
+    "vertical_extra_phase_lag_ms_1Hz": 12.932672724957381,
+    "normal_gain_vs_base_2Hz": 0.9861514835330883,
+    "vertical_extra_phase_lag_ms_2Hz": 10.464204621647722
+  },
+  {
+    "posture_index": 20,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968115462785266,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0027185671374033407,
+    "normal_gain_vs_base_2Hz": 0.9865109867914282,
+    "vertical_extra_phase_lag_ms_2Hz": 0.003196756839347946
+  },
+  {
+    "posture_index": 21,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 21,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924850690699768,
+    "vertical_extra_phase_lag_ms_1Hz": 12.915084042017025,
+    "normal_gain_vs_base_2Hz": 0.9679334971495802,
+    "vertical_extra_phase_lag_ms_2Hz": 10.497108739092418
+  },
+  {
+    "posture_index": 21,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925013569592028,
+    "vertical_extra_phase_lag_ms_1Hz": 0.004468712673661484,
+    "normal_gain_vs_base_2Hz": 0.9680386234884635,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0021683517293819275
+  },
+  {
+    "posture_index": 21,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 21,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967960498683447,
+    "vertical_extra_phase_lag_ms_1Hz": 12.915566509314882,
+    "normal_gain_vs_base_2Hz": 0.9863045720702605,
+    "vertical_extra_phase_lag_ms_2Hz": 10.496909475266579
+  },
+  {
+    "posture_index": 21,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968007155308561,
+    "vertical_extra_phase_lag_ms_1Hz": 0.009420667531892793,
+    "normal_gain_vs_base_2Hz": 0.9863474624378415,
+    "vertical_extra_phase_lag_ms_2Hz": 0.006946789761361801
+  },
+  {
+    "posture_index": 22,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -7.658162394394261e-15,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 22,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924516174865007,
+    "vertical_extra_phase_lag_ms_1Hz": 13.708850686783919,
+    "normal_gain_vs_base_2Hz": 0.967332499277845,
+    "vertical_extra_phase_lag_ms_2Hz": 8.436449287295053
+  },
+  {
+    "posture_index": 22,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924379875949273,
+    "vertical_extra_phase_lag_ms_1Hz": 0.048690177297755405,
+    "normal_gain_vs_base_2Hz": 0.9664165622430387,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0671473002430007
+  },
+  {
+    "posture_index": 22,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 22,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967826242003369,
+    "vertical_extra_phase_lag_ms_1Hz": 13.718944950680918,
+    "normal_gain_vs_base_2Hz": 0.9860172434818835,
+    "vertical_extra_phase_lag_ms_2Hz": 8.469131431179791
+  },
+  {
+    "posture_index": 22,
+    "piece": "L",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967528856949899,
+    "vertical_extra_phase_lag_ms_1Hz": 0.08584879274341535,
+    "normal_gain_vs_base_2Hz": 0.9853183189380488,
+    "vertical_extra_phase_lag_ms_2Hz": 0.001821668135570985
+  },
+  {
+    "posture_index": 23,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 23,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924130038460834,
+    "vertical_extra_phase_lag_ms_1Hz": 13.704017279816915,
+    "normal_gain_vs_base_2Hz": 0.9665708206386114,
+    "vertical_extra_phase_lag_ms_2Hz": 8.742606031774855
+  },
+  {
+    "posture_index": 23,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925501633931654,
+    "vertical_extra_phase_lag_ms_1Hz": 0.011459480217499245,
+    "normal_gain_vs_base_2Hz": 0.9684625489366682,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0021361258030471665
+  },
+  {
+    "posture_index": 23,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0
+  },
+  {
+    "posture_index": 23,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996767253146576,
+    "vertical_extra_phase_lag_ms_1Hz": 13.698514970350171,
+    "normal_gain_vs_base_2Hz": 0.9856487745239186,
+    "vertical_extra_phase_lag_ms_2Hz": 8.766045749376735
+  },
+  {
+    "posture_index": 23,
+    "piece": "L",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968367962446713,
+    "vertical_extra_phase_lag_ms_1Hz": 0.03070350715585985,
+    "normal_gain_vs_base_2Hz": 0.9869009610628917,
+    "vertical_extra_phase_lag_ms_2Hz": 0.010118445022619924
+  },
+  {
+    "posture_index": 24,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 24,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924825630734571,
+    "vertical_extra_phase_lag_ms_1Hz": 13.180995121026008,
+    "normal_gain_vs_base_2Hz": 0.9678706097873039,
+    "vertical_extra_phase_lag_ms_2Hz": 10.29469429861841
+  },
+  {
+    "posture_index": 24,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924824432593771,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0002453157118643731,
+    "normal_gain_vs_base_2Hz": 0.9678786913906801,
+    "vertical_extra_phase_lag_ms_2Hz": -0.00042363649610270007
+  },
+  {
+    "posture_index": 24,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 24,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967950279794279,
+    "vertical_extra_phase_lag_ms_1Hz": 13.181048245789663,
+    "normal_gain_vs_base_2Hz": 0.9862725615237569,
+    "vertical_extra_phase_lag_ms_2Hz": 10.295959862593994
+  },
+  {
+    "posture_index": 24,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996794943443264,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0003061843934582786,
+    "normal_gain_vs_base_2Hz": 0.9862807581568159,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00018833667181135155
+  },
+  {
+    "posture_index": 25,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 25,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924860619626893,
+    "vertical_extra_phase_lag_ms_1Hz": 13.180712618720065,
+    "normal_gain_vs_base_2Hz": 0.9679500230063107,
+    "vertical_extra_phase_lag_ms_2Hz": 10.288363649261047
+  },
+  {
+    "posture_index": 25,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924899500185181,
+    "vertical_extra_phase_lag_ms_1Hz": 0.00036833906521906395,
+    "normal_gain_vs_base_2Hz": 0.967999227826918,
+    "vertical_extra_phase_lag_ms_2Hz": 2.885978761505354e-06
+  },
+  {
+    "posture_index": 25,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 25,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967963307995321,
+    "vertical_extra_phase_lag_ms_1Hz": 13.180648614696661,
+    "normal_gain_vs_base_2Hz": 0.9863094223181336,
+    "vertical_extra_phase_lag_ms_2Hz": 10.2883834693472
+  },
+  {
+    "posture_index": 25,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967979962254433,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0008617280298112527,
+    "normal_gain_vs_base_2Hz": 0.9863383284314526,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00025496227427054255
+  },
+  {
+    "posture_index": 26,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 26,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924835542865063,
+    "vertical_extra_phase_lag_ms_1Hz": 13.24192764771398,
+    "normal_gain_vs_base_2Hz": 0.9678915248180132,
+    "vertical_extra_phase_lag_ms_2Hz": 10.362994701798609
+  },
+  {
+    "posture_index": 26,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924900448480894,
+    "vertical_extra_phase_lag_ms_1Hz": 1.4919454806795963e-05,
+    "normal_gain_vs_base_2Hz": 0.9678998424809225,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0009650707820389262
+  },
+  {
+    "posture_index": 26,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 26,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967953888502765,
+    "vertical_extra_phase_lag_ms_1Hz": 13.241841005960397,
+    "normal_gain_vs_base_2Hz": 0.9862819507598218,
+    "vertical_extra_phase_lag_ms_2Hz": 10.363832606263614
+  },
+  {
+    "posture_index": 26,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967960684737117,
+    "vertical_extra_phase_lag_ms_1Hz": -2.1518799816552204e-06,
+    "normal_gain_vs_base_2Hz": 0.9862735974251018,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0005035317228271515
+  },
+  {
+    "posture_index": 27,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 27,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924837647234785,
+    "vertical_extra_phase_lag_ms_1Hz": 13.235831503907797,
+    "normal_gain_vs_base_2Hz": 0.9678959360937942,
+    "vertical_extra_phase_lag_ms_2Hz": 10.366259637029154
+  },
+  {
+    "posture_index": 27,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925046290685745,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0005025820113054284,
+    "normal_gain_vs_base_2Hz": 0.9681147611475063,
+    "vertical_extra_phase_lag_ms_2Hz": -0.00014480787736225015
+  },
+  {
+    "posture_index": 27,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 27,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967954622063209,
+    "vertical_extra_phase_lag_ms_1Hz": 13.235619747710398,
+    "normal_gain_vs_base_2Hz": 0.9862838370064964,
+    "vertical_extra_phase_lag_ms_2Hz": 10.3666278195694
+  },
+  {
+    "posture_index": 27,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968033405966955,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0012577673915752702,
+    "normal_gain_vs_base_2Hz": 0.9864033892026295,
+    "vertical_extra_phase_lag_ms_2Hz": -2.6293123521735558e-05
+  },
+  {
+    "posture_index": 28,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 28,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924830067260044,
+    "vertical_extra_phase_lag_ms_1Hz": 13.358308389291143,
+    "normal_gain_vs_base_2Hz": 0.9678787563529061,
+    "vertical_extra_phase_lag_ms_2Hz": 10.366725545045227
+  },
+  {
+    "posture_index": 28,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924901099755474,
+    "vertical_extra_phase_lag_ms_1Hz": 0.004441409780659125,
+    "normal_gain_vs_base_2Hz": 0.9678615126715836,
+    "vertical_extra_phase_lag_ms_2Hz": -9.255405202477787e-05
+  },
+  {
+    "posture_index": 28,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 28,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996795179818107,
+    "vertical_extra_phase_lag_ms_1Hz": 13.35924657116631,
+    "normal_gain_vs_base_2Hz": 0.9862758606513,
+    "vertical_extra_phase_lag_ms_2Hz": 10.369747952332059
+  },
+  {
+    "posture_index": 28,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967951362876315,
+    "vertical_extra_phase_lag_ms_1Hz": 0.008009507967210838,
+    "normal_gain_vs_base_2Hz": 0.9862461740966797,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00528113987628929
+  },
+  {
+    "posture_index": 29,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 29,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924814961129769,
+    "vertical_extra_phase_lag_ms_1Hz": 13.353660432821185,
+    "normal_gain_vs_base_2Hz": 0.9678458654800713,
+    "vertical_extra_phase_lag_ms_2Hz": 10.379707006020615
+  },
+  {
+    "posture_index": 29,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925029301248973,
+    "vertical_extra_phase_lag_ms_1Hz": 0.002740464988116774,
+    "normal_gain_vs_base_2Hz": 0.9680776389057867,
+    "vertical_extra_phase_lag_ms_2Hz": 0.000655996933191438
+  },
+  {
+    "posture_index": 29,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 29,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967946476348879,
+    "vertical_extra_phase_lag_ms_1Hz": 13.353176208258837,
+    "normal_gain_vs_base_2Hz": 0.9862615202458347,
+    "vertical_extra_phase_lag_ms_2Hz": 10.379408310448934
+  },
+  {
+    "posture_index": 29,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968029025784694,
+    "vertical_extra_phase_lag_ms_1Hz": 0.006641241258402264,
+    "normal_gain_vs_base_2Hz": 0.9863909836119377,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0030891228766922424
+  },
+  {
+    "posture_index": 30,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 30,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.992481765915364,
+    "vertical_extra_phase_lag_ms_1Hz": 13.179867384924187,
+    "normal_gain_vs_base_2Hz": 0.9678526298239258,
+    "vertical_extra_phase_lag_ms_2Hz": 10.29759063073499
+  },
+  {
+    "posture_index": 30,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924821301940874,
+    "vertical_extra_phase_lag_ms_1Hz": 0.00019725774903457923,
+    "normal_gain_vs_base_2Hz": 0.9678719604535335,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0004316025612108072
+  },
+  {
+    "posture_index": 30,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 30,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967947339729862,
+    "vertical_extra_phase_lag_ms_1Hz": 13.17989673884661,
+    "normal_gain_vs_base_2Hz": 0.9862643021086116,
+    "vertical_extra_phase_lag_ms_2Hz": 10.29901550960099
+  },
+  {
+    "posture_index": 30,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967949598898568,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0002198050147673638,
+    "normal_gain_vs_base_2Hz": 0.9862803834603373,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00015176003929780616
+  },
+  {
+    "posture_index": 31,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 31,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924861273931171,
+    "vertical_extra_phase_lag_ms_1Hz": 13.179666465940446,
+    "normal_gain_vs_base_2Hz": 0.9679515201245716,
+    "vertical_extra_phase_lag_ms_2Hz": 10.288792153026517
+  },
+  {
+    "posture_index": 31,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924904909747834,
+    "vertical_extra_phase_lag_ms_1Hz": 0.00057716628845231,
+    "normal_gain_vs_base_2Hz": 0.9680047029254598,
+    "vertical_extra_phase_lag_ms_2Hz": 1.6724813149518878e-05
+  },
+  {
+    "posture_index": 31,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 31,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967963553877577,
+    "vertical_extra_phase_lag_ms_1Hz": 13.179605435982072,
+    "normal_gain_vs_base_2Hz": 0.986310124324044,
+    "vertical_extra_phase_lag_ms_2Hz": 10.2887520262665
+  },
+  {
+    "posture_index": 31,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967981763742785,
+    "vertical_extra_phase_lag_ms_1Hz": 0.001311761233134158,
+    "normal_gain_vs_base_2Hz": 0.9863408740304438,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0004552535244691554
+  },
+  {
+    "posture_index": 32,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 32,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924829229254047,
+    "vertical_extra_phase_lag_ms_1Hz": 13.241245024688926,
+    "normal_gain_vs_base_2Hz": 0.9678772947359489,
+    "vertical_extra_phase_lag_ms_2Hz": 10.364700004486975
+  },
+  {
+    "posture_index": 32,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924892245151443,
+    "vertical_extra_phase_lag_ms_1Hz": 2.266769754580515e-05,
+    "normal_gain_vs_base_2Hz": 0.9678834344213253,
+    "vertical_extra_phase_lag_ms_2Hz": -0.001065088492616609
+  },
+  {
+    "posture_index": 32,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 32,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967951584928632,
+    "vertical_extra_phase_lag_ms_1Hz": 13.241151128877696,
+    "normal_gain_vs_base_2Hz": 0.9862754845197127,
+    "vertical_extra_phase_lag_ms_2Hz": 10.36569429412335
+  },
+  {
+    "posture_index": 32,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967957137788235,
+    "vertical_extra_phase_lag_ms_1Hz": -1.6956941178743708e-06,
+    "normal_gain_vs_base_2Hz": 0.9862660742943963,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0005380604721280329
+  },
+  {
+    "posture_index": 33,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 33,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924842552988001,
+    "vertical_extra_phase_lag_ms_1Hz": 13.234952438419803,
+    "normal_gain_vs_base_2Hz": 0.9679069858682369,
+    "vertical_extra_phase_lag_ms_2Hz": 10.366261118259045
+  },
+  {
+    "posture_index": 33,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925036999926865,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0006768660448985249,
+    "normal_gain_vs_base_2Hz": 0.9681109556128106,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0001700878472577631
+  },
+  {
+    "posture_index": 33,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 33,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996795641314781,
+    "vertical_extra_phase_lag_ms_1Hz": 13.234749634239657,
+    "normal_gain_vs_base_2Hz": 0.9862888615362924,
+    "vertical_extra_phase_lag_ms_2Hz": 10.366474582163713
+  },
+  {
+    "posture_index": 33,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968029832322931,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0016286207728773605,
+    "normal_gain_vs_base_2Hz": 0.9864001128823404,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00011349822152260698
+  },
+  {
+    "posture_index": 34,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 34,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924821616332646,
+    "vertical_extra_phase_lag_ms_1Hz": 13.358998454905006,
+    "normal_gain_vs_base_2Hz": 0.9678598386529108,
+    "vertical_extra_phase_lag_ms_2Hz": 10.36532981914679
+  },
+  {
+    "posture_index": 34,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.992487092704918,
+    "vertical_extra_phase_lag_ms_1Hz": 0.004529152933892744,
+    "normal_gain_vs_base_2Hz": 0.967826494755358,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0002850007056307945
+  },
+  {
+    "posture_index": 34,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 34,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967948721247492,
+    "vertical_extra_phase_lag_ms_1Hz": 13.359980318421144,
+    "normal_gain_vs_base_2Hz": 0.9862672909080609,
+    "vertical_extra_phase_lag_ms_2Hz": 10.368741430694897
+  },
+  {
+    "posture_index": 34,
+    "piece": "S",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967940809643272,
+    "vertical_extra_phase_lag_ms_1Hz": 0.008073271790037757,
+    "normal_gain_vs_base_2Hz": 0.9862305091974912,
+    "vertical_extra_phase_lag_ms_2Hz": 0.005299904577991311
+  },
+  {
+    "posture_index": 35,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 35,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924824785516588,
+    "vertical_extra_phase_lag_ms_1Hz": 13.353637460313543,
+    "normal_gain_vs_base_2Hz": 0.9678679903641422,
+    "vertical_extra_phase_lag_ms_2Hz": 10.377285364980374
+  },
+  {
+    "posture_index": 35,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925048556455441,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0032885630179850136,
+    "normal_gain_vs_base_2Hz": 0.9680984747347331,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0008011131129078535
+  },
+  {
+    "posture_index": 35,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 35,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967950059349125,
+    "vertical_extra_phase_lag_ms_1Hz": 13.353238383495304,
+    "normal_gain_vs_base_2Hz": 0.9862715678700978,
+    "vertical_extra_phase_lag_ms_2Hz": 10.376766954719654
+  },
+  {
+    "posture_index": 35,
+    "piece": "S",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996803384623808,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0077486622591062095,
+    "normal_gain_vs_base_2Hz": 0.986397369409565,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0037346047860686436
+  },
+  {
+    "posture_index": 36,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 36,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924788808554227,
+    "vertical_extra_phase_lag_ms_1Hz": 12.837850866337545,
+    "normal_gain_vs_base_2Hz": 0.967832597501491,
+    "vertical_extra_phase_lag_ms_2Hz": 10.530325820353486
+  },
+  {
+    "posture_index": 36,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924788503632802,
+    "vertical_extra_phase_lag_ms_1Hz": 0.00014243453698533352,
+    "normal_gain_vs_base_2Hz": 0.9678253542664242,
+    "vertical_extra_phase_lag_ms_2Hz": -9.791433856264917e-05
+  },
+  {
+    "posture_index": 36,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 36,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967941457396662,
+    "vertical_extra_phase_lag_ms_1Hz": 12.837872857674087,
+    "normal_gain_vs_base_2Hz": 0.9862718070473738,
+    "vertical_extra_phase_lag_ms_2Hz": 10.530280712954449
+  },
+  {
+    "posture_index": 36,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967940421388127,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0002809952527484849,
+    "normal_gain_vs_base_2Hz": 0.9862684133332069,
+    "vertical_extra_phase_lag_ms_2Hz": 7.914670883070726e-05
+  },
+  {
+    "posture_index": 37,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 37,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924814965110453,
+    "vertical_extra_phase_lag_ms_1Hz": 12.83928946472734,
+    "normal_gain_vs_base_2Hz": 0.967878609390026,
+    "vertical_extra_phase_lag_ms_2Hz": 10.52778317354342
+  },
+  {
+    "posture_index": 37,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924818189493512,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0002413858891434581,
+    "normal_gain_vs_base_2Hz": 0.9678779778121422,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0001684218850718538
+  },
+  {
+    "posture_index": 37,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 37,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967951151029826,
+    "vertical_extra_phase_lag_ms_1Hz": 12.839315847048606,
+    "normal_gain_vs_base_2Hz": 0.9862916856497764,
+    "vertical_extra_phase_lag_ms_2Hz": 10.527826181470546
+  },
+  {
+    "posture_index": 37,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967951283790355,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0005007481602825922,
+    "normal_gain_vs_base_2Hz": 0.9862905655205451,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00041112121107383606
+  },
+  {
+    "posture_index": 38,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 38,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924871250839145,
+    "vertical_extra_phase_lag_ms_1Hz": 12.885292581983341,
+    "normal_gain_vs_base_2Hz": 0.9679715271491486,
+    "vertical_extra_phase_lag_ms_2Hz": 10.599376561509686
+  },
+  {
+    "posture_index": 38,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925380134652684,
+    "vertical_extra_phase_lag_ms_1Hz": 0.006996321127003818,
+    "normal_gain_vs_base_2Hz": 0.9682083625004609,
+    "vertical_extra_phase_lag_ms_2Hz": 0.004109059171156001
+  },
+  {
+    "posture_index": 38,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 38,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967966895877312,
+    "vertical_extra_phase_lag_ms_1Hz": 12.885725856858675,
+    "normal_gain_vs_base_2Hz": 0.9863182223834901,
+    "vertical_extra_phase_lag_ms_2Hz": 10.598540969020398
+  },
+  {
+    "posture_index": 38,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968087711238949,
+    "vertical_extra_phase_lag_ms_1Hz": 0.015534543316336684,
+    "normal_gain_vs_base_2Hz": 0.9863787341788854,
+    "vertical_extra_phase_lag_ms_2Hz": 0.011595295527370085
+  },
+  {
+    "posture_index": 39,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 39,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924869584174636,
+    "vertical_extra_phase_lag_ms_1Hz": 12.901543231942926,
+    "normal_gain_vs_base_2Hz": 0.9679660832465758,
+    "vertical_extra_phase_lag_ms_2Hz": 10.592131545649995
+  },
+  {
+    "posture_index": 39,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925084571102964,
+    "vertical_extra_phase_lag_ms_1Hz": 0.00369243132645148,
+    "normal_gain_vs_base_2Hz": 0.9681066408839304,
+    "vertical_extra_phase_lag_ms_2Hz": 0.002088335335899731
+  },
+  {
+    "posture_index": 39,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 39,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967966065880393,
+    "vertical_extra_phase_lag_ms_1Hz": 12.901959319519243,
+    "normal_gain_vs_base_2Hz": 0.9863150175692098,
+    "vertical_extra_phase_lag_ms_2Hz": 10.592102668865389
+  },
+  {
+    "posture_index": 39,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968027758357968,
+    "vertical_extra_phase_lag_ms_1Hz": 0.007829038747774998,
+    "normal_gain_vs_base_2Hz": 0.9863723294296045,
+    "vertical_extra_phase_lag_ms_2Hz": 0.006018891039303972
+  },
+  {
+    "posture_index": 40,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 40,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924794116278779,
+    "vertical_extra_phase_lag_ms_1Hz": 13.192664571691227,
+    "normal_gain_vs_base_2Hz": 0.967795788380882,
+    "vertical_extra_phase_lag_ms_2Hz": 10.445962387131758
+  },
+  {
+    "posture_index": 40,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.992478304406993,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0004131876769924287,
+    "normal_gain_vs_base_2Hz": 0.9677900962579482,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0008257978367375631
+  },
+  {
+    "posture_index": 40,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 40,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967938781603948,
+    "vertical_extra_phase_lag_ms_1Hz": 13.19273539699663,
+    "normal_gain_vs_base_2Hz": 0.9862383420413707,
+    "vertical_extra_phase_lag_ms_2Hz": 10.448117245397095
+  },
+  {
+    "posture_index": 40,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967929991571182,
+    "vertical_extra_phase_lag_ms_1Hz": 0.00048684283635591424,
+    "normal_gain_vs_base_2Hz": 0.9862386166770519,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00023184983241293
+  },
+  {
+    "posture_index": 41,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 41,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924872441608618,
+    "vertical_extra_phase_lag_ms_1Hz": 13.200434121557459,
+    "normal_gain_vs_base_2Hz": 0.9679729764555011,
+    "vertical_extra_phase_lag_ms_2Hz": 10.427737078133898
+  },
+  {
+    "posture_index": 41,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924899502631491,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0007421737423190768,
+    "normal_gain_vs_base_2Hz": 0.9680021149789748,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00013228632353217247
+  },
+  {
+    "posture_index": 41,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 41,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996796714985192,
+    "vertical_extra_phase_lag_ms_1Hz": 13.200421442263243,
+    "normal_gain_vs_base_2Hz": 0.9863182956233414,
+    "vertical_extra_phase_lag_ms_2Hz": 10.427613199117808
+  },
+  {
+    "posture_index": 41,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967977549152875,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0016335824199823564,
+    "normal_gain_vs_base_2Hz": 0.9863342456075691,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0008056839469412648
+  },
+  {
+    "posture_index": 42,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 42,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924788842569139,
+    "vertical_extra_phase_lag_ms_1Hz": 12.837981897402903,
+    "normal_gain_vs_base_2Hz": 0.967832682642265,
+    "vertical_extra_phase_lag_ms_2Hz": 10.529666689709389
+  },
+  {
+    "posture_index": 42,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924789476195749,
+    "vertical_extra_phase_lag_ms_1Hz": 0.00013236419636855276,
+    "normal_gain_vs_base_2Hz": 0.9678274047259651,
+    "vertical_extra_phase_lag_ms_2Hz": -9.042216753754036e-05
+  },
+  {
+    "posture_index": 42,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 42,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967941474511087,
+    "vertical_extra_phase_lag_ms_1Hz": 12.838002778377751,
+    "normal_gain_vs_base_2Hz": 0.9862718591525494,
+    "vertical_extra_phase_lag_ms_2Hz": 10.52962447633443
+  },
+  {
+    "posture_index": 42,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967941127542811,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0002609048021944052,
+    "normal_gain_vs_base_2Hz": 0.9862698397210438,
+    "vertical_extra_phase_lag_ms_2Hz": 7.638485647975563e-05
+  },
+  {
+    "posture_index": 43,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 43,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.99248132173858,
+    "vertical_extra_phase_lag_ms_1Hz": 12.83912585406091,
+    "normal_gain_vs_base_2Hz": 0.9678755067528775,
+    "vertical_extra_phase_lag_ms_2Hz": 10.527581296786748
+  },
+  {
+    "posture_index": 43,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924818799265404,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0003019646005676898,
+    "normal_gain_vs_base_2Hz": 0.9678778115701356,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00018737395788334663
+  },
+  {
+    "posture_index": 43,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 43,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967950474255141,
+    "vertical_extra_phase_lag_ms_1Hz": 12.839153207373021,
+    "normal_gain_vs_base_2Hz": 0.986290269799172,
+    "vertical_extra_phase_lag_ms_2Hz": 10.527634078795751
+  },
+  {
+    "posture_index": 43,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967951798106716,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0006317141141188458,
+    "normal_gain_vs_base_2Hz": 0.9862911450570867,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0004807837260525283
+  },
+  {
+    "posture_index": 44,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 44,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924871257391154,
+    "vertical_extra_phase_lag_ms_1Hz": 12.886100449724044,
+    "normal_gain_vs_base_2Hz": 0.9679715171091142,
+    "vertical_extra_phase_lag_ms_2Hz": 10.599462192958102
+  },
+  {
+    "posture_index": 44,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9925362945762225,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0066905854337250634,
+    "normal_gain_vs_base_2Hz": 0.9681995566243112,
+    "vertical_extra_phase_lag_ms_2Hz": 0.003936573390489091
+  },
+  {
+    "posture_index": 44,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 44,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967966894897441,
+    "vertical_extra_phase_lag_ms_1Hz": 12.886512189149425,
+    "normal_gain_vs_base_2Hz": 0.9863182067822781,
+    "vertical_extra_phase_lag_ms_2Hz": 10.598658863977455
+  },
+  {
+    "posture_index": 44,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968083320777319,
+    "vertical_extra_phase_lag_ms_1Hz": 0.014864545586546183,
+    "normal_gain_vs_base_2Hz": 0.9863760168956469,
+    "vertical_extra_phase_lag_ms_2Hz": 0.011100155010647985
+  },
+  {
+    "posture_index": 45,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 45,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924868284524684,
+    "vertical_extra_phase_lag_ms_1Hz": 12.901853329149795,
+    "normal_gain_vs_base_2Hz": 0.967963163208877,
+    "vertical_extra_phase_lag_ms_2Hz": 10.591772318251245
+  },
+  {
+    "posture_index": 45,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.992508998478744,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0037393739103409457,
+    "normal_gain_vs_base_2Hz": 0.9681106709923442,
+    "vertical_extra_phase_lag_ms_2Hz": 0.002121135360870196
+  },
+  {
+    "posture_index": 45,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 45,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967965598471538,
+    "vertical_extra_phase_lag_ms_1Hz": 12.902284673125171,
+    "normal_gain_vs_base_2Hz": 0.9863137101674139,
+    "vertical_extra_phase_lag_ms_2Hz": 10.591769224912701
+  },
+  {
+    "posture_index": 45,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9968029830585217,
+    "vertical_extra_phase_lag_ms_1Hz": 0.007914454625467113,
+    "normal_gain_vs_base_2Hz": 0.9863748087156105,
+    "vertical_extra_phase_lag_ms_2Hz": 0.006106587965350944
+  },
+  {
+    "posture_index": 46,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 46,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.992479667142288,
+    "vertical_extra_phase_lag_ms_1Hz": 13.193352149313764,
+    "normal_gain_vs_base_2Hz": 0.96780156527034,
+    "vertical_extra_phase_lag_ms_2Hz": 10.445268802565012
+  },
+  {
+    "posture_index": 46,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924784247057048,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0005097905195002799,
+    "normal_gain_vs_base_2Hz": 0.96779465291692,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0007630226314656145
+  },
+  {
+    "posture_index": 46,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 46,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967939703715193,
+    "vertical_extra_phase_lag_ms_1Hz": 13.193461461248408,
+    "normal_gain_vs_base_2Hz": 0.9862409378868222,
+    "vertical_extra_phase_lag_ms_2Hz": 10.447438901361954
+  },
+  {
+    "posture_index": 46,
+    "piece": "T",
+    "side": "L",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967930607821253,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0006481895353777393,
+    "normal_gain_vs_base_2Hz": 0.9862405211551182,
+    "vertical_extra_phase_lag_ms_2Hz": 0.0003860232746264022
+  },
+  {
+    "posture_index": 47,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 1.0,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 47,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924873178464564,
+    "vertical_extra_phase_lag_ms_1Hz": 13.20038861542343,
+    "normal_gain_vs_base_2Hz": 0.9679746323614035,
+    "vertical_extra_phase_lag_ms_2Hz": 10.427811314621325
+  },
+  {
+    "posture_index": 47,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 1243.9024390243903,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9924899956016633,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0008036865938756207,
+    "normal_gain_vs_base_2Hz": 0.9680020646443329,
+    "vertical_extra_phase_lag_ms_2Hz": 0.00014317312452024673
+  },
+  {
+    "posture_index": 47,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "baseline",
+    "cart_d": [
+      60,
+      60,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9999999999999999,
+    "vertical_extra_phase_lag_ms_1Hz": -0.0,
+    "normal_gain_vs_base_2Hz": 1.0,
+    "vertical_extra_phase_lag_ms_2Hz": -0.0
+  },
+  {
+    "posture_index": 47,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "isotropic80",
+    "cart_d": [
+      80,
+      80,
+      80,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.996796741633524,
+    "vertical_extra_phase_lag_ms_1Hz": 13.200387720944098,
+    "normal_gain_vs_base_2Hz": 0.986319041355706,
+    "vertical_extra_phase_lag_ms_2Hz": 10.427683542321622
+  },
+  {
+    "posture_index": 47,
+    "piece": "T",
+    "side": "R",
+    "contact_stiffness_N_m": 2700.0,
+    "setting": "base_y80",
+    "cart_d": [
+      60,
+      80,
+      60,
+      7,
+      7,
+      7
+    ],
+    "normal_gain_vs_base_1Hz": 0.9967977364420182,
+    "vertical_extra_phase_lag_ms_1Hz": 0.0017525027602767439,
+    "normal_gain_vs_base_2Hz": 0.986333712671342,
+    "vertical_extra_phase_lag_ms_2Hz": 0.000882201081578581
+  }
+]

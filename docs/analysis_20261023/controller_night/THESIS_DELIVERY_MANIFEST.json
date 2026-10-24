@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-10-23T18:50:41.545789+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "prior_delivery_files_verified": 36,
+  "local_report_links_checked": 10,
+  "preservation": {
+    "verified_utc": "2026-10-23T18:49:44.744589+00:00",
+    "archive_identical": true,
+    "files": 765,
+    "bytes": 4080005175,
+    "baseline_zip_sha256_verified": true,
+    "preserved_zip_files_verified": 431,
+    "unchanged_runtime_source_files": 332
+  },
+  "files": [
+    {
+      "path": "thesis_synthesis.py",
+      "bytes": 22352,
+      "sha256": "e16101cdc79d2e4d520865ad9bb1b2df79c18c868e9a1bfe576ab63910ba9fcc"
+    },
+    {
+      "path": "THESIS_SYNTHESIS.md",
+      "bytes": 11659,
+      "sha256": "9c113af44af97194a14ed7ab513b753baf846d085723682e64df234a965ddd85"
+    },
+    {
+      "path": "THESIS_EVIDENCE.json",
+      "bytes": 22390,
+      "sha256": "9ce5454f1920f29fd07b7d26bad8cd03a14e980fe3be0a9d825e18af6d80e4dd"
+    },
+    {
+      "path": "thesis_observed_runs.csv",
+      "bytes": 3506,
+      "sha256": "5532afaf2bd40f7d628dc8b511fae4c40d8526b4fa589a9f1422f400bc4402cc"
+    },
+    {
+      "path": "19_risultati_sperimentali_per_tesi.png",
+      "bytes": 107011,
+      "sha256": "eb71d6f1d002676ab49eff77e67ad512be1da627889d2b94a20c0ddb82a0e929"
+    },
+    {
+      "path": "thesis_synthesis_process.log",
+      "bytes": 1142,
+      "sha256": "987f0d62f103f540ccc132de105eb9ad8910e2e3e9ee0c1eaf21aeb818aaffc4"
+    },
+    {
+      "path": "finalize_thesis_tranche.py",
+      "bytes": 9274,
+      "sha256": "31a8e866878b2b3c4a3409b977fbaeff6460f7447d91ef1e02dfb85f23afd8b3"
+    }
+  ],
+  "scope": "Synthesis from saved observations and frozen studies only. No tuning, causal improvement claim, robot recommendation or universal thesis acceptance decision."
+}

@@ -1,0 +1,80 @@
+{
+  "created_utc": "2026-10-23T17:50:20.418297+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "previous_holdout_delivery_files_verified": 19,
+  "preservation": {
+    "verified_utc": "2026-10-23T17:49:13.237480+00:00",
+    "archive_identical": true,
+    "files": 765,
+    "bytes": 4080005175,
+    "baseline_zip_sha256_verified": true,
+    "preserved_zip_files_verified": 431,
+    "unchanged_runtime_source_files": 332
+  },
+  "files": [
+    {
+      "path": "linear_robustness.py",
+      "bytes": 17405,
+      "sha256": "43209fb4091b8e42c20b9951ac1bc5c1620d13ef32e08afbd2fb8f6c39281ec5"
+    },
+    {
+      "path": "LINEAR_ROBUSTNESS_DESIGN.json",
+      "bytes": 5130,
+      "sha256": "0da5b35d8f6a2cf3206ac3a4fea43384e6d78d4eae488c8a569e065adcb983b1"
+    },
+    {
+      "path": "linear_robustness_validation.json",
+      "bytes": 338,
+      "sha256": "8af736f5d93ce1f10990eb0a9a95b16b20559acbf37e476873fb9c8cd96c3d51"
+    },
+    {
+      "path": "linear_robustness_metrics.json",
+      "bytes": 273227,
+      "sha256": "28f14248bd500dfc6cd2231291d4bf4a5f5b60b8f7239ebfc395c3cb1bfa1394"
+    },
+    {
+      "path": "linear_robustness_metrics.csv",
+      "bytes": 101602,
+      "sha256": "2fb9602239ae058026305901a1b8805ef45e0f2ac188d8b7def915555726894e"
+    },
+    {
+      "path": "linear_robustness_summary.json",
+      "bytes": 8424,
+      "sha256": "c2ebb3e7bdff0c385efbf6aa9be3d4943177b7f2af95c070b21fc324cd50e54f"
+    },
+    {
+      "path": "LINEAR_ROBUSTNESS_REPORT.md",
+      "bytes": 5592,
+      "sha256": "d91b7dc106ba2add6e5919554c16c69be6a2fdfe21e04532d17a4570f5a5ac84"
+    },
+    {
+      "path": "17_robustezza_locale_sensibilita.png",
+      "bytes": 230850,
+      "sha256": "a1088546d11eee74ccb327301a65381b16bb7f5a5ed0176289744b84b2bbdca0"
+    },
+    {
+      "path": "MINIMUM_IDENTIFICATION_PROTOCOL.md",
+      "bytes": 6876,
+      "sha256": "5a6d1086d3819a90c14859b1d6a7a5402f56e56ecdcf86f29b7d6706b09401ca"
+    },
+    {
+      "path": "finalize_linear_tranche.py",
+      "bytes": 9007,
+      "sha256": "6ecceb5d899c8e0d4811dcad4b0ed23d064bb73d2082914cf63c7e27a822f42f"
+    },
+    {
+      "path": "linear_robustness_process.log",
+      "bytes": 390,
+      "sha256": "69deba7a4230376447e88e1c16c37dd6a93a01a9b42b1570f99317193d00808c"
+    }
+  ],
+  "conclusion": "Fixed local unsaturated LTI hypotheses only; no plant validation or new selected controller. No data from CSVs or new holdout tuning."
+}

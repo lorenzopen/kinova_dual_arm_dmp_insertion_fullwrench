@@ -1,0 +1,34 @@
+[
+  {
+    "test_id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "ARX_unstable_or_singular_candidates_rejected": 0
+  },
+  {
+    "test_id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+    "ARX_unstable_or_singular_candidates_rejected": 0
+  },
+  {
+    "test_id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "ARX_unstable_or_singular_candidates_rejected": 0
+  },
+  {
+    "test_id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "ARX_unstable_or_singular_candidates_rejected": 0
+  },
+  {
+    "test_id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "ARX_unstable_or_singular_candidates_rejected": 0
+  },
+  {
+    "test_id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+    "ARX_unstable_or_singular_candidates_rejected": 0
+  },
+  {
+    "test_id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "ARX_unstable_or_singular_candidates_rejected": 0
+  },
+  {
+    "test_id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+    "ARX_unstable_or_singular_candidates_rejected": 0
+  }
+]

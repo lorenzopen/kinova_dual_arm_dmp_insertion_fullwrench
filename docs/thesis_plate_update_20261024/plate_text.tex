@@ -1,0 +1,15 @@
+\subsection{What zero free length means in the implementation}
+\label{sec:plate-zero-length}
+
+The side view in Figure~\ref{fig:tripad-geometry} distinguishes a rigid support from the spring at its tip. Let $\vect a_i$ be that tip and $\vect s_i$ the centre of sphere $i$. They coincide in the unloaded configuration. The support still places both points $d=20$ mm ahead of the flange. In the flange axes the implemented deformation and peripheral force are
+\begin{equation}
+\vect\Delta_i=R_f^\top(\vect s_i-\vect a_i),\qquad
+\vect f_i^{\mathrm{spring}}=-K_i\vect\Delta_i-C_i\vect u_i.
+\label{eq:plate-point-spring}
+\end{equation}
+Here $\vect u_i=R_f^\top(\vect v_{s_i}-\vect v_{a_i})$ is the relative attachment-point velocity expressed in the flange axes, as used by the numerical damper. The elastic potential is $U_i=\tfrac12\vect\Delta_i^\top K_i\vect\Delta_i$: no nonzero scalar rest length is subtracted from $\norm{\vect s_i-\vect a_i}$. Thus $\ell_0=0$ describes this point-spring model; it does not collapse the support or set the flange--plate spacing to zero. The central six-axis spring likewise uses a relative pose about a prescribed rest transform, rather than the absolute distance between the flange and plate centres.
+
+The three sphere centres remain fixed in the rigid plate frame. Their different displacements relative to the support tips arise from one plate translation and rotation, not from three independently controlled pad motions. A tilted surface can therefore rotate the plate while the flange retains its attitude. A more irregular surface may give different contact normals or leave a pad unloaded; compliance does not guarantee that every shape admits three loaded contacts.
+
+The current floating-plate source applies these springs without hard travel stops. Its $\pm8$ mm range is a nominal design reference, not a simulated stop. This differs from the axial-rail mechanism described earlier. The zero-free-length potential is quadratic in attachment displacement, while finite plate rotations still make the complete pose-to-displacement relation nonlinear.
+

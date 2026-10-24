@@ -1,0 +1,27 @@
+{
+  "job": {
+    "group": "core",
+    "mechanism": "floating",
+    "method": "wong",
+    "case": "spatial",
+    "seed": 2,
+    "mass": 1.9,
+    "model_mass": 1.9,
+    "com": [
+      0.015,
+      0.015,
+      0
+    ],
+    "model_com": [
+      0.015,
+      0.015,
+      0
+    ],
+    "mu": 0.75,
+    "model_mu": 0.75,
+    "id": "core_floating_wong_spatial_2"
+  },
+  "pid": 16952,
+  "source_sha256": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2",
+  "time": 1792822718.7320557
+}

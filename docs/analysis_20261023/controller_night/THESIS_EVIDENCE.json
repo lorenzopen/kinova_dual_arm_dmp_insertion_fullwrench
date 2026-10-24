@@ -1,0 +1,568 @@
+{
+  "created_utc": "2026-10-23T18:49:09.516075+00:00",
+  "freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "verification": {
+    "primary_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+    "supplement_sha256": "bd68f3bd068ae79ecdaf4399b6c64984640d7930f324d4062fd96e5e8e96bd11",
+    "source_files_verified": 14,
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "scope": "Aggregation and writing from saved metrics only; no new source CSV loading, simulation or tuning.",
+  "input_files": [
+    {
+      "path": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json",
+      "sha256": "9343f9b348a38382f5096fd2cf4afd71f9933d4feb5643b40d370eda8feb8512"
+    },
+    {
+      "path": "docs/analysis_20261023/archive_review/run_catalog.json",
+      "sha256": "800bbce7aa3e7796f0996a9ba3f48d49b2899e15189137691c9c3d00b5b8875d"
+    },
+    {
+      "path": "docs/analysis_20261023/archive_review/L_transient_chronology.json",
+      "sha256": "2bd64a8ed393692ba96c43b104deb32ed9380151d6f6ee16dd89b919efd03f1a"
+    },
+    {
+      "path": "docs/analysis_20261023/archive_review/REPORT.md",
+      "sha256": "0d93b7cff6ce59444b78aaa9e7e667c0036213f7a5d6080c85525a188e531e46"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/holdout_summary.json",
+      "sha256": "b0279f08d22af1516c5a28afd3bca45e9a56b4193760806794270c7f8ebcb01a"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/SIGNAL_PIPELINE_AUDIT.json",
+      "sha256": "c309bc9bfdf1aee226441fc19a28bd9b0e9f1f13496528dc8010528ac7f39e5d"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/profile_nominal_feasibility.json",
+      "sha256": "e8ff2e15336101fb2a92c5b3dc883d564b21ffc114965930bf148afff8bebf60"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/EMPIRICAL_CONTROL_REPORT.md",
+      "sha256": "edde0357731a50f173ebb8dcf343c9054e7059ceabc73ecceb35973d9f1c57e4"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/DAMPING_REPORT.md",
+      "sha256": "4026f60ae88501dd6f911be3cab449b645e16d26b8938e6d5c15a3e3a9b993e0"
+    }
+  ],
+  "counts": {
+    "metadata_FFI_records": 24,
+    "seat_found_flags": 13,
+    "selected_curated_successes": 12
+  },
+  "cohort": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "piece": "Z",
+      "split": "development",
+      "band_force_0p8_2p5_N_mean_hand": 0.11930139868450353,
+      "band_percent_of_mean_force": 2.893323526858375,
+      "route_RMSE_logged_target_N_mean_hand": 0.3042854600098224,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 0.6283641145037163,
+      "route_rate_limited_percent": 6.839945280437757,
+      "route_trim_max_abs_mm": 0.842890391457734,
+      "believed_final_mm": -0.4488054915232076,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "piece": "Z",
+      "split": "development",
+      "band_force_0p8_2p5_N_mean_hand": 0.12306358922541398,
+      "band_percent_of_mean_force": 2.974559680523378,
+      "route_RMSE_logged_target_N_mean_hand": 0.33929093243271297,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 0.5120276005076212,
+      "route_rate_limited_percent": 8.791208791208792,
+      "route_trim_max_abs_mm": 1.0483862972257094,
+      "believed_final_mm": -0.05377378689602752,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+      "piece": "Z",
+      "split": "holdout",
+      "band_force_0p8_2p5_N_mean_hand": 0.11106786740430516,
+      "band_percent_of_mean_force": 2.6967036633128956,
+      "route_RMSE_logged_target_N_mean_hand": 0.3226463313541134,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 0.49256827695527294,
+      "route_rate_limited_percent": 7.681755829903978,
+      "route_trim_max_abs_mm": 0.6596313629550358,
+      "believed_final_mm": 0.20072713874508263,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "piece": "L",
+      "split": "development",
+      "band_force_0p8_2p5_N_mean_hand": 0.11468740853423082,
+      "band_percent_of_mean_force": 2.413956376670552,
+      "route_RMSE_logged_target_N_mean_hand": 0.28378531388281836,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 1.3962653374353187,
+      "route_rate_limited_percent": 12.76595744680851,
+      "route_trim_max_abs_mm": 1.636135376565507,
+      "believed_final_mm": 2.5256835621446374,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "piece": "L",
+      "split": "development",
+      "band_force_0p8_2p5_N_mean_hand": 0.11626192180958667,
+      "band_percent_of_mean_force": 2.4479224166329963,
+      "route_RMSE_logged_target_N_mean_hand": 0.30488670430384135,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 1.4468771504077644,
+      "route_rate_limited_percent": 12.189349112426036,
+      "route_trim_max_abs_mm": 1.4237175759374134,
+      "believed_final_mm": 2.9629456100542795,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+      "piece": "L",
+      "split": "holdout",
+      "band_force_0p8_2p5_N_mean_hand": 0.10375873764597747,
+      "band_percent_of_mean_force": 2.1797448566058586,
+      "route_RMSE_logged_target_N_mean_hand": 0.27443657824079537,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 1.5205659389345427,
+      "route_rate_limited_percent": 11.633372502937721,
+      "route_trim_max_abs_mm": 1.3563073759845001,
+      "believed_final_mm": 1.987645639554364,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "piece": "S",
+      "split": "development",
+      "band_force_0p8_2p5_N_mean_hand": 0.0703866410064487,
+      "band_percent_of_mean_force": 1.6271724252969104,
+      "route_RMSE_logged_target_N_mean_hand": 0.5539083498079693,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 0.9478622189272298,
+      "route_rate_limited_percent": 18.381112984822934,
+      "route_trim_max_abs_mm": 1.0413755232176616,
+      "believed_final_mm": 2.8781895311446037,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "piece": "S",
+      "split": "development",
+      "band_force_0p8_2p5_N_mean_hand": 0.059114038047269335,
+      "band_percent_of_mean_force": 1.3496315675011943,
+      "route_RMSE_logged_target_N_mean_hand": 0.4591981032035139,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 1.1364331145653037,
+      "route_rate_limited_percent": 19.185059422750424,
+      "route_trim_max_abs_mm": 0.5798060058273863,
+      "believed_final_mm": 2.899060916927848,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+      "piece": "S",
+      "split": "holdout",
+      "band_force_0p8_2p5_N_mean_hand": 0.07692611334148441,
+      "band_percent_of_mean_force": 1.7695826484522341,
+      "route_RMSE_logged_target_N_mean_hand": 0.531404060931064,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 0.7120669234577514,
+      "route_rate_limited_percent": 19.19191919191919,
+      "route_trim_max_abs_mm": 1.0596265896221582,
+      "believed_final_mm": 2.4529416859692676,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "piece": "T",
+      "split": "development",
+      "band_force_0p8_2p5_N_mean_hand": 0.11107052894713045,
+      "band_percent_of_mean_force": 2.431274152365285,
+      "route_RMSE_logged_target_N_mean_hand": 0.2734139880916634,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 0.30087961464699053,
+      "route_rate_limited_percent": 5.5858310626703,
+      "route_trim_max_abs_mm": 1.2076148196497347,
+      "believed_final_mm": 0.4930440859011176,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "piece": "T",
+      "split": "development",
+      "band_force_0p8_2p5_N_mean_hand": 0.09408691697194316,
+      "band_percent_of_mean_force": 2.058783972912996,
+      "route_RMSE_logged_target_N_mean_hand": 0.269625922115042,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 0.41834973165487804,
+      "route_rate_limited_percent": 6.584362139917696,
+      "route_trim_max_abs_mm": 1.0296900601305001,
+      "believed_final_mm": 0.3165957278615239,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+      "piece": "T",
+      "split": "holdout",
+      "band_force_0p8_2p5_N_mean_hand": 0.10380287776217094,
+      "band_percent_of_mean_force": 2.273507586169203,
+      "route_RMSE_logged_target_N_mean_hand": 0.2779845285068433,
+      "slow_seat_RMSE_logged_target_N_mean_hand": 0.4493292346749799,
+      "route_rate_limited_percent": 7.0054945054945055,
+      "route_trim_max_abs_mm": 1.5795524258209857,
+      "believed_final_mm": 0.36792362823323543,
+      "source_saved_metrics": "docs/analysis_20261023/archive_review/successful_and_reference_metrics.json"
+    }
+  ],
+  "descriptive_historical_comparison": [
+    {
+      "piece": "Z",
+      "historical_ids": [
+        "F75_Zt1_s9012_c100_five_cut800_online_20261022_202036"
+      ],
+      "FFI_ids": [
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+        "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651"
+      ],
+      "historical_metadata": [
+        {
+          "id": "F75_Zt1_s9012_c100_five_cut800_online_20261022_202036",
+          "git": "567450f",
+          "argv": [
+            "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/insert_open.py",
+            "insert",
+            "F75_Zt1_s9012",
+            "--arm",
+            "c100_five_cut800",
+            "--slow",
+            "3",
+            "--online",
+            "--squeeze-gain",
+            "0.5"
+          ],
+          "execution": null,
+          "controller_parameters": null
+        }
+      ],
+      "historical_band_minmax_N": [
+        0.1555824537707065,
+        0.1555824537707065
+      ],
+      "FFI_band_minmax_N": [
+        0.11106786740430516,
+        0.12306358922541398
+      ],
+      "historical_RMSE_minmax_N": [
+        0.2561386417271517,
+        0.2561386417271517
+      ],
+      "FFI_RMSE_minmax_N": [
+        0.3042854600098224,
+        0.33929093243271297
+      ]
+    },
+    {
+      "piece": "L",
+      "historical_ids": [
+        "F75_Lt1_s9014_c100_five_cut800_20261022_150027",
+        "F75_Lt1_s9014_c100_five_cut800_20261022_150751",
+        "F75_Lt1_s9014_c100_five_cut800_20261022_151230"
+      ],
+      "FFI_ids": [
+        "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+        "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+        "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139"
+      ],
+      "historical_metadata": [
+        {
+          "id": "F75_Lt1_s9014_c100_five_cut800_20261022_150027",
+          "git": "edc8806",
+          "argv": [
+            "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+            "insert",
+            "F75_Lt1_s9014",
+            "--arm",
+            "c100_five_cut800",
+            "--slow",
+            "3",
+            "--twist"
+          ],
+          "execution": null,
+          "controller_parameters": null
+        },
+        {
+          "id": "F75_Lt1_s9014_c100_five_cut800_20261022_150751",
+          "git": "5cd89c3",
+          "argv": [
+            "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+            "insert",
+            "F75_Lt1_s9014",
+            "--arm",
+            "c100_five_cut800",
+            "--slow",
+            "3",
+            "--twist"
+          ],
+          "execution": null,
+          "controller_parameters": null
+        },
+        {
+          "id": "F75_Lt1_s9014_c100_five_cut800_20261022_151230",
+          "git": "e3aeeed",
+          "argv": [
+            "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+            "insert",
+            "F75_Lt1_s9014",
+            "--arm",
+            "c100_five_cut800",
+            "--slow",
+            "3",
+            "--twist"
+          ],
+          "execution": null,
+          "controller_parameters": null
+        }
+      ],
+      "historical_band_minmax_N": [
+        0.30958983399480483,
+        0.3373789426866869
+      ],
+      "FFI_band_minmax_N": [
+        0.10375873764597747,
+        0.11626192180958667
+      ],
+      "historical_RMSE_minmax_N": [
+        0.3522493805226907,
+        0.4031139959363936
+      ],
+      "FFI_RMSE_minmax_N": [
+        0.27443657824079537,
+        0.30488670430384135
+      ]
+    },
+    {
+      "piece": "S",
+      "historical_ids": [
+        "S_s7073m3_c100_narrow75_20261022_124524",
+        "S_s7073m3_c100_narrow75_20261022_134830"
+      ],
+      "FFI_ids": [
+        "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+        "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+        "S_s7073m3_c100_narrow75_ffi_20261023_191548"
+      ],
+      "historical_metadata": [
+        {
+          "id": "S_s7073m3_c100_narrow75_20261022_124524",
+          "git": "592ea49",
+          "argv": [
+            "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+            "insert",
+            "S_s7073m3",
+            "--arm",
+            "c100_narrow75",
+            "--slow",
+            "3",
+            "--twist"
+          ],
+          "execution": null,
+          "controller_parameters": null
+        },
+        {
+          "id": "S_s7073m3_c100_narrow75_20261022_134830",
+          "git": "26708ce",
+          "argv": [
+            "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+            "insert",
+            "S_s7073m3",
+            "--arm",
+            "c100_narrow75",
+            "--slow",
+            "3",
+            "--twist"
+          ],
+          "execution": null,
+          "controller_parameters": null
+        }
+      ],
+      "historical_band_minmax_N": [
+        0.32609886804010557,
+        0.4248537617127016
+      ],
+      "FFI_band_minmax_N": [
+        0.059114038047269335,
+        0.07692611334148441
+      ],
+      "historical_RMSE_minmax_N": [
+        0.7261200248574436,
+        0.7494703700850082
+      ],
+      "FFI_RMSE_minmax_N": [
+        0.4591981032035139,
+        0.5539083498079693
+      ]
+    },
+    {
+      "piece": "T",
+      "historical_ids": [
+        "F75_Tt1_s9007_c100_five_cut800_20261021_201546",
+        "F75_Tt1_s9007_c100_five_cut800_20261021_202847",
+        "F75_Tt1_s9007_c100_five_cut800_20261021_203436"
+      ],
+      "FFI_ids": [
+        "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+        "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+        "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114"
+      ],
+      "historical_metadata": [
+        {
+          "id": "F75_Tt1_s9007_c100_five_cut800_20261021_201546",
+          "git": "c63cc4a",
+          "argv": [
+            "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+            "insert",
+            "F75_Tt1_s9007",
+            "--arm",
+            "c100_five_cut800",
+            "--slow",
+            "3",
+            "--twist"
+          ],
+          "execution": null,
+          "controller_parameters": null
+        },
+        {
+          "id": "F75_Tt1_s9007_c100_five_cut800_20261021_202847",
+          "git": "6ae471a",
+          "argv": [
+            "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+            "insert",
+            "F75_Tt1_s9007",
+            "--arm",
+            "c100_five_cut800",
+            "--slow",
+            "3",
+            "--twist"
+          ],
+          "execution": null,
+          "controller_parameters": null
+        },
+        {
+          "id": "F75_Tt1_s9007_c100_five_cut800_20261021_203436",
+          "git": "cb2a541",
+          "argv": [
+            "/home/nvidia/lorenzo/ws/src/kinova_dual_arm_dmp_insertion_fullwrench/kinova_dual_arm_dmp_insertion/main.py",
+            "insert",
+            "F75_Tt1_s9007",
+            "--arm",
+            "c100_five_cut800",
+            "--slow",
+            "3",
+            "--twist"
+          ],
+          "execution": null,
+          "controller_parameters": null
+        }
+      ],
+      "historical_band_minmax_N": [
+        0.17188063438494716,
+        0.20743276338785183
+      ],
+      "FFI_band_minmax_N": [
+        0.09408691697194316,
+        0.11107052894713045
+      ],
+      "historical_RMSE_minmax_N": [
+        0.26708981388306346,
+        0.3199712020727834
+      ],
+      "FFI_RMSE_minmax_N": [
+        0.269625922115042,
+        0.2779845285068433
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Twelve selected archived FFI successes on four trajectories, three repeats per piece, seat_found and no JAM flags.",
+      "kind": "observed_selected_records",
+      "evidence": [
+        "thesis_observed_runs.csv",
+        "../archive_review/REPORT.md"
+      ],
+      "limit": "Not12/12 attempts or a population success probability; insertion outcome is not independent final-pose metrology."
+    },
+    {
+      "claim": "Residual route band RMS and tracking error are separate measured properties; no universal thesis acceptance limit was established.",
+      "kind": "observed_metrics_and_scope",
+      "evidence": [
+        "thesis_observed_runs.csv"
+      ],
+      "limit": "RMS band is not peak-to-peak amplitude or standard deviation of an independent white-noise sensor."
+    },
+    {
+      "claim": "Specific historical references have greater selected-band RMS; Z20:20 has smaller full-route RMSE than these FFI Z repeats.",
+      "kind": "descriptive_unmatched_comparison",
+      "evidence": [
+        "THESIS_EVIDENCE.json"
+      ],
+      "limit": "Controller, target/planning/preload and conditions differ; no causal isolation of SOCP offline or FFI contribution."
+    },
+    {
+      "claim": "All12 confirmed FFI records use D60/7; D80 online records are unmatched.",
+      "kind": "runtime_metadata",
+      "evidence": [
+        "damping_metadata_audit.json"
+      ],
+      "limit": "Cannot identify sufficient or optimal cart_d; actual inner-servo source missing."
+    },
+    {
+      "claim": "L overshoot accompanies continued measured tool closure while published targets open and integral trim remains fixed.",
+      "kind": "observed_chronology_and_source",
+      "evidence": [
+        "../archive_review/L_TRANSIENT.md"
+      ],
+      "limit": "Does not uniquely identify pure delay, windup, board impact or servo mechanics."
+    },
+    {
+      "claim": "At k_eff680 and nominal speed2mm/s the nominal model permits1.36N/s; plans contain sharper changes.",
+      "kind": "declared_nominal_model_and_profile",
+      "evidence": [
+        "PROFILE_PREVIEW_REPORT.md"
+      ],
+      "limit": "Not a lower bound on real force error or a universal contact force slew limit."
+    },
+    {
+      "claim": "PI variants change frozen conditional score only slightly;0/448 cases satisfy all provisional goals.",
+      "kind": "conditional_replay",
+      "evidence": [
+        "HOLDOUT_REPORT.md"
+      ],
+      "limit": "Recorded residual/contact/phases fixed; model predictive gates failed; no validated robot recommendation."
+    },
+    {
+      "claim": "Autonomous stress and local pole tests verify behavior only under stated hypothetical plants.",
+      "kind": "synthetic_and_analytical",
+      "evidence": [
+        "ADVANCED_CONTROL_REPORT.md",
+        "LINEAR_ROBUSTNESS_REPORT.md"
+      ],
+      "limit": "Neither exact baseline replay nor software refinement identifies the robot or establishes full-wrench margins."
+    },
+    {
+      "claim": "ATI source is already temporally averaged before FFI; further long averaging affects phase as well as attenuation.",
+      "kind": "source_metadata_and_filter_algebra",
+      "evidence": [
+        "SIGNAL_PIPELINE_REPORT.md"
+      ],
+      "limit": "Default block size/hardware rate not runtime evidence; filter-only graph is not a new controller prediction."
+    },
+    {
+      "claim": "Next discriminating comparison is fixed-FFI repeated D-only, after confirming actual servo law, with synchronized signal acquisition/consumption.",
+      "kind": "future_protocol_not_executed",
+      "evidence": [
+        "DAMPING_AB_PROTOCOL.md",
+        "MINIMUM_IDENTIFICATION_PROTOCOL.md"
+      ],
+      "limit": "No robot experiment, new gains, deployment or acceptance threshold authorized/executed by this research."
+    }
+  ]
+}

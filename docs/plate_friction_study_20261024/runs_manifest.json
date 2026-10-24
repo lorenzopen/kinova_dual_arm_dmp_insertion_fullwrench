@@ -1,0 +1,2461 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "cvxpy": "1.9.3",
+  "solvers": [
+    "CLARABEL",
+    "SCS",
+    "SCIPY",
+    "HIGHS",
+    "OSQP"
+  ],
+  "source_sha256": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2",
+  "protocol_sha256": "72fc25d688a5fb5d4f9eeb6a15dbb379644e837c801b3d7dac16dd01b8cad7ce",
+  "prior_sha256": "2d229d367e70de99a0bc1b6cdf7004642b73bda5935bde5202ddccf636b0eadd",
+  "solver_sha256": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+  "plate_sha256": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+  "jobs": [
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "none",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_none_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "none",
+      "case": "centered",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_none_centered_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "none",
+      "case": "centered",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_none_centered_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "none",
+      "case": "planar",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_none_planar_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "none",
+      "case": "planar",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_none_planar_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "none",
+      "case": "planar",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_none_planar_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "none",
+      "case": "spatial",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_none_spatial_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "none",
+      "case": "spatial",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_none_spatial_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "none",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_none_spatial_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "fixed",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_fixed_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "fixed",
+      "case": "centered",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_fixed_centered_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "fixed",
+      "case": "centered",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_fixed_centered_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "fixed",
+      "case": "planar",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_fixed_planar_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "fixed",
+      "case": "planar",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_fixed_planar_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "fixed",
+      "case": "planar",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_fixed_planar_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "fixed",
+      "case": "spatial",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_fixed_spatial_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "fixed",
+      "case": "spatial",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_fixed_spatial_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "fixed",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_fixed_spatial_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_centered_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_centered_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "planar",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_planar_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "planar",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_planar_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "planar",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_planar_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_spatial_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_spatial_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_adaptive_spatial_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "wong",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_wong_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "wong",
+      "case": "centered",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_wong_centered_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "wong",
+      "case": "centered",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_wong_centered_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "wong",
+      "case": "planar",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_wong_planar_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "wong",
+      "case": "planar",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_wong_planar_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "wong",
+      "case": "planar",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_wong_planar_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "wong",
+      "case": "spatial",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_wong_spatial_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "wong",
+      "case": "spatial",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_wong_spatial_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "welded",
+      "method": "wong",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_welded_wong_spatial_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "none",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_none_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "none",
+      "case": "centered",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_none_centered_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "none",
+      "case": "centered",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_none_centered_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "none",
+      "case": "planar",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_none_planar_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "none",
+      "case": "planar",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_none_planar_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "none",
+      "case": "planar",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_none_planar_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "none",
+      "case": "spatial",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_none_spatial_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "none",
+      "case": "spatial",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_none_spatial_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "none",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_none_spatial_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "fixed",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_fixed_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "fixed",
+      "case": "centered",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_fixed_centered_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "fixed",
+      "case": "centered",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_fixed_centered_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "fixed",
+      "case": "planar",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_fixed_planar_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "fixed",
+      "case": "planar",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_fixed_planar_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "fixed",
+      "case": "planar",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_fixed_planar_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "fixed",
+      "case": "spatial",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_fixed_spatial_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "fixed",
+      "case": "spatial",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_fixed_spatial_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "fixed",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_fixed_spatial_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_centered_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_centered_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "planar",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_planar_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "planar",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_planar_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "planar",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_planar_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_spatial_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_spatial_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_adaptive_spatial_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_centered_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "centered",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_centered_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "centered",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_centered_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "planar",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_planar_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "planar",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_planar_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "planar",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_planar_2"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "spatial",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_spatial_0"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "spatial",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_spatial_1"
+    },
+    {
+      "group": "core",
+      "mechanism": "floating",
+      "method": "wong",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "core_floating_wong_spatial_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "light_known",
+      "seed": 0,
+      "mass": 1.7,
+      "model_mass": 1.7,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_light_known_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "light_known",
+      "seed": 1,
+      "mass": 1.7,
+      "model_mass": 1.7,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_light_known_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "light_known",
+      "seed": 2,
+      "mass": 1.7,
+      "model_mass": 1.7,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_light_known_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "heavy_known",
+      "seed": 0,
+      "mass": 2.2,
+      "model_mass": 2.2,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_heavy_known_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "heavy_known",
+      "seed": 1,
+      "mass": 2.2,
+      "model_mass": 2.2,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_heavy_known_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "heavy_known",
+      "seed": 2,
+      "mass": 2.2,
+      "model_mass": 2.2,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_heavy_known_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "mass_under10",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.71,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_mass_under10_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "mass_under10",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.71,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_mass_under10_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "mass_under10",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.71,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_mass_under10_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "com_unmodelled",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_com_unmodelled_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "com_unmodelled",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_com_unmodelled_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "com_unmodelled",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_welded_adaptive_com_unmodelled_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "mu_over10",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.825,
+      "id": "stress_welded_adaptive_mu_over10_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "mu_over10",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.825,
+      "id": "stress_welded_adaptive_mu_over10_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "welded",
+      "method": "adaptive",
+      "case": "mu_over10",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.825,
+      "id": "stress_welded_adaptive_mu_over10_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "light_known",
+      "seed": 0,
+      "mass": 1.7,
+      "model_mass": 1.7,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_light_known_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "light_known",
+      "seed": 1,
+      "mass": 1.7,
+      "model_mass": 1.7,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_light_known_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "light_known",
+      "seed": 2,
+      "mass": 1.7,
+      "model_mass": 1.7,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_light_known_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "heavy_known",
+      "seed": 0,
+      "mass": 2.2,
+      "model_mass": 2.2,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_heavy_known_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "heavy_known",
+      "seed": 1,
+      "mass": 2.2,
+      "model_mass": 2.2,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_heavy_known_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "heavy_known",
+      "seed": 2,
+      "mass": 2.2,
+      "model_mass": 2.2,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_heavy_known_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "mass_under10",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.71,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_mass_under10_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "mass_under10",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.71,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_mass_under10_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "mass_under10",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.71,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_mass_under10_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "com_unmodelled",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_com_unmodelled_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "com_unmodelled",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_com_unmodelled_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "com_unmodelled",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "stress_floating_adaptive_com_unmodelled_2"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "mu_over10",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.825,
+      "id": "stress_floating_adaptive_mu_over10_0"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "mu_over10",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.825,
+      "id": "stress_floating_adaptive_mu_over10_1"
+    },
+    {
+      "group": "stress",
+      "mechanism": "floating",
+      "method": "adaptive",
+      "case": "mu_over10",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.825,
+      "id": "stress_floating_adaptive_mu_over10_2"
+    },
+    {
+      "group": "central2700",
+      "mechanism": "floating2700",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "central2700_floating2700_adaptive_centered_0"
+    },
+    {
+      "group": "central2700",
+      "mechanism": "floating2700",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "central2700_floating2700_adaptive_centered_1"
+    },
+    {
+      "group": "central2700",
+      "mechanism": "floating2700",
+      "method": "adaptive",
+      "case": "centered",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0,
+        0,
+        0
+      ],
+      "model_com": [
+        0,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "central2700_floating2700_adaptive_centered_2"
+    },
+    {
+      "group": "central2700",
+      "mechanism": "floating2700",
+      "method": "adaptive",
+      "case": "planar",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "central2700_floating2700_adaptive_planar_0"
+    },
+    {
+      "group": "central2700",
+      "mechanism": "floating2700",
+      "method": "adaptive",
+      "case": "planar",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "central2700_floating2700_adaptive_planar_1"
+    },
+    {
+      "group": "central2700",
+      "mechanism": "floating2700",
+      "method": "adaptive",
+      "case": "planar",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "central2700_floating2700_adaptive_planar_2"
+    },
+    {
+      "group": "central2700",
+      "mechanism": "floating2700",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 0,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "central2700_floating2700_adaptive_spatial_0"
+    },
+    {
+      "group": "central2700",
+      "mechanism": "floating2700",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 1,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "central2700_floating2700_adaptive_spatial_1"
+    },
+    {
+      "group": "central2700",
+      "mechanism": "floating2700",
+      "method": "adaptive",
+      "case": "spatial",
+      "seed": 2,
+      "mass": 1.9,
+      "model_mass": 1.9,
+      "com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "model_com": [
+        0.015,
+        0.015,
+        0
+      ],
+      "mu": 0.75,
+      "model_mu": 0.75,
+      "id": "central2700_floating2700_adaptive_spatial_2"
+    }
+  ]
+}

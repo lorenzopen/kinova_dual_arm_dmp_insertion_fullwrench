@@ -1,0 +1,27 @@
+{
+  "job": {
+    "group": "core",
+    "mechanism": "welded",
+    "method": "adaptive",
+    "case": "centered",
+    "seed": 0,
+    "mass": 1.9,
+    "model_mass": 1.9,
+    "com": [
+      0,
+      0,
+      0
+    ],
+    "model_com": [
+      0,
+      0,
+      0
+    ],
+    "mu": 0.75,
+    "model_mu": 0.75,
+    "id": "core_welded_adaptive_centered_0"
+  },
+  "pid": 1004,
+  "source_sha256": "a888fd03b3e8611fa4633a73d3ebde9b06e9840139802e9029d4b6e8edaf1106",
+  "time": 1792823804.6120522
+}

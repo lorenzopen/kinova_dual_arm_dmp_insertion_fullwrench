@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-23T17:00:34.731109+00:00",
+  "primary_freeze_sha256": "c84b3ea52d1e810ebfb431c37266edfd0c4cded16c641b797da25dbdb0707b82",
+  "additional_source_fingerprints": [
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\standalone.py",
+      "sha256": "0f9288befe16781207c9e3478f50b26b42228c5d238bafeb52b1a5187ddbafb9"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\damping_physics.py",
+      "sha256": "32d8c0e4cfb078835dfb454011810ea90a0da5e0feedf9de75ff9e55ac5feca0"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\rigid_model.py",
+      "sha256": "f06309dfb23c012e569ea5880f0347e9ca6d0fe8e7cfe532f8e0af6e88db7d3d"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\freeze_final_comparison.py",
+      "sha256": "afda0728e9d2f4f2b7024a2c4cbee327460e461cb0fbb8f3057d00d64800337e"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\freeze_final_source_supplement.py",
+      "sha256": "b36a14eb5be30a4675d0cd274dec120a8a7ec700adeb978b42fcab50924fb3d6"
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.3.5",
+  "scipy": "1.18.1",
+  "baseline_snapshot_sha256": "7f8f9715977dd2735a84df1d5eb90aa6733c80a71724656726a28a7e4fdbe37f",
+  "note": "Adds transitive helper/runtime evidence before holdout; original frozen parameters and file are unchanged. No reserved CSV read."
+}

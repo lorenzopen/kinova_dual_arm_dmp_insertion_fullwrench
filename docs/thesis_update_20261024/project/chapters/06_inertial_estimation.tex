@@ -1,0 +1,138 @@
+\chapter{Inertial Estimation through Lift and Wielding}
+\label{ch:estimation}
+
+Estimation uses the load carried by the hands while the object is entirely in the air. A lift gives mass and two CoM components. Slow changes of orientation provide the third component. The estimator must also indicate when the accepted measurements do not support a three-dimensional answer.
+
+\section{Why identify the load before reorientation?}
+
+Wielding is active load identification before a requested orientation change. Two boxes can have equal mass and horizontal CoM coordinates but different CoM heights. Their upright gravity moments are identical; their moments after tilting need not be. An upright-only estimate can therefore support vertical transfer yet leave the later inclined allocation underdetermined.
+
+This need is industrially relevant, although the present apparatus is not a deployed cell. Wong et al. demonstrate dual-arm lifting with online inertial estimation on real robots~\cite{wong2026}. Commercial payload identification also uses multiple diverse poses to estimate mass and CoM~\cite{urpayload}. These sources motivate identification; they do not validate this thesis's discrete-contact tool or prove a benefit from its human prior.
+
+The appropriate downstream test is controlled reorientation under a changing gravity moment. Identification remains entirely airborne. Placement on an inclined fixture could be a later test, but support forces must never enter the free-space estimator. A ramp adds a release-stability problem and is not required to establish the value of the missing CoM coordinate.
+
+\section{Equilibrium about a stated pole}
+
+Let $\vect c$ be the reference pole and $\vect r_W=\vect p_{\mathrm{CoM}}-\vect c$. The total contact force and moment acting on the object satisfy
+\begin{align}
+\vect F_c+m\vect g&\simeq0,\\
+\vect T_c(\vect c)+\vect r_W\times m\vect g&\simeq0.
+\end{align}
+Consequently,
+\begin{equation}
+\vect T_c(\vect c)\simeq m\vect g\times\vect r_W.
+\label{eq:estimation-moment}
+\end{equation}
+The sign follows from the contact force acting on the object. A measured reaction on a hand has the opposite sign and must be converted before using this equation.
+
+For a body-fixed pole, $\vect r_W=R_{WB}\vect r_B$. Define the first mass moment $\vect q=m\vect r_B$. Each accepted sample gives
+\begin{equation}
+\vect T_k=H_k\vect q+\vect e_k,\qquad
+H_k=\crossmat{\vect g}R_{WB,k}.
+\label{eq:regression}
+\end{equation}
+The equation is linear in $\vect q$. The pole must remain attached to the same body location, or its movement must be accounted for. Choosing a new arbitrary pole for every sample and keeping one $\vect r_B$ would make the regression inconsistent.
+
+\section{Mass from the free-space resultant}
+
+Under the same equilibrium assumption,
+\begin{equation}
+\hat m_k=\frac{\norm{\vect F_{c,k}}}{g_0},\qquad g_0=9.81\ \mathrm{m/s^2}.
+\end{equation}
+The current estimator uses the median of the recent twenty-five mass samples once enough samples are available. It estimates mass spread with the median absolute deviation multiplied by $1.4826$, with a floor of one per cent of the estimated mass. Before sufficient samples exist, it retains the declared mass prior.
+
+The norm avoids sign ambiguity in the scalar mass, but it does not make nonvertical forces valid. External support, dragging or acceleration can change the resultant. The estimator therefore also checks its direction. In a free-space static hang, the contact resultant should oppose gravity.
+
+\section{What a vertical lift observes}
+
+At a constant attitude, $\crossmat{\vect g}R_{WB}$ has rank two. Its null vector is the body direction parallel to world gravity. At upright attitude,
+\begin{equation}
+\vect T_c=\begin{bmatrix}mg_0 r_y\\-mg_0 r_x\\0\end{bmatrix},\qquad
+r_x=-\frac{T_y}{mg_0},\quad r_y=\frac{T_x}{mg_0}.
+\label{eq:planar-estimate}
+\end{equation}
+The vertical coordinate is absent. Adding more upright samples cannot identify it. A minimum-norm solution may return zero for this coordinate, but zero is an algebraic convention rather than a measurement.
+
+\thesisfigure{ch06_estimation/observability.pdf}{Singular values of the gravity-moment regressor for illustrative accepted attitudes. The upright data have rank two. Introducing a second nonparallel gravity direction removes the common null direction. This figure is an algebraic illustration, not an experimental convergence curve.}{fig:observability}
+
+\section{Why wielding supplies the missing direction}
+
+Stacking samples gives $H=(H_1^\top,\ldots,H_N^\top)^\top$. Its null space is the intersection of the individual null spaces. Two sufficiently different body-frame gravity directions have no common nonzero null vector, so full rank is possible.
+
+The information matrix is
+\begin{equation}
+\mathcal I=\sum_k H_k^\top R_e^{-1}H_k,
+\label{eq:information}
+\end{equation}
+for a stated moment-noise covariance $R_e$. If the noise is taken as isotropic and equal across samples, this is proportional to $H^\top H$. The smallest eigenvalue indicates the least informed parameter direction. This is the quasi-static counterpart of information-based trajectory design~\cite{wilson2014}.
+
+A maximum tilt angle is insufficient evidence of observability. If only a few accepted samples occur at that angle while most are upright, the third singular value can remain small. The code records the gravity-direction swing over accepted samples and an observability ratio. The commanded trajectory is not substituted for the measured excitation.
+
+Wielding is performed without a bottom pivot, table or wall. A support force would add an unknown wrench and change the regression. Rotations are slow movements of the dual-hand grasp, with pauses or sufficiently settled samples, rather than dynamic shaking intended to identify inertial tensors.
+
+\section{The implemented least-squares estimator}
+
+Earlier scripts use recursive least squares. The current passive-tool path instead retains accepted samples and solves an observed-subspace least-squares problem. Least squares is established~\cite[Section 3.1]{bishop2006}; the acceptance gates, rank threshold and uncertainty assigned to missing directions are implementation choices described below.
+
+The current passive-tool estimator stores accepted regressors and moments and solves stacked least squares in the observable subspace. It diagonalizes
+\begin{equation}
+H^\top H=V\diag(\ell_1,\ell_2,\ell_3)V^\top.
+\end{equation}
+A direction is treated as observed if $\ell_j>\eta^2\ell_{\max}$ and exceeds a small absolute threshold; the default $\eta$ is $0.15$. The estimate is
+\begin{equation}
+\hat{\vect q}=\sum_{j\in\mathcal O}
+\vect v_j\frac{\vect v_j^\top H^\top\vect T}{\ell_j},
+\label{eq:subspace-estimator}
+\end{equation}
+where $\mathcal O$ contains only the observed directions.
+
+This truncation prevents numerical noise in an almost-null direction from generating a large CoM component. It is not a way to declare that the omitted component is small. The omitted component remains unknown and receives prior variance.
+
+\section{Uncertainty and unobserved coordinates}
+
+Let the residual moment vector be $\vect e=\vect T-H\hat{\vect q}$. A residual variance estimate is
+\begin{equation}
+\hat\sigma_T^2=\frac{\vect e^\top\vect e}{\max(3N-|\mathcal O|,1)}.
+\end{equation}
+The first-moment covariance is constructed as
+\begin{equation}
+C_q=\sum_{j\in\mathcal O}\frac{\hat\sigma_T^2}{\ell_j}\vect v_j\vect v_j^\top
++\sum_{j\notin\mathcal O}(\hat m r_{\max})^2\vect v_j\vect v_j^\top.
+\label{eq:cov-unobserved}
+\end{equation}
+The second term states the declared prior uncertainty in unobserved directions. A pseudoinverse alone would place zero covariance there, creating false confidence.
+
+Since $\hat{\vect r}=\hat{\vect q}/\hat m$, first-order propagation gives
+\begin{equation}
+C_r\simeq \frac{C_q}{\hat m^2}
++\frac{\hat{\vect q}\hat{\vect q}^\top}{\hat m^4}\sigma_m^2.
+\label{eq:mass-propagation}
+\end{equation}
+The code implements this expression without a cross-covariance between the mass and first-moment estimates. Both are computed from the same contact history, so independence is an approximation. The reported covariance also neglects uncertainty in orientation, normals and moment-pole position. It is a self-assessment under the regression model, not a calibrated confidence guarantee for all physical errors.
+
+The code reports observed-subspace uncertainty separately from total covariance. During a static hang, total covariance is dominated by the unobserved direction. It cannot distinguish a good planar estimate from a poor one if only its trace is reported. A radius bound can clip an implausible CoM estimate; when clipping acts, it is recorded. The clipped result must not be presented as if all its coordinates were measured.
+
+\section{Sample acceptance and abstention}
+
+The estimator accepts samples only if the angular rate is below $0.30$ rad/s, the contact resultant exceeds $2$ N, at least four pads are present when contact count is supplied, and the resultant lies within $20^\circ$ of vertical. These are implemented checks, not a complete quasi-static certificate.
+
+An angular-rate bound does not bound angular acceleration. Likewise, a vertical resultant can contain inertial load. The recording analysis therefore compares inertial terms with applied wrench where those signals are available. For a physical system, reliable acceleration or residual estimates would be needed to validate the same assumption.
+
+The stage gate should use the estimator's own evidence: accepted sample count, observed directions, singular-value ratio, clipping, rejected-sample fraction and realized contact state. It must not inspect true CoM error. An estimate can abstain after a lift or after wielding if these conditions are inadequate. Every abstention remains in the campaign denominator.
+
+\section{Using the estimate in control}
+
+The estimated mass determines the gravity wrench. The estimated CoM determines the moment reference in the allocator. Both must use the same body-to-world pose estimate and the same stated pole. A good CoM estimate combined with a wrong pole still creates the wrong moment balance.
+
+The uncertainty relevant to a particular pose can be examined through
+\begin{equation}
+C_{\tau}\simeq \hat m^2\crossmat{\vect g_B}C_r\crossmat{\vect g_B}^\top.
+\end{equation}
+An uncertain coordinate parallel to gravity creates no gravitational moment in that pose. On tilting, it can become load-bearing. This explains why the previously unobserved coordinate matters before the new orientation is reached. The equation is used here as an interpretation of estimation uncertainty; it is not added as a stochastic friction constraint.
+
+\section{The inverse problem in the catalogue task}
+
+For a catalogue tetromino, mass and CoM are known by declaration. The unknown becomes the grasp offset. A static hang supplies the two components perpendicular to gravity through the same moment balance. If the planned grasp centre is $\vect c_{\mathrm{plan}}$ and the measured CoM offset from the actual grasp pole is $\hat{\vect r}$, their relationship updates the believed object position relative to the hands.
+
+The unobserved component is retained from the declared geometric plan, not set to a measured zero. Insertion depth is subsequently closed through seating feedback. This reuse of the regression is useful because the relevant unknown has changed, not because the catalogue task has somehow become a full blind CoM experiment.
+

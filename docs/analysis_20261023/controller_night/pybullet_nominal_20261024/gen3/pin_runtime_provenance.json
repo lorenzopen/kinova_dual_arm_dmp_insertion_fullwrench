@@ -1,0 +1,624 @@
+[
+  {
+    "name": "pinocchio-python",
+    "basename": "win-64/pinocchio-python-4.1.0-py312h95acbbb_1.conda",
+    "sha256": "47fb1c6434dece19c07b6d26a29377c180b619314cae7b8ad91f28ff9b03a94f",
+    "metadata_digest": "sha256",
+    "depends": [
+      "python",
+      "coal-python",
+      "numpy >=2.1",
+      "libpinocchio ==4.1.0 h9717e7e_1",
+      "vc >=14.3",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+      "casadi >=3.7.2,<3.8.0a0",
+      "libboost >=1.90.0,<1.91.0a0",
+      "numpy >=1.25,<3",
+      "libpinocchio >=4.1.0,<4.1.1.0a0",
+      "eigenpy >=3.13.0,<3.13.1.0a0",
+      "python_abi 3.12.* *_cp312",
+      "libboost-python >=1.90.0,<1.91.0a0"
+    ]
+  },
+  {
+    "name": "coal-python",
+    "basename": "win-64/coal-python-3.0.4-py312h06430fc_2.conda",
+    "sha256": "881fe238cb91d7fe3fc4f17242833b03ebae7739a028f18a950488c7dd3f3cca",
+    "metadata_digest": "sha256",
+    "depends": [
+      "python",
+      "libcoal ==3.0.4 h2cdedba_2",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3",
+      "eigenpy >=3.13.0,<3.13.1.0a0",
+      "libboost-python >=1.90.0,<1.91.0a0",
+      "assimp >=6.0.5,<7.0a0",
+      "python_abi 3.12.* *_cp312",
+      "libcoal >=3.0.4,<3.0.5.0a0",
+      "numpy >=1.25,<3",
+      "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+      "libboost >=1.90.0,<1.91.0a0",
+      "qhull >=2020.2,<2020.3.0a0",
+      "octomap >=1.10.1,<1.11.0a0"
+    ]
+  },
+  {
+    "name": "libpinocchio",
+    "basename": "win-64/libpinocchio-4.1.0-h9717e7e_1.conda",
+    "sha256": "74086795c9367105d769498314d1247d89b0527d6b2a10843b995261fd044107",
+    "metadata_digest": "sha256",
+    "depends": [
+      "libboost-devel",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3",
+      "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+      "urdfdom_headers >=3.0.0,<4.0a0",
+      "urdfdom >=6.0.0,<7.0a0",
+      "libcoal >=3.0.4,<3.0.5.0a0",
+      "casadi >=3.7.2,<3.8.0a0",
+      "libgz-math >=9.2.0,<10.0a0",
+      "console_bridge >=1.0.2,<1.1.0a0",
+      "qhull >=2020.2,<2020.3.0a0",
+      "libsdformat >=16.1.0,<17.0a0",
+      "libboost >=1.90.0,<1.91.0a0"
+    ]
+  },
+  {
+    "name": "casadi",
+    "basename": "win-64/casadi-3.7.2-py312hf8f8a3f_4.conda",
+    "sha256": "355d422942c036bab8d96a96d61137f6df85c600fa588ed1b37a7f0a540a1888",
+    "metadata_digest": "sha256",
+    "depends": [
+      "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+      "ipopt >=3.14.19,<3.14.20.0a0",
+      "libblas >=3.9.0,<4.0a0",
+      "libcblas >=3.9.0,<4.0a0",
+      "liblapack >=3.9.0,<4.0a0",
+      "libosqp >=1.0.0,<1.0.1.0a0",
+      "mumps-seq >=5.8.2,<5.8.3.0a0",
+      "numpy >=1.23,<3",
+      "python >=3.12,<3.13.0a0",
+      "python_abi 3.12.* *_cp312",
+      "tinyxml2 >=11.0.0,<11.1.0a0",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "libboost",
+    "basename": "win-64/libboost-1.90.0-h9dfe17d_3.conda",
+    "sha256": "e82a6fdfc93a7fa72b188ba2bcc0f740d564cf742c001d2b58f15f1c6e0e6437",
+    "metadata_digest": "sha256",
+    "depends": [
+      "bzip2 >=1.0.8,<2.0a0",
+      "libiconv >=1.18,<2.0a0",
+      "liblzma >=5.8.3,<6.0a0",
+      "libzlib >=1.3.2,<2.0a0",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "zstd >=1.5.7,<1.6.0a0"
+    ]
+  },
+  {
+    "name": "eigenpy",
+    "basename": "win-64/eigenpy-3.13.0-py312h0e39f44_1.conda",
+    "sha256": "249cf5cdca29daf904cad85f435761bf1c6b5d517f55c22391fefcadc6a0e40b",
+    "metadata_digest": "sha256",
+    "depends": [
+      "libboost-python-devel",
+      "numpy >=2.1",
+      "python",
+      "scipy",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "libboost-python >=1.90.0,<1.91.0a0",
+      "python_abi 3.12.* *_cp312",
+      "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+      "numpy >=1.25,<3"
+    ]
+  },
+  {
+    "name": "libboost-python",
+    "basename": "win-64/libboost-python-1.90.0-py312h9b46583_3.conda",
+    "sha256": "467b031452d309c1340e6e373d68cb8d1ab0557ec8dff2293b43d1e590061d3d",
+    "metadata_digest": "sha256",
+    "depends": [
+      "libboost 1.90.0 h9dfe17d_3",
+      "numpy >=1.25,<3",
+      "python >=3.12,<3.13.0a0",
+      "python_abi 3.12.* *_cp312",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "libcoal",
+    "basename": "win-64/libcoal-3.0.4-h2cdedba_2.conda",
+    "sha256": "54ea79959e1409ca3ae256b1e65b48fcf13f34587499663edb6456a3bc50a946",
+    "metadata_digest": "sha256",
+    "depends": [
+      "eigen",
+      "libboost-devel",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3",
+      "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+      "assimp >=6.0.5,<7.0a0",
+      "qhull >=2020.2,<2020.3.0a0",
+      "octomap >=1.10.1,<1.11.0a0",
+      "libboost >=1.90.0,<1.91.0a0"
+    ]
+  },
+  {
+    "name": "assimp",
+    "basename": "win-64/assimp-6.0.5-h0fc915f_2.conda",
+    "sha256": "9969d6ea375d68b315a7e92715c7472b44a15f797bd4f2aec9ee8253fa0ad773",
+    "metadata_digest": "sha256",
+    "depends": [
+      "libzlib >=1.3.2,<2.0a0",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "zlib"
+    ]
+  },
+  {
+    "name": "qhull",
+    "basename": "win-64/qhull-2020.2-hc790b64_5.conda",
+    "sha256": "887d53486a37bd870da62b8fa2ebe3993f912ad04bd755e7ed7c47ced97cbaa8",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.2,<15",
+      "vc14_runtime >=14.29.30139"
+    ]
+  },
+  {
+    "name": "octomap",
+    "basename": "win-64/octomap-1.10.1-h477610d_1.conda",
+    "sha256": "c0372555908298dbf8a00a6574e83811215cd6b40c2a8dd0e9d4b10626f704fe",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0"
+    ]
+  },
+  {
+    "name": "urdfdom",
+    "basename": "win-64/urdfdom-6.0.2-h37f4996_0.conda",
+    "sha256": "61a1cc2e47957b9f21827d807eb9523136a496bdb343ef00d5ff2f570d701ef0",
+    "metadata_digest": "sha256",
+    "depends": [
+      "urdfdom_headers >=3.0.1,<4.0a0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "console_bridge >=1.0.2,<1.1.0a0",
+      "tinyxml2 >=11.0.0,<11.1.0a0"
+    ]
+  },
+  {
+    "name": "libgz-math",
+    "basename": "win-64/libgz-math-9.3.0-ha4f8ca9_2.conda",
+    "sha256": "01a5239c56b4c95cb1eefba59d524402279f9b6c0adec05728acc47a78e11963",
+    "metadata_digest": "sha256",
+    "depends": [
+      "eigen",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "libgz-utils >=4.0.0,<5.0a0",
+      "libgz-cmake >=5.1.1,<6.0a0"
+    ]
+  },
+  {
+    "name": "console_bridge",
+    "basename": "win-64/console_bridge-1.0.2-h5362a0b_1.tar.bz2",
+    "sha256": "15dd8cd1735c9405ad04d9881c15650fb98bf8e71e5675e98898184e4a731ec6",
+    "metadata_digest": "md5",
+    "depends": [
+      "vc >=14.1,<15",
+      "vs2015_runtime >=14.16.27033"
+    ]
+  },
+  {
+    "name": "libsdformat",
+    "basename": "win-64/libsdformat-16.1.0-py312h09339eb_0.conda",
+    "sha256": "ef7a540469542c2b10ddd85d0ada8ed2cd8f6e40259471774a48a4e12323f132",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "libgz-utils >=4.0.0,<5.0a0",
+      "urdfdom_headers >=3.0.0,<4.0a0",
+      "urdfdom >=6.0.0,<7.0a0",
+      "tinyxml2 >=11.0.0,<11.1.0a0",
+      "libgz-tools >=2.0.3,<3.0a0",
+      "dlfcn-win32 >=1.4.2,<2.0a0",
+      "libgz-math >=9.2.0,<10.0a0",
+      "libgz-cmake >=5.1.1,<6.0a0"
+    ]
+  },
+  {
+    "name": "ipopt",
+    "basename": "win-64/ipopt-3.14.19-he5a0f77_2.conda",
+    "sha256": "08147c943ee3573cc4e9763d1f4a614d1584a5cbf777f43cc0adc17a45f05869",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ampl-asl >=1.0.0,<1.0.1.0a0",
+      "libblas >=3.9.0,<4.0a0",
+      "liblapack >=3.9.0,<4.0a0",
+      "mumps-seq >=5.8.2,<5.8.3.0a0",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.2,<15",
+      "vc14_runtime >=14.29.30139"
+    ]
+  },
+  {
+    "name": "libblas",
+    "basename": "win-64/libblas-3.12.1-6_h532c42f_netlib.conda",
+    "sha256": "789f62131d3c463165268e43c7840be29cee830fbe5d0310e820da457aaacf9a",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "libcblas",
+    "basename": "win-64/libcblas-3.12.1-6_h79d3226_netlib.conda",
+    "sha256": "b0294b06289c2a48cf1ffa04995fcc21301339376d6012704acfb8c83bb6d771",
+    "metadata_digest": "sha256",
+    "depends": [
+      "libblas 3.12.1.*",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "liblapack",
+    "basename": "win-64/liblapack-3.12.1-6_h1d85584_netlib.conda",
+    "sha256": "34729b4b823919686b2c330ced47b52c5caab321d26990e5326022f339f89dad",
+    "metadata_digest": "sha256",
+    "depends": [
+      "libblas 3.12.1.*",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "libosqp",
+    "basename": "win-64/libosqp-1.0.0-np2py312h325a191_2.conda",
+    "sha256": "1c0c8d570f483cc215814616261c1769e94bd20373a6b705d4ba34d699e047ae",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "libqdldl >=0.1.8,<0.1.9.0a0"
+    ]
+  },
+  {
+    "name": "mumps-seq",
+    "basename": "win-64/mumps-seq-5.8.2-flang_h3fd9f6e_3.conda",
+    "sha256": "1d800093f8a0415f3c9677d24ede8ba6ba0c9c037cfbf4d783592d4c1ae09883",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "llvm-openmp >=21.1.8",
+      "liblapack >=3.9.0,<4.0a0",
+      "libblas >=3.9.0,<4.0a0"
+    ]
+  },
+  {
+    "name": "tinyxml2",
+    "basename": "win-64/tinyxml2-11.0.0-h5112557_1.conda",
+    "sha256": "aace0c0c0dbcd2b0a028ba06573878d6a852228c70d3031e3c035cf9e066b020",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0"
+    ]
+  },
+  {
+    "name": "bzip2",
+    "basename": "win-64/bzip2-1.0.8-h0ad9c76_10.conda",
+    "sha256": "04767466ee9227c9c57ab2c6503e0149177d34111c7418d2f420297acb1eb229",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "libiconv",
+    "basename": "win-64/libiconv-1.18-hc1393d2_3.conda",
+    "sha256": "35e04e3ddac7720fc7c550a1c9f998604299d6a7bd1f3ec9b2825d825061daa2",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "liblzma",
+    "basename": "win-64/liblzma-5.8.3-hfd05255_1.conda",
+    "sha256": "d36c4a1e1f80fd08e18a407e03622ff2f34dfdd022da6488ad19603dea19e6d5",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "libzlib",
+    "basename": "win-64/libzlib-1.3.2-hfd05255_3.conda",
+    "sha256": "0629c2cc0404d3bb29d6baa7b4ba62da80797015e86de050db81ea5a07050527",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "zstd",
+    "basename": "win-64/zstd-1.5.7-h534d264_7.conda",
+    "sha256": "ca7daae4f218a11fab82cc2857f0ea518ec3f46acec60490485347a4c22c6b3e",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "libzlib >=1.3.2,<2.0a0"
+    ]
+  },
+  {
+    "name": "scipy",
+    "basename": "win-64/scipy-1.18.1-py312h8847828_1.conda",
+    "sha256": "150b400449ff18c66255ba5fb31acb27db9d62906417f10c832e46e10f5faff6",
+    "metadata_digest": "sha256",
+    "depends": [
+      "libblas >=3.9.0,<4.0a0",
+      "libcblas >=3.9.0,<4.0a0",
+      "liblapack >=3.9.0,<4.0a0",
+      "numpy <2.8",
+      "numpy >=1.25,<3",
+      "numpy >=2.0.0",
+      "python >=3.12,<3.13.0a0",
+      "python_abi 3.12.* *_cp312",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "zlib",
+    "basename": "win-64/zlib-1.3.2-hfd05255_3.conda",
+    "sha256": "5a0b55df66ff07b4342e04967cef69f8bf348f6a0fb1cc1eca741c7b015dfe77",
+    "metadata_digest": "sha256",
+    "depends": [
+      "libzlib 1.3.2 hfd05255_3",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "libgz-utils",
+    "basename": "win-64/libgz-utils-4.0.0-h839fea3_3.conda",
+    "sha256": "e7cf71da2f0a214a32b8e21974adf4f3a63a5a6c59ccff3db239f6208ab01c37",
+    "metadata_digest": "sha256",
+    "depends": [
+      "cli11",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "spdlog >=1.17.0,<1.18.0a0",
+      "libgz-cmake >=5.1.1,<6.0a0"
+    ]
+  },
+  {
+    "name": "libgz-cmake",
+    "basename": "win-64/libgz-cmake-5.1.1-h5112557_1.conda",
+    "sha256": "04811c3821292df5fddedcf05a0d15bafa58197d0c48088dfc350f7a9c963115",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0"
+    ]
+  },
+  {
+    "name": "vs2015_runtime",
+    "basename": "win-64/vs2015_runtime-14.51.36247-h633cb9f_41.conda",
+    "sha256": "ee0ae67c96b80b9fdb50c3f617c6329dbcdf1562d0267604f6c0e24f494431d6",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc14_runtime >=14.51.36247"
+    ]
+  },
+  {
+    "name": "libgz-tools",
+    "basename": "win-64/libgz-tools-2.0.3-hb268c4e_1.conda",
+    "sha256": "c4947d4a4c434905db6365e789bd12dbe0c7e4492fc853c74504d643c583fb79",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ruby",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0"
+    ]
+  },
+  {
+    "name": "dlfcn-win32",
+    "basename": "win-64/dlfcn-win32-1.4.2-hac47afa_0.conda",
+    "sha256": "2a9baf44fbbdc1fcd45f24dd81c79240c040925687772355a5e240d5bdd14dbf",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "ampl-asl",
+    "basename": "win-64/ampl-asl-1.0.0-he0c23c2_2.conda",
+    "sha256": "0969867af79bd415322d94845acff44a6cb5d7acb3db02a81b582a57c375de11",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.2,<15",
+      "vc14_runtime >=14.29.30139"
+    ]
+  },
+  {
+    "name": "libqdldl",
+    "basename": "win-64/libqdldl-0.1.8-he0c23c2_1.conda",
+    "sha256": "734510668fd35752e4f4cd06dc9aaf35305d37ad9d66698c061fb89dfb0a8383",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.2,<15",
+      "vc14_runtime >=14.29.30139",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.2,<15",
+      "vc14_runtime >=14.29.30139",
+      "ucrt >=10.0.20348.0"
+    ]
+  },
+  {
+    "name": "llvm-openmp",
+    "basename": "win-64/llvm-openmp-23.1.4-h49e36cd_0.conda",
+    "sha256": "a3012ff7e6ec5e0a0a19ea8df76a504f3c2bea2d5b12a94f8aa5a50ac9eeab3c",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "cli11",
+    "basename": "win-64/cli11-2.7.2-h5112557_1.conda",
+    "sha256": "f4c22689d5174545501940a0dfb66892751915ea01d15eb72e888304282ade4d",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0"
+    ]
+  },
+  {
+    "name": "spdlog",
+    "basename": "win-64/spdlog-1.17.0-hd227c35_2.conda",
+    "sha256": "bd14e9166389be0c654e724e16290772b65745aee8d8bb8bacc65d3179330387",
+    "metadata_digest": "sha256",
+    "depends": [
+      "fmt >=12.1.0,<12.2.0a0",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "ruby",
+    "basename": "win-64/ruby-4.0.9-h0a2bca5_0.conda",
+    "sha256": "4c0e91acb4d1d4482670b996f52e64612b9d7c3ee2220a4966873f8e529b7f94",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "libffi >=3.5.2,<3.6.0a0",
+      "libzlib >=1.3.2,<2.0a0",
+      "yaml >=0.2.5,<0.3.0a0",
+      "openssl >=3.5.9,<4.0a0"
+    ]
+  },
+  {
+    "name": "fmt",
+    "basename": "win-64/fmt-12.1.0-h1ced75a_1.conda",
+    "sha256": "1d6d6f1bf284e50cf617ce9a6250e0bf70bd0d30b068568364d6b1852aad9466",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "libffi",
+    "basename": "win-64/libffi-3.5.2-h3d046cb_0.conda",
+    "sha256": "59d01f2dfa8b77491b5888a5ab88ff4e1574c9359f7e229da254cdfe27ddc190",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "yaml",
+    "basename": "win-64/yaml-0.2.5-h6a83c73_3.conda",
+    "sha256": "80ee68c1e7683a35295232ea79bcc87279d31ffeda04a1665efdb43cbd50a309",
+    "metadata_digest": "sha256",
+    "depends": [
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208",
+      "ucrt >=10.0.20348.0"
+    ]
+  },
+  {
+    "name": "openssl",
+    "basename": "win-64/openssl-3.6.5-hf411b9b_0.conda",
+    "sha256": "bc44625e0c6d83f3e02b5f6adc01e0e3ca7001d3d94e24959591a57f5a011b9a",
+    "metadata_digest": "sha256",
+    "depends": [
+      "ca-certificates",
+      "ucrt >=10.0.20348.0",
+      "vc >=14.3,<15",
+      "vc14_runtime >=14.44.35208"
+    ]
+  },
+  {
+    "name": "ca-certificates",
+    "basename": "noarch/ca-certificates-2026.10.23-h4c7d964_0.conda",
+    "sha256": "f1d280d2618de987204102090e83733089c092dc2dd45686fd3dcbe809034f6a",
+    "metadata_digest": "sha256",
+    "depends": [
+      "__win"
+    ]
+  }
+]

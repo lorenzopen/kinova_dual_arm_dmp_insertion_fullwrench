@@ -1,0 +1,20 @@
+{
+  "original": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\urdf\\gen3_ati_tool.urdf",
+  "original_sha256": "a0ebb5a79a1c25cbf069374d39d55570be83a6c86ee6ec9d0c35e15a125ce2db",
+  "derived": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\gen3\\assets\\gen3_lab_bullet.urdf",
+  "derived_sha256": "7418ba3b59b2532d62448a66e2765888d2c884fe39c5685e2722e777a0aa7165",
+  "changes": [
+    "tool_frame explicit massless semantic frame, no Bullet1kg default",
+    "joint_1 actual continuous/bounded convention from reach_ik",
+    "joint_2 actual continuous/bounded convention from reach_ik",
+    "joint_3 actual continuous/bounded convention from reach_ik",
+    "joint_4 actual continuous/bounded convention from reach_ik",
+    "joint_5 actual continuous/bounded convention from reach_ik",
+    "joint_6 actual continuous/bounded convention from reach_ik",
+    "joint_7 actual continuous/bounded convention from reach_ik",
+    "Mesh URI resolution to official Kinova STL",
+    "Rigid payload .110kg plus explicit plate/pads .040kg; nominal combined CoM preserved",
+    "Original rough payload inertia retained for mount (not calibrated full tool inertia)",
+    "Added tiny-mass fixed wrist FT joint downstream of rigid mount; external springs react on sensor link"
+  ]
+}

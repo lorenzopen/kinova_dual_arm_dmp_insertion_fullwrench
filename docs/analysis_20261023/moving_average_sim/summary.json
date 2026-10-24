@@ -1,0 +1,674 @@
+[
+  {
+    "piece": "Z",
+    "window_ms": 0,
+    "route_band_physical_N": {
+      "central_mean": 0.11746511009907469,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.3206736431260339,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.764542493805657,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    }
+  },
+  {
+    "piece": "Z",
+    "window_ms": 25.0,
+    "route_band_physical_N": {
+      "central_mean": 0.11745674542726507,
+      "scenario_ratio_percent_min_median_max": [
+        98.25035247669325,
+        100.04371417343403,
+        102.23566945109106
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.3219031420845883,
+      "scenario_ratio_percent_min_median_max": [
+        99.8742230698544,
+        100.35794811819582,
+        100.94912119097341
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.763455348152909,
+      "scenario_ratio_percent_min_median_max": [
+        99.75537541260037,
+        99.9827609972788,
+        100.11035253943743
+      ]
+    }
+  },
+  {
+    "piece": "Z",
+    "window_ms": 50.0,
+    "route_band_physical_N": {
+      "central_mean": 0.11717234887824297,
+      "scenario_ratio_percent_min_median_max": [
+        96.11550104017307,
+        99.86786427479132,
+        104.63352978205987
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.3233882423376857,
+      "scenario_ratio_percent_min_median_max": [
+        99.86049152588124,
+        100.80705411645563,
+        102.19357583542165
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.760840938836135,
+      "scenario_ratio_percent_min_median_max": [
+        99.40149601877447,
+        99.94041112670925,
+        100.21304548651595
+      ]
+    }
+  },
+  {
+    "piece": "Z",
+    "window_ms": 100.0,
+    "route_band_physical_N": {
+      "central_mean": 0.11547190722259469,
+      "scenario_ratio_percent_min_median_max": [
+        90.87319611609853,
+        98.81382944027914,
+        107.87695495030798
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.32631186466029977,
+      "scenario_ratio_percent_min_median_max": [
+        100.03767760710673,
+        101.64665435881126,
+        104.93266686901744
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.760213688566186,
+      "scenario_ratio_percent_min_median_max": [
+        98.90877530999221,
+        99.92774810442141,
+        100.44651308186259
+      ]
+    }
+  },
+  {
+    "piece": "Z",
+    "window_ms": 250.0,
+    "route_band_physical_N": {
+      "central_mean": 0.1057190994798282,
+      "scenario_ratio_percent_min_median_max": [
+        77.42944590392122,
+        90.64483326588612,
+        105.81611667471655
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.332340464777282,
+      "scenario_ratio_percent_min_median_max": [
+        99.42801634242863,
+        103.40221692559406,
+        113.61132697241749
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.789092925779912,
+      "scenario_ratio_percent_min_median_max": [
+        98.62906329986278,
+        100.71925789083602,
+        101.23119195238732
+      ]
+    }
+  },
+  {
+    "piece": "Z",
+    "window_ms": 500.0,
+    "route_band_physical_N": {
+      "central_mean": 0.09466991330188147,
+      "scenario_ratio_percent_min_median_max": [
+        71.82333310013449,
+        84.4385309427007,
+        91.29392131176152
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.3382898284847046,
+      "scenario_ratio_percent_min_median_max": [
+        98.35472612104263,
+        106.58060021933223,
+        136.4874322540074
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.8999341012778865,
+      "scenario_ratio_percent_min_median_max": [
+        100.33658166905364,
+        102.54415748425438,
+        107.84188895663
+      ]
+    }
+  },
+  {
+    "piece": "L",
+    "window_ms": 0,
+    "route_band_physical_N": {
+      "central_mean": 0.11129919856401027,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.2858809189393081,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 6.409814992138847,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    }
+  },
+  {
+    "piece": "L",
+    "window_ms": 25.0,
+    "route_band_physical_N": {
+      "central_mean": 0.1117466885213315,
+      "scenario_ratio_percent_min_median_max": [
+        98.71305084515589,
+        100.39663516133285,
+        102.41987294149394
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.2884391209689898,
+      "scenario_ratio_percent_min_median_max": [
+        100.56438524210675,
+        100.84630358910943,
+        101.2722201622464
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 6.402240100510627,
+      "scenario_ratio_percent_min_median_max": [
+        99.78583893614015,
+        99.82596141503126,
+        100.09941296450778
+      ]
+    }
+  },
+  {
+    "piece": "L",
+    "window_ms": 50.0,
+    "route_band_physical_N": {
+      "central_mean": 0.111953067267107,
+      "scenario_ratio_percent_min_median_max": [
+        96.77795339065548,
+        100.5547012303953,
+        105.22975126456527
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.29167229480610957,
+      "scenario_ratio_percent_min_median_max": [
+        101.25640872257429,
+        101.90852254083063,
+        102.9962963242738
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 6.391778883910773,
+      "scenario_ratio_percent_min_median_max": [
+        99.5181635945524,
+        99.59670101925782,
+        100.20750351856422
+      ]
+    }
+  },
+  {
+    "piece": "L",
+    "window_ms": 100.0,
+    "route_band_physical_N": {
+      "central_mean": 0.11139426937504508,
+      "scenario_ratio_percent_min_median_max": [
+        92.7851027652923,
+        99.83844709209815,
+        110.55373030772793
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.29880238593140857,
+      "scenario_ratio_percent_min_median_max": [
+        102.99822822514845,
+        104.24004342942324,
+        106.9637909834132
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 6.367738066554004,
+      "scenario_ratio_percent_min_median_max": [
+        98.91433069483926,
+        99.17251686331673,
+        100.22768710570386
+      ]
+    }
+  },
+  {
+    "piece": "L",
+    "window_ms": 250.0,
+    "route_band_physical_N": {
+      "central_mean": 0.10417204359291847,
+      "scenario_ratio_percent_min_median_max": [
+        80.11585765552442,
+        94.15984634414495,
+        114.17627162505934
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.32510616960160466,
+      "scenario_ratio_percent_min_median_max": [
+        109.81426749969165,
+        113.84794631398366,
+        120.44948333413433
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 6.261629197097956,
+      "scenario_ratio_percent_min_median_max": [
+        96.62028369458653,
+        97.5606968707123,
+        98.91502848617291
+      ]
+    }
+  },
+  {
+    "piece": "L",
+    "window_ms": 500.0,
+    "route_band_physical_N": {
+      "central_mean": 0.09173423737359056,
+      "scenario_ratio_percent_min_median_max": [
+        71.80734867420475,
+        84.77437717196054,
+        93.56129497783299
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.3861242114936898,
+      "scenario_ratio_percent_min_median_max": [
+        121.07934917854688,
+        135.88513337539527,
+        166.5343671887813
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 5.9894803999569275,
+      "scenario_ratio_percent_min_median_max": [
+        92.06101775325818,
+        94.01601917819474,
+        95.44629526049387
+      ]
+    }
+  },
+  {
+    "piece": "S",
+    "window_ms": 0,
+    "route_band_physical_N": {
+      "central_mean": 0.06853427189853943,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.5171291696117235,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 5.521161038955185,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    }
+  },
+  {
+    "piece": "S",
+    "window_ms": 25.0,
+    "route_band_physical_N": {
+      "central_mean": 0.0687997569458486,
+      "scenario_ratio_percent_min_median_max": [
+        98.37504247582561,
+        100.33332053798361,
+        102.27014162484085
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.5182226177219952,
+      "scenario_ratio_percent_min_median_max": [
+        99.99915362787249,
+        100.22316077661732,
+        100.4296695495521
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 5.513869014492009,
+      "scenario_ratio_percent_min_median_max": [
+        99.72715900309431,
+        99.89228929608399,
+        99.924577868087
+      ]
+    }
+  },
+  {
+    "piece": "S",
+    "window_ms": 50.0,
+    "route_band_physical_N": {
+      "central_mean": 0.0689615494607669,
+      "scenario_ratio_percent_min_median_max": [
+        96.56322420503251,
+        100.55088926570926,
+        104.95710705908807
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.5196407807193496,
+      "scenario_ratio_percent_min_median_max": [
+        100.09685687401317,
+        100.46332605032704,
+        101.00992970773636
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 5.504069685074922,
+      "scenario_ratio_percent_min_median_max": [
+        99.39105536738538,
+        99.72581422174396,
+        99.8041872794911
+      ]
+    }
+  },
+  {
+    "piece": "S",
+    "window_ms": 100.0,
+    "route_band_physical_N": {
+      "central_mean": 0.0688259332678353,
+      "scenario_ratio_percent_min_median_max": [
+        93.24223597651158,
+        100.31985883587471,
+        109.89109197725908
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.5226127333467834,
+      "scenario_ratio_percent_min_median_max": [
+        100.35654708545343,
+        100.94247346976064,
+        102.09487053240176
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 5.480471641518336,
+      "scenario_ratio_percent_min_median_max": [
+        98.49885587822955,
+        99.28162492322592,
+        99.58752529180998
+      ]
+    }
+  },
+  {
+    "piece": "S",
+    "window_ms": 250.0,
+    "route_band_physical_N": {
+      "central_mean": 0.06500228784981947,
+      "scenario_ratio_percent_min_median_max": [
+        83.36853635500788,
+        94.17479273864707,
+        118.2558970475645
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.5324554788339434,
+      "scenario_ratio_percent_min_median_max": [
+        101.10942307585186,
+        102.67324715849111,
+        105.90714719808767
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 5.401124100634171,
+      "scenario_ratio_percent_min_median_max": [
+        96.13555839771969,
+        97.9717079534429,
+        98.42205318969336
+      ]
+    }
+  },
+  {
+    "piece": "S",
+    "window_ms": 500.0,
+    "route_band_physical_N": {
+      "central_mean": 0.057201452206301795,
+      "scenario_ratio_percent_min_median_max": [
+        77.15089001813816,
+        86.66487567262324,
+        94.42261410787785
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.566008176371219,
+      "scenario_ratio_percent_min_median_max": [
+        103.13237691640755,
+        108.7537338916007,
+        140.737776174088
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 5.329414497650819,
+      "scenario_ratio_percent_min_median_max": [
+        94.83421360761575,
+        96.74629099734354,
+        100.57323511886189
+      ]
+    }
+  },
+  {
+    "piece": "T",
+    "window_ms": 0,
+    "route_band_physical_N": {
+      "central_mean": 0.10298504585080666,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.27245121921111665,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.434284770265591,
+      "scenario_ratio_percent_min_median_max": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    }
+  },
+  {
+    "piece": "T",
+    "window_ms": 25.0,
+    "route_band_physical_N": {
+      "central_mean": 0.10312651322076168,
+      "scenario_ratio_percent_min_median_max": [
+        97.90642046049393,
+        100.14348337239252,
+        102.39746592994268
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.27482286762229785,
+      "scenario_ratio_percent_min_median_max": [
+        100.57909366617008,
+        100.89858375644958,
+        101.31611121222326
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.436668289912718,
+      "scenario_ratio_percent_min_median_max": [
+        99.6744086307226,
+        100.00265538067121,
+        100.42379944272844
+      ]
+    }
+  },
+  {
+    "piece": "T",
+    "window_ms": 50.0,
+    "route_band_physical_N": {
+      "central_mean": 0.10305078973952005,
+      "scenario_ratio_percent_min_median_max": [
+        95.07590520343972,
+        100.06000317688333,
+        105.1172382750763
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.27813836654303964,
+      "scenario_ratio_percent_min_median_max": [
+        101.34300598219784,
+        102.03210952240107,
+        103.35756512527456
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.440515611475207,
+      "scenario_ratio_percent_min_median_max": [
+        99.33065138010319,
+        100.03264226240887,
+        100.82281424421265
+      ]
+    }
+  },
+  {
+    "piece": "T",
+    "window_ms": 100.0,
+    "route_band_physical_N": {
+      "central_mean": 0.1018230100796688,
+      "scenario_ratio_percent_min_median_max": [
+        88.87512300223834,
+        99.04966527683743,
+        108.97317938708542
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.284936536478501,
+      "scenario_ratio_percent_min_median_max": [
+        102.90633985083315,
+        104.38811438571838,
+        107.57109657477653
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.444870333334692,
+      "scenario_ratio_percent_min_median_max": [
+        98.85999032434903,
+        100.18086723964328,
+        101.44657152612098
+      ]
+    }
+  },
+  {
+    "piece": "T",
+    "window_ms": 250.0,
+    "route_band_physical_N": {
+      "central_mean": 0.0926594790663408,
+      "scenario_ratio_percent_min_median_max": [
+        73.87120198675426,
+        91.84501592391,
+        108.96820536862481
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.3072244281479557,
+      "scenario_ratio_percent_min_median_max": [
+        107.08134269431697,
+        111.59640909778383,
+        125.17395667720382
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.440955672984033,
+      "scenario_ratio_percent_min_median_max": [
+        98.60749517408706,
+        100.65253814786344,
+        102.54096804777267
+      ]
+    }
+  },
+  {
+    "piece": "T",
+    "window_ms": 500.0,
+    "route_band_physical_N": {
+      "central_mean": 0.08074545814885802,
+      "scenario_ratio_percent_min_median_max": [
+        69.07829197541126,
+        82.6653205519801,
+        90.89312680925987
+      ]
+    },
+    "route_tracking_rmse_N": {
+      "central_mean": 0.34728349423162874,
+      "scenario_ratio_percent_min_median_max": [
+        113.53489785770381,
+        123.83988963129494,
+        172.6700626978544
+      ]
+    },
+    "first_seat_peak_physical_N": {
+      "central_mean": 4.4137572756391705,
+      "scenario_ratio_percent_min_median_max": [
+        95.08426326180081,
+        101.13103864998311,
+        104.47588386621443
+      ]
+    }
+  }
+]

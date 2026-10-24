@@ -1,0 +1,1988 @@
+{
+  "note": "Dense data files excluded from the revised unpublished commit at the user request; local originals retained unchanged. The small archived TP-GMM prior is kept.",
+  "source_local_commit": "bc74299",
+  "count": 396,
+  "total_bytes": 444803185,
+  "files": [
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_advanced_central.npz",
+      "bytes": 2166563,
+      "sha256": "cd5f169dc1639ea446ab7ecd78ff2c7e9b4dee0c5a1d562ac0e21a703a84d559"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_conditional_shortlist.npz",
+      "bytes": 1709602,
+      "sha256": "a4095ad530ddb3ae0d2f4f79e8788192a27d673f5240610ec98d879f1ffbbbcf"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_event_exact_delay.npz",
+      "bytes": 2762350,
+      "sha256": "89e2bdc249198d3415cffb2f001c528da2973b40814b98cc3c542884add46252"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_nominal_feasibility.npz",
+      "bytes": 17952,
+      "sha256": "0609388983354eca712c58531fa11b8d70c62b7ae7f998f9b3ddc87bc68ee8a8"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_planned_reference_central.npz",
+      "bytes": 709284,
+      "sha256": "1b9dabba9100ce3394a33874b69c3c19f5695f09b46a3fb9df722d109f069a03"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_preview_central.npz",
+      "bytes": 704783,
+      "sha256": "ef090f6b2de498a56fddef0133d9092f6425cf684734c2e10a28e41357cdcaea"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_advanced_central.npz",
+      "bytes": 2190587,
+      "sha256": "96f6eda4c33b2f095fed651f520a8b69e0b9a40672ebe6aaa2605d45e106680a"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_conditional_shortlist.npz",
+      "bytes": 1716164,
+      "sha256": "3a2190fe9fd6495c8328db2067d0def08acb71cd7e4ce84de7d91cb3bed33b59"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_nominal_feasibility.npz",
+      "bytes": 17903,
+      "sha256": "00984fc8fb2a347aa31ce0a88732df0852cb7f2346aa5cb2f0e518f7e72e62df"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_planned_reference_central.npz",
+      "bytes": 717499,
+      "sha256": "be58494336b609f04fa3caecdce311e19f609d7ef28cddd074858fa3b06a82e8"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_preview_central.npz",
+      "bytes": 711774,
+      "sha256": "c4e47053b4d8e72220753af44dcd7391812b73fe6e2f16d9b6ae57ec502cc282"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_holdout_attempt1_traces.npz",
+      "bytes": 3438363,
+      "sha256": "d25da2d4d5a664ba3b30acc20607bf315b099414154673085a8f9d430066ad06"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_saved_clock_audit.npz",
+      "bytes": 11807,
+      "sha256": "ddc42964eb09d449fc2edd088735678989e77387714c28e8a23b1c114e7ed737"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_advanced_central.npz",
+      "bytes": 1982632,
+      "sha256": "f3635531da491e72f06cb67676ef2571f708eeda7f1cc43bad998b1a329c9955"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_conditional_shortlist.npz",
+      "bytes": 1545901,
+      "sha256": "da6c7c2bea8d566d68621c32dbd170b2b0ccfd027ec63acf5c1b10c9e9e5d604"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_event_exact_delay.npz",
+      "bytes": 2517150,
+      "sha256": "f9494b7f18cf9d29eac69cd50c8177240c7facc878489c115d7d118a5bac7181"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_nominal_feasibility.npz",
+      "bytes": 12817,
+      "sha256": "64ed1f93ea912bc3d918bd139e7a3cfc56c5d8282f6216d8e594bf1b0456ff5e"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_planned_reference_central.npz",
+      "bytes": 635287,
+      "sha256": "606123db96dd8d75df01c5444d5c38572131d8d298163a7c62add8d3abe6a486"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_preview_central.npz",
+      "bytes": 572526,
+      "sha256": "20e036e1c2cef8fab264468175e7e0ef6e67ca667a45c3d10d3c0506765db081"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_advanced_central.npz",
+      "bytes": 1976755,
+      "sha256": "deb9c6a6fd46872080d1779ebb6b3918f3c54c0f8c8759d14b8f375d715227e7"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_conditional_shortlist.npz",
+      "bytes": 1545662,
+      "sha256": "cd11149039488445493f4b12b0f38d15925aa5442071beff8ddc50d3c9c93930"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_nominal_feasibility.npz",
+      "bytes": 12825,
+      "sha256": "1a2a1cead8439e26d87cc58d5a0151fe3d02e384a1797512a37576f70fd5405a"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_planned_reference_central.npz",
+      "bytes": 634677,
+      "sha256": "4bbedc77036ad9332739835c2d77bdfc754b0bdd7741c5dba017d15ae4fb6f73"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_preview_central.npz",
+      "bytes": 576657,
+      "sha256": "abea5d0a859c4f525a1b21a3723ad6a1be30690371ab42d7ca7c5669ecc0a1e6"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_holdout_attempt1_traces.npz",
+      "bytes": 3098538,
+      "sha256": "395c8c9f6aa3c1c6e02556428680ff8a1999af306929eb0d3d65f525b63de2fd"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_saved_clock_audit.npz",
+      "bytes": 10554,
+      "sha256": "20e78b65933fac17c27fc065d193f435cf0b5c6a49c0974808c8370951507ea4"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_advanced_central.npz",
+      "bytes": 1922543,
+      "sha256": "1d9ff9fed79e0dc20a34458741d1ba2639c448ce959aa9dbec329d40eda5de37"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_conditional_shortlist.npz",
+      "bytes": 1516174,
+      "sha256": "7d7eefa86c1849c0dfac212f7d419474eedb955a18c360f9662572a8d372c0bb"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_event_exact_delay.npz",
+      "bytes": 2331406,
+      "sha256": "be4fd0a53e3a50da9d4e95e2ab7205fc67680eb61a230806d21741f46c527d57"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_nominal_feasibility.npz",
+      "bytes": 13511,
+      "sha256": "c7ad634942cd3f69203c2ae4e55066b61fd8db60e636c1cfea4a17cc033fa15a"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_planned_reference_central.npz",
+      "bytes": 579126,
+      "sha256": "4a30d5c64724b69af8e1f468afa6fe1355f81e0009119dd9d9af90a986ea4222"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_preview_central.npz",
+      "bytes": 582393,
+      "sha256": "a5fbbf431bff4e38feec6903c799249fefd56fdddee464f9a28aa187a7ec4400"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_advanced_central.npz",
+      "bytes": 1918438,
+      "sha256": "984524e87ad45c36ec1969e74d1cb89c50eb058995d1cd93e55bc2f8362d4ede"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_conditional_shortlist.npz",
+      "bytes": 1508448,
+      "sha256": "fe45ef01f4d84c6a45f7f9814773d096bc485d17f894b25d6334541d5d997d17"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_nominal_feasibility.npz",
+      "bytes": 13522,
+      "sha256": "205f5452be5d985560b68275ef84a579c6e4376f580aefbdc8bf7f3f70e68434"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_planned_reference_central.npz",
+      "bytes": 574649,
+      "sha256": "86fa894f2fdd0df787c78d9e4d8f3f7f9b1cb380c6e7aec47210d897659bd2b9"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_preview_central.npz",
+      "bytes": 579254,
+      "sha256": "142b2cc640124c8dc648685f1b67bb1f5ee3346dce2e3f9e6b5db7b119cc4dce"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_holdout_attempt1_traces.npz",
+      "bytes": 3003723,
+      "sha256": "de1b701d6368b43b04551d44147568fd9db57416a1e4309da851016f74654d09"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_saved_clock_audit.npz",
+      "bytes": 10391,
+      "sha256": "22a0a964b8ed928637f61bfd2309b109da15758c0f2d76c95c79f80392205a18"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/L_planned_reference_autonomous.npz",
+      "bytes": 17991857,
+      "sha256": "ba57340444c03793114d43a42e657ecaa9182811176357608a85527c4734bf09"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_planned_reference_autonomous.npz",
+      "bytes": 14000952,
+      "sha256": "39be2d868d36d56b6f52ad367c3488e823f3313de1d7bce16ce13cddc1039271"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_190407_advanced_central.npz",
+      "bytes": 2829088,
+      "sha256": "a678190b027353a78cb24e5ed067e7b9676527b4db0495e6e9e04060f421dfcb"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_190407_conditional_shortlist.npz",
+      "bytes": 2250244,
+      "sha256": "bd73b954b1da7c6ec10930c3d5c79903a0d61a772dacb993ae3f5d3d845c0670"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_190407_event_exact_delay.npz",
+      "bytes": 2319531,
+      "sha256": "e64892e6b47bac1d0b5fa618c81f185ed28655290df5c8f641ff1a36be1791f6"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_190407_nominal_feasibility.npz",
+      "bytes": 14151,
+      "sha256": "933d3199356e4aea7adc80169b2aabc960cc8107640b24756ab7e10b6c07d88d"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_190407_planned_reference_central.npz",
+      "bytes": 622731,
+      "sha256": "d2abebf75dfa4036b5776b26ef284112802b9a14b2c1a28e17cf2d6518cbb7ab"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_190407_preview_central.npz",
+      "bytes": 597996,
+      "sha256": "b9602bf91d58160056204314b6aae00da13f797aa7e4eb05d5fda0cf71926862"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_191302_advanced_central.npz",
+      "bytes": 2829579,
+      "sha256": "de6bea5e16f6281100c74e8ad94d3c885ada6d05c0cad7c5bc6a7c13ae3de19d"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_191302_conditional_shortlist.npz",
+      "bytes": 2224984,
+      "sha256": "d9646c9cab6a66e56fa5aef1aea6faf7888ada85bbac7c175c0bc8a3cbee3528"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_191302_nominal_feasibility.npz",
+      "bytes": 14141,
+      "sha256": "ba66dcbf039c0bb60da8539be437ee6611c33fb11ead401d77a070680003cf90"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_191302_planned_reference_central.npz",
+      "bytes": 612120,
+      "sha256": "81f0321f2c64cab559fea8ad1302c6fe3701def2b02a494ad4cdc9f89db8c4ce"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_191302_preview_central.npz",
+      "bytes": 588704,
+      "sha256": "ea662510ece6704d93242a5ab79aec31256534c29872c989979802fb30fffd96"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_191548_holdout_attempt1_traces.npz",
+      "bytes": 4464982,
+      "sha256": "b9a5043a1c88f46141d2835e24d369186f54b1ce7cc080052882b22e7c27b044"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/S_s7073m3_c100_narrow75_ffi_20261023_191548_saved_clock_audit.npz",
+      "bytes": 15225,
+      "sha256": "c04e35b3673ba5d6774720ff4687b5590685a80e90ec1df997acf0ef8a8c7f36"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/T_planned_reference_autonomous.npz",
+      "bytes": 15917563,
+      "sha256": "0a36a7e61efc64ff3f4a159bf343ca1f41b099015b74b7b1feb3385f5d2fde80"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/Z_planned_reference_autonomous.npz",
+      "bytes": 14633438,
+      "sha256": "28fc9a1fc6160db024eb00a7232f15da96ee502a2fbe952dd62fef474c3281d9"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/advanced_autonomous_traces.npz",
+      "bytes": 16775291,
+      "sha256": "692d1b779ca5e5a30e31a684880b63c07536988bcd7296989079f0a8f26374ef"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/critical_peak_grid_traces.npz",
+      "bytes": 56067,
+      "sha256": "b4d2fee3d8d98a52a843726e61503f874adb900eb685f7e732974e503c4a0450"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/damping_closedloop_traces.npz",
+      "bytes": 2384556,
+      "sha256": "ec05b4dcc561c18f76f2a8510c0ccca7754d8062affe51bc8d33ff9d80ba8333"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/empirical_crossrun_traces.npz",
+      "bytes": 734173,
+      "sha256": "4686153925107fe26daa83a5d71ba59f38a60915be01057d2203f096f7ffc3bb"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/gen3/rigid_pin_hold_125.npz",
+      "bytes": 39258,
+      "sha256": "9bd4e7b9c1b95c5477f27f057594c71135e2f7becac75d04471e524c1cb1a655"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/gen3/rigid_pin_hold_125_warm.npz",
+      "bytes": 37447,
+      "sha256": "f86dd2bc12d401b2f37e3434f87edbd9bb6ca591a65e6aa29e5b0a886a17f2a3"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/gen3/rigid_pin_hold_250.npz",
+      "bytes": 39263,
+      "sha256": "344de4df1fe60951e37a9cc894163768ba6edc56ef8c04a5ccd99d11d84a8212"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/gen3/rigid_pin_hold_250_warm.npz",
+      "bytes": 37412,
+      "sha256": "a0b6a009b1ba26e667948bbc6bc6a95948b5406a2d52a90a970e3d8eee52dc41"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_dt025/joint_telemetry.npz",
+      "bytes": 8143,
+      "sha256": "1b7d571fe0a2609ecb91a87b9cf1ae6f5992eade9d324f04cfcae8f80dc3746d"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_dt025/laboratory_loop_1kHz.npz",
+      "bytes": 116421,
+      "sha256": "a9ea6db860e0646da2605557016de7f909596751a69d26e25bc60655608aef59"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_dt025/trace.npz",
+      "bytes": 64087,
+      "sha256": "76e2c78858e6dd04dd78611cf8dae39fef27fe135d723ae0a47abe232df7f6ce"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_D80_dt025/joint_telemetry.npz",
+      "bytes": 4184,
+      "sha256": "005e7d6c45e8569829b6213660e7821e83e1eba9f2e6c6346391db6b37763f94"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_D80_dt025/kortex_feedback_1kHz.npz",
+      "bytes": 38204,
+      "sha256": "4644cd96f05913e9ad50cf23645ace94f6bea23f9ca90d22703f21f9d7a53cd1"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_D80_dt025/laboratory_loop_1kHz.npz",
+      "bytes": 62537,
+      "sha256": "732a7ba5c2795b94734ca2e8a16cb329888d71adfeba14720d858f11e73db5a4"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_D80_dt025/node_publish_250Hz.npz",
+      "bytes": 6165,
+      "sha256": "1d4ca34746180a79322c5d6cb8b423b2e4107bcafc518e6acadf15db678a818b"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_D80_dt025/trace.npz",
+      "bytes": 35180,
+      "sha256": "7a8d7a81d0c4a447aa0f28c57d4b23006eb118010fb633027292975c06edeb4f"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_dt025/joint_telemetry.npz",
+      "bytes": 4152,
+      "sha256": "bf85ade7c88e4c861805210ab8135801bdabd4e99383c8901c498fc5ada26c2e"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_dt025/kortex_feedback_1kHz.npz",
+      "bytes": 37695,
+      "sha256": "4808ad6de8f1ba6e60daa33da956ac8420ad162aa9c81e87362be10f4e516ce3"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_dt025/laboratory_loop_1kHz.npz",
+      "bytes": 63328,
+      "sha256": "36efe9ef67b0742c1e95a419734137ba1754c15c6f430f1c50377f3b7a22d6b5"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_dt025/node_publish_250Hz.npz",
+      "bytes": 6154,
+      "sha256": "bd90c4424198d68e4262d2c470e2a0f0cc0bca10340e22bada82fa8b290e9b8b"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_central2700_warm_dt025/trace.npz",
+      "bytes": 35126,
+      "sha256": "8dc43d11644f65ce577e26358d908942249bcdaae8e08b9fcb24caf3b02b0929"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_dt0125/joint_telemetry.npz",
+      "bytes": 7793,
+      "sha256": "292571a0b29fe0d7b7bc2e3f4e232459090d8da8cbf6ee4f796df49b98d49d1f"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_dt0125/laboratory_loop_1kHz.npz",
+      "bytes": 107100,
+      "sha256": "1d5209b31b405285b4bb62fafbe746c335eea1a77d8c7d25e73e801ae39fdacf"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_dt0125/trace.npz",
+      "bytes": 58588,
+      "sha256": "f9b4fca0c5679b67868eb26c0b1b7e2bc701289717b7c0fe79ba68ebf309b954"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_dt025/joint_telemetry.npz",
+      "bytes": 8483,
+      "sha256": "ad6f56a8dc0f8b8849d7f478390dd2de267ad5bf50dd14632dee870c2f32558a"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_dt025/laboratory_loop_1kHz.npz",
+      "bytes": 116502,
+      "sha256": "1fdd170dfab6008f7f1605e069073519bf79fe91381b46c518af54e0273648a9"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_dt025/trace.npz",
+      "bytes": 63427,
+      "sha256": "2f02ff0975021ef54cafae9f8e3c4707245972f8fe2eb515eeba3fd06316a148"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_warm_dt0125/joint_telemetry.npz",
+      "bytes": 4528,
+      "sha256": "8f8a7d312078d1d889301d187499bcd0d8452ee4d98f8b99300c02d4af1e3a6c"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_warm_dt0125/kortex_feedback_1kHz.npz",
+      "bytes": 38269,
+      "sha256": "518b1ff2763fccd2181a9f3adef35b0214045a04b65ff85a981908568f576b34"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_warm_dt0125/laboratory_loop_1kHz.npz",
+      "bytes": 62523,
+      "sha256": "561c1e4e0891c08d3daab645b98230d70de07e5d028afc00f8c1727a6ec555fb"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_warm_dt0125/node_publish_250Hz.npz",
+      "bytes": 6182,
+      "sha256": "29e2ec3fc6cd982f17c44ccc8c7647928088149dab6ce50ef2cd9599b925d96d"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3Lab_Z_hold_warm_dt0125/trace.npz",
+      "bytes": 35132,
+      "sha256": "94f26a1c9808ccf2fa8af159a6d9c59b2394670aa6845855b67503bf5418018d"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_L_central2700_implicit_D80_dt05/joint_telemetry.npz",
+      "bytes": 1228511,
+      "sha256": "13c77b61c53771b67bc4899c5bdb181d8f690f33844e8e09f7576f291a866462"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_L_central2700_implicit_D80_dt05/trace.npz",
+      "bytes": 9762422,
+      "sha256": "851a97bff1abb11831995dc997d663fa920a7d288a3a2fb882c2d5ef59a576c6"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_L_central2700_implicit_dt05/joint_telemetry.npz",
+      "bytes": 1241126,
+      "sha256": "64a204ad0ad989aa3aef387b0927305469681f20c02b6ad4e35bb445aa8fd562"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_L_central2700_implicit_dt05/trace.npz",
+      "bytes": 9867092,
+      "sha256": "a3fc7302feb84e3df9a71f4ad0d1afb45c63b49f16b152cef014cfe43c02d9b3"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_central2700_dt05/joint_telemetry.npz",
+      "bytes": 2792,
+      "sha256": "4bfc750087377008b09e12622a8d27516e57d0691d3f0572b3e3227d3fd4da21"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_central2700_dt05/trace.npz",
+      "bytes": 27810,
+      "sha256": "5c178c52a513b956af09dc1e147dacdbe1430433d56ef864aff228cc3b3f162c"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_central2700_implicit_D80_dt025/joint_telemetry.npz",
+      "bytes": 1128133,
+      "sha256": "1f8751f3ddfe236ef402ea17061273d962de2d62fa5c57e74373921b42bb7da1"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_central2700_implicit_D80_dt025/trace.npz",
+      "bytes": 8965694,
+      "sha256": "6a7afbd34690a42ea04a78254bf1443a1672045de84f44b4cb3b2a49ccc25769"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_central2700_implicit_dt025/joint_telemetry.npz",
+      "bytes": 1140585,
+      "sha256": "f3c3cbe050de8fb693aa30339fb0818e1803a3c51ad3e10c96420db0073ee553"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_central2700_implicit_dt025/trace.npz",
+      "bytes": 9064644,
+      "sha256": "778e7c8e0bb91de2d8e404eae9532da3dac9f417ce74e8450f6b63562ade7c7f"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_central2700_implicit_dt05/joint_telemetry.npz",
+      "bytes": 1136534,
+      "sha256": "213c53fd0ade8b595dd82109ee048a8332116704650e3964599224572eb03791"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_central2700_implicit_dt05/trace.npz",
+      "bytes": 9024223,
+      "sha256": "9e1799c33d6044a82cf1dfc788dc15d146a695afdf28a7135554fbcf5699dad8"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_lab_hold_implicit/joint_telemetry.npz",
+      "bytes": 934,
+      "sha256": "39648195551ed282053bd48bc67f8a1ebf3bfe02978cef02d54db1f60b087fc3"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_lab_hold_implicit/trace.npz",
+      "bytes": 192081,
+      "sha256": "d9cfbc558e083b30136719fa85f2ea47b1f74d91d3365719b945180b52d57613"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_lab_scene_masschecked/joint_telemetry.npz",
+      "bytes": 850,
+      "sha256": "3be3299241c6cb266de51c0c4e416a184ba706babc5d2da792aaba68f9401eed"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_lab_scene_masschecked/trace.npz",
+      "bytes": 202755,
+      "sha256": "65247a81e4899b07c30621acfd17b9839b2e9e4b3c31fa816d7ef8bb96061b7d"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_lab_scene_v1/joint_telemetry.npz",
+      "bytes": 934,
+      "sha256": "ec42a1e6ad9fdb274c5ee965ce5eddee5c2a9e8a66e3034a2912e86acf0cd171"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Gen3_Z_lab_scene_v1/trace.npz",
+      "bytes": 171987,
+      "sha256": "967036810fcb189274ee38316634c4610e2ea3f1dd9e1f858b26b3b9a98070d7"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/L_D60_dt05/trace.npz",
+      "bytes": 3359808,
+      "sha256": "ce984c14e6e0c0ffb34c83e597699fbc0c26dc2cc9daf7b4f2d963cc58a95a35"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/L_axial2700_D60_dt05/trace.npz",
+      "bytes": 9410384,
+      "sha256": "042e8ae1d31dcf3d07b07caf1b23e17959d39a06c0ca4bf4857b938a4a417e07"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/L_central2700_D60_dt025/trace.npz",
+      "bytes": 9306409,
+      "sha256": "93ad9e22794bb58fdd32c15d424d6eaf01aaa255b85ed977c651bf70dbc6d91a"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/L_central2700_D60_dt05/trace.npz",
+      "bytes": 9315577,
+      "sha256": "dd3b367238298ba3ceae8eaf4462b7818623b5a5a6a457da599ef0e8277a197f"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/S_D60_dt05/trace.npz",
+      "bytes": 3950719,
+      "sha256": "ab79686aa14d2cb796ada5a7afcb6cf8d07fbbcef3d0ab7622d8e74b55a52004"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/S_axial2700_D60_dt05/trace.npz",
+      "bytes": 11207507,
+      "sha256": "f728e3c3a632caf85fc2cc5a71b098e68b5c9dc6fff81c6834eb68a2c37c4eb2"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/S_central2700_D60_dt05/trace.npz",
+      "bytes": 11121400,
+      "sha256": "32a50d1be1987d7a5268927bca03972fc1bfc9e4f806f31400af410a45c8c809"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/T_D60_dt05/trace.npz",
+      "bytes": 8458569,
+      "sha256": "da0bec1d39100f9759b8a61d6dfdab75f8548e77e382f543821d6c92460f73ef"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/T_central2700_D60_dt05/trace.npz",
+      "bytes": 8548002,
+      "sha256": "7045a0a1e39bd57e9f0b84558a6d179eb7b567ac46244cfe436206d037b1a919"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Z_D60_dt025/trace.npz",
+      "bytes": 8418330,
+      "sha256": "2326c8db8ebdd232f188662e79cb2a056cb7333e99f4848de61cbfb0cb021856"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Z_D60_dt05/trace.npz",
+      "bytes": 3063138,
+      "sha256": "afd9424562e28f7d238f627643c5619ba15457e403496868c51c38fdaaba0161"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Z_D60_dt1/trace.npz",
+      "bytes": 7452,
+      "sha256": "48f07d8d14363d697107ed1f9376332bce1f9f295ecf91614da2e79a7c611b68"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Z_axial2700_D60_dt05/trace.npz",
+      "bytes": 8596246,
+      "sha256": "1988ad5bd137e38119a08100c15d04c3225673a0a8ffb05398c3c554596e17b9"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Z_central2700_D60_dt025/trace.npz",
+      "bytes": 8499220,
+      "sha256": "79a2629305e21fb5e8c7cefbd99a75eefc03b932bc25fa14996a6cd45fd65e13"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/runs/Z_central2700_D60_dt05/trace.npz",
+      "bytes": 8498536,
+      "sha256": "7a55c35d7697d91ca3e6c9857a7aeeae62d50ec8dce93c45ad55c1ba1190eda5"
+    },
+    {
+      "path": "docs/analysis_20261023/controller_night/standalone_traces_shortlist.npz",
+      "bytes": 221657,
+      "sha256": "04e95df511b1a07c370578156df6b1092868c122fcc13927f3427bc7940b6513"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_central.npz",
+      "bytes": 578649,
+      "sha256": "470bcc2e57132759449c8cb097fc12122e4008b44d92980d9d7b081ec5276af8"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_central.npz",
+      "bytes": 577941,
+      "sha256": "4617921c79366af9540b413bae77c865cad41cec1ec4867e25b7ae4fb1dbed31"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_central.npz",
+      "bytes": 578407,
+      "sha256": "ee1980ca017173072e0dcc03d09c0ae54c528651fa67fdebd6497db6355d4e80"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_central.npz",
+      "bytes": 518597,
+      "sha256": "96ee7b79522f2f09995bbe9059aba9b7bb4ee31278ee1a385bcf3605118f58a2"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_central.npz",
+      "bytes": 518182,
+      "sha256": "4381f0c060996f574ac928a2661cca5f694554c2eff87b55603911ed2a8f52cc"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_central.npz",
+      "bytes": 518552,
+      "sha256": "54d43e993d971f11fe2c6d51afc7f89b1950babce5b8316a81a85befae25320a"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_central.npz",
+      "bytes": 510496,
+      "sha256": "21c7984c7490026d22a6e3cefb5de39e39d419f782ca47fa7fdf909620327b61"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_central.npz",
+      "bytes": 509448,
+      "sha256": "90c1a80989ff90e58e8d362eea4be6b26b744a9078519cfb5da5b858acbf2c71"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_central.npz",
+      "bytes": 510011,
+      "sha256": "5f5bd0928cfe17cf3e92f32c44c2690e4f622048a232477152c215e8209108b6"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/S_s7073m3_c100_narrow75_ffi_20261023_190407_central.npz",
+      "bytes": 747960,
+      "sha256": "2130dac04f9e23ad32a098cf976efa2f9dd61951679c5b79e6b3d984ecc85f58"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/S_s7073m3_c100_narrow75_ffi_20261023_191302_central.npz",
+      "bytes": 746618,
+      "sha256": "4a5c67c59b64b70561cdbbd09bc6d2e7b463ae8f51ce6e188f22fd4c34554cc0"
+    },
+    {
+      "path": "docs/analysis_20261023/moving_average_sim/S_s7073m3_c100_narrow75_ffi_20261023_191548_central.npz",
+      "bytes": 748233,
+      "sha256": "f7d1c22a1ba33f3a8e80e5a034a925d7d79eeac06b66f24b72bd819f625986e4"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/pilot/core_floating_adaptive_centered_0/manifold.npz",
+      "bytes": 185871,
+      "sha256": "1e2fffd33b82d431c95c13d8f0de945a9f1afe99734c746df6dee644ebb320a8"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/pilot/core_floating_adaptive_centered_0/trace.npz",
+      "bytes": 404306,
+      "sha256": "9bdfcbf8a7640199e67fb2c9e98dbef951e1f479566d58303d7d3069f0633bb8"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/pilot/core_floating_wong_spatial_2/manifold.npz",
+      "bytes": 186834,
+      "sha256": "0a73fcc59a33aa016d5f9cf02bfa72710c1ae9b0001148fcb0a8f08c8c620b33"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/pilot/core_floating_wong_spatial_2/trace.npz",
+      "bytes": 379075,
+      "sha256": "985caaa6a7070671b73e511011328fc1a32b11586e4487f9f12c4a24c0118bac"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/pilot/core_welded_adaptive_centered_0/manifold.npz",
+      "bytes": 186593,
+      "sha256": "ea8bdff5a6f72484d1cd4eb9ef1cab2e535ab175f3f7780474c94eda5059cd23"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/pilot/core_welded_adaptive_centered_0/trace.npz",
+      "bytes": 407689,
+      "sha256": "898d2239c6c10276a788c5bb65f845a57901511fd66a8360c6d0a92ae3ac864c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/pilot/core_welded_adaptive_spatial_2/manifold.npz",
+      "bytes": 186878,
+      "sha256": "6cccacb9b81e534dc26fd0a6a073b2c5a5fe8b0d78ebd27bcc048ae306055eef"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/pilot/core_welded_adaptive_spatial_2/trace.npz",
+      "bytes": 405403,
+      "sha256": "8e5dcebe317b3ecd2466b0fa13e8104ae75665a3cf5030e41de28730babc6881"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/refinement/core_floating_adaptive_centered_0/manifold.npz",
+      "bytes": 185522,
+      "sha256": "d1f9f8101ef334bd81265d4c5e46fdc8eea4d6f56a3954ce43e8541e300938bf"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/refinement/core_floating_adaptive_centered_0/trace.npz",
+      "bytes": 403937,
+      "sha256": "42e1a450cf86bfed14f79a589efffbf7e79051eb6e30b2d92c01ceac8df879b2"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/refinement/core_floating_wong_spatial_2/manifold.npz",
+      "bytes": 186833,
+      "sha256": "3691b90372848fef2a1b148483f1bf927d35bb656c8243fbb6320be26013e9e7"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/refinement/core_floating_wong_spatial_2/trace.npz",
+      "bytes": 378738,
+      "sha256": "7cdc52b7aaba6efc6ddb5aac9fc1c61faf0c7efe6e5d501a9dfe96f53fd9dc52"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/refinement/core_welded_adaptive_centered_0/manifold.npz",
+      "bytes": 186338,
+      "sha256": "dbc2661814f4b30fc6fb8c0885251792442b8f546430aa6b8ec453b447a9ee44"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/refinement/core_welded_adaptive_centered_0/trace.npz",
+      "bytes": 407202,
+      "sha256": "a32d227f207fc9a7cb4e5e6d9a727b8b22b6f6dfe2eeff106badaab47baa648d"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/refinement/core_welded_adaptive_spatial_2/manifold.npz",
+      "bytes": 186776,
+      "sha256": "961f4d68dd942382754b98909e28612562466177484a56ac551aeb49e2e2de96"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/refinement/core_welded_adaptive_spatial_2/trace.npz",
+      "bytes": 404946,
+      "sha256": "ca0e0d71b83fe4ca2d6aa46e16eef66ee1e4b606aee0eaec375ad2a0a2097f5e"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_centered_0/manifold.npz",
+      "bytes": 186719,
+      "sha256": "832916280d704686bbfde2861c06a5006ee994a4be37ecaeb29530c5b151b1f3"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_centered_0/trace.npz",
+      "bytes": 405861,
+      "sha256": "f36caa38fb62427245377fb5daf0d435905c5f7c2371482e91ea6132ff0f1152"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_centered_1/manifold.npz",
+      "bytes": 188209,
+      "sha256": "13b7e7d74c77a9dc07b10c2f4f33cf70593e3b5bf9f9a2ff963a5de43b7ba05e"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_centered_1/trace.npz",
+      "bytes": 406879,
+      "sha256": "f6620665ba8a54dd86af188ca14592a535a1f754d90fae3177f5949793b4b99c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_centered_2/manifold.npz",
+      "bytes": 186808,
+      "sha256": "d548590e0431fdbb462529db913cfc9f4395adfc234800c65c614be5eeb0dc43"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_centered_2/trace.npz",
+      "bytes": 404947,
+      "sha256": "55d6a080319065f782e9815bf971f1924aee2b245f8a97c3a7996760e333e071"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_planar_0/manifold.npz",
+      "bytes": 186002,
+      "sha256": "676e60b97ff87bea22a47a2fcac3eb9cfd2507f73b1862b056fe44d7f4f38031"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_planar_0/trace.npz",
+      "bytes": 407169,
+      "sha256": "2ed81ad93d2716e37c4eac80532c357008248d28412cb05d36e6c86b734fe695"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_planar_1/manifold.npz",
+      "bytes": 188328,
+      "sha256": "82d6b1c0e68039fac3230da1d3d30b2f7a098eff7592390289552038d3443a36"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_planar_1/trace.npz",
+      "bytes": 409303,
+      "sha256": "a242cc57f1fad74a26de0f950d026aa27053de142d52ce40b22eaa50a8b562f0"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_planar_2/manifold.npz",
+      "bytes": 187580,
+      "sha256": "552f0926663451499c1f4d802fba6b28577f17aa442b5b8c458b5a19e018c276"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_planar_2/trace.npz",
+      "bytes": 407631,
+      "sha256": "cc5fa6bba6d9fbd49205d3f581f621a246c153b2bec72fd9fb4768d4be2efdb3"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_spatial_0/manifold.npz",
+      "bytes": 188567,
+      "sha256": "b86eca97351acf84b1d5905d6f46571c3e3a729e0403dd4bb740ac0da9439b15"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_spatial_0/trace.npz",
+      "bytes": 407453,
+      "sha256": "be3514fb78dfe21de1ad7bed928e50edb7557130c7e6886c2d575f0e1b7a4580"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_spatial_1/manifold.npz",
+      "bytes": 187901,
+      "sha256": "0984cd1d689cbebc0305b114bc8be3f5345fa7db776a2d21661073b920863a8d"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_spatial_1/trace.npz",
+      "bytes": 405359,
+      "sha256": "743728869fa366a9a621d2cb7c53716c548f2e974a4248a3b0ed67d0c01daf7a"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_spatial_2/manifold.npz",
+      "bytes": 187690,
+      "sha256": "d5e53e97ee17edf96cde23f14277201f91b53d2ee50268c5e2ced678be6dd859"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/central2700_floating2700_adaptive_spatial_2/trace.npz",
+      "bytes": 404914,
+      "sha256": "a3152766a70520aa6599f2887243806aa400c17494ff361b06b800f074788dc2"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_centered_0/manifold.npz",
+      "bytes": 185871,
+      "sha256": "1e2fffd33b82d431c95c13d8f0de945a9f1afe99734c746df6dee644ebb320a8"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_centered_0/trace.npz",
+      "bytes": 404306,
+      "sha256": "9bdfcbf8a7640199e67fb2c9e98dbef951e1f479566d58303d7d3069f0633bb8"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_centered_1/manifold.npz",
+      "bytes": 186828,
+      "sha256": "8aa24eccddbe6177450198260ead36e0d95edb196ab7e6b11b5bd4ba061cf2fb"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_centered_1/trace.npz",
+      "bytes": 404510,
+      "sha256": "5074349cb8c1792d3b3813e13f58b7919cff54fe871a185d45145608c6681f04"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_centered_2/manifold.npz",
+      "bytes": 186782,
+      "sha256": "3cc92f46ef0e2b019dd10815c3bb4ea02c8ee015bdb86ca66da9720353a1b108"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_centered_2/trace.npz",
+      "bytes": 404525,
+      "sha256": "3c6aa1e00c9ba1e473b333d48f35dd983208f949ca7bdf457b78da71d7add8b8"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_planar_0/manifold.npz",
+      "bytes": 186023,
+      "sha256": "a9926506a31dde447b3ccc3acc9cdf3dd5fbdc7842c832634931733e99483ba4"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_planar_0/trace.npz",
+      "bytes": 407299,
+      "sha256": "d11040c5240ad8459d143c1a3efd6cab92ae294858cfdd0973a05f036b16643c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_planar_1/manifold.npz",
+      "bytes": 187284,
+      "sha256": "a7382c36fcc43af51e6766fe7d61fbde39a5e95ab74a8ab180cf0748b4073fdf"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_planar_1/trace.npz",
+      "bytes": 407693,
+      "sha256": "34753fc1e82e62ff9735704953467138e61b18abff81a022799070aa9ea32800"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_planar_2/manifold.npz",
+      "bytes": 187556,
+      "sha256": "05376b85eadcc96d91679908b67be9ff85910c1c1024310485d5ed37a85e0eee"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_planar_2/trace.npz",
+      "bytes": 407408,
+      "sha256": "e99fc6ceb54599b7c00ea2b79e9c9cda79f47723b0852404f156fc8ed1f35523"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_spatial_0/manifold.npz",
+      "bytes": 187221,
+      "sha256": "a4676e88c425cde7d9742a96cd25d2019a089fd23ae55cbda182aa32256a8e7d"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_spatial_0/trace.npz",
+      "bytes": 405594,
+      "sha256": "f3c41cf1570ca882e9c251a2594e74c20e3e18785b02cdc8b4b231cc921d6de7"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_spatial_1/manifold.npz",
+      "bytes": 187520,
+      "sha256": "d5e1a1724523acb453ef4b49bfa4498d5ef1917ac0f50c8f7d502adcbb0a5200"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_spatial_1/trace.npz",
+      "bytes": 404916,
+      "sha256": "1772546d2e56c169a187e2164093e8fd7921c44076af9f4643635d1393105d43"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_spatial_2/manifold.npz",
+      "bytes": 187537,
+      "sha256": "907d874ed5dbbc3aaa15fed71b36787662eafef8422ccd62e0a4043e8eaf1233"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_adaptive_spatial_2/trace.npz",
+      "bytes": 404958,
+      "sha256": "497aa23e91aa1055385ae65175fe46cb0f957b9ab4238931174fecdada6cc95a"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_centered_0/manifold.npz",
+      "bytes": 185827,
+      "sha256": "d7d36b19fa411eabdcfb842196badad3f2f0400a4cc478784f21bb1fcc25eaaf"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_centered_0/trace.npz",
+      "bytes": 402763,
+      "sha256": "147044a12784988d8d3cab9a9646c5fc6521cd508c4f66ef08a38048fa9f99e0"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_centered_1/manifold.npz",
+      "bytes": 186727,
+      "sha256": "e22859e067bf56fafc50cafbfe3ca82f55be5b8aecf876121a707fb358d2a0d2"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_centered_1/trace.npz",
+      "bytes": 402879,
+      "sha256": "829ca3c8acf36ec36f05cee7442f6acd69952d66f2cbac78462f6df22b5ddfa6"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_centered_2/manifold.npz",
+      "bytes": 186709,
+      "sha256": "b5a1d175f94e1ad3b7cb9a45e64408e33e7a142cadfe518e79ab91217124e706"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_centered_2/trace.npz",
+      "bytes": 403122,
+      "sha256": "ffdd7cc9e5a515bd42b369ebcee1cfde3539e5a742205bc55744642b12f76b88"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_planar_0/manifold.npz",
+      "bytes": 185993,
+      "sha256": "27a809ef795aed59b3b918b2bb68d917b06afd0d2ffcf179b04caee1842440ab"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_planar_0/trace.npz",
+      "bytes": 403561,
+      "sha256": "2de75fa3d85cae070d261d370e5f00581d9a40fb7e043fc831b9f04cc5199b13"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_planar_1/manifold.npz",
+      "bytes": 187345,
+      "sha256": "14f6f5351df73f75003d4c7f7fcc95a9429a58c02a822814e7d4be3307a2f57c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_planar_1/trace.npz",
+      "bytes": 403922,
+      "sha256": "3a42c28d196c074ba84876c3a26d0a17ae8f74a30162a36cfb054ee957a410c1"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_planar_2/manifold.npz",
+      "bytes": 187607,
+      "sha256": "de5a9d3559e582c8f8f49fad5c09c3c099e87a35559be364baaa717c7c8c4da1"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_planar_2/trace.npz",
+      "bytes": 403700,
+      "sha256": "22709df5a37a3698dcbda17fd51ae85a1d6eec9918aab712790f81a9fd49c915"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_spatial_0/manifold.npz",
+      "bytes": 187208,
+      "sha256": "d226c59907b5bb9a27e1556beba693c350ad8cfe263c8ea1ad4ef73aca0cca5a"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_spatial_0/trace.npz",
+      "bytes": 402073,
+      "sha256": "7e74010216ba1e106229a9aa3d91ed4f5b1777e0ad49c60ff455fabdfa107152"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_spatial_1/manifold.npz",
+      "bytes": 187462,
+      "sha256": "00c253ce1de612308903a2241263037383268c5c3b59e01e97ecac9d9d680e79"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_spatial_1/trace.npz",
+      "bytes": 401391,
+      "sha256": "cca807a406bbcf3ffdf47f6c00a57be5242c585ac6eaadc7a0877fce043117d0"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_spatial_2/manifold.npz",
+      "bytes": 187428,
+      "sha256": "dd7a8b396bc6fd0166718169f2a8fbc915fbb140002ac21e61648cd5ecdbbc32"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_fixed_spatial_2/trace.npz",
+      "bytes": 401354,
+      "sha256": "6382bc3f5b07bb4fd5219c1fb0f8432f64ed297dc30f9ddde621081e3f962af1"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_centered_0/manifold.npz",
+      "bytes": 42159,
+      "sha256": "76a812fb6eaccddc330f364d9d7862e9fe2830fe9d6efb4c91a69be732eb436a"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_centered_0/trace.npz",
+      "bytes": 90698,
+      "sha256": "b421a7c6d2d979dc46c8f47565aed209a82fd35df02b9ec47fdf1d2a2aebdd71"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_centered_1/manifold.npz",
+      "bytes": 42461,
+      "sha256": "adc979c1c30973519f7e811929a8fb8dd06211204b295bf1a71ddcdd05cd634b"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_centered_1/trace.npz",
+      "bytes": 90537,
+      "sha256": "6b7272ee42587e0b8322918dec3224dab97cbcfe0e6383e2eaded681308b0a00"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_centered_2/manifold.npz",
+      "bytes": 42355,
+      "sha256": "789ae59787a8814e8162af9258c247810c4ded1a6c9da090676142b68de13445"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_centered_2/trace.npz",
+      "bytes": 90366,
+      "sha256": "199e1e742189750625f1fdba826bcebada89d970180984e75f3f1ed29edc638e"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_planar_0/manifold.npz",
+      "bytes": 38341,
+      "sha256": "78017ac7d352010330dc81e4b56b82ddf8b8dd03ed322e421971eb9aff51ba10"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_planar_0/trace.npz",
+      "bytes": 84371,
+      "sha256": "c381ce47655f7f02c97834fe50ddc61048f84f8e2b9604a9223fe040badf5b9d"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_planar_1/manifold.npz",
+      "bytes": 38972,
+      "sha256": "00e3690191b868d7ae0d48b2907a10ef71d069512d976c0a42c8951fadc89754"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_planar_1/trace.npz",
+      "bytes": 84206,
+      "sha256": "d7fb8a152fe85d9f4a56be554f913403a643d5d6a47e18719bd716ab8092b80a"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_planar_2/manifold.npz",
+      "bytes": 38691,
+      "sha256": "f6764324f0f9e0a9029716675f22467741c9c7f6582fa85bc2d3d21a1faeb492"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_planar_2/trace.npz",
+      "bytes": 83638,
+      "sha256": "84d94f0fdcf45dc3eb354fc433359d479dcfc116ef69c2c31ebfab14b0e33588"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_spatial_0/manifold.npz",
+      "bytes": 38930,
+      "sha256": "6305ae80dbdb421074510fdb7b4abb25d766ee95fa5d5c2ba75ddb173ce0f42f"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_spatial_0/trace.npz",
+      "bytes": 84696,
+      "sha256": "3c8edbc6f26e9c3689c3c215c238b6a3e8d8cc2a07285b70f66a8b842e648621"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_spatial_1/manifold.npz",
+      "bytes": 39815,
+      "sha256": "4ec41fe198da86c0f13f1e48743d5579172a909413c9480097d0fe62bca1a0f7"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_spatial_1/trace.npz",
+      "bytes": 85174,
+      "sha256": "db44d78531adec518e605819132f0d4d75a1e5b3e7472dc78c7d697f0d3bbe10"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_spatial_2/manifold.npz",
+      "bytes": 38927,
+      "sha256": "b924d80c8eb8754c5b2ba2c4902107571ee1249862fcfe55ae8871725cf68711"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_none_spatial_2/trace.npz",
+      "bytes": 83614,
+      "sha256": "c584a885ec98c6152ef57f68bbb443fc9437db7b82961ae38dbbf84658a40bc2"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_centered_0/manifold.npz",
+      "bytes": 41929,
+      "sha256": "912629849cc52523e22fe2dabe63ba46099c5ecb6a0df1e0978dbb074c4a29a7"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_centered_0/trace.npz",
+      "bytes": 89493,
+      "sha256": "d2865396194406bd542f270964d91b9b98032c4e78999eb9bff19cefcfaa1144"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_centered_1/manifold.npz",
+      "bytes": 42902,
+      "sha256": "c3a5226e9a1376321dac0aeb0667b37d5d596a075bbfbe05b2071ad830196656"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_centered_1/trace.npz",
+      "bytes": 90481,
+      "sha256": "c5fd578624fee3bb3c8e50e35ff283111ff43a7ff0686ca7e487b2643d47de8b"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_centered_2/manifold.npz",
+      "bytes": 42825,
+      "sha256": "ed356e8cc4d3c5bfc104c0ccac7d7edc3cda96cbbf132c3936ed37397cfe323c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_centered_2/trace.npz",
+      "bytes": 90437,
+      "sha256": "b88b0f4b80ed389e0b1bbbc3db3e5afc0615b38350bf6110539033c871c30863"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_planar_0/manifold.npz",
+      "bytes": 186854,
+      "sha256": "bc4c50be37eaac5c9e0541ef0e2630dbad95399e54bf7b155fb83221a92ed2e8"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_planar_0/trace.npz",
+      "bytes": 391495,
+      "sha256": "cce62ecd2da89f5c6d0ac4e8a210eadb9196636525d9119698d89c424c2f5560"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_planar_1/manifold.npz",
+      "bytes": 187929,
+      "sha256": "bb4b77ba4e7d0cb82753278aaf5468a05c346351c97545a506b84ddc4515e355"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_planar_1/trace.npz",
+      "bytes": 391167,
+      "sha256": "23305a95b62859c36864e9e129b9a316f8024783962826d6e0c6c1a1372b2b0e"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_planar_2/manifold.npz",
+      "bytes": 187365,
+      "sha256": "434dda859f5a9e5f44df4347ada23d37ab1f4b7bd8dae997d1464b4734baba97"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_planar_2/trace.npz",
+      "bytes": 390259,
+      "sha256": "5b000848213b8f352b55af1f949735aaedd61f09d8bb604453053d72b7061303"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_spatial_0/manifold.npz",
+      "bytes": 186052,
+      "sha256": "eb4215bf3be617bdbe0a8936d610551fd3f73ababf50d80a8825e1eb3c28865f"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_spatial_0/trace.npz",
+      "bytes": 379588,
+      "sha256": "11c2b98c7da67c466eacd6f73bd97988a824b42afe7d3853ff6426793fa0e0cd"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_spatial_1/manifold.npz",
+      "bytes": 187106,
+      "sha256": "c23fad527bcb3bc9afbb3c98ff14166b6138581b1ccfd5d580aeb0c18bbb7e40"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_spatial_1/trace.npz",
+      "bytes": 378860,
+      "sha256": "404d7bac87fd539a1bc28e15600bde828d79756a109dbf7275f4f5a9ca707f34"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_spatial_2/manifold.npz",
+      "bytes": 186834,
+      "sha256": "0a73fcc59a33aa016d5f9cf02bfa72710c1ae9b0001148fcb0a8f08c8c620b33"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_floating_wong_spatial_2/trace.npz",
+      "bytes": 379075,
+      "sha256": "985caaa6a7070671b73e511011328fc1a32b11586e4487f9f12c4a24c0118bac"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_centered_0/manifold.npz",
+      "bytes": 186593,
+      "sha256": "ea8bdff5a6f72484d1cd4eb9ef1cab2e535ab175f3f7780474c94eda5059cd23"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_centered_0/trace.npz",
+      "bytes": 407689,
+      "sha256": "898d2239c6c10276a788c5bb65f845a57901511fd66a8360c6d0a92ae3ac864c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_centered_1/manifold.npz",
+      "bytes": 186483,
+      "sha256": "a06073bc028464e14b2741f9e0409e8294429d90c63c84e8425446669a1beb96"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_centered_1/trace.npz",
+      "bytes": 406085,
+      "sha256": "f4f4174d8bba7a432d187380d1ff64ad033dc9eeb6d0849f06a927513f59c2dc"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_centered_2/manifold.npz",
+      "bytes": 186462,
+      "sha256": "c0a3f142b0b31e18f50c27064d29daec9014fdb0492dab0e881d14f77e30e15f"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_centered_2/trace.npz",
+      "bytes": 406584,
+      "sha256": "1ed8806c07d54852fa1688e645fd109f890d53d7c6a9a5b31c10fe4db60d88df"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_planar_0/manifold.npz",
+      "bytes": 186411,
+      "sha256": "decbd83e763a1932ba55d3f3c3705ceb48860fb387eeea4b54a9d6ea219cd510"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_planar_0/trace.npz",
+      "bytes": 409301,
+      "sha256": "854f347e6bed0f5286c62f4cbaa915a95dbe254d5d4fe1536f0a03621d3596d5"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_planar_1/manifold.npz",
+      "bytes": 186497,
+      "sha256": "f8024e45a729932c02666ccc12a42c84a51b49dac835450550187b328a10b7e1"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_planar_1/trace.npz",
+      "bytes": 408471,
+      "sha256": "0c8a3dd42bb8efb4254ad3470b4e8d74680154f359eb1dcfb24419ac0284b723"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_planar_2/manifold.npz",
+      "bytes": 186931,
+      "sha256": "ef401a37c4490ab2d5c825a217c58862b6a3f6514b4d552fec22ecf7c8063698"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_planar_2/trace.npz",
+      "bytes": 408473,
+      "sha256": "1e6eca7a04f7526e62c9cc75c86e1033f95663fcceab00de6cc42b392563e02b"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_spatial_0/manifold.npz",
+      "bytes": 187330,
+      "sha256": "122e3ef870be4bd4a929794a2c8e227be86db70c4ef76767fee629905ee91a98"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_spatial_0/trace.npz",
+      "bytes": 406886,
+      "sha256": "19e9f14b46725e02e624122f025e7b776b7371b62aa39a09a632897467a2e006"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_spatial_1/manifold.npz",
+      "bytes": 185496,
+      "sha256": "1b88df4886b5bbb8640dfd30116c77b90958230bd396e849a3106f5763b086ca"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_spatial_1/trace.npz",
+      "bytes": 403680,
+      "sha256": "1062606bd221285207054d16732e7f7bed60eff3f2ac3193a3dc04c1d309897c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_spatial_2/manifold.npz",
+      "bytes": 186878,
+      "sha256": "6cccacb9b81e534dc26fd0a6a073b2c5a5fe8b0d78ebd27bcc048ae306055eef"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_adaptive_spatial_2/trace.npz",
+      "bytes": 405403,
+      "sha256": "8e5dcebe317b3ecd2466b0fa13e8104ae75665a3cf5030e41de28730babc6881"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_centered_0/manifold.npz",
+      "bytes": 186556,
+      "sha256": "57743bbb2b5000ccf3277848dde21dc4024704d41fb7b82d2c2c911c50ab0917"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_centered_0/trace.npz",
+      "bytes": 406177,
+      "sha256": "b337e131f5a8d286067bc0968920d8773f5c2198df3159049feeb6b5a36d17a6"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_centered_1/manifold.npz",
+      "bytes": 186509,
+      "sha256": "0715604ea39776a25a68ab67fcfd01018e00ac0f245e85bfa2f3895fc77e96c6"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_centered_1/trace.npz",
+      "bytes": 404666,
+      "sha256": "01d80a6cd3d2aae66ed4f90d1616526324c8ef50e3daaed6853b19537fdea535"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_centered_2/manifold.npz",
+      "bytes": 186392,
+      "sha256": "05b6b7c1ec97083e8945076126bfa9af59ed09062d6f271adfbeecbd98abfddb"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_centered_2/trace.npz",
+      "bytes": 405040,
+      "sha256": "d636a08bc53a3e580dcc08d3d275488a000920db8dd9f502e9915b3abcac46b7"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_planar_0/manifold.npz",
+      "bytes": 187260,
+      "sha256": "40811407885ad9c96cc4522f5bf7a8c888de19a2e3360230b646cb04604ddcdd"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_planar_0/trace.npz",
+      "bytes": 405433,
+      "sha256": "ebc783cde292940864e6045cd1984c9dc3446c2344bd30db50b3d5400dc63c90"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_planar_1/manifold.npz",
+      "bytes": 186543,
+      "sha256": "4f4085ebe9d7cc42ad6506b29526db9820283842a9be9882e414eb653ba7ae73"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_planar_1/trace.npz",
+      "bytes": 404668,
+      "sha256": "78c09164703d4225a51b3abc050b0441c2af6893c11b3ca7a70599c973faa644"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_planar_2/manifold.npz",
+      "bytes": 186926,
+      "sha256": "28c87e101a6a6edb71c0f2432d8f65142e6c1da8229ce571055fccf590aec805"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_planar_2/trace.npz",
+      "bytes": 404548,
+      "sha256": "2f69bb17b4eb31142754fa83e72f8fed644cbd907c7ad9668e9f98819a8ae61e"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_spatial_0/manifold.npz",
+      "bytes": 187232,
+      "sha256": "0418987133cbe97aa6df0173747f5e9ffb5363e0b3591eb50065a40f060a615e"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_spatial_0/trace.npz",
+      "bytes": 403069,
+      "sha256": "1c3d97d958e0aed2db35640d1941a13c60dd88b479cac2a231110df02ecf0cc4"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_spatial_1/manifold.npz",
+      "bytes": 185482,
+      "sha256": "f6faff5650c27130dde7cd74b50c67d6cfac2c487e405c6827bf031ea0cc52d1"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_spatial_1/trace.npz",
+      "bytes": 399889,
+      "sha256": "09035b59a6f685a00c3352f269171e7f827b5bda11dd925e2b781e7d47a58595"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_spatial_2/manifold.npz",
+      "bytes": 186840,
+      "sha256": "4bbc0b230dfc6aac2637ed261f2de3cce501e4ea07989b85ba8ce38cc5dd4491"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_fixed_spatial_2/trace.npz",
+      "bytes": 401747,
+      "sha256": "e770da83106d785ce46d772c61cb23e071ced63aca510dfd08f03841ff1eee0f"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_centered_0/manifold.npz",
+      "bytes": 184052,
+      "sha256": "c8395cc83ea4f883e73b89f3e8a36ec989df80697ded12bc85ca703ee0a62963"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_centered_0/trace.npz",
+      "bytes": 402913,
+      "sha256": "0b7224d5a2898fb085dcea1700347efc671559e5a7963100ecb044c79d8c3ffd"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_centered_1/manifold.npz",
+      "bytes": 180727,
+      "sha256": "0a649ed2da643d31b552200bda095cce18b357b6249452176b3799eb6d5d1e66"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_centered_1/trace.npz",
+      "bytes": 399034,
+      "sha256": "4ea2e2cec6a18d46a29f3974e8ad9c61d381df3fbd2f980bb6d331dcbb01190f"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_centered_2/manifold.npz",
+      "bytes": 180762,
+      "sha256": "30ff99d80e05f142986d2d17366e1912fd326fc567d902f80777bf4e86184e97"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_centered_2/trace.npz",
+      "bytes": 398852,
+      "sha256": "7bfbd3bfdad708290269dbd3e31e0e21a4effe2bc35239f8e543280670183feb"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_planar_0/manifold.npz",
+      "bytes": 42901,
+      "sha256": "b3fca7b0306a0dca6d5730b334132ed6fde6c8d9b28b20b9fb59ff6e8d58c9fc"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_planar_0/trace.npz",
+      "bytes": 96652,
+      "sha256": "372961cd08b12147fba69dd8bd074dab5e30133499b8f363686c06e2ef4b7fda"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_planar_1/manifold.npz",
+      "bytes": 39330,
+      "sha256": "fcdc8f7704413426d2919ecaef1f54455718e7debde49ad5602f6ae9c159f027"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_planar_1/trace.npz",
+      "bytes": 93267,
+      "sha256": "4d8e94eedd1e2f48afb851ee5feb0aec866a8173a6e8b21f1d215e75442d58ac"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_planar_2/manifold.npz",
+      "bytes": 41627,
+      "sha256": "970a0bc427a00255b9479ca898ba7a16c9ecb6e7f07664fae5df183abf56e14a"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_planar_2/trace.npz",
+      "bytes": 93522,
+      "sha256": "e4a4983b54f4c0eda9c67e6cdcc41ed37d014e97a60aa13e8f75f0470ff629d9"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_spatial_0/manifold.npz",
+      "bytes": 42380,
+      "sha256": "de396359b278516065100ec074e883c6a51f008e357c349ab1d85ef65a18907f"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_spatial_0/trace.npz",
+      "bytes": 91912,
+      "sha256": "3057f2df1db9c378fe9ff82332c0a54ecbd0c46c94a1d0707f107047da3a0795"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_spatial_1/manifold.npz",
+      "bytes": 38694,
+      "sha256": "2d5e1f68ff90b8073c185f98874934c3ff08fea3a1e372b2cc45ba49ac47f5f2"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_spatial_1/trace.npz",
+      "bytes": 88585,
+      "sha256": "4fbae6b1a11b99e3e3eeb0c5dcbc7810e31164971dea4670e82974c959f8a6f0"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_spatial_2/manifold.npz",
+      "bytes": 41071,
+      "sha256": "c324948e3fbeb7b2ba46d19020cfec9e27d56d3d4b7d339ea65614a5df0da32f"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_none_spatial_2/trace.npz",
+      "bytes": 90164,
+      "sha256": "e6fe7c266749620d2f13a75e4ffdeff2e17a2e5da9491523f9845234cd29a172"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_centered_0/manifold.npz",
+      "bytes": 181871,
+      "sha256": "0ee87bed42c9ab33821b6795261abf7ea12f0ee604f7cb0b08c878aee092e01d"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_centered_0/trace.npz",
+      "bytes": 382641,
+      "sha256": "566b3e7eb5953da70667a4fa51df4d0c8e02feecc31d67683038d2772243af2d"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_centered_1/manifold.npz",
+      "bytes": 181565,
+      "sha256": "208043a33857ba074efbd2b5157ee247a8534efeeb101c20640cae6fe79498d5"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_centered_1/trace.npz",
+      "bytes": 382116,
+      "sha256": "7fc2e2842ca5bab4a49633f336914937ce4fa181553a8cfd580758d7926151ce"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_centered_2/manifold.npz",
+      "bytes": 181168,
+      "sha256": "eff4f2ffd30f38fd01a3fce27b3e580f80e541ae62350e71665bc2a3801e5e2b"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_centered_2/trace.npz",
+      "bytes": 381623,
+      "sha256": "61946610821861fe736769eb83bbe009e9c879191b1996a5af3cc3c1ab602214"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_planar_0/manifold.npz",
+      "bytes": 184831,
+      "sha256": "ac9366c2e16c60fd754b5f7e97bff9251befb50cc3b6f2da3d5650d6ccbfc7c6"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_planar_0/trace.npz",
+      "bytes": 388821,
+      "sha256": "dc0e5056040b5ae13729cb65ac66b5125248a780142d7e2ae666bdacff0233f2"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_planar_1/manifold.npz",
+      "bytes": 185624,
+      "sha256": "165c37e578f59d24fcf611093f88d203c4e40dc4d45f813d6b7aa2c809f013b4"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_planar_1/trace.npz",
+      "bytes": 388859,
+      "sha256": "887d53ca802b71258cf87995a3a03f48f0560d630bd782cacccd95fc576e3d4d"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_planar_2/manifold.npz",
+      "bytes": 184800,
+      "sha256": "0e8a29cf4bbfc9da4d6da2e3c9a0205f3edf7cfac7347a8c0f6703d01b597fa2"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_planar_2/trace.npz",
+      "bytes": 387447,
+      "sha256": "a417f39d9bb9eb98e25e6ec8914b6ea500fa91f8651ef0264107e11544edfa04"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_spatial_0/manifold.npz",
+      "bytes": 185367,
+      "sha256": "9d266d9455946778eb7e4e860f2649ad02e4a826ca5336d8b26622c8918471a5"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_spatial_0/trace.npz",
+      "bytes": 378066,
+      "sha256": "bbc486cd59646210b6dbcf9c9955d90ed4e4667fee1f72a2d3a7d639cb3723dd"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_spatial_1/manifold.npz",
+      "bytes": 185622,
+      "sha256": "d12f39cebcab704f8deaccae519c8c336a8c1b02316dd822a82e0b2f5202dffc"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_spatial_1/trace.npz",
+      "bytes": 377340,
+      "sha256": "04fffac4dab67e58ecf182f43886ad233ce0e661a091eda3db93ee29d2da32af"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_spatial_2/manifold.npz",
+      "bytes": 184198,
+      "sha256": "a63c1566f0b490f93b6159b5adec0fc8bd32146ff2f15f736cfac959b82ae653"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/core_welded_wong_spatial_2/trace.npz",
+      "bytes": 375542,
+      "sha256": "fbcedd12f075d1fb5dac68da6e0d2ff8115cfcbde4392ecf6623a9ec92bccaae"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_com_unmodelled_0/manifold.npz",
+      "bytes": 186575,
+      "sha256": "59ed9dfc4159e1c20122bb5e3d5547e291460caca2ceee1b789137595838d7e9"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_com_unmodelled_0/trace.npz",
+      "bytes": 404565,
+      "sha256": "b997b8c80b4c412c496da92ed919dc97d02e66859b95efb8885e54b47d937ee9"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_com_unmodelled_1/manifold.npz",
+      "bytes": 187860,
+      "sha256": "a3f01332bfeada2d87ea52123d1ccbacaddc84d5e0d835a4e062b6061dd555ae"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_com_unmodelled_1/trace.npz",
+      "bytes": 405884,
+      "sha256": "abe495067cb048d4a9c1f52e714c483f93f6b0e4aac7f8b55d11ec53545233c9"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_com_unmodelled_2/manifold.npz",
+      "bytes": 187418,
+      "sha256": "da60f55837cc06975e6c8679087b79cdc72b9195f02b433b58171d0b01138519"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_com_unmodelled_2/trace.npz",
+      "bytes": 404980,
+      "sha256": "4811961291d806bbe29e55c5370ef39440b833a417b12cf8bbe513bdb8ce1b75"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_heavy_known_0/manifold.npz",
+      "bytes": 188161,
+      "sha256": "0c23e7a930b94967742fd5db4cf359ea98454bfa897217f998a859b8c4c1034b"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_heavy_known_0/trace.npz",
+      "bytes": 407275,
+      "sha256": "25318b421e96c47ba59b623844565c2c97da8fd9af1dcda2fd4cf64b7dedbd3d"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_heavy_known_1/manifold.npz",
+      "bytes": 188564,
+      "sha256": "a3edfb61bf0f80742e892b63e6fd1986dbd9db1cdb6a8ea40d2ac82fc092deb4"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_heavy_known_1/trace.npz",
+      "bytes": 406696,
+      "sha256": "ccbf185eacff9b048a6cfbd2a0471634abb26e36ce33fc977e78f58ab7db3e82"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_heavy_known_2/manifold.npz",
+      "bytes": 188500,
+      "sha256": "9c5c2afc40fa4ca71da6b12d9152bda6ec6d02ae703ee1435b51dba68e320e80"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_heavy_known_2/trace.npz",
+      "bytes": 406852,
+      "sha256": "5241c64e161cf002d42fbe14876bc0085485676be98a02480e92ff7048080d53"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_light_known_0/manifold.npz",
+      "bytes": 186431,
+      "sha256": "5c2e464b46b11a5813ed3022f45871a30c795ccdffc5b65387995a50757c4266"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_light_known_0/trace.npz",
+      "bytes": 404383,
+      "sha256": "9ef88da54962ea0d75dcc8ec5dba38c7c9700f8f42af53cab5e559a142d4890b"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_light_known_1/manifold.npz",
+      "bytes": 186565,
+      "sha256": "892522d3e387101dab0c5fe38ebb156566ad5c94cd662bfdcc933af72564ec04"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_light_known_1/trace.npz",
+      "bytes": 403955,
+      "sha256": "5a296934131c1dc7052acf2934c10f26b0e79e485c5bec1c53b499137b24680f"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_light_known_2/manifold.npz",
+      "bytes": 186763,
+      "sha256": "ac5155c84042ed8f3203da7a76e8b21c70c9de0861fcd471f9315ad8ca40eae0"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_light_known_2/trace.npz",
+      "bytes": 404088,
+      "sha256": "9109142deda16f62902a3af3f55895bd23fd6b49a91571340a20278d3fbf46a8"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mass_under10_0/manifold.npz",
+      "bytes": 186692,
+      "sha256": "c036a74b37f2f9c3569a19262e66d62c5bcf02068ecab05227092b134f34333b"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mass_under10_0/trace.npz",
+      "bytes": 404980,
+      "sha256": "3841c3671d34ce2e655e059d61d0109529bb3904b12c48a73c1f281c2189ac9a"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mass_under10_1/manifold.npz",
+      "bytes": 187006,
+      "sha256": "044403f86366ba7048163bbb6067f58a4996b08b05c3a354e15466838f11e944"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mass_under10_1/trace.npz",
+      "bytes": 404657,
+      "sha256": "0c947641300f3a0baafbb38158c856ddf7f22b67995cd9ca230dd9e6a1e0a04c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mass_under10_2/manifold.npz",
+      "bytes": 187022,
+      "sha256": "2282bf85978726609bcb6df33f9e473dd378bf2212f9a3fa896920c0efc46a54"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mass_under10_2/trace.npz",
+      "bytes": 404567,
+      "sha256": "4fee88b20d8310344c4cefab89913d4a329a647bdb17db3540639b638a158d25"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mu_over10_0/manifold.npz",
+      "bytes": 186718,
+      "sha256": "53bed34332b206671c3860c71dfe4aeac730772967827a461d91addc5e2098b1"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mu_over10_0/trace.npz",
+      "bytes": 405681,
+      "sha256": "ba75e39bcdf8136c96df6782f0c5d8c04e7894466b62b9cfe4a81d192402dd0e"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mu_over10_1/manifold.npz",
+      "bytes": 186850,
+      "sha256": "34f4d650fc7f67c36dd0b9aa38dbb9a7a29944f67b439667f91831e63f459803"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mu_over10_1/trace.npz",
+      "bytes": 404713,
+      "sha256": "fe0cec7f11312ec5f8fe628452ae8d8f73658973ee79a380da0502c7623e979c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mu_over10_2/manifold.npz",
+      "bytes": 186901,
+      "sha256": "b6edb6c54aacedc82827ea7a5f9ad55698f44f4a382fec96f3aac4c6bac8d241"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_floating_adaptive_mu_over10_2/trace.npz",
+      "bytes": 404852,
+      "sha256": "e8cdc63e38d526afce5f3ae50b2c9b6dcb5677d687c02220de209003c908b3c5"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_com_unmodelled_0/manifold.npz",
+      "bytes": 187183,
+      "sha256": "bec0bf255d1184a74e43fae9425e01cc37bd7480441a1d08595333f4dc9cf280"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_com_unmodelled_0/trace.npz",
+      "bytes": 407178,
+      "sha256": "f476d76f373d195b9a9e916c6b3c19df467a010fc88a8c7aca0fee8c5cb6899b"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_com_unmodelled_1/manifold.npz",
+      "bytes": 186264,
+      "sha256": "9362898bfb3e676e786f40abef9d845377ba93d10e42ec042f18f313511806d9"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_com_unmodelled_1/trace.npz",
+      "bytes": 404931,
+      "sha256": "cb7787159e6e271a23ba91d46cdbbbb165d2e1e82e242979f069e4550e6fd2c1"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_com_unmodelled_2/manifold.npz",
+      "bytes": 187097,
+      "sha256": "5ec80f43ac416539c48639a3a6b33ad50ef11527bb24757b31487698592f47f7"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_com_unmodelled_2/trace.npz",
+      "bytes": 405869,
+      "sha256": "d7405eda8becfcefdd0bcc155a04f279903b88f68b40726c91d2d9b1727b6437"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_heavy_known_0/manifold.npz",
+      "bytes": 188161,
+      "sha256": "bf94ca104a42cf9312d743a416c386a877da139b55758c06882309ac359b7f40"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_heavy_known_0/trace.npz",
+      "bytes": 408038,
+      "sha256": "f7f944da1287ea1b22e3a36b976ecc64ed43f8a77f8376734f3165043f7430f2"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_heavy_known_1/manifold.npz",
+      "bytes": 186541,
+      "sha256": "bb4ea7189d91a4f5f59369a18e4d6559e20f006258984fb500cb4e3b35fe05b4"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_heavy_known_1/trace.npz",
+      "bytes": 405390,
+      "sha256": "e54c3c58b3c92385a3186e046f59d13b801daf82654273d1c1caa46737c69b7e"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_heavy_known_2/manifold.npz",
+      "bytes": 188009,
+      "sha256": "677c5c8f58cc1f059564d67112308c099f59b617ba84421a3f3e57addc2d4a2f"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_heavy_known_2/trace.npz",
+      "bytes": 407015,
+      "sha256": "f6f19e0a7d64755a94f29e9fac2ce657e27da890e4ff91ac17c0ec599e2d0194"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_light_known_0/manifold.npz",
+      "bytes": 186683,
+      "sha256": "d4987b2154046109170860efdda82e51bb880bc1f03647dde3741993cbfb96db"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_light_known_0/trace.npz",
+      "bytes": 405719,
+      "sha256": "7526511ecfcd079eaec464e19f97b7b7ca85748c22579b281a730296423dc67c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_light_known_1/manifold.npz",
+      "bytes": 184774,
+      "sha256": "e5f62808bba5305a8c56a0247d783f6c3478b538698e1190c6b23a7c313ae32d"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_light_known_1/trace.npz",
+      "bytes": 402561,
+      "sha256": "258094421743c1bd3354b7a3493dcb9ef60396a1d445aef39aeb1d67c91ade4a"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_light_known_2/manifold.npz",
+      "bytes": 186041,
+      "sha256": "6a8a32babff77ff8842cf7d0ebf2eea3f6e8e5559b7af2765bef9df211541351"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_light_known_2/trace.npz",
+      "bytes": 404215,
+      "sha256": "cdc6fa437163b077f72ce9e980935d631bdee70e5d35546a447094ef1d3a3779"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mass_under10_0/manifold.npz",
+      "bytes": 186924,
+      "sha256": "dbe85055695a0e0765c8db867d1392ee69050f8943a3e5f1a15dc9388f44b22c"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mass_under10_0/trace.npz",
+      "bytes": 406406,
+      "sha256": "41fb0ebce4079a563af3ddcf316441ca5cde36190d5fe63c0c9b623f54ba2f48"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mass_under10_1/manifold.npz",
+      "bytes": 184877,
+      "sha256": "85319527bfc75e5bcb73600f4963595aa21f4c3c8a0f164801b7912e084a2c81"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mass_under10_1/trace.npz",
+      "bytes": 403234,
+      "sha256": "fe311a0ec1d3b39946dccb7588cefbdb41410336dc071aac7295a2989ee926f3"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mass_under10_2/manifold.npz",
+      "bytes": 185936,
+      "sha256": "d913845791b62d493190d1a0992e645a8e0fa317a9378e0b9d0b71668fc67c3b"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mass_under10_2/trace.npz",
+      "bytes": 404542,
+      "sha256": "4bd144c623f2e67a47493b137e66dba349d0d69fd30c37985b071ff9cc079cd1"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mu_over10_0/manifold.npz",
+      "bytes": 187109,
+      "sha256": "1b65030a615ea914e9f46c99a3d35ca1ec45a7ee2a69f1eae5d679c558c1b31a"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mu_over10_0/trace.npz",
+      "bytes": 406755,
+      "sha256": "d32f618d6f6e3084ba6139c2ef68ee617e329f7990697f54c6a1e4c553e8bea8"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mu_over10_1/manifold.npz",
+      "bytes": 185393,
+      "sha256": "9e255037e2d341357203aa4139ec1d7434ab9068297f1e53ffb6d7c61f3d8574"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mu_over10_1/trace.npz",
+      "bytes": 404171,
+      "sha256": "ac9fb0eda705ed402e4cd4102a5f916861cd1f81de6f24692f364fbd7a90c6a2"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mu_over10_2/manifold.npz",
+      "bytes": 186454,
+      "sha256": "1517d7960285a5dc637342fc70cc153e6e9ef51376ce3e187b2c892a2f470fad"
+    },
+    {
+      "path": "docs/plate_friction_study_20261024/runs/stress_welded_adaptive_mu_over10_2/trace.npz",
+      "bytes": 405221,
+      "sha256": "23eca98ab71e48d3922b5755913815763cbc10b0e679b25adcc7dfa2bb2aa2ad"
+    },
+    {
+      "path": "docs/thesis_haption_update_20261024/project/figures/data/kinova_comparison_20261024/L_real.npz",
+      "bytes": 229487,
+      "sha256": "75ca9b45cda49dc988f54b8591ac8d25f6ce5b378acac686c42fe8d97d46752e"
+    },
+    {
+      "path": "docs/thesis_haption_update_20261024/project/figures/data/kinova_comparison_20261024/L_sim.npz",
+      "bytes": 274714,
+      "sha256": "e5a2f16ff5311ec59c91fccdb6ea79709f100497654fc4c9b96dba8cb8cfd8d6"
+    },
+    {
+      "path": "docs/thesis_haption_update_20261024/project/figures/data/kinova_comparison_20261024/Z_real.npz",
+      "bytes": 216887,
+      "sha256": "212a2e30d58fcb1d9516e66e6566386a0e02a0a796d4a8fad94ee63f1fa5817b"
+    },
+    {
+      "path": "docs/thesis_haption_update_20261024/project/figures/data/kinova_comparison_20261024/Z_sim.npz",
+      "bytes": 252137,
+      "sha256": "25c3954add57bf40fd6aff0847d0253d6a9324170d30c7116efcb749981ffe7c"
+    },
+    {
+      "path": "docs/thesis_haption_update_20261024/project/figures/data/kinova_comparison_20261024/original_source_stop.npz",
+      "bytes": 18013,
+      "sha256": "3d20cbe71aeb41074d07702bdc7881a760b56ebdde9a85f8ff24d11eff239b06"
+    },
+    {
+      "path": "docs/thesis_haption_update_20261024/project/figures/data/s7025_off/trace.npz",
+      "bytes": 6321860,
+      "sha256": "f05323fbb1a9bb3bb954e2030bd90bf605c31aadbcc79194b26acde4563281da"
+    },
+    {
+      "path": "docs/thesis_haption_update_20261024/project/figures/data/s7025_on/trace.npz",
+      "bytes": 6563784,
+      "sha256": "60f7144152586d36072459d55e41a0fc12105d348b37530babd270358373e7ac"
+    },
+    {
+      "path": "docs/thesis_haption_update_20261024/project/figures/data/s7025_on_prev/trace.npz",
+      "bytes": 6563784,
+      "sha256": "60f7144152586d36072459d55e41a0fc12105d348b37530babd270358373e7ac"
+    },
+    {
+      "path": "docs/thesis_plate_update_20261024/project/figures/data/kinova_comparison_20261024/L_real.npz",
+      "bytes": 229487,
+      "sha256": "75ca9b45cda49dc988f54b8591ac8d25f6ce5b378acac686c42fe8d97d46752e"
+    },
+    {
+      "path": "docs/thesis_plate_update_20261024/project/figures/data/kinova_comparison_20261024/L_sim.npz",
+      "bytes": 274714,
+      "sha256": "e5a2f16ff5311ec59c91fccdb6ea79709f100497654fc4c9b96dba8cb8cfd8d6"
+    },
+    {
+      "path": "docs/thesis_plate_update_20261024/project/figures/data/kinova_comparison_20261024/Z_real.npz",
+      "bytes": 216887,
+      "sha256": "212a2e30d58fcb1d9516e66e6566386a0e02a0a796d4a8fad94ee63f1fa5817b"
+    },
+    {
+      "path": "docs/thesis_plate_update_20261024/project/figures/data/kinova_comparison_20261024/Z_sim.npz",
+      "bytes": 252137,
+      "sha256": "25c3954add57bf40fd6aff0847d0253d6a9324170d30c7116efcb749981ffe7c"
+    },
+    {
+      "path": "docs/thesis_plate_update_20261024/project/figures/data/kinova_comparison_20261024/original_source_stop.npz",
+      "bytes": 18013,
+      "sha256": "3d20cbe71aeb41074d07702bdc7881a760b56ebdde9a85f8ff24d11eff239b06"
+    },
+    {
+      "path": "docs/thesis_plate_update_20261024/project/figures/data/s7025_off/trace.npz",
+      "bytes": 6321860,
+      "sha256": "f05323fbb1a9bb3bb954e2030bd90bf605c31aadbcc79194b26acde4563281da"
+    },
+    {
+      "path": "docs/thesis_plate_update_20261024/project/figures/data/s7025_on/trace.npz",
+      "bytes": 6563784,
+      "sha256": "60f7144152586d36072459d55e41a0fc12105d348b37530babd270358373e7ac"
+    },
+    {
+      "path": "docs/thesis_plate_update_20261024/project/figures/data/s7025_on_prev/trace.npz",
+      "bytes": 6563784,
+      "sha256": "60f7144152586d36072459d55e41a0fc12105d348b37530babd270358373e7ac"
+    },
+    {
+      "path": "docs/thesis_update_20261024/project/figures/data/kinova_comparison_20261024/L_real.npz",
+      "bytes": 229487,
+      "sha256": "75ca9b45cda49dc988f54b8591ac8d25f6ce5b378acac686c42fe8d97d46752e"
+    },
+    {
+      "path": "docs/thesis_update_20261024/project/figures/data/kinova_comparison_20261024/L_sim.npz",
+      "bytes": 274714,
+      "sha256": "e5a2f16ff5311ec59c91fccdb6ea79709f100497654fc4c9b96dba8cb8cfd8d6"
+    },
+    {
+      "path": "docs/thesis_update_20261024/project/figures/data/kinova_comparison_20261024/Z_real.npz",
+      "bytes": 216887,
+      "sha256": "212a2e30d58fcb1d9516e66e6566386a0e02a0a796d4a8fad94ee63f1fa5817b"
+    },
+    {
+      "path": "docs/thesis_update_20261024/project/figures/data/kinova_comparison_20261024/Z_sim.npz",
+      "bytes": 252137,
+      "sha256": "25c3954add57bf40fd6aff0847d0253d6a9324170d30c7116efcb749981ffe7c"
+    },
+    {
+      "path": "docs/thesis_update_20261024/project/figures/data/kinova_comparison_20261024/original_source_stop.npz",
+      "bytes": 18013,
+      "sha256": "3d20cbe71aeb41074d07702bdc7881a760b56ebdde9a85f8ff24d11eff239b06"
+    },
+    {
+      "path": "docs/thesis_update_20261024/project/figures/data/s7025_off/trace.npz",
+      "bytes": 6321860,
+      "sha256": "f05323fbb1a9bb3bb954e2030bd90bf605c31aadbcc79194b26acde4563281da"
+    },
+    {
+      "path": "docs/thesis_update_20261024/project/figures/data/s7025_on/trace.npz",
+      "bytes": 6563784,
+      "sha256": "60f7144152586d36072459d55e41a0fc12105d348b37530babd270358373e7ac"
+    },
+    {
+      "path": "docs/thesis_update_20261024/project/figures/data/s7025_on_prev/trace.npz",
+      "bytes": 6563784,
+      "sha256": "60f7144152586d36072459d55e41a0fc12105d348b37530babd270358373e7ac"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+\subsection{The implemented Cartesian impedance}
+\label{sec:kinova-impedance}
+
+The insertion node commands absolute end-effector poses. The laboratory controller turns each pose into seven joint torques; it does not impose that pose kinematically. Let $\vect q_K,\dot{\vect q}_K$ be the position and velocity returned by the joint-state Kalman filter. An additional first-order low-pass filter gives
+\begin{equation}
+\dot{\vect q}_{f,k}=\alpha_k\dot{\vect q}_{K,k}+(1-\alpha_k)\dot{\vect q}_{f,k-1},
+\qquad \alpha_k=\frac{\Delta t_k}{(2\pi f_c)^{-1}+\Delta t_k},
+\quad f_c=100\ \mathrm{Hz}.
+\end{equation}
+The Kalman filter uses a constant-acceleration model and wrap-aware position innovations. Both filters precede the velocity feedback in the impedance law.
+
+In the arm base axes, define the pose error and Cartesian velocity as
+\begin{equation}
+\vect e=\begin{bmatrix}\vect p_d-\vect p\\\operatorname{log}(R_dR^\top)^\vee\end{bmatrix},
+\qquad \vect v=J(\vect q_K)\dot{\vect q}_f,
+\end{equation}
+where $J$ is the end-effector Jacobian with world-aligned axes at the end-effector pole. The implemented torque before limiting is
+\begin{equation}
+\vect\tau_0=J^\top\bigl(K\vect e-D\vect v\bigr)
+-B\dot{\vect q}_f+\vect g(\vect q_K)+\vect\tau_{\mathrm{fric}}.
+\label{eq:kinova-impedance}
+\end{equation}
+The diagonal matrices $K,D$ set the Cartesian stiffness and damping. The term $\vect g$ compensates gravity from the arm-and-tool URDF. This implementation has no Coriolis feedforward term. The optional null-space stiffness is zero in the configuration considered here.
+
+The source configuration used for the later comparison sets translational stiffness to $1500$ N/m and rotational stiffness to $20$ Nm/rad, with damping $60$ N\,s/m and $7$ Nm\,s/rad. Joint damping is $B=0.001$ Nm\,s/rad. These are distinct from the settings recorded for the initial series in Table~\ref{tab:kinova-setup}. The Stribeck friction option is enabled, but its scale defaults to zero and is not overridden by the inspected launch; its nominal feedforward contribution is therefore zero. This does not imply that physical friction is absent.
+
+The controller clips each joint torque to $35$ Nm on joints 1--4 and $12$ Nm on joints 5--7. The surrounding node then limits its change to $0.5$ Nm per control tick. A joint speed above $2$ rad/s for twenty ticks triggers a gravity-only mode. The nominal control rate is $1$ kHz, while joint states and the joint-torque wrench estimate are published at $250$ Hz. The node uses measured time increments, capped at three nominal control periods; these nominal rates do not remove scheduling delay.
+
+The torque-based wrench estimate is a separate signal from the ATI measurement. With the source's reaction-torque convention, $\vect\tau_{\mathrm{sensor}}=-\vect\tau_{\mathrm{motor}}$, its quasi-static expression is
+\begin{equation}
+\hat{\vect w}_{\mathrm{EE}}=(J_{\mathrm{local}}^\top)^+
+\bigl(\vect\tau_{\mathrm{sensor}}+\vect g+\vect\tau_{\mathrm{fric}}\bigr).
+\label{eq:kinova-wrench-estimate}
+\end{equation}
+It is expressed in the end-effector local frame. Unmodelled inertia, friction and gravity residuals can enter that estimate. The ATI instead measures the mechanical wrench at its own sensor pole; changing pole and axes is required before comparing components.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[node distance=10mm and 8mm,box/.style={draw,rounded corners,align=center,text width=37mm,minimum height=15mm},>=Latex]
+\node[box] (outer) {Object route\\and squeeze loop};
+\node[box,right=of outer] (inner) {Cartesian\\impedance};
+\node[box,right=of inner] (plant) {Arm, spring\\and piece};
+\node[box,above=of outer] (plan) {SOCP references\\online or stored};
+\node[box,below=of inner] (state) {Joint-state filters\\$\vect q_K,\dot{\vect q}_f$};
+\node[box,below=of outer] (ati) {ATI wrist\\force/torque};
+\draw[->] (plan)--(outer);
+\draw[->] (outer)--node[above,font=\footnotesize]{pose}(inner);
+\draw[->] (inner)--node[above,font=\footnotesize]{$\vect\tau$}(plant);
+\draw[->] (plant.south) |- (state.east);\draw[->] (state)--(inner);
+\draw[->] (plant.east) -- ++(6mm,0) |- ([yshift=-5mm]ati.south) -- (ati.south);
+\draw[->] (ati)--(outer);
+\end{tikzpicture}
+\caption{The two control levels. The outer loop adjusts a pose to regulate squeeze; the inner loop realizes that pose compliantly through joint torque. Joint-state feedback sets the impedance damping, while the ATI closes the outer force loop. The passive pads have no independent force actuators.}
+\label{fig:kinova-control-blocks}
+\end{figure}
+
+Equation~\eqref{eq:kinova-impedance} is a conventional local impedance structure. Its damping term opposes measured Cartesian velocity; increasing $D$ changes this inner mechanical response, not an arbitrary time delay in an outer-loop model. Whether it suppresses a particular force oscillation depends on the arm dynamics, filters, tool compliance and contact state. The damping comparison below therefore keeps the force controller fixed and states which inner realization was simulated.
+

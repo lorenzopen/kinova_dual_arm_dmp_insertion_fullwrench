@@ -1,0 +1,111 @@
+{
+  "target": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\thesis_english_2026",
+  "all_hashes_verified": true,
+  "files": [
+    {
+      "path": "chapters/04_contact_and_end_effectors.tex",
+      "previous_sha256": "434882702a6e481797219b6a441cc1213baef47bcb6956e855930507d7d5f07b",
+      "sha256": "5f8f444bd18ee75642928cf9e534672a8cfefa63ccdb57448056c4808503cea3"
+    },
+    {
+      "path": "figures/README.md",
+      "previous_sha256": "19ce479ed9b9458d8a5bb23792666b79396ac973191d338388f65d631ef876b2",
+      "sha256": "e42c10db5b61178ae405f21502f64863b985382d48bdd9cabdf6672395fd2c0b"
+    },
+    {
+      "path": "build/main.pdf",
+      "previous_sha256": "57c21a18b816622ae013e774192f16fc9d3af54e05bcbd70640979ef211b0163",
+      "sha256": "1073505b1a0359d0ca2940ddb0ffad734e0993e4f06f2607b40b1b3a92ebc30c"
+    },
+    {
+      "path": "figures/scripts/fig_plate_conformity.py",
+      "previous_sha256": null,
+      "sha256": "41f7486b5eb3dcf38aa2083d87f8edb1c95591f2ae31a77e4e2adac965f30811"
+    },
+    {
+      "path": "figures/ch04_contacts/plate_front_side.pdf",
+      "previous_sha256": null,
+      "sha256": "ddd515e957429d3877414c03450d1845d37d81321bef2f030546ee6660ea90be"
+    },
+    {
+      "path": "figures/ch04_contacts/plate_front_side.png",
+      "previous_sha256": null,
+      "sha256": "abcf0202c0a88d928ec9ad7ba8b0ad252c0a69dd237b52a69105fc4c0fa7bac1"
+    },
+    {
+      "path": "figures/ch04_contacts/plate_conformity_bullet.pdf",
+      "previous_sha256": null,
+      "sha256": "d622ad1909597fa180844b2426bf1f629f2b89841e2094b981fc4c4fb5a402e8"
+    },
+    {
+      "path": "figures/ch04_contacts/plate_conformity_bullet.png",
+      "previous_sha256": null,
+      "sha256": "fabbcee414cbdca79448bba7deacfb94e8652a3acac72d26c43de793ef0e47bd"
+    },
+    {
+      "path": "figures/ch04_contacts/plate_conformity_trace.pdf",
+      "previous_sha256": null,
+      "sha256": "faa9a5dcea4ee748e7427b77968dde2c22097a6ed25a600ea97df1e9a9c13736"
+    },
+    {
+      "path": "figures/ch04_contacts/plate_conformity_trace.png",
+      "previous_sha256": null,
+      "sha256": "66bd61b5cb1dc635f1753fef6224c869ff5a191f567254358e775e1e15942b0e"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/faceted_first_load.png",
+      "previous_sha256": null,
+      "sha256": "829888e05901649ce65d48b708d10b2da309f3d014a8cdd5c74f1adecf1de5f5"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/faceted_settled.png",
+      "previous_sha256": null,
+      "sha256": "94c0c503836979f0aa5e5a3ef94d2d15359b7c2b37bf5ff561631f9373480a95"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/faceted_trace.csv",
+      "previous_sha256": null,
+      "sha256": "155988b35279e688608aa6df9398f05bd78e2881c2ff71c13e8f42d9843d41ff"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/flat_first_load.png",
+      "previous_sha256": null,
+      "sha256": "652c900e632565a3ff842d479a853299b465caf6e09acfd8997bd64e8ce888f3"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/flat_settled.png",
+      "previous_sha256": null,
+      "sha256": "5fad34aeb440fb1b0bfec187caa03e484cbd90e508c05b7f0e140853fcf85aa6"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/flat_trace.csv",
+      "previous_sha256": null,
+      "sha256": "f4e6e816d0f13463629694e055657e8ea18ec44a31037ae92f111c0e094df7ec"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/manifest.json",
+      "previous_sha256": null,
+      "sha256": "51dc133d7ab57f8c0d4647b0c326d9b28362ebc5088bb619714d6a6941f114ce"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/results.json",
+      "previous_sha256": null,
+      "sha256": "b6c3bcdf62fe254c2d7446ba4e6bc13ed337154ac7b758e87a5f61ed1338f498"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/tilted_first_load.png",
+      "previous_sha256": null,
+      "sha256": "38bb42f2835ddde3bad9683645cec2fd545c2aeb9cf9e28e4b9cf1e227383fa2"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/tilted_settled.png",
+      "previous_sha256": null,
+      "sha256": "bae2d4160db71a37bc41a59e29624cc333e3fc9550f6fd01c2e04790100de20e"
+    },
+    {
+      "path": "figures/data/plate_conformity_20261024/tilted_trace.csv",
+      "previous_sha256": null,
+      "sha256": "344f6ca6e572bef3f85fabb82293912aacdc9a108c511d213789f17239260362"
+    }
+  ]
+}

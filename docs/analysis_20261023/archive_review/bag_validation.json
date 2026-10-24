@@ -1,0 +1,1921 @@
+[
+  {
+    "run": "F75_Lt1_s9014_c100_five_cut800_20261022_150027",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_150020\\sessione_20261022_150020_0.mcap",
+    "topics": {
+      "ftR": {
+        "route_messages": 4385,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 9.150028228759766
+      },
+      "jointsR": {
+        "route_messages": 1501,
+        "median_rate_Hz": 69.51923491290007,
+        "max_interval_ms": 22.752761840820312
+      },
+      "ftL": {
+        "route_messages": 4387,
+        "median_rate_Hz": 199.44384213029005,
+        "max_interval_ms": 9.456634521484375
+      },
+      "jointsL": {
+        "route_messages": 1489,
+        "median_rate_Hz": 68.88386339188202,
+        "max_interval_ms": 20.618677139282227
+      },
+      "poseL": {
+        "route_messages": 2082,
+        "median_rate_Hz": 98.38393694877088,
+        "max_interval_ms": 28.70774269104004
+      },
+      "poseR": {
+        "route_messages": 2082,
+        "median_rate_Hz": 98.1330338550806,
+        "max_interval_ms": 28.559207916259766
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.3227102612998429,
+        "p95_absolute_N": 0.6202143735374612
+      },
+      "2.5_10": {
+        "rms_N": 0.07476089491873379,
+        "p95_absolute_N": 0.15009334136043428
+      }
+    },
+    "csv_band_rms_N": 0.321567143802869,
+    "band_rms_bag_over_csv": 1.0035548330076742,
+    "left_right_band_correlation": 0.9996466227907301
+  },
+  {
+    "run": "F75_Lt1_s9014_c100_five_cut800_20261022_150751",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_150839\\sessione_20261022_150839_0.mcap",
+    "topics": {
+      "jointsL": {
+        "route_messages": 1479,
+        "median_rate_Hz": 68.52150331228609,
+        "max_interval_ms": 21.94523811340332
+      },
+      "ftR": {
+        "route_messages": 4383,
+        "median_rate_Hz": 199.41539485570294,
+        "max_interval_ms": 8.607149124145508
+      },
+      "ftL": {
+        "route_messages": 4384,
+        "median_rate_Hz": 199.43435880367076,
+        "max_interval_ms": 8.826017379760742
+      },
+      "jointsR": {
+        "route_messages": 1476,
+        "median_rate_Hz": 68.14355575051583,
+        "max_interval_ms": 21.489858627319336
+      },
+      "poseL": {
+        "route_messages": 2085,
+        "median_rate_Hz": 97.43319085671808,
+        "max_interval_ms": 29.727697372436523
+      },
+      "poseR": {
+        "route_messages": 2085,
+        "median_rate_Hz": 97.5839372753394,
+        "max_interval_ms": 29.738664627075195
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.30772804661675246,
+        "p95_absolute_N": 0.6456988764055527
+      },
+      "2.5_10": {
+        "rms_N": 0.07925575108611518,
+        "p95_absolute_N": 0.16611337843149168
+      }
+    },
+    "csv_band_rms_N": 0.30958983399480483,
+    "band_rms_bag_over_csv": 0.9939862774108932,
+    "left_right_band_correlation": 0.9997138544550336
+  },
+  {
+    "run": "F75_Lt1_s9014_c100_five_cut800_20261022_151230",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_151338\\sessione_20261022_151338_0.mcap",
+    "topics": {
+      "ftR": {
+        "route_messages": 4383,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 8.730888366699219
+      },
+      "jointsL": {
+        "route_messages": 1472,
+        "median_rate_Hz": 68.59826963021115,
+        "max_interval_ms": 29.666900634765625
+      },
+      "jointsR": {
+        "route_messages": 1472,
+        "median_rate_Hz": 68.7726110054437,
+        "max_interval_ms": 36.847591400146484
+      },
+      "ftL": {
+        "route_messages": 4383,
+        "median_rate_Hz": 199.47229752223333,
+        "max_interval_ms": 9.71674919128418
+      },
+      "poseL": {
+        "route_messages": 2069,
+        "median_rate_Hz": 97.71465846612618,
+        "max_interval_ms": 32.1199893951416
+      },
+      "poseR": {
+        "route_messages": 2069,
+        "median_rate_Hz": 97.71465846612618,
+        "max_interval_ms": 32.088518142700195
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.3379946722884446,
+        "p95_absolute_N": 0.6453407567234278
+      },
+      "2.5_10": {
+        "rms_N": 0.08687147426553973,
+        "p95_absolute_N": 0.18265049134496206
+      }
+    },
+    "csv_band_rms_N": 0.3373789426866869,
+    "band_rms_bag_over_csv": 1.0018250386252752,
+    "left_right_band_correlation": 0.9996692701785139
+  },
+  {
+    "run": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_182945\\sessione_20261023_182945_0.mcap",
+    "topics": {
+      "ftL": {
+        "route_messages": 4382,
+        "median_rate_Hz": 199.41539485570294,
+        "max_interval_ms": 8.770942687988281
+      },
+      "jointsR": {
+        "route_messages": 1478,
+        "median_rate_Hz": 68.75682764499524,
+        "max_interval_ms": 25.107383728027344
+      },
+      "jointsL": {
+        "route_messages": 1493,
+        "median_rate_Hz": 69.65257607838252,
+        "max_interval_ms": 24.965286254882812
+      },
+      "ftR": {
+        "route_messages": 4383,
+        "median_rate_Hz": 199.47229752223333,
+        "max_interval_ms": 9.262561798095703
+      },
+      "poseL": {
+        "route_messages": 2193,
+        "median_rate_Hz": 100.08719411069882,
+        "max_interval_ms": 18.486499786376953
+      },
+      "poseR": {
+        "route_messages": 2193,
+        "median_rate_Hz": 100.19358845731212,
+        "max_interval_ms": 20.68185806274414
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 2194,
+        "raw_average_component_rmse_N": 2.889167882169614e-05,
+        "raw_average_component_abs_p99_N": 4.949999999945387e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 2194,
+        "raw_average_component_rmse_N": 2.8848829026320166e-05,
+        "raw_average_component_abs_p99_N": 4.959999999971321e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.11445706999171644,
+        "p95_absolute_N": 0.20641035556327592
+      },
+      "2.5_10": {
+        "rms_N": 0.0657878787782831,
+        "p95_absolute_N": 0.12798981263010856
+      }
+    },
+    "csv_band_rms_N": 0.11468740853423082,
+    "band_rms_bag_over_csv": 0.9979915969376392,
+    "left_right_band_correlation": 0.9846457589683213
+  },
+  {
+    "run": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_183827\\sessione_20261023_183827_0.mcap",
+    "topics": {
+      "ftL": {
+        "route_messages": 4382,
+        "median_rate_Hz": 199.44384213029005,
+        "max_interval_ms": 9.119987487792969
+      },
+      "ftR": {
+        "route_messages": 4382,
+        "median_rate_Hz": 199.48178445733853,
+        "max_interval_ms": 9.857177734375
+      },
+      "jointsL": {
+        "route_messages": 1515,
+        "median_rate_Hz": 70.21342060549246,
+        "max_interval_ms": 22.826433181762695
+      },
+      "jointsR": {
+        "route_messages": 1463,
+        "median_rate_Hz": 67.7965926356965,
+        "max_interval_ms": 22.874116897583008
+      },
+      "poseL": {
+        "route_messages": 2193,
+        "median_rate_Hz": 100.5309972076747,
+        "max_interval_ms": 20.061731338500977
+      },
+      "poseR": {
+        "route_messages": 2193,
+        "median_rate_Hz": 100.6081627268257,
+        "max_interval_ms": 21.808624267578125
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 2194,
+        "raw_average_component_rmse_N": 2.8789020815904974e-05,
+        "raw_average_component_abs_p99_N": 4.949999999936949e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 2194,
+        "raw_average_component_rmse_N": 2.8957805329761344e-05,
+        "raw_average_component_abs_p99_N": 4.949999999936949e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.1166273484189656,
+        "p95_absolute_N": 0.22523961989346464
+      },
+      "2.5_10": {
+        "rms_N": 0.06476439427466436,
+        "p95_absolute_N": 0.12576518536210163
+      }
+    },
+    "csv_band_rms_N": 0.11626192180958667,
+    "band_rms_bag_over_csv": 1.0031431323660505,
+    "left_right_band_correlation": 0.995938302154073
+  },
+  {
+    "run": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_184223\\sessione_20261023_184223_0.mcap",
+    "topics": {
+      "jointsR": {
+        "route_messages": 1521,
+        "median_rate_Hz": 71.0405311563151,
+        "max_interval_ms": 24.21283721923828
+      },
+      "ftL": {
+        "route_messages": 4383,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 8.957862854003906
+      },
+      "jointsL": {
+        "route_messages": 1501,
+        "median_rate_Hz": 70.60642380984446,
+        "max_interval_ms": 28.448820114135742
+      },
+      "ftR": {
+        "route_messages": 4384,
+        "median_rate_Hz": 199.47229752223333,
+        "max_interval_ms": 9.787797927856445
+      },
+      "poseL": {
+        "route_messages": 2192,
+        "median_rate_Hz": 100.01440255621527,
+        "max_interval_ms": 21.53754234313965
+      },
+      "poseR": {
+        "route_messages": 2192,
+        "median_rate_Hz": 99.94767067794591,
+        "max_interval_ms": 21.580934524536133
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 2193,
+        "raw_average_component_rmse_N": 2.882535661654761e-05,
+        "raw_average_component_abs_p99_N": 4.950000000025767e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 2193,
+        "raw_average_component_rmse_N": 2.8980383897709856e-05,
+        "raw_average_component_abs_p99_N": 4.9599999999649924e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.1040109673812798,
+        "p95_absolute_N": 0.20353742896986332
+      },
+      "2.5_10": {
+        "rms_N": 0.06674052894914512,
+        "p95_absolute_N": 0.13459815495049554
+      }
+    },
+    "csv_band_rms_N": 0.10375873764597747,
+    "band_rms_bag_over_csv": 1.0024309252504877,
+    "left_right_band_correlation": 0.9961452629338994
+  },
+  {
+    "run": "F75_Tt1_s9007_c100_five_cut800_20261021_201546",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261021_201607\\sessione_20261021_201607_0.mcap",
+    "topics": {
+      "jointsL": {
+        "route_messages": 1567,
+        "median_rate_Hz": 84.15875436413981,
+        "max_interval_ms": 20.773887634277344
+      },
+      "ftL": {
+        "route_messages": 3778,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 9.592294692993164
+      },
+      "jointsR": {
+        "route_messages": 1560,
+        "median_rate_Hz": 83.87433759273702,
+        "max_interval_ms": 19.10686492919922
+      },
+      "ftR": {
+        "route_messages": 3779,
+        "median_rate_Hz": 199.41539485570294,
+        "max_interval_ms": 8.360147476196289
+      },
+      "poseL": {
+        "route_messages": 1765,
+        "median_rate_Hz": 97.01513872344363,
+        "max_interval_ms": 29.851436614990234
+      },
+      "poseR": {
+        "route_messages": 1765,
+        "median_rate_Hz": 97.13759003219157,
+        "max_interval_ms": 30.151844024658203
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.2066700198577752,
+        "p95_absolute_N": 0.3819923327411554
+      },
+      "2.5_10": {
+        "rms_N": 0.09112083846778027,
+        "p95_absolute_N": 0.18973788848577527
+      }
+    },
+    "csv_band_rms_N": 0.20578582968133816,
+    "band_rms_bag_over_csv": 1.004296652387612,
+    "left_right_band_correlation": 0.9993189438951476
+  },
+  {
+    "run": "F75_Tt1_s9007_c100_five_cut800_20261021_202847",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261021_202912\\sessione_20261021_202912_0.mcap",
+    "topics": {
+      "jointsR": {
+        "route_messages": 1569,
+        "median_rate_Hz": 83.99106883604506,
+        "max_interval_ms": 18.62311363220215
+      },
+      "ftR": {
+        "route_messages": 3776,
+        "median_rate_Hz": 199.43435880367076,
+        "max_interval_ms": 8.080005645751953
+      },
+      "ftL": {
+        "route_messages": 3776,
+        "median_rate_Hz": 199.46281148944266,
+        "max_interval_ms": 9.235382080078125
+      },
+      "jointsL": {
+        "route_messages": 1572,
+        "median_rate_Hz": 84.39413267872592,
+        "max_interval_ms": 19.46091651916504
+      },
+      "poseL": {
+        "route_messages": 1795,
+        "median_rate_Hz": 97.93368824133745,
+        "max_interval_ms": 34.836769104003906
+      },
+      "poseR": {
+        "route_messages": 1795,
+        "median_rate_Hz": 97.97829870236052,
+        "max_interval_ms": 34.97314453125
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.20864308035071302,
+        "p95_absolute_N": 0.4581481468098019
+      },
+      "2.5_10": {
+        "rms_N": 0.11041443759696087,
+        "p95_absolute_N": 0.22884472456985616
+      }
+    },
+    "csv_band_rms_N": 0.20743276338785183,
+    "band_rms_bag_over_csv": 1.0058347434758808,
+    "left_right_band_correlation": 0.994968001558489
+  },
+  {
+    "run": "F75_Tt1_s9007_c100_five_cut800_20261021_203436",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261021_203458\\sessione_20261021_203458_0.mcap",
+    "topics": {
+      "ftR": {
+        "route_messages": 3778,
+        "median_rate_Hz": 199.41539485570294,
+        "max_interval_ms": 8.488893508911133
+      },
+      "jointsR": {
+        "route_messages": 1561,
+        "median_rate_Hz": 83.95324259407526,
+        "max_interval_ms": 18.743276596069336
+      },
+      "ftL": {
+        "route_messages": 3778,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 8.861780166625977
+      },
+      "jointsL": {
+        "route_messages": 1561,
+        "median_rate_Hz": 83.77633300376507,
+        "max_interval_ms": 19.81973648071289
+      },
+      "poseL": {
+        "route_messages": 1787,
+        "median_rate_Hz": 96.71091435225216,
+        "max_interval_ms": 26.49068832397461
+      },
+      "poseR": {
+        "route_messages": 1787,
+        "median_rate_Hz": 96.9814906875383,
+        "max_interval_ms": 26.526927947998047
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.17319914062705816,
+        "p95_absolute_N": 0.37102479103165875
+      },
+      "2.5_10": {
+        "rms_N": 0.09929551374708058,
+        "p95_absolute_N": 0.2124760892324428
+      }
+    },
+    "csv_band_rms_N": 0.17188063438494716,
+    "band_rms_bag_over_csv": 1.0076710575733507,
+    "left_right_band_correlation": 0.9993951246203365
+  },
+  {
+    "run": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_192218\\sessione_20261023_192218_0.mcap",
+    "topics": {
+      "ftL": {
+        "route_messages": 3776,
+        "median_rate_Hz": 199.46281148944266,
+        "max_interval_ms": 8.69894027709961
+      },
+      "jointsL": {
+        "route_messages": 1305,
+        "median_rate_Hz": 70.07734012781421,
+        "max_interval_ms": 19.794702529907227
+      },
+      "jointsR": {
+        "route_messages": 1299,
+        "median_rate_Hz": 69.91788494557335,
+        "max_interval_ms": 23.17214012145996
+      },
+      "ftR": {
+        "route_messages": 3775,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 9.092092514038086
+      },
+      "poseL": {
+        "route_messages": 1890,
+        "median_rate_Hz": 99.8477396624372,
+        "max_interval_ms": 18.23592185974121
+      },
+      "poseR": {
+        "route_messages": 1890,
+        "median_rate_Hz": 99.84536278804038,
+        "max_interval_ms": 18.910646438598633
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1891,
+        "raw_average_component_rmse_N": 2.883886716085867e-05,
+        "raw_average_component_abs_p99_N": 4.930000000058499e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1891,
+        "raw_average_component_rmse_N": 2.889856809242767e-05,
+        "raw_average_component_abs_p99_N": 4.9599999999649924e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.11152753195564902,
+        "p95_absolute_N": 0.23727534991247257
+      },
+      "2.5_10": {
+        "rms_N": 0.07056904448523227,
+        "p95_absolute_N": 0.15881815713544065
+      }
+    },
+    "csv_band_rms_N": 0.11107052894713045,
+    "band_rms_bag_over_csv": 1.0041145298653984,
+    "left_right_band_correlation": 0.9990585591176245
+  },
+  {
+    "run": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_192742\\sessione_20261023_192742_0.mcap",
+    "topics": {
+      "ftL": {
+        "route_messages": 3776,
+        "median_rate_Hz": 199.45332635883778,
+        "max_interval_ms": 8.746623992919922
+      },
+      "jointsR": {
+        "route_messages": 1276,
+        "median_rate_Hz": 68.47731465608724,
+        "max_interval_ms": 23.92435073852539
+      },
+      "ftR": {
+        "route_messages": 3775,
+        "median_rate_Hz": 199.41539485570294,
+        "max_interval_ms": 8.939266204833984
+      },
+      "jointsL": {
+        "route_messages": 1313,
+        "median_rate_Hz": 70.53873967810834,
+        "max_interval_ms": 21.717548370361328
+      },
+      "poseL": {
+        "route_messages": 1892,
+        "median_rate_Hz": 100.93865665535581,
+        "max_interval_ms": 18.853425979614258
+      },
+      "poseR": {
+        "route_messages": 1892,
+        "median_rate_Hz": 100.98240038521729,
+        "max_interval_ms": 18.88442039489746
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1893,
+        "raw_average_component_rmse_N": 2.8895223647500696e-05,
+        "raw_average_component_abs_p99_N": 4.950000000025767e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1893,
+        "raw_average_component_rmse_N": 2.857093389756299e-05,
+        "raw_average_component_abs_p99_N": 4.939999999997724e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.09445459055868029,
+        "p95_absolute_N": 0.1955215425656908
+      },
+      "2.5_10": {
+        "rms_N": 0.06467683091409736,
+        "p95_absolute_N": 0.1389903750810062
+      }
+    },
+    "csv_band_rms_N": 0.09408691697194316,
+    "band_rms_bag_over_csv": 1.0039078077863555,
+    "left_right_band_correlation": 0.9961238759298359
+  },
+  {
+    "run": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_193209\\sessione_20261023_193209_0.mcap",
+    "topics": {
+      "jointsR": {
+        "route_messages": 1273,
+        "median_rate_Hz": 69.16272013719411,
+        "max_interval_ms": 30.760765075683594
+      },
+      "ftR": {
+        "route_messages": 3775,
+        "median_rate_Hz": 199.3964345139054,
+        "max_interval_ms": 9.363174438476562
+      },
+      "jointsL": {
+        "route_messages": 1280,
+        "median_rate_Hz": 69.32848476834327,
+        "max_interval_ms": 26.610136032104492
+      },
+      "ftL": {
+        "route_messages": 3776,
+        "median_rate_Hz": 199.45332635883778,
+        "max_interval_ms": 9.367942810058594
+      },
+      "poseL": {
+        "route_messages": 1883,
+        "median_rate_Hz": 99.81566140336264,
+        "max_interval_ms": 19.550085067749023
+      },
+      "poseR": {
+        "route_messages": 1883,
+        "median_rate_Hz": 99.85843699779775,
+        "max_interval_ms": 19.685745239257812
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1884,
+        "raw_average_component_rmse_N": 2.9110273994171323e-05,
+        "raw_average_component_abs_p99_N": 4.949999999936949e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1884,
+        "raw_average_component_rmse_N": 2.874599027392634e-05,
+        "raw_average_component_abs_p99_N": 4.940000000086542e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.10376684021050689,
+        "p95_absolute_N": 0.21036169621402373
+      },
+      "2.5_10": {
+        "rms_N": 0.0627940547207874,
+        "p95_absolute_N": 0.13050537710251242
+      }
+    },
+    "csv_band_rms_N": 0.10380287776217094,
+    "band_rms_bag_over_csv": 0.9996528270464079,
+    "left_right_band_correlation": 0.998730505262462
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_20261022_152007",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_152037\\sessione_20261022_152037_0.mcap",
+    "topics": {
+      "jointsL": {
+        "route_messages": 1327,
+        "median_rate_Hz": 70.54348520779723,
+        "max_interval_ms": 22.400379180908203
+      },
+      "jointsR": {
+        "route_messages": 1268,
+        "median_rate_Hz": 67.69155288725348,
+        "max_interval_ms": 26.744365692138672
+      },
+      "ftL": {
+        "route_messages": 3807,
+        "median_rate_Hz": 199.48178445733853,
+        "max_interval_ms": 8.430242538452148
+      },
+      "ftR": {
+        "route_messages": 3806,
+        "median_rate_Hz": 199.41539485570294,
+        "max_interval_ms": 8.121252059936523
+      },
+      "poseL": {
+        "route_messages": 1796,
+        "median_rate_Hz": 97.3630771373523,
+        "max_interval_ms": 29.15811538696289
+      },
+      "poseR": {
+        "route_messages": 1796,
+        "median_rate_Hz": 97.17359775733846,
+        "max_interval_ms": 29.181718826293945
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.38869902215010704,
+        "p95_absolute_N": 0.7572127509196624
+      },
+      "2.5_10": {
+        "rms_N": 0.0915437638911225,
+        "p95_absolute_N": 0.1663303511264332
+      }
+    },
+    "csv_band_rms_N": 0.38785563123048034,
+    "band_rms_bag_over_csv": 1.0021744970337314,
+    "left_right_band_correlation": 0.9996876913077536
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_20261022_152814",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_153004\\sessione_20261022_153004_0.mcap",
+    "topics": {
+      "jointsR": {
+        "route_messages": 1276,
+        "median_rate_Hz": 68.29000797798727,
+        "max_interval_ms": 21.731138229370117
+      },
+      "ftR": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.43435880367076,
+        "max_interval_ms": 8.733510971069336
+      },
+      "ftL": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.45332635883778,
+        "max_interval_ms": 8.671760559082031
+      },
+      "jointsL": {
+        "route_messages": 1280,
+        "median_rate_Hz": 68.33896537678207,
+        "max_interval_ms": 22.757768630981445
+      },
+      "poseL": {
+        "route_messages": 1801,
+        "median_rate_Hz": 97.87427077985718,
+        "max_interval_ms": 29.811620712280273
+      },
+      "poseR": {
+        "route_messages": 1801,
+        "median_rate_Hz": 98.16518828843589,
+        "max_interval_ms": 29.86884117126465
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.2938324827314273,
+        "p95_absolute_N": 0.5946492597213349
+      },
+      "2.5_10": {
+        "rms_N": 0.08914796581925044,
+        "p95_absolute_N": 0.17628606171094088
+      }
+    },
+    "csv_band_rms_N": 0.29375190753319114,
+    "band_rms_bag_over_csv": 1.000274296765978,
+    "left_right_band_correlation": 0.99975698797368
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_20261022_173458",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_173528\\sessione_20261022_173528_0.mcap",
+    "topics": {
+      "ftR": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.43435880367076,
+        "max_interval_ms": 10.050535202026367
+      },
+      "jointsL": {
+        "route_messages": 1293,
+        "median_rate_Hz": 69.42085619470858,
+        "max_interval_ms": 34.81245040893555
+      },
+      "ftL": {
+        "route_messages": 3806,
+        "median_rate_Hz": 199.46281148944266,
+        "max_interval_ms": 9.001731872558594
+      },
+      "jointsR": {
+        "route_messages": 1273,
+        "median_rate_Hz": 68.24833825551406,
+        "max_interval_ms": 26.15213394165039
+      },
+      "poseL": {
+        "route_messages": 1769,
+        "median_rate_Hz": 97.9096840458933,
+        "max_interval_ms": 35.63356399536133
+      },
+      "poseR": {
+        "route_messages": 1769,
+        "median_rate_Hz": 98.24221485706255,
+        "max_interval_ms": 35.65168380737305
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.1485088424477591,
+        "p95_absolute_N": 0.2869718731276446
+      },
+      "2.5_10": {
+        "rms_N": 0.06712523210555608,
+        "p95_absolute_N": 0.1299489019465673
+      }
+    },
+    "csv_band_rms_N": 0.14816574471962912,
+    "band_rms_bag_over_csv": 1.002315634621074,
+    "left_right_band_correlation": 0.9990086006594376
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_20261022_181557",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_181610\\sessione_20261022_181610_0.mcap",
+    "topics": {
+      "ftL": {
+        "route_messages": 3804,
+        "median_rate_Hz": 199.47229752223333,
+        "max_interval_ms": 8.353948593139648
+      },
+      "jointsR": {
+        "route_messages": 1265,
+        "median_rate_Hz": 67.93330255986655,
+        "max_interval_ms": 28.67436408996582
+      },
+      "ftR": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.41539485570294,
+        "max_interval_ms": 8.378982543945312
+      },
+      "poseL": {
+        "route_messages": 1814,
+        "median_rate_Hz": 98.75689293871112,
+        "max_interval_ms": 27.932167053222656
+      },
+      "poseR": {
+        "route_messages": 1814,
+        "median_rate_Hz": 98.72899748134547,
+        "max_interval_ms": 27.75406837463379
+      },
+      "jointsL": {
+        "route_messages": 1295,
+        "median_rate_Hz": 69.50080365871845,
+        "max_interval_ms": 23.34451675415039
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.08150474006152927,
+        "p95_absolute_N": 0.15977112046566577
+      },
+      "2.5_10": {
+        "rms_N": 0.06674227409374099,
+        "p95_absolute_N": 0.13024894269857884
+      }
+    },
+    "csv_band_rms_N": 0.08216586456168891,
+    "band_rms_bag_over_csv": 0.9919537814920298,
+    "left_right_band_correlation": 0.999239883549512
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_20261022_184327",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_184423\\sessione_20261022_184423_0.mcap",
+    "topics": {
+      "jointsL": {
+        "route_messages": 1273,
+        "median_rate_Hz": 68.90310074335702,
+        "max_interval_ms": 40.45534133911133
+      },
+      "ftR": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.43435880367076,
+        "max_interval_ms": 9.496450424194336
+      },
+      "ftL": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.45332635883778,
+        "max_interval_ms": 9.348630905151367
+      },
+      "jointsR": {
+        "route_messages": 1291,
+        "median_rate_Hz": 69.86605811755103,
+        "max_interval_ms": 30.88831901550293
+      },
+      "poseL": {
+        "route_messages": 1767,
+        "median_rate_Hz": 97.08362845172789,
+        "max_interval_ms": 87.94569969177246
+      },
+      "poseR": {
+        "route_messages": 1767,
+        "median_rate_Hz": 97.26598951811141,
+        "max_interval_ms": 87.89992332458496
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.27212840044183506,
+        "p95_absolute_N": 0.5200018479134684
+      },
+      "2.5_10": {
+        "rms_N": 0.06348218590572527,
+        "p95_absolute_N": 0.1262705676398637
+      }
+    },
+    "csv_band_rms_N": 0.27144463236737976,
+    "band_rms_bag_over_csv": 1.0025189964837098,
+    "left_right_band_correlation": 0.9998682581971285
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_174232\\sessione_20261023_174232_0.mcap",
+    "topics": {
+      "ftL": {
+        "route_messages": 3807,
+        "median_rate_Hz": 199.46281148944266,
+        "max_interval_ms": 9.048938751220703
+      },
+      "jointsL": {
+        "route_messages": 1337,
+        "median_rate_Hz": 70.88205769523262,
+        "max_interval_ms": 21.303892135620117
+      },
+      "jointsR": {
+        "route_messages": 1315,
+        "median_rate_Hz": 69.81547014664514,
+        "max_interval_ms": 19.81329917907715
+      },
+      "ftR": {
+        "route_messages": 3806,
+        "median_rate_Hz": 199.40591423409717,
+        "max_interval_ms": 9.000062942504883
+      },
+      "poseL": {
+        "route_messages": 1908,
+        "median_rate_Hz": 100.02155768588734,
+        "max_interval_ms": 17.54450798034668
+      },
+      "poseR": {
+        "route_messages": 1908,
+        "median_rate_Hz": 99.82160026655242,
+        "max_interval_ms": 17.66347885131836
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1909,
+        "raw_average_component_rmse_N": 2.8824964292080546e-05,
+        "raw_average_component_abs_p99_N": 4.950000000025767e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1909,
+        "raw_average_component_rmse_N": 2.8975187810319274e-05,
+        "raw_average_component_abs_p99_N": 4.947400000025135e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.11926116066457289,
+        "p95_absolute_N": 0.22593321981115264
+      },
+      "2.5_10": {
+        "rms_N": 0.06471072853954132,
+        "p95_absolute_N": 0.12481145285474263
+      }
+    },
+    "csv_band_rms_N": 0.11930139868450353,
+    "band_rms_bag_over_csv": 0.9996627196296579,
+    "left_right_band_correlation": 0.9988640371970787
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_175235\\sessione_20261023_175235_0.mcap",
+    "topics": {
+      "ftR": {
+        "route_messages": 3803,
+        "median_rate_Hz": 199.43435880367076,
+        "max_interval_ms": 8.822441101074219
+      },
+      "jointsR": {
+        "route_messages": 1297,
+        "median_rate_Hz": 69.31702721909137,
+        "max_interval_ms": 20.8742618560791
+      },
+      "ftL": {
+        "route_messages": 3803,
+        "median_rate_Hz": 199.47704087698855,
+        "max_interval_ms": 8.650541305541992
+      },
+      "jointsL": {
+        "route_messages": 1296,
+        "median_rate_Hz": 69.22893077608688,
+        "max_interval_ms": 22.191762924194336
+      },
+      "poseL": {
+        "route_messages": 1905,
+        "median_rate_Hz": 99.87864933085679,
+        "max_interval_ms": 20.872831344604492
+      },
+      "poseR": {
+        "route_messages": 1905,
+        "median_rate_Hz": 100.04660870394886,
+        "max_interval_ms": 20.94435691833496
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1906,
+        "raw_average_component_rmse_N": 2.856681805414624e-05,
+        "raw_average_component_abs_p99_N": 4.94000000017536e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1906,
+        "raw_average_component_rmse_N": 2.8807293900704792e-05,
+        "raw_average_component_abs_p99_N": 4.939999999997724e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.12308143177854398,
+        "p95_absolute_N": 0.25804771251830383
+      },
+      "2.5_10": {
+        "rms_N": 0.07209663912144373,
+        "p95_absolute_N": 0.1421184251565555
+      }
+    },
+    "csv_band_rms_N": 0.12306358922541398,
+    "band_rms_bag_over_csv": 1.0001449864516574,
+    "left_right_band_correlation": 0.9963847460694628
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_175741\\sessione_20261023_175741_0.mcap",
+    "topics": {
+      "jointsL": {
+        "route_messages": 1311,
+        "median_rate_Hz": 69.97153962931452,
+        "max_interval_ms": 24.46436882019043
+      },
+      "ftR": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 8.959531784057617
+      },
+      "jointsR": {
+        "route_messages": 1308,
+        "median_rate_Hz": 69.64274565802145,
+        "max_interval_ms": 25.437593460083008
+      },
+      "ftL": {
+        "route_messages": 3806,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 8.70966911315918
+      },
+      "poseL": {
+        "route_messages": 1907,
+        "median_rate_Hz": 100.61781674683043,
+        "max_interval_ms": 17.99917221069336
+      },
+      "poseR": {
+        "route_messages": 1907,
+        "median_rate_Hz": 100.66732269290772,
+        "max_interval_ms": 18.114089965820312
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1908,
+        "raw_average_component_rmse_N": 2.889692820732173e-05,
+        "raw_average_component_abs_p99_N": 4.947699999961137e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1908,
+        "raw_average_component_rmse_N": 2.9034883234561176e-05,
+        "raw_average_component_abs_p99_N": 4.939999999997724e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.1112978896845934,
+        "p95_absolute_N": 0.2216284469735889
+      },
+      "2.5_10": {
+        "rms_N": 0.06634751623772302,
+        "p95_absolute_N": 0.1281570996331759
+      }
+    },
+    "csv_band_rms_N": 0.11106786740430516,
+    "band_rms_bag_over_csv": 1.0020710065445926,
+    "left_right_band_correlation": 0.9986190128903891
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_offline_20261022_193252",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_193455\\sessione_20261022_193455_0.mcap",
+    "topics": {
+      "jointsR": {
+        "route_messages": 1296,
+        "median_rate_Hz": 69.21407944025479,
+        "max_interval_ms": 26.983261108398438
+      },
+      "ftR": {
+        "route_messages": 3807,
+        "median_rate_Hz": 199.51025067782905,
+        "max_interval_ms": 9.986400604248047
+      },
+      "ftL": {
+        "route_messages": 3806,
+        "median_rate_Hz": 199.46281148944266,
+        "max_interval_ms": 9.590625762939453
+      },
+      "jointsL": {
+        "route_messages": 1315,
+        "median_rate_Hz": 70.36065188763914,
+        "max_interval_ms": 39.47734832763672
+      },
+      "poseL": {
+        "route_messages": 1903,
+        "median_rate_Hz": 99.90957814249303,
+        "max_interval_ms": 47.46365547180176
+      },
+      "poseR": {
+        "route_messages": 1903,
+        "median_rate_Hz": 99.80497323022011,
+        "max_interval_ms": 47.50370979309082
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.1162620963404626,
+        "p95_absolute_N": 0.22610879767556358
+      },
+      "2.5_10": {
+        "rms_N": 0.06152820094801091,
+        "p95_absolute_N": 0.12004463309802743
+      }
+    },
+    "csv_band_rms_N": 0.11609087250077835,
+    "band_rms_bag_over_csv": 1.0014749121614457,
+    "left_right_band_correlation": 0.9903969611244762
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_offline_20261022_195355",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_195542\\sessione_20261022_195542_0.mcap",
+    "topics": {
+      "ftR": {
+        "route_messages": 3807,
+        "median_rate_Hz": 199.45332635883778,
+        "max_interval_ms": 8.845090866088867
+      },
+      "ftL": {
+        "route_messages": 3807,
+        "median_rate_Hz": 199.47229752223333,
+        "max_interval_ms": 8.972883224487305
+      },
+      "jointsL": {
+        "route_messages": 1307,
+        "median_rate_Hz": 69.56362520627918,
+        "max_interval_ms": 22.63045310974121
+      },
+      "poseL": {
+        "route_messages": 1909,
+        "median_rate_Hz": 99.76698936752219,
+        "max_interval_ms": 16.141891479492188
+      },
+      "poseR": {
+        "route_messages": 1909,
+        "median_rate_Hz": 99.8631921048559,
+        "max_interval_ms": 16.249418258666992
+      },
+      "jointsR": {
+        "route_messages": 1310,
+        "median_rate_Hz": 69.88060845370786,
+        "max_interval_ms": 20.24054527282715
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.11530563822665345,
+        "p95_absolute_N": 0.24662180990318566
+      },
+      "2.5_10": {
+        "rms_N": 0.058742893565348675,
+        "p95_absolute_N": 0.11912040800995334
+      }
+    },
+    "csv_band_rms_N": 0.11482642707693966,
+    "band_rms_bag_over_csv": 1.004173352440834,
+    "left_right_band_correlation": 0.9988467558956888
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_offline_20261023_123222",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_123307\\sessione_20261023_123307_0.mcap",
+    "topics": {
+      "jointsR": {
+        "route_messages": 1306,
+        "median_rate_Hz": 69.36861603598835,
+        "max_interval_ms": 20.961523056030273
+      },
+      "ftR": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.4296174785441,
+        "max_interval_ms": 8.547067642211914
+      },
+      "jointsL": {
+        "route_messages": 1306,
+        "median_rate_Hz": 69.76437517672693,
+        "max_interval_ms": 24.63054656982422
+      },
+      "ftL": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.44384213029005,
+        "max_interval_ms": 8.695363998413086
+      },
+      "poseL": {
+        "route_messages": 1905,
+        "median_rate_Hz": 100.46598081368192,
+        "max_interval_ms": 20.336389541625977
+      },
+      "poseR": {
+        "route_messages": 1905,
+        "median_rate_Hz": 100.62385145023151,
+        "max_interval_ms": 20.116567611694336
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1906,
+        "raw_average_component_rmse_N": 2.862439183589684e-05,
+        "raw_average_component_abs_p99_N": 4.958299999990423e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1906,
+        "raw_average_component_rmse_N": 2.9050061330551983e-05,
+        "raw_average_component_abs_p99_N": 4.950000000099486e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.08951614365064828,
+        "p95_absolute_N": 0.17902529900829056
+      },
+      "2.5_10": {
+        "rms_N": 0.06320278800542059,
+        "p95_absolute_N": 0.12257911512473797
+      }
+    },
+    "csv_band_rms_N": 0.08937011403457051,
+    "band_rms_bag_over_csv": 1.0016339871293134,
+    "left_right_band_correlation": 0.9986961868127642
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_online_20261022_202036",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_202153\\sessione_20261022_202153_0.mcap",
+    "topics": {
+      "jointsL": {
+        "route_messages": 1285,
+        "median_rate_Hz": 68.6892666470145,
+        "max_interval_ms": 22.971630096435547
+      },
+      "jointsR": {
+        "route_messages": 1293,
+        "median_rate_Hz": 69.14561730328558,
+        "max_interval_ms": 20.270347595214844
+      },
+      "ftR": {
+        "route_messages": 3806,
+        "median_rate_Hz": 199.44384213029005,
+        "max_interval_ms": 9.28044319152832
+      },
+      "ftL": {
+        "route_messages": 3807,
+        "median_rate_Hz": 199.45332635883778,
+        "max_interval_ms": 10.67972183227539
+      },
+      "poseL": {
+        "route_messages": 1848,
+        "median_rate_Hz": 99.61297677290648,
+        "max_interval_ms": 28.43499183654785
+      },
+      "poseR": {
+        "route_messages": 1848,
+        "median_rate_Hz": 99.72666317941889,
+        "max_interval_ms": 25.42400360107422
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.15536931718100802,
+        "p95_absolute_N": 0.3264938702672509
+      },
+      "2.5_10": {
+        "rms_N": 0.06891310879164639,
+        "p95_absolute_N": 0.1255916396688311
+      }
+    },
+    "csv_band_rms_N": 0.1555824537707065,
+    "band_rms_bag_over_csv": 0.9986300730928656,
+    "left_right_band_correlation": 0.9991034179925837
+  },
+  {
+    "run": "F75_Zt1_s9012_c100_five_cut800_online_20261023_121841",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_121933\\sessione_20261023_121933_0.mcap",
+    "topics": {
+      "jointsR": {
+        "route_messages": 1313,
+        "median_rate_Hz": 69.95520122754641,
+        "max_interval_ms": 22.03655242919922
+      },
+      "jointsL": {
+        "route_messages": 1314,
+        "median_rate_Hz": 70.05451630144307,
+        "max_interval_ms": 21.831750869750977
+      },
+      "ftL": {
+        "route_messages": 3806,
+        "median_rate_Hz": 199.46281148944266,
+        "max_interval_ms": 8.089303970336914
+      },
+      "ftR": {
+        "route_messages": 3805,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 9.09733772277832
+      },
+      "poseL": {
+        "route_messages": 1836,
+        "median_rate_Hz": 98.04357176250585,
+        "max_interval_ms": 26.890993118286133
+      },
+      "poseR": {
+        "route_messages": 1836,
+        "median_rate_Hz": 98.22725995316159,
+        "max_interval_ms": 24.674177169799805
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1837,
+        "raw_average_component_rmse_N": 2.8778108268523183e-05,
+        "raw_average_component_abs_p99_N": 4.950000000021326e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1837,
+        "raw_average_component_rmse_N": 2.894994431762633e-05,
+        "raw_average_component_abs_p99_N": 4.9500000000235465e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.1581990065122331,
+        "p95_absolute_N": 0.31279396091137346
+      },
+      "2.5_10": {
+        "rms_N": 0.07610036277658734,
+        "p95_absolute_N": 0.15208960964410498
+      }
+    },
+    "csv_band_rms_N": 0.15832031013318149,
+    "band_rms_bag_over_csv": 0.9992338088471002,
+    "left_right_band_correlation": 0.999488710771818
+  },
+  {
+    "run": "S_s7073m3_c100_narrow75_20261022_124524",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_124620\\sessione_20261022_124620_0.mcap",
+    "topics": {
+      "ftL": {
+        "route_messages": 3069,
+        "median_rate_Hz": 199.43435880367076,
+        "max_interval_ms": 9.356498718261719
+      },
+      "jointsR": {
+        "route_messages": 1046,
+        "median_rate_Hz": 69.0352228586477,
+        "max_interval_ms": 22.914886474609375
+      },
+      "ftR": {
+        "route_messages": 3069,
+        "median_rate_Hz": 199.3774777772496,
+        "max_interval_ms": 11.914968490600586
+      },
+      "jointsL": {
+        "route_messages": 1047,
+        "median_rate_Hz": 69.44671832571693,
+        "max_interval_ms": 32.48238563537598
+      },
+      "poseL": {
+        "route_messages": 1462,
+        "median_rate_Hz": 97.5918842198334,
+        "max_interval_ms": 26.856184005737305
+      },
+      "poseR": {
+        "route_messages": 1462,
+        "median_rate_Hz": 97.54195348837209,
+        "max_interval_ms": 26.923179626464844
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.42324326055640554,
+        "p95_absolute_N": 0.9172822917739429
+      },
+      "2.5_10": {
+        "rms_N": 0.12625497849106312,
+        "p95_absolute_N": 0.20814558397373986
+      }
+    },
+    "csv_band_rms_N": 0.4248537617127016,
+    "band_rms_bag_over_csv": 0.9962092811658212,
+    "left_right_band_correlation": 0.9919583964714035
+  },
+  {
+    "run": "S_s7073m3_c100_narrow75_20261022_134830",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261022_135045\\sessione_20261022_135045_0.mcap",
+    "topics": {
+      "jointsL": {
+        "route_messages": 1050,
+        "median_rate_Hz": 69.27009083402147,
+        "max_interval_ms": 21.264076232910156
+      },
+      "jointsR": {
+        "route_messages": 1031,
+        "median_rate_Hz": 68.22779991866612,
+        "max_interval_ms": 23.04553985595703
+      },
+      "ftL": {
+        "route_messages": 3072,
+        "median_rate_Hz": 199.43435880367076,
+        "max_interval_ms": 9.085655212402344
+      },
+      "ftR": {
+        "route_messages": 3072,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 9.400606155395508
+      },
+      "poseL": {
+        "route_messages": 1447,
+        "median_rate_Hz": 97.89825761200649,
+        "max_interval_ms": 32.05704689025879
+      },
+      "poseR": {
+        "route_messages": 1447,
+        "median_rate_Hz": 97.9474102097053,
+        "max_interval_ms": 32.1047306060791
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison": "unavailable: source CSV lacks ATI message stamps"
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.3268001808386087,
+        "p95_absolute_N": 0.6637231362067639
+      },
+      "2.5_10": {
+        "rms_N": 0.07747495829039479,
+        "p95_absolute_N": 0.14436309879278214
+      }
+    },
+    "csv_band_rms_N": 0.32609886804010557,
+    "band_rms_bag_over_csv": 1.0021506140230356,
+    "left_right_band_correlation": 0.9899893121964357
+  },
+  {
+    "run": "S_s7073m3_c100_narrow75_ffi_20261023_185410",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_185523\\sessione_20261023_185523_0.mcap",
+    "topics": {
+      "ftL": {
+        "route_messages": 3070,
+        "median_rate_Hz": 199.44384213029005,
+        "max_interval_ms": 8.581399917602539
+      },
+      "poseL": {
+        "route_messages": 1538,
+        "median_rate_Hz": 100.26304592068463,
+        "max_interval_ms": 17.069339752197266
+      },
+      "poseR": {
+        "route_messages": 1538,
+        "median_rate_Hz": 100.45274704219955,
+        "max_interval_ms": 17.275333404541016
+      },
+      "ftR": {
+        "route_messages": 3070,
+        "median_rate_Hz": 199.41539485570294,
+        "max_interval_ms": 9.687662124633789
+      },
+      "jointsL": {
+        "route_messages": 1052,
+        "median_rate_Hz": 69.49965202982601,
+        "max_interval_ms": 21.563053131103516
+      },
+      "jointsR": {
+        "route_messages": 1056,
+        "median_rate_Hz": 69.57689564222086,
+        "max_interval_ms": 23.581266403198242
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1539,
+        "raw_average_component_rmse_N": 2.9087911570321557e-05,
+        "raw_average_component_abs_p99_N": 4.949999999981358e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1539,
+        "raw_average_component_rmse_N": 2.896771619112922e-05,
+        "raw_average_component_abs_p99_N": 4.9499999999924604e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.07326801704929281,
+        "p95_absolute_N": 0.15142050170148566
+      },
+      "2.5_10": {
+        "rms_N": 0.030818152622179008,
+        "p95_absolute_N": 0.06626235942988792
+      }
+    },
+    "csv_band_rms_N": 0.07308191791638033,
+    "band_rms_bag_over_csv": 1.0025464456628712,
+    "left_right_band_correlation": 0.9942245666179483
+  },
+  {
+    "run": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_190457\\sessione_20261023_190457_0.mcap",
+    "topics": {
+      "jointsL": {
+        "route_messages": 1055,
+        "median_rate_Hz": 69.87536963457197,
+        "max_interval_ms": 21.557092666625977
+      },
+      "ftR": {
+        "route_messages": 3069,
+        "median_rate_Hz": 199.3964345139054,
+        "max_interval_ms": 9.037971496582031
+      },
+      "ftL": {
+        "route_messages": 3069,
+        "median_rate_Hz": 199.43435880367076,
+        "max_interval_ms": 8.810281753540039
+      },
+      "jointsR": {
+        "route_messages": 1048,
+        "median_rate_Hz": 69.49159169607502,
+        "max_interval_ms": 21.4846134185791
+      },
+      "poseL": {
+        "route_messages": 1536,
+        "median_rate_Hz": 100.3950404519125,
+        "max_interval_ms": 20.993471145629883
+      },
+      "poseR": {
+        "route_messages": 1536,
+        "median_rate_Hz": 100.47199731710823,
+        "max_interval_ms": 21.00086212158203
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1537,
+        "raw_average_component_rmse_N": 2.8726652198271422e-05,
+        "raw_average_component_abs_p99_N": 4.930000000218371e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1537,
+        "raw_average_component_rmse_N": 2.881724713395232e-05,
+        "raw_average_component_abs_p99_N": 4.9599999999649924e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.07059639581458527,
+        "p95_absolute_N": 0.13785945754590706
+      },
+      "2.5_10": {
+        "rms_N": 0.03029403355503611,
+        "p95_absolute_N": 0.06303698942120502
+      }
+    },
+    "csv_band_rms_N": 0.0703866410064487,
+    "band_rms_bag_over_csv": 1.002980037193668,
+    "left_right_band_correlation": 0.9873652294112981
+  },
+  {
+    "run": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_191351\\sessione_20261023_191351_0.mcap",
+    "topics": {
+      "ftL": {
+        "route_messages": 3069,
+        "median_rate_Hz": 199.44384213029005,
+        "max_interval_ms": 8.697032928466797
+      },
+      "jointsR": {
+        "route_messages": 1064,
+        "median_rate_Hz": 70.26105601715358,
+        "max_interval_ms": 21.760940551757812
+      },
+      "jointsL": {
+        "route_messages": 1043,
+        "median_rate_Hz": 68.68870419651996,
+        "max_interval_ms": 20.65134048461914
+      },
+      "ftR": {
+        "route_messages": 3070,
+        "median_rate_Hz": 199.40591423409717,
+        "max_interval_ms": 8.947372436523438
+      },
+      "poseL": {
+        "route_messages": 1538,
+        "median_rate_Hz": 100.51533742331289,
+        "max_interval_ms": 20.167112350463867
+      },
+      "poseR": {
+        "route_messages": 1538,
+        "median_rate_Hz": 100.49366269736684,
+        "max_interval_ms": 20.314693450927734
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1539,
+        "raw_average_component_rmse_N": 2.9067264496019225e-05,
+        "raw_average_component_abs_p99_N": 4.939999999997724e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1539,
+        "raw_average_component_rmse_N": 2.899896744070207e-05,
+        "raw_average_component_abs_p99_N": 4.959999999950781e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.05918665296321982,
+        "p95_absolute_N": 0.1154054425604689
+      },
+      "2.5_10": {
+        "rms_N": 0.032821540122993785,
+        "p95_absolute_N": 0.0725976064344253
+      }
+    },
+    "csv_band_rms_N": 0.059114038047269335,
+    "band_rms_bag_over_csv": 1.0012283870016192,
+    "left_right_band_correlation": 0.9881923594964465
+  },
+  {
+    "run": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+    "bag": "NVIDIA_RUNS\\bags\\sessione_20261023_191651\\sessione_20261023_191651_0.mcap",
+    "topics": {
+      "jointsR": {
+        "route_messages": 1056,
+        "median_rate_Hz": 69.67861118033059,
+        "max_interval_ms": 21.083831787109375
+      },
+      "ftR": {
+        "route_messages": 3070,
+        "median_rate_Hz": 199.42487637885128,
+        "max_interval_ms": 8.338212966918945
+      },
+      "ftL": {
+        "route_messages": 3071,
+        "median_rate_Hz": 199.45332635883778,
+        "max_interval_ms": 8.693456649780273
+      },
+      "jointsL": {
+        "route_messages": 1057,
+        "median_rate_Hz": 70.06855997327096,
+        "max_interval_ms": 20.955562591552734
+      },
+      "poseL": {
+        "route_messages": 1539,
+        "median_rate_Hz": 100.02275030703376,
+        "max_interval_ms": 17.798185348510742
+      },
+      "poseR": {
+        "route_messages": 1539,
+        "median_rate_Hz": 100.20795107033639,
+        "max_interval_ms": 17.79007911682129
+      }
+    },
+    "validation": {
+      "L": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1540,
+        "raw_average_component_rmse_N": 2.885445177863695e-05,
+        "raw_average_component_abs_p99_N": 4.940000000141609e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      },
+      "R": {
+        "native_force_unit": "N",
+        "raw_average_comparison_samples": 1540,
+        "raw_average_component_rmse_N": 2.9339400248249147e-05,
+        "raw_average_component_abs_p99_N": 4.96000000005381e-05,
+        "timestamp_match_abs_max_ms": 0.0
+      }
+    },
+    "normal_mean_hand_bands": {
+      "0.8_2.5": {
+        "rms_N": 0.07727303471929199,
+        "p95_absolute_N": 0.1486989115975688
+      },
+      "2.5_10": {
+        "rms_N": 0.03518385154763044,
+        "p95_absolute_N": 0.07203250919859264
+      }
+    },
+    "csv_band_rms_N": 0.07692611334148441,
+    "band_rms_bag_over_csv": 1.004509799894186,
+    "left_right_band_correlation": 0.9956068780888392
+  }
+]

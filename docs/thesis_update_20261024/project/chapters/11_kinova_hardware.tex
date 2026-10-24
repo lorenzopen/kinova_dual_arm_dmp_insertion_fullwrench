@@ -1,0 +1,237 @@
+\chapter{Insertion on Two Kinova Gen3 Arms}
+\label{ch:kinova}
+
+This chapter executes the insertion stage of Chapter~\ref{ch:tetris} on two physical arms. The convex program, the scalar squeeze loop, the jam sentry and the learnt routes are transferred from simulation; the arm dynamics and passive tool determine how their commands are realized. Each wrist carries a six-axis force/torque sensor, so the hand wrenches that the controller closes on are measured rather than estimated from joint torques.
+
+The first hardware series was recorded on 21 and 22 October 2026, with the piece presented by hand and the board assembled from the route file. Its ten executions over four worlds are reported with the operator's recorded outcomes. A later series of 23 October uses offline normal-force feedforward plus integral feedback. It is presented separately, followed by comparisons with an articulated Gen3 simulation and a test of the laboratory impedance source.
+
+\section{The cell}
+
+Two Kinova Gen3 7-DoF arms stand with parallel bases $600$ mm apart. A shelf stands in front of them, as in Fig.~\ref{fig:kinova-cell}. Its floor runs from $120$ to $770$ mm ahead of the bases and lies $30$ mm below the base plane. The shelf is $125$ mm deep and has no front or back panel, so each tool reaches one face of the piece from its own side. All poses are expressed in the shelf frame of the simulation: origin on the floor at the far end of column~$0$, $z$ up, the shelf plane is $x$--$z$ and the pad axis is $y$. Each arm's base pose in that frame was measured by hand.
+
+\thesisfigure[0.62]{ch11_kinova/cell_top_view.pdf}{The cell from above, in the frame of the right base. The two tools are drawn at the grasp of the T route; the piece moves in the mid-plane of the shelf, between them.}{fig:kinova-cell}
+
+The pieces are built from $100$ mm polystyrene cubes; a whole tetromino weighs $50$ g. The routes were trained at this size (Chapter~\ref{ch:tetris}): the five-piece kit worlds with the slot narrowed to $75\%$ and the route starting with the piece's grasp point at $800$ mm, and the narrowed worlds of the column-$2$--$5$ set.
+
+Each tool is, from the flange outwards: an ATI Mini40 (SI-80-4) force/torque sensor with its adapters, a free coil spring and a printed tri-pad of three spheres of $15$ mm radius on a $70$ mm triangle. The front of the spheres is $100$ mm from the flange. The spring is $50$ mm long, with an axial stiffness of $2700$ N/m, and is not guided. In series with a $1000$ N/m arm it gives about $730$ N/m per hand along the squeeze axis. Its estimated torsional stiffness is about $0.25$ Nm/rad, against $20$ Nm/rad at the wrist. The spring therefore passes forces but almost no moment about the pad axis, which matters for the twist channel below. The $150$ g mounted on each flange are included in the URDF used for gravity compensation.
+
+\begin{table}[htbp]\centering\small
+\caption{The hardware configuration of the runs of 21--22 October 2026.}\label{tab:kinova-setup}
+\resizebox{\textwidth}{!}{\begin{tabular}{@{}ll@{}}
+\toprule
+Arms & 2 $\times$ Kinova Gen3, 7 DoF, bases parallel, $600$ mm apart \\
+Arm control & Cartesian impedance at the flange, joint torque at $1$ kHz \\
+Stiffness, damping & $1000$ N/m, $20$ Nm/rad; $5$ N\,s/m, $1$ Nm\,s/rad \\
+Wrist sensors & ATI Mini40 SI-80-4, Ethernet NetBox, $1$ kHz, means of 5 at $200$ Hz \\
+Tool & sensor, free spring ($2700$ N/m), tri-pad; $100$ mm, $150$ g past the flange \\
+Pieces & $100$ mm polystyrene cubes, $50$ g per tetromino \\
+Command loop & both flange targets from one object frame, $100$ Hz \\
+Squeeze and twist & closed on the measured hand wrenches, every $20$ ms \\
+Convex program & re-solved every $100$ ms in a worker thread \\
+Speed & route, turns and seat $3\times$ slower than trained \\
+Safety stops & $60$ N per hand, $40$ mm tracking, jam sentry, sensor silent $50$ ms \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\subsection{Control on the arms}
+
+Each arm runs the laboratory's Cartesian impedance controller: a target flange pose in, joint torques out at $1$ kHz, with gravity compensated from the URDF. The stiffness is diagonal in the base axes and fixed at launch. The values in Table~\ref{tab:kinova-setup} are those used in the bimanual friction-margin experiments on the same arms~\cite{frictioncone2026}, not the $1500$ N/m and $40$ Nm/rad of the simulated wrist.
+
+The insertion node runs one loop at $100$ Hz. It reads both flange poses by forward kinematics and both sensor readings, and sends both flange targets. As in simulation, the targets follow from one commanded object frame plus a scalar squeeze along the pad axis. Every $20$ ms the squeeze is integrated on the measured normal force towards the convex program's target. With the full wrench enabled, the opposite twist of the two flanges about the pad axis is integrated on the measured moment error as well. The convex program is re-solved every $100$ ms. On the robot computer it takes a median $47$--$58$ ms, so it runs in a worker thread: the loop keeps streaming targets with the last solution until the next one arrives.
+
+\subsection{The implemented Cartesian impedance}
+\label{sec:kinova-impedance}
+
+The insertion node commands absolute end-effector poses. The laboratory controller turns each pose into seven joint torques; it does not impose that pose kinematically. Let $\vect q_K,\dot{\vect q}_K$ be the position and velocity returned by the joint-state Kalman filter. An additional first-order low-pass filter gives
+\begin{equation}
+\dot{\vect q}_{f,k}=\alpha_k\dot{\vect q}_{K,k}+(1-\alpha_k)\dot{\vect q}_{f,k-1},
+\qquad \alpha_k=\frac{\Delta t_k}{(2\pi f_c)^{-1}+\Delta t_k},
+\quad f_c=100\ \mathrm{Hz}.
+\end{equation}
+The Kalman filter uses a constant-acceleration model and wrap-aware position innovations. Both filters precede the velocity feedback in the impedance law.
+
+In the arm base axes, define the pose error and Cartesian velocity as
+\begin{equation}
+\vect e=\begin{bmatrix}\vect p_d-\vect p\\\operatorname{log}(R_dR^\top)^\vee\end{bmatrix},
+\qquad \vect v=J(\vect q_K)\dot{\vect q}_f,
+\end{equation}
+where $J$ is the end-effector Jacobian with world-aligned axes at the end-effector pole. The implemented torque before limiting is
+\begin{equation}
+\vect\tau_0=J^\top\bigl(K\vect e-D\vect v\bigr)
+-B\dot{\vect q}_f+\vect g(\vect q_K)+\vect\tau_{\mathrm{fric}}.
+\label{eq:kinova-impedance}
+\end{equation}
+The diagonal matrices $K,D$ set the Cartesian stiffness and damping. The term $\vect g$ compensates gravity from the arm-and-tool URDF. This implementation has no Coriolis feedforward term. The optional null-space stiffness is zero in the configuration considered here.
+
+The source configuration used for the later comparison sets translational stiffness to $1500$ N/m and rotational stiffness to $20$ Nm/rad, with damping $60$ N\,s/m and $7$ Nm\,s/rad. Joint damping is $B=0.001$ Nm\,s/rad. These are distinct from the settings recorded for the initial series in Table~\ref{tab:kinova-setup}. The Stribeck friction option is enabled, but its scale defaults to zero and is not overridden by the inspected launch; its nominal feedforward contribution is therefore zero. This does not imply that physical friction is absent.
+
+The controller clips each joint torque to $35$ Nm on joints 1--4 and $12$ Nm on joints 5--7. The surrounding node then limits its change to $0.5$ Nm per control tick. A joint speed above $2$ rad/s for twenty ticks triggers a gravity-only mode. The nominal control rate is $1$ kHz, while joint states and the joint-torque wrench estimate are published at $250$ Hz. The node uses measured time increments, capped at three nominal control periods; these nominal rates do not remove scheduling delay.
+
+The torque-based wrench estimate is a separate signal from the ATI measurement. With the source's reaction-torque convention, $\vect\tau_{\mathrm{sensor}}=-\vect\tau_{\mathrm{motor}}$, its quasi-static expression is
+\begin{equation}
+\hat{\vect w}_{\mathrm{EE}}=(J_{\mathrm{local}}^\top)^+
+\bigl(\vect\tau_{\mathrm{sensor}}+\vect g+\vect\tau_{\mathrm{fric}}\bigr).
+\label{eq:kinova-wrench-estimate}
+\end{equation}
+It is expressed in the end-effector local frame. Unmodelled inertia, friction and gravity residuals can enter that estimate. The ATI instead measures the mechanical wrench at its own sensor pole; changing pole and axes is required before comparing components.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[node distance=10mm and 8mm,box/.style={draw,rounded corners,align=center,text width=37mm,minimum height=15mm},>=Latex]
+\node[box] (outer) {Object route\\and squeeze loop};
+\node[box,right=of outer] (inner) {Cartesian\\impedance};
+\node[box,right=of inner] (plant) {Arm, spring\\and piece};
+\node[box,above=of outer] (plan) {SOCP references\\online or stored};
+\node[box,below=of inner] (state) {Joint-state filters\\$\vect q_K,\dot{\vect q}_f$};
+\node[box,below=of outer] (ati) {ATI wrist\\force/torque};
+\draw[->] (plan)--(outer);
+\draw[->] (outer)--node[above,font=\footnotesize]{pose}(inner);
+\draw[->] (inner)--node[above,font=\footnotesize]{$\vect\tau$}(plant);
+\draw[->] (plant.south) |- (state.east);\draw[->] (state)--(inner);
+\draw[->] (plant.east) -- ++(6mm,0) |- ([yshift=-5mm]ati.south) -- (ati.south);
+\draw[->] (ati)--(outer);
+\end{tikzpicture}
+\caption{The two control levels. The outer loop adjusts a pose to regulate squeeze; the inner loop realizes that pose compliantly through joint torque. Joint-state feedback sets the impedance damping, while the ATI closes the outer force loop. The passive pads have no independent force actuators.}
+\label{fig:kinova-control-blocks}
+\end{figure}
+
+Equation~\eqref{eq:kinova-impedance} is a conventional local impedance structure. Its damping term opposes measured Cartesian velocity; increasing $D$ changes this inner mechanical response, not an arbitrary time delay in an outer-loop model. Whether it suppresses a particular force oscillation depends on the arm dynamics, filters, tool compliance and contact state. The damping comparison below therefore keeps the force controller fixed and states which inner realization was simulated.
+
+
+\subsection{The wrist sensors}
+
+Each NetBox streams at $1$ kHz; a light reader publishes means of five samples at $200$ Hz, and the loop averages the samples of its own period. The sensor's pose follows from the flange pose and a fixed rotation. That rotation was found by three holds by hand per arm: nothing touching, a press on the pad face towards the flange, and a press down on the front of the tri-pad. The two measured force directions fix the sensor axes against the flange axes, and the moment of the downward press fixes the sign. The two sensors turned out to be rotated by about $9^\circ$ and $12^\circ$ about the flange axis. At each tare, with the tools in free air, the bias is the mean of $0.5$ s of samples less the tool's weight at the current attitude, so the weight is removed again at every attitude afterwards. The standard deviation at rest was below $0.03$ N per force axis in every run.
+
+\section{What the arms were asked to do}
+
+Each run follows the sequence of Chapter~\ref{ch:tetris}. The piece is presented by hand between the open tools at the route's grasp pose, above the board. The tools close until contact and squeeze, and the operator lets go. The pair then carries the piece to the mouth of the slot and along the learnt route. A slow straight seat follows, then a descent until the shelf is felt to carry the piece, the release, and a retreat. The commanded path is the one exported from the full simulation, scaled to the real cell, at one third of the trained speed.
+
+\thesisfigure{ch11_kinova/planned_vs_executed.pdf}{The four worlds executed, as built: neighbours, the piece where it is presented (solid) and its slot (dashed). The dashed black line is the route's planned path of the grasp centre, the midpoint of the two pads. The coloured lines are the measured midpoint of the two flanges in every run of that world, from the mouth of the slot to the seat.}{fig:kinova-routes}
+
+Figure~\ref{fig:kinova-routes} shows the four worlds. The T is presented turned by $8^\circ$ from its slot attitude, the L and the Z by $3^\circ$, the S upright; each route turns the piece into its slot attitude on the way down.
+
+\section{What they did}
+
+Table~\ref{tab:kinova-runs} lists the ten runs, all with the full wrench and the wrist sensors as the source of the hand wrenches. Every run followed its route, found the seat and released the piece, with no jam stop. The operator recorded eight insertions and two entries; in the first T run the neighbouring L was not pushed aside, in the second all neighbours were. The placement error, the worst cell against its target as the simulation scores it, has not yet been measured by hand.
+
+\begin{table}[htbp]\centering\footnotesize
+\caption{The runs of 21--22 October 2026. Asked and measured: the median normal force per hand while carrying (target of the convex program and wrist sensor). Side: the largest horizontal force the environment exerted on the piece. Twist: the largest rotation the twist channel added to a flange. Solve: median time of one convex program on the robot computer.}\label{tab:kinova-runs}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{\input{figures/ch11_kinova/runs_table.tex}}
+\end{table}
+
+\paragraph{Tracking.} The measured midpoint of the flanges stays within a median $5$--$8$ mm of its commanded position, at most $14$--$21$ mm, while carrying. This error includes the compliant response under contact load and possible gravity-model residuals; the logs do not separate their contributions. Close to the route start, a $0.77$ m reach with the tool horizontal, inverse kinematics on the controller's URDF finds the flange up to about $9$ mm short of the commanded pose of the T route: the start pose is at the edge of the arms' workspace, and the impedance absorbs the difference as tracking error.
+
+\paragraph{Squeeze.} The squeeze closed on the measured force follows the convex program. The median normal force per hand differs from its target by at most $0.1$ N in every run (Table~\ref{tab:kinova-runs}). The targets are $3.9$--$4.9$ N per hand for a $0.49$ N piece, and the largest measured value is $8.0$ N. Figure~\ref{fig:kinova-wrench} shows one run of the L. During the route the target varies with the predicted slot load and the measured force follows it, with oscillations of about $1$ N at roughly $1$ Hz. A compliant arm--tool chain can support such motion, but these traces alone do not distinguish mechanical resonance, feedback dynamics, contact changes and measurement effects. The small median bias is not an instantaneous $0.1$ N tracking bound.
+
+\thesisfigure{ch11_kinova/wrench_one_run.pdf}{One run of the L (22 October, 15:00), from contact to release; the time the arms held still waiting for the operator is cut out. Background: approach and squeeze (grey), carry to the mouth (blue), route (sand), slow seat and seat by feel (green), release (grey). From the top: normal force of each hand measured by its wrist sensor against the target of the convex program; the force the environment exerts on the piece, with the jam limit (off the scale during the route, about $40$--$60$ N); the moment each hand applies about the pad axis; the twist correction added to each flange.}{fig:kinova-wrench}
+
+\paragraph{Contact with the board.} The horizontal force the environment exerted on the piece stayed below $5$ N in every run, far under the jam limit; the S pushed hardest. In Fig.~\ref{fig:kinova-wrench} the vertical force rises to $4.5$ N at the seat: this is the shelf taking the piece, the event the seat-by-feel step waits for.
+
+\paragraph{Twist.} The twist channel was active in every run, but it had little to act on. The moment each hand applied about the pad axis stayed within $\pm0.04$ Nm. Meanwhile the correction rotated the flanges steadily, up to $1.4$--$3.6^\circ$, without reducing that moment. This is what the spring predicts: at about $0.25$ Nm/rad, $2.5^\circ$ of flange rotation changes the moment at the pads by about $0.01$ Nm. With this tool the opposite twist cannot be regulated through the flange. The insertions succeeded with the squeeze carrying the piece, and the twist channel contributed at most a small rotation. A tool that transmits torsion, or a twist actuated at the pad, would be needed before the channel can be evaluated.
+
+\paragraph{The convex program.} Out of $203$--$309$ solves per run, at most one failed; that historical implementation fell back to the trained pickup squeeze for that tick. This describes the recorded series, not the later allocator-failure policy. A median solve of $47$--$58$ ms within a $100$ ms period was enough once the program left the streaming loop. Solved inline, the same program had stalled the loop for $40$--$260$ ms about once per second during carrying, and the arms visibly jerked.
+
+\paragraph{Why the wrist sensors.} Earlier runs used the external wrench estimated from the joint torque sensors. With the arms empty, that estimate drifted by up to $8$--$9$ N per arm along a route, repeatably. Each route needed an empty-handed recording of the error, subtracted at the nearest flange position, and the moments could not be corrected that way. Figure~\ref{fig:kinova-ati-est} compares the two sources on the same run. During the route, the estimate departs from the sensor by up to about $4$ N. After the release, it settles at $-1.5$ to $-2.5$ N where the sensor reads zero. These errors are of the size of the squeeze itself.
+
+\thesisfigure{ch11_kinova/ati_vs_estimate.pdf}{Normal force of each hand in the run of Fig.~\ref{fig:kinova-wrench}: the wrist sensor, which the controller used, against the joint-torque estimate logged beside it (tared at the same instant).}{fig:kinova-ati-est}
+
+\section{Earlier runs with the joint-torque estimate}
+
+Before the wrist sensors were mounted, the same insertion ran with the joint-torque estimate and the empty-handed correction. On 16 October the T was inserted with the scalar squeeze; the Z entered, but the stack of neighbours half fell. That run used the correction recorded for the T, not for the Z. On 19 October the L was inserted. On 20 October the T of the column-$2$--$5$ set was the first insertion with the twist channel enabled. It was inserted, but not smoothly. Its log shows the two hands opposing each other vertically instead of sharing the weight, with the measured forces needing more friction than the model's $\mu=1$ in two thirds of the ticks. These runs established the sequence on the arms and showed the limits of the estimate that the wrist sensors removed.
+
+\section{The later feedforward-plus-integral series}
+\label{sec:kinova-ffi}
+
+The archive of 23 October contains twelve recorded successful FFI runs: three each for Z, L, S and T. This is a selected set of completed executions, not a denominator for a hardware success rate. These runs use normal-force feedforward with a bounded ATI integral correction and an offline SOCP plan. They are a later condition than the online full-wrench series above; changing the gains, allocation schedule and feedback together prevents attributing a difference to any single change.
+
+At each planned sample, the allocator still computes a complete wrench pair. The normal-only execution extracts a common per-hand demand
+\begin{equation}
+N^*=\max\left(1\ \mathrm{N},\ \sum_j\lambda_{Lj},\ \sum_j\lambda_{Rj}\right).
+\end{equation}
+This runtime scalar selection is distinct from the signed-distance constraints inside the SOCP. It does not mean that every pad is given a separate $1$ N normal-force floor. The remaining optimized force and moment components are logged, but are not all tracked by this scalar loop.
+
+Let $N_0$ be the measured per-hand preload at pickup. Relative to the frozen pickup poses, the requested extra closure of each hand is a feedforward displacement plus an integral trim:
+\begin{align}
+\delta_{\mathrm{ff}}^*&=\frac{N^*-N_0}{k_{\mathrm{eff}}}, & k_{\mathrm{eff}}&=680\ \mathrm{N/m},\nonumber\\
+e_N&=2N^*-(N_L+N_R), &
+\delta_{I,k+1}^{\mathrm{trial}}&=\delta_{I,k}+k_I e_N\Delta t_k,
+\label{eq:kinova-ffi}
+\end{align}
+with $k_I=0.0016$ m/(N\,s). The error is the sum over both hands. Feedforward receives priority within the feasible motion interval; the retained integral state is the attainable trim, which prevents windup against the limits. Trim travel is bounded by $\pm3$ mm per hand and total extra closure by $\pm12$ mm. Both trim and total speed are limited to $2$ mm/s per hand. Force updates are nominally every $20$ ms; elapsed-time limiting handles delayed updates. No additional moving average or derivative action is introduced in this condition.
+
+The first two runs of each piece were frozen as development data and the third chronological run as holdout before controller exploration. The comparisons below use the first development Z and L runs, identified in Appendix~\ref{app:reproducibility}; they do not tune against or claim prediction of the holdout. Real force samples are used for plotting afterwards, never to drive the simulated piece.
+
+\section{An articulated Gen3 simulation beside the measurements}
+\label{sec:kinova-sim-comparison}
+
+Two articulated seven-joint Gen3 models are placed using the laboratory base transforms, with the shelf, incoming piece and neighbouring pieces in the nominal route geometry. Forward kinematics is checked against an independent chain and the logged initial poses. This checks the frame construction, not the accuracy of the hand-measured laboratory transforms. The setup initializes the open grasp pose and represents the operator's support until release; the physical homing and hand presentation are not replayed.
+
+The tool model has a $2700$ N/m central axial spring and three pad springs of $500$ N/m each. These parallel paths give a total small-deflection axial stiffness of $4200$ N/m between the mount and plate; setting the central spring to $2700$ N/m does not set the complete tool to that value. The $150$ g tool mass is split into $110$ g rigidly attached and $40$ g mobile beyond the virtual sensor. Piece mass is $50$ g and pad friction is $\mu=1$. Environment contacts use $8000$ N/m stiffness and $207$ N\,s/m damping.
+
+The inherited lateral and rotational tool parameters are also assumptions. In particular, the central model retains $40$ Nm/rad torsional stiffness before the pad contribution, far above the approximately $0.25$ Nm/rad estimated for the free laboratory coil. The model therefore cannot validate the real twist authority. Neither actuator transmission dynamics nor measured hardware timing and force noise are identified from these runs.
+
+\subsection{Two inner-controller realizations}
+
+The complete insertion curves use a locally implicit Cartesian impedance approximation with the same nominal $K=1500/20$ and $D=60/7$. It includes articulated inertia, gravity and Coriolis compensation, a small null-space damping term and the URDF torque limits. Its integration and limiting differ from Equation~\eqref{eq:kinova-impedance}; it does not reproduce the laboratory Kalman, slew and watchdog chain. The outer FFI and the nominal SOCP planner are the original implementations. This condition tests their interaction with the declared mechanical model, rather than a byte-identical robot servo.
+
+A separate trial executes the hardware-free laboratory controller classes, including the Kalman and RC filters, gravity term, torque clip, slew and speed watchdog. The executable torque and wrench-estimation methods match the reference supplied for the laboratory controller. The copied full-file version is frozen, but its identity with the file actually deployed on the NVIDIA computer has not been independently verified. Matching controller equations is distinct from matching the physical plant.
+
+The virtual wrist measurement comes from the fixed-joint mechanical reaction, with the mobile tool's gravity removed. It is kept separate from the joint-torque estimate of Equation~\eqref{eq:kinova-wrench-estimate}. The simulated signal is block-averaged through the declared sensor and outer-loop sampling chain. It is not replaced by the SOCP target or by a measured laboratory waveform.
+
+\subsection{Normal forces and wrist moments}
+
+Figure~\ref{fig:kinova-real-sim-force} shows the first Z and L development runs beside the autonomous simulations. Each clock starts at its own departure towards the slot mouth. No force-based time warping or amplitude fitting is applied. The same axis limits are used within each pair, and the recorded controller inputs are plotted without additional display smoothing. The target is the original per-hand SOCP reference, including its variations.
+
+\thesisfigure[1.0]{ch11_kinova/real_sim_normal.pdf}{Measured normal force per hand: real ATI data (left) and articulated PyBullet with approximate inner impedance (right). Blue is left, orange right; the dashed line is the per-hand SOCP target. Rows are Z and L. Vertical dotted lines mark execution-stage changes on each run's own clock. These are two selected completed cases, not a controlled hardware--simulation validation population.}{fig:kinova-real-sim-force}
+
+\thesisfigure[1.0]{ch11_kinova/real_sim_zoom.pdf}{The Z comparison on identical time and force scales, $12$--$17$ s after departure towards the mouth. The laboratory signal contains larger repeated fluctuations than this nominal simulation. A varying target and changing contacts remain present; these fluctuations cannot all be classified as sensor noise.}{fig:kinova-real-sim-zoom}
+
+For quantitative comparison, let $\bar N=(N_L+N_R)/2$ and $e=\bar N-N^*$. Metrics use only the route stage, except for the separately reported seating excess. Both traces are interpolated on their own uniform $100$ Hz grids for metric calculation. Band RMS is obtained with a third-order Butterworth band-pass applied forwards and backwards. This offline analysis filter is not part of the controller. In particular, the force-band RMS contains target-driven motion as well as residual fluctuation; the band RMS of $e$ is also retained in the evidence.
+
+\begin{table}[htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llrrrr@{}}\toprule
+Piece & Source & RMSE $e$ & $\bar N$, 0.8--2.5 Hz & $\bar N$, 2.5--10 Hz & Seat excess\\
+& & (N) & RMS (N) & RMS (N) & (N)\\\midrule
+Z & Real & 0.301 & 0.125 & 0.066 & 1.446\\
+Z & Simulation & 0.209 & 0.042 & 0.014 & 0.850\\
+L & Real & 0.282 & 0.115 & 0.066 & 2.638\\
+L & Simulation & 0.278 & 0.043 & 0.012 & 1.470\\\bottomrule
+\end{tabular}
+\caption{Descriptive comparison of the two selected cases. All columns concern the mean of the two hands. Seat excess is $\max e$ during slow seating and seating by feel. RMS is not peak-to-peak amplitude, and a small median bias does not imply the same instantaneous tracking precision.}
+\label{tab:kinova-real-sim}
+\end{table}
+
+The simulation is smoother in both bands, but its tracking error does not vanish. The L route RMSE is nearly the same as in the real run despite smaller repeated fluctuations. At seating, the measured peak excess of the mean force is $1.45$ N for Z and $2.64$ N for L, versus $0.85$ and $1.47$ N in the model. Route tracking and seating transients must therefore be reported separately.
+
+\thesisfigure[1.0]{ch11_kinova/real_sim_moment.pdf}{Magnitude of the wrist moment, real (left) and simulated (right), on the same selected Z and L executions. These are sensor wrenches, not individual motor torques. The FFI condition regulates normal squeeze, not all three moments. Different tool compliance and sensor-pole construction limit the interpretation of amplitude differences.}{fig:kinova-real-sim-moment}
+
+The simulated worst-cell errors after release are $4.41$ mm for Z at a $0.25$ ms physics step and $4.78$ mm for L at $0.5$ ms. Corresponding real worst-cell errors were not measured, so no placement-accuracy agreement is claimed. Moreover, the coarser Z simulation at $0.5$ ms ends $77.2$ mm from target. This step-size sensitivity is a failure of robustness of the current model and must accompany its finer-step result.
+
+\subsection{What increasing damping to 80 changes}
+
+The paired damping test changes only the approximate inner translational damping from $60$ to $80$ N\,s/m; rotational damping stays at $7$ Nm\,s/rad. The FFI gains, motion limits, geometry, SOCP profile and each case's physics step are fixed. In Z the route force RMS at $2.5$--$10$ Hz falls from $0.0138$ to $0.0117$ N; in L it falls from $0.0118$ to $0.0107$ N. The lower-band RMS remains about $0.042$ and $0.044$ N, respectively. Route RMSE remains about $0.209$ N for Z and $0.278$ N for L, and seating excess changes little.
+
+This is evidence of a modest reduction of faster fluctuations in that model, not evidence that $D=80$ cures the laboratory oscillation. The full-source trial described next does not reach insertion at either damping value. A hardware comparison that changes only $D$, with the same FFI plan, repeated route and tool, is still needed to isolate the damping effect.
+
+\subsection{The original-source trial and the predictive limit}
+
+With the laboratory controller classes, the nominal articulated plant does not maintain the initial free-space pose. In the trial with a settled Kalman covariance and a $0.25$ ms physics step, the right-arm speed watchdog first triggers at $72$ ms and the left at $89$ ms; an external pose-error sentinel ends the trial at $0.12$ s, before pickup. Figure~\ref{fig:kinova-lab-source-stop} preserves the measured virtual wrist signals up to that stop. No insertion RMSE or seating overshoot can be assigned to this trial.
+
+\thesisfigure[0.92]{ch11_kinova/original_source_stop.pdf}{Virtual wrist force and moment magnitudes during the original-source trial, before pickup. Tool gravity has been removed, while inertial reactions remain. Dotted lines mark the two speed-watchdog events. The run stops at $0.12$ s; no force curve is extrapolated beyond it.}{fig:kinova-lab-source-stop}
+
+The kinematic, Jacobian and gravity comparisons were checked before interpreting this failure. A separate rigid-URDF Pinocchio forward-dynamics test also triggers the speed watchdog in free space under a small initial perturbation, including at finer steps. Thus pad contact and the Bullet contact solver alone do not explain the discrepancy. The available evidence does not identify which actuator, inertia, friction, internal filtering or deployed-parameter difference is responsible. The robot's demonstrated ability to hold in the laboratory is not reproduced by this plant.
+
+The defensible conclusion is narrower than either ``the controller is validated'' or ``the motors cause the sinusoids''. The nominal approximate model completes the two selected insertions and exposes finite tracking error and seating overshoot. The original-source realization exposes an unresolved plant mismatch even before contact. Predicting hardware oscillations requires first reproducing a measured free-space hold and a small pose change with synchronized joint positions, velocities, commanded and measured torques, and timing. Until then, the smoother simulation is an explanatory comparison, not a causal reconstruction of the laboratory force trace.
+
+
+\section{What these runs show and what they do not}
+
+The initial series shows that routes learnt in simulation can be executed by two impedance-controlled arms following one object frame, while a squeeze loop closes on wrist-sensor measurements. Its small median force bias coexists with repeated fluctuations and larger transient errors. The later FFI series gives recorded scalar-force executions, but it is not a paired ablation of the earlier full-wrench condition.
+
+The articulated simulations make the distinction between allocation and realization explicit. An admissible SOCP reference still has to pass through pose tracking, tool deflection and changing shelf contact. The approximate model can complete selected routes with smoother forces, yet its step-size sensitivity and the original-source free-space failure prevent using it to identify the cause of the real oscillations. Raising damping to $80$ has only a modest effect in the completed approximate simulations.
+
+Real placement accuracy and neighbour displacement remain unmeasured. The passive spring gives the twist channel little authority in the initial apparatus. A controlled same-route comparison, changing only inner damping or only the outer force law, is needed before attributing improvements to one component. A synchronized free-space validation of the robot model must precede a claim that simulation predicts the hardware transients.
+
+\todo{Measure placement after release and neighbour displacement; repeat a fixed route with identical FFI settings at two inner damping values; validate the free-space arm response with synchronized joint, torque and timing logs; evaluate twist only with a tool whose torsional transmission is measured.}

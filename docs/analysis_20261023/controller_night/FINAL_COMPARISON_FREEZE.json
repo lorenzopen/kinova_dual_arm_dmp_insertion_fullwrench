@@ -1,0 +1,354 @@
+{
+  "created_utc": "2026-10-23T16:59:43.682815+00:00",
+  "purpose": "Final fixed-parameter retrospective comparison; no deployment recommendation.",
+  "candidates": [
+    {
+      "id": "I_P0_I1.6_D0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "FF_only_P0_I0_D0",
+      "family": "FF_only",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "P_P0.05_I0_D0",
+      "family": "P",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority"
+    },
+    {
+      "id": "PD_P0.05_I0_D0.005",
+      "family": "PD",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    },
+    {
+      "id": "PI_P0.05_I0.8_D0",
+      "family": "PI",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0
+    }
+  ],
+  "selection_reasons": {
+    "I_P0_I1.6_D0": "Actual recorded FFI baseline, fixed.",
+    "FF_only_P0_I0_D0": "Nominal-only diagnostic with same entry state and fixed entry trim bias.",
+    "P_P0.05_I0_D0": "Best development worst-model score in family P under original FF priority; no holdout inspected.",
+    "PI_P0.1_I0.8_D0_R0.1": "Best development worst-model score in family PI under original FF priority; no holdout inspected.",
+    "PD_P0.05_I0_D0.005": "Best development worst-model score in family PD under original FF priority; no holdout inspected.",
+    "PID_P0.05_I0.8_D0.005": "Best development worst-model score in family PID under original FF priority; no holdout inspected.",
+    "PI_P0.05_I0.8_D0": "Simpler unfiltered small-P PI nearly tied with baseline in initial development screen; compare to filtered-P PI without selecting on holdout."
+  },
+  "models": [
+    {
+      "id": "delay_k480_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k480_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k480_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k680_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k680_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k680_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k964_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k964_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k964_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k1500_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k1500_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k1500_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "lag680_d18_t0.03",
+      "kind": "lag",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "tau_s": 0.03
+    },
+    {
+      "id": "lag680_d18_t0.12",
+      "kind": "lag",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "tau_s": 0.12
+    },
+    {
+      "id": "resonant680_d18_z0.3",
+      "kind": "resonant",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.3
+    },
+    {
+      "id": "resonant680_d18_z0.7",
+      "kind": "resonant",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.7
+    }
+  ],
+  "baseline_id": "I_P0_I1.6_D0",
+  "data_split": {
+    "Z": {
+      "development": [
+        {
+          "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143_meta.json",
+          "csv_sha256": "de16feb4b73c491a40f3d928b74816722b16bb96c194d3d0ec3e15819d64bc5c"
+        },
+        {
+          "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1751_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1751_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102_meta.json",
+          "csv_sha256": "575b789b7ba0f7fb70f35c8d5cd0d5622d343c7294c744424d3fb12dfec53ed0"
+        }
+      ],
+      "holdout": [
+        {
+          "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1756_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1756_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651_meta.json",
+          "csv_sha256": "d4227676d5aa41cee48e07f133b6331e624e013565f8bb4c6839bd92e4498e2f"
+        }
+      ]
+    },
+    "L": {
+      "development": [
+        {
+          "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743_meta.json",
+          "csv_sha256": "34faf9658e529d3783ed4490fb1bcf9f4773a9a2df8f9f836e5c721be14079d9"
+        },
+        {
+          "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1837_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1837_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741_meta.json",
+          "csv_sha256": "7441f021b501dab8333c4d8e0d738534831903b602c7ae478bc1e3050066a1a3"
+        }
+      ],
+      "holdout": [
+        {
+          "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1841_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1841_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139_meta.json",
+          "csv_sha256": "2e8fedfad66cee8a6df775f6cfca40b17478191ca9b4d33a8d22a186bfba2c99"
+        }
+      ]
+    },
+    "S": {
+      "development": [
+        {
+          "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1904_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_190407.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1904_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_190407_meta.json",
+          "csv_sha256": "02f693fd538d748a2dd00dc8e0b12bb58679b450b8594d23964a9a8daf4fa9c9"
+        },
+        {
+          "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1913_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191302.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1913_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191302_meta.json",
+          "csv_sha256": "75327a0c28f39f05fad23e6e17bc1de460c733f99465862ba2b5f12515aa76ff"
+        }
+      ],
+      "holdout": [
+        {
+          "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1915_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191548.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1915_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_191548_meta.json",
+          "csv_sha256": "52b1cb21ae95b0390c5d73b52064fc600af451d10a33e3f648b0a926218ee3b4"
+        }
+      ]
+    },
+    "T": {
+      "development": [
+        {
+          "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1921_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1921_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128_meta.json",
+          "csv_sha256": "12a2f3411ac2e7518cf0cfdc5e64ab28186e4b93693c037b0124e84b13b88367"
+        },
+        {
+          "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1927_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1927_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700_meta.json",
+          "csv_sha256": "b982e31a77cd3f18d5e5295e0b71ec444b202a8a1a8b6f19398b00a40aa9929c"
+        }
+      ],
+      "holdout": [
+        {
+          "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+          "source": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1931_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114.csv",
+          "metadata": "NVIDIA_RUNS\\runs_riuscitee\\20261023_1931_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114_meta.json",
+          "csv_sha256": "db533d89a9e83913c2123a5c38f8c259b2f118e01e3d5b55b8ffa78082039c72"
+        }
+      ]
+    }
+  },
+  "holdout_limit": "Third chronological success per piece, already seen in earlier descriptive and moving-average work. Reserved only against THIS night tuning, not prospective independent validation.",
+  "time_grid_s": 0.0025,
+  "source_fingerprints": [
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\conditional_controllers.py",
+      "sha256": "d39414cb1d61b2d09ad0477e4091a4d83ec2066a03271bff5216c1cb84f596fa"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\advanced_controllers.py",
+      "sha256": "6ca0347411946c50833393a586cd1215bebcb7d9f5afda31099ef478df287107"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\frozen_design.json",
+      "sha256": "4d525e6b3dcdd58c676e4df849ac4627c2ec0a2050845d15573dcdb2aef0312d"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\conditional_controller_design.json",
+      "sha256": "ddcb9f9830b5b241b4b0ebbb3e26d7be0e29606ff10e5fcef09033f11107c4e6"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\advanced_controller_design.json",
+      "sha256": "ccc795140d62c875542e1b622bc04815c7060e06d4db6ae46a6c488689a63ec2"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\moving_average_sim\\simulate.py",
+      "sha256": "9e09127e36d0951a30934bdc9dd1580676880c3ebfdb3a9a12465d1dca263a1b"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\archive_review\\analyze.py",
+      "sha256": "18e51c5469c78293777032dca9d77d22e3d0e370ec2b35d226d86eb04f720f88"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\ffi_three_successes\\review.py",
+      "sha256": "f78aa794ac61c6c2c9a6e4cc6317036956dbc942f1e0f8f57e1fc5ce1fdd7a3a"
+    },
+    {
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\kinova_dual_arm_dmp_insertion\\insert_ffi.py",
+      "sha256": "b0648d683cf58e64db3b5af552dc6be07b0b15ee53a601522f88f5fa3ad07991"
+    }
+  ],
+  "primary_evaluation": "One locked batch,7 candidates x16 hypothetical models x4 reserved runs=448 cases. Do not retune parameters or choose a favorable model after reading holdout. Failure/negative results retained.",
+  "scheduling": "Original nominal and original recorded target, original FF priority, fixed phase/event schedule from logs, no preview or replanning in the primary comparison.",
+  "limits": "FF/trim/sum speeds2mm/s; FF+-9mm trim+-3mm total+-12mm. Same first recorded physical FF/trim/output for all; P/PD and nominal-only use fixed entry bias, no hidden I.",
+  "score": "mean over 8 runs of worst model (RMSEroute/0.2 + RMSband0.8-2.5/0.05 + maxpositiveerror_firstseat/0.25 + p95absrouteerror/0.5); reject if mean-of-hands force<=0 in any scenario. No individual-contact guarantee.",
+  "provisional_thresholds": {
+    "route_rmse_N_hand": 0.2,
+    "route_band_rms_N_hand": 0.05,
+    "first_seat_positive_error_N_hand": 0.25,
+    "note": "Exploratory goals, not agreed acceptance or safety limits."
+  },
+  "secondary_diagnostics": [
+    "Original-target RMSE,p95,positive/negative errors",
+    "Raw force and target-subtracted error bands0.2-0.8,0.8-2.5,2.5-10Hz",
+    "Observed left/right force minima and deviation from common scalar target; not actual friction margin",
+    "Alternative force mean-only minima; no inference of bilateral contact",
+    "Rate/trim limiting fractions and command bounds",
+    "Maximum200ms trailing mean force/positive error in first-seat window as an additional less sample-sensitive transient feature, without replacing the frozen score"
+  ],
+  "numerical_limit": "Moderate candidates passed representative development refinement, but point maxima can remain grid-sensitive with ZOH residual. Report raw maxima and this uncertainty; do not turn small score gaps into a robot recommendation.",
+  "governance": "Create exclusive started/progress marker before first reserved CSV analysis; save each completed run, resume only missing runs after interruption. Reports can regenerate from saved results, not by retuning. Verify source fingerprints, original CSV hashes and protection manifest.",
+  "excluded": {
+    "planned_references": "No full-wrench margin validation and no robust improvement. Minimax lowers original normal; planners remain diagnostic only.",
+    "stronger_PD": "Unfavorable robust tradeoffs and flagged numerical sensitivity.",
+    "explicit_delay_compensation": "No identified plant passed predictive gate; no supported compensator candidate.",
+    "changed_cart_d": "No controlled FFI D-only logs and actual internal servo source missing; future protocol only."
+  }
+}

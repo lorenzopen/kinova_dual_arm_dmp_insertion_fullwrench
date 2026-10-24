@@ -1,0 +1,74 @@
+[
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+    "first_sequence": 2,
+    "updates": 1006,
+    "replay_max_output_error_mm": 1.734723475976807e-15
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+    "first_sequence": 2,
+    "updates": 1007,
+    "replay_max_output_error_mm": 1.734723475976807e-15
+  },
+  {
+    "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_184139",
+    "first_sequence": 2,
+    "updates": 1012,
+    "replay_max_output_error_mm": 2.6020852139652106e-15
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+    "first_sequence": 2,
+    "updates": 904,
+    "replay_max_output_error_mm": 1.734723475976807e-15
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+    "first_sequence": 2,
+    "updates": 902,
+    "replay_max_output_error_mm": 4.336808689942018e-15
+  },
+  {
+    "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_193114",
+    "first_sequence": 2,
+    "updates": 899,
+    "replay_max_output_error_mm": 8.673617379884035e-16
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+    "first_sequence": 2,
+    "updates": 886,
+    "replay_max_output_error_mm": 3.469446951953614e-15
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+    "first_sequence": 2,
+    "updates": 883,
+    "replay_max_output_error_mm": 1.734723475976807e-15
+  },
+  {
+    "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175651",
+    "first_sequence": 2,
+    "updates": 882,
+    "replay_max_output_error_mm": 1.734723475976807e-15
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+    "first_sequence": 2,
+    "updates": 1332,
+    "replay_max_output_error_mm": 1.3010426069826053e-15
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+    "first_sequence": 2,
+    "updates": 1320,
+    "replay_max_output_error_mm": 1.734723475976807e-15
+  },
+  {
+    "id": "S_s7073m3_c100_narrow75_ffi_20261023_191548",
+    "first_sequence": 2,
+    "updates": 1320,
+    "replay_max_output_error_mm": 2.6020852139652106e-15
+  }
+]

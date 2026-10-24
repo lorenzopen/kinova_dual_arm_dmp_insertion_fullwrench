@@ -1,0 +1,50 @@
+{
+  "central_axial_N_per_m": 2700.0,
+  "pad_each_axial_N_per_m": 500.0,
+  "total_axial_N_per_m": 4200.0,
+  "reaction_equivalence_cases": 60,
+  "max_abs_reaction_error": 1.5265566588595902e-16,
+  "free_air_max_force_after_settle_N": 0.00013895455705151597,
+  "static_compression": {
+    "L": {
+      "wrist_normal": 5.272602535823645,
+      "contact_normal": 5.272602612434016,
+      "wrench_difference": [
+        1.7533016255622089e-06,
+        7.079063113479833e-08,
+        2.5377702375761757e-05,
+        1.755578613426515e-05,
+        -3.499986044127007e-06,
+        -1.519191238100195e-07
+      ],
+      "pad_normal_N": [
+        1.8826507101265626,
+        1.6953145904268245,
+        1.6950875460135337
+      ],
+      "plate_normal_N": 0.0,
+      "effective_pad_piece_mu": 1.0
+    },
+    "R": {
+      "wrist_normal": 5.272013103858986,
+      "contact_normal": 5.2720131537783,
+      "wrench_difference": [
+        4.036254700713008e-06,
+        -7.043173688714433e-08,
+        2.0714704440608078e-05,
+        -1.7399979530674427e-05,
+        1.6340647091151058e-06,
+        8.858029418475077e-09
+      ],
+      "pad_normal_N": [
+        1.8826309368032403,
+        1.6947110018428575,
+        1.6951260626723117
+      ],
+      "plate_normal_N": 0.0,
+      "effective_pad_piece_mu": 1.0
+    }
+  },
+  "source": "unchanged floating_plate.update_springs, captured actual applied reaction vs independent algebra",
+  "contact_order": "unfiltered body-pair order; force on A = +normal/friction, on B opposite"
+}

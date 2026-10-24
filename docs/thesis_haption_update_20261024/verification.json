@@ -1,0 +1,16 @@
+{
+  "compiled": true,
+  "undefined_references": false,
+  "undefined_citations": false,
+  "new_overfull_boxes": 0,
+  "rendered_chapter_pages": 6,
+  "diagrams": [
+    "fig:recording",
+    "fig:virtual-coupling-schematic"
+  ],
+  "colours": [
+    "#1f6fb2",
+    "#d9622b"
+  ],
+  "pages": 139
+}

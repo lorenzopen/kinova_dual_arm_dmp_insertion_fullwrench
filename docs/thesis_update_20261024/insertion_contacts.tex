@@ -1,0 +1,26 @@
+\subsection{Where the insertion load comes from}
+\label{sec:insertion-load-source}
+
+The scene model and the force allocator answer different questions. The nominal scene specifies the incoming piece, the shelf, the neighbours and their poses. Along a candidate route, the contact model determines which surfaces meet and the wrench that their interaction applies to the piece. The reduced model above is one proposal mechanism; the exported Kinova routes use the load saved during a replay in the full apparatus simulation. This gives a path-indexed nominal environment wrench $\vect w_{\mathrm{ext}}^{\mathrm{nom}}(s)$, where $s$ denotes route progress.
+
+At the stated object pole, quasi-static balance requires
+\begin{equation}
+\vect b(s)=-\vect w_g-\vect w_{\mathrm{ext}}^{\mathrm{nom}}(s),
+\label{eq:insertion-load-source}
+\end{equation}
+with all moments transported to that same pole. The SOCP then asks how the two hands can supply $\vect b(s)$ through their six pad contacts. It does not calculate collisions with the shelf itself. A stored resisting-load convention may absorb the minus sign into the exported quantity; the balance and the moment pole, rather than a field name, fix the physical sign.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[node distance=7mm,box/.style={draw,rounded corners,align=center,text width=85mm,minimum height=11mm},>=Latex]
+\node[box] (scene) {Nominal piece, shelf and neighbours\\plus the candidate route};
+\node[box,below=of scene] (contact) {Contact-model rollout or full-simulation replay};
+\node[box,below=of contact] (load) {Predicted environment wrench along the route\\plus gravity, expressed at one object pole};
+\node[box,below=of load] (allocation) {SOCP: admissible wrist references};
+\draw[->] (scene)--(contact);\draw[->] (contact)--(load);\draw[->] (load)--(allocation);
+\end{tikzpicture}
+\caption{The source of the allocator's insertion load. Collision prediction belongs to the scene rollout. The SOCP distributes its requested load through a fixed local grasp model. The actual execution can meet a different contact when geometry or compliance differs.}
+\label{fig:insertion-load-blocks}
+\end{figure}
+
+With an offline plan, this calculation is completed before the physical descent. The runtime interpolates the stored references and uses wrist measurements to regulate squeeze and detect excessive interaction. Such feedback does not make the stored collision prediction update itself. In an online variant the allocation is solved again using the current inputs, but it still requires an explicit estimate or prediction of the environment load. The comparison in Chapter~\ref{ch:kinova} uses the offline variant and keeps this distinction visible.
+

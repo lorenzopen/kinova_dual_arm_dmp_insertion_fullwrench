@@ -1,0 +1,17 @@
+{
+  "started_utc": "2026-10-24T03:08:31.666313+00:00",
+  "supervisor_pid": null,
+  "active_child": null,
+  "completed": [
+    "Z_central2700_D60_dt05",
+    "L_central2700_D60_dt05",
+    "S_central2700_D60_dt05",
+    "T_central2700_D60_dt05",
+    "Z_central2700_D60_dt025",
+    "L_central2700_D60_dt025"
+  ],
+  "central_N_per_m": 2700,
+  "pad_each_N_per_m": 500,
+  "total_axial_N_per_m": 4200,
+  "completed_utc": "2026-10-24T03:19:34.102483+00:00"
+}

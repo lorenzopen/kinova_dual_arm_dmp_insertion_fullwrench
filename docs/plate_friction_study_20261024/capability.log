@@ -1,0 +1,4 @@
+pybullet build time: May 17 2025 21:12:02
+C:\Users\Lorenzo\Desktop\kinova_dual_arm_dmp_insertion_fullwrench\docs\plate_friction_study_20261024\capability.py:22: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  T.value=tangential;problem.solve(solver='CLARABEL')
+Three exact cone slices and a rank-6 / nullity-3 wrist example saved.

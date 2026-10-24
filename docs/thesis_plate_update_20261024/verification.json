@@ -1,0 +1,15 @@
+{
+  "compiled": true,
+  "undefined_references": false,
+  "undefined_citations": false,
+  "new_overfull_boxes": 0,
+  "existing_table_overflow_fixed": true,
+  "inherited_overfull_boxes_elsewhere": 3,
+  "model_source_hashes_checked": true,
+  "measured_pad_distance_error_m": 4.757729337168115e-07,
+  "rendered_chapter_pages": 9,
+  "cases": 3,
+  "physics_steps_per_case": 12000,
+  "seconds_per_case": 3,
+  "pages": 141
+}

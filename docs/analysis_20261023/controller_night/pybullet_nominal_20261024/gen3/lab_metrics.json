@@ -1,0 +1,218 @@
+[
+  {
+    "run": "Gen3Lab_Z_central2700_dt025",
+    "dt_ms": 0.25,
+    "seconds": 0.24,
+    "error": "Abort('right flange 41 mm from its target')",
+    "last_phase": "to_open_pose",
+    "ever_route": false,
+    "events": [
+      {
+        "t": 0.06,
+        "side": "L",
+        "event": "velocity_watchdog_gravity_only"
+      },
+      {
+        "t": 0.066,
+        "side": "R",
+        "event": "velocity_watchdog_gravity_only"
+      }
+    ],
+    "planning": {
+      "feasible": 232,
+      "solves": 232,
+      "samples": 1157,
+      "profile_sha256": "c50d13d17137db665526da262f060c5dbb3bcbb32f3235b503ecb9621e118637",
+      "method": "unchanged NominalPlanner / GraspSOCP / TP-GMM, recomputed before Bullet"
+    },
+    "warmup": "Already at grasp open pose, after homing; Kalman initialized and previous command seeded with nominal gravity",
+    "all_normal_correction_limits_unchanged": {
+      "ki_m_per_N_s": 0.0016,
+      "trim_limit_m": 0.003,
+      "trim_speed_m_per_s": 0.002,
+      "total_limit_m": 0.012,
+      "total_speed_m_per_s": 0.002,
+      "max_dt_s": 0.1,
+      "stall_dt_s": 0.3
+    },
+    "max_abs_Kalman_velocity_rad_s": 117.37126648696497,
+    "loop_sample_any_torque_clipped_fraction": 0.08541666666666667,
+    "loop_sample_slew_active_fraction": 0.19166666666666668
+  },
+  {
+    "run": "Gen3Lab_Z_central2700_warm_dt025",
+    "dt_ms": 0.25,
+    "seconds": 0.12,
+    "error": "Abort('right flange 43 mm from its target')",
+    "last_phase": "to_open_pose",
+    "ever_route": false,
+    "events": [
+      {
+        "t": 0.07200000000000001,
+        "side": "R",
+        "event": "velocity_watchdog_gravity_only"
+      },
+      {
+        "t": 0.089,
+        "side": "L",
+        "event": "velocity_watchdog_gravity_only"
+      }
+    ],
+    "planning": {
+      "feasible": 232,
+      "solves": 232,
+      "samples": 1157,
+      "profile_sha256": "c50d13d17137db665526da262f060c5dbb3bcbb32f3235b503ecb9621e118637",
+      "method": "unchanged NominalPlanner / GraspSOCP / TP-GMM, recomputed before Bullet"
+    },
+    "warmup": {
+      "pose": "Grasp open pose, homing trajectory not simulated",
+      "kalman_covariance_constant_pose_warm_seconds": 2.0,
+      "previous_command": "Nominal gravity",
+      "RC": "Zero actual starting velocity"
+    },
+    "all_normal_correction_limits_unchanged": {
+      "ki_m_per_N_s": 0.0016,
+      "trim_limit_m": 0.003,
+      "trim_speed_m_per_s": 0.002,
+      "total_limit_m": 0.012,
+      "total_speed_m_per_s": 0.002,
+      "max_dt_s": 0.1,
+      "stall_dt_s": 0.3
+    },
+    "max_abs_Kalman_velocity_rad_s": 119.39713373079863,
+    "loop_sample_any_torque_clipped_fraction": 0.20416666666666666,
+    "loop_sample_slew_active_fraction": 0.3625,
+    "max_abs_raw_velocity_rad_s": 100.0,
+    "feedback_negative_previous_torque_max_error": 0.0,
+    "max_abs_torque_step_Nm": 0.5000000000000004
+  },
+  {
+    "run": "Gen3Lab_Z_hold_dt0125",
+    "dt_ms": 0.125,
+    "seconds": 0.22,
+    "error": "Abort('right flange 41 mm from its target')",
+    "last_phase": "start",
+    "ever_route": false,
+    "events": [
+      {
+        "t": 0.06,
+        "side": "L",
+        "event": "velocity_watchdog_gravity_only"
+      },
+      {
+        "t": 0.068,
+        "side": "R",
+        "event": "velocity_watchdog_gravity_only"
+      }
+    ],
+    "planning": {
+      "feasible": 232,
+      "solves": 232,
+      "samples": 1157,
+      "profile_sha256": "c50d13d17137db665526da262f060c5dbb3bcbb32f3235b503ecb9621e118637",
+      "method": "unchanged NominalPlanner / GraspSOCP / TP-GMM, recomputed before Bullet"
+    },
+    "warmup": "Already at grasp open pose, after homing; Kalman initialized and previous command seeded with nominal gravity",
+    "all_normal_correction_limits_unchanged": {
+      "ki_m_per_N_s": 0.0016,
+      "trim_limit_m": 0.003,
+      "trim_speed_m_per_s": 0.002,
+      "total_limit_m": 0.012,
+      "total_speed_m_per_s": 0.002,
+      "max_dt_s": 0.1,
+      "stall_dt_s": 0.3
+    },
+    "max_abs_Kalman_velocity_rad_s": 118.10203165849558,
+    "loop_sample_any_torque_clipped_fraction": 0.1,
+    "loop_sample_slew_active_fraction": 0.20909090909090908
+  },
+  {
+    "run": "Gen3Lab_Z_hold_dt025",
+    "dt_ms": 0.25,
+    "seconds": 0.24,
+    "error": "Abort('right flange 41 mm from its target')",
+    "last_phase": "start",
+    "ever_route": false,
+    "events": [
+      {
+        "t": 0.06,
+        "side": "L",
+        "event": "velocity_watchdog_gravity_only"
+      },
+      {
+        "t": 0.066,
+        "side": "R",
+        "event": "velocity_watchdog_gravity_only"
+      }
+    ],
+    "planning": {
+      "feasible": 232,
+      "solves": 232,
+      "samples": 1157,
+      "profile_sha256": "c50d13d17137db665526da262f060c5dbb3bcbb32f3235b503ecb9621e118637",
+      "method": "unchanged NominalPlanner / GraspSOCP / TP-GMM, recomputed before Bullet"
+    },
+    "warmup": "Already at grasp open pose, after homing; Kalman initialized and previous command seeded with nominal gravity",
+    "all_normal_correction_limits_unchanged": {
+      "ki_m_per_N_s": 0.0016,
+      "trim_limit_m": 0.003,
+      "trim_speed_m_per_s": 0.002,
+      "total_limit_m": 0.012,
+      "total_speed_m_per_s": 0.002,
+      "max_dt_s": 0.1,
+      "stall_dt_s": 0.3
+    },
+    "max_abs_Kalman_velocity_rad_s": 117.37128488312909,
+    "loop_sample_any_torque_clipped_fraction": 0.08541666666666667,
+    "loop_sample_slew_active_fraction": 0.19166666666666668
+  },
+  {
+    "run": "Gen3Lab_Z_hold_warm_dt0125",
+    "dt_ms": 0.125,
+    "seconds": 0.12,
+    "error": "Abort('right flange 47 mm from its target')",
+    "last_phase": "start",
+    "ever_route": false,
+    "events": [
+      {
+        "t": 0.067,
+        "side": "L",
+        "event": "velocity_watchdog_gravity_only"
+      },
+      {
+        "t": 0.073,
+        "side": "R",
+        "event": "velocity_watchdog_gravity_only"
+      }
+    ],
+    "planning": {
+      "feasible": 232,
+      "solves": 232,
+      "samples": 1157,
+      "profile_sha256": "c50d13d17137db665526da262f060c5dbb3bcbb32f3235b503ecb9621e118637",
+      "method": "unchanged NominalPlanner / GraspSOCP / TP-GMM, recomputed before Bullet"
+    },
+    "warmup": {
+      "pose": "Grasp open pose, homing trajectory not simulated",
+      "kalman_covariance_constant_pose_warm_seconds": 2.0,
+      "previous_command": "Nominal gravity",
+      "RC": "Zero actual starting velocity"
+    },
+    "all_normal_correction_limits_unchanged": {
+      "ki_m_per_N_s": 0.0016,
+      "trim_limit_m": 0.003,
+      "trim_speed_m_per_s": 0.002,
+      "total_limit_m": 0.012,
+      "total_speed_m_per_s": 0.002,
+      "max_dt_s": 0.1,
+      "stall_dt_s": 0.3
+    },
+    "max_abs_Kalman_velocity_rad_s": 120.06498073811521,
+    "loop_sample_any_torque_clipped_fraction": 0.1375,
+    "loop_sample_slew_active_fraction": 0.31666666666666665,
+    "max_abs_raw_velocity_rad_s": 100.0,
+    "feedback_negative_previous_torque_max_error": 0.0,
+    "max_abs_torque_step_Nm": 0.5000000000000004
+  }
+]

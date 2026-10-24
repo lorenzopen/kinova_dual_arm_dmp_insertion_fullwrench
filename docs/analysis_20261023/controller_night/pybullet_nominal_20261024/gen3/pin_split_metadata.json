@@ -1,0 +1,152 @@
+{
+  "libpinocchio": [
+    {
+      "basename": "win-64/libpinocchio-4.1.0-hbed6c27_0.conda",
+      "version": "4.1.0",
+      "download_url": "//api.anaconda.org/download/conda-forge/libpinocchio/4.1.0/win-64/libpinocchio-4.1.0-hbed6c27_0.conda",
+      "sha256": "1f017c64cf0f7ebcbdb2269ac58d9c142f60ddda8cc52ff130a7af4dca0a2fab",
+      "attrs": {
+        "operatingsystem": "win32",
+        "machine": "x86_64",
+        "target-triplet": "x86_64-any-win32",
+        "has_prefix": false,
+        "subdir": "win-64",
+        "arch": "x86_64",
+        "build": "hbed6c27_0",
+        "build_number": 0,
+        "depends": [
+          "casadi >=3.7.2,<3.8.0a0",
+          "console_bridge >=1.0.2,<1.1.0a0",
+          "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+          "libboost >=1.90.0,<1.91.0a0",
+          "libboost-devel",
+          "libcoal >=3.0.4,<3.0.5.0a0",
+          "libgz-math >=9.1.0,<10.0a0",
+          "libsdformat >=16.0.1,<17.0a0",
+          "qhull >=2020.2,<2020.3.0a0",
+          "ucrt >=10.0.20348.0",
+          "urdfdom >=6.0.0,<7.0a0",
+          "urdfdom_headers >=3.0.0,<4.0a0",
+          "vc >=14.3,<15",
+          "vc14_runtime >=14.44.35208"
+        ],
+        "license": "BSD-2-Clause",
+        "license_family": "BSD",
+        "platform": "win",
+        "timestamp": 1783453728596
+      }
+    },
+    {
+      "basename": "win-64/libpinocchio-4.1.0-h9717e7e_1.conda",
+      "version": "4.1.0",
+      "download_url": "//api.anaconda.org/download/conda-forge/libpinocchio/4.1.0/win-64/libpinocchio-4.1.0-h9717e7e_1.conda",
+      "sha256": "74086795c9367105d769498314d1247d89b0527d6b2a10843b995261fd044107",
+      "attrs": {
+        "operatingsystem": "win32",
+        "machine": "x86_64",
+        "target-triplet": "x86_64-any-win32",
+        "has_prefix": false,
+        "subdir": "win-64",
+        "arch": "x86_64",
+        "build": "h9717e7e_1",
+        "build_number": 1,
+        "depends": [
+          "libboost-devel",
+          "vc >=14.3,<15",
+          "vc14_runtime >=14.44.35208",
+          "ucrt >=10.0.20348.0",
+          "vc >=14.3",
+          "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+          "urdfdom_headers >=3.0.0,<4.0a0",
+          "urdfdom >=6.0.0,<7.0a0",
+          "libcoal >=3.0.4,<3.0.5.0a0",
+          "casadi >=3.7.2,<3.8.0a0",
+          "libgz-math >=9.2.0,<10.0a0",
+          "console_bridge >=1.0.2,<1.1.0a0",
+          "qhull >=2020.2,<2020.3.0a0",
+          "libsdformat >=16.1.0,<17.0a0",
+          "libboost >=1.90.0,<1.91.0a0"
+        ],
+        "license": "BSD-2-Clause",
+        "platform": "win",
+        "timestamp": 1784113987629
+      }
+    }
+  ],
+  "pinocchio-python": [
+    {
+      "basename": "win-64/pinocchio-python-4.1.0-py312hb7c5900_0.conda",
+      "version": "4.1.0",
+      "download_url": "//api.anaconda.org/download/conda-forge/pinocchio-python/4.1.0/win-64/pinocchio-python-4.1.0-py312hb7c5900_0.conda",
+      "sha256": "da48a0c169ba49fca1bf1e3435daebd245d3e50c67fb92e9a61b0ee60d9ec392",
+      "attrs": {
+        "operatingsystem": "win32",
+        "machine": "x86_64",
+        "target-triplet": "x86_64-any-win32",
+        "has_prefix": true,
+        "subdir": "win-64",
+        "arch": "x86_64",
+        "build": "py312hb7c5900_0",
+        "build_number": 0,
+        "depends": [
+          "casadi >=3.7.2,<3.8.0a0",
+          "coal-python",
+          "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+          "eigenpy >=3.13.0,<3.13.1.0a0",
+          "libboost >=1.90.0,<1.91.0a0",
+          "libboost-python >=1.90.0,<1.91.0a0",
+          "libcoal >=3.0.4,<3.0.5.0a0",
+          "libpinocchio 4.1.0 hbed6c27_0",
+          "numpy >=1.25,<3",
+          "numpy >=2.1",
+          "python >=3.12,<3.13.0a0",
+          "python_abi 3.12.* *_cp312",
+          "ucrt >=10.0.20348.0",
+          "vc >=14.3,<15",
+          "vc14_runtime >=14.44.35208"
+        ],
+        "license": "BSD-2-Clause",
+        "license_family": "BSD",
+        "platform": "win",
+        "timestamp": 1783458694363
+      }
+    },
+    {
+      "basename": "win-64/pinocchio-python-4.1.0-py312h95acbbb_1.conda",
+      "version": "4.1.0",
+      "download_url": "//api.anaconda.org/download/conda-forge/pinocchio-python/4.1.0/win-64/pinocchio-python-4.1.0-py312h95acbbb_1.conda",
+      "sha256": "47fb1c6434dece19c07b6d26a29377c180b619314cae7b8ad91f28ff9b03a94f",
+      "attrs": {
+        "operatingsystem": "win32",
+        "machine": "x86_64",
+        "target-triplet": "x86_64-any-win32",
+        "has_prefix": false,
+        "subdir": "win-64",
+        "arch": "x86_64",
+        "build": "py312h95acbbb_1",
+        "build_number": 1,
+        "depends": [
+          "python",
+          "coal-python",
+          "numpy >=2.1",
+          "libpinocchio ==4.1.0 h9717e7e_1",
+          "vc >=14.3",
+          "vc14_runtime >=14.44.35208",
+          "ucrt >=10.0.20348.0",
+          "vc >=14.3,<15",
+          "eigen-abi >=5.0.1.100,<5.0.1.101.0a0",
+          "casadi >=3.7.2,<3.8.0a0",
+          "libboost >=1.90.0,<1.91.0a0",
+          "numpy >=1.25,<3",
+          "libpinocchio >=4.1.0,<4.1.1.0a0",
+          "eigenpy >=3.13.0,<3.13.1.0a0",
+          "python_abi 3.12.* *_cp312",
+          "libboost-python >=1.90.0,<1.91.0a0"
+        ],
+        "license": "BSD-2-Clause",
+        "platform": "win",
+        "timestamp": 1784113987629
+      }
+    }
+  ]
+}

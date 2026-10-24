@@ -1,0 +1,32 @@
+{
+  "updated_utc": "2026-10-24T03:53:06.584352+00:00",
+  "worker_pid": null,
+  "status": "original_controller_integrated_plant_validation_failed",
+  "achieved": [
+    "Two articulated Gen3 in recorded nominal lab transforms",
+    "Central2700 + three500 springs",
+    "Original FFI and offline SOCP",
+    "Verbatim Cartesian/Kalman classes with real Pinocchio",
+    "User-supplied compute/estimate methods executable-AST matched",
+    "Kortex reaction torque sign and250Hz estimate/pose publishing",
+    "Independent FK/J/gravity, mechanical FT static, slew/sign checks",
+    "Preserved all failures and all originals"
+  ],
+  "not_validated": [
+    "Full insertion prediction with original impedance",
+    "Actuator/transmission/physical joint dynamics",
+    "Deployed entire-node file hash"
+  ],
+  "current_results": "LAB_IMPEDANCE_RESULTS.md",
+  "latest_trials": [
+    "Gen3Lab_Z_central2700_warm_dt025",
+    "Gen3Lab_Z_hold_warm_dt0125"
+  ],
+  "next_required": "Validate nominal stationary hold and small free-space motion against actual joint torque/state/timing before insertion claims",
+  "originals": {
+    "NVIDIA_files": 765,
+    "NVIDIA_bytes": 4080005175,
+    "runtime_files": 332,
+    "sha256_verified": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "purpose": "D-only comparison; original experiment runners retained",
+  "base_gen3_sha256": "fb699be28ca91620db31109039f0a6ba32a0f023ab6a1c9f3227a9ec7c133339",
+  "base_lab_sha256": "9cc8c053e6a3e4c7e55a9431b653101f3159c710f177add969286f1e1ff6b98e",
+  "modified_gen3_sha256": "702c0e56757fea40d5fbdc924fd573d4e96fc51a78571ac8bfb58b284c383c40",
+  "modified_lab_sha256": "4d9e3d673e80099862d89a0ddfcbafdccde1d44c4e22a4018ef91e4d1af4e682",
+  "change": "Translation D parameter only, rotation D7, all K/masses/springs/FFI/limits/periods unchanged"
+}

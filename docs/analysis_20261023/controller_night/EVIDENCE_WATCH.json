@@ -1,0 +1,26 @@
+{
+  "checked_utc": "2026-10-24T00:44:15.594083+00:00",
+  "kind": "bounded_new_evidence_intake",
+  "archive_files": 765,
+  "archive_metadata_matches_original": true,
+  "archive_added": [],
+  "archive_removed": [],
+  "archive_metadata_changed": [],
+  "archive_full_SHA_reverified_this_check": false,
+  "last_full_preservation": {
+    "verified_utc": "2026-10-23T19:48:14.250160+00:00",
+    "archive_identical": true,
+    "files": 765,
+    "bytes": 4080005175,
+    "baseline_zip_sha256_verified": true,
+    "preserved_zip_files_verified": 431,
+    "unchanged_runtime_source_files": 332
+  },
+  "frozen_source_files_checked": 14,
+  "changed_frozen_sources": [],
+  "inner_servo_sources_in_known_layouts": [],
+  "latest_checkpoint_sha_verified": true,
+  "new_evidence_or_change_requires_review": false,
+  "action": "No new discriminating input. Keep conclusions/parameters frozen; no repeated grids, payload rebuild or unchanged-status notification.",
+  "limitation": "Path/size/mtime scan is not a fresh full-content SHA verification. Source absence check covers known layouts, not every user directory."
+}

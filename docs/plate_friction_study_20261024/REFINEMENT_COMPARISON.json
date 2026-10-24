@@ -1,0 +1,94 @@
+[
+  {
+    "id": "core_floating_adaptive_centered_0",
+    "coarse": {
+      "endpoint_ok": true,
+      "outcome": "complete",
+      "final_position_mm": 3.0074416193838966,
+      "final_attitude_error_deg": 1.3968786202365093,
+      "force_wrench_rmse_N": 3.730119269154179,
+      "moment_wrench_rmse_Nm": 0.3445616743321002,
+      "psi_min_loaded_N": 0.14170025247596954,
+      "margin_deficit_percent": 65.10416666666666
+    },
+    "fine": {
+      "endpoint_ok": true,
+      "outcome": "complete",
+      "final_position_mm": 3.0101858327976143,
+      "final_attitude_error_deg": 1.3955284816661884,
+      "force_wrench_rmse_N": 3.730552929404983,
+      "moment_wrench_rmse_Nm": 0.34463713292525694,
+      "psi_min_loaded_N": 0.11810354045098208,
+      "margin_deficit_percent": 64.73958333333333
+    }
+  },
+  {
+    "id": "core_floating_wong_spatial_2",
+    "coarse": {
+      "endpoint_ok": false,
+      "outcome": "complete",
+      "final_position_mm": 30.327869349265924,
+      "final_attitude_error_deg": 37.78855991642185,
+      "force_wrench_rmse_N": 2.20377237395503,
+      "moment_wrench_rmse_Nm": 0.14186049381809318,
+      "psi_min_loaded_N": -2.842170943040401e-15,
+      "margin_deficit_percent": 0.0
+    },
+    "fine": {
+      "endpoint_ok": false,
+      "outcome": "complete",
+      "final_position_mm": 30.083299594788592,
+      "final_attitude_error_deg": 37.4849510911117,
+      "force_wrench_rmse_N": 2.204873568295308,
+      "moment_wrench_rmse_Nm": 0.1421913264025963,
+      "psi_min_loaded_N": -2.842170943040401e-15,
+      "margin_deficit_percent": 0.0
+    }
+  },
+  {
+    "id": "core_welded_adaptive_centered_0",
+    "coarse": {
+      "endpoint_ok": true,
+      "outcome": "complete",
+      "final_position_mm": 2.5762969356423167,
+      "final_attitude_error_deg": 0.40371647059374083,
+      "force_wrench_rmse_N": 1.6488778326933502,
+      "moment_wrench_rmse_Nm": 0.18468339633859504,
+      "psi_min_loaded_N": -2.842170943040401e-15,
+      "margin_deficit_percent": 59.53125
+    },
+    "fine": {
+      "endpoint_ok": true,
+      "outcome": "complete",
+      "final_position_mm": 2.589257653511836,
+      "final_attitude_error_deg": 0.40447467139123444,
+      "force_wrench_rmse_N": 1.6491718306405159,
+      "moment_wrench_rmse_Nm": 0.18473489250186617,
+      "psi_min_loaded_N": -4.263256414560601e-15,
+      "margin_deficit_percent": 59.47916666666667
+    }
+  },
+  {
+    "id": "core_welded_adaptive_spatial_2",
+    "coarse": {
+      "endpoint_ok": true,
+      "outcome": "complete",
+      "final_position_mm": 2.4032984080341535,
+      "final_attitude_error_deg": 0.32459515243374276,
+      "force_wrench_rmse_N": 2.3609064670041326,
+      "moment_wrench_rmse_Nm": 0.26387197125087,
+      "psi_min_loaded_N": -3.552713678800501e-15,
+      "margin_deficit_percent": 65.46875
+    },
+    "fine": {
+      "endpoint_ok": true,
+      "outcome": "complete",
+      "final_position_mm": 2.3949887525780067,
+      "final_attitude_error_deg": 0.3222165385359921,
+      "force_wrench_rmse_N": 2.3628857586726184,
+      "moment_wrench_rmse_Nm": 0.26436141580984357,
+      "psi_min_loaded_N": -5.684341886080802e-15,
+      "margin_deficit_percent": 64.01041666666667
+    }
+  }
+]

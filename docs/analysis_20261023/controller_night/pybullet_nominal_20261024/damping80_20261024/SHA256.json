@@ -1,0 +1,42 @@
+[
+  {
+    "path": "01_D60_D80_forze.png",
+    "sha256": "92be994bbd659fda452960a373e224f32f08b463213de3dc1e2ee89dffe98e22"
+  },
+  {
+    "path": "02_D60_D80_errori_coppie.png",
+    "sha256": "90a72ac7e8afcbbcf98121cbca3af861cf8a56b1989dc1484b5392eb99275afd"
+  },
+  {
+    "path": "03_D60_D80_zoom_Z.png",
+    "sha256": "069b89e8c040bfbfea4ec10c7b339d145b205a71ab8852579670da7f6302b54f"
+  },
+  {
+    "path": "04_originale_D60_D80.png",
+    "sha256": "1cd4d9683c77e0c17633625a7bec1565de4286bd39f0a69e7b3adb4164a738ff"
+  },
+  {
+    "path": "analysis.log",
+    "sha256": "d851cf19c12d2f7d668be9d18077e8a589c6472978e825d7b20dc433f0a98020"
+  },
+  {
+    "path": "analysis_delivery.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "metrics.csv",
+    "sha256": "dfd02ffdab90998713a5aba253942a9e0f409ace44c36ef8cfb66f845de9fffe"
+  },
+  {
+    "path": "PROTOCOL.md",
+    "sha256": "85412214f55959191906595b1c820aaf479fd6404616617de3562eff446e885a"
+  },
+  {
+    "path": "results.json",
+    "sha256": "d851cf19c12d2f7d668be9d18077e8a589c6472978e825d7b20dc433f0a98020"
+  },
+  {
+    "path": "RESULTS.md",
+    "sha256": "246948dad5f979f924116b44476456790a2b2860a5dbde009e9655eceaed48aa"
+  }
+]

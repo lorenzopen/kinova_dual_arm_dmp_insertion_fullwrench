@@ -1,0 +1,30 @@
+{
+  "job": {
+    "group": "core",
+    "mechanism": "welded",
+    "method": "none",
+    "case": "spatial",
+    "seed": 1,
+    "mass": 1.9,
+    "model_mass": 1.9,
+    "com": [
+      0.015,
+      0.015,
+      0
+    ],
+    "model_com": [
+      0.015,
+      0.015,
+      0
+    ],
+    "mu": 0.75,
+    "model_mu": 0.75,
+    "id": "core_welded_none_spatial_1"
+  },
+  "error": "object_lost",
+  "seconds": 1.4705,
+  "wall_seconds": 3.210014299955219,
+  "stage": "airborne",
+  "samples": 148,
+  "source_sha256": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2"
+}

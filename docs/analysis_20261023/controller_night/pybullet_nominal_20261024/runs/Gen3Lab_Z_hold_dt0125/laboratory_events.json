@@ -1,0 +1,12 @@
+[
+  {
+    "t": 0.06,
+    "side": "L",
+    "event": "velocity_watchdog_gravity_only"
+  },
+  {
+    "t": 0.068,
+    "side": "R",
+    "event": "velocity_watchdog_gravity_only"
+  }
+]

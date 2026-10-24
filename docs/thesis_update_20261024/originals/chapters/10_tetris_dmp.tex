@@ -1,0 +1,260 @@
+\chapter{Tetris Placement and DMP Insertion}
+\label{ch:tetris}
+
+The final application puts catalogue tetrominoes into a standing shelf. It joins a discrete placement decision with a physical insertion. The placement rule chooses a cell configuration; the hands must realize it despite pose error, persistent grasp error and contact with neighbours. The SOCP determines the grip demand during that interaction, while a dynamic movement primitive can change the route into the slot.
+
+The insertion formulation follows Yang et al.~\cite{yang2025haptic}. The contribution of this application is its evaluation with the finite tri-pad apparatus and the modifications required to represent tetromino geometry and the errors delivered by the preceding manipulation stages.
+
+\section{A declared catalogue regime}
+
+The task uses seven tetrominoes in a $6\times6$ standing shelf with $120$ mm cells and nominal $3$ mm seams. Shape, mass and catalogue CoM are known. A pose observation contains injected error, stated as $8$ mm per position axis and $5^\circ$ for the initial orientation setting. The distribution used in each frozen campaign must be recorded; a scale alone does not specify it.
+
+This is not the blind-polytope regime. Known catalogue inertial properties are declared task information, not estimated ground truth. What remains uncertain is the relation between the piece and the grasp obtained from that observation. The later hang uses tool-state orientation and measured contact wrench to update the observable components of that relation.
+
+The physical staging includes a feeder and a nest. The current implementation turns the initially flat piece upright while it is supported, then takes free-space measurements after lifting. That supported staging is distinct from the airborne active-sensing protocol. No sample from a supported turn is used as if gravity were balanced by the hands alone. The DMP descent deliberately introduces shelf and neighbour contacts.
+
+\section{Placement and execution have different roles}
+
+The discrete planner evaluates rotation and column choices using the six features of the documented Dellacherie rule: landing height, eroded cells, row transitions, column transitions, holes and wells. The implemented weights are $(-1,1,-1,-1,-4,-1)$ in that order. They are fixed reference weights, not learned DMP parameters.
+
+A nominal board provides the desired cell layout. A played board records the actual poses left by previous releases. They coincide only if every placement is exact. A trajectory trained on the nominal board can encounter a different gap in the game because a neighbouring piece has shifted or rotated.
+
+\thesisfigure{ch10_tetris/planned_vs_pybullet.pdf}{The board Dellacherie planned (top, numbers are moves) against the pile the full simulation built (bottom, numbers are placement errors after release), in one game with today's defaults (seed 7025, all seven pieces in). The real pile is the one the next piece meets.}{fig:planned-vs-real}
+
+The planner is used to define a repeatable sequence of insertion problems. Its score is not an estimate of physical contact feasibility. A good board score does not establish that the hands can carry the required insertion wrench or that the available lead-in is sufficient for the remaining pose error.
+
+\section{Manipulation before descent}
+
+The piece arrives flat. The first grasp acts on its silhouette, and the pair turns it toward an upright configuration. After lift, a hang measures the observable grasp offset. The piece is then staged in the nest and grasped through its thickness. A second hang updates the offset used for the shelf insertion.
+
+Both hands follow one commanded object frame. An additional scalar displacement controls squeeze along the opposing pad axis. This prevents independent hand commands from changing the planned relative grasp while the object is transported or turned.
+
+The hang does not perform full inertial identification. With catalogue mass and CoM, it solves for the displacement of the grasp pole relative to the piece. Its unobserved component retains the geometric prior. The update is consumed in the second grasp, so the final pose command accounts for where the pads actually landed in the observed directions.
+
+\thesisfigure[0.75]{ch10_tetris/hang_estimate.pdf}{What the still hang of the thickness grasp recovers, move by move, in the game of Fig.~\ref{fig:planned-vs-real}. Light: the vision error that reached the grasp ($3$--$25$ mm). Black: the estimator's error across gravity, the two directions $\tau=r\times mg$ observes ($0.02$--$0.26$ mm, $6.1$ mm on the J of move 2). Hatched: the component along gravity, which no static hang observes and which is taken from the plan. The truth is used only to compute these errors.}{fig:hang-estimate}
+
+The distinction between commanded and measured orientation remains important. A body that rotates inside the grasp can arrive at the slot with an error that persists throughout descent. Moving the initial point of a trajectory does not reproduce that same error.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[>=Latex,box/.style={draw,rounded corners,align=center,text width=85mm,minimum height=10mm},node distance=5mm]
+\node[box] (a) {Catalogue and uncertain pose observation};
+\node[box,below=of a] (b) {First grasp, supported staging, free-space hang};
+\node[box,below=of b] (c) {Thickness grasp and second free-space hang};
+\node[box,below=of c] (d) {Discrete shelf placement};
+\node[box,below=of d] (e) {Straight or DMP descent with bounded SOCP grip};
+\node[box,below=of e] (f) {Seat by contact feedback and measure after release};
+\foreach \u/\v in {a/b,b/c,c/d,d/e,e/f}{\draw[->] (\u)--(\v);}
+\end{tikzpicture}
+\caption{The catalogue insertion chain. The DMP acts during descent. The grasp estimator and force allocator retain their separate roles. Supported staging is not an airborne estimation manoeuvre.}
+\label{fig:tetris-chain}
+\end{figure}
+
+\thesisfigure{ch10_tetris/pipeline_snapshots.png}{One move of the chain in the full simulation (seed 7025, move 3, an L). The piece arrives flat and is grasped on its silhouette, rolled up about its bottom edge and put down in the nest, grasped again across its thickness, held still in the air while the wrench is read, carried to the mouth of the slot and seated.}{fig:tetris-snapshots}
+
+\thesisfigure{ch10_tetris/nest_poses.png}{Every piece of the same game standing in the nest before the thickness grasp. The I is spawned upright in the nest and the station stands the O; the other five are stood up by the two tools.}{fig:tetris-nest}
+
+\section{The quasi-static insertion model}
+
+Let $u\in\R^3$ contain the two planar command coordinates and the in-plane angle. Let $z$ contain object and contact-proxy coordinates. The model potential has control, resistance and contact terms,
+\begin{equation}
+W(z,u)=W_{\mathrm{ctrl}}+W_{\mathrm{resist}}+W_{\mathrm{contact}}.
+\end{equation}
+For the reciprocal object coordinates, equilibrium is represented by $W_z=0$. If $W_{zz}$ is invertible in the neighbourhood, differentiation gives
+\begin{equation}
+\frac{dz}{du}=-W_{zz}^{-1}W_{zu}.
+\end{equation}
+The reduced command-force derivative is the Schur complement
+\begin{equation}
+\mathcal G=W_{uu}-W_{uz}W_{zz}^{-1}W_{zu}.
+\label{eq:haptic-metric}
+\end{equation}
+The subscripts denote derivative row and column spaces. This ordering is dimensionally consistent when $z$ has more coordinates than $u$.
+
+The implementation follows the equilibrium manifold with relaxation,
+\begin{equation}
+\dot z_o=-W_{zz}^{-1}\bigl(W_{zu}\dot u+\eta W_z\bigr),
+\end{equation}
+for the object coordinates. Contact proxies use a separate nonreciprocal potential and relaxation law. Their dynamics are not obtained by treating every proxy as an ordinary elastic degree of freedom in the same symmetric Hessian.
+
+The model uses smooth superellipse contact geometry to obtain the required derivatives. A sharp-edged simulator body can create a face contact that this model does not represent in the same way. Model-to-simulator agreement must therefore be tested at the level of geometry and load paths, not only at the level of an ordinary differential equation.
+
+\section{Haptic distance}
+
+If the reduced interaction force is $\vect f_u=W_u$, its local rate along equilibrium is $\dot{\vect f}_u=\mathcal G\dot u$. The interaction cost is
+\begin{equation}
+\phi=\int_0^T\norm{\mathcal G\dot u}\,dt
+=\int_0^T\sqrt{\dot u^\top\mathcal G^\top\mathcal G\dot u}\,dt.
+\label{eq:haptic-distance}
+\end{equation}
+For a symmetric $\mathcal G$, the integrand uses $\mathcal G^2$, as in the implementation. It measures the total variation of interaction force under the model, rather than mechanical work or maximum force.
+
+This cost alone does not reward accurate final placement. It also decreases if a rollout is truncated early. The training code therefore treats a failed rollout as inadmissible instead of awarding it a small partial integral. Costs are meaningfully compared only when the compared trajectories satisfy the stated completion conditions.
+
+\section{Dynamic movement primitives}
+\label{sec:dmp}
+
+The DMP has three command coordinates and twenty radial basis functions per coordinate. With canonical phase
+\begin{equation}
+s(t)=\exp(-\alpha_s t/\tau_0),
+\end{equation}
+the forcing term is
+\begin{equation}
+\vect f_{\Theta}(s)=s\frac{\Theta\vect\psi(s)}{\sum_j\psi_j(s)},\qquad
+\psi_j(s)=\exp\left[-\frac12\left(\frac{s-c_j}{h_j}\right)^2\right].
+\label{eq:dmp-forcing}
+\end{equation}
+The implemented state equation is
+\begin{equation}
+\frac{d}{dt}\begin{bmatrix}u\\v\end{bmatrix}
+=\frac1{\tau_0}\begin{bmatrix}
+v\\-K(u-u_g)-Bv+\vect f_{\Theta}(s)
+\end{bmatrix},
+\quad K=15I,\quad B=2\sqrt{15}I.
+\label{eq:dmp-state}
+\end{equation}
+Here $v$ is the stored velocity-state coordinate; if $\tau_0\neq1$, it equals $\tau_0\dot u$. The inherited augmented implementation uses its default $\tau_0=1$, so the coordinate equals the physical command rate in those rollouts. A time-scaling change requires consistent use of that rate in the environment equation and haptic integral.
+
+The weights $\Theta\in\R^{3\times20}$ provide sixty search variables. Zero weights give the reference attractor trajectory. Over a finite horizon it approaches, rather than reaches exactly, its target. The final physical seating stage is therefore not replaced by assuming the DMP endpoint is exact.
+
+The analytic rollout uses an RK45 integration with relative tolerance $10^{-3}$, absolute tolerance $10^{-6}$, a nominal horizon of $1.5$ s and output spacing $0.002$ s. These are parameters of the inherited analytic model. The physical execution is paced separately to remain within the manipulation speed settings. Numerical integration time is not itself a measured industrial insertion time.
+
+\section{Elitist search}
+
+The black-box optimizer perturbs the current weights with Gaussian samples, evaluates rollouts, sorts them by cost and averages the best one per cent. The first rollout retains the unperturbed incumbent. For small rollout populations, the retained set contains a single candidate. This is elitist search, not a path-integral update or a covariance-adaptation algorithm.
+
+The implementation uses a stable ordering for tied costs. When every rollout fails, the incumbent remains. Exploration scales for translation and rotation are stated separately because the coordinates have different units. Changing either is a comparison arm and must be recorded with the policy.
+
+The Python port was checked against the MATLAB right-hand side at reference states, with a reported discrepancy of $9.2\times10^{-14}$. This is a numerical port check. It does not imply that the analytic contact model matches the shelf or that the learned trajectory transfers to the hands.
+
+\section{Adapting the environment to tetrominoes}
+
+A book row has neighbours with uniform profiles. A tetromino slot does not. Its flank can be occupied at one row and open at another. Its lower support can differ from column to column. The task-specific world construction therefore uses flank profiles by row band and support profiles by column.
+
+A shelf wall is fixed. A neighbouring piece is an object that may move within the contact model. Giving both the same spring-supported state would make a wall artificially compliant. Omitting support below the incoming piece would make completion depend only on the DMP target rather than on seating.
+
+The policy key records the piece, orientation and local environment profile. A route trained for one notch cannot be assigned to another merely because both are labelled ``piece on the left''. This increases the number of worlds but avoids a hidden geometry substitution.
+
+\section{Keeping finite grip in training}
+
+An analytic or simulator rollout can apply a command spring directly to the piece. That is an idealized handle. The real simulation apparatus instead has two compliant tools, six friction-limited contacts and a scalar squeeze loop. A route using a direct handle may depend on a load the finite grasp cannot carry.
+
+The later training stage therefore executes each rollout with the actual tri-pad tools, allocator, jam detection, slow seating and release. The final placement error is measured after release. Force variation is measured on that apparatus rather than assumed equal to the analytic model's force history.
+
+During insertion, a coupling displacement in the planar model produces additional force and moment demand. The wrapper maps its two translational coordinates into world directions and its angular demand into the current pad axis. Gravity compensation is added. The resulting desired wrench is passed to the same bounded force allocator used for holding.
+
+This changes the role of squeeze. It must support weight and resist insertion load together. Increasing grip can help only within the friction and geometric conditions already discussed. A DMP that requires a large moment cannot be accepted simply because its path looks smooth.
+
+\section{Persistent grasp error and played boards}
+\label{sec:persistent-grasp-error}
+
+Training on a shifted start point moves the command trajectory relative to the environment. It does not reproduce a piece that remains displaced and rotated inside the hands while those hands believe a nominal grasp. The later robustness training introduces this persistent relation error throughout the descent.
+
+The saved recipe tests four prescribed combinations with magnitudes $6$ mm across the slot, $3^\circ$ in the shelf plane and $10$ mm along insertion. The values were selected from the 75th-percentile component errors of eighty-four recorded grasps. Four scenarios are a finite stress test; they are not all eight sign corners of a three-variable box and not a probabilistic guarantee over the full error distribution.
+
+The recipe first evaluates the straight reference. If every scenario seats within $12$ mm, it saves a straight-line marker. Otherwise, a five-rollout, five-generation search starts from the better reference and stops once all tested scenarios meet the target. The retained route is compared with the straight and model references on the worst-scenario placement, with force variation used for close outcomes.
+
+A placement-error term with weight $0.5$ N/mm is added to the interaction cost in the simulator training. This is an application-specific modification to the analytic haptic objective and must be named as such. Failed insertions rank below successful ones. A low integral cannot compensate for an unseated piece.
+
+Only boards satisfying the trainer's declared cleanliness conditions are used for local policy refinement. This is a training-data selection, not a filter for the whole-game evaluation. Held-out game results must include failure to reach later worlds, accumulated placement drift and missing-library fallbacks.
+
+\section{Established observations and current limitations}
+
+The saved process summary reports thirty placed pieces out of forty-two on the six training seeds with the earlier library and thirty-seven out of forty-two with the persistent-error library. Its reported comparison gives $p=0.29$. The result is a training-seed observation, not a statistically established held-out improvement.
+
+The earlier unseen-seed comparisons were close or inconsistent. Their interpretation is constrained by library coverage: many requested insertion worlds had no apparatus-validated route and used a model policy or straight fallback. Overall game performance therefore combines local route quality, library coverage and the errors left by previous moves.
+
+Exact enumeration of the nominal $6\times6$ planning task in the saved analysis gives $5040$ seven-piece orders, $4942$ distinct planned games and $2491$ world keys. These are counts under that planning definition. Physical drift can produce additional distinct states, and changes in the key definition can change the count. Enumeration is not a completed insertion campaign.
+
+The frozen September ledger contains $379$ identified policies or straight markers, of which $96$ remain above the $12$ mm worst-scenario target. Of those, $23$ are at least $60$ mm from target. These are library triage counts, not success rates for the newer friction or grasp configuration.
+
+\thesisfigure{ch10_tetris/tetris_shoulder_case.png}{An unresolved S-piece insertion case from a saved diagnostic comparison. A shoulder meets a neighbouring top edge. Both displayed routes leave the piece above the intended seat, illustrating why a trajectory change must be evaluated with the actual shelf contact geometry. The image is retained unchanged; it is not a successful-run illustration.}{fig:tetris-shoulder}
+
+Figures~\ref{fig:insertion-forces} and~\ref{fig:insertion-same-route} show what the apparatus measures during an insertion. They come from two games on the same seed, one with the learnt routes and one with the straight line on every move; the first placed seven pieces of seven and the second three. On the first move the board is identical in the two games, and the straight line seats closer than the learnt route ($1.0$ against $3.7$ mm). On the fourth move both games drive the same straight route, because the learnt one had not beaten it in training, into boards that differ by at most $2.3$ mm and $0.8^\circ$ per neighbour. One Z seats at $4$ mm and the other ends $123$ mm out. Neither detected a jam. The difference in that game comes from the board left by earlier moves, not from the route.
+
+\thesisfigure{ch10_tetris/insertion_forces.pdf}{One insertion on the same board, straight line against learnt route (seed 7025, move 1, an S). Top: normal force measured by each hand and the target set by the SOCP. Middle: horizontal push of the slot on the piece, measured from the pads in quasi-statics, and the push predicted by the model along the route. Bottom: moment carried about the pad axis, the channel held by the tri-pads' friction alone.}{fig:insertion-forces}
+
+\thesisfigure{ch10_tetris/insertion_forces_same_route.pdf}{The same straight route into two boards that differ by millimetres (seed 7025, move 4, a Z). Where the piece ends out, the two hands stop delivering the same squeeze and the slot push grows to $5$ N; where it seats, the moment about the pad axis peaks at $0.5$ Nm instead.}{fig:insertion-same-route}
+
+The ongoing September campaigns combine a central-grasp change with effective pad friction increased from $0.49$ to $1.0$. One saved board-specific result reaches the target at all four scenarios, but the two changes have not been separated. It cannot be attributed to the DMP, grasp location or friction alone.
+
+\section{Insertion into slots narrower than the piece}
+\label{sec:tight-slots}
+
+The game-level evaluation above uses the slots that the placement rule produces. With a $3$ mm seam and pieces that end a few millimetres from their cells, most of those slots offer positive or nearly zero lateral clearance. The straight reference route seats in many of them, and in that regime a learned route can only avoid contacts that a straight descent would also avoid. This does not test the case for which the haptic planning method was designed. In the book case study of Yang et al.~\cite{yang2025haptic}, the gap between the neighbouring books is half the thickness of the book being inserted. The object cannot enter along a straight line; the trajectory has to tilt, push and slide so that the neighbours move and make room. The remainder of this chapter focuses on that regime, transferred to tetrominoes in the shelf, and keeps the complete apparatus of the previous chapters in the loop.
+
+\subsection{Constructing narrowed slots from played boards}
+
+A narrowed slot is not drawn by hand. Each case starts from a board reached in a recorded game, just before the move in question, so that every neighbour has the pose and the support it actually had. The slot is then narrowed by moving the neighbours sideways, never by changing the incoming piece.
+
+On every side of the slot that is flanked by another piece, the neighbour column that already protrudes furthest towards the incoming piece defines the face of that side. All pieces on that side, together with every piece resting on them, are translated by one common horizontal displacement so that this face enters the incoming piece's silhouette by a fixed intrusion $\delta$, measured against the piece column it faces at the same height. Moving the whole side by one amount preserves the relative arrangement of the neighbours; translating them one by one would make stacked neighbours interpenetrate. A shelf panel is never moved and an open flank stays open.
+
+The case studied here uses $\delta=15$ mm per side, one eighth of a cell. For the I piece standing in a single column, the opening becomes $90$ mm for a $120$ mm piece, which gives the name ``$75\%$'' to this set. The same intrusion in millimetres is used for every shape, rather than the same fraction of the piece width, so that a two-cell-wide piece is not asked to displace its neighbours twice as far.
+
+A narrowed board is accepted only if it remains physically consistent: no moved piece may overlap a piece that was not moved, enter a side panel, or lose its support. These are preconditions on the board, computed from the modelled geometry before any insertion is attempted; they are not predictors of success. Boards that appear twice in the archive and near-identical cases, with the same insertion type and the same moved neighbours, are counted once.
+
+The selection covers every tetromino and, for each, aims at insertions of different type. The type of an insertion is defined by the rotation of the piece, the kind of flank on each side (piece, panel or open) and what the piece lands on (shelf floor or another piece). Within each tetromino the cases are chosen so that they differ in as many of these attributes as the archive allows.
+
+\subsection{The apparatus during the insertion}
+
+The insertion is executed by the same apparatus as the rest of the pipeline. The piece is held across its thickness by the two compliant tri-pad tools of Chapter~\ref{ch:contacts}. At every control tick the squeeze is set by the convex program of Chapter~\ref{ch:socp}, with the friction cones~\eqref{eq:friction-cone} as hard constraints and the per-pad limit~\eqref{eq:pad-cap} inside the program. The cost carries the human coordination prior of Chapter~\ref{ch:prior}, queried at the current attitude of the piece, so the distribution of contact forces between the two hands follows the same TP-GMM/GMR precision used when the piece is held in the air. The desired wrench passed to the program combines gravity with the insertion load predicted by the coupling displacement of the route, as described in the previous sections.
+
+The descent follows the learned route at the manipulation pace of the earlier chapters. A jam detector compares the measured contact load with the load the route predicts and stops the push when they diverge. A slow seating stage closes the remaining depth by contact feedback, and the piece is released before its placement error is measured. A route is therefore evaluated on where the piece rests after it has been let go, not on where the hands believed it was.
+
+The physical parameters of this study are declared, not tuned to the outcome. The effective pad-to-piece friction coefficient is set to $1.0$, a coating with higher friction than the $0.49$ used elsewhere in this thesis; piece-to-piece friction is $0.5$ and piece-to-floor friction $0.3$. The contact of the seated pieces is compliant, with stiffness $8000$ N/m and damping $207$ Ns/m. The jam detector is relaxed so that the route is allowed to push. Each of these values belongs to the experimental condition and is recorded with every result.
+
+\subsection{Searching a route that makes room}
+
+The route is the dynamic movement primitive of Section~\ref{sec:dmp}, and its weights are searched with the elitist procedure described above. Each candidate is first integrated through the quasi-static model, which turns the sixty weights into a command path for the hands. That path is then executed by the apparatus in the full simulation, and the cost is computed from the execution. For a candidate that seats, the cost is the total variation of the externally applied force measured on the piece during the route, plus a placement term of $0.5$ N per millimetre of final error. A candidate that does not seat is ranked below every seated candidate, by how close it came to the seat. Without that ranking, every failed candidate would tie and the search could not move when no candidate seats yet, which is the normal situation at the start in a narrowed slot.
+
+The search used for these slots is wider than the one inherited from the book study, with Gaussian perturbations of standard deviation $3$ on the translational weights and $40$ on the rotational ones, and it starts from the better of the straight route and the analytic model's own policy for that piece. Since the slot is already narrower than the piece, the training and evaluation use the nominal grasp. The persistent grasp errors of Section~\ref{sec:persistent-grasp-error} are not superimposed on the intrusion; in the earlier configuration they were, with four persistent combinations scored on the worst.
+
+\thesisfigure{ch10_tetris/learnt_routes.pdf}{Three learnt routes into narrowed slots, retrained at the size of the laboratory pieces ($100$ mm cubes, $70$ mm tri-pad). The piece is drawn at eight points of its route, the black line is the path of its centre, the red cells are the slot and the dashed line is the straight descent. Placement is measured after release in the full simulation.}{fig:learnt-routes}
+
+\subsection{A reduced contact model as a fast proposal stage}
+
+A rollout on the full apparatus costs about half a minute of simulation, and a complete search costs several hours per slot. To reduce this cost, the search can be split in two stages: a fast proposal stage in a reduced quasi-static model, followed by a short refinement on the full apparatus that starts from the proposed route.
+
+The reduced model keeps the structure of the haptic model of Yang et al.---super-ellipse bodies, corner-against-surface contacts with a proxy on the surface, the coupling to the hands and the relaxation dynamics along the equilibrium manifold---and changes what the tetromino shelf requires:
+\begin{itemize}
+\item The incoming piece is the union of its catalogue columns, each a super-ellipse rigidly attached to one piece frame. The frame origin is the centroid of the cells, as in the analytic model, so that a route found in the reduced model can be used directly as a starting point for the full search.
+\item Each neighbour is a rigid body with a single horizontal coordinate. A piece standing on the shelf does not lift or tilt while it is pushed sideways; the floor and the side panels are fixed.
+\item Contacts are created only between columns that can come within reach of each other, including the columns lying under the piece. Neighbour-to-neighbour, neighbour-to-panel and piece-to-floor contacts are one-sided springs along a single direction and need no proxy.
+\item Friction is Coulomb at every contact. A proxy sticks while the tangential force stays inside the cone and slips only by the excess,
+\begin{equation}
+\dot q=\frac{r}{\norm{\partial_q\sigma}}\,\frac{\mathrm{dz}\!\left(f_t,\ \mu f_n\right)}{k_c},
+\end{equation}
+where $\sigma(q)$ is the surface point of the proxy, $f_n$ and $f_t$ the normal and tangential components of the contact spring force, $k_c$ the contact stiffness, $r$ a relaxation rate and $\mathrm{dz}(f,c)$ a smoothed dead zone that vanishes for $\lvert f\rvert<c$. The inherited implementation drives the proxy towards the corner irrespective of the cone, so its friction depends on the speed rather than on the normal load.
+\item Each neighbour is held by friction on what it stands on, with a breakaway force that grows with the load the incoming piece applies to it from above,
+\begin{equation}
+F_k=F_{k,0}+\mu_{\mathrm{under}}\,N_k^{\downarrow},
+\end{equation}
+where $F_{k,0}$ is the breakaway of the free neighbour and $\mu_{\mathrm{under}}$ is the floor or piece-to-piece coefficient. A piece pressed from above therefore resists sliding more, as it does in the full simulation.
+\item The grasp can slip: the hands are coupled to a grasp point that slides on the piece once the force exceeds $2\mu F$ or the moment about the pad axis exceeds $4\mu F R_{\mathrm{tri}}$, with $F$ the squeeze that the convex program delivers on that board in the full simulation.
+\item The DMP is integrated at a time scale that keeps its peak speed at the descent speed of the apparatus, so the path is the same as at the original time scale and only its duration changes.
+\item A candidate that drives any body more than $15$ mm into another is discarded as non-physical.
+\end{itemize}
+
+\thesisfigure{ch10_tetris/lean_to_pybullet.pdf}{One route through both stages (J piece, narrowed slot, nominal grasp). Top: the route found in the reduced model, seated at $0.5$ mm. Bottom: the same route driven in the full simulation with the two tri-pads, the SOCP squeeze, the jam detector and the slow seat; it seats at $4.5$ mm with $2$ mm of slip in the pads, so the refinement stopped at its first rollout. On other slots the reduced model was more lenient than the full simulation and its route did not transfer.}{fig:lean-to-pybullet}
+
+The reduced model is used only to propose routes. Its cost is the distance from the seat at the end of the rollout, and the proposed route becomes the starting point of a short search on the full apparatus, with the same cost, settings and evaluation as above. Every number reported for this study is measured on the full apparatus; the reduced model's own outcome is not used as evidence of a successful insertion.
+
+\todo{Report the narrowed-slot campaign: per piece and per insertion type, the straight route against the searched route on the full apparatus, placement after release, grasp slip, neighbour displacement and jam events; the proposal-plus-refinement scheme against the search on the full apparatus alone, including simulation time spent.}
+
+\section{Final validation still required}
+
+\todo{Freeze the policy library, code revision, contact friction, grasp selector, world-key definition and fallback before the final held-out comparison. Do not aggregate a moving training ledger into a final result.}
+
+\todo{Separate the central-grasp change from the friction change on the same boards. State physical and optimization friction values, including any deterministic cone margin.}
+
+\todo{Evaluate straight, analytic-model and apparatus-trained routes on the same held-out seed set. Report policy coverage, actual route selected, local insertion completion and whole-game placement outcomes. Preserve failures and unreachable later moves.}
+
+\todo{Report placement after release, maximum interaction force, accepted allocation fraction, jam events and grasp slip. Explain how often improved local placement prevents a subsequent failure. Use games as the independent unit for game-level comparisons.}
+
+\todo{Verify the slow-execution assumption from measured velocities and inertial/contact-wrench ratios during descent and seating. Retain the supported staging as an explicitly different stage from free-space identification.}
+
+\subsection{Towards two Kinova arms}
+
+The insertion stage has been packaged for two Kinova Gen3 arms as a ROS~2 package that depends only on the route files, the convex program and the arm interface. Each route is exported from its replay in the full simulation as the commanded object path, the predicted slot load and the grasp pose. Played offline without physics, the package reproduces the commanded flange path of the simulation to $0.2$ mm median and $0.6$ mm maximum. The routes were retrained at the size of the laboratory pieces, $100$ mm cubes and a $70$ mm tri-pad: $27$ of $29$ narrowed slots and $12$ of $15$ five-piece kit slots seat in simulation. With the shelf floor $0.35$ m below the arm bases, every route pose lies $564$--$816$ mm from the shoulder, inside the $902$ mm reach. The laboratory tool is two printed plates with a central spring and a sponge layer; its pad friction and its hand--piece stiffness must be measured before any route is trusted on it. The first executions on the two arms, with force/torque sensors at the wrists, are reported in Chapter~\ref{ch:kinova}.
+
+The industrial analogy is shelf replenishment with finite contact capacity and imperfect pose information. The useful outcome would be a route that creates space without losing the grasp and leaves neighbours in a usable state. The present evidence establishes the modelling and evaluation requirements for that outcome; the final held-out campaign is still needed to quantify it.
+

@@ -1,0 +1,737 @@
+{
+  "provenance": [
+    {
+      "name": "frozen_simulator",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\plate_friction_study_20261024\\study.py",
+      "expected": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2",
+      "actual": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2",
+      "ok": true
+    },
+    {
+      "name": "frozen_protocol",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\plate_friction_study_20261024\\PROTOCOL.md",
+      "expected": "72fc25d688a5fb5d4f9eeb6a15dbb379644e837c801b3d7dac16dd01b8cad7ce",
+      "actual": "72fc25d688a5fb5d4f9eeb6a15dbb379644e837c801b3d7dac16dd01b8cad7ce",
+      "ok": true
+    },
+    {
+      "name": "prior",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\kinova_dual_arm_dmp_insertion\\prior_torsional_C.npz",
+      "expected": "2d229d367e70de99a0bc1b6cdf7004642b73bda5935bde5202ddccf636b0eadd",
+      "actual": "2d229d367e70de99a0bc1b6cdf7004642b73bda5935bde5202ddccf636b0eadd",
+      "ok": true
+    },
+    {
+      "name": "solver_copy",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\plate_friction_study_20261024\\socp_reference.py",
+      "expected": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+      "actual": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+      "ok": true
+    },
+    {
+      "name": "production_solver",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\kinova_dual_arm_dmp_insertion\\socp.py",
+      "expected": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+      "actual": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+      "ok": true
+    },
+    {
+      "name": "plate_copy",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\plate_friction_study_20261024\\vendor\\spider_ee\\floating_plate.py",
+      "expected": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+      "actual": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+      "ok": true
+    },
+    {
+      "name": "plate_original",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\lorenzo_data_analysis\\10_tripad_passivo\\spider_ee\\floating_plate.py",
+      "expected": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+      "actual": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+      "ok": true
+    },
+    {
+      "name": "paper_0",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\PAPERS\\friction_cone.pdf",
+      "expected": "5cf869f81ff871551e49192956877fefeb5fc271b271a84b378d33e457ece9e4",
+      "actual": "5cf869f81ff871551e49192956877fefeb5fc271b271a84b378d33e457ece9e4",
+      "ok": true
+    },
+    {
+      "name": "paper_1",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\PAPERS\\2026 Industrial Dual Arm Box Handling.pdf",
+      "expected": "6b63459ca9e3aa19ede12b823cfe1bef6b1515a311882aa8ab080ebd2bd04028",
+      "actual": "6b63459ca9e3aa19ede12b823cfe1bef6b1515a311882aa8ab080ebd2bd04028",
+      "ok": true
+    }
+  ],
+  "profiles": [
+    {
+      "path": "022e0b42bd2a.json",
+      "method": "fixed",
+      "case": "spatial",
+      "knots": {
+        "wrench_balance_force_N": 1.649915341908277e-11,
+        "wrench_balance_moment_Nm": 1.18120147661319e-12,
+        "witness_balance_force_N": 1.6495679991426346e-11,
+        "witness_balance_moment_Nm": 1.1812883898022555e-12,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.5596458096434965e-15,
+        "witness_to_wrist_moment_Nm": 1.3913823270755058e-15,
+        "wong_ellipse_excess_N": -4.195244868389821,
+        "wong_bending_Nm": 0.4010987323215264
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 1.649915341908277e-11,
+        "wrench_balance_moment_Nm": 0.0025001057648921486,
+        "witness_balance_force_N": 1.6495679991426346e-11,
+        "witness_balance_moment_Nm": 0.0011560239299995049,
+        "margin_deficit_N": 0.01339547489193027,
+        "witness_to_wrist_force_N": 7.119291619286993e-15,
+        "witness_to_wrist_moment_Nm": 0.0014658086871865176,
+        "wong_ellipse_excess_N": -4.195244868389821,
+        "wong_bending_Nm": 0.4010987323215264
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        50.477857857048996,
+        56.70125880369872
+      ],
+      "rho_range_N": [
+        2.19970703125,
+        2.19970703125
+      ],
+      "fixed_calibration": {
+        "rho_per_pad_N": 2.19970703125,
+        "target_mean_force_N": 52.88848454962347,
+        "matched_mean_force_N": 52.890610388948
+      }
+    },
+    {
+      "path": "06c2deaa264c.json",
+      "method": "fixed",
+      "case": "planar",
+      "knots": {
+        "wrench_balance_force_N": 3.090668258176879e-11,
+        "wrench_balance_moment_Nm": 2.9244666258353204e-12,
+        "witness_balance_force_N": 3.090879973089317e-11,
+        "witness_balance_moment_Nm": 2.9246024616602248e-12,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.552713678800501e-15,
+        "witness_to_wrist_moment_Nm": 1.471569104550992e-15,
+        "wong_ellipse_excess_N": -3.6243175099718528,
+        "wong_bending_Nm": 0.414504536409618
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 3.090668258176879e-11,
+        "wrench_balance_moment_Nm": 0.002216298869065325,
+        "witness_balance_force_N": 3.090879973089317e-11,
+        "witness_balance_moment_Nm": 0.0014227237596397511,
+        "margin_deficit_N": 0.020303433774965463,
+        "witness_to_wrist_force_N": 7.377764055609925e-15,
+        "witness_to_wrist_moment_Nm": 0.0009838598347241382,
+        "wong_ellipse_excess_N": -3.6243175099718528,
+        "wong_bending_Nm": 0.414504536409618
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        49.20854983242873,
+        56.252668922788814
+      ],
+      "rho_range_N": [
+        2.04931640625,
+        2.04931640625
+      ],
+      "fixed_calibration": {
+        "rho_per_pad_N": 2.04931640625,
+        "target_mean_force_N": 52.913703789803925,
+        "matched_mean_force_N": 52.91404768506278
+      }
+    },
+    {
+      "path": "1069b37db0d0.json",
+      "method": "none",
+      "case": "planar",
+      "knots": {
+        "wrench_balance_force_N": 9.31021139747561e-13,
+        "wrench_balance_moment_Nm": 4.348144572801568e-14,
+        "witness_balance_force_N": 9.31021139747561e-13,
+        "witness_balance_moment_Nm": 4.384615406268496e-14,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 1.831026719408895e-15,
+        "witness_to_wrist_moment_Nm": 1.1775897877475924e-15,
+        "wong_ellipse_excess_N": 3.0903531312899624,
+        "wong_bending_Nm": 0.516808320748254
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 9.31021139747561e-13,
+        "wrench_balance_moment_Nm": 0.0042623167424109855,
+        "witness_balance_force_N": 9.31021139747561e-13,
+        "witness_balance_moment_Nm": 0.0022652530904383535,
+        "margin_deficit_N": 0.027636600907669617,
+        "witness_to_wrist_force_N": 5.102196573270515e-15,
+        "witness_to_wrist_moment_Nm": 0.0016022444500131412,
+        "wong_ellipse_excess_N": 3.0903531312899624,
+        "wong_bending_Nm": 0.516808320748254
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        31.618179555051007,
+        46.01336668636489
+      ],
+      "rho_range_N": [
+        0.0,
+        0.0
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "35f783009e8e.json",
+      "method": "adaptive",
+      "case": "spatial",
+      "knots": {
+        "wrench_balance_force_N": 1.8430727353518816e-11,
+        "wrench_balance_moment_Nm": 2.732285427087439e-13,
+        "witness_balance_force_N": 1.843227084809294e-11,
+        "witness_balance_moment_Nm": 2.732810438186495e-13,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.554447978966673e-15,
+        "witness_to_wrist_moment_Nm": 1.3074614405932247e-15,
+        "wong_ellipse_excess_N": -4.168418029553903,
+        "wong_bending_Nm": 0.4015613144852651
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 1.8430727353518816e-11,
+        "wrench_balance_moment_Nm": 0.002490891139736104,
+        "witness_balance_force_N": 1.843227084809294e-11,
+        "witness_balance_moment_Nm": 0.0011524734860859775,
+        "margin_deficit_N": 0.01339432645955796,
+        "witness_to_wrist_force_N": 7.337557957613285e-15,
+        "witness_to_wrist_moment_Nm": 0.0014702442567206986,
+        "wong_ellipse_excess_N": -4.168418029553903,
+        "wong_bending_Nm": 0.4015613144852651
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        50.50057037985653,
+        56.66367969641785
+      ],
+      "rho_range_N": [
+        2.1924379165032826,
+        2.202142592517734
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "39649136810f.json",
+      "method": "none",
+      "case": "centered",
+      "knots": {
+        "wrench_balance_force_N": 9.825296883350076e-13,
+        "wrench_balance_moment_Nm": 9.21990257219275e-14,
+        "witness_balance_force_N": 9.814825663656875e-13,
+        "witness_balance_moment_Nm": 9.235297243818145e-14,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.552713678800501e-15,
+        "witness_to_wrist_moment_Nm": 1.229183485640686e-15,
+        "wong_ellipse_excess_N": 3.1727249229970145,
+        "wong_bending_Nm": 0.45089284346603475
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 9.825296883350076e-13,
+        "wrench_balance_moment_Nm": 0.0037727830008365995,
+        "witness_balance_force_N": 9.814825663656875e-13,
+        "witness_balance_moment_Nm": 0.002304163599141606,
+        "margin_deficit_N": 0.026324496766090277,
+        "witness_to_wrist_force_N": 7.32410687763558e-15,
+        "witness_to_wrist_moment_Nm": 0.0020404374801088502,
+        "wong_ellipse_excess_N": 3.1727249229970145,
+        "wong_bending_Nm": 0.45089284346603475
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        33.24660716358961,
+        47.02546263163664
+      ],
+      "rho_range_N": [
+        0.0,
+        0.0
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "50a65e7c3c2d.json",
+      "method": "adaptive",
+      "case": "planar",
+      "knots": {
+        "wrench_balance_force_N": 2.4124927013931625e-11,
+        "wrench_balance_moment_Nm": 9.52338987467446e-13,
+        "witness_balance_force_N": 2.4130779109801336e-11,
+        "witness_balance_moment_Nm": 9.522951234441257e-13,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.552713678800501e-15,
+        "witness_to_wrist_moment_Nm": 1.4071419885088062e-15,
+        "wong_ellipse_excess_N": -3.6175527098157136,
+        "wong_bending_Nm": 0.4145627688567531
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 2.4124927013931625e-11,
+        "wrench_balance_moment_Nm": 0.0022133061114419667,
+        "witness_balance_force_N": 2.4130779109801336e-11,
+        "witness_balance_moment_Nm": 0.001421025523393595,
+        "margin_deficit_N": 0.02030252227072804,
+        "witness_to_wrist_force_N": 7.337557957613285e-15,
+        "witness_to_wrist_moment_Nm": 0.0009836681799593767,
+        "wong_ellipse_excess_N": -3.6175527098157136,
+        "wong_bending_Nm": 0.4145627688567531
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        49.21556119859874,
+        56.24095548102065
+      ],
+      "rho_range_N": [
+        2.0476758444146212,
+        2.0500686614818036
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "732ead3e028b.json",
+      "method": "wong",
+      "case": "spatial",
+      "knots": {
+        "wrench_balance_force_N": 3.552713678800501e-15,
+        "wrench_balance_moment_Nm": 5.585701844806365e-16,
+        "witness_balance_force_N": 2.00174824655111e-12,
+        "witness_balance_moment_Nm": 1.4370651711021194e-13,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 1.880717072974108e-12,
+        "witness_to_wrist_moment_Nm": 4.255817044290704e-14,
+        "wong_ellipse_excess_N": -4.833484723576476e-10,
+        "wong_bending_Nm": 1.2837277347343155e-15
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 5.0242958677880805e-15,
+        "wrench_balance_moment_Nm": 0.0011241036686753974,
+        "witness_balance_force_N": 2.00174824655111e-12,
+        "witness_balance_moment_Nm": 0.0007122021518172567,
+        "margin_deficit_N": 0.0028820858312968768,
+        "witness_to_wrist_force_N": 1.880717072974108e-12,
+        "witness_to_wrist_moment_Nm": 0.00021927125768880882,
+        "wong_ellipse_excess_N": 0.0024681771845180833,
+        "wong_bending_Nm": 0.0003239113293670969
+      },
+      "discrete_witness_knots": 2,
+      "combined_force_range_N": [
+        34.92592309903888,
+        39.6402665575616
+      ],
+      "rho_range_N": [
+        0.0,
+        0.0
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "7454135b9792.json",
+      "method": "adaptive",
+      "case": "mass_under10",
+      "knots": {
+        "wrench_balance_force_N": 3.144017495777478e-11,
+        "wrench_balance_moment_Nm": 3.7008200762660646e-12,
+        "witness_balance_force_N": 3.1440722495910726e-11,
+        "witness_balance_moment_Nm": 3.700757864017186e-12,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.66205343881779e-15,
+        "witness_to_wrist_moment_Nm": 1.278941868017495e-15,
+        "wong_ellipse_excess_N": -4.007607974970719,
+        "wong_bending_Nm": 0.35700104459795773
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 3.144017495777478e-11,
+        "wrench_balance_moment_Nm": 0.0019308254064349696,
+        "witness_balance_force_N": 3.1440722495910726e-11,
+        "witness_balance_moment_Nm": 0.0009689657121105192,
+        "margin_deficit_N": 0.011926692635331637,
+        "witness_to_wrist_force_N": 7.327471962526033e-15,
+        "witness_to_wrist_moment_Nm": 0.001085169401095702,
+        "wong_ellipse_excess_N": -4.007607974970719,
+        "wong_bending_Nm": 0.35700104459795773
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        46.0983967021243,
+        51.357539045736345
+      ],
+      "rho_range_N": [
+        2.042582991501825,
+        2.0513171999148323
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "85f2c2da8155.json",
+      "method": "wong",
+      "case": "planar",
+      "knots": {
+        "wrench_balance_force_N": 3.552713678800501e-15,
+        "wrench_balance_moment_Nm": 4.440892098500626e-16,
+        "witness_balance_force_N": 8.280567002434699e-14,
+        "witness_balance_moment_Nm": 3.289533399364433e-15,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 7.462813136385195e-14,
+        "witness_to_wrist_moment_Nm": 7.783795306780582e-16,
+        "wong_ellipse_excess_N": -3.979145901666925e-10,
+        "wong_bending_Nm": 1.1657341758564144e-15
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 3.552713678800501e-15,
+        "wrench_balance_moment_Nm": 0.001288358210138174,
+        "witness_balance_force_N": 8.384705353994056e-14,
+        "witness_balance_moment_Nm": 0.0008804477873950028,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 7.462813136385195e-14,
+        "witness_to_wrist_moment_Nm": 0.00026858215328379176,
+        "wong_ellipse_excess_N": -3.979145901666925e-10,
+        "wong_bending_Nm": 0.000268582153283764
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        33.74756331519795,
+        39.44206995644777
+      ],
+      "rho_range_N": [
+        0.0,
+        0.0
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "90931df23875.json",
+      "method": "adaptive",
+      "case": "mu_over10",
+      "knots": {
+        "wrench_balance_force_N": 1.1054072293672483e-12,
+        "wrench_balance_moment_Nm": 2.175315664620327e-13,
+        "witness_balance_force_N": 1.1053579593519458e-12,
+        "witness_balance_moment_Nm": 2.1756686597251315e-13,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.580361673049448e-15,
+        "witness_to_wrist_moment_Nm": 1.323729281859443e-15,
+        "wong_ellipse_excess_N": -4.254932538686768,
+        "wong_bending_Nm": 0.3996263353345564
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 1.1054072293672483e-12,
+        "wrench_balance_moment_Nm": 0.002837586553097889,
+        "witness_balance_force_N": 1.1053579593519458e-12,
+        "witness_balance_moment_Nm": 0.0015105703314668652,
+        "margin_deficit_N": 0.011652940110592258,
+        "witness_to_wrist_force_N": 7.32410687763558e-15,
+        "witness_to_wrist_moment_Nm": 0.001467734245448672,
+        "wong_ellipse_excess_N": -4.254932538686768,
+        "wong_bending_Nm": 0.3996263353345564
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        47.28371868394478,
+        55.554955188671535
+      ],
+      "rho_range_N": [
+        2.1924379165032826,
+        2.202142592517734
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "a5d6647ab2f9.json",
+      "method": "adaptive",
+      "case": "centered",
+      "knots": {
+        "wrench_balance_force_N": 5.168807540362199e-11,
+        "wrench_balance_moment_Nm": 1.2328982391424256e-12,
+        "witness_balance_force_N": 5.1686318448416677e-11,
+        "witness_balance_moment_Nm": 1.2328098151543232e-12,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.66205343881779e-15,
+        "witness_to_wrist_moment_Nm": 1.5013688443919505e-15,
+        "wong_ellipse_excess_N": -3.838575456236395,
+        "wong_bending_Nm": 0.3979804856798539
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 5.168807540362199e-11,
+        "wrench_balance_moment_Nm": 0.0035727177495203056,
+        "witness_balance_force_N": 5.1686318448416677e-11,
+        "witness_balance_moment_Nm": 0.0020918865073863927,
+        "margin_deficit_N": 0.023207098526489167,
+        "witness_to_wrist_force_N": 7.327471962526033e-15,
+        "witness_to_wrist_moment_Nm": 0.0014468545248996689,
+        "wong_ellipse_excess_N": -3.838575456236395,
+        "wong_bending_Nm": 0.3979804856798539
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        48.69907765374741,
+        57.933419810137345
+      ],
+      "rho_range_N": [
+        2.013897343069965,
+        2.013897343070125
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "cf0c85fa468b.json",
+      "method": "fixed",
+      "case": "centered",
+      "knots": {
+        "wrench_balance_force_N": 6.169621849890719e-11,
+        "wrench_balance_moment_Nm": 3.64337839870521e-12,
+        "witness_balance_force_N": 6.169268357272255e-11,
+        "witness_balance_moment_Nm": 3.643342232119725e-12,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.5596458096434965e-15,
+        "witness_to_wrist_moment_Nm": 1.4775771333359793e-15,
+        "wong_ellipse_excess_N": -3.839633699580963,
+        "wong_bending_Nm": 0.3979648248359391
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 6.169621849890719e-11,
+        "wrench_balance_moment_Nm": 0.0035727044924412504,
+        "witness_balance_force_N": 6.169268357272255e-11,
+        "witness_balance_moment_Nm": 0.0020918775352280566,
+        "margin_deficit_N": 0.023206757081939866,
+        "witness_to_wrist_force_N": 7.327471962526033e-15,
+        "witness_to_wrist_moment_Nm": 0.0014468591630850069,
+        "wong_ellipse_excess_N": -3.839633699580963,
+        "wong_bending_Nm": 0.3979648248359391
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        48.70150583203689,
+        57.93534184052119
+      ],
+      "rho_range_N": [
+        2.01416015625,
+        2.01416015625
+      ],
+      "fixed_calibration": {
+        "rho_per_pad_N": 2.01416015625,
+        "target_mean_force_N": 54.26594147314569,
+        "matched_mean_force_N": 54.267895642815134
+      }
+    },
+    {
+      "path": "e5fc363cbba6.json",
+      "method": "adaptive",
+      "case": "light_known",
+      "knots": {
+        "wrench_balance_force_N": 6.69803993854912e-11,
+        "wrench_balance_moment_Nm": 9.928925574498349e-13,
+        "witness_balance_force_N": 6.697697694824203e-11,
+        "witness_balance_moment_Nm": 9.9278712344229e-13,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.552713678800501e-15,
+        "witness_to_wrist_moment_Nm": 1.279769832707001e-15,
+        "wong_ellipse_excess_N": -3.999141237453081,
+        "wong_bending_Nm": 0.35465649039703523
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 6.69803993854912e-11,
+        "wrench_balance_moment_Nm": 0.0019014460717959054,
+        "witness_balance_force_N": 6.697697694824203e-11,
+        "witness_balance_moment_Nm": 0.0009338313217575082,
+        "margin_deficit_N": 0.011850523148834835,
+        "witness_to_wrist_force_N": 7.324948293788351e-15,
+        "witness_to_wrist_moment_Nm": 0.00108837173004436,
+        "wong_ellipse_excess_N": -3.999141237453081,
+        "wong_bending_Nm": 0.35465649039703523
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        45.86674198261325,
+        51.07836678447392
+      ],
+      "rho_range_N": [
+        2.034695890185959,
+        2.0433790213567846
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "ebf623b58f1b.json",
+      "method": "wong",
+      "case": "centered",
+      "knots": {
+        "wrench_balance_force_N": 5.0242958677880805e-15,
+        "wrench_balance_moment_Nm": 5.551115123125783e-16,
+        "witness_balance_force_N": 4.050716828981883e-14,
+        "witness_balance_moment_Nm": 1.055077015130091e-15,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 2.929642751054232e-14,
+        "witness_to_wrist_moment_Nm": 9.452671489666313e-16,
+        "wong_ellipse_excess_N": 1.929656434640492e-11,
+        "wong_bending_Nm": 1.0547118733938987e-15
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 5.0242958677880805e-15,
+        "wrench_balance_moment_Nm": 0.0007723189034816169,
+        "witness_balance_force_N": 4.050716828981883e-14,
+        "witness_balance_moment_Nm": 0.0005148792689882997,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 2.929642751054232e-14,
+        "witness_to_wrist_moment_Nm": 0.000195237642901136,
+        "wong_ellipse_excess_N": 0.002273692564074281,
+        "wong_bending_Nm": 0.00019523764290058088
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        33.31528926656532,
+        36.359067992897295
+      ],
+      "rho_range_N": [
+        0.0,
+        0.0
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "f5d68bba84b1.json",
+      "method": "adaptive",
+      "case": "heavy_known",
+      "knots": {
+        "wrench_balance_force_N": 2.648831302341387e-11,
+        "wrench_balance_moment_Nm": 5.479148652088867e-13,
+        "witness_balance_force_N": 2.6488311620020215e-11,
+        "witness_balance_moment_Nm": 5.480191883568285e-13,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.972054645195637e-15,
+        "witness_to_wrist_moment_Nm": 1.6146613780347262e-15,
+        "wong_ellipse_excess_N": -4.422142333157609,
+        "wong_bending_Nm": 0.47196307852125846
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 2.648831302341387e-11,
+        "wrench_balance_moment_Nm": 0.003132216012803228,
+        "witness_balance_force_N": 2.6488311620020215e-11,
+        "witness_balance_moment_Nm": 0.0014921178328848826,
+        "margin_deficit_N": 0.01571083541560281,
+        "witness_to_wrist_force_N": 7.944109290391274e-15,
+        "witness_to_wrist_moment_Nm": 0.0016220803742311469,
+        "wong_ellipse_excess_N": -4.422142333157609,
+        "wong_bending_Nm": 0.47196307852125846
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        57.45415330156467,
+        65.0475919909685
+      ],
+      "rho_range_N": [
+        2.4290509559792675,
+        2.4402879492591585
+      ],
+      "fixed_calibration": null
+    },
+    {
+      "path": "fb86eaccfbc8.json",
+      "method": "none",
+      "case": "spatial",
+      "knots": {
+        "wrench_balance_force_N": 6.6607481139508275e-12,
+        "wrench_balance_moment_Nm": 2.3763379751660185e-12,
+        "witness_balance_force_N": 6.66075310854098e-12,
+        "witness_balance_moment_Nm": 2.376341017959943e-12,
+        "margin_deficit_N": 0.0,
+        "witness_to_wrist_force_N": 3.580361673049448e-15,
+        "witness_to_wrist_moment_Nm": 1.0659053534168219e-15,
+        "wong_ellipse_excess_N": 3.5387632018713546,
+        "wong_bending_Nm": 0.5351898106249368
+      },
+      "dense_interpolation": {
+        "wrench_balance_force_N": 6.6607481139508275e-12,
+        "wrench_balance_moment_Nm": 0.004989247840650286,
+        "witness_balance_force_N": 6.66075310854098e-12,
+        "witness_balance_moment_Nm": 0.0034746994266719885,
+        "margin_deficit_N": 0.015901297753513788,
+        "witness_to_wrist_force_N": 7.119291619286993e-15,
+        "witness_to_wrist_moment_Nm": 0.0012314136845103462,
+        "wong_ellipse_excess_N": 3.5387632018713546,
+        "wong_bending_Nm": 0.5351898106249368
+      },
+      "discrete_witness_knots": 7,
+      "combined_force_range_N": [
+        31.354912944923417,
+        46.64969603885484
+      ],
+      "rho_range_N": [
+        0.0,
+        0.0
+      ],
+      "fixed_calibration": null
+    }
+  ],
+  "pilot_physics": [
+    {
+      "id": "core_floating_adaptive_centered_0",
+      "outcome": null,
+      "recorded_sample_interval_s": 0.010000000000000009,
+      "force_newton_residual_rms_N": 0.002353147827340845,
+      "moment_euler_residual_rms_Nm": 4.164491882900325e-05,
+      "terminal_contact_force_N": [
+        6.287478489808151e-06,
+        -4.0239650039297634e-07,
+        18.638998271265923
+      ],
+      "terminal_force_balance_N": 6.533209793721488e-06,
+      "lipschitz_min_slack_N": 0.0007872131667665955,
+      "manifold_max_normal_spread_deg": 1.4787793334710982e-06
+    },
+    {
+      "id": "core_floating_wong_spatial_2",
+      "outcome": null,
+      "recorded_sample_interval_s": 0.010000000000000009,
+      "force_newton_residual_rms_N": 0.03807659814365373,
+      "moment_euler_residual_rms_Nm": 0.0031941309716006575,
+      "terminal_contact_force_N": [
+        0.00046573837981177534,
+        0.00067936997702214,
+        18.640283096696628
+      ],
+      "terminal_force_balance_N": 0.0015247271680539401,
+      "lipschitz_min_slack_N": 0.06440594376049413,
+      "manifold_max_normal_spread_deg": 1.4787793334710982e-06
+    },
+    {
+      "id": "core_welded_adaptive_centered_0",
+      "outcome": null,
+      "recorded_sample_interval_s": 0.010000000000000009,
+      "force_newton_residual_rms_N": 0.001594683036237735,
+      "moment_euler_residual_rms_Nm": 3.2564510487671525e-05,
+      "terminal_contact_force_N": [
+        2.265943772794543e-06,
+        1.1354022333653902e-06,
+        18.6390015453631
+      ],
+      "terminal_force_balance_N": 2.968465345198489e-06,
+      "lipschitz_min_slack_N": 0.00076578372714875,
+      "manifold_max_normal_spread_deg": 1.4787793334710982e-06
+    },
+    {
+      "id": "core_welded_adaptive_spatial_2",
+      "outcome": null,
+      "recorded_sample_interval_s": 0.010000000000000009,
+      "force_newton_residual_rms_N": 0.001458898559732796,
+      "moment_euler_residual_rms_Nm": 4.555447776962383e-05,
+      "terminal_contact_force_N": [
+        4.130459491435978e-06,
+        1.0828132860352113e-07,
+        18.639006711443756
+      ],
+      "terminal_force_balance_N": 7.88136395022778e-06,
+      "lipschitz_min_slack_N": 0.00010870920288819086,
+      "manifold_max_normal_spread_deg": 1.7075472925031877e-06
+    }
+  ],
+  "interpolation_note": "Linear interpolation of world-frame wrenches is not exact rigid rotation. Knot checks pass; dense in-between residuals are reported without claiming hard continuous feasibility.",
+  "physics_note": "Contact-reconstructed virtual wrist resultant, not a native ATI measurement. Newton/Euler residuals use finite differences at 100 Hz and do not replace time-step convergence."
+}

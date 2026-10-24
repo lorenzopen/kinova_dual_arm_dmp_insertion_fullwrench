@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "side": "L",
+      "zero_load_estimated_norm": 0.0,
+      "prescribed_external_wrench_local": [
+        0.4,
+        -0.3,
+        0.2,
+        0.01,
+        -0.02,
+        0.03
+      ],
+      "estimated": [
+        0.40000000000000113,
+        -0.30000000000000066,
+        0.19999999999999962,
+        0.009999999999999842,
+        -0.020000000000000212,
+        0.029999999999999968
+      ],
+      "max_abs_error": 1.1102230246251565e-15
+    },
+    {
+      "side": "R",
+      "zero_load_estimated_norm": 0.0,
+      "prescribed_external_wrench_local": [
+        0.4,
+        -0.3,
+        0.2,
+        0.01,
+        -0.02,
+        0.03
+      ],
+      "estimated": [
+        0.39999999999999863,
+        -0.3000000000000006,
+        0.19999999999999996,
+        0.009999999999999842,
+        -0.019999999999999817,
+        0.030000000000000207
+      ],
+      "max_abs_error": 1.3877787807814457e-15
+    }
+  ],
+  "relation": "sensor=-motor; quasistatic motor=g-J_local.T external_wrench",
+  "limitation": "Quasistatic estimator interface check, not dynamic ATI/contact equivalence"
+}

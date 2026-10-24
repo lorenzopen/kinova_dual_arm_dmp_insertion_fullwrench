@@ -1,0 +1,9 @@
+pybullet build time: May 17 2025 21:12:02
+  prior: 5 components, std_f 12.09 N, std_tau 0.7160 Nm
+PROFILE a5d6647ab2f9 adaptive centered
+PROFILE 35f783009e8e adaptive spatial
+PROFILE 732ead3e028b wong spatial
+{"index": 1, "total": 4, "id": "core_welded_adaptive_centered_0", "error": null, "seconds": 4.4905}
+{"index": 2, "total": 4, "id": "core_floating_adaptive_centered_0", "error": null, "seconds": 4.4905}
+{"index": 3, "total": 4, "id": "core_welded_adaptive_spatial_2", "error": null, "seconds": 4.4905}
+{"index": 4, "total": 4, "id": "core_floating_wong_spatial_2", "error": null, "seconds": 4.4905}

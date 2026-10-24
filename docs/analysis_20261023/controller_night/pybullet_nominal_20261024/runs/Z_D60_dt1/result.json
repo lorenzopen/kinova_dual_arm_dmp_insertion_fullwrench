@@ -1,0 +1,65 @@
+{
+  "controller_result": {},
+  "error": "Abort('left hand force 302.2 N over 60 N')",
+  "truth": {
+    "final_worst_cell_mm": 552.5763703167985,
+    "final_centroid_mm": 550.0001000000001,
+    "final_orientation_deg": 2.9534927645817475,
+    "physics_steps": 30,
+    "seconds": 0.03
+  },
+  "planning": {
+    "feasible": 232,
+    "solves": 232,
+    "samples": 1157,
+    "profile_sha256": "c50d13d17137db665526da262f060c5dbb3bcbb32f3235b503ecb9621e118637",
+    "method": "unchanged NominalPlanner / GraspSOCP / TP-GMM, recomputed before Bullet"
+  },
+  "wall_seconds": 0.15087629994377494,
+  "dt": 0.001,
+  "cart_k": [
+    1500,
+    1500,
+    1500,
+    20,
+    20,
+    20
+  ],
+  "cart_d": [
+    60.0,
+    60.0,
+    60.0,
+    7,
+    7,
+    7
+  ],
+  "ffi": {
+    "ki_m_per_N_s": 0.0016,
+    "trim_limit_m": 0.003,
+    "trim_speed_m_per_s": 0.002,
+    "total_limit_m": 0.012,
+    "total_speed_m_per_s": 0.002,
+    "max_dt_s": 0.1,
+    "stall_dt_s": 0.3
+  },
+  "feedforward_k_eff": 680.0,
+  "piece_mass": 0.05,
+  "tool_mass": 0.19,
+  "mechanical_pad_K": [
+    21500.0,
+    21500.0,
+    21500.0,
+    42.44824,
+    1.2241199999999997,
+    1.2241199999999997
+  ],
+  "assumptions": [
+    "Floating Cartesian wrist proxy, not full Kinova torque servo or seven-link dynamics",
+    "Original floating-plate model: attached plate/pads .14kg, flange .05kg, inflated .05kgm2 flange inertia",
+    "K/D set to archived nominal Cartesian gains; spring model original nominal, not measured real coil",
+    "Neighbour and held piece contact 8000N/m,207Ns/m; neighbours .05kg; uncalibrated source nominal assumptions",
+    "No injected bias, communication delay, jitter, device noise or hardware saturation",
+    "Gravity-compensated spring-reaction wrist sensor, 5ms block then last-two block average",
+    "Truth object pose and contact forces for evaluation only, never fed to controller"
+  ]
+}

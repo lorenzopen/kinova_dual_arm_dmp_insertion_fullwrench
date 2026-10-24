@@ -1,0 +1,171 @@
+{
+  "error": null,
+  "controller_result": {
+    "route_followed": true,
+    "jammed": false,
+    "seat_found": true,
+    "landed_high": false,
+    "drop_mm": 0.0,
+    "believed_mm": 0.6563350148479641,
+    "socp_ok": 0,
+    "socp_ticks": 0,
+    "socp_failed": 0,
+    "side_force_max": 2.1561864593919364,
+    "squeeze_median": 4.628684415934925
+  },
+  "truth": {
+    "final_worst_cell_mm": 4.42498026158209,
+    "final_centroid_mm": 2.8035077292843678,
+    "final_orientation_deg": 1.1005290106309318,
+    "physics_steps": 76480,
+    "seconds": 38.24
+  },
+  "planning": {
+    "feasible": 263,
+    "solves": 263,
+    "samples": 1313,
+    "profile_sha256": "c923c8b645bf2d3e8665f92e905404caee8089ea3e731a00efdd859492807f77",
+    "method": "unchanged NominalPlanner / GraspSOCP / TP-GMM, recomputed before Bullet"
+  },
+  "dt": 0.0005,
+  "cart_k": [
+    1500,
+    1500,
+    1500,
+    20,
+    20,
+    20
+  ],
+  "cart_d": [
+    80.0,
+    80.0,
+    80.0,
+    7,
+    7,
+    7
+  ],
+  "ffi": {
+    "ki_m_per_N_s": 0.0016,
+    "trim_limit_m": 0.003,
+    "trim_speed_m_per_s": 0.002,
+    "total_limit_m": 0.012,
+    "total_speed_m_per_s": 0.002,
+    "max_dt_s": 0.1,
+    "stall_dt_s": 0.3
+  },
+  "feedforward_k_eff": 680.0,
+  "pad_axial_N_per_m": 4200.0,
+  "central_axial_N_per_m": 2700.0,
+  "pad_each_axial_N_per_m": 500.0,
+  "mechanical_pad_K": [
+    4200.0,
+    21500.0,
+    21500.0,
+    42.44824,
+    1.2241199999999997,
+    1.2241199999999997
+  ],
+  "spring_damping_reference_dt": 0.00025,
+  "tool_mass": 0.15,
+  "plate_mass": 0.04,
+  "lab_scene_checks": [
+    {
+      "side": "L",
+      "base_position_shelf": [
+        0.7525,
+        -0.3025,
+        0.03
+      ],
+      "base_quat_shelf": [
+        -0.0,
+        -0.0,
+        -1.0,
+        0.0
+      ],
+      "fk_vs_independent_chain_position_error_m": 1.7156610089964406e-08,
+      "fk_rotation_error_rad": 2.0448637286385912e-07,
+      "recorded_tool_position_error_m": 6.066764537922451e-06,
+      "open_ik_error_m": 2.4586352449845334e-08,
+      "open_ik_error_rad": 1.4853039669123037e-07,
+      "jacobian_finite_difference_max_error": 0.0035762101607579684,
+      "jacobian_requires_base_rotation": true,
+      "initial_q": [
+        2.317315131490396,
+        -0.7247208793724236,
+        2.420920392332476,
+        -1.0771947602797898,
+        -0.17463363995725734,
+        -1.014888819175205,
+        2.7762631262095785
+      ],
+      "torque_limits": [
+        39.0,
+        39.0,
+        39.0,
+        39.0,
+        39.0,
+        9.0,
+        39.0
+      ]
+    },
+    {
+      "side": "R",
+      "base_position_shelf": [
+        0.7525,
+        0.2975,
+        0.03
+      ],
+      "base_quat_shelf": [
+        -0.0,
+        -0.0,
+        -1.0,
+        0.0
+      ],
+      "fk_vs_independent_chain_position_error_m": 1.0226704230734494e-08,
+      "fk_rotation_error_rad": 2.534262743500041e-07,
+      "recorded_tool_position_error_m": 6.6513554459146054e-06,
+      "open_ik_error_m": 3.8120142374929963e-10,
+      "open_ik_error_rad": 7.607919975648817e-10,
+      "jacobian_finite_difference_max_error": 0.002387858260879819,
+      "jacobian_requires_base_rotation": true,
+      "initial_q": [
+        0.4177866261484085,
+        0.0311437707309791,
+        2.8852281793718895,
+        -1.0848555972033735,
+        1.506247013566509,
+        1.7191940451291299,
+        1.109547786736528
+      ],
+      "torque_limits": [
+        39.0,
+        39.0,
+        39.0,
+        39.0,
+        39.0,
+        9.0,
+        39.0
+      ]
+    }
+  ],
+  "central_C_linear": [
+    10.844353369380768,
+    29.51459149490487,
+    29.51459149490487
+  ],
+  "central_C_rotational": [
+    0.07078971123629452,
+    0.0,
+    0.0
+  ],
+  "pad_C_linear": [
+    4.666666666666667,
+    4.666666666666667,
+    4.666666666666667
+  ],
+  "wall_seconds": 118.02493349998258,
+  "torque_control_hz": 1000,
+  "servo_discretization": "implicit",
+  "law": "Articulated Cartesian impedance in torque at1kHz, implicit realization, gravity+coriolis, .2 nullspace damping",
+  "limitation": "Same outer FFI/SOCP, physical Kinova URDF; inner law declared proxy, not verified lab servo source"
+}

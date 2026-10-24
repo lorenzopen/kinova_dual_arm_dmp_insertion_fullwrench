@@ -1,0 +1,50 @@
+{
+  "started_utc": "2026-10-24T02:57:24.143614+00:00",
+  "supervisor_pid": null,
+  "active_child": null,
+  "completed": [
+    "L_D60_dt05",
+    "S_D60_dt05",
+    "T_D60_dt05",
+    "Z_D60_dt025"
+  ],
+  "jobs": [
+    [
+      "L_D60_dt05",
+      "L",
+      0.0005,
+      60,
+      true
+    ],
+    [
+      "S_D60_dt05",
+      "S",
+      0.0005,
+      60,
+      false
+    ],
+    [
+      "T_D60_dt05",
+      "T",
+      0.0005,
+      60,
+      false
+    ],
+    [
+      "Z_D60_dt025",
+      "Z",
+      0.00025,
+      60,
+      false
+    ],
+    [
+      "Z_D80_dt025",
+      "Z",
+      0.00025,
+      80,
+      false
+    ]
+  ],
+  "stopped_by_user_steering": "User prioritizes 2700N/m spring; D80 comparison stopped, no further original-pad jobs.",
+  "stopped_utc": "2026-10-24T03:04:40.294483+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "python_executable": "C:\\Users\\Lorenzo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "cvxpy": "1.9.3",
+  "pybullet_api": 202010061,
+  "pybullet_binary": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\analysis_20261023\\controller_night\\pybullet_nominal_20261024\\deps\\conda\\Lib\\site-packages\\pybullet.cp312-win_amd64.pyd",
+  "pybullet_binary_sha256": "5362a950fa142cac48f6d8b8a5a9b3c5c64915b72993368ee9a3fa8a40025689",
+  "blas_threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "shortlist": [
+    {
+      "id": "I_P0_I1.6_D0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "mean_run_worst_model_score": 11.887384334635788,
+      "worst_score": 16.668543876302138,
+      "minimum_mean_hand_force_N": 2.4249065323101124,
+      "maximum_seat_positive_error_N": 2.645307817825389
+    },
+    {
+      "id": "P_P0.05_I0_D0",
+      "family": "P",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "mean_run_worst_model_score": 15.844409555229662,
+      "worst_score": 24.95027343166077,
+      "minimum_mean_hand_force_N": 0.687720888127676,
+      "maximum_seat_positive_error_N": 3.077047101428218
+    },
+    {
+      "id": "PI_P0.05_I0.8_D0",
+      "family": "PI",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "mean_run_worst_model_score": 11.890739423335132,
+      "worst_score": 16.458209675553952,
+      "minimum_mean_hand_force_N": 2.30047087122595,
+      "maximum_seat_positive_error_N": 2.576043506299373
+    },
+    {
+      "id": "PD_P0.05_I0_D0.005",
+      "family": "PD",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "mean_run_worst_model_score": 15.774529566669123,
+      "worst_score": 24.860234177937855,
+      "minimum_mean_hand_force_N": 0.640140541636796,
+      "maximum_seat_positive_error_N": 3.0423434861942136
+    },
+    {
+      "id": "PID_P0.05_I0.8_D0.005",
+      "family": "PID",
+      "kp_m_N": 5e-05,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 5e-06,
+      "derivative_tau_s": 0.05,
+      "mean_run_worst_model_score": 11.959784893440846,
+      "worst_score": 16.680097983037427,
+      "minimum_mean_hand_force_N": 2.2819356232043546,
+      "maximum_seat_positive_error_N": 2.584871496980305
+    }
+  ],
+  "caveat": "Preliminary development shortlist under fixed recorded residual. No original holdout evaluated; no robot recommendation. Model adequacy gate failed for all empirical families."
+}

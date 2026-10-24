@@ -1,0 +1,117 @@
+{
+ "note": "SIMULATED counterfactual, not robot data; see module docstring",
+ "runs": {
+  "20261022_152007": {
+   "source": "docs\\runs\\20261022_F75_Zt1_s9012_twist_ati\\1_1520_riuscita\\F75_Zt1_s9012_c100_five_cut800_20261022_152007.csv",
+   "cart_d": "5/1",
+   "logged_gain": 1.0,
+   "simulated_gain": 0.5,
+   "model": {
+    "k_sum_N_per_m": 1668.348606281641,
+    "tau_s": 0.145,
+    "band_fit_R2": 0.9070932082580273
+   },
+   "replay_check_max_abs_N": 0.04893416496603642,
+   "measured": {
+    "err_rms_N": 0.868487484569758,
+    "min_N": 6.180000001275566,
+    "band_rms_N": 0.775583866206589,
+    "peak_Hz": 1.7578125,
+    "peak_amp_N": 0.892120374722343,
+    "ratio_median": 1.0011261262954616
+   },
+   "simulated": {
+    "err_rms_N": 0.5211609084815545,
+    "min_N": 6.627526806150246,
+    "band_rms_N": 0.3185407185983356,
+    "peak_Hz": 1.5625,
+    "peak_amp_N": 0.2695817959058162,
+    "ratio_median": 1.0001737505164205
+   }
+  },
+  "20261022_152814": {
+   "source": "docs\\runs\\20261022_F75_Zt1_s9012_twist_ati\\2_1528_riuscita\\F75_Zt1_s9012_c100_five_cut800_20261022_152814.csv",
+   "cart_d": "5/1",
+   "logged_gain": 1.0,
+   "simulated_gain": 0.5,
+   "model": {
+    "k_sum_N_per_m": 1457.564900789954,
+    "tau_s": 0.145,
+    "band_fit_R2": 0.8470384903403423
+   },
+   "replay_check_max_abs_N": 0.04375002240509396,
+   "measured": {
+    "err_rms_N": 0.7200716063747382,
+    "min_N": 5.935000000643467,
+    "band_rms_N": 0.5875721367022875,
+    "peak_Hz": 1.7578125,
+    "peak_amp_N": 0.5182359764582094,
+    "ratio_median": 0.9982967960925707
+   },
+   "simulated": {
+    "err_rms_N": 0.5674233247297589,
+    "min_N": 6.289085788220259,
+    "band_rms_N": 0.28735456856826475,
+    "peak_Hz": 1.3671875,
+    "peak_amp_N": 0.20623210565517738,
+    "ratio_median": 0.9998074343932033
+   }
+  },
+  "20261022_184327": {
+   "source": "E:/TESI/NVIDIA_LOG_RUNS/F75_Zt1_s9012_c100_five_cut800_20261022_184327.csv",
+   "cart_d": "60/7",
+   "logged_gain": 1.0,
+   "simulated_gain": 0.5,
+   "model": {
+    "k_sum_N_per_m": 1273.944402833717,
+    "tau_s": 0.18,
+    "band_fit_R2": 0.8822906022354878
+   },
+   "replay_check_max_abs_N": 0.0396421720754212,
+   "measured": {
+    "err_rms_N": 0.6621430885355201,
+    "min_N": 6.242499993061314,
+    "band_rms_N": 0.5428302100837642,
+    "peak_Hz": 1.3671875,
+    "peak_amp_N": 0.5442990359450154,
+    "ratio_median": 0.9959892052607678
+   },
+   "simulated": {
+    "err_rms_N": 0.5260300014179995,
+    "min_N": 6.695673394478899,
+    "band_rms_N": 0.2591901330308375,
+    "peak_Hz": 0.9765625,
+    "peak_amp_N": 0.21425253649362572,
+    "ratio_median": 0.9975992655601579
+   }
+  },
+  "20261022_173458": {
+   "source": "docs\\runs\\20261022_F75_Zt1_s9012_squeeze_gain\\F75_Zt1_s9012_c100_five_cut800_20261022_173458.csv",
+   "cart_d": "60/7",
+   "logged_gain": 0.5,
+   "simulated_gain": 1.0,
+   "model": {
+    "k_sum_N_per_m": 1347.4657938305695,
+    "tau_s": 0.2,
+    "band_fit_R2": 0.6377142887241112
+   },
+   "replay_check_max_abs_N": 0.0368295638354077,
+   "measured": {
+    "err_rms_N": 0.5916933067800623,
+    "min_N": 6.593846163682689,
+    "band_rms_N": 0.2961941392047841,
+    "peak_Hz": 0.5859375,
+    "peak_amp_N": 0.30962794775819913,
+    "ratio_median": 0.9966383485653564
+   },
+   "simulated": {
+    "err_rms_N": 1.0092534283868373,
+    "min_N": 5.702780459033182,
+    "band_rms_N": 0.9377857123271902,
+    "peak_Hz": 1.171875,
+    "peak_amp_N": 1.238791563055839,
+    "ratio_median": 1.0035630976469965
+   }
+  }
+ }
+}

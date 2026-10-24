@@ -1,0 +1,66 @@
+[
+  {
+    "basename": "win-64/pinocchio-3.8.0-py312h46333bb_0.conda",
+    "version": "3.8.0",
+    "download_url": "//api.anaconda.org/download/conda-forge/pinocchio/3.8.0/win-64/pinocchio-3.8.0-py312h46333bb_0.conda",
+    "sha256": "d8b231f47b8cde533fb16f3d0f0b56240f68b2b94004076c3f033c0927d6f13e",
+    "attrs": {
+      "operatingsystem": "win32",
+      "machine": "x86_64",
+      "target-triplet": "x86_64-any-win32",
+      "has_prefix": true,
+      "subdir": "win-64",
+      "arch": "x86_64",
+      "build": "py312h46333bb_0",
+      "build_number": 0,
+      "depends": [
+        "casadi >=3.7.0,<3.8.0a0",
+        "console_bridge >=1.0.2,<1.1.0a0",
+        "eigenpy >=3.12.0,<3.12.1.0a0",
+        "hpp-fcl >=3.0.1,<3.0.2.0a0",
+        "libboost >=1.88.0,<1.89.0a0",
+        "libboost-devel",
+        "libboost-python >=1.88.0,<1.89.0a0",
+        "libboost-python-devel",
+        "libsdformat14 >=14.8.0,<15.0a0",
+        "numpy >=1.23,<3",
+        "numpy >=2.1",
+        "python >=3.12,<3.13.0a0",
+        "python_abi 3.12.* *_cp312",
+        "qhull >=2020.2,<2020.3.0a0",
+        "ucrt >=10.0.20348.0",
+        "urdfdom >=4.0.1,<4.1.0a0",
+        "vc >=14.3,<15",
+        "vc14_runtime >=14.44.35208"
+      ],
+      "license": "BSD-2-Clause",
+      "license_family": "BSD",
+      "platform": "win",
+      "timestamp": 1758168064777
+    }
+  },
+  {
+    "basename": "win-64/pinocchio-4.1.0-py312h2d15979_1.conda",
+    "version": "4.1.0",
+    "download_url": "//api.anaconda.org/download/conda-forge/pinocchio/4.1.0/win-64/pinocchio-4.1.0-py312h2d15979_1.conda",
+    "sha256": "e5a4d3e4a4443d5ecb4bd7b6c06cd22453f4d9f6cc3b0c4a58420d56f10531c1",
+    "attrs": {
+      "operatingsystem": "win32",
+      "machine": "x86_64",
+      "target-triplet": "x86_64-any-win32",
+      "has_prefix": false,
+      "subdir": "win-64",
+      "arch": "x86_64",
+      "build": "py312h2d15979_1",
+      "build_number": 1,
+      "depends": [
+        "libpinocchio ==4.1.0 h9717e7e_1",
+        "pinocchio-python ==4.1.0 py312h95acbbb_1",
+        "python_abi 3.12.* *_cp312"
+      ],
+      "license": "BSD-2-Clause",
+      "platform": "win",
+      "timestamp": 1784113987629
+    }
+  }
+]

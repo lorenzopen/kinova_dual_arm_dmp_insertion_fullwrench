@@ -1,0 +1,10 @@
+{
+  "scenarios": 384,
+  "identical_control_schedules_and_noise": true,
+  "max_difference_N": {
+    "rmse_N_hand": 0.000192770181751456,
+    "up_overshoot_N_hand": 5.00844021988911e-06,
+    "down_undershoot_N_hand": 0.0001351060356085121,
+    "final_band_rms_N_hand": 0.00031171415585902473
+  }
+}

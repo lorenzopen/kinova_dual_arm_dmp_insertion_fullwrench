@@ -1,0 +1,11 @@
+{
+  "trials_checked": 111,
+  "failures_retained": 18,
+  "no_exceptions": true,
+  "max_native_normal_force_sign_error_N": 2.9669774193052945e-08,
+  "max_contact_normal_unit_error": 3.3306690738754696e-16,
+  "source_hashes_match": true,
+  "report_pages": 12,
+  "report_sha256": "0970d2bd3eef20e614cca047880dcc3d53fa39009241e82d2c6c514ed1ed9763",
+  "note": "Only derived workspace outputs written. NVIDIA_RUNS and original papers/controllers untouched. See audit for source paths and hashes."
+}

@@ -1,0 +1,595 @@
+{
+  "caveat": "Lag and gain fits on correlated closed-loop signals are observational alignment only. No independent excitation, residual prediction or causal identification. Fixed-normal closing coordinate is not direct pad compression. Diagnostic runs differ in preload/force and are interrupted.",
+  "runs": [
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143",
+      "piece": "Z",
+      "role": "development",
+      "label": "23/10 17:43",
+      "ki_m_N_s": 0.0016,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.9946279487734369,
+      "force_band_rms_N_hand": 0.11930117485377333,
+      "commanded_projected_closure_band_rms_mm_hand": 0.0612089279717947,
+      "measured_projected_closure_band_rms_mm_hand": 0.04611003994117425,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.19,
+        "gain": 0.604482951237899,
+        "r2": 0.6221094824180753,
+        "residual_rms": 0.028558624479438844
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.0,
+        "gain": 2.572094273207681,
+        "r2": 0.9887212753056839,
+        "residual_rms": 0.01276245516710489
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": -0.3846710732954517,
+          "predicted_motion_rms_mm": 0.034153888275376354,
+          "full_6D_command_model_motion_r2": -0.3837245702345087,
+          "full_6D_model_motion_rms_mm": 0.034122465491431685,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.561677257108691,
+            "r2": 0.9994290697865755,
+            "residual_rms": 0.0008162170471829691
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": -0.17948602564214955,
+          "predicted_motion_rms_mm": 0.02218497889236266,
+          "full_6D_command_model_motion_r2": -0.17904104897145645,
+          "full_6D_model_motion_rms_mm": 0.02216459947558878,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.3649038134913844,
+            "r2": 0.9998112864508425,
+            "residual_rms": 0.0003048134308058768
+          }
+        }
+      ]
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_175102",
+      "piece": "Z",
+      "role": "development",
+      "label": "23/10 17:51",
+      "ki_m_N_s": 0.0016,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.9936407794280152,
+      "force_band_rms_N_hand": 0.12306376462822606,
+      "commanded_projected_closure_band_rms_mm_hand": 0.06028353614946708,
+      "measured_projected_closure_band_rms_mm_hand": 0.04758251367158024,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.15,
+        "gain": 0.678504942395214,
+        "r2": 0.7210608872118207,
+        "residual_rms": 0.025593653922741502
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.0,
+        "gain": 2.577820455608744,
+        "r2": 0.9875193756806265,
+        "residual_rms": 0.014043507602023742
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": 0.06995769604528734,
+          "predicted_motion_rms_mm": 0.03400936763146018,
+          "full_6D_command_model_motion_r2": 0.07029369389977647,
+          "full_6D_model_motion_rms_mm": 0.03395452759915802,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.5620200899184626,
+            "r2": 0.9994056900128319,
+            "residual_rms": 0.000829197350119703
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": 0.10850603148500726,
+          "predicted_motion_rms_mm": 0.022084788989871724,
+          "full_6D_command_model_motion_r2": 0.10843917547171422,
+          "full_6D_model_motion_rms_mm": 0.02204919410531602,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.3650784252569468,
+            "r2": 0.9998048089370254,
+            "residual_rms": 0.0003085895789545495
+          }
+        }
+      ]
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743",
+      "piece": "L",
+      "role": "development",
+      "label": "23/10 18:27",
+      "ki_m_N_s": 0.0016,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.9927945562973057,
+      "force_band_rms_N_hand": 0.11468775536216255,
+      "commanded_projected_closure_band_rms_mm_hand": 0.06030511620970462,
+      "measured_projected_closure_band_rms_mm_hand": 0.04178811104869471,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.14,
+        "gain": 0.48560422640948875,
+        "r2": 0.5183766726634375,
+        "residual_rms": 0.02792810193589151
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.01,
+        "gain": 2.6103105974076657,
+        "r2": 0.8699371114937828,
+        "residual_rms": 0.04066042664149106
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": 0.03077484710311451,
+          "predicted_motion_rms_mm": 0.0333802232517631,
+          "full_6D_command_model_motion_r2": 0.033026830821845654,
+          "full_6D_model_motion_rms_mm": 0.033308597415023726,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.5599142930029081,
+            "r2": 0.9994410200589785,
+            "residual_rms": 0.0007892017659389993
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": 0.13513887044794026,
+          "predicted_motion_rms_mm": 0.02170266471741152,
+          "full_6D_command_model_motion_r2": 0.1360362870156705,
+          "full_6D_model_motion_rms_mm": 0.021656206515532853,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.3639300798377086,
+            "r2": 0.9998159548823293,
+            "residual_rms": 0.0002944262039195428
+          }
+        }
+      ]
+    },
+    {
+      "id": "F75_Lt1_s9014_c100_five_cut800_ffi_20261023_183741",
+      "piece": "L",
+      "role": "development",
+      "label": "23/10 18:37",
+      "ki_m_N_s": 0.0016,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.9927899466091059,
+      "force_band_rms_N_hand": 0.11626232647613786,
+      "commanded_projected_closure_band_rms_mm_hand": 0.06924513157100226,
+      "measured_projected_closure_band_rms_mm_hand": 0.043446030562376774,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.17500000000000002,
+        "gain": 0.5204129942971812,
+        "r2": 0.6789317476599797,
+        "residual_rms": 0.02419077258654184
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.0,
+        "gain": 2.6353271520470876,
+        "r2": 0.9585347128619505,
+        "residual_rms": 0.02340043923081505
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": -0.22092005841254392,
+          "predicted_motion_rms_mm": 0.03808034427402283,
+          "full_6D_command_model_motion_r2": -0.21924679756916365,
+          "full_6D_model_motion_rms_mm": 0.03799170817605516,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.5592651343193961,
+            "r2": 0.9995093582646182,
+            "residual_rms": 0.0008434970199538563
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": -0.018896037673768573,
+          "predicted_motion_rms_mm": 0.02475467990436139,
+          "full_6D_command_model_motion_r2": -0.018524343950651723,
+          "full_6D_model_motion_rms_mm": 0.024697247776770615,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.36360193233156113,
+            "r2": 0.9998527973908051,
+            "residual_rms": 0.00030034243432374395
+          }
+        }
+      ]
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_190407",
+      "piece": "S",
+      "role": "development",
+      "label": "23/10 19:04",
+      "ki_m_N_s": 0.0016,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.995646778786852,
+      "force_band_rms_N_hand": 0.07038622539484408,
+      "commanded_projected_closure_band_rms_mm_hand": 0.04756197379821715,
+      "measured_projected_closure_band_rms_mm_hand": 0.025980609474933566,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.215,
+        "gain": 0.2813203404512408,
+        "r2": 0.28294165132870785,
+        "residual_rms": 0.020287779539879154
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.005,
+        "gain": 2.7119278563842,
+        "r2": 0.9476606984250835,
+        "residual_rms": 0.015235660949767279
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": -1.0666582238070283,
+          "predicted_motion_rms_mm": 0.025317695882979784,
+          "full_6D_command_model_motion_r2": -1.0931936307374124,
+          "full_6D_model_motion_rms_mm": 0.02534698090797064,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.5581411504651838,
+            "r2": 0.9995140802652773,
+            "residual_rms": 0.0005581673034870332
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": -0.4901315566324378,
+          "predicted_motion_rms_mm": 0.016466533966469053,
+          "full_6D_command_model_motion_r2": -0.5064024116875872,
+          "full_6D_model_motion_rms_mm": 0.016486275499596064,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.3630545026095123,
+            "r2": 0.9998494389837789,
+            "residual_rms": 0.00020207674497750154
+          }
+        }
+      ]
+    },
+    {
+      "id": "S_s7073m3_c100_narrow75_ffi_20261023_191302",
+      "piece": "S",
+      "role": "development",
+      "label": "23/10 19:13",
+      "ki_m_N_s": 0.0016,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.9958425596976461,
+      "force_band_rms_N_hand": 0.05910358427968312,
+      "commanded_projected_closure_band_rms_mm_hand": 0.0393116700876272,
+      "measured_projected_closure_band_rms_mm_hand": 0.021842270615928937,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.185,
+        "gain": 0.3834932432546614,
+        "r2": 0.45977410722034906,
+        "residual_rms": 0.016144053277020187
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.0,
+        "gain": 2.5763914707515503,
+        "r2": 0.912002992589732,
+        "residual_rms": 0.017578125333144918
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": -0.6105838445629181,
+          "predicted_motion_rms_mm": 0.021834271964278836,
+          "full_6D_command_model_motion_r2": -0.6194757594383846,
+          "full_6D_model_motion_rms_mm": 0.021851441841367593,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.559851506802406,
+            "r2": 0.9994335919422346,
+            "residual_rms": 0.0005198957541982369
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": -0.22816036925262195,
+          "predicted_motion_rms_mm": 0.014195043714479025,
+          "full_6D_command_model_motion_r2": -0.23397821890343762,
+          "full_6D_model_motion_rms_mm": 0.014205946422472703,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.3639260141918188,
+            "r2": 0.9997989513923425,
+            "residual_rms": 0.00020136667787336147
+          }
+        }
+      ]
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128",
+      "piece": "T",
+      "role": "development",
+      "label": "23/10 19:21",
+      "ki_m_N_s": 0.0016,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.986199700339003,
+      "force_band_rms_N_hand": 0.11107034471661398,
+      "commanded_projected_closure_band_rms_mm_hand": 0.045441299356637606,
+      "measured_projected_closure_band_rms_mm_hand": 0.04926976125045572,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.17500000000000002,
+        "gain": 0.949253543246249,
+        "r2": 0.7450436717176041,
+        "residual_rms": 0.02493147552178163
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.0,
+        "gain": 2.239972241725468,
+        "r2": 0.9730532720737378,
+        "residual_rms": 0.01840528007872517
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": -0.035916189293176304,
+          "predicted_motion_rms_mm": 0.025156455975496622,
+          "full_6D_command_model_motion_r2": -0.03617360023877203,
+          "full_6D_model_motion_rms_mm": 0.025193362710994024,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.5622427010725852,
+            "r2": 0.9993641873494122,
+            "residual_rms": 0.000634338774050647
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": -0.004185196011930348,
+          "predicted_motion_rms_mm": 0.01632584105464537,
+          "full_6D_command_model_motion_r2": -0.004078641375867109,
+          "full_6D_model_motion_rms_mm": 0.01635038068335631,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.3652316681557412,
+            "r2": 0.9997785763709258,
+            "residual_rms": 0.00024293667397636478
+          }
+        }
+      ]
+    },
+    {
+      "id": "F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192700",
+      "piece": "T",
+      "role": "development",
+      "label": "23/10 19:27",
+      "ki_m_N_s": 0.0016,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.9863659235336977,
+      "force_band_rms_N_hand": 0.09407606568859801,
+      "commanded_projected_closure_band_rms_mm_hand": 0.04682852165311878,
+      "measured_projected_closure_band_rms_mm_hand": 0.04031420625315044,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.17500000000000002,
+        "gain": 0.6796079657607504,
+        "r2": 0.6102695668226987,
+        "residual_rms": 0.024406608215790156
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.0,
+        "gain": 2.291040048187749,
+        "r2": 0.9702317003666061,
+        "residual_rms": 0.01568907122553268
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": -0.14425873302573988,
+          "predicted_motion_rms_mm": 0.02507699393642289,
+          "full_6D_command_model_motion_r2": -0.1484871936217087,
+          "full_6D_model_motion_rms_mm": 0.025126931383255148,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.5593507325218076,
+            "r2": 0.999404454958415,
+            "residual_rms": 0.0006119737461232778
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": -0.04566378063775134,
+          "predicted_motion_rms_mm": 0.016295544178511766,
+          "full_6D_command_model_motion_r2": -0.04799296088766036,
+          "full_6D_model_motion_rms_mm": 0.016328382354608054,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.36371519022401005,
+            "r2": 0.999781640805435,
+            "residual_rms": 0.00024079896804253014
+          }
+        }
+      ]
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165531",
+      "piece": "Z",
+      "role": "near_zero_I_diagnostic",
+      "label": "23/10 16:55",
+      "ki_m_N_s": 1e-06,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.9947891111256092,
+      "force_band_rms_N_hand": 0.10038368827407154,
+      "commanded_projected_closure_band_rms_mm_hand": 0.03295746666720721,
+      "measured_projected_closure_band_rms_mm_hand": 0.03713580381607243,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.1,
+        "gain": 0.5017092993212916,
+        "r2": 0.1386539246223848,
+        "residual_rms": 0.03001910436046442
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.0,
+        "gain": 2.6169724821987583,
+        "r2": 0.9671853986056987,
+        "residual_rms": 0.015591458672063657
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": 0.05152416208020172,
+          "predicted_motion_rms_mm": 0.015994161222902988,
+          "full_6D_command_model_motion_r2": 0.052325093665557376,
+          "full_6D_model_motion_rms_mm": 0.015986656282846887,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.5654257834486389,
+            "r2": 0.9998093662194536,
+            "residual_rms": 0.00022083174826909846
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": 0.07906147905354965,
+          "predicted_motion_rms_mm": 0.01054817507007675,
+          "full_6D_command_model_motion_r2": 0.07954500821613364,
+          "full_6D_model_motion_rms_mm": 0.010543059428533199,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.3660284537653635,
+            "r2": 0.9999136060212245,
+            "residual_rms": 9.804472815269306e-05
+          }
+        }
+      ]
+    },
+    {
+      "id": "F75_Zt1_s9012_c100_five_cut800_ffi_20261023_165902",
+      "piece": "Z",
+      "role": "near_zero_I_diagnostic",
+      "label": "23/10 16:59",
+      "ki_m_N_s": 1e-06,
+      "damping_L": [
+        60.0,
+        60.0,
+        60.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "opposing_normal_cosine": 0.99536868528075,
+      "force_band_rms_N_hand": 0.08167534976142113,
+      "commanded_projected_closure_band_rms_mm_hand": 0.03287251427353926,
+      "measured_projected_closure_band_rms_mm_hand": 0.030667253691647533,
+      "command_to_motion_observational_alignment": {
+        "delay_s": 0.085,
+        "gain": 0.41490811044209297,
+        "r2": 0.09141203124207464,
+        "residual_rms": 0.028515140378954328
+      },
+      "motion_to_force_observational_alignment": {
+        "delay_s": 0.0,
+        "gain": 2.568034507588805,
+        "r2": 0.9787238382651613,
+        "residual_rms": 0.011326857495507185
+      },
+      "normal_only_mechanical_model_diagnostic": [
+        {
+          "contact_stiffness_N_m": 1243.9024390243903,
+          "predicted_motion_vs_recorded_motion_r2": 0.0494107543029908,
+          "predicted_motion_rms_mm": 0.012274665075128852,
+          "full_6D_command_model_motion_r2": 0.04922957211304002,
+          "full_6D_model_motion_rms_mm": 0.012270023823433621,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.025,
+            "gain": 0.5611215800348773,
+            "r2": 0.9998712763181319,
+            "residual_rms": 0.00013982076761850557
+          }
+        },
+        {
+          "contact_stiffness_N_m": 2700.0,
+          "predicted_motion_vs_recorded_motion_r2": 0.06435921054967697,
+          "predicted_motion_rms_mm": 0.00802845504684131,
+          "full_6D_command_model_motion_r2": 0.06422376198464708,
+          "full_6D_model_motion_rms_mm": 0.008025406117916823,
+          "model_command_to_motion_alignment": {
+            "delay_s": 0.015,
+            "gain": 0.3646813822406257,
+            "r2": 0.999878124067694,
+            "residual_rms": 8.896139204864612e-05
+          }
+        }
+      ]
+    }
+  ]
+}

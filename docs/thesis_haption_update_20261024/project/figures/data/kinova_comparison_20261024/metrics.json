@@ -1,0 +1,45 @@
+{
+  "definition": "Route stage; own 100 Hz interpolation; third-order Butterworth forward-backward bandpass",
+  "cases": {
+    "Z": {
+      "real": {
+        "route_rmse_N": 0.3008220619800265,
+        "route_force_band_08_25_N": 0.1254124600281349,
+        "route_error_band_08_25_N": 0.16198920033795544,
+        "route_force_band_25_10_N": 0.06618925416370934,
+        "seat_positive_error_N": 1.445897531187518,
+        "active_min_L_N": 2.9360363216093903,
+        "active_min_R_N": 2.9243646005601414
+      },
+      "simulation": {
+        "route_rmse_N": 0.20861644879055058,
+        "route_force_band_08_25_N": 0.04179601937567324,
+        "route_error_band_08_25_N": 0.08585447877295924,
+        "route_force_band_25_10_N": 0.013841277016153715,
+        "seat_positive_error_N": 0.8495437477978682,
+        "active_min_L_N": 3.0726023236454068,
+        "active_min_R_N": 3.0726055642803973
+      }
+    },
+    "L": {
+      "real": {
+        "route_rmse_N": 0.28195686479224785,
+        "route_force_band_08_25_N": 0.114798587231525,
+        "route_error_band_08_25_N": 0.1397115235400942,
+        "route_force_band_25_10_N": 0.06604521779140854,
+        "seat_positive_error_N": 2.6375172546851067,
+        "active_min_L_N": 3.1408346013530974,
+        "active_min_R_N": 3.1795496706703936
+      },
+      "simulation": {
+        "route_rmse_N": 0.2775172103252413,
+        "route_force_band_08_25_N": 0.043497133222354566,
+        "route_error_band_08_25_N": 0.08896548264272285,
+        "route_force_band_25_10_N": 0.01176836147230418,
+        "seat_positive_error_N": 1.4704923523271436,
+        "active_min_L_N": 2.912710993603803,
+        "active_min_R_N": 2.91275575405475
+      }
+    }
+  }
+}

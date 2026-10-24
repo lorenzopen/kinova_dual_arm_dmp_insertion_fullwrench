@@ -1,0 +1,4110 @@
+{
+  "files": [
+    {
+      "path": "analysis.log",
+      "bytes": 5124,
+      "sha256": "1f7e8b610517ad8c74c5d58467a43e44b6d5864b26cb95c1d0ada516a40cc6ae"
+    },
+    {
+      "path": "ANALYSIS_NOTES.md",
+      "bytes": 2626,
+      "sha256": "77e009456169768ff5a18c95136afb01bc1c9dda986535342e98e21116456be9"
+    },
+    {
+      "path": "analyze.py",
+      "bytes": 9230,
+      "sha256": "818c41ade9964700581937b83fb55073be873454a07ff89ad4a6c18a405cdfb4"
+    },
+    {
+      "path": "AUDIT.json",
+      "bytes": 29433,
+      "sha256": "70ee684b0a311c0356ac41e1660aa4b60f091cc24f0b37e24454ae50276ec47c"
+    },
+    {
+      "path": "audit.log",
+      "bytes": 2010,
+      "sha256": "b07784d47e8eff85bb6def84a2e0e32110040f404aa4908c17cb748534f26702"
+    },
+    {
+      "path": "audit.py",
+      "bytes": 7130,
+      "sha256": "6246c35e2d9bcec45c074efd9bf2bcd91098b0f9572ffa9c07a250f81ed8e83a"
+    },
+    {
+      "path": "audit_wong.log",
+      "bytes": 10818,
+      "sha256": "6676b815076b344cef92097238b22616353fa242dbee9b5abfc246f2cc5a9486"
+    },
+    {
+      "path": "audit_wong.py",
+      "bytes": 1983,
+      "sha256": "e79c6b3cf1726784362a97edbe89e319332ba3fe9c7ec13ce20b9fd8c7a14f4b"
+    },
+    {
+      "path": "capability.json",
+      "bytes": 56221,
+      "sha256": "3d5bf67f8c4db561702fcc2de1444a27da2a864e21da55aa0be50f060f324b4a"
+    },
+    {
+      "path": "capability.log",
+      "bytes": 430,
+      "sha256": "473d510e68fe0f548134a27afb2c6d3d260b44ab29cec1e2f5555558bf962464"
+    },
+    {
+      "path": "capability.py",
+      "bytes": 3974,
+      "sha256": "b8169243c32684fbb226f2c4018d878379c64ec307e69284cbc758d4ac289837"
+    },
+    {
+      "path": "DATA_DICTIONARY.md",
+      "bytes": 2689,
+      "sha256": "7e0c272d903f291d504300c98b67f0bb52eb1edc8e72b32947b6ebc7419cfc1a"
+    },
+    {
+      "path": "DELIVERY_CHECKS.json",
+      "bytes": 503,
+      "sha256": "4da2ee1fa814d55c813093078ec0dad5168ff88cde0612f254b54180dffaae31"
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "bytes": 713,
+      "sha256": "504e65320db5eab9e54ccc19bc9a8d9e903095a6ac6c0d4fcf5655137d91e15a"
+    },
+    {
+      "path": "figures/01_per_pad_cones.pdf",
+      "bytes": 28227,
+      "sha256": "454b006c79b2dda39b8f87f3f0b23a8435aa8d4300b52ab85b5230cf04f0fa17"
+    },
+    {
+      "path": "figures/01_per_pad_cones.png",
+      "bytes": 126397,
+      "sha256": "9cf401c149979bc3870768c4f9bcc00f5ec671aa37691b29b14565a5390a584d"
+    },
+    {
+      "path": "figures/02_per_pad_margin.pdf",
+      "bytes": 24740,
+      "sha256": "720b18a46bf1ee3607c34baeb43f7914ec38db3e6398067e53c58bdcd8f0f772"
+    },
+    {
+      "path": "figures/02_per_pad_margin.png",
+      "bytes": 129868,
+      "sha256": "5653f7cae3f56b97c8b4df84457205c2d716b6b2115fdb214913004a5c878874"
+    },
+    {
+      "path": "figures/03_wrist_components.pdf",
+      "bytes": 29432,
+      "sha256": "62c2af1dff79587f6aab3dc5351ef93d4c387e994827bc8ae225f287f641caff"
+    },
+    {
+      "path": "figures/03_wrist_components.png",
+      "bytes": 167197,
+      "sha256": "5750357fcb40532de2252c2e308d1142b2baf9829d150777e5d9d9c206c31119"
+    },
+    {
+      "path": "figures/04_exact_vs_ellipse.pdf",
+      "bytes": 29776,
+      "sha256": "9c3e6a5518a7c3b04497e8e8e953604bb832e63363715c06c82a9f1ff28d9d5b"
+    },
+    {
+      "path": "figures/04_exact_vs_ellipse.png",
+      "bytes": 134894,
+      "sha256": "10b5ee4a924f9f97c182793d3e57f8b00786f795d6c04bc2dc0191b9fdde1651"
+    },
+    {
+      "path": "figures/05_aggregate_vs_local.pdf",
+      "bytes": 23544,
+      "sha256": "b760bcf8c08becb43f5ee6fce5f37e203d68e761799b0ad2f675e7c7c38e5c6c"
+    },
+    {
+      "path": "figures/05_aggregate_vs_local.png",
+      "bytes": 78098,
+      "sha256": "87789da6bab7174ac3b013176ce601ccd7a7b8af30b749fe1151046d13b513c9"
+    },
+    {
+      "path": "figures/06_core_outcomes.pdf",
+      "bytes": 16479,
+      "sha256": "5f273dc88802352bc9b3d3c91fd6139688d88794197d158c5c28bc279ba91097"
+    },
+    {
+      "path": "figures/06_core_outcomes.png",
+      "bytes": 64223,
+      "sha256": "f9a104166443db987764e3ac0b0ddf0648ae95f86ae23e81f6cdf2ad920d881a"
+    },
+    {
+      "path": "figures/07_same_wrist_different_cones.pdf",
+      "bytes": 17784,
+      "sha256": "42d96008f2905772b506e132a48ac42ac756a06e0771e9673ac16bb44533840f"
+    },
+    {
+      "path": "figures/07_same_wrist_different_cones.png",
+      "bytes": 61161,
+      "sha256": "e55abc5d77e8ced37586d6bae142f80fab6e59378dc48ef97316c1e4ac573cd3"
+    },
+    {
+      "path": "figures/08_stress_conditions.pdf",
+      "bytes": 15032,
+      "sha256": "8c9dafee477ea487565389f4838ff4c79a0d6faf9e9abbe8418595561fed4448"
+    },
+    {
+      "path": "figures/08_stress_conditions.png",
+      "bytes": 40758,
+      "sha256": "4315def1bf170185b65465f3e4c189caad6596360fdf4bd062359954c27d2053"
+    },
+    {
+      "path": "figures/09_recorded_end_states.pdf",
+      "bytes": 31288,
+      "sha256": "c77a87c387bd8a04ab4f8fa75804e36e478fb890052a06a4a440eaadb9cb78c4"
+    },
+    {
+      "path": "figures/09_recorded_end_states.png",
+      "bytes": 43057,
+      "sha256": "df0f4720e6a17c165edb50f77ba841fb680fa4cbfb150b891b46ac5cc5f7ddc7"
+    },
+    {
+      "path": "figures/10_wrist_forces.pdf",
+      "bytes": 29545,
+      "sha256": "a599b2b5510a457a19a6481e2825717709923e1ce0d5d025dc8f1cdb47f61291"
+    },
+    {
+      "path": "figures/10_wrist_forces.png",
+      "bytes": 144648,
+      "sha256": "088dd8500dd9d40c924eb7a762b37ef5518a154c7832895210d207b3f88a766c"
+    },
+    {
+      "path": "figures/10_wrist_moments.pdf",
+      "bytes": 29729,
+      "sha256": "be3bdf3de31a3242dacfcf46f9ea375124026c749cdda6540675237c05ddc3bf"
+    },
+    {
+      "path": "figures/10_wrist_moments.png",
+      "bytes": 151376,
+      "sha256": "e10ac9523a675a6fa0b442821a885bdfe6de81dc469a5b98aab9fccace385ab2"
+    },
+    {
+      "path": "figures/11_information_flow.pdf",
+      "bytes": 17474,
+      "sha256": "6899cf504ac57366df1e2b4f5ce9b9471f7d84feb415073478471207b27fa277"
+    },
+    {
+      "path": "figures/11_information_flow.png",
+      "bytes": 38900,
+      "sha256": "f662c1ec5f43ec3306607f76ca1ac5cb84dec19ac17234c5e346336e44e27cf5"
+    },
+    {
+      "path": "finalize.py",
+      "bytes": 3806,
+      "sha256": "a04843f57a2261a617791729d7d3c28ad39e061e8b7bf8bcfffeb36ea2d9743a"
+    },
+    {
+      "path": "groups.json",
+      "bytes": 4775,
+      "sha256": "cffbda51de0f11641853d5fc5070b7dbef700a74590b9c283daf090bf825e89b"
+    },
+    {
+      "path": "inputs/contact_geometry_snapshot.json",
+      "bytes": 19671,
+      "sha256": "b6c3bcdf62fe254c2d7446ba4e6bc13ed337154ac7b758e87a5f61ed1338f498"
+    },
+    {
+      "path": "inputs/prior_reference.py",
+      "bytes": 8579,
+      "sha256": "a57e69e3cd3593b986b20ff2b705c187f93f86bfad3da2f2901887b942bb45c5"
+    },
+    {
+      "path": "inputs/prior_torsional_C.npz",
+      "bytes": 20726,
+      "sha256": "2d229d367e70de99a0bc1b6cdf7004642b73bda5935bde5202ddccf636b0eadd"
+    },
+    {
+      "path": "metrics.csv",
+      "bytes": 70325,
+      "sha256": "62d5559cf37fb8aeac39a5ac7365a9f30b8386d521bada1a874fbfb8b01b6c03"
+    },
+    {
+      "path": "metrics.json",
+      "bytes": 237803,
+      "sha256": "3c9f6f8565b563a91de66c90fbc68b0d391d9f137930fa3f730767ee73d00142"
+    },
+    {
+      "path": "output/pdf/studio_coni_floating_plate.pdf",
+      "bytes": 1125196,
+      "sha256": "0970d2bd3eef20e614cca047880dcc3d53fa39009241e82d2c6c514ed1ed9763"
+    },
+    {
+      "path": "papers/friction_cone.txt",
+      "bytes": 42524,
+      "sha256": "ec96b2fe0a6090a0783fbfe7c54618cc9425084dfee3bee3709365affecda050"
+    },
+    {
+      "path": "papers/friction_page-3.png",
+      "bytes": 210149,
+      "sha256": "a83d8e2372499cd414a1f8328e396540698e17de2e4c32975ee57ebc8cd925be"
+    },
+    {
+      "path": "papers/friction_page-4.png",
+      "bytes": 252817,
+      "sha256": "df2b605ae1c0520dd709605dc7563fd7a322e7f2e7c58e89f63ce725f5061fb4"
+    },
+    {
+      "path": "papers/sources.json",
+      "bytes": 1017,
+      "sha256": "402eef26b92470173bd4d3c5a708b8768c92efe326d506c4d5d26ac58a249291"
+    },
+    {
+      "path": "papers/wong.txt",
+      "bytes": 57836,
+      "sha256": "c929be31296adc3a633c0794d22824bf58a2c740149b2f062e9bc23d5db25ded"
+    },
+    {
+      "path": "papers/wong_page-06.png",
+      "bytes": 209838,
+      "sha256": "e3c0afc3b159fe4ab0f5a3648dcbc94c9657e88047b5add74bd37c2d12bf598c"
+    },
+    {
+      "path": "pilot/core_floating_adaptive_centered_0/after_release.png",
+      "bytes": 5154,
+      "sha256": "4e44b6d9fa22b280faa654af2757131dac8d76bc3e24b230ffca7a3eb35a04a5"
+    },
+    {
+      "path": "pilot/core_floating_adaptive_centered_0/COMPLETED.json",
+      "bytes": 589,
+      "sha256": "40b7446e85e7ff66c2669d11e8bea30f57b6989255a110d38f98f7e40eb2d22b"
+    },
+    {
+      "path": "pilot/core_floating_adaptive_centered_0/final.png",
+      "bytes": 5732,
+      "sha256": "cc2411a6d6a059f23113b59826c9af63c1f5fd95ec683f72bce3cddd5e1d2bb4"
+    },
+    {
+      "path": "pilot/core_floating_adaptive_centered_0/manifold.npz",
+      "bytes": 185871,
+      "sha256": "1e2fffd33b82d431c95c13d8f0de945a9f1afe99734c746df6dee644ebb320a8"
+    },
+    {
+      "path": "pilot/core_floating_adaptive_centered_0/STARTED.json",
+      "bytes": 516,
+      "sha256": "d40912538a0580d819225abb6915596b57c16d1ac1beaf45bec1df787593dcee"
+    },
+    {
+      "path": "pilot/core_floating_adaptive_centered_0/trace.npz",
+      "bytes": 404306,
+      "sha256": "9bdfcbf8a7640199e67fb2c9e98dbef951e1f479566d58303d7d3069f0633bb8"
+    },
+    {
+      "path": "pilot/core_floating_wong_spatial_2/after_release.png",
+      "bytes": 5165,
+      "sha256": "843d247a03a550bb4177e5bd8801accf662e6b0d3d4a3e073aed3bd6cbba572f"
+    },
+    {
+      "path": "pilot/core_floating_wong_spatial_2/COMPLETED.json",
+      "bytes": 595,
+      "sha256": "809551de34dc16634049e0e5bf889a807623c771eaf184163b8ca5cd5ce905e5"
+    },
+    {
+      "path": "pilot/core_floating_wong_spatial_2/final.png",
+      "bytes": 6490,
+      "sha256": "47775b6c978db99147f932ab1fc55cf65559233ed1a66fec0c3fccafc8d10765"
+    },
+    {
+      "path": "pilot/core_floating_wong_spatial_2/manifold.npz",
+      "bytes": 186834,
+      "sha256": "0a73fcc59a33aa016d5f9cf02bfa72710c1ae9b0001148fcb0a8f08c8c620b33"
+    },
+    {
+      "path": "pilot/core_floating_wong_spatial_2/STARTED.json",
+      "bytes": 522,
+      "sha256": "f7c2b50b480a88f51e3bc173687c78ca34ce596ceafbf281eb40aabc5209e9cc"
+    },
+    {
+      "path": "pilot/core_floating_wong_spatial_2/trace.npz",
+      "bytes": 379075,
+      "sha256": "985caaa6a7070671b73e511011328fc1a32b11586e4487f9f12c4a24c0118bac"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_centered_0/after_release.png",
+      "bytes": 5182,
+      "sha256": "ce8b2b05429f2b1930007b76537fe1b7962f472b16d7dfd5422de0ba68778293"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_centered_0/COMPLETED.json",
+      "bytes": 586,
+      "sha256": "aa599eb8a5ce120c6a70b096ce8d3fbec6a104e77fffc37a0efe005b6ba9ff8c"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_centered_0/final.png",
+      "bytes": 5679,
+      "sha256": "7b331d8e6f1e1ae972dcfa3c648b46c816e6545c19f5ebf2057b1eff7a64686b"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_centered_0/manifold.npz",
+      "bytes": 186593,
+      "sha256": "ea8bdff5a6f72484d1cd4eb9ef1cab2e535ab175f3f7780474c94eda5059cd23"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_centered_0/STARTED.json",
+      "bytes": 511,
+      "sha256": "69f522a63392e0c3a8c1efea58be3857246d8399515d9f9e27b1ccd379c399bd"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_centered_0/trace.npz",
+      "bytes": 407689,
+      "sha256": "898d2239c6c10276a788c5bb65f845a57901511fd66a8360c6d0a92ae3ac864c"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_spatial_2/after_release.png",
+      "bytes": 5149,
+      "sha256": "cac1c0edd9b54e97974356c3331b52b9830353e90cb08fab37e7a5cd1e5080c1"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_spatial_2/COMPLETED.json",
+      "bytes": 600,
+      "sha256": "0260b6abd9e0e300909c74e7181c2142d4904d9fd4ada48d37a5cf988f8eabe8"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_spatial_2/final.png",
+      "bytes": 5679,
+      "sha256": "7d6b5ef08c5e5ba7329b408b269a7cc61c6802987434df8b96d5811670f62753"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_spatial_2/manifold.npz",
+      "bytes": 186878,
+      "sha256": "6cccacb9b81e534dc26fd0a6a073b2c5a5fe8b0d78ebd27bcc048ae306055eef"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_spatial_2/STARTED.json",
+      "bytes": 526,
+      "sha256": "ac8716b7f04713ac17a7832415bd0c00f93adfb1689c5fd0e511f653652fc003"
+    },
+    {
+      "path": "pilot/core_welded_adaptive_spatial_2/trace.npz",
+      "bytes": 405403,
+      "sha256": "8e5dcebe317b3ecd2466b0fa13e8104ae75665a3cf5030e41de28730babc6881"
+    },
+    {
+      "path": "pilot.log",
+      "bytes": 616,
+      "sha256": "0b410c903652da8d64406f8803c2653c29e4ff5b262f3974d90f517b9f0eae0c"
+    },
+    {
+      "path": "pilot_manifest.json",
+      "bytes": 2280,
+      "sha256": "6ecf027aa3b86393da6ac398946c169c146e2b430a19d82231085d0fe39c753e"
+    },
+    {
+      "path": "plots.log",
+      "bytes": 131,
+      "sha256": "39dd2e8198d0f3c50aab9fe61f7d83561b0ca0b5a6f3d7f65f9ab9251bfac2eb"
+    },
+    {
+      "path": "plots.py",
+      "bytes": 13087,
+      "sha256": "f69d3dda1943bf1a4c7553198940120f490969c74aa12f767a631f67c68cf84e"
+    },
+    {
+      "path": "profiles/022e0b42bd2a.json",
+      "bytes": 22523,
+      "sha256": "2c9ba56e7e1004d32538d3556318a1debd226c3784ea50e82130b93d3995c490"
+    },
+    {
+      "path": "profiles/06c2deaa264c.json",
+      "bytes": 22471,
+      "sha256": "f21a0a77a9d4e39afbed3fa1013e7e58a421648c3e6839598bfc25a3a57f2d2d"
+    },
+    {
+      "path": "profiles/1069b37db0d0.json",
+      "bytes": 21942,
+      "sha256": "f60033e354400845fe046b30e7c86a6913522161a4f4b250847ebebe24c5c957"
+    },
+    {
+      "path": "profiles/35f783009e8e.json",
+      "bytes": 22579,
+      "sha256": "8da270e2e2c4b8352894f10a3302362f30b734d24c39b9be790519ce2c4f69c1"
+    },
+    {
+      "path": "profiles/39649136810f.json",
+      "bytes": 21960,
+      "sha256": "47dfdd27ee9d042a623de753f9878317cd66661e8af3ea529bfecfc8ab5e763c"
+    },
+    {
+      "path": "profiles/50a65e7c3c2d.json",
+      "bytes": 22533,
+      "sha256": "46f619d77edca1a2388793b001f7ae681d27842523be9b88da60623c60dbd0d5"
+    },
+    {
+      "path": "profiles/732ead3e028b.json",
+      "bytes": 24116,
+      "sha256": "2491f6a9aa9c6eea16a1185281fbae9ac8b993500bbf9b2f397453ad86588f3d"
+    },
+    {
+      "path": "profiles/7454135b9792.json",
+      "bytes": 22575,
+      "sha256": "0c37d3a40f20cbc233cd5dfe610ef9646ae9760fc6122181d56ea907133ef01d"
+    },
+    {
+      "path": "profiles/85f2c2da8155.json",
+      "bytes": 25656,
+      "sha256": "a9b7d9332566b9265c6220ce8fd7d5f39367b21e651747fa2ed2fe4efe3fb4a0"
+    },
+    {
+      "path": "profiles/90931df23875.json",
+      "bytes": 22590,
+      "sha256": "c180e604976f3432bdf88ef526ef51f5fa0bec6edc3d085cd4469a9b673140de"
+    },
+    {
+      "path": "profiles/a5d6647ab2f9.json",
+      "bytes": 22568,
+      "sha256": "e744a3fd5013e8cdd26448d4c583ec29f2572555fdb2a849422c1be6c431de2e"
+    },
+    {
+      "path": "profiles/cf0c85fa468b.json",
+      "bytes": 22500,
+      "sha256": "62198e93b2805c0eac14e0392dd84c1ef939539da5ca2d5acb4a9cc3da73b852"
+    },
+    {
+      "path": "profiles/e5fc363cbba6.json",
+      "bytes": 22582,
+      "sha256": "c11c409c9dd6e1d7d013ec0e1baf21a8dd7fff60e9ad43c561cf8c13f7f1967e"
+    },
+    {
+      "path": "profiles/ebf623b58f1b.json",
+      "bytes": 25662,
+      "sha256": "e4d8b5a5d6a5a9b850f9d6b9a7fc0e87608af47e55d6c82045f2a5a0c5c1f6af"
+    },
+    {
+      "path": "profiles/f5d68bba84b1.json",
+      "bytes": 22577,
+      "sha256": "aa3a8289c1c411ed163493eb97440469be7349aca96061dd135626911e0fc821"
+    },
+    {
+      "path": "profiles/fb86eaccfbc8.json",
+      "bytes": 22043,
+      "sha256": "0d8d66177904927ac3602ca47b1452bfce85cf189cbbe085632c293ae80ed83b"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 5666,
+      "sha256": "72fc25d688a5fb5d4f9eeb6a15dbb379644e837c801b3d7dac16dd01b8cad7ce"
+    },
+    {
+      "path": "read_papers.py",
+      "bytes": 767,
+      "sha256": "2d7085bbc90c5312e5fe6913a2c8a1a3c2c73d0ca8b14c03f4429c99b64a4f28"
+    },
+    {
+      "path": "refinement/core_floating_adaptive_centered_0/after_release.png",
+      "bytes": 5163,
+      "sha256": "3e463638b2c7e278d7000aea901ab8c6903f5cbd92dbd357ce8a5187dc84068d"
+    },
+    {
+      "path": "refinement/core_floating_adaptive_centered_0/COMPLETED.json",
+      "bytes": 602,
+      "sha256": "6fd73dbd28a0860ff4693a8770ba297539db0813188e013fac100a5f12c313a0"
+    },
+    {
+      "path": "refinement/core_floating_adaptive_centered_0/final.png",
+      "bytes": 5722,
+      "sha256": "300f7395f525e9f6348211555181af0012426f3909dfded5f8d8092eca2c8b4b"
+    },
+    {
+      "path": "refinement/core_floating_adaptive_centered_0/manifold.npz",
+      "bytes": 185522,
+      "sha256": "d1f9f8101ef334bd81265d4c5e46fdc8eea4d6f56a3954ce43e8541e300938bf"
+    },
+    {
+      "path": "refinement/core_floating_adaptive_centered_0/STARTED.json",
+      "bytes": 515,
+      "sha256": "59b5d1560de456bc1f9da3f1c1aa4df8a75691090e9f9b2ea2ff67a4323f51b1"
+    },
+    {
+      "path": "refinement/core_floating_adaptive_centered_0/trace.npz",
+      "bytes": 403937,
+      "sha256": "42e1a450cf86bfed14f79a589efffbf7e79051eb6e30b2d92c01ceac8df879b2"
+    },
+    {
+      "path": "refinement/core_floating_wong_spatial_2/after_release.png",
+      "bytes": 5164,
+      "sha256": "16a465ee252c6ffdd68caf67019a6e2fcd08c009e4191d486792727bd16f7a36"
+    },
+    {
+      "path": "refinement/core_floating_wong_spatial_2/COMPLETED.json",
+      "bytes": 608,
+      "sha256": "19713b9a442e3708f50b507b7f4ef6e932d9cdf025da187bdc6a999e4c1ebe92"
+    },
+    {
+      "path": "refinement/core_floating_wong_spatial_2/final.png",
+      "bytes": 6469,
+      "sha256": "14318844d2932ebe7f72ad088f8d575d3bac54052e16807032e7cb747dfff476"
+    },
+    {
+      "path": "refinement/core_floating_wong_spatial_2/manifold.npz",
+      "bytes": 186833,
+      "sha256": "3691b90372848fef2a1b148483f1bf927d35bb656c8243fbb6320be26013e9e7"
+    },
+    {
+      "path": "refinement/core_floating_wong_spatial_2/STARTED.json",
+      "bytes": 521,
+      "sha256": "8eae7a4e0c84b5002b2fd3887049653d59ded3bce3989af3af517f74dd80c277"
+    },
+    {
+      "path": "refinement/core_floating_wong_spatial_2/trace.npz",
+      "bytes": 378738,
+      "sha256": "7cdc52b7aaba6efc6ddb5aac9fc1c61faf0c7efe6e5d501a9dfe96f53fd9dc52"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_centered_0/after_release.png",
+      "bytes": 5182,
+      "sha256": "8670de30d27a813458261a5cb73e693ad4fb055898558436bec7773537b74afe"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_centered_0/COMPLETED.json",
+      "bytes": 598,
+      "sha256": "56f70dfd451f517622b0a7a5b89476aa6ac0bc1af79624e8d7a91cfa7c8afd98"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_centered_0/final.png",
+      "bytes": 5692,
+      "sha256": "116e5a4de3b7d1e8feb927875a2e564d1d0a3787c8919f8339c16a5e1c94f5b3"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_centered_0/manifold.npz",
+      "bytes": 186338,
+      "sha256": "dbc2661814f4b30fc6fb8c0885251792442b8f546430aa6b8ec453b447a9ee44"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_centered_0/STARTED.json",
+      "bytes": 511,
+      "sha256": "18741cfa4bcc8500388ece63ea149e6d1a91d6cd3a797d7055ee7cb8dc28875f"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_centered_0/trace.npz",
+      "bytes": 407202,
+      "sha256": "a32d227f207fc9a7cb4e5e6d9a727b8b22b6f6dfe2eeff106badaab47baa648d"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_spatial_2/after_release.png",
+      "bytes": 5144,
+      "sha256": "52e282d0e5e0752bbb1995b8bdba78933e88d7d175b9910819b397505d79e077"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_spatial_2/COMPLETED.json",
+      "bytes": 611,
+      "sha256": "f3fb18e332f305d294b7ef4ab6ed29c37fc482cead5a90f56f9fa41617ddf21b"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_spatial_2/final.png",
+      "bytes": 5676,
+      "sha256": "c82f2efa8a55c36f4b0f42bfeb977e5abcefa9fd01513cc90349ae724303f31e"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_spatial_2/manifold.npz",
+      "bytes": 186776,
+      "sha256": "961f4d68dd942382754b98909e28612562466177484a56ac551aeb49e2e2de96"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_spatial_2/STARTED.json",
+      "bytes": 525,
+      "sha256": "e0977ceef035c96ff7f0280a0de4aa1097b00d8faeca4790648819c574266a2d"
+    },
+    {
+      "path": "refinement/core_welded_adaptive_spatial_2/trace.npz",
+      "bytes": 404946,
+      "sha256": "ca0e0d71b83fe4ca2d6aa46e16eef66ee1e4b606aee0eaec375ad2a0a2097f5e"
+    },
+    {
+      "path": "refinement.log",
+      "bytes": 321,
+      "sha256": "b3d6ef0be59f759412d325fc769320ade6d1ac826f9cffb5bf268c69757072b5"
+    },
+    {
+      "path": "refinement.py",
+      "bytes": 2417,
+      "sha256": "ffc1709a7403cff7fd68400f60fc109850d86e5ea144fe26696192b40657ebc3"
+    },
+    {
+      "path": "REFINEMENT_COMPARISON.json",
+      "bytes": 3286,
+      "sha256": "6b33a63213d082fbb3890c422a9c0fcf955aa47b2f7d3cc6817bdc583d43590c"
+    },
+    {
+      "path": "refinement_manifest.json",
+      "bytes": 1989,
+      "sha256": "f8fe02b94f3f5dff996f25467f6d26c0c3cbdee6557cf63ccfbb39af1a3387ef"
+    },
+    {
+      "path": "REFINEMENT_PROTOCOL.md",
+      "bytes": 1293,
+      "sha256": "a06d4d401149417a1c7c6371aad4cff63799b327afb031f4f3f833891d0c32cf"
+    },
+    {
+      "path": "refinement_source.diff",
+      "bytes": 1521,
+      "sha256": "06e4894603856f714a07da1cbdd6246662c14903260bf3242ab8a76b0c264336"
+    },
+    {
+      "path": "REFINEMENT_STATE.json",
+      "bytes": 57,
+      "sha256": "0990890f97f47ef669d239e42b7eefa604b124cea673a8519d5a34ec8af71459"
+    },
+    {
+      "path": "report.log",
+      "bytes": 32,
+      "sha256": "50ae58a2b655023d8bca6a27cc5e2ec50bfc4e48ba13ddcca4e5f017cc4a4904"
+    },
+    {
+      "path": "report.py",
+      "bytes": 25750,
+      "sha256": "493a40e25809df2aba6f624ccb136bb00ff95c9616766f3d38c51399dba11115"
+    },
+    {
+      "path": "RESULTS.md",
+      "bytes": 18810,
+      "sha256": "788a0967c9d9317949aef26c50d5dafe45850f767e13ea3052e95a367616347e"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_0/after_release.png",
+      "bytes": 5158,
+      "sha256": "b252ef1d53ce6c797e9dee527dcc227aa320251bbd585e40079130dfbdf3cd90"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_0/COMPLETED.json",
+      "bytes": 611,
+      "sha256": "973be6372131775cec892fda685fe9896545568cacc7527d44a1fd98c64daab1"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_0/final.png",
+      "bytes": 5515,
+      "sha256": "16381ee2b60edac14b1edab40369a41e53cfd4bc51e8c6e2eac7198c2841877a"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_0/manifold.npz",
+      "bytes": 186719,
+      "sha256": "832916280d704686bbfde2861c06a5006ee994a4be37ecaeb29530c5b151b1f3"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_0/STARTED.json",
+      "bytes": 538,
+      "sha256": "d1d733df95d841b5a08571d67f4102b5e7f8166c1541bac67168f87ef769d565"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_0/trace.npz",
+      "bytes": 405861,
+      "sha256": "f36caa38fb62427245377fb5daf0d435905c5f7c2371482e91ea6132ff0f1152"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_1/after_release.png",
+      "bytes": 5138,
+      "sha256": "0182bd0dd0e1e8483f29a257cebe646213f785101e8352dde9607a81038b70d2"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_1/COMPLETED.json",
+      "bytes": 611,
+      "sha256": "8c51ce4f2edf565e27edd9929a04789775d8e4c94224926f088502fee58cc5ca"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_1/final.png",
+      "bytes": 5509,
+      "sha256": "8f1d711bf20fa46a73d8f8b5f4dbb9d7fbd358d3de650597caf9202240dde8c7"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_1/manifold.npz",
+      "bytes": 188209,
+      "sha256": "13b7e7d74c77a9dc07b10c2f4f33cf70593e3b5bf9f9a2ff963a5de43b7ba05e"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_1/STARTED.json",
+      "bytes": 538,
+      "sha256": "773f9a7b915d7079f27dfa9b32144e38f4a3c3d54a3b6a4c62f299c7393307a6"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_1/trace.npz",
+      "bytes": 406879,
+      "sha256": "f6620665ba8a54dd86af188ca14592a535a1f754d90fae3177f5949793b4b99c"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_2/after_release.png",
+      "bytes": 5119,
+      "sha256": "c991749db42228720637e6c77fd1009b390eebda717417ea7fc780a6ac1702f9"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_2/COMPLETED.json",
+      "bytes": 611,
+      "sha256": "fb67b28e5aa23b3df16e318fcfe4cd9cf9251badb8a0dffa6b43017744460489"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_2/final.png",
+      "bytes": 5444,
+      "sha256": "3439c974e3a4d51f7bfed763f72462f22383a5c9b88348ce362f450c3bc45b54"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_2/manifold.npz",
+      "bytes": 186808,
+      "sha256": "d548590e0431fdbb462529db913cfc9f4395adfc234800c65c614be5eeb0dc43"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_2/STARTED.json",
+      "bytes": 537,
+      "sha256": "41689109513e0823afe45edaf488639a6fa6ba39a6786a70851c278087bd6d22"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_centered_2/trace.npz",
+      "bytes": 404947,
+      "sha256": "55d6a080319065f782e9815bf971f1924aee2b245f8a97c3a7996760e333e071"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_0/after_release.png",
+      "bytes": 5142,
+      "sha256": "377cbe123a3a71b12ce5da53cbb5917902a777247e06a9123d3197521f88bc0a"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_0/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "f8cd1a6a5330e7028db6baf016a518dc7746e891e1fc170945b4354e1fd4e695"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_0/final.png",
+      "bytes": 5539,
+      "sha256": "7dd657bbad1844dbe1fd70912d7458bc4b4c89185a52194173af0d9efceba410"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_0/manifold.npz",
+      "bytes": 186002,
+      "sha256": "676e60b97ff87bea22a47a2fcac3eb9cfd2507f73b1862b056fe44d7f4f38031"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_0/STARTED.json",
+      "bytes": 542,
+      "sha256": "7b5674a304d1a908ac34fe8fe8d12d5bef468b915a18bdbada014ce4f3e57115"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_0/trace.npz",
+      "bytes": 407169,
+      "sha256": "2ed81ad93d2716e37c4eac80532c357008248d28412cb05d36e6c86b734fe695"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_1/after_release.png",
+      "bytes": 5158,
+      "sha256": "b1f160eb7581a84b768347d61e91ff9199a902c010173b4df5fdea7e540442b9"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_1/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "737ecff8fa4eac5f4ef95a22770103e290cccef7e923727bcf87b2a4907b85a1"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_1/final.png",
+      "bytes": 5537,
+      "sha256": "5cf10e126919f20689f1716331dbb18a15879381c68c81fae9aa439b55180d9b"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_1/manifold.npz",
+      "bytes": 188328,
+      "sha256": "82d6b1c0e68039fac3230da1d3d30b2f7a098eff7592390289552038d3443a36"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_1/STARTED.json",
+      "bytes": 542,
+      "sha256": "1d2778c5e92f6cf2ab8af757fd0b8bf621a48b0b29a14a60df2f171ad537d3ed"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_1/trace.npz",
+      "bytes": 409303,
+      "sha256": "a242cc57f1fad74a26de0f950d026aa27053de142d52ce40b22eaa50a8b562f0"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_2/after_release.png",
+      "bytes": 5121,
+      "sha256": "b5b26a16cde38d5913f44e118980eb06c28b19cf8f466083b5bea0c6528d2482"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_2/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "d61b12895207fee935b5bd58677acff0b9934573a46c2cd90e9250a3df0eef98"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_2/final.png",
+      "bytes": 5546,
+      "sha256": "4065e4217248a862cb6dccdef40d9bca57ae0471abc28a484252a87b9e6e6481"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_2/manifold.npz",
+      "bytes": 187580,
+      "sha256": "552f0926663451499c1f4d802fba6b28577f17aa442b5b8c458b5a19e018c276"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_2/STARTED.json",
+      "bytes": 542,
+      "sha256": "d39a1120f54b49178a672ae30416e1a6ca298237d9348cf571d73f724e81f1ef"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_planar_2/trace.npz",
+      "bytes": 407631,
+      "sha256": "cc5fa6bba6d9fbd49205d3f581f621a246c153b2bec72fd9fb4768d4be2efdb3"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_0/after_release.png",
+      "bytes": 5109,
+      "sha256": "7ba78ad6cdbf9cc7f96cb00f91098379a2386c0ba658ba536039fd18a9eebb83"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_0/COMPLETED.json",
+      "bytes": 625,
+      "sha256": "c9e88495c452287a076b698062a4384f496cd627d2d454faf26499c202900738"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_0/final.png",
+      "bytes": 5514,
+      "sha256": "94b7a0f558abce91cf8c52ed9743638b45ed9af120fbc8014c4f668a6dff8b6a"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_0/manifold.npz",
+      "bytes": 188567,
+      "sha256": "b86eca97351acf84b1d5905d6f46571c3e3a729e0403dd4bb740ac0da9439b15"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_0/STARTED.json",
+      "bytes": 552,
+      "sha256": "fe8fdc9b2740b486eb0256af3afe3b2837bf6fbb5a831630a123f8dfc8ea629f"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_0/trace.npz",
+      "bytes": 407453,
+      "sha256": "be3514fb78dfe21de1ad7bed928e50edb7557130c7e6886c2d575f0e1b7a4580"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_1/after_release.png",
+      "bytes": 5103,
+      "sha256": "caf44e8ab18f1266018707a16fe71bf577d7a2b66a40e29d01880fe6e4fb7f67"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_1/COMPLETED.json",
+      "bytes": 625,
+      "sha256": "2db0bdd21de2492a9595a3f2af1d7e8ec8fa85624314be68e7ebb2f6f28d97d0"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_1/final.png",
+      "bytes": 5598,
+      "sha256": "9e9d97b971e1c2b3c0a009417691bd1a88b0794dc2a45abcfd325fb741887bf2"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_1/manifold.npz",
+      "bytes": 187901,
+      "sha256": "0984cd1d689cbebc0305b114bc8be3f5345fa7db776a2d21661073b920863a8d"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_1/STARTED.json",
+      "bytes": 551,
+      "sha256": "7fca12201cb5538db0206f4b7b42dac8f0ccfb9c5da41a8cb7298c8ea0d2aef6"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_1/trace.npz",
+      "bytes": 405359,
+      "sha256": "743728869fa366a9a621d2cb7c53716c548f2e974a4248a3b0ed67d0c01daf7a"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_2/after_release.png",
+      "bytes": 5121,
+      "sha256": "66e60c630aa42241b0755b24e1768da84b71624470a38e5a02523d50a0b551b7"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_2/COMPLETED.json",
+      "bytes": 625,
+      "sha256": "bbddea83ccb224fa6d957597e99eb6768cdd7ec24b054eba4e780e3417ae2e0d"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_2/final.png",
+      "bytes": 5497,
+      "sha256": "67c391c587fee43e4c00fb189a05a205c4be326a71a1c5b868a44493838ee834"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_2/manifold.npz",
+      "bytes": 187690,
+      "sha256": "d5e53e97ee17edf96cde23f14277201f91b53d2ee50268c5e2ced678be6dd859"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_2/STARTED.json",
+      "bytes": 552,
+      "sha256": "f537ce1ebe1ceae5d3a3d83a993bebd7c63011c2360b4f96a7fb97f509c4821c"
+    },
+    {
+      "path": "runs/central2700_floating2700_adaptive_spatial_2/trace.npz",
+      "bytes": 404914,
+      "sha256": "a3152766a70520aa6599f2887243806aa400c17494ff361b06b800f074788dc2"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_0/after_release.png",
+      "bytes": 5154,
+      "sha256": "4e44b6d9fa22b280faa654af2757131dac8d76bc3e24b230ffca7a3eb35a04a5"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_0/COMPLETED.json",
+      "bytes": 589,
+      "sha256": "9ddfa2f4b136a04485b487fb471c6c9d542e0b92287caa68e13b36a4655e4a91"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_0/final.png",
+      "bytes": 5732,
+      "sha256": "cc2411a6d6a059f23113b59826c9af63c1f5fd95ec683f72bce3cddd5e1d2bb4"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_0/manifold.npz",
+      "bytes": 185871,
+      "sha256": "1e2fffd33b82d431c95c13d8f0de945a9f1afe99734c746df6dee644ebb320a8"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_0/STARTED.json",
+      "bytes": 516,
+      "sha256": "e2b05943599651d643acec26bd675da4aded83b4f9991394663d4d82bd21b76e"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_0/trace.npz",
+      "bytes": 404306,
+      "sha256": "9bdfcbf8a7640199e67fb2c9e98dbef951e1f479566d58303d7d3069f0633bb8"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_1/after_release.png",
+      "bytes": 5174,
+      "sha256": "bab45344449599956fad6360d5be733191681532d32e35784b263b763837b29c"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_1/COMPLETED.json",
+      "bytes": 589,
+      "sha256": "fd07f1cb2007d6a4f0df23284ec452f5b689dacaadcc5ede9e99c6835f99005a"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_1/final.png",
+      "bytes": 5721,
+      "sha256": "129237deb1089f44c4254cda5b365a6ef31961a40bd867fd51ed75078033f46e"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_1/manifold.npz",
+      "bytes": 186828,
+      "sha256": "8aa24eccddbe6177450198260ead36e0d95edb196ab7e6b11b5bd4ba061cf2fb"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_1/STARTED.json",
+      "bytes": 516,
+      "sha256": "78d3c29f44677fa960cfb322df8774cbc4a00354791f387a7d3706eb9e9f33d3"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_1/trace.npz",
+      "bytes": 404510,
+      "sha256": "5074349cb8c1792d3b3813e13f58b7919cff54fe871a185d45145608c6681f04"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_2/after_release.png",
+      "bytes": 5180,
+      "sha256": "40a2bcfe00940e28431e3c114d45037db90688660ebdb00756ae3ae9b27d433f"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_2/COMPLETED.json",
+      "bytes": 589,
+      "sha256": "3a4cc9c2edb53fd7f225a1e0b93c1429da1bbcf4b98f8ac688f34277d4e66cb2"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_2/final.png",
+      "bytes": 5694,
+      "sha256": "e03d4f26f3528ca404220dd559018aff2d7855d7d8d8ca93ca48036bcb10af24"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_2/manifold.npz",
+      "bytes": 186782,
+      "sha256": "3cc92f46ef0e2b019dd10815c3bb4ea02c8ee015bdb86ca66da9720353a1b108"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_2/STARTED.json",
+      "bytes": 516,
+      "sha256": "8f1aa644ea45c9e21278481ac5673a57d926414e26082652461024ded222f702"
+    },
+    {
+      "path": "runs/core_floating_adaptive_centered_2/trace.npz",
+      "bytes": 404525,
+      "sha256": "3c6aa1e00c9ba1e473b333d48f35dd983208f949ca7bdf457b78da71d7add8b8"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_0/after_release.png",
+      "bytes": 5145,
+      "sha256": "99f0454be5cb894ff088416577911f98996d64da0c21a2fe9abc517ee937373f"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_0/COMPLETED.json",
+      "bytes": 593,
+      "sha256": "f508e4f8608a3b5c25b42c80dbba3e5f5df4d76850d373cd126ec276f345acd4"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_0/final.png",
+      "bytes": 5715,
+      "sha256": "885eff56abf3e3763403e33b74cd011c929c19d659cd1326b9acacc1f3b9bd98"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_0/manifold.npz",
+      "bytes": 186023,
+      "sha256": "a9926506a31dde447b3ccc3acc9cdf3dd5fbdc7842c832634931733e99483ba4"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_0/STARTED.json",
+      "bytes": 519,
+      "sha256": "3a482bceef349cd887aa39fa9e4264215cc3afa382285c13b3b16acce0130adb"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_0/trace.npz",
+      "bytes": 407299,
+      "sha256": "d11040c5240ad8459d143c1a3efd6cab92ae294858cfdd0973a05f036b16643c"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_1/after_release.png",
+      "bytes": 5173,
+      "sha256": "6e3e38f84762671c9ce9bb9d5d14a87ce785255da846320c606913c7984ce1f5"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_1/COMPLETED.json",
+      "bytes": 593,
+      "sha256": "58fa496fc7dc5b490c3fb026202e3b40200fcf16852622e730c5f6fb3898b243"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_1/final.png",
+      "bytes": 5690,
+      "sha256": "25fccd2ececca73f4cb0665197af99a96ad673adef3eb89279ddfe76dedd7d4a"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_1/manifold.npz",
+      "bytes": 187284,
+      "sha256": "a7382c36fcc43af51e6766fe7d61fbde39a5e95ab74a8ab180cf0748b4073fdf"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_1/STARTED.json",
+      "bytes": 520,
+      "sha256": "de5ac84c10aa036701d644db0ea9b15ed3963bd25c5be2ec88b786f2b2d705a5"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_1/trace.npz",
+      "bytes": 407693,
+      "sha256": "34753fc1e82e62ff9735704953467138e61b18abff81a022799070aa9ea32800"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_2/after_release.png",
+      "bytes": 5136,
+      "sha256": "bc22e945dc73ec10bb5b39c6ba261cc2ac6964bca686a815cda566d78a306f40"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_2/COMPLETED.json",
+      "bytes": 593,
+      "sha256": "36e91ee311b280f48af0c0c99913971feea1ac4d636315390e48ac11aa2e6350"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_2/final.png",
+      "bytes": 5688,
+      "sha256": "70ab8db7abf408105049b73ac7f6d8fbf1ed73f230930bf38d2c777b9060e1ce"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_2/manifold.npz",
+      "bytes": 187556,
+      "sha256": "05376b85eadcc96d91679908b67be9ff85910c1c1024310485d5ed37a85e0eee"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_2/STARTED.json",
+      "bytes": 519,
+      "sha256": "fd293c66cf6cb2a98d03a62cde31b8d4c65b6daaab0476e0e3de88d18a4794f8"
+    },
+    {
+      "path": "runs/core_floating_adaptive_planar_2/trace.npz",
+      "bytes": 407408,
+      "sha256": "e99fc6ceb54599b7c00ea2b79e9c9cda79f47723b0852404f156fc8ed1f35523"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_0/after_release.png",
+      "bytes": 5148,
+      "sha256": "13f1498a983e77be81c81736ad3f3bb99cbb3e0978f29a55e136879d82553aed"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_0/COMPLETED.json",
+      "bytes": 603,
+      "sha256": "153448ffda99c8fe2c001c71827d366df1baf61a1bd0493e75fa4ebc250e70da"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_0/final.png",
+      "bytes": 5763,
+      "sha256": "816b7d6c6c58ba8fe9746dc58c860076550c473dfb6f9628ceb460e53115ab96"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_0/manifold.npz",
+      "bytes": 187221,
+      "sha256": "a4676e88c425cde7d9742a96cd25d2019a089fd23ae55cbda182aa32256a8e7d"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_0/STARTED.json",
+      "bytes": 529,
+      "sha256": "cad02a1b66e3f38addb32e655a697711a5de06383e33abdd01e2a1c3c705522a"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_0/trace.npz",
+      "bytes": 405594,
+      "sha256": "f3c41cf1570ca882e9c251a2594e74c20e3e18785b02cdc8b4b231cc921d6de7"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_1/after_release.png",
+      "bytes": 5190,
+      "sha256": "2af43f9f660d0a6a0b9a71588fc7cb4c4c688644b9328aec9800d7710e06cc58"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_1/COMPLETED.json",
+      "bytes": 603,
+      "sha256": "4c7d2af851774913a1327f978eb4fd303e88710efd0c0b639d042a2b1ed2e8e3"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_1/final.png",
+      "bytes": 5739,
+      "sha256": "e959fe88938a262231af2cc069b2fb2e69c095f824dbcfce184c55d552981dd9"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_1/manifold.npz",
+      "bytes": 187520,
+      "sha256": "d5e1a1724523acb453ef4b49bfa4498d5ef1917ac0f50c8f7d502adcbb0a5200"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_1/STARTED.json",
+      "bytes": 529,
+      "sha256": "2076b91f83eef283765a19c1f2b1dd089d5fcc3f79b50c8fda689082beb10728"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_1/trace.npz",
+      "bytes": 404916,
+      "sha256": "1772546d2e56c169a187e2164093e8fd7921c44076af9f4643635d1393105d43"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_2/after_release.png",
+      "bytes": 5146,
+      "sha256": "c753d93ca988c247e171fafde92250a348c870603de2a9b37bcb216a680c5765"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_2/COMPLETED.json",
+      "bytes": 603,
+      "sha256": "d0056549a25309a859e2370763a9d25ccb3f11c5c64386df4a9a5e3403ba41e5"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_2/final.png",
+      "bytes": 5676,
+      "sha256": "bd168ee642fad66ca841313acf5dac32c17ac62fa8b480302180c0f2d48aa7a8"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_2/manifold.npz",
+      "bytes": 187537,
+      "sha256": "907d874ed5dbbc3aaa15fed71b36787662eafef8422ccd62e0a4043e8eaf1233"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_2/STARTED.json",
+      "bytes": 530,
+      "sha256": "c64db3aaa87d58d98edc394ce3821b51e1d0d6f7abe7974fc9e165490c31283a"
+    },
+    {
+      "path": "runs/core_floating_adaptive_spatial_2/trace.npz",
+      "bytes": 404958,
+      "sha256": "497aa23e91aa1055385ae65175fe46cb0f957b9ab4238931174fecdada6cc95a"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_0/after_release.png",
+      "bytes": 5154,
+      "sha256": "4e44b6d9fa22b280faa654af2757131dac8d76bc3e24b230ffca7a3eb35a04a5"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_0/COMPLETED.json",
+      "bytes": 583,
+      "sha256": "76a3448ca82811e2cbe0c090ee6b02bda1d0499b77901632bf90c4d05b2eac86"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_0/final.png",
+      "bytes": 5730,
+      "sha256": "216266c0edbb1b6027731cb04d5ce5e1744c0b53cdea20b7df121b72fbcc541f"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_0/manifold.npz",
+      "bytes": 185827,
+      "sha256": "d7d36b19fa411eabdcfb842196badad3f2f0400a4cc478784f21bb1fcc25eaaf"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_0/STARTED.json",
+      "bytes": 509,
+      "sha256": "12dc843b69730d0525270c2e8f3b8144bb57b4565f4f5f816982da012b7eb7f8"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_0/trace.npz",
+      "bytes": 402763,
+      "sha256": "147044a12784988d8d3cab9a9646c5fc6521cd508c4f66ef08a38048fa9f99e0"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_1/after_release.png",
+      "bytes": 5175,
+      "sha256": "fe65387081c6f54a134f775a310429dfcc43eb94a98d5e923a5d5c6ec5df24f8"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_1/COMPLETED.json",
+      "bytes": 583,
+      "sha256": "b949608f899c29c7575f847eedd04600ca3c8728cbd8c5f987e94abe92bde859"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_1/final.png",
+      "bytes": 5722,
+      "sha256": "adc3542e486b785f64a8887d952aaf60fc8107c508f3742d0dcd240add250404"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_1/manifold.npz",
+      "bytes": 186727,
+      "sha256": "e22859e067bf56fafc50cafbfe3ca82f55be5b8aecf876121a707fb358d2a0d2"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_1/STARTED.json",
+      "bytes": 510,
+      "sha256": "ceb7b0cf14685a06b495e5bbe770e7b3deea764166e79abd8166ce1c34d5cab9"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_1/trace.npz",
+      "bytes": 402879,
+      "sha256": "829ca3c8acf36ec36f05cee7442f6acd69952d66f2cbac78462f6df22b5ddfa6"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_2/after_release.png",
+      "bytes": 5180,
+      "sha256": "40a2bcfe00940e28431e3c114d45037db90688660ebdb00756ae3ae9b27d433f"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_2/COMPLETED.json",
+      "bytes": 583,
+      "sha256": "2eb8c8fd7f73a117a4427e7a2532b664fe6980a52ae962efa4356dd917a2abbc"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_2/final.png",
+      "bytes": 5698,
+      "sha256": "b48ea37677e70f983378e5ffcbe5253a1fda4ed14fa682590db6bae33e545f7a"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_2/manifold.npz",
+      "bytes": 186709,
+      "sha256": "b5a1d175f94e1ad3b7cb9a45e64408e33e7a142cadfe518e79ab91217124e706"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_2/STARTED.json",
+      "bytes": 510,
+      "sha256": "f486b551d57c343138232e2d6f404e4caa290b2ecd86c8eb6122098c7a4a70d6"
+    },
+    {
+      "path": "runs/core_floating_fixed_centered_2/trace.npz",
+      "bytes": 403122,
+      "sha256": "ffdd7cc9e5a515bd42b369ebcee1cfde3539e5a742205bc55744642b12f76b88"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_0/after_release.png",
+      "bytes": 5143,
+      "sha256": "3a7d4f369e1417a8f846fcfbdadcb02a288c6b1cab6f9c89f49323fe8a180645"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_0/COMPLETED.json",
+      "bytes": 587,
+      "sha256": "2de97756f304f432eeee0399aae7710eebed4639189448755665c9fc4d0ebca6"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_0/final.png",
+      "bytes": 5714,
+      "sha256": "b716b518697811a012d4e20c0f0e9e96fe02d13c19f59b902894c7c23deec0be"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_0/manifold.npz",
+      "bytes": 185993,
+      "sha256": "27a809ef795aed59b3b918b2bb68d917b06afd0d2ffcf179b04caee1842440ab"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_0/STARTED.json",
+      "bytes": 514,
+      "sha256": "c77383b279e62bae1f42f81ff690e4f7c71cdf14be8a4203de1590fb0f521b07"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_0/trace.npz",
+      "bytes": 403561,
+      "sha256": "2de75fa3d85cae070d261d370e5f00581d9a40fb7e043fc831b9f04cc5199b13"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_1/after_release.png",
+      "bytes": 5173,
+      "sha256": "6e3e38f84762671c9ce9bb9d5d14a87ce785255da846320c606913c7984ce1f5"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_1/COMPLETED.json",
+      "bytes": 587,
+      "sha256": "e7931e79254609c31c27efde5863f1bc9375d95635ec3de372e93a4be791dc9a"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_1/final.png",
+      "bytes": 5690,
+      "sha256": "376f21fd5998cd6beb84664f1cb4ea17267634694e161f221829ce2d4d125bf2"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_1/manifold.npz",
+      "bytes": 187345,
+      "sha256": "14f6f5351df73f75003d4c7f7fcc95a9429a58c02a822814e7d4be3307a2f57c"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_1/STARTED.json",
+      "bytes": 514,
+      "sha256": "fbf670db98e9d177d9e98472f86920ee53b0b54b63fcd4ccad13c9c2842f092a"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_1/trace.npz",
+      "bytes": 403922,
+      "sha256": "3a42c28d196c074ba84876c3a26d0a17ae8f74a30162a36cfb054ee957a410c1"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_2/after_release.png",
+      "bytes": 5136,
+      "sha256": "bc22e945dc73ec10bb5b39c6ba261cc2ac6964bca686a815cda566d78a306f40"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_2/COMPLETED.json",
+      "bytes": 587,
+      "sha256": "77539fcb21d8afaf5a073ad5c099bd3a45d925d7bbc334c73da149fee63e739f"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_2/final.png",
+      "bytes": 5692,
+      "sha256": "6c0d2d2ce1570b3287cdbadd36842f0b630167eb372f026bffc1f2b88724c885"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_2/manifold.npz",
+      "bytes": 187607,
+      "sha256": "de5a9d3559e582c8f8f49fad5c09c3c099e87a35559be364baaa717c7c8c4da1"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_2/STARTED.json",
+      "bytes": 514,
+      "sha256": "19d453e4fef6290b787cac3fec41a7cb42b3e894c0e39b244c18cdf281ca60d8"
+    },
+    {
+      "path": "runs/core_floating_fixed_planar_2/trace.npz",
+      "bytes": 403700,
+      "sha256": "22709df5a37a3698dcbda17fd51ae85a1d6eec9918aab712790f81a9fd49c915"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_0/after_release.png",
+      "bytes": 5149,
+      "sha256": "2adc579376c423bfd0fc173899bda7c13becd27451586189c187e2bf3d5ef5fd"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_0/COMPLETED.json",
+      "bytes": 597,
+      "sha256": "8cc32ac4f5f3f803e0fdb1b2f023fe6fff497a98083f40b94bd54759df223a2e"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_0/final.png",
+      "bytes": 5746,
+      "sha256": "edf48f91c0b9aeb9184cbedc87a16668a85d2bac40ea477fa53dd166648984a0"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_0/manifold.npz",
+      "bytes": 187208,
+      "sha256": "d226c59907b5bb9a27e1556beba693c350ad8cfe263c8ea1ad4ef73aca0cca5a"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_0/STARTED.json",
+      "bytes": 524,
+      "sha256": "7633a73b0213ca1c86a425fd588c0b04431befb4026d1880c06a79deb4175c7d"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_0/trace.npz",
+      "bytes": 402073,
+      "sha256": "7e74010216ba1e106229a9aa3d91ed4f5b1777e0ad49c60ff455fabdfa107152"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_1/after_release.png",
+      "bytes": 5189,
+      "sha256": "4c60c0319592fe830b88060f724a4a7b6f6160bd165a5ef40e899655213c1694"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_1/COMPLETED.json",
+      "bytes": 597,
+      "sha256": "bbfa2e9de17b23a543d66d3984e5c1b77050661f2bc4c8161d9b75d248dccec2"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_1/final.png",
+      "bytes": 5756,
+      "sha256": "dd29597dae6a493732197736c7f7bdfce5334bfab8e95ab7050248a561d20579"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_1/manifold.npz",
+      "bytes": 187462,
+      "sha256": "00c253ce1de612308903a2241263037383268c5c3b59e01e97ecac9d9d680e79"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_1/STARTED.json",
+      "bytes": 524,
+      "sha256": "6a512f3ced9bbc49fac4fce13279d459cf66b33d0778354947e65e2ae4b8b7cd"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_1/trace.npz",
+      "bytes": 401391,
+      "sha256": "cca807a406bbcf3ffdf47f6c00a57be5242c585ac6eaadc7a0877fce043117d0"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_2/after_release.png",
+      "bytes": 5144,
+      "sha256": "462e5d6bbfbb92fa8ce2f3507a7eb79f31ddaf62bf3cefab11754941ac4b3fe7"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_2/COMPLETED.json",
+      "bytes": 596,
+      "sha256": "90d8787f0cf3603fde56e396fde48755eee3458a934a3a6d50026b2ac446103a"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_2/final.png",
+      "bytes": 5668,
+      "sha256": "08731292ba4fa0083facea651f8f9a65c3f9ba12daa2516798b70e942c3c59b9"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_2/manifold.npz",
+      "bytes": 187428,
+      "sha256": "dd7a8b396bc6fd0166718169f2a8fbc915fbb140002ac21e61648cd5ecdbbc32"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_2/STARTED.json",
+      "bytes": 523,
+      "sha256": "f176900a2aea7756ad0e8dc1db99ef75958fb6b9dc3fea94cd0c20c8fc283865"
+    },
+    {
+      "path": "runs/core_floating_fixed_spatial_2/trace.npz",
+      "bytes": 401354,
+      "sha256": "6382bc3f5b07bb4fd5219c1fb0f8432f64ed297dc30f9ddde621081e3f962af1"
+    },
+    {
+      "path": "runs/core_floating_none_centered_0/after_release.png",
+      "bytes": 5572,
+      "sha256": "13ad070243d33180c006751c9250943a901b0a75571f6efb907f28f758e741f3"
+    },
+    {
+      "path": "runs/core_floating_none_centered_0/COMPLETED.json",
+      "bytes": 603,
+      "sha256": "13702358fc882830cea7f9b179965f9a12ae9015a183380ff898169cf52d03af"
+    },
+    {
+      "path": "runs/core_floating_none_centered_0/final.png",
+      "bytes": 6958,
+      "sha256": "9f972a30c0f71265691787f20ec817e67a7d2684b5c165ebef30a1a3d4fc7971"
+    },
+    {
+      "path": "runs/core_floating_none_centered_0/manifold.npz",
+      "bytes": 42159,
+      "sha256": "76a812fb6eaccddc330f364d9d7862e9fe2830fe9d6efb4c91a69be732eb436a"
+    },
+    {
+      "path": "runs/core_floating_none_centered_0/STARTED.json",
+      "bytes": 508,
+      "sha256": "9f982a36cef8f8c8d5c7caeddef2f1d7a2269419f7ae2519b9df146ac77211c7"
+    },
+    {
+      "path": "runs/core_floating_none_centered_0/trace.npz",
+      "bytes": 90698,
+      "sha256": "b421a7c6d2d979dc46c8f47565aed209a82fd35df02b9ec47fdf1d2a2aebdd71"
+    },
+    {
+      "path": "runs/core_floating_none_centered_1/after_release.png",
+      "bytes": 5523,
+      "sha256": "556c0023693a6aef28c4e159e2875d057f40f41b0dad65dc590a41fdb4602eb3"
+    },
+    {
+      "path": "runs/core_floating_none_centered_1/COMPLETED.json",
+      "bytes": 602,
+      "sha256": "902da8c7e2a8ba8fb9dd70f3cfe4fa96cf0458865fb5ca5469593437e61358cc"
+    },
+    {
+      "path": "runs/core_floating_none_centered_1/final.png",
+      "bytes": 7002,
+      "sha256": "68a7bbe60a8fee2787e128a25bfcd042a2347c66fab3a24b06437e6f4be6620b"
+    },
+    {
+      "path": "runs/core_floating_none_centered_1/manifold.npz",
+      "bytes": 42461,
+      "sha256": "adc979c1c30973519f7e811929a8fb8dd06211204b295bf1a71ddcdd05cd634b"
+    },
+    {
+      "path": "runs/core_floating_none_centered_1/STARTED.json",
+      "bytes": 508,
+      "sha256": "ad4525b6e792bf104524a7ee924a978e4ca3511a7cbbb3eaea475c9e6b4319b0"
+    },
+    {
+      "path": "runs/core_floating_none_centered_1/trace.npz",
+      "bytes": 90537,
+      "sha256": "6b7272ee42587e0b8322918dec3224dab97cbcfe0e6383e2eaded681308b0a00"
+    },
+    {
+      "path": "runs/core_floating_none_centered_2/after_release.png",
+      "bytes": 5590,
+      "sha256": "0d413429b67daeed6b9dbbb623551382df499d668616c6b19f078d612b5a0ed1"
+    },
+    {
+      "path": "runs/core_floating_none_centered_2/COMPLETED.json",
+      "bytes": 602,
+      "sha256": "f9e57a0a4fa5ae8df94f6d5942737713c540e2f449196703ab3d41808682283f"
+    },
+    {
+      "path": "runs/core_floating_none_centered_2/final.png",
+      "bytes": 6998,
+      "sha256": "f01aadbdaaa2f29b3a5807ccb7a6ca28b77927e7f9affd770a38be5ed0964d65"
+    },
+    {
+      "path": "runs/core_floating_none_centered_2/manifold.npz",
+      "bytes": 42355,
+      "sha256": "789ae59787a8814e8162af9258c247810c4ded1a6c9da090676142b68de13445"
+    },
+    {
+      "path": "runs/core_floating_none_centered_2/STARTED.json",
+      "bytes": 508,
+      "sha256": "ff03bdc457afeafa021a1bb3213992b69c2b73083dabd86e7c27b40639e5773b"
+    },
+    {
+      "path": "runs/core_floating_none_centered_2/trace.npz",
+      "bytes": 90366,
+      "sha256": "199e1e742189750625f1fdba826bcebada89d970180984e75f3f1ed29edc638e"
+    },
+    {
+      "path": "runs/core_floating_none_planar_0/after_release.png",
+      "bytes": 5745,
+      "sha256": "e70290b6a2e41b68b1b3be16a046dc7be9c9adbe29c2cb89e846b833af6d6f85"
+    },
+    {
+      "path": "runs/core_floating_none_planar_0/COMPLETED.json",
+      "bytes": 595,
+      "sha256": "27db22c201674e5b5ff5e87cabe5d9c04b5d681154b5049ee8ec1d62b720e99a"
+    },
+    {
+      "path": "runs/core_floating_none_planar_0/final.png",
+      "bytes": 7052,
+      "sha256": "959f348dc92baa9a0ab2d57779fabfe6b454d63d07d2fb769c874dc225ca30f8"
+    },
+    {
+      "path": "runs/core_floating_none_planar_0/manifold.npz",
+      "bytes": 38341,
+      "sha256": "78017ac7d352010330dc81e4b56b82ddf8b8dd03ed322e421971eb9aff51ba10"
+    },
+    {
+      "path": "runs/core_floating_none_planar_0/STARTED.json",
+      "bytes": 512,
+      "sha256": "a94fdc03e96e161ee4d1d8e727728d86f579769ea0cd907c8865fcc84e1e7c92"
+    },
+    {
+      "path": "runs/core_floating_none_planar_0/trace.npz",
+      "bytes": 84371,
+      "sha256": "c381ce47655f7f02c97834fe50ddc61048f84f8e2b9604a9223fe040badf5b9d"
+    },
+    {
+      "path": "runs/core_floating_none_planar_1/after_release.png",
+      "bytes": 5680,
+      "sha256": "d587baf45ed4ea6c33b16578470a7500f72aafc3d6b2415ea8ac6ec6c5d4d072"
+    },
+    {
+      "path": "runs/core_floating_none_planar_1/COMPLETED.json",
+      "bytes": 594,
+      "sha256": "f95082a8ec1420e516844015511a58b4cdd0c97992a84fe9d11c3cf8ab85a1bd"
+    },
+    {
+      "path": "runs/core_floating_none_planar_1/final.png",
+      "bytes": 7079,
+      "sha256": "5508fb015a3da863dbd25ba16273a7af5c2d85d1eac21a901da5b053d927442d"
+    },
+    {
+      "path": "runs/core_floating_none_planar_1/manifold.npz",
+      "bytes": 38972,
+      "sha256": "00e3690191b868d7ae0d48b2907a10ef71d069512d976c0a42c8951fadc89754"
+    },
+    {
+      "path": "runs/core_floating_none_planar_1/STARTED.json",
+      "bytes": 511,
+      "sha256": "8588f43084c251ff32062a534a9747e292a8240f39c83fa6a80654be830f1e3d"
+    },
+    {
+      "path": "runs/core_floating_none_planar_1/trace.npz",
+      "bytes": 84206,
+      "sha256": "d7fb8a152fe85d9f4a56be554f913403a643d5d6a47e18719bd716ab8092b80a"
+    },
+    {
+      "path": "runs/core_floating_none_planar_2/after_release.png",
+      "bytes": 5835,
+      "sha256": "0049555c1fc46899ed821d84e8eac498ee21e7c1c2f0465a6e79e4c546103470"
+    },
+    {
+      "path": "runs/core_floating_none_planar_2/COMPLETED.json",
+      "bytes": 594,
+      "sha256": "164249d2744aeb50d60c99775b8f6a6254bf0575e57d6cc010f611b4822bf1c5"
+    },
+    {
+      "path": "runs/core_floating_none_planar_2/final.png",
+      "bytes": 7031,
+      "sha256": "250405273d909ecabfff9a0a6531c3e628d665c74798d5c421b0d98085b9e829"
+    },
+    {
+      "path": "runs/core_floating_none_planar_2/manifold.npz",
+      "bytes": 38691,
+      "sha256": "f6764324f0f9e0a9029716675f22467741c9c7f6582fa85bc2d3d21a1faeb492"
+    },
+    {
+      "path": "runs/core_floating_none_planar_2/STARTED.json",
+      "bytes": 512,
+      "sha256": "772f17eba9298a839470e18b854613ec92b8d5e1c97078a50e973be30ed63ec7"
+    },
+    {
+      "path": "runs/core_floating_none_planar_2/trace.npz",
+      "bytes": 83638,
+      "sha256": "84d94f0fdcf45dc3eb354fc433359d479dcfc116ef69c2c31ebfab14b0e33588"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_0/after_release.png",
+      "bytes": 5785,
+      "sha256": "c39f9d718454b111888a30f9e4f62f9a23c418e461141bae7686f22da43dfe0d"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_0/COMPLETED.json",
+      "bytes": 605,
+      "sha256": "44d6590697df33eaa5a5632575c3e181845c27d53a0a86ca6bcdc43568087b44"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_0/final.png",
+      "bytes": 7584,
+      "sha256": "0ee625b8fd977f33a0b12d9fced4d02d6d9c2622578212d6ab65b78555a0a973"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_0/manifold.npz",
+      "bytes": 38930,
+      "sha256": "6305ae80dbdb421074510fdb7b4abb25d766ee95fa5d5c2ba75ddb173ce0f42f"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_0/STARTED.json",
+      "bytes": 521,
+      "sha256": "33c537bc1b1d762bcc32471b1ef40b5ee2ae49540e14cc102e464a112617295d"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_0/trace.npz",
+      "bytes": 84696,
+      "sha256": "3c8edbc6f26e9c3689c3c215c238b6a3e8d8cc2a07285b70f66a8b842e648621"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_1/after_release.png",
+      "bytes": 5690,
+      "sha256": "5dd702a1de380908f6894225e861f34e4b93e5d30db5ddea7469878867ecec3a"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_1/COMPLETED.json",
+      "bytes": 605,
+      "sha256": "5534ee9485ddfc5d61ede80a67c646d1a96c618436e35134e4b74457be084c86"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_1/final.png",
+      "bytes": 7601,
+      "sha256": "97a5a07f3de0c1a0e27392f9c83a8e238d79bdc388a0ab1fc1f50b3cbf2f25c3"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_1/manifold.npz",
+      "bytes": 39815,
+      "sha256": "4ec41fe198da86c0f13f1e48743d5579172a909413c9480097d0fe62bca1a0f7"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_1/STARTED.json",
+      "bytes": 522,
+      "sha256": "d82a23855a4b23f3723133c58d4df141cdaf4e49f05fd36101df55ecf456d32c"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_1/trace.npz",
+      "bytes": 85174,
+      "sha256": "db44d78531adec518e605819132f0d4d75a1e5b3e7472dc78c7d697f0d3bbe10"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_2/after_release.png",
+      "bytes": 5742,
+      "sha256": "db69ee2f5683a67e7411c134a54f776405cf026ec4cfd90c4845bde30606553f"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_2/COMPLETED.json",
+      "bytes": 604,
+      "sha256": "537844117f259ea4f136e7a21b901f9ca49bc5225c03fe31ba48244c45042a0a"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_2/final.png",
+      "bytes": 7558,
+      "sha256": "481ce87df4aa0aeacfc5040623846c046bf6aec133c6cdc82ad26e76aa45acf1"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_2/manifold.npz",
+      "bytes": 38927,
+      "sha256": "b924d80c8eb8754c5b2ba2c4902107571ee1249862fcfe55ae8871725cf68711"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_2/STARTED.json",
+      "bytes": 521,
+      "sha256": "101314f4cdacfe0720508b92833ec490d593e778ba2f0ad436942b6269f66d27"
+    },
+    {
+      "path": "runs/core_floating_none_spatial_2/trace.npz",
+      "bytes": 83614,
+      "sha256": "c584a885ec98c6152ef57f68bbb443fc9437db7b82961ae38dbbf84658a40bc2"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_0/after_release.png",
+      "bytes": 5558,
+      "sha256": "0a97489ae6e67859772b7349f36c7bd0bf8ee18eb659f0cfefe3d4e6a5022834"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_0/COMPLETED.json",
+      "bytes": 590,
+      "sha256": "8278dee79a8413f57279b56ecf18a5940659c1fd73c49caa8131c4ea3ed2bbef"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_0/final.png",
+      "bytes": 6965,
+      "sha256": "bafaa314fefb24ca269f2c9cc4e70785893b7ffa8663cc415bb3419fe335b596"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_0/manifold.npz",
+      "bytes": 41929,
+      "sha256": "912629849cc52523e22fe2dabe63ba46099c5ecb6a0df1e0978dbb074c4a29a7"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_0/STARTED.json",
+      "bytes": 508,
+      "sha256": "d3f9816cd3450facf8e0e1e86a2f65a56812ddc6a901576fe2bf1e6f3846e3e8"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_0/trace.npz",
+      "bytes": 89493,
+      "sha256": "d2865396194406bd542f270964d91b9b98032c4e78999eb9bff19cefcfaa1144"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_1/after_release.png",
+      "bytes": 5568,
+      "sha256": "e816fdd96be41f9c341ffd9b69e9e1dc36efc0c457efa5f389c2c17a3a4cd597"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_1/COMPLETED.json",
+      "bytes": 590,
+      "sha256": "f445f67efc5604f43e8f45e6cd4b2e66d69861ff44ab64aff01653d8324c0c7a"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_1/final.png",
+      "bytes": 6935,
+      "sha256": "30ab2a23d20ef0be9d8df23b42995ce2ef6a1ff0d38f7461b855b8dd17b17f6b"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_1/manifold.npz",
+      "bytes": 42902,
+      "sha256": "c3a5226e9a1376321dac0aeb0667b37d5d596a075bbfbe05b2071ad830196656"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_1/STARTED.json",
+      "bytes": 507,
+      "sha256": "44150e47bcc783e77127ac56cc73f6cc622e06b39b0ecd250a70f04e4609d368"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_1/trace.npz",
+      "bytes": 90481,
+      "sha256": "c5fd578624fee3bb3c8e50e35ff283111ff43a7ff0686ca7e487b2643d47de8b"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_2/after_release.png",
+      "bytes": 5516,
+      "sha256": "bb8dee474d075f49d3dbf5b52c96dcb519d26c640640b411e8e663e891695461"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_2/COMPLETED.json",
+      "bytes": 591,
+      "sha256": "d30ec4698851a98f53dc5869cb2c617730f4640e0c7d962ccec078cc136cfe73"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_2/final.png",
+      "bytes": 7011,
+      "sha256": "33cf213fee0b5e4cb116016d1c5d2699e81cb77a3d2b7f28e3fe80b023f7c476"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_2/manifold.npz",
+      "bytes": 42825,
+      "sha256": "ed356e8cc4d3c5bfc104c0ccac7d7edc3cda96cbbf132c3936ed37397cfe323c"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_2/STARTED.json",
+      "bytes": 508,
+      "sha256": "bd84913c2d89f8b0c8345a84f8d3024d88d35cb1ff33b1d310a177195731f51d"
+    },
+    {
+      "path": "runs/core_floating_wong_centered_2/trace.npz",
+      "bytes": 90437,
+      "sha256": "b88b0f4b80ed389e0b1bbbc3db3e5afc0615b38350bf6110539033c871c30863"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_0/after_release.png",
+      "bytes": 5216,
+      "sha256": "311884c36cfea768c77edd7a74fc571353cb033b1e50391f12766f01497ff43c"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_0/COMPLETED.json",
+      "bytes": 585,
+      "sha256": "b1baa1f82a55e07afdcc7e834381170288e69d8ebd2038bceca944a62665afc0"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_0/final.png",
+      "bytes": 5674,
+      "sha256": "036f8c7aa759201c570f117c610719b86d7e63e7ad7070e4db5f5d1c4158a828"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_0/manifold.npz",
+      "bytes": 186854,
+      "sha256": "bc4c50be37eaac5c9e0541ef0e2630dbad95399e54bf7b155fb83221a92ed2e8"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_0/STARTED.json",
+      "bytes": 511,
+      "sha256": "067bd79767766d5adf47831504f0093915ddd43717a848cbb6d9a101c59ee8d6"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_0/trace.npz",
+      "bytes": 391495,
+      "sha256": "cce62ecd2da89f5c6d0ac4e8a210eadb9196636525d9119698d89c424c2f5560"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_1/after_release.png",
+      "bytes": 5185,
+      "sha256": "393bb7a4740b4ce00ce5944742a046b998d209d0e869dc66d70d2a7c3321d376"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_1/COMPLETED.json",
+      "bytes": 585,
+      "sha256": "90a7fb0cb7addec9fb7ef3635b24f10d7c40910b881315019bdab18da93f8f1d"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_1/final.png",
+      "bytes": 5685,
+      "sha256": "1050c7535219f2e0a971fb29e8e94a6c82db4479f5b67b953518f0ba18c788cd"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_1/manifold.npz",
+      "bytes": 187929,
+      "sha256": "bb4b77ba4e7d0cb82753278aaf5468a05c346351c97545a506b84ddc4515e355"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_1/STARTED.json",
+      "bytes": 511,
+      "sha256": "a3bbfea776a792bca3b5d121ea047b4c376ab171c03a469db5c1d3ff6e6ac36c"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_1/trace.npz",
+      "bytes": 391167,
+      "sha256": "23305a95b62859c36864e9e129b9a316f8024783962826d6e0c6c1a1372b2b0e"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_2/after_release.png",
+      "bytes": 5135,
+      "sha256": "6ddb1f84b58e1efba46eaeed26399560dbd66e1525917286d4d398a0e69f6fe9"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_2/COMPLETED.json",
+      "bytes": 585,
+      "sha256": "b82f38983ab052285e3995d34e15e94cc0e1c51b144fc584b852d2b694c7a23f"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_2/final.png",
+      "bytes": 5690,
+      "sha256": "bbab686276db352a9441c31e72ed0b84df057ecabe03859d85c49f7b182f0738"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_2/manifold.npz",
+      "bytes": 187365,
+      "sha256": "434dda859f5a9e5f44df4347ada23d37ab1f4b7bd8dae997d1464b4734baba97"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_2/STARTED.json",
+      "bytes": 512,
+      "sha256": "0a8db4a970ffc7811ff24d57e75f577a389d810ee4a5c22ec63e30d72bc669bd"
+    },
+    {
+      "path": "runs/core_floating_wong_planar_2/trace.npz",
+      "bytes": 390259,
+      "sha256": "5b000848213b8f352b55af1f949735aaedd61f09d8bb604453053d72b7061303"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_0/after_release.png",
+      "bytes": 5138,
+      "sha256": "44e73341ca1ee2a451d85fd99c6c3450d9e1da28fdb887672134dddfccd31dc7"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_0/COMPLETED.json",
+      "bytes": 595,
+      "sha256": "9f6ab0e0cf8d39493500604622ab590f571604a8b622071569e71af8f5033956"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_0/final.png",
+      "bytes": 6676,
+      "sha256": "903497480bc668dd0e36c222a2eae85db9c7f31e207b8fc3d56acb35c1b8b00c"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_0/manifold.npz",
+      "bytes": 186052,
+      "sha256": "eb4215bf3be617bdbe0a8936d610551fd3f73ababf50d80a8825e1eb3c28865f"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_0/STARTED.json",
+      "bytes": 522,
+      "sha256": "7e630ec4f8dc69ee7a09632b2e7a218f3567fabd0b13addc549f5dab55c0bcb4"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_0/trace.npz",
+      "bytes": 379588,
+      "sha256": "11c2b98c7da67c466eacd6f73bd97988a824b42afe7d3853ff6426793fa0e0cd"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_1/after_release.png",
+      "bytes": 5190,
+      "sha256": "cfb1bffab8d298b70e69c770d6b87960f49bb10eb96bd6eae3616b0b5ca7db0d"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_1/COMPLETED.json",
+      "bytes": 595,
+      "sha256": "60aa63d0a252f190089084124f8d4d4fa54da31c57cc4f773de69106b8066247"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_1/final.png",
+      "bytes": 6730,
+      "sha256": "42eac631599e85e88f3df4b05d6e01f2ae1847f3453d3599bc4ad6a946ea1fba"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_1/manifold.npz",
+      "bytes": 187106,
+      "sha256": "c23fad527bcb3bc9afbb3c98ff14166b6138581b1ccfd5d580aeb0c18bbb7e40"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_1/STARTED.json",
+      "bytes": 521,
+      "sha256": "68dbb5c74fbf0ae95ea11475d78a174952b023c3028c2352e051016133e3f57b"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_1/trace.npz",
+      "bytes": 378860,
+      "sha256": "404d7bac87fd539a1bc28e15600bde828d79756a109dbf7275f4f5a9ca707f34"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_2/after_release.png",
+      "bytes": 5165,
+      "sha256": "843d247a03a550bb4177e5bd8801accf662e6b0d3d4a3e073aed3bd6cbba572f"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_2/COMPLETED.json",
+      "bytes": 595,
+      "sha256": "08a59fad1af2e39793ea166cdbf147249123faaa1ae1eec2d0a46d0c63b107dd"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_2/final.png",
+      "bytes": 6490,
+      "sha256": "47775b6c978db99147f932ab1fc55cf65559233ed1a66fec0c3fccafc8d10765"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_2/manifold.npz",
+      "bytes": 186834,
+      "sha256": "0a73fcc59a33aa016d5f9cf02bfa72710c1ae9b0001148fcb0a8f08c8c620b33"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_2/STARTED.json",
+      "bytes": 522,
+      "sha256": "2c029396318ff60999bcc3875b60c719be906e46318a70b49744a0669ded66ad"
+    },
+    {
+      "path": "runs/core_floating_wong_spatial_2/trace.npz",
+      "bytes": 379075,
+      "sha256": "985caaa6a7070671b73e511011328fc1a32b11586e4487f9f12c4a24c0118bac"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_0/after_release.png",
+      "bytes": 5182,
+      "sha256": "ce8b2b05429f2b1930007b76537fe1b7962f472b16d7dfd5422de0ba68778293"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_0/COMPLETED.json",
+      "bytes": 586,
+      "sha256": "78b912012af80a6ca085b85c49284cc050af5d9b2a0781f9a806862db636fb71"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_0/final.png",
+      "bytes": 5679,
+      "sha256": "7b331d8e6f1e1ae972dcfa3c648b46c816e6545c19f5ebf2057b1eff7a64686b"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_0/manifold.npz",
+      "bytes": 186593,
+      "sha256": "ea8bdff5a6f72484d1cd4eb9ef1cab2e535ab175f3f7780474c94eda5059cd23"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_0/STARTED.json",
+      "bytes": 512,
+      "sha256": "3d6d9da90677708229956b00cd367a16ec2a8bdd98cab914999fed1d03302054"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_0/trace.npz",
+      "bytes": 407689,
+      "sha256": "898d2239c6c10276a788c5bb65f845a57901511fd66a8360c6d0a92ae3ac864c"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_1/after_release.png",
+      "bytes": 5254,
+      "sha256": "7d1cf3b19ef9446f8a1b6eecc9f774045138f2decc380cb53514788ff6a16781"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_1/COMPLETED.json",
+      "bytes": 586,
+      "sha256": "1973ec35957ee236017d0336e8949b3ba60b4ff091050aa1f88d554cce152b69"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_1/final.png",
+      "bytes": 5702,
+      "sha256": "c116d2d51a3d574d17478cf84d821c79091093498b08378707bcfe6f394a6068"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_1/manifold.npz",
+      "bytes": 186483,
+      "sha256": "a06073bc028464e14b2741f9e0409e8294429d90c63c84e8425446669a1beb96"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_1/STARTED.json",
+      "bytes": 512,
+      "sha256": "0af7f085dacfee3f2c1635dd7a86587012689e3ab4fd892004780b2c4e99c2d3"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_1/trace.npz",
+      "bytes": 406085,
+      "sha256": "f4f4174d8bba7a432d187380d1ff64ad033dc9eeb6d0849f06a927513f59c2dc"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_2/after_release.png",
+      "bytes": 5172,
+      "sha256": "851a1bbd0937ef22ea0e8bb08354d369a3fa8696ce03b1ed443e31b960315173"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_2/COMPLETED.json",
+      "bytes": 584,
+      "sha256": "177e2cbfb6f56918971aab518fc98fda330b79e1e2d4d3048df82cf0386de082"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_2/final.png",
+      "bytes": 5631,
+      "sha256": "6c6c6b97cd352771aaff5e6aa280459319da9362e69efa4d24e46c7f534efeee"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_2/manifold.npz",
+      "bytes": 186462,
+      "sha256": "c0a3f142b0b31e18f50c27064d29daec9014fdb0492dab0e881d14f77e30e15f"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_2/STARTED.json",
+      "bytes": 512,
+      "sha256": "a3c836f56d0ac467f0e817a838a936b25de28e32a8d2661e6854591796d3a10a"
+    },
+    {
+      "path": "runs/core_welded_adaptive_centered_2/trace.npz",
+      "bytes": 406584,
+      "sha256": "1ed8806c07d54852fa1688e645fd109f890d53d7c6a9a5b31c10fe4db60d88df"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_0/after_release.png",
+      "bytes": 5210,
+      "sha256": "9e32d771f8c8e2a1e48110483e389aebdbdf065992c8ad2566c6149994e2eda2"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_0/COMPLETED.json",
+      "bytes": 590,
+      "sha256": "905b2db600fe8f06dcee385484587e19c8ed3d538f9570aa1f01037d85a4b251"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_0/final.png",
+      "bytes": 5760,
+      "sha256": "adf47423aece16323a9e3cd9b32f5a0f8bee8adda81eadc87bc6a7aa676323f4"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_0/manifold.npz",
+      "bytes": 186411,
+      "sha256": "decbd83e763a1932ba55d3f3c3705ceb48860fb387eeea4b54a9d6ea219cd510"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_0/STARTED.json",
+      "bytes": 516,
+      "sha256": "e7015df2e37e0f601f9752ef16c106fb7b303cd7002fe183908b43ce66813a63"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_0/trace.npz",
+      "bytes": 409301,
+      "sha256": "854f347e6bed0f5286c62f4cbaa915a95dbe254d5d4fe1536f0a03621d3596d5"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_1/after_release.png",
+      "bytes": 5231,
+      "sha256": "d1a47dd335bdfe620cbb0ae3e731f07ff4fdd7493296951093cdd28f10ca22ee"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_1/COMPLETED.json",
+      "bytes": 590,
+      "sha256": "354af8706cd93263d481b18cfef0023149d6b5b1fdc2998fc366804492f530ec"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_1/final.png",
+      "bytes": 5664,
+      "sha256": "7f1e7d730e25360412e2c27492c6316df1d67f5c51f302138bd8e81c5b92e6f0"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_1/manifold.npz",
+      "bytes": 186497,
+      "sha256": "f8024e45a729932c02666ccc12a42c84a51b49dac835450550187b328a10b7e1"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_1/STARTED.json",
+      "bytes": 515,
+      "sha256": "c3573ea483a2795627c5f3fc9f588accdb9fc836cc6afad399d46c54202f6ae2"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_1/trace.npz",
+      "bytes": 408471,
+      "sha256": "0c8a3dd42bb8efb4254ad3470b4e8d74680154f359eb1dcfb24419ac0284b723"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_2/after_release.png",
+      "bytes": 5176,
+      "sha256": "ff2a62ca698984f38ab1dc9b170b1156d85e9ebfddf48eeacd9387eba33e5918"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_2/COMPLETED.json",
+      "bytes": 590,
+      "sha256": "46f2a6a0952b6ebce36ceea5bdc7257acc59b3a2f1573882c360e959650a48b1"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_2/final.png",
+      "bytes": 5700,
+      "sha256": "498dff7d8e6ecee748a38824b7b1ecb7381db3a0e61d2ba22d88eeaafb5649d9"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_2/manifold.npz",
+      "bytes": 186931,
+      "sha256": "ef401a37c4490ab2d5c825a217c58862b6a3f6514b4d552fec22ecf7c8063698"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_2/STARTED.json",
+      "bytes": 515,
+      "sha256": "83cb01f5613a1106c45e2e4ae383628c03cdf23bfde43103366c6fbf7e2349ed"
+    },
+    {
+      "path": "runs/core_welded_adaptive_planar_2/trace.npz",
+      "bytes": 408473,
+      "sha256": "1e6eca7a04f7526e62c9cc75c86e1033f95663fcceab00de6cc42b392563e02b"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_0/after_release.png",
+      "bytes": 5237,
+      "sha256": "c16b962ee8e1b2e80bae2d4dcc2db1df18ca06073b911d8cf1d113c718a01fe2"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_0/COMPLETED.json",
+      "bytes": 600,
+      "sha256": "68cdf820dec326b9104de47041afaf059642031c9e46fcb97c6b294e51adf562"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_0/final.png",
+      "bytes": 5743,
+      "sha256": "74ffda60cdae8d38fa9c1c127754ac769c46f5a47a879dfd3b6ebe6a3254f890"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_0/manifold.npz",
+      "bytes": 187330,
+      "sha256": "122e3ef870be4bd4a929794a2c8e227be86db70c4ef76767fee629905ee91a98"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_0/STARTED.json",
+      "bytes": 526,
+      "sha256": "fbe31a1cad9ae0c296c0792acc362933558e4995783063d8140931571a6a2782"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_0/trace.npz",
+      "bytes": 406886,
+      "sha256": "19e9f14b46725e02e624122f025e7b776b7371b62aa39a09a632897467a2e006"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_1/after_release.png",
+      "bytes": 5226,
+      "sha256": "c1348f4a7ea45848da3d60422d4c5ceb17dc7268760d13bd6be86f760b93ec76"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_1/COMPLETED.json",
+      "bytes": 600,
+      "sha256": "083fa1cf157083d11d4cb1617f76a39a175bf0546c14278efe5f25c10c5dcd39"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_1/final.png",
+      "bytes": 5708,
+      "sha256": "7df8724c31c07c271d795a4b650453533ed5c3dfad57090325e6ece9bd24e29b"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_1/manifold.npz",
+      "bytes": 185496,
+      "sha256": "1b88df4886b5bbb8640dfd30116c77b90958230bd396e849a3106f5763b086ca"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_1/STARTED.json",
+      "bytes": 526,
+      "sha256": "547b4aa631234cd23ecaf8ede95c63ee5ed4a327ca4f74bb4c467263f4cb528f"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_1/trace.npz",
+      "bytes": 403680,
+      "sha256": "1062606bd221285207054d16732e7f7bed60eff3f2ac3193a3dc04c1d309897c"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_2/after_release.png",
+      "bytes": 5149,
+      "sha256": "cac1c0edd9b54e97974356c3331b52b9830353e90cb08fab37e7a5cd1e5080c1"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_2/COMPLETED.json",
+      "bytes": 600,
+      "sha256": "ce7bd44ffd1ff25357df4cddadd1f0d68e22b17bbb023b86e34d011b914dc1e6"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_2/final.png",
+      "bytes": 5679,
+      "sha256": "7d6b5ef08c5e5ba7329b408b269a7cc61c6802987434df8b96d5811670f62753"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_2/manifold.npz",
+      "bytes": 186878,
+      "sha256": "6cccacb9b81e534dc26fd0a6a073b2c5a5fe8b0d78ebd27bcc048ae306055eef"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_2/STARTED.json",
+      "bytes": 526,
+      "sha256": "f06257ea9b17730bd7d3dffc0464fade245a613171c7a261a62c23080bb6c79a"
+    },
+    {
+      "path": "runs/core_welded_adaptive_spatial_2/trace.npz",
+      "bytes": 405403,
+      "sha256": "8e5dcebe317b3ecd2466b0fa13e8104ae75665a3cf5030e41de28730babc6881"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_0/after_release.png",
+      "bytes": 5182,
+      "sha256": "ce8b2b05429f2b1930007b76537fe1b7962f472b16d7dfd5422de0ba68778293"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_0/COMPLETED.json",
+      "bytes": 579,
+      "sha256": "5bc90e07a022fb4f877a73faca5615dc773b277028504dbcb316719307e79584"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_0/final.png",
+      "bytes": 5682,
+      "sha256": "a1b666858d2046af8896d3c56a64907b18565e25fb0a21a293eb965368b3045e"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_0/manifold.npz",
+      "bytes": 186556,
+      "sha256": "57743bbb2b5000ccf3277848dde21dc4024704d41fb7b82d2c2c911c50ab0917"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_0/STARTED.json",
+      "bytes": 505,
+      "sha256": "6983d21490bc6ffaecacd1f58282f20bff0e220b1826405930717a784781aa66"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_0/trace.npz",
+      "bytes": 406177,
+      "sha256": "b337e131f5a8d286067bc0968920d8773f5c2198df3159049feeb6b5a36d17a6"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_1/after_release.png",
+      "bytes": 5254,
+      "sha256": "7d1cf3b19ef9446f8a1b6eecc9f774045138f2decc380cb53514788ff6a16781"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_1/COMPLETED.json",
+      "bytes": 579,
+      "sha256": "1de77940439d1c318728222cd0c600df40396b3420cd5b6ee63b3e4ff1dff128"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_1/final.png",
+      "bytes": 5702,
+      "sha256": "c116d2d51a3d574d17478cf84d821c79091093498b08378707bcfe6f394a6068"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_1/manifold.npz",
+      "bytes": 186509,
+      "sha256": "0715604ea39776a25a68ab67fcfd01018e00ac0f245e85bfa2f3895fc77e96c6"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_1/STARTED.json",
+      "bytes": 506,
+      "sha256": "a270a6715feb07647533e43dc1c509503d7f121eef4aeec2233b58be24b8778b"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_1/trace.npz",
+      "bytes": 404666,
+      "sha256": "01d80a6cd3d2aae66ed4f90d1616526324c8ef50e3daaed6853b19537fdea535"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_2/after_release.png",
+      "bytes": 5172,
+      "sha256": "851a1bbd0937ef22ea0e8bb08354d369a3fa8696ce03b1ed443e31b960315173"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_2/COMPLETED.json",
+      "bytes": 580,
+      "sha256": "d87207b0e742f773c8de070a1dd14a69a37bb75a4e0ec7ee8868257f139e45ac"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_2/final.png",
+      "bytes": 5631,
+      "sha256": "6c6c6b97cd352771aaff5e6aa280459319da9362e69efa4d24e46c7f534efeee"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_2/manifold.npz",
+      "bytes": 186392,
+      "sha256": "05b6b7c1ec97083e8945076126bfa9af59ed09062d6f271adfbeecbd98abfddb"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_2/STARTED.json",
+      "bytes": 505,
+      "sha256": "922d1b659f509dab6afa37cd576d1d64263aa52ecbfc1dd6764eea05d60a29cf"
+    },
+    {
+      "path": "runs/core_welded_fixed_centered_2/trace.npz",
+      "bytes": 405040,
+      "sha256": "d636a08bc53a3e580dcc08d3d275488a000920db8dd9f502e9915b3abcac46b7"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_0/after_release.png",
+      "bytes": 5210,
+      "sha256": "9e32d771f8c8e2a1e48110483e389aebdbdf065992c8ad2566c6149994e2eda2"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_0/COMPLETED.json",
+      "bytes": 584,
+      "sha256": "d4abed26d2f82fb469f7fef9b1cfde77e1b78dfa5488c4bab4a8a311f6e29fad"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_0/final.png",
+      "bytes": 5755,
+      "sha256": "1f19c16ddf805f9b48be07664198158b6b924968634275b84a74db5e2c40e548"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_0/manifold.npz",
+      "bytes": 187260,
+      "sha256": "40811407885ad9c96cc4522f5bf7a8c888de19a2e3360230b646cb04604ddcdd"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_0/STARTED.json",
+      "bytes": 509,
+      "sha256": "bb736543a798ea2b61fe2dc10dc8948740f1903253c9651002d6710501027633"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_0/trace.npz",
+      "bytes": 405433,
+      "sha256": "ebc783cde292940864e6045cd1984c9dc3446c2344bd30db50b3d5400dc63c90"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_1/after_release.png",
+      "bytes": 5231,
+      "sha256": "d1a47dd335bdfe620cbb0ae3e731f07ff4fdd7493296951093cdd28f10ca22ee"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_1/COMPLETED.json",
+      "bytes": 584,
+      "sha256": "7af0fcc3156e3495fa2dd28a966ec322dcbd5b4fc175feba28a6ce42af6c297c"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_1/final.png",
+      "bytes": 5664,
+      "sha256": "7f1e7d730e25360412e2c27492c6316df1d67f5c51f302138bd8e81c5b92e6f0"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_1/manifold.npz",
+      "bytes": 186543,
+      "sha256": "4f4085ebe9d7cc42ad6506b29526db9820283842a9be9882e414eb653ba7ae73"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_1/STARTED.json",
+      "bytes": 509,
+      "sha256": "c872f9374e13e55ce045049ea03c6b7329ffac53960e77eaeba5f3daaa58f18c"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_1/trace.npz",
+      "bytes": 404668,
+      "sha256": "78c09164703d4225a51b3abc050b0441c2af6893c11b3ca7a70599c973faa644"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_2/after_release.png",
+      "bytes": 5176,
+      "sha256": "ff2a62ca698984f38ab1dc9b170b1156d85e9ebfddf48eeacd9387eba33e5918"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_2/COMPLETED.json",
+      "bytes": 584,
+      "sha256": "b7ccc2af4b157f4f6806dabd3d4e91054205c55844a661b4a57913f2d8245a43"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_2/final.png",
+      "bytes": 5698,
+      "sha256": "fc28f05be578f1e0bb5a731c83f7e5e60a77354db45655c0b1ea2a6bd96116c2"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_2/manifold.npz",
+      "bytes": 186926,
+      "sha256": "28c87e101a6a6edb71c0f2432d8f65142e6c1da8229ce571055fccf590aec805"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_2/STARTED.json",
+      "bytes": 510,
+      "sha256": "4bf010b700533c005271e7c0bd52e7bf7a814675ca50f697cd00f30ab776ae3a"
+    },
+    {
+      "path": "runs/core_welded_fixed_planar_2/trace.npz",
+      "bytes": 404548,
+      "sha256": "2f69bb17b4eb31142754fa83e72f8fed644cbd907c7ad9668e9f98819a8ae61e"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_0/after_release.png",
+      "bytes": 5240,
+      "sha256": "28c51973f9996120a9ad867abffa4cd8c3bf7cb6a2fdb6c6f05d2d444004da33"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_0/COMPLETED.json",
+      "bytes": 593,
+      "sha256": "96546bbf3fcab0b9814ab3562123378924df00fd6c408042dedc012af5b404fb"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_0/final.png",
+      "bytes": 5754,
+      "sha256": "adf714974c4537525dd9db4371087d5381d663a4c88025cd6a1477f7668edb0d"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_0/manifold.npz",
+      "bytes": 187232,
+      "sha256": "0418987133cbe97aa6df0173747f5e9ffb5363e0b3591eb50065a40f060a615e"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_0/STARTED.json",
+      "bytes": 520,
+      "sha256": "45094b507a67fdb3a8b7df449f3aa5bae1b23088cd239abedf048a3295e4d749"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_0/trace.npz",
+      "bytes": 403069,
+      "sha256": "1c3d97d958e0aed2db35640d1941a13c60dd88b479cac2a231110df02ecf0cc4"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_1/after_release.png",
+      "bytes": 5226,
+      "sha256": "c1348f4a7ea45848da3d60422d4c5ceb17dc7268760d13bd6be86f760b93ec76"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_1/COMPLETED.json",
+      "bytes": 593,
+      "sha256": "0698292a37d67fc3320a159282af08e1f85444b9d8f4d4bd60471c69cb047a61"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_1/final.png",
+      "bytes": 5705,
+      "sha256": "31d4381845e394b1373af4aed1e03e8a8e7a0836c6a0e1c96efbb23cd083629f"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_1/manifold.npz",
+      "bytes": 185482,
+      "sha256": "f6faff5650c27130dde7cd74b50c67d6cfac2c487e405c6827bf031ea0cc52d1"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_1/STARTED.json",
+      "bytes": 520,
+      "sha256": "2efaa631434f1f69c68c1a11303a54d7dce6f0ed3f7b1698e8d5bba05f496b39"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_1/trace.npz",
+      "bytes": 399889,
+      "sha256": "09035b59a6f685a00c3352f269171e7f827b5bda11dd925e2b781e7d47a58595"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_2/after_release.png",
+      "bytes": 5151,
+      "sha256": "1eb59d9a52e9a0d29c820c181f08d21d901073069b79c76b52c6c534e1a10c4f"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_2/COMPLETED.json",
+      "bytes": 594,
+      "sha256": "d6a9f57af8d86fc87ca7a54c3e25ef1d34da046338c536b5fa0ff32c552d2d49"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_2/final.png",
+      "bytes": 5677,
+      "sha256": "f7364ef0e0b721ddf7dbdbcc8f47fa300d343242532a0e2c7d4322236c923b2b"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_2/manifold.npz",
+      "bytes": 186840,
+      "sha256": "4bbc0b230dfc6aac2637ed261f2de3cce501e4ea07989b85ba8ce38cc5dd4491"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_2/STARTED.json",
+      "bytes": 520,
+      "sha256": "51d12ecb19c6631abb4b8f126ccef2a267d8305a5ccb272c18be6d2c222a0301"
+    },
+    {
+      "path": "runs/core_welded_fixed_spatial_2/trace.npz",
+      "bytes": 401747,
+      "sha256": "e770da83106d785ce46d772c61cb23e071ced63aca510dfd08f03841ff1eee0f"
+    },
+    {
+      "path": "runs/core_welded_none_centered_0/after_release.png",
+      "bytes": 5264,
+      "sha256": "e18f6167999cd82395176c5d422a7540de3735936f275cc6f7c3fe21928c7b13"
+    },
+    {
+      "path": "runs/core_welded_none_centered_0/COMPLETED.json",
+      "bytes": 578,
+      "sha256": "f16c1c85f8a8ff02eab965acd7cf4493e4a89c7d1d05ccf1ed73559d222dd701"
+    },
+    {
+      "path": "runs/core_welded_none_centered_0/final.png",
+      "bytes": 5993,
+      "sha256": "97e4c099e4e4b8f464a9e71b5bb734acca2991696f85323d372757054b8ecd82"
+    },
+    {
+      "path": "runs/core_welded_none_centered_0/manifold.npz",
+      "bytes": 184052,
+      "sha256": "c8395cc83ea4f883e73b89f3e8a36ec989df80697ded12bc85ca703ee0a62963"
+    },
+    {
+      "path": "runs/core_welded_none_centered_0/STARTED.json",
+      "bytes": 504,
+      "sha256": "af70266498c0829eabf9babf39e17efb03b759928b66f2dfddbdcb58ae46277d"
+    },
+    {
+      "path": "runs/core_welded_none_centered_0/trace.npz",
+      "bytes": 402913,
+      "sha256": "0b7224d5a2898fb085dcea1700347efc671559e5a7963100ecb044c79d8c3ffd"
+    },
+    {
+      "path": "runs/core_welded_none_centered_1/after_release.png",
+      "bytes": 5256,
+      "sha256": "280794f424789dc799a70fb9fea005ed3f579a0fa75a9b5a77b107e8a2c9d81c"
+    },
+    {
+      "path": "runs/core_welded_none_centered_1/COMPLETED.json",
+      "bytes": 578,
+      "sha256": "f2114953ae8cdb479172af83718564e6bf70ce22ef46f2c5f9a1706613d22ec2"
+    },
+    {
+      "path": "runs/core_welded_none_centered_1/final.png",
+      "bytes": 5994,
+      "sha256": "210b6e62ad59adef362319d43578f078a1f7c9f70eb48b1476597043eab3f592"
+    },
+    {
+      "path": "runs/core_welded_none_centered_1/manifold.npz",
+      "bytes": 180727,
+      "sha256": "0a649ed2da643d31b552200bda095cce18b357b6249452176b3799eb6d5d1e66"
+    },
+    {
+      "path": "runs/core_welded_none_centered_1/STARTED.json",
+      "bytes": 503,
+      "sha256": "5fd26f9cadce274c8a9515710ab2906089ddbaf64560a2d3b12d3f0f7f101112"
+    },
+    {
+      "path": "runs/core_welded_none_centered_1/trace.npz",
+      "bytes": 399034,
+      "sha256": "4ea2e2cec6a18d46a29f3974e8ad9c61d381df3fbd2f980bb6d331dcbb01190f"
+    },
+    {
+      "path": "runs/core_welded_none_centered_2/after_release.png",
+      "bytes": 5243,
+      "sha256": "b60a25dc253c9d4c13e74e4db159bd883e29ca4b7e5567faca5db58719759c48"
+    },
+    {
+      "path": "runs/core_welded_none_centered_2/COMPLETED.json",
+      "bytes": 578,
+      "sha256": "2fa00d765c6b9a861bcf7db4cd085455189fa60819d22d0c36d8c91eacf55dc6"
+    },
+    {
+      "path": "runs/core_welded_none_centered_2/final.png",
+      "bytes": 5960,
+      "sha256": "92db64189c8178d4b2c7cbd105b7f73b2c0485d031a1b8fc9a0d9c7fd5eae7b7"
+    },
+    {
+      "path": "runs/core_welded_none_centered_2/manifold.npz",
+      "bytes": 180762,
+      "sha256": "30ff99d80e05f142986d2d17366e1912fd326fc567d902f80777bf4e86184e97"
+    },
+    {
+      "path": "runs/core_welded_none_centered_2/STARTED.json",
+      "bytes": 503,
+      "sha256": "e81e36bf62da8f6518e13bc0e66ecdafdb199c93e00f593a5301f6b47eb7be20"
+    },
+    {
+      "path": "runs/core_welded_none_centered_2/trace.npz",
+      "bytes": 398852,
+      "sha256": "7bfbd3bfdad708290269dbd3e31e0e21a4effe2bc35239f8e543280670183feb"
+    },
+    {
+      "path": "runs/core_welded_none_planar_0/after_release.png",
+      "bytes": 5585,
+      "sha256": "561226a108468f39f0144c45b7a3dfb656b17607a2b7756d726ee0eaa87ca820"
+    },
+    {
+      "path": "runs/core_welded_none_planar_0/COMPLETED.json",
+      "bytes": 590,
+      "sha256": "a117190ca954356e03126c2af9ecbdad6ccc4d034c74d312d2a5f9faeedffa43"
+    },
+    {
+      "path": "runs/core_welded_none_planar_0/final.png",
+      "bytes": 7553,
+      "sha256": "f13a8f18fc9174ca35a29217bfda57af17ae399b0a2081e15d0ebe28d394cdbc"
+    },
+    {
+      "path": "runs/core_welded_none_planar_0/manifold.npz",
+      "bytes": 42901,
+      "sha256": "b3fca7b0306a0dca6d5730b334132ed6fde6c8d9b28b20b9fb59ff6e8d58c9fc"
+    },
+    {
+      "path": "runs/core_welded_none_planar_0/STARTED.json",
+      "bytes": 508,
+      "sha256": "5524a9e5007da7fa7cba9d2ab3bb57e4ea2afbc4a411a8a9ee879be2af1ae8d7"
+    },
+    {
+      "path": "runs/core_welded_none_planar_0/trace.npz",
+      "bytes": 96652,
+      "sha256": "372961cd08b12147fba69dd8bd074dab5e30133499b8f363686c06e2ef4b7fda"
+    },
+    {
+      "path": "runs/core_welded_none_planar_1/after_release.png",
+      "bytes": 5585,
+      "sha256": "ac3fea0ad8c9b4f84b07029964de795c5aa58ee066ada6f11f4604727b56d712"
+    },
+    {
+      "path": "runs/core_welded_none_planar_1/COMPLETED.json",
+      "bytes": 591,
+      "sha256": "4e6111ce1e6437bb87cd8486c7026d7436482099a004b51480ab36d15a367bf5"
+    },
+    {
+      "path": "runs/core_welded_none_planar_1/final.png",
+      "bytes": 7533,
+      "sha256": "b4fa025d55fd49fa668806e8d1dcf6496de9d897140217f3ef214485fb8ec770"
+    },
+    {
+      "path": "runs/core_welded_none_planar_1/manifold.npz",
+      "bytes": 39330,
+      "sha256": "fcdc8f7704413426d2919ecaef1f54455718e7debde49ad5602f6ae9c159f027"
+    },
+    {
+      "path": "runs/core_welded_none_planar_1/STARTED.json",
+      "bytes": 508,
+      "sha256": "6ca9b93ae9b382d79ab065f0d9ab2b1b1696d0babb4e655c27f13a2ee3825902"
+    },
+    {
+      "path": "runs/core_welded_none_planar_1/trace.npz",
+      "bytes": 93267,
+      "sha256": "4d8e94eedd1e2f48afb851ee5feb0aec866a8173a6e8b21f1d215e75442d58ac"
+    },
+    {
+      "path": "runs/core_welded_none_planar_2/after_release.png",
+      "bytes": 5595,
+      "sha256": "50e1f2e8a8d5f3a31e0a977807c235aff4cbdf74c6b8c4918ff00dca23a0d0a7"
+    },
+    {
+      "path": "runs/core_welded_none_planar_2/COMPLETED.json",
+      "bytes": 590,
+      "sha256": "5117742006cb28e3f8b85b55abf3806f12942f75b25254035646d37f841dcc8e"
+    },
+    {
+      "path": "runs/core_welded_none_planar_2/final.png",
+      "bytes": 7468,
+      "sha256": "5371bfbe15359f672732e3d404c462ccbb5992b0561fc8c6837c067122ce1a0d"
+    },
+    {
+      "path": "runs/core_welded_none_planar_2/manifold.npz",
+      "bytes": 41627,
+      "sha256": "970a0bc427a00255b9479ca898ba7a16c9ecb6e7f07664fae5df183abf56e14a"
+    },
+    {
+      "path": "runs/core_welded_none_planar_2/STARTED.json",
+      "bytes": 507,
+      "sha256": "4f80baa9602fd2d3d0cfa43f6a34974bc1ab4bbd05de0041b1577afe76866269"
+    },
+    {
+      "path": "runs/core_welded_none_planar_2/trace.npz",
+      "bytes": 93522,
+      "sha256": "e4a4983b54f4c0eda9c67e6cdcc41ed37d014e97a60aa13e8f75f0470ff629d9"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_0/after_release.png",
+      "bytes": 5499,
+      "sha256": "a90e973d4d08284e567157c9e5455a7cce3b83ae6951722cc4f8fccb55f2a1f1"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_0/COMPLETED.json",
+      "bytes": 601,
+      "sha256": "7017693f5121a6ffaf27616db93896295380b0519f1f00472002c17503462f89"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_0/final.png",
+      "bytes": 7430,
+      "sha256": "71e23614a2edeb4d7188252bc531a1581d7f63839bf237e830067f10ff73109c"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_0/manifold.npz",
+      "bytes": 42380,
+      "sha256": "de396359b278516065100ec074e883c6a51f008e357c349ab1d85ef65a18907f"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_0/STARTED.json",
+      "bytes": 517,
+      "sha256": "f85eb2a3d86e058a8e21afae747ded24d0a943a6f6480da20a7bba3c3013b8c5"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_0/trace.npz",
+      "bytes": 91912,
+      "sha256": "3057f2df1db9c378fe9ff82332c0a54ecbd0c46c94a1d0707f107047da3a0795"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_1/after_release.png",
+      "bytes": 5477,
+      "sha256": "15756be2774ad4d0216531295f31ab6035c461b2684baef3c2f257a8c7615e69"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_1/COMPLETED.json",
+      "bytes": 600,
+      "sha256": "209281e4a03ae59639bb41e33840138a5a4ed9a112751f3bc73e0a7d2b1c0569"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_1/final.png",
+      "bytes": 7451,
+      "sha256": "d8dd0b9cfeb2351f9fc8f9ffe9a16033a0b99ee02a0085e180877ae07afef900"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_1/manifold.npz",
+      "bytes": 38694,
+      "sha256": "2d5e1f68ff90b8073c185f98874934c3ff08fea3a1e372b2cc45ba49ac47f5f2"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_1/STARTED.json",
+      "bytes": 518,
+      "sha256": "1cd9222adddd33aabec3cc5de9de5a6e68e88fe08bc2bdd870befd03902c68b6"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_1/trace.npz",
+      "bytes": 88585,
+      "sha256": "4fbae6b1a11b99e3e3eeb0c5dcbc7810e31164971dea4670e82974c959f8a6f0"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_2/after_release.png",
+      "bytes": 5543,
+      "sha256": "d71dd79b5edc24b908942ac1d0d7dd7352c2993811132d37bc14dcb7d660e276"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_2/COMPLETED.json",
+      "bytes": 600,
+      "sha256": "fbf7c8358bd64c2c275c8160c4ba3ee734599b449dfd8b35fddbcefb2a6dca9f"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_2/final.png",
+      "bytes": 7469,
+      "sha256": "b6a98dcf9f3946264ecf40e0c4ea6e83de4b3580e298d84215c36c628e11133b"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_2/manifold.npz",
+      "bytes": 41071,
+      "sha256": "c324948e3fbeb7b2ba46d19020cfec9e27d56d3d4b7d339ea65614a5df0da32f"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_2/STARTED.json",
+      "bytes": 518,
+      "sha256": "c59ae03745fd3bf1a8233c249cd58d01669e1345057cfd579a40721ae608a082"
+    },
+    {
+      "path": "runs/core_welded_none_spatial_2/trace.npz",
+      "bytes": 90164,
+      "sha256": "e6fe7c266749620d2f13a75e4ffdeff2e17a2e5da9491523f9845234cd29a172"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_0/after_release.png",
+      "bytes": 5219,
+      "sha256": "7746c27879f2e6159b72a235990dd87ed806d25c158fa00a467bea592c0f5475"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_0/COMPLETED.json",
+      "bytes": 578,
+      "sha256": "e6c77a8138eedc0fa4e5dd1c549871c310eef02d8d68bdbaaf5d5fac61ea3b71"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_0/final.png",
+      "bytes": 5831,
+      "sha256": "36dc27032c914cd3a5cd5b243d7a2e959dd8f75fe41a224901ea4e0829eb6f0f"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_0/manifold.npz",
+      "bytes": 181871,
+      "sha256": "0ee87bed42c9ab33821b6795261abf7ea12f0ee604f7cb0b08c878aee092e01d"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_0/STARTED.json",
+      "bytes": 504,
+      "sha256": "5791c720256d550456c4e474ad8fa9709a93453f1946cbc8815ff33cf8fbb770"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_0/trace.npz",
+      "bytes": 382641,
+      "sha256": "566b3e7eb5953da70667a4fa51df4d0c8e02feecc31d67683038d2772243af2d"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_1/after_release.png",
+      "bytes": 5247,
+      "sha256": "3205e8f1a3eb8b6f9c064b67cc34fb4a705e7bca54bb76187ea404faf213a2d1"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_1/COMPLETED.json",
+      "bytes": 578,
+      "sha256": "c24d8cba0ba553f12a35626c57104fa046c91acc667267d5d5eb02c825508e6c"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_1/final.png",
+      "bytes": 5815,
+      "sha256": "90b7f090a7a14d8088b0bba0d025197bea2c2ecd5871adc94bf39348fe50264b"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_1/manifold.npz",
+      "bytes": 181565,
+      "sha256": "208043a33857ba074efbd2b5157ee247a8534efeeb101c20640cae6fe79498d5"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_1/STARTED.json",
+      "bytes": 504,
+      "sha256": "db074de8ed74b42cffeb2920b6f2b823e58d5b4467be7159eaffcd416e3df927"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_1/trace.npz",
+      "bytes": 382116,
+      "sha256": "7fc2e2842ca5bab4a49633f336914937ce4fa181553a8cfd580758d7926151ce"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_2/after_release.png",
+      "bytes": 5242,
+      "sha256": "495fe221fed4fdb4bcbf2a5f8b469bd7e4841a36653b3f57549afd5c7c18c9b4"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_2/COMPLETED.json",
+      "bytes": 578,
+      "sha256": "d8308375fb22c305ed8ec6faef3da94f02aa0bbc3594d895e7f4ce69feb49d7b"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_2/final.png",
+      "bytes": 5831,
+      "sha256": "05342aeacc1f9c61364e8f4031814cd7bfd5eea95dc9dde37b2272b7ff09e4d6"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_2/manifold.npz",
+      "bytes": 181168,
+      "sha256": "eff4f2ffd30f38fd01a3fce27b3e580f80e541ae62350e71665bc2a3801e5e2b"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_2/STARTED.json",
+      "bytes": 504,
+      "sha256": "29ee05478510aa923754e88adba35858c0d050d35fd464ee8ef06142d1350caa"
+    },
+    {
+      "path": "runs/core_welded_wong_centered_2/trace.npz",
+      "bytes": 381623,
+      "sha256": "61946610821861fe736769eb83bbe009e9c879191b1996a5af3cc3c1ab602214"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_0/after_release.png",
+      "bytes": 5223,
+      "sha256": "678b0bd68cd34a7a677a74cb3044aa1ae792bcfc94cb5d0b649525d8fe3ee22c"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_0/COMPLETED.json",
+      "bytes": 582,
+      "sha256": "f256746b66fa487f2c64de816fd947c9d59983bd64923170d941f984885d5aeb"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_0/final.png",
+      "bytes": 5711,
+      "sha256": "9ca0366ccf1aa23bcd9de15cffc95797807e6f404584e96835dccef968609899"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_0/manifold.npz",
+      "bytes": 184831,
+      "sha256": "ac9366c2e16c60fd754b5f7e97bff9251befb50cc3b6f2da3d5650d6ccbfc7c6"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_0/STARTED.json",
+      "bytes": 508,
+      "sha256": "5f29728776172139dbeaf3b83bcbbe7774fb0bf31568897ac2e3b0993a98e16f"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_0/trace.npz",
+      "bytes": 388821,
+      "sha256": "dc0e5056040b5ae13729cb65ac66b5125248a780142d7e2ae666bdacff0233f2"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_1/after_release.png",
+      "bytes": 5144,
+      "sha256": "2a687f736db964e614e0edf6f429d76ab508a6a982c9ee66767dd6ffd2a5d01f"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_1/COMPLETED.json",
+      "bytes": 582,
+      "sha256": "93c941ba5154cfe49b1ae5a055223826ad927ed7c5e48bd9b043c507e9545cd4"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_1/final.png",
+      "bytes": 5738,
+      "sha256": "e2ce16a3ceb67611335d97c8224162de70348f08322ea6d2e2f9b9fd6bef6ba0"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_1/manifold.npz",
+      "bytes": 185624,
+      "sha256": "165c37e578f59d24fcf611093f88d203c4e40dc4d45f813d6b7aa2c809f013b4"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_1/STARTED.json",
+      "bytes": 508,
+      "sha256": "d2825f568f24da5a305de0c64493372cd664fbfb5646426737da808911d7295c"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_1/trace.npz",
+      "bytes": 388859,
+      "sha256": "887d53ca802b71258cf87995a3a03f48f0560d630bd782cacccd95fc576e3d4d"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_2/after_release.png",
+      "bytes": 5195,
+      "sha256": "dee587d860c0f64ffc9a1414b7613d315f998f92a407c28bf3b9269ff3fe3b60"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_2/COMPLETED.json",
+      "bytes": 582,
+      "sha256": "e4fd67eb3d78a1c4e72fbd9db230768ac25eff626b917f32cde5fbf21b58e742"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_2/final.png",
+      "bytes": 5647,
+      "sha256": "188b9dea9cf2ea95f62f20f814f3c97ab86a17f4147660505a2191658ce831f8"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_2/manifold.npz",
+      "bytes": 184800,
+      "sha256": "0e8a29cf4bbfc9da4d6da2e3c9a0205f3edf7cfac7347a8c0f6703d01b597fa2"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_2/STARTED.json",
+      "bytes": 508,
+      "sha256": "3105c0844c93f9362c83ce505fcc35ba960737413c1a3dee52ce8c75b4990a57"
+    },
+    {
+      "path": "runs/core_welded_wong_planar_2/trace.npz",
+      "bytes": 387447,
+      "sha256": "a417f39d9bb9eb98e25e6ec8914b6ea500fa91f8651ef0264107e11544edfa04"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_0/after_release.png",
+      "bytes": 5082,
+      "sha256": "7b2739d0d21dca48c9044234b20be21c70f1d016682e6bf9561163b1a9198205"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_0/COMPLETED.json",
+      "bytes": 592,
+      "sha256": "acbc5a89fb0b3265aaf6cbf34ceea192888f3c77d41bb31001e1797509b91d8d"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_0/final.png",
+      "bytes": 6976,
+      "sha256": "f988b7d5c7abb0a0e19d5d982fb51bedea1a250a0f6af32f3995d677c69db9e7"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_0/manifold.npz",
+      "bytes": 185367,
+      "sha256": "9d266d9455946778eb7e4e860f2649ad02e4a826ca5336d8b26622c8918471a5"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_0/STARTED.json",
+      "bytes": 518,
+      "sha256": "424b60ab05d43e510c61f39029d4fa329a471cf26da5edfa50db4b53d9cb6aaf"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_0/trace.npz",
+      "bytes": 378066,
+      "sha256": "bbc486cd59646210b6dbcf9c9955d90ed4e4667fee1f72a2d3a7d639cb3723dd"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_1/after_release.png",
+      "bytes": 5132,
+      "sha256": "cdc023010d410f3cad29f65ca5eb556f6595bc9a9053d7c640fc0273869d8d6f"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_1/COMPLETED.json",
+      "bytes": 592,
+      "sha256": "3a7b39d1f4a5b21f492dd8e49b7ea7d0b9c143b579e0be45513c1c5c0367cbb2"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_1/final.png",
+      "bytes": 7028,
+      "sha256": "b694b1fb03acd3e6dd4f6362d3c216a993e415093c9c4e8050060a1310b3dbd6"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_1/manifold.npz",
+      "bytes": 185622,
+      "sha256": "d12f39cebcab704f8deaccae519c8c336a8c1b02316dd822a82e0b2f5202dffc"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_1/STARTED.json",
+      "bytes": 517,
+      "sha256": "45df65839b5bb9b6024045e2417176b09ea277f86615273b229663bd1cc9f454"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_1/trace.npz",
+      "bytes": 377340,
+      "sha256": "04fffac4dab67e58ecf182f43886ad233ce0e661a091eda3db93ee29d2da32af"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_2/after_release.png",
+      "bytes": 5121,
+      "sha256": "8ae5aa900f2b143a94668f7328804f6d561674f9546b724192ad49dd42589727"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_2/COMPLETED.json",
+      "bytes": 592,
+      "sha256": "a8a253b5dabfca97eb5fad2584f35b3cc9b4849eb515886cba3f99f241353f44"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_2/final.png",
+      "bytes": 6974,
+      "sha256": "7c31e192fd65ba0fa9a9f26a6c79d549ac7ebd4e5c143535e6c8104709937710"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_2/manifold.npz",
+      "bytes": 184198,
+      "sha256": "a63c1566f0b490f93b6159b5adec0fc8bd32146ff2f15f736cfac959b82ae653"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_2/STARTED.json",
+      "bytes": 518,
+      "sha256": "01e6405ce28663a4615e7ee5304864f350cdee3d72c947c41e8f277c07179e4a"
+    },
+    {
+      "path": "runs/core_welded_wong_spatial_2/trace.npz",
+      "bytes": 375542,
+      "sha256": "fbcedd12f075d1fb5dac68da6e0d2ff8115cfcbde4392ecf6623a9ec92bccaae"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_0/after_release.png",
+      "bytes": 5134,
+      "sha256": "d7706ae46ad3868cd88d97153b316cdee982366e398c4768b82a0baeaec9069d"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_0/COMPLETED.json",
+      "bytes": 613,
+      "sha256": "c63bc138867f1574d97704dc53452efd464fa61a24ed6869c73668b3053acd1e"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_0/final.png",
+      "bytes": 5746,
+      "sha256": "01b6608258116ae463f0f7c4f26da178f6fcdf296dddbbe45deb58c5640bbd6f"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_0/manifold.npz",
+      "bytes": 186575,
+      "sha256": "59ed9dfc4159e1c20122bb5e3d5547e291460caca2ceee1b789137595838d7e9"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_0/STARTED.json",
+      "bytes": 540,
+      "sha256": "5db116c2d43967f04b2af8c9130f4296ad9a73a769a0db82a508f9cca7b142c8"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_0/trace.npz",
+      "bytes": 404565,
+      "sha256": "b997b8c80b4c412c496da92ed919dc97d02e66859b95efb8885e54b47d937ee9"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_1/after_release.png",
+      "bytes": 5215,
+      "sha256": "2c5ad488904e217c511b3686ba1163cc59ccd23b3d4ec33f4de7b9c845c7c28c"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_1/COMPLETED.json",
+      "bytes": 613,
+      "sha256": "d8d32328cc32f304d874fe6cbd81c6a11b2ebd90c2a5dabe8cb16f50806487b1"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_1/final.png",
+      "bytes": 5714,
+      "sha256": "bacaee562e0276b7a344a7eedc3ac8be8a01727e5b73ebd8f671367a2cb4c9bf"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_1/manifold.npz",
+      "bytes": 187860,
+      "sha256": "a3f01332bfeada2d87ea52123d1ccbacaddc84d5e0d835a4e062b6061dd555ae"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_1/STARTED.json",
+      "bytes": 539,
+      "sha256": "6e5b3b722edcde104de06fe6dc9fc766855482dae7db9e155141e929b10f5c68"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_1/trace.npz",
+      "bytes": 405884,
+      "sha256": "abe495067cb048d4a9c1f52e714c483f93f6b0e4aac7f8b55d11ec53545233c9"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_2/after_release.png",
+      "bytes": 5199,
+      "sha256": "b59dac8704f6675c1d05c8365f6994e1fef250fdf7fabe4eb20ab211eba820e2"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_2/COMPLETED.json",
+      "bytes": 613,
+      "sha256": "60bfcf71c1c7d7f87a76224f0b0d354be5b146e124994ee7a6c95f2aaff6cb9a"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_2/final.png",
+      "bytes": 5714,
+      "sha256": "63e847784dacdb4886f4b2edf30f66ed0f37413e4d058a0103d52969fe0c346c"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_2/manifold.npz",
+      "bytes": 187418,
+      "sha256": "da60f55837cc06975e6c8679087b79cdc72b9195f02b433b58171d0b01138519"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_2/STARTED.json",
+      "bytes": 540,
+      "sha256": "f6d23a4bca0ac66b6ff4bbff6c753d19b25e03873fa081769f21e50ecbc9debb"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_com_unmodelled_2/trace.npz",
+      "bytes": 404980,
+      "sha256": "4811961291d806bbe29e55c5370ef39440b833a417b12cf8bbe513bdb8ce1b75"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_0/after_release.png",
+      "bytes": 5163,
+      "sha256": "65afbcfaa53a62df529cc08078f6b317f7e959faec8dddde59200b9d2bd841b7"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_0/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "7a45d4361f0e679ad92a97814d916c5816f42655d12eb0191d34ead70223f057"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_0/final.png",
+      "bytes": 5713,
+      "sha256": "9d2c8a77be9491e9837b71c315e75c5b4e59a80c4ad6dcd521550f7b5411c5f4"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_0/manifold.npz",
+      "bytes": 188161,
+      "sha256": "0c23e7a930b94967742fd5db4cf359ea98454bfa897217f998a859b8c4c1034b"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_0/STARTED.json",
+      "bytes": 542,
+      "sha256": "bc28a4014480d8f7f70adf123ec159a78a0f479e3742f9aa9b08c88c2a4af646"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_0/trace.npz",
+      "bytes": 407275,
+      "sha256": "25318b421e96c47ba59b623844565c2c97da8fd9af1dcda2fd4cf64b7dedbd3d"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_1/after_release.png",
+      "bytes": 5222,
+      "sha256": "953286defce29b5c281c52c1b1efa5dd597d61f8f9645a540a8aa0ca5e249c4e"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_1/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "01bdf343ec2a179edee5b1dbc05a11f811bc5c9ac9e9fd48f73d3097cb185ba6"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_1/final.png",
+      "bytes": 5674,
+      "sha256": "88f9fbd4bb8eb0abbe6d28aa8e66d5284bfca2cd3e4e801193468430ecd56a0b"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_1/manifold.npz",
+      "bytes": 188564,
+      "sha256": "a3edfb61bf0f80742e892b63e6fd1986dbd9db1cdb6a8ea40d2ac82fc092deb4"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_1/STARTED.json",
+      "bytes": 542,
+      "sha256": "8221c1729b46ae6e4422c557b771192c260fd519cbf41f1700b40a46f1c573f4"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_1/trace.npz",
+      "bytes": 406696,
+      "sha256": "ccbf185eacff9b048a6cfbd2a0471634abb26e36ce33fc977e78f58ab7db3e82"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_2/after_release.png",
+      "bytes": 5177,
+      "sha256": "661d55b0fd69565069dd08f19ba5d1e3489631ff955b7fc484468bf5ccd02c8c"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_2/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "46fc32c91f283e5d1f50e34791c540fe2f147b1c900794473f3cf8b9caf44e29"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_2/final.png",
+      "bytes": 5717,
+      "sha256": "f2aaba2f3c094dd5052afa3ff429ce838aac0c293bb8e5a87ee32c6423f920bb"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_2/manifold.npz",
+      "bytes": 188500,
+      "sha256": "9c5c2afc40fa4ca71da6b12d9152bda6ec6d02ae703ee1435b51dba68e320e80"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_2/STARTED.json",
+      "bytes": 542,
+      "sha256": "c5e4c2963dd1534839459d1678ef75a22f98e3d736203a751f2fad6bc25f264e"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_heavy_known_2/trace.npz",
+      "bytes": 406852,
+      "sha256": "5241c64e161cf002d42fbe14876bc0085485676be98a02480e92ff7048080d53"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_0/after_release.png",
+      "bytes": 5093,
+      "sha256": "96fd782d0d68f104ee1d22a4031ff610b9837f3e039bcdcfdd7a0f4e5f398b66"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_0/COMPLETED.json",
+      "bytes": 614,
+      "sha256": "5104c965326852ee4a81c4a5c8ed7104cf261bc5838dc5050467da8adf9cfcff"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_0/final.png",
+      "bytes": 5671,
+      "sha256": "b312b71a3330276206084bbf3701d858769b695e0e39238ab2b7aa7adaa0485e"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_0/manifold.npz",
+      "bytes": 186431,
+      "sha256": "5c2e464b46b11a5813ed3022f45871a30c795ccdffc5b65387995a50757c4266"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_0/STARTED.json",
+      "bytes": 542,
+      "sha256": "dfb7b1ec5f8e08afa5cd502a1908aa2a5b8ef0c2bcc72bc787eacb459264e740"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_0/trace.npz",
+      "bytes": 404383,
+      "sha256": "9ef88da54962ea0d75dcc8ec5dba38c7c9700f8f42af53cab5e559a142d4890b"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_1/after_release.png",
+      "bytes": 5142,
+      "sha256": "d2b8bf750b8802057105712f43b749bbfa13fc2a093cff4ee5084496a6141fbf"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_1/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "1e2088dcaecbba3b94884017d7a3d0a5dccb167be6fd538235541d407bfd408b"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_1/final.png",
+      "bytes": 5667,
+      "sha256": "48b1ba418b8b546d87ca24f10cbbb3ff598c809a7d31e21261c6dadc5640805e"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_1/manifold.npz",
+      "bytes": 186565,
+      "sha256": "892522d3e387101dab0c5fe38ebb156566ad5c94cd662bfdcc933af72564ec04"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_1/STARTED.json",
+      "bytes": 542,
+      "sha256": "7f28d9d5b9513f3accd53b8001515c29dc02928c4509be902e55cf16bb7cad4e"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_1/trace.npz",
+      "bytes": 403955,
+      "sha256": "5a296934131c1dc7052acf2934c10f26b0e79e485c5bec1c53b499137b24680f"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_2/after_release.png",
+      "bytes": 5146,
+      "sha256": "3496f87f9edcbd7c32bed20a3dc9467bfb97171ffc327b3d5617554cf2ad41d3"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_2/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "62054c3fcdc3fc003a1fe67c6f4bd91b2650bc97abc6b59aa9664a1ad9dca6c3"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_2/final.png",
+      "bytes": 5687,
+      "sha256": "ad4ac6b94aac7c6ea12dac2bb5885c780284be7047230b14738d712e2b1ae1cc"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_2/manifold.npz",
+      "bytes": 186763,
+      "sha256": "ac5155c84042ed8f3203da7a76e8b21c70c9de0861fcd471f9315ad8ca40eae0"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_2/STARTED.json",
+      "bytes": 542,
+      "sha256": "20074c37e6578715c18d785f29ea197c3330ad5424cd2df7e08c5200030bc53d"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_light_known_2/trace.npz",
+      "bytes": 404088,
+      "sha256": "9109142deda16f62902a3af3f55895bd23fd6b49a91571340a20278d3fbf46a8"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_0/after_release.png",
+      "bytes": 5135,
+      "sha256": "ddb745999ace86931e2d762392575e2f24366487805f98e1d6c3361b63d81505"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_0/COMPLETED.json",
+      "bytes": 618,
+      "sha256": "b37f929359297fa4a92d574733340137d96f852098c1a03eea3929bc77857f9f"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_0/final.png",
+      "bytes": 5692,
+      "sha256": "cd100046984e7ba0e9af651d9662d0027eee9c2103c449814353d603e9e1a8d0"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_0/manifold.npz",
+      "bytes": 186692,
+      "sha256": "c036a74b37f2f9c3569a19262e66d62c5bcf02068ecab05227092b134f34333b"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_0/STARTED.json",
+      "bytes": 545,
+      "sha256": "5275474f458fbdf300ca61957a2ccc2c779ec756f9afa1a3a91458de376a19be"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_0/trace.npz",
+      "bytes": 404980,
+      "sha256": "3841c3671d34ce2e655e059d61d0109529bb3904b12c48a73c1f281c2189ac9a"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_1/after_release.png",
+      "bytes": 5167,
+      "sha256": "1b03ec4cac2b8cf99e2553ec6f9689f9302ca39109804ac7764eb5a772232df0"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_1/COMPLETED.json",
+      "bytes": 618,
+      "sha256": "d0c9232be7d2d25fa0762d7c78a77aa184c8effa8a4dd851ea714b2d811c66a9"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_1/final.png",
+      "bytes": 5740,
+      "sha256": "8a46da41242ab09ae86294ad502f78a999624bfc7e9a474885f5122b5724c8ea"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_1/manifold.npz",
+      "bytes": 187006,
+      "sha256": "044403f86366ba7048163bbb6067f58a4996b08b05c3a354e15466838f11e944"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_1/STARTED.json",
+      "bytes": 545,
+      "sha256": "bcb64c2fced7525eb392700f10c269e9e936ce1404e1f7b4552eeec969182917"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_1/trace.npz",
+      "bytes": 404657,
+      "sha256": "0c947641300f3a0baafbb38158c856ddf7f22b67995cd9ca230dd9e6a1e0a04c"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_2/after_release.png",
+      "bytes": 5163,
+      "sha256": "c05f8428d31de4e832498e8edee36b40efa63d426bd669ca196c91ff4bacdfa0"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_2/COMPLETED.json",
+      "bytes": 618,
+      "sha256": "f70968223819eeaec8dcb2a22f44913f8d9d781479cc65d6d82d43777e491b29"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_2/final.png",
+      "bytes": 5660,
+      "sha256": "12e3a7665b8416958a78e829588574157b577381ff04679c4ad5c37442bdb726"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_2/manifold.npz",
+      "bytes": 187022,
+      "sha256": "2282bf85978726609bcb6df33f9e473dd378bf2212f9a3fa896920c0efc46a54"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_2/STARTED.json",
+      "bytes": 545,
+      "sha256": "b13419e12d7f06d6b714ab3a6c833043961a2aa2c5179d80c9945a63040f8a83"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mass_under10_2/trace.npz",
+      "bytes": 404567,
+      "sha256": "4fee88b20d8310344c4cefab89913d4a329a647bdb17db3540639b638a158d25"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_0/after_release.png",
+      "bytes": 5158,
+      "sha256": "94b7a8ddfdc9e921cc07c5ea98d0c3ac99f1fd557ea20d4c0630489c6ab72e4e"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_0/COMPLETED.json",
+      "bytes": 612,
+      "sha256": "1bebd656729c5680e689cb18ca66a91f148e83f8585d98cc76685256313a4a99"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_0/final.png",
+      "bytes": 5678,
+      "sha256": "43f4fe7a76806890d4e9306ecea6f65048b6d984c6fcd1edd11ae198e94a0b9f"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_0/manifold.npz",
+      "bytes": 186718,
+      "sha256": "53bed34332b206671c3860c71dfe4aeac730772967827a461d91addc5e2098b1"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_0/STARTED.json",
+      "bytes": 538,
+      "sha256": "3e42131525817866203d534d85dfa6fa1c6d4609877acfe059fb2ed70f5a7a3b"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_0/trace.npz",
+      "bytes": 405681,
+      "sha256": "ba75e39bcdf8136c96df6782f0c5d8c04e7894466b62b9cfe4a81d192402dd0e"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_1/after_release.png",
+      "bytes": 5188,
+      "sha256": "a7a40f3cd371d8005cf4034c84cd761ae1b21529e61c16e386c981224975fdf2"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_1/COMPLETED.json",
+      "bytes": 612,
+      "sha256": "ff1eab5c42f352353eade661167696f59d8c1148cef37d5ec0b900566cefa922"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_1/final.png",
+      "bytes": 5748,
+      "sha256": "f2a10d02105cffa33aabba2cde1635046895b38b9c5ee69bfa0d0ea3db1f47a6"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_1/manifold.npz",
+      "bytes": 186850,
+      "sha256": "34f4d650fc7f67c36dd0b9aa38dbb9a7a29944f67b439667f91831e63f459803"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_1/STARTED.json",
+      "bytes": 539,
+      "sha256": "41a7984162117b6f06e2907c56d1d95d18a1ef57af0c2c5ad04ae10cb0d8892e"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_1/trace.npz",
+      "bytes": 404713,
+      "sha256": "fe0cec7f11312ec5f8fe628452ae8d8f73658973ee79a380da0502c7623e979c"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_2/after_release.png",
+      "bytes": 5157,
+      "sha256": "7f3144b53201344c612573253281d246c0f2719ade3ca3d623493fc761e58dc3"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_2/COMPLETED.json",
+      "bytes": 612,
+      "sha256": "9f08c6bd92519ffe6968cf31744caee04ad157b5c84b64bb1bad9f96bc547d1c"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_2/final.png",
+      "bytes": 5722,
+      "sha256": "1b62d5d1a0ef0cd44f167e363109e538adbc89228b2421fddd59b15824a09878"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_2/manifold.npz",
+      "bytes": 186901,
+      "sha256": "b6edb6c54aacedc82827ea7a5f9ad55698f44f4a382fec96f3aac4c6bac8d241"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_2/STARTED.json",
+      "bytes": 538,
+      "sha256": "25cefd3768f1e03f485795210fec957823064fc22b3eb6f7ef91af7ccaae81ad"
+    },
+    {
+      "path": "runs/stress_floating_adaptive_mu_over10_2/trace.npz",
+      "bytes": 404852,
+      "sha256": "e8cdc63e38d526afce5f3ae50b2c9b6dcb5677d687c02220de209003c908b3c5"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_0/after_release.png",
+      "bytes": 5222,
+      "sha256": "fce8d43ccbc0d4e2f1ea85245475a85f3ad9f8596b57615f4de773038d9158f9"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_0/COMPLETED.json",
+      "bytes": 610,
+      "sha256": "ed12c0e08553584477565a806e9b5cfb88dd0518997bc38292fa4fbd07087b6a"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_0/final.png",
+      "bytes": 5690,
+      "sha256": "3977a8ff66c4989e71830ef86371f73e3bf23a74961f0080afb41b6333982e10"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_0/manifold.npz",
+      "bytes": 187183,
+      "sha256": "bec0bf255d1184a74e43fae9425e01cc37bd7480441a1d08595333f4dc9cf280"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_0/STARTED.json",
+      "bytes": 536,
+      "sha256": "2a462846bdb45c7cc5da8dabddac63df85e80e1529fb731ad41f6d0dd900e0ee"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_0/trace.npz",
+      "bytes": 407178,
+      "sha256": "f476d76f373d195b9a9e916c6b3c19df467a010fc88a8c7aca0fee8c5cb6899b"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_1/after_release.png",
+      "bytes": 5141,
+      "sha256": "693786f30deddc679f4a17bfda9574be0f70f2b4c230d9f50424121883aa9b5b"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_1/COMPLETED.json",
+      "bytes": 610,
+      "sha256": "172121b2f7850b721acc5b1d0f2ac906930351a87a9a581fb6d1a7c0a2ddf945"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_1/final.png",
+      "bytes": 5677,
+      "sha256": "7d69c510a704e0e4617d99932c1276a9eef01e7ff21cf6fae5f85af05a77e6c0"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_1/manifold.npz",
+      "bytes": 186264,
+      "sha256": "9362898bfb3e676e786f40abef9d845377ba93d10e42ec042f18f313511806d9"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_1/STARTED.json",
+      "bytes": 536,
+      "sha256": "1d6f2994ec8b9c80b7024e4ccfec18dcf502c1ccdfdd9403a8af28589946422f"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_1/trace.npz",
+      "bytes": 404931,
+      "sha256": "cb7787159e6e271a23ba91d46cdbbbb165d2e1e82e242979f069e4550e6fd2c1"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_2/after_release.png",
+      "bytes": 5173,
+      "sha256": "da0df5f96aaa50570ba280fb6416fa48956e4f7b865711748463c1ccd5036a89"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_2/COMPLETED.json",
+      "bytes": 610,
+      "sha256": "59b562539eb6f536353d07a4f4d8900490c2b4ac2064a37899149b536438f5a5"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_2/final.png",
+      "bytes": 5708,
+      "sha256": "66918d26339f0674c9fff7a459af79dd5815d07f83de8fe162549b8e085d0fc4"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_2/manifold.npz",
+      "bytes": 187097,
+      "sha256": "5ec80f43ac416539c48639a3a6b33ad50ef11527bb24757b31487698592f47f7"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_2/STARTED.json",
+      "bytes": 536,
+      "sha256": "28662dc05be6f2c7b991219c261267f58cc2023eec134786bffc87a179f9703e"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_com_unmodelled_2/trace.npz",
+      "bytes": 405869,
+      "sha256": "d7405eda8becfcefdd0bcc155a04f279903b88f68b40726c91d2d9b1727b6437"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_0/after_release.png",
+      "bytes": 5263,
+      "sha256": "a4b2fcdff5f8800211f90f8e7abcf9b403b744f5f49ad2cc9228f9e529049591"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_0/COMPLETED.json",
+      "bytes": 612,
+      "sha256": "ab7c421bb412809a5f8a8a1918a436a8058c251b07df28b37abf460cf6b677b2"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_0/final.png",
+      "bytes": 5701,
+      "sha256": "10fd010d6be7312b74f84da67c1ab16fcab99b1892d51d8bb9d75b2335c8e949"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_0/manifold.npz",
+      "bytes": 188161,
+      "sha256": "bf94ca104a42cf9312d743a416c386a877da139b55758c06882309ac359b7f40"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_0/STARTED.json",
+      "bytes": 538,
+      "sha256": "e28e4043b6da0462da039a6e22a0f6b86aa070b782c8554b51b17e7f7e260f8c"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_0/trace.npz",
+      "bytes": 408038,
+      "sha256": "f7f944da1287ea1b22e3a36b976ecc64ed43f8a77f8376734f3165043f7430f2"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_1/after_release.png",
+      "bytes": 5241,
+      "sha256": "135bbf365a411f290244c918cee8d434de135561ab34df92302cf21dde7ec479"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_1/COMPLETED.json",
+      "bytes": 612,
+      "sha256": "87acc07e5b0e5ad64c75ddde3ed455ca6221bacd63ced27b70ac8f7b8f2a031a"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_1/final.png",
+      "bytes": 5700,
+      "sha256": "bf1e21b987633c65569537a7703ee476443f501069b5bf0469f5224dcd4a8e75"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_1/manifold.npz",
+      "bytes": 186541,
+      "sha256": "bb4ea7189d91a4f5f59369a18e4d6559e20f006258984fb500cb4e3b35fe05b4"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_1/STARTED.json",
+      "bytes": 537,
+      "sha256": "31232173ac2e6df0a6b69a6e0fd15167f02e5939c9ed8ee11ec15d2e7feec5d9"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_1/trace.npz",
+      "bytes": 405390,
+      "sha256": "e54c3c58b3c92385a3186e046f59d13b801daf82654273d1c1caa46737c69b7e"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_2/after_release.png",
+      "bytes": 5204,
+      "sha256": "7df59e678110c4d1e0cce1017ad3ba524ed75ee7fe3b392106470c6d998df1b9"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_2/COMPLETED.json",
+      "bytes": 612,
+      "sha256": "b5c79386118133ba294248c0de88faa71a606cb4e0ff016e082fc2aabfacb650"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_2/final.png",
+      "bytes": 5645,
+      "sha256": "ef4fcfd3bb57ac5a5976a6fd5f1b4fce01516d8ff6d6682d53e2ad0ba53340b0"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_2/manifold.npz",
+      "bytes": 188009,
+      "sha256": "677c5c8f58cc1f059564d67112308c099f59b617ba84421a3f3e57addc2d4a2f"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_2/STARTED.json",
+      "bytes": 537,
+      "sha256": "b367fca1757d501010c602be89abfcabfa100cdd3c004fe9b0020900247cfa06"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_heavy_known_2/trace.npz",
+      "bytes": 407015,
+      "sha256": "f6f19e0a7d64755a94f29e9fac2ce657e27da890e4ff91ac17c0ec599e2d0194"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_0/after_release.png",
+      "bytes": 5227,
+      "sha256": "76cd1b23cd3a62ff3bf7aaab436cfb79386aa633b031e36d95bc936b1878a475"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_0/COMPLETED.json",
+      "bytes": 611,
+      "sha256": "453bbf4c8889bbfc2ee15798e1aafdb464512c917c823317defce1bcf222bea7"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_0/final.png",
+      "bytes": 5737,
+      "sha256": "be7df38d37c0c29eac5fc640ce4fb0281cc14d49004488a463b070cc6ac4dc26"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_0/manifold.npz",
+      "bytes": 186683,
+      "sha256": "d4987b2154046109170860efdda82e51bb880bc1f03647dde3741993cbfb96db"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_0/STARTED.json",
+      "bytes": 537,
+      "sha256": "f2d474c9183d56065e7dd78041bdcbb2eeaf545d88fa6c668593578e164c51f4"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_0/trace.npz",
+      "bytes": 405719,
+      "sha256": "7526511ecfcd079eaec464e19f97b7b7ca85748c22579b281a730296423dc67c"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_1/after_release.png",
+      "bytes": 5194,
+      "sha256": "1be03ba3553695de1ef74adeba44bf68a52b20d4fdbcffb074c034f669dede68"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_1/COMPLETED.json",
+      "bytes": 612,
+      "sha256": "ec2fa287fe9387cded93f76eb93f1269c263f60917ab487b6af22ac7107406ff"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_1/final.png",
+      "bytes": 5723,
+      "sha256": "da5aa981923f517d1c39d6d83a0949784ee81715dbaf329157c42cbba363ea24"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_1/manifold.npz",
+      "bytes": 184774,
+      "sha256": "e5f62808bba5305a8c56a0247d783f6c3478b538698e1190c6b23a7c313ae32d"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_1/STARTED.json",
+      "bytes": 538,
+      "sha256": "2a9376215c2acf81e0e4b85b324eefb5c1a3682497c0df4d36fc7307d82f0fbf"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_1/trace.npz",
+      "bytes": 402561,
+      "sha256": "258094421743c1bd3354b7a3493dcb9ef60396a1d445aef39aeb1d67c91ade4a"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_2/after_release.png",
+      "bytes": 5147,
+      "sha256": "ce067abd70abf7de202c1e009f87f9dc9bfda6b68e61740ba45c2cb5d3a5f16a"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_2/COMPLETED.json",
+      "bytes": 612,
+      "sha256": "8758017c06911f015fa31d37e288d43c560bf2eaff61a4d16f0e458be8d74ebb"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_2/final.png",
+      "bytes": 5682,
+      "sha256": "88c747c44bd3040b2fd7bbe9c79d6bdd2cb487ceb7e77c02a765d6c63b0b57bd"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_2/manifold.npz",
+      "bytes": 186041,
+      "sha256": "6a8a32babff77ff8842cf7d0ebf2eea3f6e8e5559b7af2765bef9df211541351"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_2/STARTED.json",
+      "bytes": 538,
+      "sha256": "ffebca3500984d732a7b1194f5a879e55f049c64bf11b4bda89d63439feebda9"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_light_known_2/trace.npz",
+      "bytes": 404215,
+      "sha256": "cdc6fa437163b077f72ce9e980935d631bdee70e5d35546a447094ef1d3a3779"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_0/after_release.png",
+      "bytes": 5172,
+      "sha256": "8a433cb4c29d8254c7185b7bbda31997e613e19b18cbbe1256f18a7f4aca69ac"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_0/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "85b2b98a7c070e03c1bb61bfbc9643e9de3a7874a88cbafafb09134c6a455a00"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_0/final.png",
+      "bytes": 5694,
+      "sha256": "add5c22a6ef6b3e1be77f5cc78b70456c9227585a0a879c329785864d34e8207"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_0/manifold.npz",
+      "bytes": 186924,
+      "sha256": "dbe85055695a0e0765c8db867d1392ee69050f8943a3e5f1a15dc9388f44b22c"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_0/STARTED.json",
+      "bytes": 541,
+      "sha256": "f98e5b7151d943ceee9c1e9474175f8ba430278c9ca20897a76f7d3f939ee299"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_0/trace.npz",
+      "bytes": 406406,
+      "sha256": "41fb0ebce4079a563af3ddcf316441ca5cde36190d5fe63c0c9b623f54ba2f48"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_1/after_release.png",
+      "bytes": 5247,
+      "sha256": "4f52c02e50ccc95cfca12be42edc993882cd186555b4b161b8ee6226b2df06e5"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_1/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "68e5b7016be627d999cb2d9f67c143353b8abfd67be10f9b4fb9c9513571bca3"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_1/final.png",
+      "bytes": 5734,
+      "sha256": "2b3aebbfbcb246204cd3866ddb8d29a697f5f7b407acb824359e8b89bf458b80"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_1/manifold.npz",
+      "bytes": 184877,
+      "sha256": "85319527bfc75e5bcb73600f4963595aa21f4c3c8a0f164801b7912e084a2c81"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_1/STARTED.json",
+      "bytes": 541,
+      "sha256": "1c19402f1dbfa295b87f99e641df0e317929a5dd041f837c7a673cc6f313eb20"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_1/trace.npz",
+      "bytes": 403234,
+      "sha256": "fe311a0ec1d3b39946dccb7588cefbdb41410336dc071aac7295a2989ee926f3"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_2/after_release.png",
+      "bytes": 5210,
+      "sha256": "159eba4f1bbdebeda45f9e017158f36deefa94a0f3a423d67d2bda75d19f25a2"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_2/COMPLETED.json",
+      "bytes": 615,
+      "sha256": "0acd16bf58202a310c9a666ff50f346457ede5531275793ad052a9ceca81ebcb"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_2/final.png",
+      "bytes": 5660,
+      "sha256": "9a30dc9f3867cb2e6fa5def34d38bc49726eca0fbd16322883ce5463fdffeead"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_2/manifold.npz",
+      "bytes": 185936,
+      "sha256": "d913845791b62d493190d1a0992e645a8e0fa317a9378e0b9d0b71668fc67c3b"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_2/STARTED.json",
+      "bytes": 540,
+      "sha256": "588c71408128c2f4ea7e62497b0467a9c004fc97e0bd38e7c591efe856f8f99e"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mass_under10_2/trace.npz",
+      "bytes": 404542,
+      "sha256": "4bd144c623f2e67a47493b137e66dba349d0d69fd30c37985b071ff9cc079cd1"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_0/after_release.png",
+      "bytes": 5213,
+      "sha256": "e807cd1df111b9ebe11d02192b4592b151b778efa4f732b6f5c7318aee7d5f02"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_0/COMPLETED.json",
+      "bytes": 609,
+      "sha256": "ff3617abec89a28f16e616de101a48e12a39e1c015a10d1d7f32f5eeb63725c5"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_0/final.png",
+      "bytes": 5762,
+      "sha256": "b0b135171022eafb17dba3f92d36b0cac02726767af61470803a6e318d3ef3bf"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_0/manifold.npz",
+      "bytes": 187109,
+      "sha256": "1b65030a615ea914e9f46c99a3d35ca1ec45a7ee2a69f1eae5d679c558c1b31a"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_0/STARTED.json",
+      "bytes": 535,
+      "sha256": "1f4773bd2d0a558c9e302cc995eded35f8e05ec59daa7d1c58a46b93c75fffd1"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_0/trace.npz",
+      "bytes": 406755,
+      "sha256": "d32f618d6f6e3084ba6139c2ef68ee617e329f7990697f54c6a1e4c553e8bea8"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_1/after_release.png",
+      "bytes": 5216,
+      "sha256": "4d57cffe87d0f0a74a67d08d162658310525bb3bf5d604af651bdb2429391aa7"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_1/COMPLETED.json",
+      "bytes": 609,
+      "sha256": "4f9bdb9619d6e603621274a5c62d13f717d3e048b1a7043307b090a6647acb19"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_1/final.png",
+      "bytes": 5732,
+      "sha256": "a71b3fdf6f3e593b4022a08d531ab40edd49a0999fb53da8c73e86e611b08152"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_1/manifold.npz",
+      "bytes": 185393,
+      "sha256": "9e255037e2d341357203aa4139ec1d7434ab9068297f1e53ffb6d7c61f3d8574"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_1/STARTED.json",
+      "bytes": 535,
+      "sha256": "c4117226de6f0bde85dcb61e7e6ace7df4e050110354d1433e8812a2f0388999"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_1/trace.npz",
+      "bytes": 404171,
+      "sha256": "ac9fb0eda705ed402e4cd4102a5f916861cd1f81de6f24692f364fbd7a90c6a2"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_2/after_release.png",
+      "bytes": 5150,
+      "sha256": "428e58e6d191edca02b27e63e26e43eeb53b1a1a6e8d42767bd96347f89370b8"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_2/COMPLETED.json",
+      "bytes": 609,
+      "sha256": "6bbefcdb2016913572ff4370fe2940a135c2d92bd2a9df98457001ec30552b82"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_2/final.png",
+      "bytes": 5696,
+      "sha256": "82d3a31343ed6f274d18ca879e649558353cfe630929639700bd7cf81430998e"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_2/manifold.npz",
+      "bytes": 186454,
+      "sha256": "1517d7960285a5dc637342fc70cc153e6e9ef51376ce3e187b2c892a2f470fad"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_2/STARTED.json",
+      "bytes": 535,
+      "sha256": "654e0046c0ea60525ea7051923607dd8e8a2cb0cc3688303d0a7af2430143c62"
+    },
+    {
+      "path": "runs/stress_welded_adaptive_mu_over10_2/trace.npz",
+      "bytes": 405221,
+      "sha256": "23eca98ab71e48d3922b5755913815763cbc10b0e679b25adcc7dfa2bb2aa2ad"
+    },
+    {
+      "path": "runs_manifest.json",
+      "bytes": 47204,
+      "sha256": "7dc4f37cd10f63da1eae9ad3d6e79b51a4b621b424723e7b47de3f1ef9eadb78"
+    },
+    {
+      "path": "socp_reference.py",
+      "bytes": 16986,
+      "sha256": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9"
+    },
+    {
+      "path": "STATE.json",
+      "bytes": 82,
+      "sha256": "24a998df5d32a3f611020fe6f820f9093bd65968b1177a427c3b7fde605d568b"
+    },
+    {
+      "path": "study.py",
+      "bytes": 18520,
+      "sha256": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2"
+    },
+    {
+      "path": "study_refinement.py",
+      "bytes": 18832,
+      "sha256": "a888fd03b3e8611fa4633a73d3ebde9b06e9840139802e9029d4b6e8edaf1106"
+    },
+    {
+      "path": "vendor/lib/tool.py",
+      "bytes": 25809,
+      "sha256": "c0a2440793d2820133e0d8b16d011094fdac41d5d279bf9c62309869ba8cdeb9"
+    },
+    {
+      "path": "vendor/spider_ee/floating_plate.py",
+      "bytes": 29125,
+      "sha256": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478"
+    },
+    {
+      "path": "VISUAL_QA.md",
+      "bytes": 1018,
+      "sha256": "c9610233a2d3d32fb25350fe6a973c7550d862f96612ecd4c832d3e8de63abb1"
+    },
+    {
+      "path": "WONG_DISCRETE_AUDIT.json",
+      "bytes": 11673,
+      "sha256": "a268c42fac6f3eb1181f0fb18935df4923ccad7316964505c4c1d9f63f509c7b"
+    },
+    {
+      "path": "worker.log",
+      "bytes": 12740,
+      "sha256": "f979f38dabf75848a90b37fd8e026d32f89bc79e11b8a100425dcd1054383c90"
+    }
+  ],
+  "originals": [
+    {
+      "name": "frozen_simulator",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\plate_friction_study_20261024\\study.py",
+      "expected": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2",
+      "actual": "ebf6fba5aab93c0058728b7654976d3a6ba43ad6556903fbcf409d27ccc930d2",
+      "ok": true
+    },
+    {
+      "name": "frozen_protocol",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\plate_friction_study_20261024\\PROTOCOL.md",
+      "expected": "72fc25d688a5fb5d4f9eeb6a15dbb379644e837c801b3d7dac16dd01b8cad7ce",
+      "actual": "72fc25d688a5fb5d4f9eeb6a15dbb379644e837c801b3d7dac16dd01b8cad7ce",
+      "ok": true
+    },
+    {
+      "name": "prior",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\kinova_dual_arm_dmp_insertion\\prior_torsional_C.npz",
+      "expected": "2d229d367e70de99a0bc1b6cdf7004642b73bda5935bde5202ddccf636b0eadd",
+      "actual": "2d229d367e70de99a0bc1b6cdf7004642b73bda5935bde5202ddccf636b0eadd",
+      "ok": true
+    },
+    {
+      "name": "solver_copy",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\plate_friction_study_20261024\\socp_reference.py",
+      "expected": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+      "actual": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+      "ok": true
+    },
+    {
+      "name": "production_solver",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\kinova_dual_arm_dmp_insertion\\socp.py",
+      "expected": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+      "actual": "5819d704e4cf37a3b320e3e85b17f4f819780a36046862895751f57ec74915e9",
+      "ok": true
+    },
+    {
+      "name": "plate_copy",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\kinova_dual_arm_dmp_insertion_fullwrench\\docs\\plate_friction_study_20261024\\vendor\\spider_ee\\floating_plate.py",
+      "expected": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+      "actual": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+      "ok": true
+    },
+    {
+      "name": "plate_original",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\lorenzo_data_analysis\\10_tripad_passivo\\spider_ee\\floating_plate.py",
+      "expected": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+      "actual": "5986c570d7428c3c921dfbcd9398484f78a2994383722cb6ba2699312b15f478",
+      "ok": true
+    },
+    {
+      "name": "paper_0",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\PAPERS\\friction_cone.pdf",
+      "expected": "5cf869f81ff871551e49192956877fefeb5fc271b271a84b378d33e457ece9e4",
+      "actual": "5cf869f81ff871551e49192956877fefeb5fc271b271a84b378d33e457ece9e4",
+      "ok": true
+    },
+    {
+      "name": "paper_1",
+      "path": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\PAPERS\\2026 Industrial Dual Arm Box Handling.pdf",
+      "expected": "6b63459ca9e3aa19ede12b823cfe1bef6b1515a311882aa8ab080ebd2bd04028",
+      "actual": "6b63459ca9e3aa19ede12b823cfe1bef6b1515a311882aa8ab080ebd2bd04028",
+      "ok": true
+    }
+  ],
+  "excluded": "Ephemeral tmp/mplconfig/scratch and the checksum manifest itself; original PDFs are verified by absolute source hash."
+}

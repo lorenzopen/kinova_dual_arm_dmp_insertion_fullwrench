@@ -1,0 +1,13 @@
+{
+  "pid": 16556,
+  "argv": [
+    "docs/analysis_20261023/controller_night/pybullet_nominal_20261024/gen3/run_gen3.py",
+    "--piece",
+    "Z",
+    "--scene-only",
+    "--tag",
+    "Gen3_Z_lab_hold_implicit",
+    "--servo",
+    "implicit"
+  ]
+}

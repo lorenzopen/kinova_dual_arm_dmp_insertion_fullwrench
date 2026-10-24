@@ -1,0 +1,85 @@
+\section{The later feedforward-plus-integral series}
+\label{sec:kinova-ffi}
+
+The archive of 23 October contains twelve recorded successful FFI runs: three each for Z, L, S and T. This is a selected set of completed executions, not a denominator for a hardware success rate. These runs use normal-force feedforward with a bounded ATI integral correction and an offline SOCP plan. They are a later condition than the online full-wrench series above; changing the gains, allocation schedule and feedback together prevents attributing a difference to any single change.
+
+At each planned sample, the allocator still computes a complete wrench pair. The normal-only execution extracts a common per-hand demand
+\begin{equation}
+N^*=\max\left(1\ \mathrm{N},\ \sum_j\lambda_{Lj},\ \sum_j\lambda_{Rj}\right).
+\end{equation}
+This runtime scalar selection is distinct from the signed-distance constraints inside the SOCP. It does not mean that every pad is given a separate $1$ N normal-force floor. The remaining optimized force and moment components are logged, but are not all tracked by this scalar loop.
+
+Let $N_0$ be the measured per-hand preload at pickup. Relative to the frozen pickup poses, the requested extra closure of each hand is a feedforward displacement plus an integral trim:
+\begin{align}
+\delta_{\mathrm{ff}}^*&=\frac{N^*-N_0}{k_{\mathrm{eff}}}, & k_{\mathrm{eff}}&=680\ \mathrm{N/m},\nonumber\\
+e_N&=2N^*-(N_L+N_R), &
+\delta_{I,k+1}^{\mathrm{trial}}&=\delta_{I,k}+k_I e_N\Delta t_k,
+\label{eq:kinova-ffi}
+\end{align}
+with $k_I=0.0016$ m/(N\,s). The error is the sum over both hands. Feedforward receives priority within the feasible motion interval; the retained integral state is the attainable trim, which prevents windup against the limits. Trim travel is bounded by $\pm3$ mm per hand and total extra closure by $\pm12$ mm. Both trim and total speed are limited to $2$ mm/s per hand. Force updates are nominally every $20$ ms; elapsed-time limiting handles delayed updates. No additional moving average or derivative action is introduced in this condition.
+
+The first two runs of each piece were frozen as development data and the third chronological run as holdout before controller exploration. The comparisons below use the first development Z and L runs, identified in Appendix~\ref{app:reproducibility}; they do not tune against or claim prediction of the holdout. Real force samples are used for plotting afterwards, never to drive the simulated piece.
+
+\section{An articulated Gen3 simulation beside the measurements}
+\label{sec:kinova-sim-comparison}
+
+Two articulated seven-joint Gen3 models are placed using the laboratory base transforms, with the shelf, incoming piece and neighbouring pieces in the nominal route geometry. Forward kinematics is checked against an independent chain and the logged initial poses. This checks the frame construction, not the accuracy of the hand-measured laboratory transforms. The setup initializes the open grasp pose and represents the operator's support until release; the physical homing and hand presentation are not replayed.
+
+The tool model has a $2700$ N/m central axial spring and three pad springs of $500$ N/m each. These parallel paths give a total small-deflection axial stiffness of $4200$ N/m between the mount and plate; setting the central spring to $2700$ N/m does not set the complete tool to that value. The $150$ g tool mass is split into $110$ g rigidly attached and $40$ g mobile beyond the virtual sensor. Piece mass is $50$ g and pad friction is $\mu=1$. Environment contacts use $8000$ N/m stiffness and $207$ N\,s/m damping.
+
+The inherited lateral and rotational tool parameters are also assumptions. In particular, the central model retains $40$ Nm/rad torsional stiffness before the pad contribution, far above the approximately $0.25$ Nm/rad estimated for the free laboratory coil. The model therefore cannot validate the real twist authority. Neither actuator transmission dynamics nor measured hardware timing and force noise are identified from these runs.
+
+\subsection{Two inner-controller realizations}
+
+The complete insertion curves use a locally implicit Cartesian impedance approximation with the same nominal $K=1500/20$ and $D=60/7$. It includes articulated inertia, gravity and Coriolis compensation, a small null-space damping term and the URDF torque limits. Its integration and limiting differ from Equation~\eqref{eq:kinova-impedance}; it does not reproduce the laboratory Kalman, slew and watchdog chain. The outer FFI and the nominal SOCP planner are the original implementations. This condition tests their interaction with the declared mechanical model, rather than a byte-identical robot servo.
+
+A separate trial executes the hardware-free laboratory controller classes, including the Kalman and RC filters, gravity term, torque clip, slew and speed watchdog. The executable torque and wrench-estimation methods match the reference supplied for the laboratory controller. The copied full-file version is frozen, but its identity with the file actually deployed on the NVIDIA computer has not been independently verified. Matching controller equations is distinct from matching the physical plant.
+
+The virtual wrist measurement comes from the fixed-joint mechanical reaction, with the mobile tool's gravity removed. It is kept separate from the joint-torque estimate of Equation~\eqref{eq:kinova-wrench-estimate}. The simulated signal is block-averaged through the declared sensor and outer-loop sampling chain. It is not replaced by the SOCP target or by a measured laboratory waveform.
+
+\subsection{Normal forces and wrist moments}
+
+Figure~\ref{fig:kinova-real-sim-force} shows the first Z and L development runs beside the autonomous simulations. Each clock starts at its own departure towards the slot mouth. No force-based time warping or amplitude fitting is applied. The same axis limits are used within each pair, and the recorded controller inputs are plotted without additional display smoothing. The target is the original per-hand SOCP reference, including its variations.
+
+\thesisfigure[1.0]{ch11_kinova/real_sim_normal.pdf}{Measured normal force per hand: real ATI data (left) and articulated PyBullet with approximate inner impedance (right). Blue is left, orange right; the dashed line is the per-hand SOCP target. Rows are Z and L. Vertical dotted lines mark execution-stage changes on each run's own clock. These are two selected completed cases, not a controlled hardware--simulation validation population.}{fig:kinova-real-sim-force}
+
+\thesisfigure[1.0]{ch11_kinova/real_sim_zoom.pdf}{The Z comparison on identical time and force scales, $12$--$17$ s after departure towards the mouth. The laboratory signal contains larger repeated fluctuations than this nominal simulation. A varying target and changing contacts remain present; these fluctuations cannot all be classified as sensor noise.}{fig:kinova-real-sim-zoom}
+
+For quantitative comparison, let $\bar N=(N_L+N_R)/2$ and $e=\bar N-N^*$. Metrics use only the route stage, except for the separately reported seating excess. Both traces are interpolated on their own uniform $100$ Hz grids for metric calculation. Band RMS is obtained with a third-order Butterworth band-pass applied forwards and backwards. This offline analysis filter is not part of the controller. In particular, the force-band RMS contains target-driven motion as well as residual fluctuation; the band RMS of $e$ is also retained in the evidence.
+
+\begin{table}[htbp]\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llrrrr@{}}\toprule
+Piece & Source & RMSE $e$ & $\bar N$, 0.8--2.5 Hz & $\bar N$, 2.5--10 Hz & Seat excess\\
+& & (N) & RMS (N) & RMS (N) & (N)\\\midrule
+Z & Real & 0.301 & 0.125 & 0.066 & 1.446\\
+Z & Simulation & 0.209 & 0.042 & 0.014 & 0.850\\
+L & Real & 0.282 & 0.115 & 0.066 & 2.638\\
+L & Simulation & 0.278 & 0.043 & 0.012 & 1.470\\\bottomrule
+\end{tabular}
+\caption{Descriptive comparison of the two selected cases. All columns concern the mean of the two hands. Seat excess is $\max e$ during slow seating and seating by feel. RMS is not peak-to-peak amplitude, and a small median bias does not imply the same instantaneous tracking precision.}
+\label{tab:kinova-real-sim}
+\end{table}
+
+The simulation is smoother in both bands, but its tracking error does not vanish. The L route RMSE is nearly the same as in the real run despite smaller repeated fluctuations. At seating, the measured peak excess of the mean force is $1.45$ N for Z and $2.64$ N for L, versus $0.85$ and $1.47$ N in the model. Route tracking and seating transients must therefore be reported separately.
+
+\thesisfigure[1.0]{ch11_kinova/real_sim_moment.pdf}{Magnitude of the wrist moment, real (left) and simulated (right), on the same selected Z and L executions. These are sensor wrenches, not individual motor torques. The FFI condition regulates normal squeeze, not all three moments. Different tool compliance and sensor-pole construction limit the interpretation of amplitude differences.}{fig:kinova-real-sim-moment}
+
+The simulated worst-cell errors after release are $4.41$ mm for Z at a $0.25$ ms physics step and $4.78$ mm for L at $0.5$ ms. Corresponding real worst-cell errors were not measured, so no placement-accuracy agreement is claimed. Moreover, the coarser Z simulation at $0.5$ ms ends $77.2$ mm from target. This step-size sensitivity is a failure of robustness of the current model and must accompany its finer-step result.
+
+\subsection{What increasing damping to 80 changes}
+
+The paired damping test changes only the approximate inner translational damping from $60$ to $80$ N\,s/m; rotational damping stays at $7$ Nm\,s/rad. The FFI gains, motion limits, geometry, SOCP profile and each case's physics step are fixed. In Z the route force RMS at $2.5$--$10$ Hz falls from $0.0138$ to $0.0117$ N; in L it falls from $0.0118$ to $0.0107$ N. The lower-band RMS remains about $0.042$ and $0.044$ N, respectively. Route RMSE remains about $0.209$ N for Z and $0.278$ N for L, and seating excess changes little.
+
+This is evidence of a modest reduction of faster fluctuations in that model, not evidence that $D=80$ cures the laboratory oscillation. The full-source trial described next does not reach insertion at either damping value. A hardware comparison that changes only $D$, with the same FFI plan, repeated route and tool, is still needed to isolate the damping effect.
+
+\subsection{The original-source trial and the predictive limit}
+
+With the laboratory controller classes, the nominal articulated plant does not maintain the initial free-space pose. In the trial with a settled Kalman covariance and a $0.25$ ms physics step, the right-arm speed watchdog first triggers at $72$ ms and the left at $89$ ms; an external pose-error sentinel ends the trial at $0.12$ s, before pickup. Figure~\ref{fig:kinova-lab-source-stop} preserves the measured virtual wrist signals up to that stop. No insertion RMSE or seating overshoot can be assigned to this trial.
+
+\thesisfigure[0.92]{ch11_kinova/original_source_stop.pdf}{Virtual wrist force and moment magnitudes during the original-source trial, before pickup. Tool gravity has been removed, while inertial reactions remain. Dotted lines mark the two speed-watchdog events. The run stops at $0.12$ s; no force curve is extrapolated beyond it.}{fig:kinova-lab-source-stop}
+
+The kinematic, Jacobian and gravity comparisons were checked before interpreting this failure. A separate rigid-URDF Pinocchio forward-dynamics test also triggers the speed watchdog in free space under a small initial perturbation, including at finer steps. Thus pad contact and the Bullet contact solver alone do not explain the discrepancy. The available evidence does not identify which actuator, inertia, friction, internal filtering or deployed-parameter difference is responsible. The robot's demonstrated ability to hold in the laboratory is not reproduced by this plant.
+
+The defensible conclusion is narrower than either ``the controller is validated'' or ``the motors cause the sinusoids''. The nominal approximate model completes the two selected insertions and exposes finite tracking error and seating overshoot. The original-source realization exposes an unresolved plant mismatch even before contact. Predicting hardware oscillations requires first reproducing a measured free-space hold and a small pose change with synchronized joint positions, velocities, commanded and measured torques, and timing. Until then, the smoother simulation is an explanatory comparison, not a causal reconstruction of the laboratory force trace.
+

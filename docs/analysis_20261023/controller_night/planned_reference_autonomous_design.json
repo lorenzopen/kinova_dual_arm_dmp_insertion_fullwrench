@@ -1,0 +1,355 @@
+{
+  "created_utc": "2026-10-23T16:48:41.294481+00:00",
+  "candidates": [
+    {
+      "id": "I_P0_I1.6_D0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "logged",
+      "feedback_reference": "original"
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority",
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "logged",
+      "feedback_reference": "original"
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_original_FBoriginal_O0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "original",
+      "feedback_reference": "original"
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_original_FBplanned_O0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "original",
+      "feedback_reference": "planned"
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_majorant_FBoriginal_O0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "majorant",
+      "feedback_reference": "original"
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_majorant_FBplanned_O0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "majorant",
+      "feedback_reference": "planned"
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_minimax_FBoriginal_O0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "minimax",
+      "feedback_reference": "original"
+    },
+    {
+      "id": "I_P0_I1.6_D0__ABS_minimax_FBplanned_O0",
+      "family": "I",
+      "kp_m_N": 0.0,
+      "ki_m_N_s": 0.0016,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "allocation": "ff_priority",
+      "pd_rolloff_tau_s": 0.0,
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "I_P0_I1.6_D0",
+      "plan": "minimax",
+      "feedback_reference": "planned"
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBoriginal_O0",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority",
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "original",
+      "feedback_reference": "original"
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_original_FBplanned_O0",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority",
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "original",
+      "feedback_reference": "planned"
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBoriginal_O0",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority",
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "majorant",
+      "feedback_reference": "original"
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_majorant_FBplanned_O0",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority",
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "majorant",
+      "feedback_reference": "planned"
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBoriginal_O0",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority",
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "minimax",
+      "feedback_reference": "original"
+    },
+    {
+      "id": "PI_P0.1_I0.8_D0_R0.1__ABS_minimax_FBplanned_O0",
+      "family": "PI",
+      "kp_m_N": 0.0001,
+      "ki_m_N_s": 0.0008,
+      "kd_m_s_N": 0.0,
+      "derivative_tau_s": 0.05,
+      "pd_rolloff_tau_s": 0.1,
+      "allocation": "ff_priority",
+      "preview": "none",
+      "preview_s": 0.0,
+      "clock_offset_s": 0.0,
+      "base_controller": "PI_P0.1_I0.8_D0_R0.1",
+      "plan": "minimax",
+      "feedback_reference": "planned"
+    }
+  ],
+  "models": [
+    {
+      "id": "delay_k480_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k480_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k480_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 480.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k680_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k680_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k680_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k964_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k964_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k964_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 964.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "delay_k1500_d0.12",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.12
+    },
+    {
+      "id": "delay_k1500_d0.18",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.18
+    },
+    {
+      "id": "delay_k1500_d0.23",
+      "kind": "delay",
+      "stiffness_N_m_hand": 1500.0,
+      "delay_s": 0.23
+    },
+    {
+      "id": "lag680_d18_t0.03",
+      "kind": "lag",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "tau_s": 0.03
+    },
+    {
+      "id": "lag680_d18_t0.12",
+      "kind": "lag",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "tau_s": 0.12
+    },
+    {
+      "id": "resonant680_d18_z0.3",
+      "kind": "resonant",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.3
+    },
+    {
+      "id": "resonant680_d18_z0.7",
+      "kind": "resonant",
+      "stiffness_N_m_hand": 680.0,
+      "delay_s": 0.18,
+      "frequency_Hz": 1.5,
+      "damping_ratio": 0.7
+    }
+  ],
+  "variants": [
+    {
+      "id": "clean_fixed",
+      "noise_N_hand": 0.0,
+      "jitter": false,
+      "wave_N_hand": 0.0
+    },
+    {
+      "id": "noise_jitter_wave",
+      "noise_N_hand": 0.013,
+      "jitter": true,
+      "wave_N_hand": 0.15
+    }
+  ],
+  "timing": "2s prelude at first route target, route duration=last profile route time, then slow_seat duration=last profile slow_seat time,4s terminal hold. Synthetic prescribed schedule is known in this benchmark; controllers only query current phase.",
+  "initialization": "Symmetric steady force at first route target, zero nominal/trim/output, pickup reference equals that force. This differs from recorded measured pickups and is not replay.",
+  "disturbances": "Second variant: mean-hand measurement noise0.013N at control events; physical additive0.15N/hand sinusoid1.2Hz from6s. Common noise across controllers/models. Fixed25ms or jitter15-35ms on2.5ms lattice, seed24402026.",
+  "limits": "Original FF priority, FF/trim/sum2mm/s, FF+-9mm trim+-3mm total+-12mm.",
+  "score": "Mean over4 profile shapes of worst model and disturbance variant; same weighted original-target routeRMSE,0.8-2.5Hz band,first-seat positive error and routep95 as conditional study.",
+  "models_not_validated": true,
+  "contact_bilateral_assumed_symmetric": true,
+  "no_claim": "No Kinova cart_d mapping, contact loss/slip/event timing prediction or full-wrench margin validation. No future measured force. No holdout read."
+}

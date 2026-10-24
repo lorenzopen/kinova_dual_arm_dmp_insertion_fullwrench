@@ -1,0 +1,17 @@
+{
+  "root": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\thesis_english_2026",
+  "files": [
+    {
+      "path": "chapters/03_haption_recording.tex",
+      "sha256": "cdc030962a3f797de05fbf2e1199a5625888e9a9744e3d838efeb914d930d7ba"
+    },
+    {
+      "path": "figures/README.md",
+      "sha256": "558abfacce899b6e1f2297763dddc54fc35c9c0f3a4146fa17b663e0108d24a7"
+    },
+    {
+      "path": "build/main.pdf",
+      "sha256": "05a23b7080c10641e247b1e9d674577d8a3805a2f0b89b282be8563bfcbb02d7"
+    }
+  ]
+}

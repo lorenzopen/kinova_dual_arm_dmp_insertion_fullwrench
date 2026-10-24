@@ -1,0 +1,28 @@
+\chapter*{Notation and conventions}
+\addcontentsline{toc}{chapter}{Notation and conventions}
+\begin{longtable}{@{}p{0.22\textwidth}p{0.71\textwidth}@{}}
+\toprule Symbol & Meaning \\
+\midrule\endhead
+$W,B,G,H$ & World, body, grasp and haptic-device frames.\\
+$R_{WB}$ & Rotation taking body coordinates into world coordinates.\\
+$\vect g$ & World gravity acceleration, $(0,0,-9.81)^\top$ m/s$^2$.\\
+$\hat{\vect g}_G$ & Unit gravity direction expressed in the grasp frame.\\
+$m,\hat m$ & Actual mass and measured mass estimate.\\
+$\vect c,\vect r_B$ & Moment reference point and CoM offset from it in body coordinates.\\
+$\vect q$ & First mass moment, $m\vect r_B$.\\
+$\crossmat{\vect a}$ & Matrix satisfying $\crossmat{\vect a}\vect b=\vect a\times\vect b$.\\
+$\vect p_i,\vect n_i$ & Contact position and unit outward object-surface normal.\\
+$\vect f_i$ & Force acting on the object at contact $i$.\\
+$\lambda_i$ & Compressive magnitude $-\vect n_i^\top\vect f_i\geq0$.\\
+$\mu,r_s$ & Friction coefficient and optional deterministic cone margin.\\
+$\vect w$ & Bimanual wrist wrench $(F_L,\tau_L,F_R,\tau_R)\in\R^{12}$.\\
+$\Sigma,Q$ & Conditional wrench covariance and precision $Q=\Sigma^{-1}$.\\
+$S$ & Physical scaling matrix for the twelve wrench coordinates.\\
+$\vect s_F,\vect s_T$ & Force and moment equilibrium slack.\\
+$u,z$ & Command and environment state in the insertion model.\\
+$\mathcal G$ & Reduced haptic metric in the insertion model.\\
+$\Theta$ & DMP weights, three coordinates by twenty basis functions.\\
+\bottomrule
+\end{longtable}
+Forces in the controller act on the object. A compressive force points into the surface, opposite to its outward normal. Moments are always specified about a stated pole. A rotation of a moment vector changes its coordinates; a change of pole also adds a force-dependent moment. These operations are kept distinct throughout the thesis.
+

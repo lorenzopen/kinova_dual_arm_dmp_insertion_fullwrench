@@ -1,0 +1,161 @@
+{
+  "target": "C:\\Users\\Lorenzo\\Desktop\\TESI_antiG\\thesis_english_2026",
+  "files": [
+    {
+      "path": "chapters/07_socp_control.tex",
+      "sha256": "8af45131cb12d7037054bd39bd77b3025a200a7249288cb8c4c5bd166faf9dfd",
+      "bytes": 33380,
+      "previous_sha256": "910f530223e7da247dad7a3e701589854a23bca89d2b28df3c9632fdd3b74b2f"
+    },
+    {
+      "path": "chapters/10_tetris_dmp.tex",
+      "sha256": "5620e992a4ca9f7f771bab96a775622fb1456db60444b27edba9a18bb8219737",
+      "bytes": 36682,
+      "previous_sha256": "4034ec9a4fb20fbc66974e241ba560dca0727ee7ec9b1418c4b9df852dd9ffc1"
+    },
+    {
+      "path": "chapters/11_kinova_hardware.tex",
+      "sha256": "57c0037ce4a6eb3ae542dc2054ff21b7ffa44f77880a1ff6033dbb64be4f9534",
+      "bytes": 33084,
+      "previous_sha256": "d235d7427f3f97feed0e0138be0f194fa2d9cbd2af915e994a4d8316fb4e3480"
+    },
+    {
+      "path": "chapters/B_reproducibility.tex",
+      "sha256": "f14a2e4485320a75f98aabe2b2ddf3826c756c4b25017f16627fe07d957815c2",
+      "bytes": 10697,
+      "previous_sha256": "67b1bd921d5258c13bb744e095b4b21d3a8672312cc88da0b644118da8535030"
+    },
+    {
+      "path": "figures/README.md",
+      "sha256": "558abfacce899b6e1f2297763dddc54fc35c9c0f3a4146fa17b663e0108d24a7",
+      "bytes": 4362,
+      "previous_sha256": "525fbe822ecc19e87987cefe765127daf399cdba9e13560f3f35759903e59f2f"
+    },
+    {
+      "path": "build/main.pdf",
+      "sha256": "05a23b7080c10641e247b1e9d674577d8a3805a2f0b89b282be8563bfcbb02d7",
+      "bytes": 2384076,
+      "previous_sha256": "b4d2b012c910fbff7b9a6a6e5fdad2f5c38bffc4865a283eb6092435bbd7f0e3"
+    },
+    {
+      "path": "figures/scripts/fig_kinova_comparison.py",
+      "sha256": "aeeef06e88f6d46076da152ef415835f0fb18f5d39a6d68eb7736c09cefd6589",
+      "bytes": 5786,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/damping_comparison.json",
+      "sha256": "d851cf19c12d2f7d668be9d18077e8a589c6472978e825d7b20dc433f0a98020",
+      "bytes": 11009,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/L_real.npz",
+      "sha256": "75ca9b45cda49dc988f54b8591ac8d25f6ce5b378acac686c42fe8d97d46752e",
+      "bytes": 229487,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/L_result.json",
+      "sha256": "e33713ade046001c5778f923a95b645594f1885ac23d5e73e7e6fc6c5a1d4611",
+      "bytes": 4268,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/L_sim.npz",
+      "sha256": "e5a2f16ff5311ec59c91fccdb6ea79709f100497654fc4c9b96dba8cb8cfd8d6",
+      "bytes": 274714,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/manifest.json",
+      "sha256": "96f17e44dacf5457a186b0cd37826ad39027276508239eabdc43ea14a68e180e",
+      "bytes": 7739,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/metrics.json",
+      "sha256": "b0e982772471a08dd47a1bd8fe37e644d63676c10fedfb393ed19166880d8050",
+      "bytes": 1751,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/original_source_result.json",
+      "sha256": "2e4136e5c948a659a9307fcd04833dfa9cb882f8300a80eaf9242385c6f8e4a4",
+      "bytes": 4921,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/original_source_stop.npz",
+      "sha256": "3d20cbe71aeb41074d07702bdc7881a760b56ebdde9a85f8ff24d11eff239b06",
+      "bytes": 18013,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/Z_real.npz",
+      "sha256": "212a2e30d58fcb1d9516e66e6566386a0e02a0a796d4a8fad94ee63f1fa5817b",
+      "bytes": 216887,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/Z_result.json",
+      "sha256": "9ab792a6e010492163e89efdb2c07ee5d43961b07af7948e3c00b8ccc88690ac",
+      "bytes": 4299,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/data/kinova_comparison_20261024/Z_sim.npz",
+      "sha256": "25c3954add57bf40fd6aff0847d0253d6a9324170d30c7116efcb749981ffe7c",
+      "bytes": 252137,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/ch11_kinova/real_sim_normal.pdf",
+      "sha256": "ad507bec6cfd687e50f83a0363858f2e513c8aac76702c288586368609281d24",
+      "bytes": 101873,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/ch11_kinova/real_sim_normal.png",
+      "sha256": "b839a60d3c4cb40d46b4675e6562172fcebb0cfba7a4ddbf1fdb74265174c6ac",
+      "bytes": 174082,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/ch11_kinova/real_sim_zoom.pdf",
+      "sha256": "332cd3ef75a2259b9a3bc88b8acec692bc767243f4905e181bf2f6eb12730606",
+      "bytes": 36783,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/ch11_kinova/real_sim_zoom.png",
+      "sha256": "0b8844a1226bf11933475019a9ad4d54399d90fa9ef9345298fda74ce32eb77e",
+      "bytes": 131442,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/ch11_kinova/real_sim_moment.pdf",
+      "sha256": "499f371ce646a448d4b542fd2d37f1b9569ea3ac20ac2292f55d383f7fc61f8f",
+      "bytes": 102165,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/ch11_kinova/real_sim_moment.png",
+      "sha256": "64927f7d319c4db59bd3cc202d7ccc0d2d16256375557d94762da450363e6666",
+      "bytes": 134696,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/ch11_kinova/original_source_stop.pdf",
+      "sha256": "dfa2d58779ff50998de6a1f55feaec759825bdb5e8c603ec4f63302c72361061",
+      "bytes": 15571,
+      "previous_sha256": null
+    },
+    {
+      "path": "figures/ch11_kinova/original_source_stop.png",
+      "sha256": "14efaa59f9f607609938701f3814b5cd5c7b9ce2e885095271e6fdd455778fc5",
+      "bytes": 81725,
+      "previous_sha256": null
+    }
+  ]
+}

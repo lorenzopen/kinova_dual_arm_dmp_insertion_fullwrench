@@ -1,0 +1,94 @@
+[
+  {
+    "piece": "Z",
+    "real_source": "docs\\runs\\20261023_1743_F75_Zt1_s9012_ffi_riuscito\\F75_Zt1_s9012_c100_five_cut800_ffi_20261023_174143.csv",
+    "real": {
+      "route_rmse_N": 0.3008220619800265,
+      "route_force_band_08_25_N": 0.1254124600281349,
+      "route_error_band_08_25_N": 0.16198920033795544,
+      "route_force_band_25_10_N": 0.06618925416370934,
+      "active_min_L_N": 2.9360363216093903,
+      "active_min_R_N": 2.9243646005601414,
+      "seat_positive_error_N": 1.445897531187518
+    },
+    "simulation": {
+      "route_rmse_N": 0.2894560120161518,
+      "route_force_band_08_25_N": 0.04030303609984342,
+      "route_error_band_08_25_N": 0.09044221416173102,
+      "route_force_band_25_10_N": 0.009347427959738669,
+      "active_min_L_N": 2.913974638665247,
+      "active_min_R_N": 2.935289454849346,
+      "seat_positive_error_N": -0.08333392164602227
+    },
+    "simulation_final_worst_cell_mm": 78.13346452558939
+  },
+  {
+    "piece": "L",
+    "real_source": "docs\\runs\\20261023_1827_F75_Lt1_s9014_ffi_riuscito\\F75_Lt1_s9014_c100_five_cut800_ffi_20261023_182743.csv",
+    "real": {
+      "route_rmse_N": 0.28195686479224785,
+      "route_force_band_08_25_N": 0.114798587231525,
+      "route_error_band_08_25_N": 0.1397115235400942,
+      "route_force_band_25_10_N": 0.06604521779140854,
+      "active_min_L_N": 3.1408346013530974,
+      "active_min_R_N": 3.1795496706703936,
+      "seat_positive_error_N": 2.6375172546851067
+    },
+    "simulation": {
+      "route_rmse_N": 0.274735556240291,
+      "route_force_band_08_25_N": 0.0420759955395685,
+      "route_error_band_08_25_N": 0.09045072311875742,
+      "route_force_band_25_10_N": 0.009191118878973337,
+      "active_min_L_N": 2.9124465754026776,
+      "active_min_R_N": 2.912408592931503,
+      "seat_positive_error_N": 1.4307599753181313
+    },
+    "simulation_final_worst_cell_mm": 5.250627909386171
+  },
+  {
+    "piece": "S",
+    "real_source": "docs\\runs\\20261023_1904_S_s7073m3_ffi_riuscito\\S_s7073m3_c100_narrow75_ffi_20261023_190407.csv",
+    "real": {
+      "route_rmse_N": 0.5534540385025185,
+      "route_force_band_08_25_N": 0.07654401764148794,
+      "route_error_band_08_25_N": 0.08174597913129907,
+      "route_force_band_25_10_N": 0.03242702226713381,
+      "active_min_L_N": 2.5315637502012422,
+      "active_min_R_N": 2.5724485972267006,
+      "seat_positive_error_N": 1.8768288892001164
+    },
+    "simulation": {
+      "route_rmse_N": 0.2918837732137355,
+      "route_force_band_08_25_N": 0.027698290387380864,
+      "route_error_band_08_25_N": 0.05228867560009772,
+      "route_force_band_25_10_N": 0.005945064105233705,
+      "active_min_L_N": 2.9948512055279486,
+      "active_min_R_N": 2.994818264305144,
+      "seat_positive_error_N": 0.6687595602000496
+    },
+    "simulation_final_worst_cell_mm": 8.853051193009177
+  },
+  {
+    "piece": "T",
+    "real_source": "docs\\runs\\20261023_1921_F75_Tt1_s9007_ffi_riuscito\\F75_Tt1_s9007_c100_five_cut800_ffi_20261023_192128.csv",
+    "real": {
+      "route_rmse_N": 0.27274353320932204,
+      "route_force_band_08_25_N": 0.11014538342514367,
+      "route_error_band_08_25_N": 0.13965548555981772,
+      "route_force_band_25_10_N": 0.07276122451522772,
+      "active_min_L_N": 2.7951484809360423,
+      "active_min_R_N": 2.8218356824836035,
+      "seat_positive_error_N": 0.5327767624052608
+    },
+    "simulation": {
+      "route_rmse_N": 0.19895283664975275,
+      "route_force_band_08_25_N": 0.021522316988220234,
+      "route_error_band_08_25_N": 0.07770565111895256,
+      "route_force_band_25_10_N": 0.0056756772358700375,
+      "active_min_L_N": 2.9312698694066897,
+      "active_min_R_N": 2.931275934430002,
+      "seat_positive_error_N": 0.25495598618116366
+    },
+    "simulation_final_worst_cell_mm": 4.950864104468439
+  }
+]
