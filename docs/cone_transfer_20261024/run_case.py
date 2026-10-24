@@ -57,7 +57,7 @@ def make_kinova_solver(mu, no_bending=False, task_scale=0.25, floor_N=1.0):
                        margin_floor_N=float(floor_N), margin_fixed_N=0.5)
     # read by TESI's lib/audit.check_allocation; this program has no cap and
     # no separate floor (contact maintenance comes from the margin)
-    s.f_pad_max, s.f_min = 1e9, 0.0
+    s.f_pad_max, s.f_min, s.r_s = 1e9, 0.0, 0.0     # r_s: newer TESI audit
     return s
 
 
