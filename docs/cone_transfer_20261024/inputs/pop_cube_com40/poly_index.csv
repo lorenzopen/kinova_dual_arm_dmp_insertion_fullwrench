@@ -1,0 +1,2 @@
+idx,mass,n_planes,n_vertices,n_faces,r_inscribed,elongation,n_openable_axes,median_area,ext_x,ext_y,ext_z,com_x,com_y,com_z
+0,2.0,6,8,6,0.06,1.0,128,0.0144,0.12,0.12,0.12,0.02828,-0.01697,0.02263

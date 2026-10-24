@@ -1,0 +1,7 @@
+# Dense traces and pooled samples stay local (regenerate with campaign.py / analyze.py)
+runs*/
+samples.npz
+wrench_margin.csv
+# mu = 0.49 pass: not part of the study
+sens_mu049/
+__pycache__/
